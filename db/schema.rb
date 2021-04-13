@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2021_04_12_065438) do
     t.string "image"
     t.string "source"
     t.string "hashtag"
+    t.string "promocode"
     t.string "rating"
     t.string "review_count"
     t.decimal "is_price"

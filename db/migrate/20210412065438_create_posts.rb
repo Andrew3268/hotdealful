@@ -7,6 +7,7 @@ class CreatePosts < ActiveRecord::Migration[6.1]
       t.string :image
       t.string :source
       t.string :hashtag
+      t.string :promocode
       t.string :rating
       t.string :review_count
       t.decimal :is_price

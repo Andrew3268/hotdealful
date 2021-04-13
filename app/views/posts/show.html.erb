@@ -1,3 +1,119 @@
+<div class="show-wrap">
+  <div class="wrap">
+
+    <div class="container clearfix">
+      <div class="content-section clearfix">
+        <div class="image-box clearfix">
+          <img src="https://m.media-amazon.com/images/I/71yeEs7IqOL._AC_UY218_.jpg" alt="" title="" />
+        </div>
+
+        <div class="inner-box clearfix">
+          <div class="title">
+            <h2 class="line-break-02">Wireless Earbuds, Tribit 100H Playtime Bluetooth 5.0 IPX8 Waterproof Touch Control Ture Wireless Bluetooth Earbuds with Mic Earphones in-Ear Deep Bass Built-in Mic Bluetooth Headphones, FlyBuds 3</h2>
+          </div>
+          <h2 class="summary_title">SUMMARY</h2>
+          <div class="receipt">
+            <!-- Button Section - Text(left) -->
+            <div class="receipt__grid1">
+              <p>Offer Price</p>
+              <p>Discount <span>by coupon</span></p>
+              <p>Discount <span>by code</span> 50% off)</p>
+              <p>Promotion Code</p>
+
+              <hr>
+
+              <p class="total_text">Total</p>
+            </div>
+
+            <!-- Summary Section - Price(right) -->
+            <div class="receipt__grid2">
+              <p><em>-</em>$42.99</p>
+              <p>- $42.99</p>
+              <p>- $42.99</p>
+              <p class="p-code">GJDKFJLKS43782</p>
+
+              <hr>
+
+              <p class="total_price ">$39.99</p> 
+                             
+            </div>
+          </div>
+
+          <!-- Button Section -->
+          <div class="btn">
+            <a class="amz_btn" target="_blank" href="#n">Check it out at Amazon</a>
+          </div>
+
+
+        </div>
+      </div><!-- ./content-section-->
+      
+
+
+     
+
+
+    </div><!--./container-->
+
+  </div>
+</div>
+
+<script type="text/javascript">
+  const textElement = document.getElementById("facebook_ctn");
+  const copyButton = document.getElementById("facebook_btn");
+  const copyText = (e) => {
+    window.getSelection().selectAllChildren(textElement);
+    document.execCommand("copy");
+  };
+  copyButton.addEventListener("click", (e) => copyText(e));
+  copyButton.addEventListener("mouseover", (e) => resetTooltip(e));
+</script>
+
+
+<script type="text/javascript">
+  var copyBtn = document.querySelector('.js-copybtn');
+  if (copyBtn) {
+      copyBtn.addEventListener('click', function(event) {
+          var copyText= document.querySelector('.js-copytext');
+          var range = document.createRange();
+          range.selectNode(copyText);
+          window.getSelection().addRange(range);
+          try {
+              var successful = document.execCommand('copy');
+              var msg = successful ? 'successful' : 'unsuccessful';
+          } catch(err) {
+
+          }
+          window.getSelection().removeAllRanges();
+      });
+  }
+</script>
+
+<!-- Accordion Menu -->
+<script type="text/javascript">
+  $('.accordion-item .heading').on('click', function(e) {
+      e.preventDefault();
+
+      // Add the correct active class
+      if($(this).closest('.accordion-item').hasClass('active')) {
+          // Remove active classes
+          $('.accordion-item').removeClass('active');
+      } else {
+          // Remove active classes
+          $('.accordion-item').removeClass('active');
+
+          // Add the active class
+          $(this).closest('.accordion-item').addClass('active');
+      }
+
+      // Show the content
+      var $content = $(this).next();
+      $content.slideToggle(100);
+      $('.accordion-item .content').not($content).slideUp('fast');
+  });
+</script>
+
+
 <p>
   <strong>Title:</strong>
   <%= @post.title %>
