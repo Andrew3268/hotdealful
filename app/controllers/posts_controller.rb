@@ -10,6 +10,12 @@ class PostsController < ApplicationController
   def show
   end
 
+  def hashtags
+    tag = Tag.find_by(name: params[:name])
+    @posts = tag.posts.order("created_at DESC")
+    
+  end
+
   # GET /posts/new
   def new
     @post = Post.new
