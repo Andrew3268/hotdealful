@@ -1,6 +1,4 @@
-<header>
-  <%= render 'shared/header' %>
-</header>
+
 
 <div class="post_index clearfix">
   <div class="wrap">
@@ -13,22 +11,7 @@
       </div>
 
       <div class="categories">
-        <p>Categories</p>
-        <ul>
-          <li><a href="#n">Electronics</a></li>
-          <li><a href="#n">Homeware</a></li>
-          <li><a href="#n">Kitchen</a></li>
-          <li><a href="#n">Outdoor</a></li>
-          <li><a href="#n">Pet</a></li>
-          <li><a href="#n">Fashion</a></li>
-        </ul>
-        <p>Coupon Type</p>
-        <ul>
-          <li><a href="#n">Online Sale</a></li>
-          <li><a href="#n">Promotion Code</a></li>
-          <li><a href="#n">Under $10</a></li>
-          <li><a href="#n">50% Off or more</a></li>
-        </ul>
+        <%= render 'posts/categories' %>
       </div>
     </div>
 
@@ -42,11 +25,14 @@
             </div>
 
             <div class="inner">
-              <div class="mark">
-                <span class="promocode">Promocode</span>
-                <span class="coupon">Coupon</span>
-              </div>
-              <p><%= post.title %></p>
+              <p>
+                <% if post.promocode.present? %>
+                  <span class="promocode">Promocode</span>
+                <% else %>
+                  <span class="sale">Onlne Sale</span>
+                <% end %>
+                <%= post.title %>
+              </p>
               <span><em class="was_price"><%= number_to_currency(post.was_price) %></em><%= number_to_currency(post.is_price) %></span>
               <p class="codenum">Save $10 by code:<%= post.promocode %></p>
               <em class="see_detail"><%= link_to "See Deatil", post %></em>
