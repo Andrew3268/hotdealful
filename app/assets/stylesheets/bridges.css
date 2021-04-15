@@ -14,9 +14,9 @@
 
 .post-type{}
 .op_wrap{float:left;width:31%;margin:1%;}
-.prime-type, .coupon-type, .shipping-type, .fast-type, .oversea-type, .subscribe-type{display:table;width:100%;/*table-layout:fixed;*/margin-bottom:20px;}
+.prime-type, .coupon-type, .shipping-type, .fast-type, .oversea-type, .subscribe-type{display:table;width:100%;margin-bottom:20px;}
 .post-type input, .prime-type input, .coupon-type input, .shipping-type input, .fast-type input, .oversea-type input, .subscribe-type input{display:none;}
-.post-type input:checked + label, .prime-type input:checked + label, .coupon-type input:checked + label, .shipping-type input:checked + label, .fast-type input:checked + label, .oversea-type input:checked + label, .subscribe-type input:checked + label{background:#68d391;color:#fff;}
+.post-type input:checked + label, .prime-type input:checked + label, .coupon-type input:checked + label, .shipping-type input:checked + label, .fast-type input:checked + label, .oversea-type input:checked + label, .subscribe-type input:checked + label{background:#68d391;color:#fff;width:100%;}
 .prime-type label, .coupon-type label, .shipping-type label, .fast-type label, .oversea-type label, .subscribe-type label{display:table-cell;padding:10px;text-align:center;border:1px solid #e3e3e3;border-left:none;cursor:pointer;}
 .post-type label:first-of-type, .prime-type label:first-of-type, .coupon-type label:first-of-type, .shipping-type label:first-of-type, .fast-type label:first-of-type{border-left:1px solid #e3e3e3;}
 .post-type label{display:inline-block;margin-bottom:10px;padding:10px;text-align:center;border:1px solid #ccc;cursor:pointer;font-size:11px;}
@@ -37,7 +37,7 @@
 .set_search_box button.accordion{margin-bottom:10px;width:47%;margin-bottom:10px;background:#fff;color:#616161;font-size:15px;border-radius:10px;border:1px solid #ccc;font-weight:300;}
 .set_search_box button.accordion span{font-size:15px;font-weight:bold;}
 .set_search_box .panel{padding:0 18px;display:none;background-color:#fff;overflow:hidden;}
-.set_search_box .feild_wrap, .set_search_box .option_wrap{width:102.5%;margin-bottom:30px;}
+.set_search_box .feild_wrap, .set_search_box .option_wrap{width:101.5%;margin-bottom:30px;}
 .set_search_box .feild_wrap{width:104%;}
 .set_search_box .feild_wrap .keyword_box{margin-bottom:15px;}
 .set_search_box .feild_wrap .pct_none{display:none;}
@@ -65,7 +65,8 @@ a.set_reset_m{display:none;}
 @media screen and (max-width:640px){
   .search-wrapping{width:100%;margin:0 0 100px 0;}
   .set_search_box .feild_wrap .keyword_box input{width:95%;}
-  .op_wrap{float:none;width:100%;margin:0;}
+  /*.op_wrap{float:none;width:100%;margin:0;}*/
+  .op_wrap p{font-size:12px;}
   .set_search_box{width:100%;margin:10px 0 30px 0;padding:10px;}
   .set_search_box button{width:100%;padding:15px;font-size:30px;} 
   .field span.label{width:100%;float:none;padding:0;}

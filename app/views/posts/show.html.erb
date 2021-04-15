@@ -3,22 +3,28 @@
 
     <div class="container clearfix">
       <div class="content-section clearfix">
+        <p class="title_mobile line-break-02"><%= @post.title %><p>
         <div class="image-box clearfix">
           <img src="https://m.media-amazon.com/images/I/71yeEs7IqOL._AC_UY218_.jpg" alt="" title="" />
         </div>
 
         <div class="inner-box clearfix">
           <div class="title">
-            <h2 class="line-break-02">Wireless Earbuds, Tribit 100H Playtime Bluetooth 5.0 IPX8 Waterproof Touch Control Ture Wireless Bluetooth Earbuds with Mic Earphones in-Ear Deep Bass Built-in Mic Bluetooth Headphones, FlyBuds 3</h2>
+            <h2 class="line-break-02"><%= @post.title %></h2>
           </div>
           <h2 class="summary_title">SUMMARY</h2>
           <div class="receipt">
             <!-- Button Section - Text(left) -->
             <div class="receipt__grid1">
               <p>Offer Price</p>
-              <p>Discount <span>by coupon</span></p>
-              <p>Discount <span>by code</span> 50% off)</p>
-              <p>Promotion Code</p>
+              <% if @post.promocode.present? %>
+                <p>Discount <span>by code</span>(<%= number_to_percentage(@post.pct, precision: 0) %> off)</p>            
+                <p>Promotion Code</p>
+              <% else %>
+                <% hotdeal_pct = 0 %>
+                <% hotdeal_pct =  (@post.was_price - @post.is_price) / @post.was_price * 100 %>
+                <p>Discount(<%= number_to_percentage(hotdeal_pct, precision: 0) %> off)</p>            
+              <% end %>
 
               <hr>
 
@@ -27,21 +33,41 @@
 
             <!-- Summary Section - Price(right) -->
             <div class="receipt__grid2">
-              <p><em>-</em>$42.99</p>
-              <p>- $42.99</p>
-              <p>- $42.99</p>
-              <p class="p-code">GJDKFJLKS43782</p>
+              <p><em>-</em><%= number_to_currency(@post.was_price) %></p>
+              <% if @post.promocode.present? %>
+                <% promo_price = 0 %>
+                <% promo_price = (@post.pct / 100) * @post.was_price %>
+                <p>- <%= number_to_currency(promo_price) %></p>
+                <p class="p-code"><%= @post.promocode %></p>
+              <% else %>
+                <% sale_price = 0 %>
+                <% sale_price = ( hotdeal_pct / 100 ) * @post.was_price %>
+                <p>- <%= number_to_currency(sale_price) %></p>  
+              <% end %>
 
               <hr>
-
-              <p class="total_price ">$39.99</p> 
+              <!-- Total Price -->
+              <% if @post.promocode.present? %>
+                <% total_price = 0 %>
+                <% total_price = @post.was_price - promo_price %>
+                <p class="total_price "><%= number_to_currency(total_price) %></p> 
+              <% else %>
+                <p class="total_price "><%= number_to_currency(@post.is_price) %></p> 
+              <% end %>
                              
             </div>
           </div>
 
           <!-- Button Section -->
           <div class="btn">
-            <a class="amz_btn" target="_blank" href="#n">Check it out at Amazon</a>
+            <a class="amz_btn" target="_blank" href="<%= @post.link %>">Check it out at Amazon</a>
+          </div>
+
+        
+          <div class="admin">
+            <p><%= render_with_hashtags(@post.hashtag) %></p>
+            <%= link_to 'Edit', edit_post_path(@post) %> |
+            <%= link_to 'Back', posts_path %>
           </div>
 
 
@@ -114,10 +140,3 @@
 </script>
 
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>

@@ -1,16 +1,9 @@
 <div class="post_index clearfix">
   <div class="wrap">
 
-    <div class="index_left">
-      <img src="https://mediaservice.retailmenot.com/ws/mediagroup/R22ASI6HQRE2BANLTBP57PD5EU?width=255&height=255" alt=""/><!-- amamzon logo -->
-
-      <div class="finder">
-        <%= render 'posts/finder' %>
-      </div>
-
-      <div class="categories">
-        <%= render 'posts/categories' %>
-      </div>
+    <div class="index_left left_hashtag">
+      <div class="finder"><%= render 'posts/finder' %></div>
+      <div class="categories"><%= render 'posts/categories' %></div>
     </div>
 
     <div class="index_right">
@@ -23,89 +16,65 @@
 
       <% @posts.each do |post| %>
         <div class="card clearfix">
-          <!-- <a target="_blank" href="<%= post.link %>"> -->
+          
             <div class="img_box">
-              <img src="<%= post.image %>" alt="<%= post.title %>"/>
+              <a target="_blank" href="<%= post.link %>"><img src="<%= post.image %>" alt="<%= post.title %>"/></a>
+              <div class="admin">
+                <%= link_to 'Edit', edit_post_path(post) %>
+                <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+              </div>
             </div>
 
             <div class="inner">
-              <p>
-                <% if post.promocode.present? %>
-                  <span class="promocode">Promocode</span>
-                <% else %>
-                  <span class="sale">Onlne Sale</span>
-                <% end %>
-                <%= post.title %>
-              </p>
-              <span><em class="was_price"><%= number_to_currency(post.was_price) %></em><%= number_to_currency(post.is_price) %></span>
-              <p class="codenum">Save $10 by code:<%= post.promocode %></p>
-              <p><%= render_with_hashtags(post.hashtag) %></p>
-              <em class="see_detail"><%= link_to "See Deatil", post %></em>
+              <a target="_blank" href="<%= post.link %>">
+                <p>
+                  <% if post.promocode.present? %>
+                    <span class="promocode">Promo code</span>
+                  <% else %>
+                    <span class="sale">Onlne Sale</span>
+                  <% end %>
+                  <%= post.title %>
+                </p>
+              </a>
 
-              <%= link_to 'Edit', edit_post_path(post) %>
-              <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <% if post.promocode.present? %>
+                <% promocode_price = 0 %>
+                <% promocode_price =  post.was_price - (post.pct / 100) * post.was_price %>
+                <span class="is_price">
+                  <%= number_to_currency(promocode_price) %>
+                  <em class="was_price"><%= number_to_currency(post.was_price) %></em>
+                  <em class="shipping">+ free shipping</em>
+                  <!-- <em class="pct"> / <%= number_to_percentage(post.pct, precision: 0) %> off </em> -->
+                </span>
+              <% else %>
+                <span class="is_price">
+                  <% hotdeal_pct = 0 %>
+                  <% hotdeal_pct =  (post.was_price - post.is_price) / post.was_price * 100 %>
+                  <%= number_to_currency(post.is_price) %>
+                  <em class="was_price"><%= number_to_currency(post.was_price) %></em>
+                  <em class="shipping">+ free shipping</em>
+                  <!-- <em class="pct"> / <%= number_to_percentage(hotdeal_pct, precision: 0) %> off</em> -->
+                </span>
+              <% end %>
 
-            </div>
+              <% if post.promocode.present? %>
+                <% promo_price = 0 %>
+                <% promo_price = (post.pct / 100) * post.was_price %>
+                <p class="codenum">Save <%= number_to_currency(promo_price) %> using code:  <%= post.promocode %></p>
+              <% else %>
+              <% end %>
+
+              <em class="see_detail"><%= link_to "See Deatil", post %><img src="<%=asset_path 'see_detail.png' %>" alt="see detail" /></em>
+
+              
+
+            </div><!--./inner-->
 
             <div class="btn_box">
-              <a target="_blank"href="<%= post.link %>">Get This Deal</a>
+              <a target="_blank"href="<%= post.link %>">Get Deal</a>
             </div>
-          <!-- </a> -->
         </div>
       <% end %>
-
-       <div class="card clearfix">
-        <a href="#n">
-          <div class="img_box">
-            <img src="https://m.media-amazon.com/images/I/71yeEs7IqOL._AC_UY218_.jpg" alt=""/>
-          </div>
-
-          <div class="inner">
-            <p>Wireless Earbuds, Tribit 100H Playtime Bluetooth 5.0 IPX8 Waterproof Touch Control Ture Wireless Bluetooth Earbuds with Mic Earphones in-Ear Deep Bass Built-in Mic Bluetooth Headphones, FlyBuds 3</p>
-            <span><em>$42.99</em>$39.99</span>
-            <em><a href="https://www.google.com">See Details -></a></em>
-          </div>
-
-          <div class="btn_box">
-            <a href="#n">Get This Deal</a>
-          </div>
-        </a>
-      </div>
-
-       <div class="card clearfix">
-        <a href="#n">
-          <div class="img_box">
-            <img src="https://m.media-amazon.com/images/I/71yeEs7IqOL._AC_UY218_.jpg" alt=""/>
-          </div>
-
-          <div class="inner">
-            <p>Wireless Earbuds, Tribit 100H Playtime Bluetooth 5.0 IPX8 Waterproof Touch Control Ture Wireless Bluetooth Earbuds with Mic Earphones in-Ear Deep Bass Built-in Mic Bluetooth Headphones, FlyBuds 3</p>
-            <span><em>$42.99</em>$39.99</span>
-          </div>
-
-          <div class="btn_box">
-            <a href="#n">Get This Deal</a>
-          </div>
-        </a>
-      </div>
-
-       <div class="card clearfix">
-        <a href="#n">
-          <div class="img_box">
-            <img src="https://m.media-amazon.com/images/I/71yeEs7IqOL._AC_UY218_.jpg" alt=""/>
-          </div>
-
-          <div class="inner">
-            <p>Wireless Earbuds, Tribit 100H Playtime Bluetooth 5.0 IPX8 Waterproof Touch Control Ture Wireless Bluetooth Earbuds with Mic Earphones in-Ear Deep Bass Built-in Mic Bluetooth Headphones, FlyBuds 3</p>
-            <span><em>$42.99</em>$39.99</span>
-          </div>
-
-          <div class="btn_box">
-            <a href="#n">Get This Deal</a>
-          </div>
-        </a>
-      </div>
-
 
     </div>
 
