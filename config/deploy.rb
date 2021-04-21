@@ -6,6 +6,7 @@ set :repo_url, "git@github.com:Andrew3268/hotdealful.git"
 
 # Deploy to the user's home directory
 set :deploy_to, "/home/deploy/#{fetch :application}"
+set :passenger_restart_with_touch, true
 
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
 
