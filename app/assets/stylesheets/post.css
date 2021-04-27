@@ -144,6 +144,12 @@
 .show-wrap .title h2{font-size:17px;font-weight:300;word-break:keep-all;line-height:1.4;height:2.8em;overflow:hidden;display:-webkit-box;display:-ms-flexbox;vertical-align:top;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:2;}
 .show-wrap .admin{text-align:left;}
 
+
+/******* Sharing Section *******/
+.sharing_btn a, .sharing_btn button{background:#08f;color:#fff;padding:5px 7px;border-radius:15px;font-size:13px;}
+.sharing_ctn{font-size:10px;}
+/******* Sharing Centents Part *******/
+
 @media screen and (max-width:640px){
   .show-header{display:none;}
   .show-wrap .wrap{margin:0;}
