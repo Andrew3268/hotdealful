@@ -7,6 +7,25 @@ class PostsController < ApplicationController
   end
   # GET /posts/1 or /posts/1.json
   def show
+    set_meta_tags title: @post.title,
+                  site: 'hotdeal-ful',
+                  revierse: true,
+                  description: @post.title,
+                  keywords: 'amazondeals, hotdeals, promotion code, coupons ',
+                  twitter: {
+                    card: "summary",
+                    site: "@hotdealful",
+                    title: @post.title,
+                    description: @post.title,
+                    image: @post.image
+                  },
+                  og: {
+                    title: @post.title,
+                    description: @post.title,
+                    type: 'website',
+                    url: post_url(@post),
+                    image: @post.image
+                  }
   end
 
   def hashtags
