@@ -1,6 +1,6 @@
 h1,h2,h3,h4,h5,h6,p,ul,li,address,form,fieldset,legend,input,button,dl,dt,dd,table,thead,tbody,tfoot,tr,th,td{margin:0;padding:0;font-family:inherit;}
 a img{border:0;}
-a{text-decoration:none;color:#000;}
+a{text-decoration:none;color:#fff;}
 ul,li{list-style:none;}
 em,address{font-style:normal;}
 fieldset{border:0;}
@@ -13,7 +13,7 @@ input, textarea, select{border:1px solid #ccc;-moz-appearance:none;appearance:no
 .clearfix:after{display:block;clear:both;content:".";visibility:hidden;height:0;}
 .clearfix{display:block;}
 
-body{margin:0;padding:0;font-size:15px;color:#000;line-height:1.5;font-weight:300;-webkit-scrollbar:none;font-family: 'Barlow', sans-serif;}
+body{margin:0;padding:0;font-size:15px;color:#fff;line-height:1.5;font-weight:300;-webkit-scrollbar:none;font-family: 'Barlow', sans-serif;background:#000;}
 @media screen and (max-width:640px){
   body{font-size:13px;font-weight:400;}
 }
@@ -34,8 +34,9 @@ body{margin:0;padding:0;font-size:15px;color:#000;line-height:1.5;font-weight:30
 
 /*Header */
 header{margin-bottom:10px;}
-header nav{padding:15px 30px 10px 30px;border-bottom:1px solid #ccc;}
+header nav{padding:15px 30px 10px 30px;border-bottom:1px solid #ccc;background:#1e1f26;}
 header nav h1{text-align:center;}
+header nav h1 a{color:#fff;}
 header nav img{width:25%;}
 header nav ul{line-height:5px;}
 header nav ul li{display:inline-block;float:left;}
@@ -64,13 +65,13 @@ header .nav-container ul.submenu_pc{display:none;}
   header .nav-container ul li:not(:first-child){margin-left:0;}
   header .nav-container ul li a{padding:10px 25px;opacity:0;color:#000;font-size:24px;font-weight:600;transform:translateY(-20px);transition:all 0.2s ease;}
   header .nav-open{position:fixed;right:10px;top:6px;display:block;width:48px;height:48px;cursor:pointer;z-index:9999;border-radius:50%;}
-  header .nav-open i{display:block;width:20px;height:2px;background:#1f2227;border-radius:2px;margin-left:14px;}
+  header .nav-open i{display:block;width:20px;height:2px;/*background:#1f2227;*/background:#fff;border-radius:2px;margin-left:14px;}
   header .nav-open i:nth-child(1){margin-top:16px;}
   header .nav-open i:nth-child(2){margin-top:4px;opacity:1;}
   header .nav-open i:nth-child(3){margin-top:4px;}
 
   header .nav-container ul.submenu_pc{left:25px;display:block;}
-  header .nav-container ul.submenu_pc p{margin:30px 0;font-size:20px;}
+  header .nav-container ul.submenu_pc p{margin:30px 0;font-size:20px;color:#000;}
   header .nav-container ul.submenu_pc li{text-align:left;margin:0;}
   header .nav-container ul.submenu_pc li a{padding:0;font-size:13px;}
   header .nav-container ul.submenu_pc li a img.cat_img{width:35px;}

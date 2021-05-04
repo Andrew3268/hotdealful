@@ -5,7 +5,6 @@
 
     <div class="container clearfix">
 
-
       <div class="content-section clearfix">
         <p class="title_mobile line-break-02"><%= @post.title %><p>
         <div class="image-box clearfix">
@@ -45,7 +44,7 @@
 
             <!-- Summary Section - Price(right) -->
             <div class="receipt__grid2">
-              <p><em>-</em><%= number_to_currency(@post.was_price) %></p>
+              <p><%= number_to_currency(@post.was_price) %></p>
               <% if @post.promocode.present? %>
                 <% promo_price = 0 %>
                 <% promo_price = (@post.pct / 100) * @post.was_price %>
@@ -137,6 +136,10 @@
     </div><!--./container-->
 
   </div>
+</div>
+
+<div class="fixed_bottom_nav">
+  <%= render "posts/pixed_nav_show" %>
 </div>
 
 <script type="text/javascript">

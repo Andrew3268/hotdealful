@@ -58,7 +58,7 @@
               <% else %>
               <% end %>
 
-              <em class="see_detail"><%= link_to "See Deatil", post %><img src="<%=asset_path 'see_detail.png' %>" alt="see detail" /></em>
+              <em class="see_detail"><%= link_to "See Deatil", post %><a href="/posts/<%= post.id %>"><img src="<%=asset_path 'see_detail.png' %>" alt="see detail" /></a></em>
 
               
 
