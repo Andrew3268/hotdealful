@@ -8,7 +8,7 @@
 .set_banner ul li{margin:10px 0;list-style:disc;}
 .set_banner ul li a{color:#08f;}*/
 /*.set_b_m{display:none;}*/
-.set_search_box{float:left;width:50%;margin-left:2%;background:white;margin:10px auto 50px auto;border-radius:10px;box-shadow:0 2px 10px rgba(0, 0, 0, 0.1);padding:15px 30px;border:1px solid #aaa;}
+.set_search_box{float:left;width:50%;margin-left:2%;background:white;margin:10px auto 50px auto;border-radius:10px;box-shadow:0 2px 10px rgba(0, 0, 0, 0.1);padding:15px 30px;border:1px solid #aaa;color:#000;}
 .set_search_box h2{margin:0 0 20px;font-size:20px;}
 .disable{display:none;}
 
@@ -99,9 +99,54 @@ a.set_reset_m{display:none;}
 }
 
 
+/* Index Find Coupon  -----------------------------*/
+.find-coupon{text-align:center;/*background:#ffea92;*/border-radius:20px;margin-bottom:20px;/*border:1px solid #ccc;*/padding:10px;}
+.find-coupon .couponbox-full{/*float:left;*/width:70%;/*margin:2% 10%;*/margin:0 auto;color:#ffea92;padding:1.2em 2em;border-radius:20px;font-weight:bold;text-align:center;}
+.find-coupon .couponbox-full p{font-size:30px;}
+.find-coupon .couponbox-left{background:rgba(0,0,0,0.2);color:#ffea92;border-radius:10px;font-weight:bold;text-align:center;font-size:12px;}
+.find-coupon .couponbox-left p{font-size:17px;}
+.find-coupon .couponbox-left span{display:inline-block;}
+.find-coupon .couponbox-left span.search_detail{margin-top:10px;}
+.find-coupon .couponbox-left span a{color:#ffea92;display:inline-block;}
+.find-coupon .couponbox-right{margin:3.5% 2.5% 2.5% 2.5%;}
+.find-coupon .find-keyword{}
+.find-coupon .find-keyword input{width:100%;padding:15px;border-radius:20px;border:1px solid #ccc;}
+.find-coupon .find-keyword input::placeholder{color:#ccc;}
+.find-coupon .index-coupon{visibility:hidden;}
+.find-coupon .index-coupon label{width:1%;font-size:0.5px;margin:0;}
+.find-coupon .find-btn{margin-top:-10px;}
+.find-coupon .find-btn .btn-comm{background:#68d391;border-radius:20px;color:#fff;display:block;width:100%;font-size:23px;padding:10px;}
+.find-coupon .find-btn button{padding:10px;}
+.find-coupon .find-btn a{padding:6px;font-size:14px;}
+
+
+@media screen and (max-width:640px){
+  .search-wrapping .find-coupon{padding:10px 0;}
+  .find-coupon{padding:1px 0 20px 0;margin-top:-30px;}
+  .find-coupon .couponbox-full{width:90%;margin:2% 5%;}
+  .find-coupon .couponbox-full p{font-size:22px;}
+  .find-coupon .couponbox-left{float:none;width:90%;margin:5%;}
+  .find-coupon .couponbox-left p{font-size:22px;}
+  .find-coupon .couponbox-right{float:none;width:100%;margin:0;} 
+  .find-coupon .find-keyword input{width:90%;}
+  .find-coupon .find-btn .btn-comm{width:90%;margin:0 5% 0 5%;font-size:20px;}
+  .find-coupon .find-btn a{padding:7px;}
+}
+
+@media screen and (min-width:641px) and (max-width:1199px){
+  .find-coupon{padding:10px 0;margin:20px 0;}
+  .find-coupon .couponbox-left p{font-size:19px;}
+  .find-coupon .couponbox-right{margin-top:30px;}
+  .find-coupon .find-keyword input{width:100%;}
+  .find-coupon .find-btn .btn-comm{width:100%;margin:0;}
+  .find-coupon .couponbox-left span a{padding:3px 20px;}
+}
+
+
 /* Search By Percentage */
-.search-pct{float:left;width:47%;margin:10px 0 0 3%;}
-.search-pct .tg{width:100%;margin:0 1%;border-collapse:collapse;border-spacing:0;border-color:#ccc;}
+.search-pct{float:left;width:47%;margin:10px 0 0 3%;border:1px solid #ccc;border-radius:10px;padding:10px;}
+.search-pct p{font-size:20px;}
+.search-pct .tg{width:100%;border-collapse:collapse;border-spacing:0;border-color:#ccc;padding:20px;}
 .search-pct .tg tr{}
 .search-pct .tg tr th{font-size:15px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#000;background-color:#f0f0f0;}
 .search-pct .tg tr td{font-size:15px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
