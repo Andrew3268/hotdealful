@@ -49,7 +49,7 @@
   .post_index .index_right .card .inner span em.shipping{font-size:13px;}
   .post_index .index_right .card .inner p.codenum{font-size:13px;line-height:1.5;}
   .post_index .index_right .card .inner .view_more_pc{display:none;}
-  .post_index .index_right .card .inner .view_more_m{display:block;}
+  .post_index .index_right .card .inner .view_more_m{display:block;width:100%;}
   .post_index .index_right .card .btn_box{float:none;width:100%;display:none;}
   .post_index .index_right .search-index{display:none;}
 }
@@ -222,8 +222,7 @@
 .modal .close-modal {
   position: absolute;
   cursor: pointer;
-  top: 23%;
-  left:80%;
+  top: 5px;
   opacity: 0;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
