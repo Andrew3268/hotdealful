@@ -12,15 +12,16 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%= javascript_pack_tag 'application' %>
+    
   </head>
   </head>
 
-  <body>
+  <body data-turbolinks="false">
       <!-- <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p> -->
       <%= render 'shared/search_modal' %>
     <%= yield %>
+    <%= javascript_pack_tag 'application' %>
   </body>
 </html>
 

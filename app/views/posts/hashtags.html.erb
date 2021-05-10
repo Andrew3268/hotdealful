@@ -14,15 +14,23 @@
         <% end %>
       </div>
 
+      <div class="search-index clearfix">
+        <%= form_for "",url: posts_path, role: "search", method: :get do %>
+          <%= text_field_tag :search, @search_term, placeholder: "Search today's deal..." %>
+        <% end %> 
+      </div>   
+
       <% @posts.each do |post| %>
         <div class="card clearfix">
           
             <div class="img_box">
               <a target="_blank" href="<%= post.link %>"><img src="<%= post.image %>" alt="<%= post.title %>"/></a>
-              <div class="admin">
-                <%= link_to 'Edit', edit_post_path(post) %>
-                <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-              </div>
+              <% if current_user && current_user.admin %>
+                <div class="admin">
+                  <%= link_to 'Edit', edit_post_path(post) %>
+                  <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+                </div>
+              <% end %>
             </div>
 
             <div class="inner">
@@ -64,19 +72,36 @@
               <% else %>
               <% end %>
 
-              <em class="see_detail"><%= link_to "See Deatil", post %><img src="<%=asset_path 'see_detail.png' %>" alt="see detail" /></em>
 
-              
+              <div class="view_more_pc clearfix">
+                <div class="view_show">
+                  <%= link_to "View Deatil", post %><a class="view_more_icon" href="/posts/<%= post.id %>"><img src="<%=asset_path 'see_detail.png' %>" alt="see detail" /></a>
+                </div>
+              </div>
+
+              <div class="view_more_m clearfix">
+                <div class="view_show">
+                  <%= link_to "View Deatil", post %>
+                </div>
+
+                <div class="view_amz">
+                  <a target="_blank"href="<%= post.link %>">View on Amazon</a>
+                </div>
+              </div>
+
 
             </div><!--./inner-->
 
             <div class="btn_box">
-              <a target="_blank"href="<%= post.link %>">Get Deal</a>
+              <a target="_blank"href="<%= post.link %>">View on Amazon</a>
             </div>
         </div>
       <% end %>
+      <%= raw pagy_nav(@pagy) %>
 
-    </div>
+
+
+    </div><!--./index_right-->
 
 
 

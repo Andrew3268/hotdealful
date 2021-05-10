@@ -36,7 +36,7 @@ class PostsController < ApplicationController
 
   def hashtags
     tag = Tag.find_by(name: params[:name])
-    @posts = tag.posts.order("created_at DESC")
+    @pagy, @posts = pagy(tag.posts.order("created_at DESC"), items: 30)
     
   end
 
