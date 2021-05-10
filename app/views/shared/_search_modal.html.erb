@@ -1,0 +1,26 @@
+<div class="global-modal">
+   <div class="overlay"></div>
+   <div class="global-modal_contents modal-transition">
+    <div class="global-modal-header">
+      <span class="mobile-close"> X </span>
+    </div>
+    <div class="global-modal-body">
+      <!-- <div class="content-left">
+        < render 'posts/finder' >
+      </div> -->
+      <div class="content-right">
+
+        <div class="couponbox-left">
+          <p>FIND THE BEST DEALS</p>
+          <!-- <span>√ Save money with coupons.</span> -->
+          <span>Search the best deals & promotion codes</span>
+        </div>  
+        <div class="search-index">
+          <%= form_for "",url: posts_path, role: "search", method: :get do %>
+            <%= text_field_tag :search, @search_term, placeholder: "Search today's deal..." %>
+          <% end %> 
+        </div>   
+     </div>
+   </div>
+ </div>
+</div>

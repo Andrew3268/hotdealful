@@ -16,6 +16,13 @@
 
     <div class="index_right">
 
+      
+      <div class="search-index clearfix">
+        <%= form_for "",url: posts_path, role: "search", method: :get do %>
+          <%= text_field_tag :search, @search_term, placeholder: "Search today's deal..." %>
+        <% end %> 
+      </div>   
+
       <% @posts.each do |post| %>
         <div class="card clearfix">
           
@@ -68,14 +75,33 @@
               <% else %>
               <% end %>
 
-              <em class="see_detail"><%= link_to "See Deatil", post %><a href="/posts/<%= post.id %>"><img src="<%=asset_path 'see_detail.png' %>" alt="see detail" /></a></em>
+
+
+              <div class="view_more_pc clearfix">
+                <div class="view_show">
+                  <%= link_to "View Deatil", post %><a class="view_more_icon" href="/posts/<%= post.id %>"><img src="<%=asset_path 'see_detail.png' %>" alt="see detail" /></a>
+                </div>
+              </div>
+
+              <div class="view_more_m clearfix">
+                <div class="view_show">
+                  <%= link_to "View Deatil", post %>
+                </div>
+
+                <div class="view_amz">
+                  <a target="_blank"href="<%= post.link %>">View on Amazon</a>
+                </div>
+              </div>
+
 
               
+
+                            
 
             </div><!--./inner-->
 
             <div class="btn_box">
-              <a target="_blank"href="<%= post.link %>">Get Deal</a>
+              <a target="_blank"href="<%= post.link %>">View on Amazon</a>
             </div>
         </div>
       <% end %>
