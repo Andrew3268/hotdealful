@@ -72,7 +72,7 @@ header .nav-container ul.submenu_pc{display:none;}
 
   header .nav-container ul.submenu_pc{left:25px;display:block;}
   header .nav-container ul.submenu_pc p{margin:30px 0;font-size:20px;color:#000;}
-  header .nav-container ul.submenu_pc li{text-align:left;margin:0;padding:15px;}
+  header .nav-container ul.submenu_pc li{text-align:left;margin:0;padding:5px;}
   header .nav-container ul.submenu_pc li a{padding:0;font-size:13px;}
   header .nav-container ul.submenu_pc li a img.cat_img{width:35px;}
 }

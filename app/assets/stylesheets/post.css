@@ -31,7 +31,7 @@
   .post_index .index_left, .post_index .index_right{float:none;width:100%;margin:0;}
   .post_index .index_left .categories{display:none;}
   .post_index .left_hashtag{display:none;}
-  .post_index .index_right .card .img_box{width:40%;height:165px;}
+  .post_index .index_right .card .img_box{width:35%;height:165px;}
   .post_index .index_right .card .img_box img{width:85%;height:85%;padding:5px 15px 5px 5px;}
   .post_index .index_right .card .inner{width:60%;margin:0;}
   .post_index .index_right .card .inner p{font-size:13px;line-height:1.3;height:2.8em;}
@@ -125,7 +125,7 @@
   .show-wrap .container .go_back{display:block;width:40px;height:40px;opacity:0.1;margin:1em 0 0 1.5em;}
   .show-wrap .container .title_mobile{display:block;}
   .show-wrap .image-box{width:100%;height:300px;margin:0;}
-  .show-wrap .image-box img{width:90%;height:90%;object-fit:cover;border-radius:20px;}
+  .show-wrap .image-box img{width:90%;height:90%;object-fit:contain;border-radius:20px;}
   .show-wrap .inner-box{float:none;width:100%;margin:0 0 50px 0;}
   .show-wrap .summary_title{margin:0.5em 3em -2.5em 1.2em;float:none;}
   .show-wrap .receipt{float:none;margin:3em 2em 0 2em;width:auto;}
