@@ -1,8 +1,6 @@
 <div class="show-wrap">
   <div class="wrap">
 
-
-
     <div class="container clearfix">
 
       <div class="content-section clearfix">
@@ -12,13 +10,14 @@
         </div>
 
         <div class="inner-box clearfix">
-
-          <div class="sharing_btn">
-            <a href="/" data-turbolinks="false">Back</a>
-            <%= render 'posts/sharing_sns' %>
-            <button id="facebook_btn">FBcopy</button>
-            <button class="btn-default js-copybtn"><span class="glyphicon glyphicon-copy"></span> TWcopy </button>
-          </div>
+          <% if current_user && current_user.admin %>
+            <div class="sharing_btn">
+              <a href="/" data-turbolinks="false">Back</a>
+              <%= render 'posts/sharing_sns' %>
+              <button id="facebook_btn">FBcopy</button>
+              <button class="btn-default js-copybtn"><span class="glyphicon glyphicon-copy"></span> TWcopy </button>
+            </div>
+          <% end %>
 
           <div class="title">
             <h2 class="line-break-02"><%= @post.title %></h2>
@@ -74,18 +73,19 @@
             <a class="amz_btn" target="_blank" href="<%= @post.link %>">Check it out at Amazon</a>
           </div>
 
-        
-          <div class="admin">
-            <p><%= render_with_hashtags(@post.hashtag) %></p>
-            <%= link_to 'Edit', edit_post_path(@post) %> |
-            <%= link_to 'Back', posts_path %>
-          </div>
-
+          <% if current_user && current_user.admin %>
+            <div class="admin">
+              <p><%= render_with_hashtags(@post.hashtag) %></p>
+              <%= link_to 'Edit', edit_post_path(@post) %> |
+              <%= link_to 'Back', posts_path %>
+            </div>
+          <% end %>
 
         </div>
       </div><!-- ./content-section-->
       
-      <div class="sharing_ctn">
+      <% if current_user && current_user.admin %>
+        <div class="sharing_ctn">
          <div class="sharing facebook clearfix"">
           <span id="facebook_ctn">
             <p>Available at Amazon NOW!!</p>
@@ -129,9 +129,7 @@
           </span>
         </div>
       </div><!--/.sharing_ctn -->
-
-     
-
+      <% end %>
 
     </div><!--./container-->
 
