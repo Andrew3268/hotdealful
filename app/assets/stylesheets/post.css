@@ -197,15 +197,15 @@
   margin: 0 auto;
   margin-top: 40px;
   border-radius: 4px;
-  cursor: pointer;*/
+  cursor: pointer;
 }
-
+*/
 .show_search_wrap img.saerch{margin-top:5px;}
 /*.btn-green-flat-trigger:hover{
   transition: background 0.5s ease,
-              padding 0.8s linear;*/
+              padding 0.8s linear;
 }
-
+*/
 
 /*.btn-green-flat {
   border: 1px solid #47BA6B;
@@ -297,10 +297,6 @@
 .global-modal-body .content-right .search-index input{width:90%;padding:15px;border-radius:20px;margin-top:20px;color:#ccc;}
 .global-modal-body .content-right .search-index input placeholder{color:#ccc;}
 
-/*.content-right .sponsor-name{
-  font-weight: bold;
-  color: #000;
-}*/
 .global-modal_contents{text-align:center;}
 
 .global-modal_close {
