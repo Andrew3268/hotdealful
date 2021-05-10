@@ -6,6 +6,8 @@ class Post < ApplicationRecord
 
   validates :was_price, presence: true
 
+  belongs_to :user
+
 
   after_create do
     post = Post.find_by(id: self.id)
