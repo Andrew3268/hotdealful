@@ -4,7 +4,13 @@
     <div class="container clearfix">
 
       <div class="content-section clearfix">
-        <p class="title_mobile line-break-02"><%= @post.title %><p>
+
+        <div class="title_mobile">
+          <p><%= @post.title %></p>
+          <span>Rating: Ave 4.3 / Reviews: 1,200 +</span>  
+        </div>
+        
+
         <div class="image-box clearfix">
           <img src="<%= @post.image %>" alt="<%= @post.title %>" title="<%= @post.title %>" />
         </div>
@@ -21,6 +27,7 @@
 
           <div class="title">
             <h2 class="line-break-02"><%= @post.title %></h2>
+            <span>Rating: Ave 4.3 / Reviews: 1,200 +</span>
           </div>
           <h2 class="summary_title">SUMMARY</h2>
           <div class="receipt">
