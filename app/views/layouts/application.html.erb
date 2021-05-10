@@ -17,12 +17,23 @@
   </head>
 
   <body>
-    <header>
       <!-- <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p> -->
-      <%= render 'shared/header' %>
       <%= render 'shared/search_modal' %>
-    </header>
     <%= yield %>
   </body>
 </html>
+
+
+<!-- search on show page -->
+<script type="text/javascript">
+  var elements = $('.modal-overlay, .modal');
+
+  $('button').click(function(){
+      elements.addClass('active');
+  });
+
+  $('.close-modal').click(function(){
+      elements.removeClass('active');
+  });
+</script>

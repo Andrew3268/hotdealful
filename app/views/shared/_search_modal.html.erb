@@ -1,26 +1,38 @@
-<div class="global-modal">
-   <div class="overlay"></div>
-   <div class="global-modal_contents modal-transition">
-    <div class="global-modal-header">
-      <span class="mobile-close"> X </span>
-    </div>
-    <div class="global-modal-body">
-      <!-- <div class="content-left">
-        < render 'posts/finder' >
-      </div> -->
-      <div class="content-right">
+<!-- modal -->
+<div class="modal-overlay">
+  <div class="modal">
+    
+    <a class="close-modal">
+      <svg viewBox="0 0 20 20">
+        <path fill="#000000" d="M15.898,4.045c-0.271-0.272-0.713-0.272-0.986,0l-4.71,4.711L5.493,4.045c-0.272-0.272-0.714-0.272-0.986,0s-0.272,0.714,0,0.986l4.709,4.711l-4.71,4.711c-0.272,0.271-0.272,0.713,0,0.986c0.136,0.136,0.314,0.203,0.492,0.203c0.179,0,0.357-0.067,0.493-0.203l4.711-4.711l4.71,4.711c0.137,0.136,0.314,0.203,0.494,0.203c0.178,0,0.355-0.067,0.492-0.203c0.273-0.273,0.273-0.715,0-0.986l-4.711-4.711l4.711-4.711C16.172,4.759,16.172,4.317,15.898,4.045z"></path>
+      </svg>
+    </a><!-- close modal -->
 
-        <div class="couponbox-left">
-          <p>FIND THE BEST DEALS</p>
-          <!-- <span>√ Save money with coupons.</span> -->
-          <span>Search the best deals & promotion codes</span>
-        </div>  
-        <div class="search-index">
-          <%= form_for "",url: posts_path, role: "search", method: :get do %>
-            <%= text_field_tag :search, @search_term, placeholder: "Search today's deal..." %>
-          <% end %> 
-        </div>   
-     </div>
-   </div>
- </div>
-</div>
+    <div class="modal-content">
+      
+      <p>FIND THE BEST DEALS</p>
+      <span>Search the best deals & promotion codes</span>
+      <div class="search-index">
+        <%= form_for "",url: posts_path, role: "search", method: :get do %>
+          <%= text_field_tag :search, @search_term, placeholder: "Search today's deal..." %>
+        <% end %> 
+      </div>   
+    </div><!-- content -->
+    
+  </div><!-- modal -->
+</div><!-- overlay -->
+
+
+<script type="text/javascript">
+  var elements = $('.modal-overlay, .modal');
+
+  $('button').click(function(){
+      elements.addClass('active');
+  });
+
+  $('.close-modal').click(function(){
+      elements.removeClass('active');
+  });
+</script>
+
+

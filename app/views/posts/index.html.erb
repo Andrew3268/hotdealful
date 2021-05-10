@@ -1,3 +1,5 @@
+<header><%= render 'shared/header_index' %></header>
+
 <div class="post_index clearfix">
   <div class="wrap">
 
@@ -76,7 +78,6 @@
               <% end %>
 
 
-
               <div class="view_more_pc clearfix">
                 <div class="view_show">
                   <%= link_to "View Deatil", post %><a class="view_more_icon" href="/posts/<%= post.id %>"><img src="<%=asset_path 'see_detail.png' %>" alt="see detail" /></a>
@@ -93,10 +94,6 @@
                 </div>
               </div>
 
-
-              
-
-                            
 
             </div><!--./inner-->
 
