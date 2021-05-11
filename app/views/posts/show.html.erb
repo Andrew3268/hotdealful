@@ -10,7 +10,9 @@
 
         <div class="title_mobile">
           <p><%= @post.title %></p>
-          <span>Rating: Ave 4.3 / Reviews: 1,200 +</span>  
+          <% if @post.rating.present? %>
+            <span>Rating: Ave <%= @post.rating %> / Reviews: <%= @post.review_count %> +</span>  
+          <% end %>
         </div>
         
 
@@ -30,7 +32,9 @@
 
           <div class="title">
             <h2 class="line-break-02"><%= @post.title %></h2>
-            <span>Rating: Ave 4.3 / Reviews: 1,200 +</span>
+            <% if @post.rating.present? %>
+              <span>Rating: Ave <%= @post.rating %> / Reviews: <%= @post.review_count %> +</span>  
+            <% end %>
           </div>
           <h2 class="summary_title">SUMMARY</h2>
           <div class="receipt">
