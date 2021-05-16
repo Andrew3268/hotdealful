@@ -144,3 +144,11 @@ header nav button img{width:25px;height:25px;}
 @media screen and (min-width:641px) and (max-width:1199px){
   .about_us{width:100%;margin-top:120px;}
 }
+
+
+/********** About admin **********/
+.registration_admin{padding:10px 20px 15px 20px;border:1px solid #08f;border-radius:15px;}
+.registration_admin p{margin-bottom:10px;}
+.registration_admin span a{border:1px solid #08f;color:#08f;font-size:15px;padding:5px 10px;border-radius:15px;}
+
+
