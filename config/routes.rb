@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   get 'bridges/finder_detail'
   get 'bridges/about_us'
   get 'bridges/delete_old_post'
+  get 'bridges/under_deal'
+  get 'bridges/half_deal'
 end

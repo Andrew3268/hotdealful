@@ -7,7 +7,7 @@
 .post_index .index_left .categories ul{margin:0 0 15px 5px;}
 .post_index .index_left .categories ul li{margin:5px 0;font-size:17px;}
 
-.post_index .index_right{float:left;width:73%;margin-left:2%;height:170px;position:relative;}
+.post_index .index_right{float:left;width:73%;margin-left:2%;margin-bottom:50px;position:relative;}
 .post_index .index_right .card_wrap{margin-top:40px;}
 .post_index .index_right .card{border:1px solid #ccc;margin-bottom:15px;border-radius:20px;background:#333;margin-top:30px;}
 .post_index .index_right .card .img_box{float:left;width:25%;height:200px;position:relative;}
@@ -38,7 +38,9 @@
 
 @media screen and (max-width:640px){
   .post_index{margin-top:0;}
+  .post_index .index_right .card_wrap{margin:0;}
   .post_index .index_left, .post_index .index_right{float:none;width:100%;margin:0;}
+  .post_index .index_right{margin-bottom:40px;}
   .post_index .index_left .categories{display:none;}
   .post_index .left_hashtag{display:none;}
   .post_index .index_right .card .img_box{width:35%;height:165px;}

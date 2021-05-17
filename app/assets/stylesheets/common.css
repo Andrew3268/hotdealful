@@ -90,10 +90,10 @@ header nav button img{width:25px;height:25px;}
 
 /* Hashtag Location */
 .where-hashtag{}
-.where-hashtag p{font-size:30px;font-weight:300;}
-.hashtag-through{display:inline;/*background:linear-gradient(to top, #4dffa6 50%, transparent 50%);*/}
+.where-hashtag p{font-size:30px;font-weight:100;}
+.where-hashtag p span{color:#ffea92;border:1px solid #ffea92;padding:5px 20px;border-radius:15px;}
+.hashtag-through{display:inline;text-transform:uppercase;}
 @media screen and (max-width:640px){
-  .where-hashtag{margin:-20px 0 10px 10px;}
 }
 
 /* From Page */
@@ -145,10 +145,23 @@ header nav button img{width:25px;height:25px;}
   .about_us{width:100%;margin-top:120px;}
 }
 
+/********** Footer Section **********/
+.footer{background:#333;padding:7px;width:100%;}
+.footer a{text-align:center;font-family: 'KoHo', sans-serif;color:#fff;display:block;}
+
 
 /********** About admin **********/
 .registration_admin{padding:10px 20px 15px 20px;border:1px solid #08f;border-radius:15px;}
 .registration_admin p{margin-bottom:10px;}
 .registration_admin span a{border:1px solid #08f;color:#08f;font-size:15px;padding:5px 10px;border-radius:15px;}
 
+
+/* Btn for back */
+.back_btn_mobile{position:fixed;bottom:10px;left:10px;display:none;}
+.back_btn_mobile a{display:block;}
+.back_btn_mobile a img, .back_btn_mobile button img{width:50px;height:50px;opacity:0.6;background:#fff;border-radius:50%;}
+
+@media screen and (max-width:640px){
+  .back_btn_mobile{display:block;}
+}
 

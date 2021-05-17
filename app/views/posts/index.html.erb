@@ -3,7 +3,7 @@
 <div class="post_index clearfix">
   <div class="wrap">
 
-    <div class="index_left">
+    <div class="index_left clearfix">
       <div class="finder"><%= render 'posts/finder' %></div>
 
       <% if current_user && current_user.admin %>
@@ -18,8 +18,7 @@
       <div class="categories"><%= render 'posts/categories' %></div>
     </div>
 
-    <div class="index_right">
-
+    <div class="index_right clearfix">
       
       <div class="search-index clearfix">
         <%= form_for "",url: posts_path, role: "search", method: :get do %>
@@ -114,7 +113,7 @@
 
   </div>
 </div>
-
+<%= render 'shared/footer' %>
 
 
 

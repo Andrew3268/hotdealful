@@ -122,7 +122,7 @@ a.set_reset_m{display:none;}
 
 @media screen and (max-width:640px){
   .search-wrapping .find-coupon{padding:10px 0;}
-  /*.find-coupon{padding:1px 0 20px 0;}*/
+  .find-coupon{padding:0;}
   .find-coupon .couponbox-full{width:100%;margin:0 auto;}
   .find-coupon .couponbox-full p{font-size:17px;border-bottom:1px solid #ffea92;margin-bottom:7px;}
   .find-coupon .couponbox-left{float:none;width:90%;margin:5%;}
