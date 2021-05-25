@@ -1,0 +1,59 @@
+
+.pin .area {
+  width: calc(100% - 20px);
+  margin: 0 auto;
+  margin-top: 70px;
+}
+.pin .dev-box { 
+  border-radius: 8px;
+  margin-bottom:20px;
+  border:5px dotted;
+  border-radius:15px;
+  padding:10px;
+}
+.pin .dev-box p{margin-top:7px;border:1px solid;border-radius:15px;padding:10px;}
+.pin img {
+  display: block;
+  max-width: 100%;
+}
+.pin .dev-box:hover {
+  opacity: .pin .8;
+}
+
+/* LAYOUT DE COLUNAS
+-------------------- */
+/* 5 colunas */
+@media (min-width: 1150px) {
+  .pin .area {
+    column-count: 5;
+  }
+}
+/* 4 colunas */
+@media (max-width: 1150px) {
+  .pin .area { 
+    column-count: 4; 
+  }
+}
+/* 3 colunas */
+@media (max-width: 900px) {
+  .pin .area { 
+    column-count: 3; 
+  }
+}
+/* 2 colunas */
+@media (max-width: 650px) {
+  .pin .area { 
+    column-count: 2; 
+  }
+}
+/* 1 colunas */
+@media (max-width: 400px) {
+  .pin .area { 
+    column-count: 1;
+    width: 100%;
+  }
+}
+/* break */
+.pin .dev-box { 
+  break-inside: avoid-column; 
+}

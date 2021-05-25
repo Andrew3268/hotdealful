@@ -1,0 +1,8 @@
+<% if current_user && current_user.admin %>
+  <div class="wrap">
+    <h1>Editing Pick</h1>
+    <%= render 'form', pick: @pick %>
+    <%= link_to 'Show', @pick %> |
+    <%= link_to 'Back', picks_path %>
+  </div>
+<% end %>

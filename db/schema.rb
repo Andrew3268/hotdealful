@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_10_044859) do
+ActiveRecord::Schema.define(version: 2021_05_25_093053) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
@@ -21,6 +21,32 @@ ActiveRecord::Schema.define(version: 2021_05_10_044859) do
     t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
+  end
+
+  create_table "picks", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "p_title"
+    t.string "p_image"
+    t.string "p_link"
+    t.string "p_hashtag"
+    t.string "p_spare_01"
+    t.string "p_spare_02"
+    t.string "p_spare_03"
+    t.string "p_spare_04"
+    t.string "p_spare_05"
+    t.text "p_spare_31"
+    t.text "p_spare_32"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "picks_tags", id: false, force: :cascade do |t|
+    t.integer "pick_id"
+    t.integer "tag_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["pick_id"], name: "index_picks_tags_on_pick_id"
+    t.index ["tag_id"], name: "index_picks_tags_on_tag_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -109,6 +135,8 @@ ActiveRecord::Schema.define(version: 2021_05_10_044859) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "picks_tags", "picks"
+  add_foreign_key "picks_tags", "tags"
   add_foreign_key "posts_tags", "posts"
   add_foreign_key "posts_tags", "tags"
 end

@@ -1,0 +1,19 @@
+<header><%= render 'shared/header_index' %></header>
+<div class="post_index clearfix">
+  <div class="wrap">
+    
+    <p>
+      <strong>Title:</strong>
+      <%= @pick.p_title %>
+    </p>
+
+    <p>
+      <strong>Hashtag:</strong>
+      <%= @pick.p_hashtag %>
+    </p>
+
+    <%= link_to 'Edit', edit_pick_path(@pick) %> |
+    <%= link_to 'Back', picks_path %>
+
+  </div>
+</div>
