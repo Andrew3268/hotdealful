@@ -129,13 +129,13 @@
                 <p>Offer: <%= number_to_currency(total_price) %> (<%= number_to_percentage(@post.pct, precision: 0) %> off)</p>
                 <p>Was: <%= number_to_currency(@post.was_price) %></p>
                 <p>You can save <%= number_to_currency(promo_price) %> by Promo Code: <%= @post.promocode %>  / Shipping is free w/Prime or on $25+</p>
-                <p>http://hotdealful.com/promocodes/<%=(params[:id]) %></p>
+                <p>http://hotdealful.com/posts/<%=(params[:id]) %></p>
                 <p>#amazondeals #amazoncoupons #amazonpromocode #coupons #promocode</p>
               <% else %>
                 <p>Offer: <%= number_to_currency(@post.is_price) %> (<%= number_to_percentage(hotdeal_pct, precision: 0) %> off)</p>
                 <p>Was: <%= number_to_currency(@post.was_price) %></p>
                 <p>You can save <%= number_to_currency(sale_price) %> / Shipping is free w/Prime or on $25+</p>
-                <p>http://hotdealful.com/promocodes/<%=(params[:id]) %></p>
+                <p>http://hotdealful.com/posts/<%=(params[:id]) %></p>
                 <p>#amazondeals #amazoncoupons #amazonpromocode #coupons #promocode</p>
               <% end %>
 
