@@ -17,7 +17,7 @@
   max-width: 100%;
 }
 .pin .dev-box:hover {
-  opacity: .pin .8;
+  opacity:0.8;
 }
 
 /* LAYOUT DE COLUNAS
