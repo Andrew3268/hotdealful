@@ -43,9 +43,9 @@
   .post_index .index_right{margin-bottom:40px;}
   .post_index .index_left .categories{display:none;}
   .post_index .left_hashtag{display:none;}
-  .post_index .index_right .card .img_box{width:35%;height:165px;}
+  .post_index .index_right .card .img_box{width:35%;height:200px;}
   .post_index .index_right .card .img_box img{width:85%;height:85%;padding:5px 15px 5px 5px;}
-  .post_index .index_right .card .inner{width:60%;margin:0;}
+  .post_index .index_right .card .inner{width:55%;margin:0 0 0 5%;}
   .post_index .index_right .card .inner p{font-size:13px;line-height:1.4;height:2.8em;}
   .post_index .index_right .card .inner p .promocode{vertical-align:middle;}
   .post_index .index_right .card .inner span.is_price{font-size:18px;margin:10px 0;}
