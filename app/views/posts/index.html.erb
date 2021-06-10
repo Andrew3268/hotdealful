@@ -58,8 +58,9 @@
                   <span class="is_price">
                     <%= number_to_currency(promocode_price) %>
                     <em class="was_price"><%= number_to_currency(post.was_price) %></em>
+                    <em class="pct"> ( <%= number_to_percentage(post.pct, precision: 0) %> off )</em>
                     <em class="shipping">+ free shipping</em>
-                    <!-- <em class="pct"> / <%= number_to_percentage(post.pct, precision: 0) %> off </em> -->
+                    
                   </span>
                 <% else %>
                   <span class="is_price">
@@ -67,8 +68,9 @@
                     <% hotdeal_pct =  (post.was_price - post.is_price) / post.was_price * 100 %>
                     <%= number_to_currency(post.is_price) %>
                     <em class="was_price"><%= number_to_currency(post.was_price) %></em>
+                    <em class="pct"> ( <%= number_to_percentage(hotdeal_pct, precision: 0) %> off )</em>
                     <em class="shipping">+ free shipping</em>
-                    <!-- <em class="pct"> / <%= number_to_percentage(hotdeal_pct, precision: 0) %> off</em> -->
+                    
                   </span>
                 <% end %>
 
@@ -113,7 +115,7 @@
 
   </div>
 </div>
-<%= render 'shared/footer' %>
+
 
 
 

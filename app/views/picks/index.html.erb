@@ -3,26 +3,48 @@
   <div class="wrap">
 
       <div class="pin">
-        <h2>Find more deals</h2>
-        <%= link_to 'New Pick', new_pick_path %>
+        <h2>Find more deals // <% if current_user && current_user.admin %><%= link_to 'New Pick', new_pick_path %></h2><% end %><br/>
+        <input type="text" id="picksInput" onkeyup="myFunction()" placeholder="Search for deals.." title="Type in a name">
 
         <div class="area">
-          <% @picks.each do |pick| %>
-            <div class="dev-box">
-              <a href="/posts/hashtag/<%=pick.p_link %>">
-                <img src="<%= pick.p_image %>">
-                <p><%= pick.p_title %></p>
-                <% if current_user && current_user.admin %>
-                  <%= render_with_phashtags(pick.p_hashtag) %><br />
-                  <%= link_to 'Edit', edit_pick_path(pick) %>
-                  <%= link_to 'Destroy', pick, method: :delete, data: { confirm: 'Are you sure?' } %>
-                <% end %>
-              </a>
-            </div>
-          <% end %>
-
+          <ul id="picksUL">
+            <% @picks.each do |pick| %>
+              <li class="dev-box">
+                <a href="/posts/hashtag/<%=pick.p_link %>">
+                  <img src="<%= pick.p_image %>">
+                  <p><%= pick.p_title %></p>
+                  <% if current_user && current_user.admin %>
+                    <%= render_with_phashtags(pick.p_hashtag) %><br />
+                    <%= link_to 'Edit', edit_pick_path(pick) %>
+                    <%= link_to 'Destroy', pick, method: :delete, data: { confirm: 'Are you sure?' } %>
+                  <% end %>
+                </a>
+              </li>
+            <% end %>
+          </ul>
         </div>
+
       </div>
 
   </div>
 </div>
+
+
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("picksInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("picksUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("p")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>

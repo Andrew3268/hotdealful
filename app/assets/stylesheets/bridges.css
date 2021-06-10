@@ -175,8 +175,8 @@ a.set_reset_m{display:none;}
 .destory_old_post{width:1200px;margin:0 auto;}
 #customers{border-collapse:collapse;width:100%;text-align:center;}
 #customers td, #customers th{border:1px solid #08f;padding:8px;}
-#customers td:nth-child(1){width:70%;}
-#customers td:nth-child(2){width:15%;}
+#customers td:nth-child(1){width:5%;}
+#customers td:nth-child(2){width:70%;}
 #customers td p{word-break:keep-all;line-height:1.4;height:1.4em;overflow:hidden;display:-webkit-box;display:-ms-flexbox;vertical-align:top;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:1;}
 #customers th{padding-top:12px;padding-bottom:12px;color:#08f;}
 

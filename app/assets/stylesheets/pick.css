@@ -1,59 +1,39 @@
+.pin .area{width:calc(100% - 20px);margin:0 auto;margin-top:20px;}
+.pin input{width:50%;padding:10px;border-radius:15px;}
+.pin h2{margin:0 0 -20px 0;}
+.pin .dev-box{border-radius:8px;margin-bottom:20px;border:3px dotted;border-radius:15px;padding:10px;}
+.pin .dev-box p{font-size:15px;margin-top:7px;border:1px solid;border-radius:15px;padding:7px;color:#ffea92;}
+.pin img{display:block;max-width:100%;object-fit:cover;border-radius:10px;}
 
-.pin .area {
-  width: calc(100% - 20px);
-  margin: 0 auto;
-  margin-top: 20px;
-}
-.pin .dev-box { 
-  border-radius: 8px;
-  margin-bottom:20px;
-  border:5px dotted;
-  border-radius:15px;
-  padding:10px;
-}
-.pin .dev-box p{margin-top:7px;border:1px solid;border-radius:15px;padding:10px;}
-.pin img {
-  display: block;
-  max-width: 100%;
-}
-.pin .dev-box:hover {
-  opacity:0.8;
+@media screen and (max-width:640px){
+  .pin input{width:96%;margin-left:2%;}
+  .pin h2{margin:7px 0 -15px 0;padding:0 10px;}
 }
 
 /* LAYOUT DE COLUNAS
 -------------------- */
 /* 5 colunas */
 @media (min-width: 1150px) {
-  .pin .area {
-    column-count: 5;
-  }
+  .pin .area{column-count:5;}
 }
 /* 4 colunas */
 @media (max-width: 1150px) {
-  .pin .area { 
-    column-count: 4; 
-  }
+  .pin .area{column-count:4;}
 }
 /* 3 colunas */
 @media (max-width: 900px) {
-  .pin .area { 
-    column-count: 3; 
-  }
+  .pin .area{ column-count:3;}
 }
 /* 2 colunas */
 @media (max-width: 650px) {
-  .pin .area { 
-    column-count: 2; 
-  }
+  .pin .area{ column-count:2;}
 }
 /* 1 colunas */
 @media (max-width: 400px) {
-  .pin .area { 
-    column-count: 1;
-    width: 100%;
-  }
+  .pin .area{column-count:1;width:100%;}
 }
 /* break */
-.pin .dev-box { 
-  break-inside: avoid-column; 
-}
+.pin .dev-box {break-inside:avoid-column;}
+
+
+
