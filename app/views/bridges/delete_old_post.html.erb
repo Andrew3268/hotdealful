@@ -4,7 +4,7 @@
   <p>Destory Old Posts // <a href="/">Home</a></p>
   <table id="customers">
     <tr>
-      <th>No.</th>
+      <!-- <th>No.</th> -->
       <th>Title</th>
       <th>Hashtag</th>
       <th>Posting Time</th>
@@ -12,7 +12,7 @@
     </tr>
     <% @posts.each_with_index do |post, i| %>
       <tr>
-        <td><p><%= i+1 %></p></td>
+        <!-- <td><p><%= i+1 %></p></td> -->
         <td><p><%= post.title %></p></td>
         <td><p><%= post.hashtag %></p></td>
         <td><%= time_ago_in_words(post.created_at) %> ago</td>
