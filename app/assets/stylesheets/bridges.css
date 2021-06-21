@@ -182,4 +182,10 @@ a.set_reset_m{display:none;}
 #customers th{padding-top:12px;padding-bottom:12px;color:#08f;}
 
 
-
+/****** Share To Ko ******/
+.sf_box{width:1000px;margin:50px auto;}
+.sf_box .card{margin-top:10px;}
+.sf_box .image_box{float:left;width:12%;}
+.sf_box .image_box img{width:120px;}
+.sf_box .inner{float:left;width:30%;margin-left:2%;}
+.sf_box .inner em.title{word-break:keep-all;line-height:1.4;height:1.4em;overflow:hidden;display:-webkit-box;display:-ms-flexbox;vertical-align:top;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:1;}
