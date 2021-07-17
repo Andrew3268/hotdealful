@@ -18,7 +18,6 @@
 .post_index .index_right .card .inner p .promocode{border:1px solid #ff6767;color:#ff6767;display:inline-block;font-size:11px;padding:3px 7px;border-radius:15px;vertical-align:bottom;margin-right:7px;}
 .post_index .index_right .card .inner p .sale{border:1px solid #67b3ff;color:#67b3ff;display:inline-block;font-size:11px;padding:3px 7px;border-radius:15px;vertical-align:middle;margin-right:7px;}
 .post_index .index_right .card .inner span.is_price{font-size:25px;display:block;margin:10px 0;}
-.post_index .index_right .card .inner span.is_price em.price{color:#68d391;}
 .post_index .index_right .card .inner span em.was_price{font-size:17px;text-decoration:line-through;color:#ccc;margin-right:2px;}
 .post_index .index_right .card .inner span em.pct{font-size:17px;color:#ccc;margin-right:5px;}
 .post_index .index_right .card .inner span em.shipping{font-size:17px;color:#ccc;}

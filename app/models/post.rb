@@ -1,7 +1,4 @@
 class Post < ApplicationRecord
-
-  is_impressionable
-
   extend FriendlyId
   friendly_id :title, use: :slugged
 
