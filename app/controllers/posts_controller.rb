@@ -1,6 +1,9 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, except: [:index, :show, :hashtags]
+  impressionist actions: [:show]
+  # impressionist actions: [:show], :unique => [:impressionable_id, :ip_address] #count by ip adress
+
 
   # GET /posts or /posts.json
   def index

@@ -58,7 +58,7 @@
                   <% promocode_price = 0 %>
                   <% promocode_price =  post.was_price - (post.pct / 100) * post.was_price %>
                   <span class="is_price">
-                    <%= number_to_currency(promocode_price) %>
+                    <em class="price"><%= number_to_currency(promocode_price) %></em>
                     <em class="was_price"><%= number_to_currency(post.was_price) %></em>
                     <em class="pct"> ( <%= number_to_percentage(post.pct, precision: 0) %> off )</em>
                     <em class="shipping">+ free shipping</em>
@@ -68,7 +68,7 @@
                   <span class="is_price">
                     <% hotdeal_pct = 0 %>
                     <% hotdeal_pct =  (post.was_price - post.is_price) / post.was_price * 100 %>
-                    <%= number_to_currency(post.is_price) %>
+                    <em class="price"><%= number_to_currency(post.is_price) %></em>
                     <em class="was_price"><%= number_to_currency(post.was_price) %></em>
                     <em class="pct"> ( <%= number_to_percentage(hotdeal_pct, precision: 0) %> off )</em>
                     <em class="shipping">+ free shipping</em>
@@ -86,6 +86,9 @@
                 <div class="view_more_pc clearfix">
                   <div class="view_show">
                     <%= link_to "Quick View", post %><a class="view_more_icon" href="/posts/<%= post.id %>"><img src="<%=asset_path 'see_detail.png' %>" alt="see detail" /></a>
+                    <% if current_user && current_user.admin %>
+                      view: <%= post.impressionist_count %>
+                    <% end %>
                   </div>
                 </div>
 
