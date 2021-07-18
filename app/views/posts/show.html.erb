@@ -83,8 +83,15 @@
           </div>
 
           <!-- Button Section -->
+
           <div class="btn">
-            <a class="amz_btn" target="_blank" href="<%= @post.link %>">Check it out on Amazon</a>
+            <% if @post.promocode.present? %>
+              <p>This promo code is applied to your account on amazon.com</p>
+              <!-- <a class="amz_btn" target="_blank" href="<%= @post.link %>">Check it out on Amazon</a> -->
+              <a class="amz_btn" target="_blank" href="<%= @post.link %>">Apply this code to my account</a>
+            <% else %>
+              <a class="amz_btn" target="_blank" href="<%= @post.link %>">Check it out on Amazon</a>
+            <% end %>
           </div>
 
           <% if current_user && current_user.admin %>

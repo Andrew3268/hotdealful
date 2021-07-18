@@ -112,6 +112,7 @@
 .show-wrap .total_price{font-size:20px;color:#68d391;font-weight:600;}
 .show-wrap .total_text{font-size:20px;}
 .show-wrap .btn{text-align:center;}
+.show-wrap .btn p{font-size:13px;}
 .show-wrap .btn a.amz_btn{border:1px solid #68d391;color:#68d391;display:block;padding:10px;font-size:15px;border-radius:15px;}
 .show-wrap .title{}
 .show-wrap .title h2{font-size:17px;font-weight:300;word-break:keep-all;line-height:1.4;height:2.8em;overflow:hidden;display:-webkit-box;display:-ms-flexbox;vertical-align:top;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:2;}
