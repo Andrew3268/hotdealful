@@ -10,15 +10,18 @@
       <th>Posting Time</th>
       <th>Destroy</th>
     </tr>
-    <% @posts.each_with_index do |post, i| %>
-      <tr>
-        <td><p><%= i+1 %></p></td>
-        <td><p><%= post.title %></p></td>
-        <td><p><%= post.hashtag %></p></td>
-        <td><%= time_ago_in_words(post.created_at) %> ago</td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+    
+      <% @posts.each_with_index do |post, i| %>
+        <% if post.created_at < 7.days %>
+          <tr>
+            <td><p><%= i+1 %></p></td>
+            <td><p><%= post.title %></p></td>
+            <td><p><%= post.hashtag %></p></td>
+            <td><%= time_ago_in_words(post.created_at) %> ago</td>
+            <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      <% end %>
   </table>
  
 </div>
