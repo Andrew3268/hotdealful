@@ -25,7 +25,7 @@ class BridgesController < ApplicationController
   end
 
   def new_index
-    @posts = Post.all
+    @pagy, @posts = pagy(Post.all.order("created_at DESC"), items:40)
   end
 
 end
