@@ -3,3 +3,7 @@
 Disallow: /bridges/delete_old_post
 Disallow: /bridges/share_facebook
 Disallow: /bridges/share_ko
+Disallow: /picks/new
+Disallow: /picks/edit
+Disallow: /posts/new
+Disallow: /posts/edit

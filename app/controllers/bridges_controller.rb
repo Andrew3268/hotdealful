@@ -24,4 +24,8 @@ class BridgesController < ApplicationController
     @posts = Post.all.order("created_at DESC").limit(50)
   end
 
+  def new_index
+    @posts = Post.all
+  end
+
 end
