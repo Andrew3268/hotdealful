@@ -247,8 +247,9 @@
 article {
   display: inline;
   float: left;
-  width: 300px;
-  margin: 0 10px 20px;
+  width: 23%;
+  /*margin: 0 10px 20px;*/
+  margin:1%;
 }
 article a {
   display: block;
@@ -259,17 +260,18 @@ article a {
   color:#08f;
   text-decoration: none;
 }
-article a:hover img {
+/*article a:hover img {
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -ms-transition: all 0.5s ease;
   transition: all 0.5s ease;
   opacity: 0.8;
-}
-article img {
-  width: 300px;
-  height:250px;
-  margin: 0 -20px 20px;
+}*/
+article em.img_box{width:100%;height:250px;display:block;}
+article em.img_box img {
+  width: 100%;
+  height:100%;
+  /*margin: 0 -20px 20px;*/
   padding:35px;
   object-fit:contain;
 }
@@ -296,11 +298,13 @@ article div {
   display: none;
 }
 
+
+
 .content {
   clear: both;
   background: #fff;
   padding: 0 20px;
-  margin: 0 10px 0;
+  margin: 0 12px 0;
   position: relative;
   max-height: 0;
   opacity: 0;
@@ -367,7 +371,7 @@ article div {
 .details .bio .summary .list, .details .bio .total .list{float:left;width:50%;}
 .details .bio .summary .price, .details .bio .total .price{float:left;width:50%;text-align:right;}
 .details .btn{}
-.details .btn a{background:#08f;color:#fff;display:block;padding:5px 20px;}
+.details .btn a{background:#08f;color:#fff;display:block;padding:7px 20px;margin-top:20px;width:40%;text-align:center;border-radius:15px;}
 
 
 
@@ -382,24 +386,24 @@ article div {
   line-height: 17px;
 }
 
-.index_wrap {
-  width: 100%;
-  padding: 20px;
-  overflow: hidden;
+.index_wrap {  
+  /*width: 100%;*/
+  /*padding: 20px;*/
+  /*overflow: hidden;*/
 }
 
 
 
 @media screen and (max-width:640px){
-  article {width:90%;margin:0 5% 5% 5%;}
+  article {width:95%;margin:0 2.5% 5% 2.5%;}
   article img{width:100%;margin:10px 0 0 0;}
-  .content{width:90%;margin:0 5%;}
+  .content{width:95%;margin:0 2.5%;}
   .content.open{}
   .details .bio{padding:0;}
   .details .bio .summary{border-bottom:1px solid #ccc;padding:5px 0;margin-top:15px;}
   .details .bio .summary .list, .details .bio .total .list{float:left;width:50%;}
   .details .bio .summary .price, .details .bio .total .price{float:left;width:50%;text-align:right;}
-  .details .btn a{background:#08f;color:#fff;display:block;padding:7px 20px;margin-top:20px;width:100%;text-align:center;border-radius:15px; }
+  .details .btn a{background:#08f;color:#fff;display:block;padding:7px 20px;margin-top:20px;width:100%;text-align:center;border-radius:15px;}
   .details .ad{display:none;}
 }
 
