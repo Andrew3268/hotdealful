@@ -18,4 +18,9 @@ Rails.application.routes.draw do
   get 'bridges/new_index'
   get 'bridges/new_under_deal'
   get 'bridges/new_half_deal'
+
+
+  get '/404' , to: 'errors#not_found'
+  get '/422' , to: 'errors#unacceptable'
+  get '/500' , to: 'errors#server_errors'
 end
