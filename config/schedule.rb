@@ -1,8 +1,8 @@
-+set :output, 'log/crontab.log'
- +
- +every 1.day , roles: %i(app) do
- +  rake '-s sitemap:refresh'
- +end
+set :output, 'log/crontab.log'
+ 
+every 1.day , roles: %i(app) do
+ rake '-s sitemap:refresh'
+end
 
 
 # Use this file to easily define all of your cron jobs.
