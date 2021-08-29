@@ -134,3 +134,19 @@ header nav button img{width:25px;height:25px;}
 .pagy-nav .page{padding:10px;color:#fff;}
 .pagy-nav .active{color:#000;background:#fff;padding:10px;border-radius:10px;}
 
+
+
+/* error page */
+/*@import url("https://fonts.googleapis.com/css?family=Roboto+Mono");*/
+.center-xy{top:50%;left:50%;transform:translate(-50%,-50%);position:absolute}
+/*html{box-sizing:border-box;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}*/
+.error_container{width:100%}
+.error_container .copy-container{text-align:center}
+.error_container p{color:#fff;font-size:24px;letter-spacing:.2px;margin:0}
+.error_container .handle{background:#ffe500;width:14px;height:30px;top:0;left:0;margin-top:1px;position:absolute}
+.error_container #cb-replay{fill:#666;width:20px;margin:15px;right:0;bottom:0;position:absolute;overflow:inherit;cursor:pointer}
+.error_container #cb-replay:hover{fill:#888}
+
+
+
+
