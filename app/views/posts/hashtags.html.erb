@@ -1,119 +1,165 @@
-<header><%= render 'shared/header_index' %></header>
-
-<div class="post_index clearfix">
+<header><%= render 'shared/header_show' %></header>
+<div class="index_wrap clearfix">
   <div class="wrap">
+    <%= render 'posts/hero' %>
+    <!-- <div class="filters">
+      <a href="#" class="active-filter" data-filter="all">ALL</a>
+      <a href="#" data-filter="electronics">electronics</a>
+      <a href="#" data-filter="melbourne">MELBOURNE</a>
+    </div> -->
+    <ul class="index_cat clearfix">
+      <li><a href="/">All</a></li>
+      <li><a href="/posts/hashtag/online_sale">Online Sale</a></li>
+      <li><a href="/posts/hashtag/promotion_code">Promotion Code</a></li>
+      <li><a href="/bridges/new_under_deal">Under $10</a></li>
+      <li><a href="/bridges/new_half_deal">50% Off or more</a></li>
+    </ul>
+    
 
-    <div class="index_left left_hashtag">
-      <div class="finder"><%= render 'posts/finder' %></div>
-      <div class="categories"><%= render 'posts/categories' %></div>
-    </div>
-
-    <div class="index_right">
-
-      <div class="card_wrap"> 
-        <div class="where-hashtag">
-          <% if params[:name].present? %>
-            <p><span class="hashtag-through">#<%= params[:name] %></span></p>
-          <% end %>
-        </div>
+    <div class="container"> 
+      <div class="where-hashtag">
+        <% if params[:name].present? %>
+          <p><span class="hashtag-through">#<%= params[:name] %></span></p>
+        <% end %>
+      </div>
 
         <% @posts.each do |post| %>
+        
+          <article class="<%= post.hashtag %>">
+            <a href="#" data-cat="columns" data-state="nat">
+              <em class="img_box">
+                <img src="<%= post.image %>">
+              </em>
 
-          <div class="card clearfix">
-            
-              <div class="img_box">
-                <a target="_blank" href="<%= post.link %>"><img src="<%= post.image %>" alt="<%= post.title %>"/></a>
-                <% if current_user && current_user.admin %>
-                  <div class="admin">
-                    <%= link_to 'Edit', edit_post_path(post) %>
-                    <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-                  </div>
-                <% end %>
-              </div>
 
-              <div class="inner">
-                <a target="_blank" href="<%= post.link %>">
-                  <p>
-                    <% if post.promocode.present? %>
-                      <span class="promocode">Promo code</span>
-                    <% else %>
-                      <span class="sale">Onlne Sale</span>
+              <% if post.promocode.present? %>
+                <i>Promo Code</i>
+              <% else %>
+                <i>Online Deal</i> 
+              <% end %>
+              <b><%= post.title %></b>
+              <p class="short_price_info">
+                <% if post.promocode.present? %>
+                    <% promocode_price = 0 %>
+                    <% promocode_price =  post.was_price - (post.pct / 100) * post.was_price %>
+                    <span class="is_price">
+                      <%= number_to_currency(promocode_price) %>
+                      <em class="was_price"><%= number_to_currency(post.was_price) %></em>
+                      <em class="pct"><%= number_to_percentage(post.pct, precision: 0) %> off</em>
+                      <!-- <em class="shipping">+ free shipping</em> -->
+                    </span>
+                  <% else %>
+                    <span class="is_price">
+                      <% hotdeal_pct = 0 %>
+                      <% hotdeal_pct =  (post.was_price - post.is_price) / post.was_price * 100 %>
+                      <%= number_to_currency(post.is_price) %>
+                      <em class="was_price"><%= number_to_currency(post.was_price) %></em>
+                      <em class="pct"><%= number_to_percentage(hotdeal_pct, precision: 0) %> off</em>
+                      <!-- <em class="shipping">+ free shipping</em> -->
+                      
+                    </span>
+                  <% end %>
+              </p>
+            </a>
+            <div>
+              <!-- <a href="https://www.JustinNorth.com.au" target="_blank">JustinNorth.com.au</a> -->
+              <!-- <b>Waterproof Shower Speaker, Wireless Bluetooth Speaker, Portable Mini Hi-Fi Sound Speaker with Suctio…</b> -->
+              <div class="details">
+                <div class="bio">
+                  <div class="intro clearfix">
+                    <% promo_price = 0 %>
+                    <% promo_price = (post.pct.to_i / 100) * post.was_price %>
+                      <p>Amazon has <em>"<%= post.title %>"</em> for 
+                      <% if post.promocode.present? %>
+                        <% total_price = 0 %>
+                        <% total_price = post.was_price - promo_price %>
+                        <em class="price"><%= number_to_currency(total_price) %>.</em> Shipping is free. 
+                      <% else %>
+                        <em class="price"><%= number_to_currency(post.is_price) %>.</em> Shipping is free. 
+                      <% end %>
+                      
+                    </p>
+                    <% if post.rating.present? %>
+                      <span>Rating: Ave <%= post.rating %> / Reviews: <%= post.review_count %> +</span>  
                     <% end %>
-                    <%= post.title %>
-                  </p>
-                </a>
+                  </div>
+                  <div class="summary clearfix">
+                    <h4>SUMMARY</h4>
+                    <div class="list">
+                      <p>Offer</p>
+                      <% if post.promocode.present? %>
+                        <p>Discount(<%= number_to_percentage(post.pct, precision: 0) %> off)</p>            
+                        <p>Promotion Code</p>
+                      <% else %>
+                        <% hotdeal_pct = 0 %>
+                        <% hotdeal_pct =  (post.was_price - post.is_price) / post.was_price * 100 %>
+                        <p>Discount(<%= number_to_percentage(hotdeal_pct, precision: 0) %> off)</p>            
+                      <% end %>
+                    </div>
 
-                <% if post.promocode.present? %>
-                  <% promocode_price = 0 %>
-                  <% promocode_price =  post.was_price - (post.pct / 100) * post.was_price %>
-                  <span class="is_price">
-                    <%= number_to_currency(promocode_price) %>
-                    <em class="was_price"><%= number_to_currency(post.was_price) %></em>
-                    <em class="pct"> ( <%= number_to_percentage(post.pct, precision: 0) %> off )</em>
-                    <em class="shipping">+ free shipping</em>
-                    <!-- <em class="pct"> / <%= number_to_percentage(post.pct, precision: 0) %> off </em> -->
-                  </span>
-                <% else %>
-                  <span class="is_price">
-                    <% hotdeal_pct = 0 %>
-                    <% hotdeal_pct =  (post.was_price - post.is_price) / post.was_price * 100 %>
-                    <%= number_to_currency(post.is_price) %>
-                    <em class="was_price"><%= number_to_currency(post.was_price) %></em>
-                    <em class="pct"> ( <%= number_to_percentage(hotdeal_pct, precision: 0) %> off )</em>
-                    <em class="shipping">+ free shipping</em>
-                    <!-- <em class="pct"> / <%= number_to_percentage(hotdeal_pct, precision: 0) %> off</em> -->
-                  </span>
-                <% end %>
+                    <div class="price">
+                      <p><%= number_to_currency(post.was_price) %></p>
+                      <% if post.promocode.present? %>
+                        <% promo_price = 0 %>
+                        <% promo_price = (post.pct / 100) * post.was_price %>
+                        <p>- <%= number_to_currency(promo_price) %></p>
+                        <p class="p-code"><%= post.promocode %></p>
+                      <% else %>
+                        <% sale_price = 0 %>
+                        <% sale_price = ( hotdeal_pct / 100 ) * post.was_price %>
+                        <p>- <%= number_to_currency(sale_price) %></p>  
+                      <% end %>
+                    </div>
+                  </div>
 
-                <% if post.promocode.present? %>
-                  <% promo_price = 0 %>
-                  <% promo_price = (post.pct / 100) * post.was_price %>
-                  <p class="codenum">Save <%= number_to_currency(promo_price) %> using code:  <%= post.promocode %></p>
-                <% else %>
-                <% end %>
+                  <div class="total">
+                    <p class="list">Total</p>
+                    <% if post.promocode.present? %>
+                      <% total_price = 0 %>
+                      <% total_price = post.was_price - promo_price %>
+                      <p class="price"><%= number_to_currency(total_price) %></p> 
+                    <% else %>
+                      <p class="price"><%= number_to_currency(post.is_price) %></p> 
+                    <% end %>
+                  </div>
 
+                  <div class="btn">
+                    <a target="_blank" href="<%= post.link %>">Go for it.</a>
+                  </div>
 
-                <div class="view_more_pc clearfix">
-                  <div class="view_show">
-                    <%= link_to "View Deatil", post %><a class="view_more_icon" href="/posts/<%= post.id %>"><img src="<%=asset_path 'see_detail.png' %>" alt="see detail" /></a>
+                  <% if current_user && current_user.admin %>
+                    <div class="admin clearfix">
+                      <!-- <p><%= render_with_hashtags(post.hashtag) %></p> -->
+                      <%= link_to 'Edit', edit_post_path(post) %> 
+                      <%= link_to 'Back', posts_path %>
+                      <a class="view_more_icon" href="/posts/<%= post.id %>">Show</a>
+                    </div>
+                  <% end %>
+
+                </div><!-- bio-->
+
+                <div class="ad">
+
+                  <div class="banner">
+                    <a href=""><img src="https://images-na.ssl-images-amazon.com/images/G/01/Associates/Prime_Gifting_300x250_updated._V324946771_.png"></a>
                   </div>
                 </div>
 
-                <div class="view_more_m clearfix">
-                  <div class="view_show">
-                    <%= link_to "View Deatil", post %>
-                  </div>
+                
 
-                  <div class="view_amz">
-                    <a target="_blank"href="<%= post.link %>">View on Amazon</a>
-                  </div>
-                </div>
+              </div><!-- details -->
 
+              
 
-              </div><!--./inner-->
-
-              <div class="btn_box">
-                <a target="_blank"href="<%= post.link %>">View on Amazon</a>
-              </div>
-          </div>
+            </div>
+          </article>
         <% end %>
-        <%= raw pagy_nav(@pagy) %>
-
-      </div><!--./card_wrap-->
-    </div><!--./index_right-->
-
-
-    <div class="back_btn_mobile">
-      <a href="/"><img class="go_back" src="<%=asset_path 'back_btn.png' %>" alt="뒤로가기" /></a>
+        
+        <div class="content"></div>
     </div>
 
+    <%= raw pagy_nav(@pagy) %>
   </div>
-</div>
+</div> <!--end index_wrap -->
 
-
-
-
-
-
-
-
+<%= javascript_pack_tag 'index' %>

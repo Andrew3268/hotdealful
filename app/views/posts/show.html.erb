@@ -9,7 +9,16 @@
       <div class="content-section clearfix">
 
         <div class="title_mobile">
-          <p><%= @post.title %></p>
+          <% promo_price = 0 %>
+          <% promo_price = (@post.pct.to_f / 100) * @post.was_price %>
+          Amazon.com has <em>"<%= @post.title %>"</em> on sale for
+          <% if @post.promocode.present? %>
+            <% total_price = 0 %>
+            <% total_price = @post.was_price - promo_price %>
+            <em class="price"><%= number_to_currency(total_price) %>.</em> Shipping is free. w/ Prime or on $25+ orders.
+          <% else %>
+            <em class="price"><%= number_to_currency(@post.is_price) %>.</em> Shipping is free. w/ Prime or on $25+ orders.
+          <% end %>
           <% if @post.rating.present? %>
             <span>Rating: Ave <%= @post.rating %> / Reviews: <%= @post.review_count %> +</span>  
           <% end %>
@@ -31,7 +40,18 @@
           <% end %>
 
           <div class="title">
-            <h2 class="line-break-02"><%= @post.title %></h2>
+            <h2 class="line-break-02">
+              <% promo_price = 0 %>
+              <% promo_price = (@post.pct.to_f / 100) * @post.was_price %>
+              Amazon.com has <em>"<%= @post.title %>"</em> on sale for
+              <% if @post.promocode.present? %>
+                <% total_price = 0 %>
+                <% total_price = @post.was_price - promo_price %>
+                <em class="price"><%= number_to_currency(total_price) %>.</em> Shipping is free. w/ Prime or on $25+ orders.
+              <% else %>
+                <em class="price"><%= number_to_currency(@post.is_price) %>.</em> Shipping is free. w/ Prime or on $25+ orders.
+              <% end %>
+            </h2>
             <% if @post.rating.present? %>
               <span>Rating: Ave <%= @post.rating %> / Reviews: <%= @post.review_count %> +</span>  
             <% end %>
@@ -86,11 +106,11 @@
 
           <div class="btn">
             <% if @post.promocode.present? %>
-              <p>This promo code is applied to your account on amazon.com</p>
+              <p>Apply coupon codes at checkout with a single click.</p>
               <!-- <a class="amz_btn" target="_blank" href="<%= @post.link %>">Check it out on Amazon</a> -->
-              <a class="amz_btn" target="_blank" href="<%= @post.link %>">Apply this code to my account</a>
+              <a class="amz_btn" target="_blank" href="<%= @post.link %>">Go for it</a>
             <% else %>
-              <a class="amz_btn" target="_blank" href="<%= @post.link %>">Check it out on Amazon</a>
+              <a class="amz_btn" target="_blank" href="<%= @post.link %>">Go for it</a>
             <% end %>
           </div>
 

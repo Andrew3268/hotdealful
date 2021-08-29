@@ -3,11 +3,7 @@
 <div class="index_wrap clearfix">
   <div class="wrap">
     <%= render 'posts/hero' %>
-    <!-- <div class="filters">
-      <a href="#" class="active-filter" data-filter="all">ALL</a>
-      <a href="#" data-filter="electronics">electronics</a>
-      <a href="#" data-filter="melbourne">MELBOURNE</a>
-    </div> -->
+    
     <ul class="index_cat clearfix">
       <li><a href="/">All</a></li>
       <li><a href="/posts/hashtag/online_sale">Online Sale</a></li>
@@ -15,6 +11,17 @@
       <li><a href="/bridges/new_under_deal">Under $10</a></li>
       <li><a href="/bridges/new_half_deal">50% Off or more</a></li>
     </ul>
+
+    <% if current_user && current_user.admin %>
+      <div class="registration_admin">
+        <p>Admin Pannel</p>
+        <span><%= link_to 'New', new_post_path %></span>
+        <span><a href="/bridges/delete_old_post">Destroy Page</a></span>
+        <span><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></span>
+        <!-- <span><a href="/bridges/share_facebook">ShareTofacebook</a></span> -->
+        <!-- <span><a href="/bridges/delete_old_post">Destroy Page</a></span> -->
+      </div>
+    <% end %>
     
 
     <div class="container"> 
@@ -26,7 +33,6 @@
               <em class="img_box">
                 <img src="<%= post.image %>">
               </em>
-
 
               <% if post.promocode.present? %>
                 <i>Promo Code</i>
@@ -64,17 +70,17 @@
                 <div class="bio">
                   <div class="intro clearfix">
                     <% promo_price = 0 %>
-                    <% promo_price = (post.pct.to_i / 100) * post.was_price %>
-                      <p>Amazon has <em>"<%= post.title %>"</em> for 
-                      <% if post.promocode.present? %>
-                        <% total_price = 0 %>
-                        <% total_price = post.was_price - promo_price %>
-                        <em class="price"><%= number_to_currency(total_price) %>.</em> Shipping is free. 
-                      <% else %>
-                        <em class="price"><%= number_to_currency(post.is_price) %>.</em> Shipping is free. 
-                      <% end %>
-                      
-                    </p>
+                    <% promo_price = (post.pct.to_f / 100) * post.was_price %>
+                    <% total_price = 0 %>
+                    <% total_price = post.was_price - promo_price %>
+                      <p>Amazon.com has <em>"<%= post.title %>"</em> on sale for 
+                        <% if post.promocode.present? %>
+                          <em class="price"><%= number_to_currency(total_price) %>.</em> Shipping is free. w/ Prime or on $25+ orders.
+                        <% else %>
+                          <em class="price"><%= number_to_currency(post.is_price) %>.</em> Shipping is free. w/ Prime or on $25+ orders.
+                        <% end %>
+
+                     </p>
                     <% if post.rating.present? %>
                       <span>Rating: Ave <%= post.rating %> / Reviews: <%= post.review_count %> +</span>  
                     <% end %>
@@ -136,16 +142,20 @@
 
                 <div class="ad">
 
-                  <div class="banner">
-                    <a href=""><img src="https://images-na.ssl-images-amazon.com/images/G/01/Associates/Prime_Gifting_300x250_updated._V324946771_.png"></a>
+                  <div class="banner clearfix">
+                    <a target="_blank" href="https://amzn.to/3zqVXCh"><img src="https://images-na.ssl-images-amazon.com/images/G/01/digital/video/associates/CIND_2021_PMAssociates_300x250_POST_Final_en-US_FT_PVD7409_Cinderella.jpg"></a>
+                    <a target="_blank" href="https://amzn.to/2Y1JbfL"><img src="https://images-na.ssl-images-amazon.com//images/G/01/AMAZON_FASHION/2020/FALL_1/DISPLAY_ADS/PSPW/ps_v1_300x250_newAdds.jpg"></a>
+                    <a target="_blank" href="https://www.amazon.com.au/prime?&tag=googhydr0au-22&hvadid=501644447262&hvpos=&hvexid=&hvnetw=g&hvrand=956801320052491461&hvpone=&hvptwo=&hvqmt=e&hvdev=c&ref=pd_sl_15icin9ae5_e&hvtargid=kwd-303629226711&_encoding=UTF8&tag=3628-20&linkCode=ur2&linkId=7fa92ca551e387dd1ba5ee1f64aca25c&camp=1789&creative=9325"><img src="https://images-na.ssl-images-amazon.com/images/G/01/Associates/Prime_Gifting_300x250_updated._V324946771_.png"></a>
                   </div>
-                </div>
 
-                
+                  <div class="m_banner clearfix">
+                    <a target="_blank" href="https://www.amazon.com.au/prime?&tag=googhydr0au-22&hvadid=501644447262&hvpos=&hvexid=&hvnetw=g&hvrand=956801320052491461&hvpone=&hvptwo=&hvqmt=e&hvdev=c&ref=pd_sl_15icin9ae5_e&hvtargid=kwd-303629226711&_encoding=UTF8&tag=3628-20&linkCode=ur2&linkId=7fa92ca551e387dd1ba5ee1f64aca25c&camp=1789&creative=9325"><img src="https://images-na.ssl-images-amazon.com//images/G/01/US-hq/2020/img/Prime/XCM_Manual_ORIGIN_1262498_1337516_US_US_Associates_3334544_468x60_en_US.jpg"></a>
+                  </div>
+
+
+                </div>                
 
               </div><!-- details -->
-
-              
 
             </div>
           </article>

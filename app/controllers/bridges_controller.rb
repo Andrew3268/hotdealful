@@ -28,4 +28,12 @@ class BridgesController < ApplicationController
     @pagy, @posts = pagy(Post.all.order("created_at DESC"), items:40)
   end
 
+  def new_under_deal
+    @pagy, @posts = pagy(Post.all.order("created_at DESC"), items: 40)
+  end
+
+  def new_half_deal
+    @pagy, @posts = pagy(Post.all.order("created_at DESC"), items: 40)
+  end
+
 end

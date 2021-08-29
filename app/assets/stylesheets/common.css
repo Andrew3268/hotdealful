@@ -16,7 +16,7 @@ input, textarea, select{border:1px solid #ccc;-moz-appearance:none;appearance:no
 .clearfix:after{display:block;clear:both;content:".";visibility:hidden;height:0;}
 .clearfix{display:block;}
 
-body{margin:0;padding:0;font-size:15px;color:#000;line-height:1.5;font-weight:300;-webkit-scrollbar:none;font-family: 'Barlow', sans-serif;background:#000;}
+body{margin:0;padding:0;font-size:15px;color:#fff;line-height:1.5;font-weight:300;-webkit-scrollbar:none;font-family: 'Barlow', sans-serif;background:#000;}
 @media screen and (max-width:640px){
   body{font-size:13px;font-weight:400;}
 }
@@ -28,7 +28,7 @@ body{margin:0;padding:0;font-size:15px;color:#000;line-height:1.5;font-weight:30
 .wrap{width:1200px;margin:0 auto;}
 @media screen and (max-width:640px){
   .layout{min-width:0;}
-  .wrap{width:auto;margin:0 1.5%;}
+  .wrap{width:auto;margin:0 5%;}
 }
 @media screen and (min-width:641px) and (max-width:1199px){
   .layout{min-width:0;}
@@ -36,7 +36,7 @@ body{margin:0;padding:0;font-size:15px;color:#000;line-height:1.5;font-weight:30
 }
 /*Header */
 header{margin-bottom:10px;position:relative;}
-header nav{padding:15px 30px 10px 30px;border-bottom:1px solid #ccc;background:#333;}
+header nav{padding:15px 30px 10px 30px;border-bottom:1px solid #ccc;}
 header nav h1{text-align:center;font-family: 'KoHo', sans-serif;}
 header nav h1 a{color:#fff;}
 header nav img{width:25%;}
@@ -90,9 +90,10 @@ header nav button img{width:25px;height:25px;}
 /* Hashtag Location */
 .where-hashtag{}
 .where-hashtag p{font-size:30px;font-weight:100;}
-.where-hashtag p span{color:#ffea92;border:1px solid #ffea92;padding:5px 20px;border-radius:15px;}
+.where-hashtag p span{color:#ffea92;border:1px solid #ffea92;padding:5px 20px;border-radius:15px;margin-left:13px;}
 .hashtag-through{display:inline;text-transform:uppercase;}
 @media screen and (max-width:640px){
+  .where-hashtag{margin-bottom:15px;}
 }
 
 /* From Page */

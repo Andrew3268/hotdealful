@@ -1,9 +1,17 @@
 # See https://www.robotstxt.org/robotstxt.html for documentation on how to use the robots.txt file
 
+User-agent: *
+
 Disallow: /bridges/delete_old_post
 Disallow: /bridges/share_facebook
 Disallow: /bridges/share_ko
+Disallow: /bridges/under_deal
+Disallow: /bridges/half_deal
+Disallow: /bridges/new_index
 Disallow: /picks/new
 Disallow: /picks/edit
 Disallow: /posts/new
 Disallow: /posts/edit
+Disallow: /users/sign_in
+Disallow: /users/sign_up
+Disallow: /users/eidt

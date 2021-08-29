@@ -16,4 +16,6 @@ Rails.application.routes.draw do
   get 'bridges/share_facebook'
   get 'bridges/share_ko'
   get 'bridges/new_index'
+  get 'bridges/new_under_deal'
+  get 'bridges/new_half_deal'
 end

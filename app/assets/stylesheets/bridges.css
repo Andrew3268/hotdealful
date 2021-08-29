@@ -8,7 +8,7 @@
 .set_banner ul li{margin:10px 0;list-style:disc;}
 .set_banner ul li a{color:#08f;}*/
 /*.set_b_m{display:none;}*/
-.set_search_box{float:left;width:50%;margin-left:2%;background:white;margin:10px auto 50px auto;border-radius:10px;padding:15px 30px;border:1px solid #aaa;background:#333;}
+.set_search_box{float:left;width:50%;margin-left:2%;margin:10px auto 50px auto;border-radius:10px;padding:15px 30px;border:1px solid #aaa;color:#fff;}
 .set_search_box h2{font-size:20px;font-weight:100;}
 .disable{display:none;}
 
@@ -16,7 +16,7 @@
 .op_wrap{float:left;width:31%;margin:1%;}
 .prime-type, .coupon-type, .shipping-type, .fast-type, .oversea-type, .subscribe-type{display:table;width:100%;margin-bottom:20px;}
 .post-type input, .prime-type input, .coupon-type input, .shipping-type input, .fast-type input, .oversea-type input, .subscribe-type input{display:none;}
-.post-type input:checked + label, .prime-type input:checked + label, .coupon-type input:checked + label, .shipping-type input:checked + label, .fast-type input:checked + label, .oversea-type input:checked + label, .subscribe-type input:checked + label{background:#68d391;color:#fff;width:100%;border:none;}
+.post-type input:checked + label, .prime-type input:checked + label, .coupon-type input:checked + label, .shipping-type input:checked + label, .fast-type input:checked + label, .oversea-type input:checked + label, .subscribe-type input:checked + label{background:#08f;color:#fff;width:100%;border:none;}
 .prime-type label, .coupon-type label, .shipping-type label, .fast-type label, .oversea-type label, .subscribe-type label{display:table-cell;padding:10px;text-align:center;border:1px solid #e3e3e3;border-left:none;cursor:pointer;}
 .post-type label:first-of-type, .prime-type label:first-of-type, .coupon-type label:first-of-type, .shipping-type label:first-of-type, .fast-type label:first-of-type{border-left:1px solid #e3e3e3;}
 .post-type label{display:inline-block;margin-bottom:10px;padding:10px;text-align:center;border:1px solid #ccc;cursor:pointer;font-size:11px;color:#000;border-radius:15px;}
@@ -31,7 +31,7 @@
 .field .custom-time select {margin-right:5%;}
 .down_ct{overflow:visible;}
 .text-center{padding-top:30px;text-align:right;}
-.set_search_box button{width:40%;padding:15px 30px;color:#68d391;font-weight:500;font-size:20px;border-radius:10px;border:1px solid #68d391;}
+.set_search_box button{width:40%;padding:10px 20px;color:#08f;font-weight:500;font-size:20px;border-radius:10px;border:1px solid #08f;color:#08f;}
 .search_dropdown{display:inline-block;}
 
 .set_search_box button.accordion{margin-bottom:10px;width:47%;margin-bottom:10px;background:#fff;color:#616161;font-size:15px;border-radius:10px;border:1px solid #ccc;font-weight:300;}
@@ -144,14 +144,14 @@ a.set_reset_m{display:none;}
 
 
 /* Search By Percentage */
-.search-pct{float:left;width:47%;margin:10px 0 0 3%;border:1px solid #ccc;border-radius:10px;padding:10px;background:#333;}
+.search-pct{float:left;width:47%;margin:10px 0 0 3%;border:1px solid #ccc;border-radius:10px;padding:10px;;color:#fff;}
 .search-pct p{font-size:20px;margin-bottom:20px;}
 .search-pct .tg{width:100%;border-collapse:collapse;border-spacing:0;border-color:#ccc;padding:20px;}
 .search-pct .tg tr{}
-.search-pct .tg tr th{font-size:15px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;background:#333;}
-.search-pct .tg tr td{font-size:15px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;background:#333;}
+.search-pct .tg tr th{font-size:15px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;}
+.search-pct .tg tr td{font-size:15px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;}
 .search-pct .tg tr td.tg-s6z2{text-align:center}
-.search-pct .tg tr td.tg-spn1{background:#333;text-align:center}
+.search-pct .tg tr td.tg-spn1{text-align:center}
 .search-pct .tg tr td a{text-decoration:none;}
 .search-pct .tg tr td a:hover{color:#68d391;}
 
