@@ -8,6 +8,23 @@ set :repo_url, "git@github.com:Andrew3268/hotdealful.git"
 set :deploy_to, "/home/deploy/#{fetch :application}"
 set :passenger_restart_with_touch, true
 
+set :sitemap_roles, :web # default
+
+after 'deploy:restart', 'deploy:sitemap'
+
+namespace :deploy do
+ desc 'Generate sitemap'
+ task :sitemap do
+   on roles(:app) do
+     within release_path do
+       execute :bundle, :exec, :rake, 'sitemap:create RAILS_ENV=production'
+       execute :bundle, :exec, :rake, 'sitemap:refresh RAILS_ENV=production'
+     end
+   end
+ end
+end
+
+
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
 
 # Only keep the last 5 releases to save disk space
