@@ -343,8 +343,8 @@ article div {
 /*.content img, .content video {
   display: block;
   width: 100%;
-  height: auto;*/
-  /*margin: 0 0 20px;*/
+  height: auto;
+  margin: 0 0 20px;*/
 }
 .content b {
   font-weight: normal;
