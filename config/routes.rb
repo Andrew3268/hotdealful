@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   resources :picks
   devise_for :users
-  root 'posts#index'
+  # root 'posts#index'
+  root 'bridges#finder_detail'
   resources :posts
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
