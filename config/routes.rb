@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   resources :posts
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
+  resources :sitemap, :only => :index
+  get 'sitemap.xml', :controller => "sitemap", :action => "xml"
+
   get '/posts/hashtag/:name', to: 'posts#hashtags'
   get '/picks/phashtag/:name', to:'picks#hashtags'
 
