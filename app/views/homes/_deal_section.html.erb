@@ -1,0 +1,75 @@
+
+
+<div class="home_wrap">
+  <div class="wrap">
+    <% @homes.each do |home| %>
+      <div class="card">
+        <div class="thumbnail">
+          <img class="left" src="<%= home.main_image %>" alt="<%= home.main_title %>"/>
+        </div>
+
+        <div class="main_title">
+          <h2><%= home.main_title %></h2>
+          <p><%= home.main_description %></p>
+          <% if current_user && current_user.admin %>
+            <%= link_to 'Edit', edit_home_path(home) %> |
+            <%= link_to 'Destroy', home, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </div>
+
+
+        <div class="right">
+
+          <div class="products clearfix">
+            <div class="img_box">
+              <img src="<%= home.sub_image_01 %>" alt="<%= home.sub_title_01 %>" />
+            </div>
+            <div class="inner">
+              <p><%= home.sub_title_01 %></p>
+              <span><%= number_to_currency(home.sub_is_price_01) %><em><%= number_to_currency(home.sub_was_price_01) %></em><strong><%= number_to_percentage(home.sub_pct_01, precision: 0) %> off</strong></span>
+            </div>
+          </div>
+
+          <div class="products clearfix">
+            <div class="img_box">
+              <img src="<%= home.sub_image_02 %>" alt="<%= home.sub_title_02 %>" />
+            </div>
+            <div class="inner">
+              <p><%= home.sub_title_02 %></p>
+              <span><%= number_to_currency(home.sub_is_price_02) %><em><%= number_to_currency(home.sub_was_price_02) %></em><strong><%= number_to_percentage(home.sub_pct_02, precision: 0) %> off</strong></span>
+            </div>
+          </div>
+
+          <div class="products clearfix">
+            <div class="img_box">
+              <img src="<%= home.sub_image_03 %>" alt="<%= home.sub_title_03 %>" />
+            </div>
+            <div class="inner">
+              <p><%= home.sub_title_03 %></p>
+              <span><%= number_to_currency(home.sub_is_price_03) %><em><%= number_to_currency(home.sub_was_price_03) %></em><strong><%= number_to_percentage(home.sub_pct_03, precision: 0) %> off</strong></span>
+            </div>
+          </div>
+
+          <div class="products clearfix">
+            <div class="img_box">
+              <img src="<%= home.sub_image_04 %>" alt="<%= home.sub_title_04 %>" />
+            </div>
+            <div class="inner">
+              <p><%= home.sub_title_04 %></p>
+              <span><%= number_to_currency(home.sub_is_price_04) %><em><%= number_to_currency(home.sub_was_price_04) %></em><strong><%= number_to_percentage(home.sub_pct_04, precision: 0) %> off</strong></span>
+            </div>
+          </div>
+
+        </div><!-- right -->
+
+       <a href="/coupons/chashtag/<%= home.main_link %>" class="m_btn">Show More</a>
+       <a href="/coupons/chashtag/<%= home.main_link %>"><div class="fab">Show<br> More</div></a>
+      </div><!-- card -->
+
+    <% end %>
+
+
+  </div>
+</div>
+
+

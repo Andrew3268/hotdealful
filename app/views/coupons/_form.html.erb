@@ -1,0 +1,28 @@
+
+<%= simple_form_for(@coupon) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <div class="basic_info">
+      <%= f.input :c_image %>
+      <%= f.input :c_title %>
+      <%= f.input :c_link %>
+      <%= f.input :c_promocode %>
+      <%= f.input :c_hashtag, label: "[#electronics, #homeware, #kitchen, #outdoor, #pet_supplies, #beauty, #fashion ] [#online_sale, #promotion_code], [#coupon type #main categories #sub categories]" %>
+    </div>
+    <div class="pricing clearfix">
+      <%= f.input :c_was_price, label: "Coupon: Current Price, deal: WAS PRICE" %>
+      <%= f.input :c_is_price, label: "hotdeal IS PRICE, only input hotdeal info" %>
+      <%= f.input :c_pct, label: "pct" %>
+      <%= f.input :c_spare_56, label: "PromoCode N0 = 100 , only show promocode" %>
+
+      <%= f.input :c_rating %>
+      <%= f.input :c_review_count %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

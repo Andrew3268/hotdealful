@@ -10,7 +10,72 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_25_093053) do
+ActiveRecord::Schema.define(version: 2021_09_23_163007) do
+
+  create_table "coupons", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "c_title"
+    t.string "c_link"
+    t.string "c_image"
+    t.string "c_source"
+    t.string "c_hashtag"
+    t.string "c_promocode"
+    t.string "c_rating"
+    t.string "c_review_count"
+    t.decimal "c_is_price"
+    t.decimal "c_was_price"
+    t.decimal "c_pct"
+    t.text "c_description"
+    t.string "c_spare_01"
+    t.string "c_spare_02"
+    t.string "c_spare_03"
+    t.string "c_spare_04"
+    t.string "c_spare_05"
+    t.string "c_spare_06"
+    t.string "c_spare_07"
+    t.string "c_spare_08"
+    t.string "c_spare_09"
+    t.string "c_spare_10"
+    t.string "c_spare_11"
+    t.string "c_spare_12"
+    t.string "c_spare_13"
+    t.string "c_spare_14"
+    t.string "c_spare_15"
+    t.text "c_spare_31"
+    t.text "c_spare_32"
+    t.float "c_spare_41"
+    t.float "c_spare_42"
+    t.float "c_spare_43"
+    t.float "c_spare_44"
+    t.float "c_spare_45"
+    t.integer "c_spare_56"
+    t.integer "c_spare_57"
+    t.integer "c_spare_58"
+    t.integer "c_spare_59"
+    t.integer "c_spare_60"
+    t.decimal "c_spare_61"
+    t.decimal "c_spare_62"
+    t.decimal "c_spare_63"
+    t.decimal "c_spare_64"
+    t.decimal "c_spare_65"
+    t.datetime "c_spare_66"
+    t.datetime "c_spare_67"
+    t.datetime "c_spare_68"
+    t.date "c_spare_71"
+    t.date "c_spare_72"
+    t.date "c_spare_73"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "coupons_tags", id: false, force: :cascade do |t|
+    t.integer "coupon_id"
+    t.integer "tag_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["coupon_id"], name: "index_coupons_tags_on_coupon_id"
+    t.index ["tag_id"], name: "index_coupons_tags_on_tag_id"
+  end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
@@ -21,6 +86,110 @@ ActiveRecord::Schema.define(version: 2021_05_25_093053) do
     t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
+  end
+
+  create_table "homes", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "main_title"
+    t.string "main_image"
+    t.string "main_link"
+    t.string "main_description"
+    t.string "sub_title_01"
+    t.string "sub_title_02"
+    t.string "sub_title_03"
+    t.string "sub_title_04"
+    t.string "sub_title_05"
+    t.string "sub_image_01"
+    t.string "sub_image_02"
+    t.string "sub_image_03"
+    t.string "sub_image_04"
+    t.string "sub_image_05"
+    t.string "sub_link_01"
+    t.string "sub_link_02"
+    t.string "sub_link_03"
+    t.string "sub_link_04"
+    t.string "sub_link_05"
+    t.decimal "sub_is_price_01"
+    t.decimal "sub_is_price_02"
+    t.decimal "sub_is_price_03"
+    t.decimal "sub_is_price_04"
+    t.decimal "sub_is_price_05"
+    t.decimal "sub_was_price_01"
+    t.decimal "sub_was_price_02"
+    t.decimal "sub_was_price_03"
+    t.decimal "sub_was_price_04"
+    t.decimal "sub_was_price_05"
+    t.decimal "sub_pct_01"
+    t.decimal "sub_pct_02"
+    t.decimal "sub_pct_03"
+    t.decimal "sub_pct_04"
+    t.decimal "sub_pct_05"
+    t.string "h_spare_01"
+    t.string "h_spare_02"
+    t.string "h_spare_03"
+    t.string "h_spare_04"
+    t.string "h_spare_05"
+    t.string "h_spare_06"
+    t.string "h_spare_07"
+    t.string "h_spare_08"
+    t.string "h_spare_09"
+    t.string "h_spare_10"
+    t.string "h_spare_11"
+    t.string "h_spare_12"
+    t.string "h_spare_13"
+    t.string "h_spare_14"
+    t.string "h_spare_15"
+    t.text "h_spare_31"
+    t.text "h_spare_32"
+    t.float "h_spare_41"
+    t.float "h_spare_42"
+    t.float "h_spare_43"
+    t.float "h_spare_44"
+    t.float "h_spare_45"
+    t.integer "h_spare_56"
+    t.integer "h_spare_57"
+    t.integer "h_spare_58"
+    t.integer "h_spare_59"
+    t.integer "h_spare_60"
+    t.decimal "h_spare_61"
+    t.decimal "h_spare_62"
+    t.decimal "h_spare_63"
+    t.decimal "h_spare_64"
+    t.decimal "h_spare_65"
+    t.datetime "h_spare_66"
+    t.datetime "h_spare_67"
+    t.datetime "h_spare_68"
+    t.date "h_spare_71"
+    t.date "h_spare_72"
+    t.date "h_spare_73"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "impressions", force: :cascade do |t|
+    t.string "impressionable_type"
+    t.integer "impressionable_id"
+    t.integer "user_id"
+    t.string "controller_name"
+    t.string "action_name"
+    t.string "view_name"
+    t.string "request_hash"
+    t.string "ip_address"
+    t.string "session_hash"
+    t.text "message"
+    t.text "referrer"
+    t.text "params"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["controller_name", "action_name", "ip_address"], name: "controlleraction_ip_index"
+    t.index ["controller_name", "action_name", "request_hash"], name: "controlleraction_request_index"
+    t.index ["controller_name", "action_name", "session_hash"], name: "controlleraction_session_index"
+    t.index ["impressionable_type", "impressionable_id", "ip_address"], name: "poly_ip_index"
+    t.index ["impressionable_type", "impressionable_id", "params"], name: "poly_params_request_index"
+    t.index ["impressionable_type", "impressionable_id", "request_hash"], name: "poly_request_index"
+    t.index ["impressionable_type", "impressionable_id", "session_hash"], name: "poly_session_index"
+    t.index ["impressionable_type", "message", "impressionable_id"], name: "impressionable_type_message_index"
+    t.index ["user_id"], name: "index_impressions_on_user_id"
   end
 
   create_table "picks", force: :cascade do |t|
@@ -135,6 +304,8 @@ ActiveRecord::Schema.define(version: 2021_05_25_093053) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "coupons_tags", "coupons"
+  add_foreign_key "coupons_tags", "tags"
   add_foreign_key "picks_tags", "picks"
   add_foreign_key "picks_tags", "tags"
   add_foreign_key "posts_tags", "posts"

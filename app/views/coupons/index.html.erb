@@ -1,0 +1,102 @@
+<header><%= render 'shared/header_index' %></header>
+<%= render 'shared/hero' %>
+
+
+<div class="coupon_wrap">
+  <div class="wrap">
+
+    <% @coupons.each do |coupon| %>
+      <% if coupon.c_spare_56 == 100 %>
+        <div class="card">  
+          <div class="img_box">
+            <%= link_to image_tag(coupon.c_image, alt: coupon.c_title, title: coupon.c_title), coupon %>
+          </div>
+          <div class="inner">
+            <p><%= coupon.c_title %></p>
+            <% if coupon.c_promocode.present? %>
+              <% promocode_price = 0 %>
+              <% promocode_price =  coupon.c_was_price.to_f - (coupon.c_pct.to_f / 100) * coupon.c_was_price.to_f %>
+              <em><%= number_to_currency(promocode_price) %><span class="was_price"><%= number_to_currency(coupon.c_was_price) %></span><span class="pct"><%= number_to_percentage(coupon.c_pct, precision: 0) %> off</span></em>
+            <% else %>
+              <% hotdeal_pct = 0 %>
+              <% hotdeal_pct =  (coupon.c_was_price.to_f - coupon.c_is_price.to_f) / coupon.c_was_price.to_f * 100 %>
+              <em><%= number_to_currency(coupon.c_is_price) %><span class="was_price"><%= number_to_currency(coupon.c_was_price) %></span><span class="pct"><%= number_to_percentage(hotdeal_pct, precision: 0) %> off</span></em>
+            <% end %>
+          </div>
+          <% if current_user && current_user.admin %>
+            <div class="admin_controller">
+              <%= link_to 'Edit', edit_coupon_path(coupon) %>
+              <%= link_to 'Destroy', coupon, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <% if coupon.c_promocode %>
+                <span>Coupon</span>
+              <% else %>
+                <span>Online Deal</span>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+
+
+    <div class="card">
+      <div class="img_box">
+        <img src="https://m.media-amazon.com/images/I/311oAojFw6L.jpg" alt="">
+      </div>
+      <div class="inner">
+        <p>this is title</p>
+        <em>$100<span class="was_price">$200</span><span class="pct">50% off</span></em>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img_box">
+        <img src="https://m.media-amazon.com/images/I/311oAojFw6L.jpg" alt="">
+      </div>
+      <div class="inner">
+        <p>this is title</p>
+        <em>$100<span class="was_price">$200</span><span class="pct">50% off</span></em>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img_box">
+        <img src="https://m.media-amazon.com/images/I/311oAojFw6L.jpg" alt="">
+      </div>
+      <div class="inner">
+        <p>this is title</p>
+        <em>$100<span class="was_price">$200</span><span class="pct">50% off</span></em>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img_box">
+        <img src="https://m.media-amazon.com/images/I/311oAojFw6L.jpg" alt="">
+      </div>
+      <div class="inner">
+        <p>this is title</p>
+        <em>$100<span class="was_price">$200</span><span class="pct">50% off</span></em>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img_box">
+        <img src="https://m.media-amazon.com/images/I/311oAojFw6L.jpg" alt="">
+      </div>
+      <div class="inner">
+        <p>this is title</p>
+        <em>$100<span class="was_price">$200</span><span class="pct">50% off</span></em>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+    
+      
+        

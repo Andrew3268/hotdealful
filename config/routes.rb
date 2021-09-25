@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
+  resources :homes
+  resources :coupons
   resources :picks
   devise_for :users
   # root 'posts#index'
-  root 'bridges#finder_detail'
+  # root 'bridges#finder_detail'
+  # root 'coupons#index'
+  root 'homes#index'
   resources :posts
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
@@ -11,6 +15,7 @@ Rails.application.routes.draw do
 
   get '/posts/hashtag/:name', to: 'posts#hashtags'
   get '/picks/phashtag/:name', to:'picks#hashtags'
+  get '/coupons/chashtag/:name', to:'coupons#hashtags'
 
   get 'bridges/finder_detail'
   get 'bridges/about_us'

@@ -1,0 +1,19 @@
+<header><%= render 'shared/header_index' %></header>
+
+<%= render 'shared/hero' %>
+
+  <% if current_user && current_user.admin %>
+    <div class="admin_panel">
+      <%= link_to 'New Coupon', new_coupon_path %>
+      <%= link_to 'New Home', new_home_path %>
+    </div>  
+  <% end %>
+
+  <p class="coupon_header">Promotion Coupons</p>
+  <%= render 'homes/coupon_section' %>
+  <a class="ctn_more" href="/coupons">Show More</a>
+
+
+  <p class="deal_header">Hot Deals</p>
+  <%= render 'homes/deal_section' %>
+

@@ -205,7 +205,8 @@ article div{display:none}
 .show-wrap .total_text{font-size:20px;}
 .show-wrap .btn{text-align:center;}
 .show-wrap .btn p{font-size:15px;}
-.show-wrap .btn a.amz_btn{border:1px solid #68d391;color:#68d391;display:block;padding:10px;font-size:15px;border-radius:15px;}
+.show-wrap .btn a.amz_btn{border:1px solid #68d391;color:#68d391;display:block;padding:10px;font-size:15px;border-radius:15px;float:left;width:48%;margin:1%;}
+.show-wrap .btn a.buy_now{background:#68d391;color:#000;}
 .show-wrap .title{}
 .show-wrap .title h2{font-size:17px;font-weight:300;word-break:keep-all;/*line-height:1.4;height:2.8em;overflow:hidden;display:-webkit-box;display:-ms-flexbox;vertical-align:top;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:2;*/}
 .show-wrap .admin{text-align:left;}
@@ -293,21 +294,7 @@ article div{display:none}
 
 
 
-/*********************/
-.hero{/*background: url('https://i.pinimg.com/originals/43/bd/dd/43bddd778bd8b4ffb7b42477e9a0b4f3.jpg') center;*/background-size:cover;padding:4rem 2rem;display:grid;grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));align-items:center;}
-.hero > *{color:white;}
-.hero h1{font-size:3rem;padding-bottom:1rem;}
-/*.hero div.article p{font-size:1.5rem;font-weight:200;}*/
-.hero div.article ul{}
-.hero div.article ul li{font-size:18px;list-style:circle;}
-.hero div.article a{padding:0.7rem 2rem;margin-top:20px;background:#08f;color:#fff;border-radius:25px;display:block;width:40%;text-align:center;font-size:17px;}
 
-@media screen and (max-width:640px){
-  .hero{padding:4rem 1rem;}
-  .hero div.article ul{margin-left:20px;}
-  .hero div.article ul li{font-size:15px;}
-  .hero div.article a{width:68%;}
-}
 
 
 
