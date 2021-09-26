@@ -88,12 +88,23 @@ header nav button img{width:25px;height:25px;}
 }
 
 /* Hashtag Location */
-.where-hashtag{}
+.where-hashtag{margin:50px 0 20px 0;}
 .where-hashtag p{font-size:30px;font-weight:100;}
 .where-hashtag p span{color:#ffea92;border:1px solid #ffea92;padding:5px 20px;border-radius:15px;margin-left:13px;}
 .hashtag-through{display:inline;text-transform:uppercase;}
 @media screen and (max-width:640px){
-  .where-hashtag{margin-bottom:15px;}
+  .where-hashtag{margin:40px 0 15px 0;}
+  .where-hashtag p{font-size:20px;}
+  .where-hashtag p span{margin:0;}
+}
+
+/* Btn for back */
+.back_btn_mobile{position:fixed;bottom:10px;left:10px;display:none;}
+.back_btn_mobile a{display:block;}
+.back_btn_mobile a img, .back_btn_mobile button img{width:50px;height:50px;opacity:0.3;}
+
+@media screen and (max-width:640px){
+  .back_btn_mobile{display:block;}
 }
 
 /* From Page */
