@@ -15,3 +15,7 @@ Disallow: /posts/edit
 Disallow: /users/sign_in
 Disallow: /users/sign_up
 Disallow: /users/eidt
+Disallow: /coupons/new
+Disallow: /coupons/edit
+Disallow: /homes/new
+Disallow: /homes/edit

@@ -1,5 +1,7 @@
-<h1>New Coupon</h1>
-
-<%= render 'form', coupon: @coupon %>
-
-<%= link_to 'Back', coupons_path %>
+<% if current_user && current_user.admin %>
+  <div class="wrap">
+    <h1>New Coupon</h1>
+    <%= render 'form', coupon: @coupon %>
+    <%= link_to 'Back', coupons_path %>
+  </div>
+<% end %>

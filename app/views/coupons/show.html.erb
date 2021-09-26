@@ -9,19 +9,21 @@
       <div class="content-section clearfix">
 
         <div class="title_mobile">
-          <% promo_price = 0 %>
-          <% promo_price = (@coupon.c_pct.to_f / 100) * @coupon.c_was_price %>
-          Amazon.com has <em>"<%= @coupon.c_title %>"</em> on sale for
-          <% if @coupon.c_promocode.present? %>
-            <% total_price = 0 %>
-            <% total_price = @coupon.c_was_price - promo_price %>
-            <em class="price"><%= number_to_currency(total_price) %>.</em> Shipping is free. w/ Prime or on $25+ orders.
-          <% else %>
-            <em class="price"><%= number_to_currency(@coupon.c_is_price) %>.</em> Shipping is free. w/ Prime or on $25+ orders.
-          <% end %>
-          <% if @coupon.c_rating.present? %>
-            <span>Rating: Ave <%= @coupon.c_rating %> / Reviews: <%= @coupon.c_review_count %> +</span>  
-          <% end %>
+          <h2 class="line-break-02">
+            <% promo_price = 0 %>
+            <% promo_price = (@coupon.c_pct.to_f / 100) * @coupon.c_was_price %>
+            Amazon.com has <em>"<%= @coupon.c_title %>"</em> on sale for
+            <% if @coupon.c_promocode.present? %>
+              <% total_price = 0 %>
+              <% total_price = @coupon.c_was_price - promo_price %>
+              <em class="price"><%= number_to_currency(total_price) %>.</em> Shipping is free. w/ Prime or on $25+ orders.
+            <% else %>
+              <em class="price"><%= number_to_currency(@coupon.c_is_price) %>.</em> Shipping is free. w/ Prime or on $25+ orders.
+            <% end %>
+            <% if @coupon.c_rating.present? %>
+              <span>Rating: Ave <%= @coupon.c_rating %> / Reviews: <%= @coupon.c_review_count %> +</span>  
+            <% end %>
+          </h2>
         </div>
         
 

@@ -1,9 +1,9 @@
 /* */
 .home_in_coupon, .admin_panel{width:900px;margin:0 auto;overflow:hidden;}
-.admin_panel. a{color:#fff;background:#08f;padding:10px;border-radius:20px;}
-.coupon_header{margin:20px 0 10px 0;text-align:center;font-size:30px;text-decoration:underline;}
+.admin_panel a{color:#fff;background:#08f;padding:10px;border-radius:20px;}
+.coupon_header{margin:30px auto 20px auto;text-align:center;font-size:30px;width:50%;display:block;border:1px solid;border-radius:20px;padding:5px 10px;}
 .ctn_more{background:#08f;color:#fff;font-size:20px;text-align:center;padding:10px 20px;border-radius:20px;width:15%;display:block;margin:15px auto 0 auto;}
-.deal_header{margin-top:100px;text-align:center;font-size:30px;text-decoration:underline;}
+.deal_header{margin:100px auto 20px auto;text-align:center;font-size:30px;width:50%;display:block;border:1px solid;border-radius:20px;padding:5px 10px;}
 /* Form */
 .sub_form{margin:20px 0;}
 
@@ -29,7 +29,8 @@
 .home_wrap .card .m_btn{display:none;}
 
 @media screen and (max-width:640px){
-  .home_in_coupon{width:100%;}
+  .home_in_coupon, .admin_panel{width:100%;}
+  .coupon_header, .deal_header{width:60%;font-size:20px;}
 
   .home_wrap{margin-top:100px;}
   .home_wrap .card{width:100%;margin:0 0 150px 0;height:900px;}
@@ -40,16 +41,19 @@
   .home_wrap .card .right{float:none;width:100%;margin:0;}
   .home_wrap .card .m_btn{display:block;width:90%;color:#fff;background:#08f;text-align:center;font-size:25px;margin:20px 5% 0 5%;border-radius:20px;padding:10px;}
   .home_wrap .card .fab{display:none;}
+  .ctn_more{width:40%;margin-top:40px;}
 }
 
 
 @media screen and (min-width:641px) and (max-width:1199px){
-  .home_wrap .card{width:100%;margin:0;height:900px;}
+  .home_in_coupon, .admin_panel{width:100%;}
+  .home_wrap .card{width:100%;margin:80px 0 150px 0;height:900px;}
   .home_wrap .card .thumbnail{float:none;width:85%;margin:0 auto;left:0;}
-  .home_wrap .card .main_title{position:inherit;width:330px;bottom:0;}
-  .home_wrap .card .main_title h2{font-size:20px;}
+  .home_wrap .card .main_title{position:inherit;width:600px;bottom:0;}
+  .home_wrap .card .main_title h2{font-size:30px;}
   .home_wrap .card .main_title p{font-size:15px;}
   .home_wrap .card .right{float:none;width:100%;margin:0;}
+  .ctn_more{width:30%;}
 }
 
 

@@ -21,5 +21,7 @@
 }
 
 @media screen and (min-width:641px) and (max-width:1199px){
-
+  .coupon_wrap .card{float:left;width:31.33%;margin:2% 1%;height:350px;position:relative;padding-top:40px;}
+  .coupon_wrap .card .inner p{font-size:13px}
+  .coupon_wrap .card .inner em{font-size:15px;}
 }
