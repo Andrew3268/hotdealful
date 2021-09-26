@@ -4,7 +4,7 @@ class CouponsController < ApplicationController
 
   # GET /coupons or /coupons.json
   def index
-    @coupons = Coupon.all.order("created_at DESC")
+    @pagy, @coupons = pagy(Coupon.all.order("created_at DESC"), items: 40)
   end
 
   # GET /coupons/1 or /coupons/1.json
@@ -65,7 +65,7 @@ class CouponsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_coupon
-      @coupon = Coupon.find(params[:id])
+      @coupon = Coupon.friendly.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

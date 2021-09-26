@@ -1,4 +1,8 @@
 class Coupon < ApplicationRecord
+  extend FriendlyId
+  friendly_id :c_title, use: :slugged
+
+  
   belongs_to :user
   has_and_belongs_to_many :tags
   validates :c_was_price, presence: true

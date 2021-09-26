@@ -2,12 +2,12 @@
 <%= render 'shared/hero' %>
 
 
-<div class="coupon_wrap">
+<div class="coupon_wrap clearfix">
   <div class="wrap">
 
     <% @coupons.each do |coupon| %>
       <% if coupon.c_spare_56 == 100 %>
-        <div class="card">  
+        <div class="card clearfix">  
           <div class="img_box">
             <%= link_to image_tag(coupon.c_image, alt: coupon.c_title, title: coupon.c_title), coupon %>
           </div>
@@ -39,7 +39,7 @@
     <% end %>
 
 
-    <div class="card">
+  <!--   <div class="card">
       <div class="img_box">
         <img src="https://m.media-amazon.com/images/I/311oAojFw6L.jpg" alt="">
       </div>
@@ -87,11 +87,21 @@
         <p>this is title</p>
         <em>$100<span class="was_price">$200</span><span class="pct">50% off</span></em>
       </div>
-    </div>
+    </div> -->
+
+
+
+
+
+
+
+
 
   </div>
 </div>
-
+<div class="wrap">
+  <%= raw pagy_nav(@pagy) %>
+</div>
 
 
 
