@@ -55,7 +55,7 @@ header nav ul li a:hover{color:#808080;text-decoration:none;}
 .hidden{display:none;}
 header .nav-container ul.submenu_pc{display:none;}
 
-header nav button{position:absolute;top:29%;left:5%;display:none;}
+header nav button{position:absolute;top:29%;left:5%;}
 header nav button img{width:25px;height:25px;}
 
 @media screen and (max-width: 560px) {

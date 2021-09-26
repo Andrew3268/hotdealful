@@ -5,6 +5,10 @@ class CouponsController < ApplicationController
   # GET /coupons or /coupons.json
   def index
     @pagy, @coupons = pagy(Coupon.all.order("created_at DESC"), items: 40)
+    if params[:search]
+      @search_term = params[:search]
+      @coupons = @coupons.search_by(@search_term)
+    end
   end
 
   # GET /coupons/1 or /coupons/1.json
