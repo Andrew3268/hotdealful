@@ -1,5 +1,5 @@
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = "http://www.example.com"
+SitemapGenerator::Sitemap.default_host = "https://www.hotdealful.com"
 
 SitemapGenerator::Sitemap.create do
   # Put links creation logic here.
@@ -25,9 +25,14 @@ SitemapGenerator::Sitemap.create do
   #     add article_path(article), :lastmod => article.updated_at
   #   end
 
-  add posts_path, :priority => 0.5, :changefreq => 'daily'
-  Post.find_each do |post|
-    add post_path(post), :lastmod => post.updated_at, :priority => 0.5
+  # add posts_path, :priority => 0.5, :changefreq => 'daily'
+  # Post.find_each do |post|
+  #   add post_path(post), :lastmod => post.updated_at, :priority => 0.5
+  # end
+
+  add coupons_path, :priority => 0.5, :changefreq => 'daily'
+  Coupon.find_each do |coupon|
+    add coupon_path(coupon), :lastmod => coupon.updated_at, :priority => 0.5
   end
 
   
