@@ -6,9 +6,10 @@
     <div class="form-inputs">
       <div class="basic_info"
         <%= f.input :main_title %>
+        <%= f.input :main_description %>
         <%= f.input :main_image %>
         <%= f.input :main_link %>
-        <%= f.input :main_description %>
+        
 
         <div class="sub_form">
           <p>HotDeal 01</p>
@@ -57,6 +58,18 @@
             <%= f.input :sub_pct_04 %>
           </div>
         </div>
+
+       <!--  <div class="sub_form">
+          <p>HotDeal 05</p>
+          <%= f.input :sub_image_05 %>
+          <%= f.input :sub_title_05 %>
+          <%= f.input :sub_link_05 %>
+          <div class="pricing clearfix">
+            <%= f.input :sub_is_price_05 %>
+            <%= f.input :sub_was_price_05 %>
+            <%= f.input :sub_pct_05 %>
+          </div>
+        </div> -->
       </div>
 
     </div>
