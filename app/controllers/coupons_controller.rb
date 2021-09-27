@@ -17,7 +17,7 @@ class CouponsController < ApplicationController
 
   def hashtags
     tag = Tag.find_by(name: params[:name])
-    @coupons = tag.coupons.order("created_at DESC")
+    @pagy, @coupons = pagy(tag.coupons.order("created_at DESC"), items: 40)
   end
 
   # GET /coupons/new

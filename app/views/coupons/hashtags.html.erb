@@ -1,6 +1,6 @@
 <header><%= render 'shared/header_index' %></header>
 
-<div class="coupon_wrap">
+<div class="coupon_wrap clearfix">
   <div class="wrap">
 
     <div class="where-hashtag">
@@ -34,57 +34,6 @@
       
     <% end %>
 
-
-    <div class="card">
-      <div class="img_box">
-        <img src="https://m.media-amazon.com/images/I/311oAojFw6L.jpg" alt="">
-      </div>
-      <div class="inner">
-        <p>this is title</p>
-        <em>$100<span class="was_price">$200</span><span class="pct">50% off</span></em>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="img_box">
-        <img src="https://m.media-amazon.com/images/I/311oAojFw6L.jpg" alt="">
-      </div>
-      <div class="inner">
-        <p>this is title</p>
-        <em>$100<span class="was_price">$200</span><span class="pct">50% off</span></em>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="img_box">
-        <img src="https://m.media-amazon.com/images/I/311oAojFw6L.jpg" alt="">
-      </div>
-      <div class="inner">
-        <p>this is title</p>
-        <em>$100<span class="was_price">$200</span><span class="pct">50% off</span></em>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="img_box">
-        <img src="https://m.media-amazon.com/images/I/311oAojFw6L.jpg" alt="">
-      </div>
-      <div class="inner">
-        <p>this is title</p>
-        <em>$100<span class="was_price">$200</span><span class="pct">50% off</span></em>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="img_box">
-        <img src="https://m.media-amazon.com/images/I/311oAojFw6L.jpg" alt="">
-      </div>
-      <div class="inner">
-        <p>this is title</p>
-        <em>$100<span class="was_price">$200</span><span class="pct">50% off</span></em>
-      </div>
-    </div>
-
     <div class="back_btn_mobile">
       <!-- <a href="/picks" onclick="goBack()"><img class="back_btn_m" src="<%=asset_path 'back_btn.png' %>" alt="뒤로가기" /></a> -->
       <button onclick="goBack()"><img class="go_back" src="<%=asset_path 'back_btn.png' %>" alt="뒤로가기" /></button>
@@ -97,7 +46,9 @@
 
   </div>
 </div>
-
+<div class="wrap">
+  <%= raw pagy_nav(@pagy) %>
+</div>
 
 
 
