@@ -18,9 +18,9 @@
 .home_wrap .card .main_title a{color:#000;}
 .home_wrap .card .right{float:left;width:45%;margin-left:5%}
 .home_wrap .card .right .products{height:100px;border-bottom:1px dotted #3d3d3d;padding:10px 0;}
-.home_wrap .card .right .products .img_box{float:left;width:30%;margin-right:3%;position:relative;height:80px;}
+.home_wrap .card .right .products .img_box{float:left;width:30%;margin-right:1%;position:relative;height:80px;}
 .home_wrap .card .right .products .img_box img{width:80%;height:80%;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);object-fit:contain;}
-.home_wrap .card .right .products .inner{color:#000;float:left;width:67%;padding:10px;}
+.home_wrap .card .right .products .inner{color:#000;float:left;width:67%;padding:10px 10px 10px 0;}
 .home_wrap .card .right .products .inner p{margin:5px 0;word-break:break-all;line-height:1.4;height:1.4em;overflow:hidden;display:-webkit-box;display:-ms-flexbox;vertical-align:top;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:1;}
 .home_wrap .card .right .products .inner span{font-size:20px;}
 .home_wrap .card .right .products .inner span em{color:#ccc;text-decoration:line-through;font-size:17px;margin:0 5px;}
@@ -36,12 +36,15 @@
   .home_wrap .card{width:100%;margin:0 0 150px 0;height:900px;}
   .home_wrap .card .thumbnail{float:none;width:85%;margin:0 auto;left:0;top:-60px;}
   .home_wrap .card .main_title{position:inherit;width:330px;bottom:0;margin-top:-30px;}
-  .home_wrap .card .main_title h2{font-size:20px;}
+  .home_wrap .card .main_title h2{font-size:16px;}
   .home_wrap .card .main_title p{font-size:15px;}
   .home_wrap .card .right{float:none;width:100%;margin:0;}
   .home_wrap .card .m_btn{display:block;width:90%;color:#fff;background:#08f;text-align:center;font-size:25px;margin:20px 5% 0 5%;border-radius:20px;padding:10px;}
   .home_wrap .card .fab{display:none;}
   .ctn_more{width:40%;margin-top:40px;}
+  .home_wrap .card .right .products .inner span{font-size:17px;}
+  .home_wrap .card .right .products .inner span em{font-size:15px;}
+  .home_wrap .card .right .products .inner span strong{font-size:15px;}
 }
 
 
