@@ -35,7 +35,7 @@ class CouponsController < ApplicationController
 
     respond_to do |format|
       if @coupon.save
-        format.html { redirect_to "/homes", notice: "Coupon was successfully created." }
+        format.html { redirect_to @coupon, notice: "Coupon was successfully created." }
         format.json { render :show, status: :created, location: @coupon }
       else
         format.html { render :new, status: :unprocessable_entity }

@@ -27,7 +27,7 @@
               <div class="admin_controller">
                 <%= link_to 'Edit', edit_coupon_path(coupon) %>
                 <%= link_to 'Destroy', coupon, method: :delete, data: { confirm: 'Are you sure?' } %>
-                <% if coupon.c_promocode %>
+                <% if coupon.c_promocode.present? %>
                   <span>Coupon</span>
                 <% else %>
                   <span>Online Deal</span>
