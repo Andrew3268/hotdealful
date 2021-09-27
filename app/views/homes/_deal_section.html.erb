@@ -6,19 +6,16 @@
       <div class="card">
         <div class="thumbnail clearfix">
           <img class="left" src="<%= home.main_image %>" alt="<%= home.main_title %>"/>
-
-
-          <div class="main_title">
-            <h2><%= home.main_title %></h2>
-            <p><%= home.main_description %></p>
-            <% if current_user && current_user.admin %>
-              <%= link_to 'Edit', edit_home_path(home) %> |
-              <%= link_to 'Destroy', home, method: :delete, data: { confirm: 'Are you sure?' } %>
-            <% end %>
-          </div>
         </div>
 
-        
+        <div class="main_title">
+          <h2><%= home.main_title %></h2>
+          <p><%= home.main_description %></p>
+          <% if current_user && current_user.admin %>
+            <%= link_to 'Edit', edit_home_path(home) %> |
+            <%= link_to 'Destroy', home, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </div>
 
 
         <div class="right">
