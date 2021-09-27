@@ -34,7 +34,7 @@
         <div class="inner-box clearfix">
           <% if current_user && current_user.admin %>
             <div class="sharing_btn">
-              <a href="/" data-turbolinks="false">Back</a>
+              <a href="/homes" data-turbolinks="false">Back</a>
               <%= render 'coupons/sharing_sns' %>
               <button id="facebook_btn">FBcopy</button>
               <button class="btn-default js-copybtn"><span class="glyphicon glyphicon-copy"></span> TWcopy </button>
@@ -109,10 +109,10 @@
           <div class="btn">
             <% if @coupon.c_promocode.present? %>
               <p>Apply coupon codes at checkout with a single click.</p>
-              <a class="amz_btn" href="/">Back</a>
+              <a class="amz_btn" href="/homes">Back</a>
               <a class="amz_btn buy_now" target="_blank" href="<%= @coupon.c_link %>">Go for it</a>
             <% else %>
-              <a class="amz_btn" href="/">Back</a>
+              <a class="amz_btn" href="/homes">Back</a>
               <a class="amz_btn buy_now" target="_blank" href="<%= @coupon.c_link %>">Go for it</a>
             <% end %>
           </div>
