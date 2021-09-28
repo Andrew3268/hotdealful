@@ -35,7 +35,7 @@
   .home_wrap{margin-top:100px;}
   .home_wrap .card{width:100%;margin:0 0 150px 0;height:900px;}
   .home_wrap .card .thumbnail{float:none;width:85%;margin:0 auto;left:0;top:-60px;}
-  .home_wrap .card .main_title{position:inherit;width:330px;bottom:0;margin-top:-30px;}
+  .home_wrap .card .main_title{position:inherit;width:300px;bottom:0;margin-top:-30px;}
   .home_wrap .card .main_title h2{font-size:16px;}
   .home_wrap .card .main_title p{font-size:15px;}
   .home_wrap .card .right{float:none;width:100%;margin:0;}
