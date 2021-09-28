@@ -13,6 +13,26 @@ class CouponsController < ApplicationController
 
   # GET /coupons/1 or /coupons/1.json
   def show
+    set_meta_tags title: @coupon.c_title,
+                  site: 'hotdeal-ful',
+                  revierse: true,
+                  description: @coupon.c_title,
+                  keywords: 'amazondeals, hotdeals, promotion code, coupons ',
+                  twitter: {
+                    card: "summary",
+                    site: "@hotdealful",
+                    title: @coupon.c_title,
+                    description: @coupon.c_title,
+                    image: @coupon.c_image
+                  },
+                  og: {
+                    title: @coupon.c_title,
+                    description: @coupon.c_title,
+                    type: 'website',
+                    url: post_url(@coupon),
+                    image: @coupon.c_image
+                  }
+
   end
 
   def hashtags
