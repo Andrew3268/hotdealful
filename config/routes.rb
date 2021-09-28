@@ -27,6 +27,8 @@ Rails.application.routes.draw do
   get 'bridges/new_index'
   get 'bridges/new_under_deal'
   get 'bridges/new_half_deal'
+  get 'bridges/delete_coupons'
+  get 'bridges/delete_hotdeals'
 
 
   get '/404' , to: 'errors#not_found'

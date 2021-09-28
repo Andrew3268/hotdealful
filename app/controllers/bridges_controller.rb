@@ -36,4 +36,12 @@ class BridgesController < ApplicationController
     @pagy, @posts = pagy(Post.all.order("created_at DESC"), items: 40)
   end
 
+  def delete_coupons
+    @coupons = Coupon.all.order("created_at DESC")
+  end
+
+  def delete_hotdeals
+    @coupons = Coupon.all.order("created_at DESC")
+  end
+
 end

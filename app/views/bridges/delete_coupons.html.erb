@@ -1,0 +1,29 @@
+<header><%= render 'shared/header_index' %></header>
+
+<div class="destory_old_post">
+  <p>Destory Coupon // <a href="/">Home</a></p>
+  <table id="customers">
+    <tr>
+      <th>No.</th>
+      <th>Title</th>
+      <th>Hashtag</th>
+      <th>Posting Time</th>
+      <th>Destroy</th>
+    </tr>
+    
+      <% @coupons.each_with_index do |coupon, i| %>
+        <% if coupon.c_spare_56 == 100 %>
+            <% if coupon.created_at < 2.days.ago %>
+              <tr>
+                <td><p><%= i + 1 %></p></td>
+                <td><p><%= coupon.c_title %></p></td>
+                <td><p><%= coupon.c_hashtag %></p></td>
+                <td><%= time_ago_in_words(coupon.created_at) %> ago</td>
+                <td><%= link_to 'Destroy', coupon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            <% end %>
+          <% end %>
+        <% end %>
+  </table>
+ 
+</div>
