@@ -29,7 +29,7 @@ class CouponsController < ApplicationController
                     title: @coupon.c_title,
                     description: @coupon.c_title,
                     type: 'website',
-                    url: post_url(@coupon),
+                    url: coupon_url(@coupon),
                     image: @coupon.c_image
                   }
 
