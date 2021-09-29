@@ -133,7 +133,7 @@
            <div class="sharing facebook clearfix"">
             <span id="facebook_ctn">
               <p>Available at Amazon NOW!!</p>
-
+              <p class="share_title"><%= @coupon.c_title %></p>
               <% if @coupon.c_promocode.present? %>
                 <p>Offer: <%= number_to_currency(total_price) %> (<%= number_to_percentage(@coupon.c_pct, precision: 0) %> off)</p>
                 <p>Was: <%= number_to_currency(@coupon.c_was_price) %></p>
