@@ -81,7 +81,7 @@ class CouponsController < ApplicationController
   def destroy
     @coupon.destroy
     respond_to do |format|
-      format.html { redirect_to coupons_url, notice: "Coupon was successfully destroyed." }
+      format.html { redirect_to "/bridges/delete_coupons", notice: "Coupon was successfully destroyed." }
       format.json { head :no_content }
     end
   end
