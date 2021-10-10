@@ -19,7 +19,7 @@ xml.urlset(xmlns: "http://www.sitemaps.org/schemas/sitemap/0.9") do
 
   @coupons.each do |coupon|
     xml.url do
-      xml.loc post_url(coupon)
+      xml.loc coupon_url(coupon)
       xml.changefreq("daily")
       xml.priority "0.8"
       xml.lastmod coupon.updated_at.strftime("%Y-%m-%dT%H:%M:%S.%2N%:z")
