@@ -121,8 +121,9 @@ header nav button img{width:25px;height:25px;}
 
 
 /********** Footer Section **********/
-.footer{background:#333;padding:7px;width:100%;}
-.footer a{text-align:center;font-family: 'KoHo', sans-serif;color:#fff;display:block;}
+.footer{background:#000;padding:7px;width:100%;}
+.footer .footer_box{margin:0 30px;}
+.footer a{text-align:center;color:#fff;display:inline-block;}
 
 
 /********** About admin **********/

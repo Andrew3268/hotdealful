@@ -110,10 +110,10 @@
             <% if @coupon.c_promocode.present? %>
               <p>Apply codes at checkout with a single click.</p>
               <a class="amz_btn" href="/homes">Back</a>
-              <a class="amz_btn buy_now" target="_blank" href="<%= @coupon.c_link %>">Go for it</a>
+              <a class="amz_btn buy_now" target="_blank" href="<%= @coupon.c_link %>">Accept an offer</a>
             <% else %>
               <a class="amz_btn" href="/homes">Back</a>
-              <a class="amz_btn buy_now" target="_blank" href="<%= @coupon.c_link %>">Go for it</a>
+              <a class="amz_btn buy_now" target="_blank" href="<%= @coupon.c_link %>">Accept an offer</a>
             <% end %>
           </div>
 

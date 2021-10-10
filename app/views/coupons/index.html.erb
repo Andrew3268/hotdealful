@@ -1,7 +1,7 @@
 <header><%= render 'shared/header_index' %></header>
 <%= render 'shared/hero' %>
 
-<% if current_user && current_user.admin %>
+
   <div class="index_wrapper">
     <div class="cards">
       <% @coupons.each do |coupon| %>
@@ -130,10 +130,10 @@
       <% end %>
 
     </div>
-    <%= raw pagy_nav(@pagy) %>
+    <!-- <%= raw pagy_nav(@pagy) %> -->
     
   </div>
-<% end %>
+
     
 <%= javascript_pack_tag 'expanding' %>
         
