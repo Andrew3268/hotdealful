@@ -1,15 +1,9 @@
 
 /* Advance amazon search */
 .search-wrapping{width:1200px;margin:10px auto 100px auto;}
-/*.set_search{font-family:'Montserrat', sans-serif;}
-.set_banner{float:left;width:33%;margin-right:2%;border:1px solid #aaa;border-radius:10px;box-shadow:0 2px 10px rgba(0, 0, 0, 0.1);padding:17px 20px;height:709.44px;overflow:scroll;}
-.set_banner h2{font-size:20px;}
-.set_banner ul{margin-left:15px;}
-.set_banner ul li{margin:10px 0;list-style:disc;}
-.set_banner ul li a{color:#08f;}*/
-/*.set_b_m{display:none;}*/
-.set_search_box{float:left;width:50%;margin-left:2%;margin:10px auto 50px auto;border-radius:10px;padding:15px 30px;border:1px solid #aaa;color:#fff;}
-.set_search_box h2{font-size:20px;font-weight:100;}
+
+.set_search_box{float:left;width:50%;margin-left:2%;margin:10px auto 50px auto;border-radius:10px;padding:15px 30px;border:1px solid #aaa;}
+.set_search_box h2{font-size:20px;font-weight:100;text-align:center;}
 .disable{display:none;}
 
 .post-type{}
@@ -54,7 +48,7 @@
 .set_search_box .feild_wrap .pct_box .pct{float:left;width:45%;}
 
 
-a.set_reset, a.set_reset_m{border:1px solid #ccc;padding:10px 50px;color:#fff;border-radius:10px;float:left;}
+a.set_reset, a.set_reset_m{border:1px solid #ccc;padding:10px 50px;border-radius:10px;float:left;color:#000;}
 a.set_reset_m{display:none;}
 
 .mid_banner{margin-bottom:40px;}
@@ -144,8 +138,8 @@ a.set_reset_m{display:none;}
 
 
 /* Search By Percentage */
-.search-pct{float:left;width:47%;margin:10px 0 0 3%;border:1px solid #ccc;border-radius:10px;padding:10px;;color:#fff;}
-.search-pct p{font-size:20px;margin-bottom:20px;}
+.search-pct{float:left;width:47%;margin:10px 0 0 3%;border:1px solid #ccc;border-radius:10px;padding:10px;}
+.search-pct p{font-size:20px;margin-bottom:20px;text-align:center;}
 .search-pct .tg{width:100%;border-collapse:collapse;border-spacing:0;border-color:#ccc;padding:20px;}
 .search-pct .tg tr{}
 .search-pct .tg tr th{font-size:15px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;}

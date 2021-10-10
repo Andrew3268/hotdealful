@@ -9,10 +9,10 @@
 
 
 /* Index */
-.home_wrap .card{position:relative;height:450px;width:900px;margin:100px auto 150px auto;background-color:#fff;-webkit-box-shadow:10px 10px 93px 0 rgba(0,0,0,.75);-moz-box-shadow:10px 10px 93px 0 rgba(0,0,0,.75);box-shadow:10px 10px 93px 0 rgba(0,0,0,.75);border-radius:20px;}
+.home_wrap .card{position:relative;height:535px;width:900px;margin:80px auto 150px auto;border-radius:20px;border:2px solid;}
 .home_wrap .card .thumbnail{float:left;position:relative;left:30px;top:-30px;height:320px;width:50%;overflow:hidden;border-radius:20px;}
 .home_wrap .card .thumbnail img.left{position:absolute;left:50%;top:50%;height:100%;width:100%;object-fit:cover;-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);transform:translate(-50%,-50%);}
-.home_wrap .card .main_title{color:#000;position:absolute;bottom:45px;left:50px;width:400px;height:100px;}
+.home_wrap .card .main_title{color:#000;position:absolute;bottom:110px;left:50px;width:400px;height:100px;}
 .home_wrap .card .main_title h2{font-size:25px;}
 .home_wrap .card .main_title p{font-size:17px;}
 .home_wrap .card .main_title a{color:#000;}
@@ -31,9 +31,10 @@
 @media screen and (max-width:640px){
   .home_in_coupon, .admin_panel{width:100%;}
   .coupon_header, .deal_header{width:60%;font-size:20px;}
+  .deal_header{margin-top:50px;}
 
   .home_wrap{margin-top:100px;}
-  .home_wrap .card{width:100%;margin:0 0 150px 0;height:900px;}
+  .home_wrap .card{width:100%;margin:0 0 150px 0;height:995px;}
   .home_wrap .card .thumbnail{float:none;width:85%;margin:0 auto;left:0;top:-60px;}
   .home_wrap .card .main_title{position:inherit;width:300px;bottom:0;margin-top:-30px;}
   .home_wrap .card .main_title h2{font-size:16px;}

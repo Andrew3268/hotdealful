@@ -1,39 +1,135 @@
-<div class="wrap">
-  <div class="coupon_wrap home_in_coupon clearfix">
+<div class="wrap">  
+  <div class="index_wrapper">
     
-    <% @coupons.each do |coupon| %>
-      <% if coupon.c_spare_56 == 100 %>
-        <div class="card">  
-          <div class="img_box">
-            <%= link_to image_tag(coupon.c_image, alt: coupon.c_title, title: coupon.c_title), coupon %>
-          </div>
-          <div class="inner">
-            <p><%= coupon.c_title %></p>
-            <% if coupon.c_promocode.present? %>
-              <% promocode_price = 0 %>
-              <% promocode_price =  coupon.c_was_price.to_f - (coupon.c_pct.to_f / 100) * coupon.c_was_price.to_f %>
-              <em><%= number_to_currency(promocode_price) %><span class="was_price"><%= number_to_currency(coupon.c_was_price) %></span><span class="pct"><%= number_to_percentage(coupon.c_pct, precision: 0) %> off</span></em>
-            <% else %>
-              <% hotdeal_pct = 0 %>
-              <% hotdeal_pct =  (coupon.c_was_price.to_f - coupon.c_is_price.to_f) / coupon.c_was_price.to_f * 100 %>
-              <em><%= number_to_currency(coupon.c_is_price) %><span class="was_price"><%= number_to_currency(coupon.c_was_price) %></span><span class="pct"><%= number_to_percentage(hotdeal_pct, precision: 0) %> off</span></em>
-            <% end %>
-          </div>
-          <% if current_user && current_user.admin %>
-            <div class="admin_controller">
-              <%= link_to 'Edit', edit_coupon_path(coupon) %>
-              <%= link_to 'Destroy', coupon, method: :delete, data: { confirm: 'Are you sure?' } %>
-              <% if coupon.c_promocode.present? %>
-                <span>Coupon</span>
-              <% else %>
-                <span>Online Deal</span>
-              <% end %>
+    <div class="cards">
+      <% @coupons.each do |coupon| %>
+        <% if coupon.c_spare_56 == 100 %>
+          <div class=" card [ is-collapsed ] ">
+            <div class="card__inner [ js-expander ]">
+              <div class="image_box">
+                <img src="<%= coupon.c_image %>" alt="<%= coupon.c_title %>" />
+              </div>
+              <div class="inner">
+                <p><%= coupon.c_title %></p>
+                <% if coupon.c_promocode.present? %>
+                  <% promocode_price = 0 %>
+                  <% promocode_price =  coupon.c_was_price.to_f - (coupon.c_pct.to_f / 100) * coupon.c_was_price.to_f %>
+                  <em><%= number_to_currency(promocode_price) %><span class="was_price"><%= number_to_currency(coupon.c_was_price) %></span><span class="pct"><%= number_to_percentage(coupon.c_pct, precision: 0) %> off</span></em>
+                <% else %>
+                  <% hotdeal_pct = 0 %>
+                  <% hotdeal_pct =  (coupon.c_was_price.to_f - coupon.c_is_price.to_f) / coupon.c_was_price.to_f * 100 %>
+                  <em><%= number_to_currency(coupon.c_is_price) %><span class="was_price"><%= number_to_currency(coupon.c_was_price) %></span><span class="pct"><%= number_to_percentage(hotdeal_pct, precision: 0) %> off</span></em>
+                <% end %>
+
+                <% if current_user && current_user.admin %>
+                  <div class="admin_controller">
+                    <%= link_to 'Edit', edit_coupon_path(coupon) %>
+                    <%= link_to 'Destroy', coupon, method: :delete, data: { confirm: 'Are you sure?' } %>
+                    <% if coupon.c_promocode.present? %>
+                      <span>Coupon</span>
+                    <% else %>
+                      <span>Online Deal</span>
+                    <% end %>
+                  </div>
+                <% end %>
+
+              </div>
+              <em class="fa fa-folder-o"></em>
             </div>
-          <% end %>
-        </div>
+
+            <div class="card__expander">
+              <i class="fa fa-close [ js-collapser ]"></i>
+
+              <div class="left">
+                <% promo_price = 0 %>
+                <% promo_price = (coupon.c_pct.to_f / 100) * coupon.c_was_price %>
+                <% total_price = 0 %>
+                <% total_price = coupon.c_was_price - promo_price %>
+                  <p>Amazon.com has <em>"<%= coupon.c_title %>"</em> on sale for 
+                    <% if coupon.c_promocode.present? %>
+                      <em class="price"><%= number_to_currency(total_price) %>.</em> Shipping is free. w/ Prime or on $25+ orders.
+                    <% else %>
+                      <em class="price"><%= number_to_currency(coupon.c_is_price) %>.</em> Shipping is free. w/ Prime or on $25+ orders.
+                    <% end %>
+                 </p>
+
+                 <div class="details">
+                  <div class="bio">
+                    <div class="summary clearfix">
+                      <h4>SUMMARY</h4>
+                      <div class="list">
+                        <p>Offer</p>
+                        <% if coupon.c_promocode.present? %>
+                          <p>Discount(<%= number_to_percentage(coupon.c_pct, precision: 0) %> off)</p>            
+                          <p>Promotion Code</p>
+                        <% else %>
+                          <% hotdeal_pct = 0 %>
+                          <% hotdeal_pct =  (coupon.c_was_price - coupon.c_is_price) / coupon.c_was_price * 100 %>
+                          <p>Discount(<%= number_to_percentage(hotdeal_pct, precision: 0) %> off)</p>            
+                        <% end %>
+                      </div>
+
+                      <div class="price">
+                        <p><%= number_to_currency(coupon.c_was_price) %></p>
+                        <% if coupon.c_promocode.present? %>
+                          <% promo_price = 0 %>
+                          <% promo_price = (coupon.c_pct / 100) * coupon.c_was_price %>
+                          <p>- <%= number_to_currency(promo_price) %></p>
+                          <p class="p-code"><%= coupon.c_promocode %></p>
+                        <% else %>
+                          <% sale_price = 0 %>
+                          <% sale_price = ( hotdeal_pct / 100 ) * coupon.c_was_price %>
+                          <p>- <%= number_to_currency(sale_price) %></p>  
+                        <% end %>
+                      </div>
+                    </div> 
+
+                    <div class="total clearfix">
+                      <p class="list">Total</p>
+                      <% if coupon.c_promocode.present? %>
+                        <% total_price = 0 %>
+                        <% total_price = coupon.c_was_price - promo_price %>
+                        <p class="price"><%= number_to_currency(total_price) %></p> 
+                      <% else %>
+                        <p class="price"><%= number_to_currency(coupon.c_is_price) %></p> 
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+                <div class="btn">
+                  <a href="<%= coupon.c_link %>">go for it!</a>
+                </div>
+              </div><!-- left -->
+
+              <div class="right">
+                <script type="text/javascript">
+                amzn_assoc_placement = "adunit0";
+                amzn_assoc_tracking_id = "3628-20";
+                amzn_assoc_ad_mode = "search";
+                amzn_assoc_ad_type = "smart";
+                amzn_assoc_marketplace = "amazon";
+                amzn_assoc_region = "US";
+                amzn_assoc_default_search_phrase = "<%= coupon.c_title %>";
+                amzn_assoc_default_category = "All";
+                amzn_assoc_linkid = "39e9aa3ca8ca9df980c22e602066352e";
+                amzn_assoc_search_bar = "false";
+                amzn_assoc_search_bar_position = "top";
+                amzn_assoc_title = "Shop Related Products";
+                amzn_assoc_rows = "1";
+                </script>
+                <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+              </div> <!-- right -->
+
+            </div>
+
+          </div>
+        <% end %>
       <% end %>
-      
-    <% end %>
+
+    </div>
+
+
 
   </div>
 </div>
+<%= javascript_pack_tag 'expanding' %>

@@ -68,6 +68,20 @@
             </div>
           </a>
 
+          <% if home.sub_title_05.present? %>
+            <a target="_blank" href="<%= home.sub_link_05 %>">
+              <div class="products clearfix">
+                <div class="img_box">
+                  <img src="<%= home.sub_image_05 %>" alt="<%= home.sub_title_05 %>" />
+                </div>
+                <div class="inner">
+                  <p><%= home.sub_title_05 %></p>
+                  <span><%= number_to_currency(home.sub_is_price_05) %><em><%= number_to_currency(home.sub_was_price_05) %></em><strong><%= number_to_percentage(home.sub_pct_05, precision: 0) %> off</strong></span>
+                </div>
+              </div>
+            </a>
+          <% end %>
+
     
         </div><!-- right -->
 
@@ -80,5 +94,7 @@
 
   </div>
 </div>
+
+
 
 

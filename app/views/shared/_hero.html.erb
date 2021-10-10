@@ -4,14 +4,11 @@
       <h1>Interested in saving money?</h1>
       <div class="article">
         <ul>        
-          <li>We only link to Amazon.</li>
-          <li>We hand-picked and verify the best and freshest coupon codes.</li>
+          <li>We only link to Amazon.com</li>
+          <li>We hand-picked and verify the best deals and freshest coupon codes.</li>
           <li>Apply coupon codes at checkout with a single click.</li>
         </ul>
         <a href="/bridges/finder_detail">Find Coupon More</a>
-        <% if current_user && current_user.admin %>
-          <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
-        <% end %>
       </div>
     </section>  
   </div>
