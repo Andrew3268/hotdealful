@@ -358,6 +358,7 @@ article div{display:none}*/
 .card__inner .inner{margin:10px 0 20px 0;}
 .card__inner .inner p{font-size:15px;word-break:keep-all;line-height:1.4;height:1.4em;overflow:hidden;display:-webkit-box;display:-ms-flexbox;vertical-align:top;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:1;}
 .card__inner .inner em{font-size:20px;}
+.card__inner .inner .was_price{color:#ccc;text-decoration:line-through;}
 .card__inner .inner em span{font-size:15px;margin:0 5px;}
 .card__inner .inner em span.pct{background:#08f;color:#fff;padding:5px;padding:5px 10px;border-radius:15px;}
 .card__inner .inner .admin_controller{font-size:13px;margin-top:10px;}

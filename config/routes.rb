@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   resources :sitemap, :only => :index
   get 'sitemap.xml', :controller => "sitemap", :action => "xml"
+  # get '/sitemap' => 'sitemaps#index'
 
   get '/posts/hashtag/:name', to: 'posts#hashtags'
   get '/picks/phashtag/:name', to:'picks#hashtags'
