@@ -85,13 +85,14 @@
 
 @media screen and (max-width:640px){
   .deal_box{margin-bottom:30px;}
-  .deal_box .deal_card{float:none;width:100%;margin:0;}  
+  .deal_box .deal_card{float:none;width:100%;margin:0 0 30px 0;}  
   .deal_box .deal_card .inner .top_deal .right p.pricing{font-size:15px;}
   .deal_box .deal_card .inner .top_deal .right span.was{font-size:13px;margin:0 5px}
   .deal_box .deal_card .inner .top_deal .right span.pct{font-size:13px;padding:3px 7px;}
 }
 
 @media screen and (min-width:641px) and (max-width:1199px){
+  .deal_box .deal_card{float:none;width:100%;margin:0 0 30px 0;} 
   .deal_box .deal_card .inner .top_deal .right p.pricing{font-size:14px;}
   .deal_box .deal_card .inner .top_deal .right span.was{font-size:12px;margin:0 5px;}
   .deal_box .deal_card .inner .top_deal .right span.pct{font-size:12px;padding:3px 5px;}
