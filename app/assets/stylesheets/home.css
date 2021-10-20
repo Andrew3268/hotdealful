@@ -65,7 +65,7 @@
 
 
 .deal_box{}
-.deal_box .deal_card{float:left;width:48%;margin:1%;border:2px solid;border-radius:20px;padding:20px;}
+.deal_box .deal_card{float:left;width:48%;margin:1% 1% 50px 1%;border:2px solid;border-radius:20px;padding:20px;height:981px;}
 .deal_box .deal_card .img_card{height:250px;}
 .deal_box .deal_card .img_card img{width:100%;height:100%;border-radius:20px;object-fit:cover;}
 .deal_box .deal_card .inner{}
@@ -75,7 +75,7 @@
 .deal_box .deal_card .inner .top_deal .left .img_left{width:100%;height:100px;position:relative;margin:0;}
 .deal_box .deal_card .inner .top_deal .left .img_left img{width:80%;height:80%;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);object-fit:contain;}
 .deal_box .deal_card .inner .top_deal .right{float:left;width:60%;padding:15px;}
-.deal_box .deal_card .inner .top_deal .right p.title{line-height:1.4;height:2.8em;overflow:hidden;display:-webkit-box;display:-ms-flexbox;vertical-align:top;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:2;word-break:break-word;}
+.deal_box .deal_card .inner .top_deal .right p.title, .deal_box .deal_card .inner h3{line-height:1.4;height:2.8em;overflow:hidden;display:-webkit-box;display:-ms-flexbox;vertical-align:top;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:2;word-break:break-word;}
 .deal_box .deal_card .inner .top_deal .right p.pricing{font-size:20px;margin:7px 0 0 0;}
 .deal_box .deal_card .inner .top_deal .right span.was{font-size:15px;color:#ccc;text-decoration:line-through;margin:0 7px;}
 .deal_box .deal_card .inner .top_deal .right span.pct{font-size:16px;padding:5px 10px;background:#08f;text-align:center;color:#fff;border-radius:20px;}

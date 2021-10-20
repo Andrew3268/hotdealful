@@ -59,7 +59,7 @@
               <div class="top_deal clearfix"> 
                 <div class="left">
                   <div class="img_left">
-                    <img src="<%= home.sub_image_01 %>" alt="<%= home.sub_title_01 %>" text="<%= home.sub_title_01 %>">
+                    <img src="<%= home.sub_image_04 %>" alt="<%= home.sub_title_04 %>" text="<%= home.sub_title_04 %>">
                   </div>
                 </div>
                 <div class="right">
@@ -69,19 +69,22 @@
               </div>
             </a>
 
-            <a target="_blank" href="<%= home.sub_link_05 %>">
-              <div class="top_deal clearfix">
-                <div class="left">
-                  <div class="img_left">
-                    <img src="<%= home.sub_image_01 %>" alt="<%= home.sub_title_01 %>" text="<%= home.sub_title_01 %>">
+            <% if home.sub_image_05.present? %>
+              <a target="_blank" href="<%= home.sub_link_05 %>">
+                <div class="top_deal clearfix">
+                  <div class="left">
+                    <div class="img_left">
+                      <img src="<%= home.sub_image_05 %>" alt="<%= home.sub_title_05 %>" text="<%= home.sub_title_05 %>">
+                    </div>
+                  </div>
+                  <div class="right">
+                    <p class="title"><%= home.sub_title_05 %></p>
+                    <p class="pricing"><%= number_to_currency(home.sub_is_price_05) %><span class="was"><%= number_to_currency(home.sub_was_price_05) %></span><span class="pct"><%= number_to_percentage(home.sub_pct_05, precision: 0) %> off</span></p>
                   </div>
                 </div>
-                <div class="right">
-                  <p class="title"><%= home.sub_title_05 %></p>
-                  <p class="pricing"><%= number_to_currency(home.sub_is_price_05) %><span class="was"><%= number_to_currency(home.sub_was_price_05) %></span><span class="pct"><%= number_to_percentage(home.sub_pct_05, precision: 0) %> off</span></p>
-                </div>
-              </div>
-            </a>
+              </a>
+            <% end %>
+            
 
           </div>
 
