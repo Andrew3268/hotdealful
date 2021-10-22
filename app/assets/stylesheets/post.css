@@ -394,7 +394,7 @@ article div{display:none}*/
   display:none;
 }
 
-.card__expander .close{text-align:center;display:block;color:#fff;background:#08f;padding:5px 10px;border-radius:15px;}
+.card__expander .close{text-align:center;display:block;color:#fff;background:#08f;padding:5px 10px;border-radius:15px;display:none;}
 /*.card__expander .fa:hover {
   opacity: 0.9;
 }*/
@@ -449,7 +449,8 @@ article div{display:none}*/
   .card__inner .inner p{margin:5px 0 7px 0;}
   .card__expander .left{float:none;width:100%;margin:0;}
   .card__expander .right{float:none;width:100%;margin:25px 0 0 0;}
-  .card__expander{display:block;}
+  .card__expander, .card__expander .close{display:block;}
+
 
 
 }
