@@ -391,7 +391,10 @@ article div{display:none}*/
   top: 10px;
   right: 10px;
   cursor: pointer;
+  display:none;
 }
+
+.card__expander .close{text-align:center;display:block;color:#fff;background:#08f;padding:5px 10px;border-radius:15px;}
 /*.card__expander .fa:hover {
   opacity: 0.9;
 }*/

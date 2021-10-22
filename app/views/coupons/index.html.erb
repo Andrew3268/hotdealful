@@ -41,7 +41,7 @@
             </div>
 
             <div class="card__expander">
-              <em class="fa fa-close [ js-collapser ]"></em>
+              <em class="fa fa-close [ js-collapser ]">Less</em>
 
               <div class="left">
                 <% promo_price = 0 %>
@@ -122,15 +122,15 @@
                 </script>
                 <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
               </div> <!-- right -->
-
-            </div>
+              <em class="close [ js-collapser ]">Less</em>
+            </div><!-- card_expander -->
 
           </div>
         
       <% end %>
 
     </div>
-    <!-- <%= raw pagy_nav(@pagy) %> -->
+    <%= raw pagy_nav(@pagy) %>
     
   </div>
 
