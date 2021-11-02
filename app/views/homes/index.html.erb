@@ -1,6 +1,14 @@
 <header><%= render 'shared/header_index' %></header>
 
-<%= render 'shared/hero' %>
+<div class="main_hero">
+  <div class="hero_pc">
+    <img src="<%=asset_path 'hero.png' %>" alt="Amazon Coupons" %>
+  </div>
+  <div class="hero_mobile">
+    <img src="<%=asset_path 'hero_m.png' %>" alt="Amazon Coupons" %>
+  </div>
+</div>
+<!-- < render 'shared/hero' > -->
 
   <% if current_user && current_user.admin %>
     <div class="admin_panel">

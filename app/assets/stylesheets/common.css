@@ -35,10 +35,10 @@ body{margin:0;padding:0;font-size:15px;color:#000;line-height:1.5;font-weight:30
   .wrap{width:auto;margin:0 3%;}
 }
 /*Header */
-header{margin-bottom:10px;position:relative;}
+header{position:relative;}
 header nav{padding:15px 30px 10px 30px;border-bottom:1px solid #ccc;}
 header nav h1{text-align:center;font-family: 'KoHo', sans-serif;}
-header nav h1 a{color:#000;}
+header nav h1 a{color:#404041;}
 header nav img{width:25%;}
 header nav ul{line-height:5px;}
 header nav ul li{display:inline-block;float:left;}
@@ -121,7 +121,7 @@ header nav button img{width:25px;height:25px;}
 
 
 /********** Footer Section **********/
-.footer{background:#000;padding:7px;width:100%;}
+.footer{background:#404041;padding:7px;width:100%;}
 .footer .footer_box{margin:0 30px;}
 .footer a{text-align:center;color:#fff;display:inline-block;}
 
@@ -145,7 +145,7 @@ header nav button img{width:25px;height:25px;}
 /* */
 .pagy-nav{margin:50px 0 30px 0;}
 .pagy-nav .page{padding:10px;color:#000;}
-.pagy-nav .active{color:#fff;background:#000;padding:10px;border-radius:10px;}
+.pagy-nav .active{color:#fff;background:#70b7b5;padding:10px;border-radius:10px;}
 
 
 /* error page */
@@ -159,8 +159,8 @@ header nav button img{width:25px;height:25px;}
 }
 
 
-/* Hero Secrion */
-.hero{width:900px;margin:30px auto 100px auto;}
+/*/* Hero Secrion */
+/*.hero{width:900px;margin:30px auto 100px auto;}
 .hero h1{font-size:3rem;float:left;width:48%;margin-right:2%;padding-bottom:1rem;}
 .hero .article{float:left;width:48%;margin-left:2%;}
 .hero .article ul{}
@@ -183,6 +183,7 @@ header nav button img{width:25px;height:25px;}
   .hero .article a{width:35%;}
 }
 
+*/
 
 
-
+*/

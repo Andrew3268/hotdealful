@@ -189,7 +189,7 @@ article div{display:none}*/
 .show-wrap .container .go_back{display:none;}
 .show-wrap .container .title_mobile{display:none;}
 .show-wrap .container .title_mobile h2{font-size:17px;font-weight:300;}
-.show-wrap .container .title h2 em, .show-wrap .container .title_mobile h2 em{border-bottom:1.5px solid #68d391;}
+.show-wrap .container .title h2 em, .show-wrap .container .title_mobile h2 em{border-bottom:3px solid #70b7b5;}
 
 
 .show-wrap .image-box{float:left;width:45%;margin-right:5%;position:relative;height:350px;background:#fff;border-radius:20px;}
@@ -200,12 +200,12 @@ article div{display:none}*/
 .show-wrap .receipt__grid2{text-align:right;}
 .show-wrap .receipt__grid2 p em{color:#fff}
 .show-wrap .receipt__grid2 p.p-code{font-weight:800;}
-.show-wrap .total_price{font-size:30px;color:#68d391;font-weight:600;}
+.show-wrap .total_price{font-size:30px;color:#70b7b5;font-weight:600;}
 .show-wrap .total_text{font-size:30px;}
 .show-wrap .btn{text-align:center;}
 .show-wrap .btn p{font-size:15px;margin-top:15px;}
-.show-wrap .btn a.amz_btn{border:1px solid #68d391;color:#68d391;display:block;padding:10px;font-size:15px;border-radius:15px;float:left;width:48%;margin:1%;}
-.show-wrap .btn a.buy_now{background:#68d391;color:#fff;}
+.show-wrap .btn a.amz_btn{border:1px solid #70b7b5;color:#70b7b5;display:block;padding:10px;font-size:15px;border-radius:15px;float:left;width:48%;margin:1%;}
+.show-wrap .btn a.buy_now{background:#70b7b5;color:#fff;}
 .show-wrap .title{}
 .show-wrap .title h2{font-size:17px;font-weight:300;word-break:keep-all;/*line-height:1.4;height:2.8em;overflow:hidden;display:-webkit-box;display:-ms-flexbox;vertical-align:top;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:2;*/}
 .show-wrap .admin{text-align:left;}
@@ -302,7 +302,7 @@ article div{display:none}*/
 
 .index_wrapper {
   margin: 1em auto;
-  max-width: 1000px;
+  max-width: 1200px;
   /*background-color: #fff;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.06);*/
 }
@@ -316,13 +316,12 @@ article div{display:none}*/
 
 .index_wrapper .card {
   margin: 15px;
-  width: calc((100% / 3) - 30px);
+  width: calc((100% / 4) - 30px);
   margin-bottom:-30px;
 }
 @media screen and (max-width: 991px) {
-  .index_wrapper .card {
-    width: calc((100% / 2) - 30px);
-  }
+  .index_wrapper .card {width: calc((100% / 3) - 30px);}
+  .card__inner{padding:10px;}
 }
 @media screen and (max-width: 767px) {
   .index_wrapper .card {
@@ -335,10 +334,10 @@ article div{display:none}*/
 }
 .card__inner {
   width: 100%;
-  padding: 30px;
+  padding: 20px;
   position: relative;
   cursor: pointer;
-  border:2px solid #000;
+  /*border:2px solid #000;*/
   border-radius:20px;
   color:#000;
   font-size: 1.5em;
@@ -360,7 +359,7 @@ article div{display:none}*/
 .card__inner .inner em{font-size:20px;}
 .card__inner .inner .was_price{color:#ccc;text-decoration:line-through;}
 .card__inner .inner em span{font-size:15px;margin:0 5px;}
-.card__inner .inner em span.pct{background:#08f;color:#fff;padding:5px;padding:5px 10px;border-radius:15px;}
+.card__inner .inner em span.pct{background:#70b7b5;color:#fff;padding:5px;padding:5px 10px;border-radius:15px;}
 .card__inner .inner .admin_controller{font-size:13px;margin-top:10px;}
 .card__inner .inner .admin_controller a{color:#000;}
 
@@ -380,7 +379,7 @@ article div{display:none}*/
 .card__expander .left{float:left;width:60%;margin-right:3%;}
 .card__expander .left p{font-size:15px;}
 .card__expander .left .btn{}
-.card__expander .left .btn a{background:#08f;color:#fff;border-radius:20px;padding:10px;width:100%;display:block;text-align:center;margin-top:10px;}
+.card__expander .left .btn a{background:#70b7b5;color:#fff;border-radius:20px;padding:10px;width:100%;display:block;text-align:center;margin-top:10px;}
 .card__expander .left .btn p{font-size:13px;text-align:center;margin-top:15px;}
 .card__expander .right{float:left;width:37%;}
 
@@ -459,6 +458,8 @@ article div{display:none}*/
   .card:nth-of-type(2n+2) .card__expander{margin-left: calc(-100% - 30px);}
   .card:nth-of-type(2n+3){clear:left;}
   .card__expander{width:calc(200% + 30px);}
+  .card__inner .inner em, .card__inner .inner .was_price{font-size:13px;}
+  .card__inner .inner em span.pct{font-size:13px;padding:5px 7px;}
 
 }
 @media screen and (min-width: 992px) {

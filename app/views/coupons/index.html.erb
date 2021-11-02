@@ -1,6 +1,15 @@
 <header><%= render 'shared/header_index' %></header>
-<%= render 'shared/hero' %>
-
+<!-- <%= render 'shared/hero' %> -->
+<div class="main_hero">
+  <div class="hero_pc">
+    <img src="<%=asset_path 'hero.png' %>" alt="Amazon Coupons" %>
+    <a target="_blank" href="https://amzn.to/3bvvCbX">More Cliping Coupons</a>
+  </div>
+  <div class="hero_mobile">
+    <img src="<%=asset_path 'hero_m.png' %>" alt="Amazon Coupons" %>
+    <a target="_blank" href="https://amzn.to/3bvvCbX">More Cliping Coupons</a>
+  </div>
+</div>
 
   <div class="index_wrapper">
     <div class="cards">
@@ -8,7 +17,8 @@
           <div class=" card [ is-collapsed ] ">
             <div class="card__inner [ js-expander ]">
               <div class="image_box">
-                <img src="<%= coupon.c_image %>" alt="<%= coupon.c_title %>" />
+                <!-- <img src="<%= coupon.c_image %>" alt="<%= coupon.c_title %>" /> -->
+                <%= link_to image_tag(coupon.c_image, alt: coupon.c_title, title: coupon.c_title), coupon %>
               </div>
               <div class="inner">
                 <p><%= coupon.c_title %></p>
@@ -37,7 +47,7 @@
 
 
               </div>
-              <em class="fa fa-folder-o"></em>
+              <!-- <em class="fa fa-folder-o"></em> -->
             </div>
 
             <div class="card__expander">
@@ -135,5 +145,5 @@
   </div>
 
     
-<%= javascript_pack_tag 'expanding' %>
+<!-- <%= javascript_pack_tag 'expanding' %> -->
         
