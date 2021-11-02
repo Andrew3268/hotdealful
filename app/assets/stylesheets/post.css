@@ -407,6 +407,7 @@ article div{display:none}*/
   overflow: hidden;
   margin-top: 0;
   opacity: 0;
+  display:none;
 }
 /*.card.is-expanded .card__inner {
   background-color: #1abc9c;

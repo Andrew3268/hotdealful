@@ -1,4 +1,4 @@
-.main_hero{text-align:center;}
+.main_hero{width:1200px;margin:0 auto;}
 .main_hero img{width:1200px;}
 .main_hero .hero_pc{position:relative;}
 .main_hero .hero_pc a{position:absolute;bottom:20px;right:50px;color:#70b7b5;font-size:20px;border-top:1px solid #70b7b5;border-bottom:1px solid #70b7b5;}
