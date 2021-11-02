@@ -6,6 +6,7 @@
 .main_hero .hero_mobile a{position:absolute;bottom:15px;right:20px;color:#404141;font-size:15px;border-top:1px solid #404141;border-bottom:1px solid #404141;}
 
 @media screen and (max-width:640px){
+  .main_hero{width:100%;}
   .main_hero img{width:100%;}
 }
 

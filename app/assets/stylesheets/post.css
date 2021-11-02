@@ -317,7 +317,6 @@ article div{display:none}*/
 .index_wrapper .card {
   margin: 15px;
   width: calc((100% / 4) - 30px);
-  margin-bottom:-30px;
 }
 @media screen and (max-width: 991px) {
   .index_wrapper .card {width: calc((100% / 3) - 30px);}

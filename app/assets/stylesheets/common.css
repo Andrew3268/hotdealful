@@ -59,6 +59,7 @@ header nav button{position:absolute;top:29%;left:5%;}
 header nav button img{width:25px;height:25px;}
 
 @media screen and (max-width: 560px) {
+  header nav{width:100%;}
   header nav img{width:70%;}
   header .nav-container{position:fixed;top:0;left:0;height:100%;width:100%;z-index:-1;background:#fff;opacity:0;transition:all 0.2s ease;}
   header .nav-container ul{position:absolute;top:50%;transform:translateY(-50%);width:100%;}
