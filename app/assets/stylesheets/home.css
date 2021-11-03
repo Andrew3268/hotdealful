@@ -13,7 +13,7 @@
 
 
 
-.home_in_coupon, .admin_panel{width:900px;margin:0 auto;overflow:hidden;}
+.home_in_coupon, .admin_panel{width:1200px;margin:0 auto;overflow:hidden;}
 .admin_panel a{color:#fff;background:#08f;padding:10px;border-radius:20px;}
 .coupon_header{margin:30px auto 20px auto;text-align:center;font-size:30px;width:50%;display:block;border:1px solid;border-radius:20px;padding:5px 10px;}
 .ctn_more{background:#08f;color:#fff;font-size:20px;text-align:center;padding:10px 20px;border-radius:20px;width:15%;display:block;margin:15px auto 0 auto;}
