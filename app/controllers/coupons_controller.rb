@@ -13,6 +13,7 @@ class CouponsController < ApplicationController
 
   # GET /coupons/1 or /coupons/1.json
   def show
+    @coupon.punch(request)
     set_meta_tags title: @coupon.c_title,
                   site: 'hotdeal-ful',
                   revierse: true,

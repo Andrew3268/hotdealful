@@ -12,6 +12,8 @@ gem 'meta-tags'
 gem 'impressionist'
 gem 'sitemap_generator'
 gem 'whenever', require: false
+gem "punching_bag"
+
 
 gem 'capistrano', '~> 3.11'
 gem 'capistrano-rails', '~> 1.4'

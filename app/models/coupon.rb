@@ -1,4 +1,6 @@
 class Coupon < ApplicationRecord
+  acts_as_punchable
+  
   extend FriendlyId
   friendly_id :c_title, use: :slugged
 
