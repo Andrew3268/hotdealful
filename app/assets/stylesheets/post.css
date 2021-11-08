@@ -207,7 +207,7 @@ article div{display:none}*/
 .show-wrap .btn a.amz_btn{border:1px solid #70b7b5;color:#70b7b5;display:block;padding:10px;font-size:15px;border-radius:15px;float:left;width:48%;margin:1%;}
 .show-wrap .btn a.buy_now{background:#70b7b5;color:#fff;}
 .show-wrap .title{}
-.show-wrap .title h2{font-size:17px;font-weight:300;word-break:keep-all;/*line-height:1.4;height:2.8em;overflow:hidden;display:-webkit-box;display:-ms-flexbox;vertical-align:top;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:2;*/}
+.show-wrap .title h2{font-size:17px;font-weight:300;word-break:keep-all;line-height:1.4;height:5.6em;overflow:hidden;display:-webkit-box;display:-ms-flexbox;vertical-align:top;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:4;}
 .show-wrap .admin{text-align:left;}
 .show-wrap .admin a{color:#000;}
 
