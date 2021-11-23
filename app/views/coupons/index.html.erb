@@ -88,7 +88,7 @@
                       <div class="list">
                         <p>Offer</p>
                         <% if coupon.c_promocode.present? %>
-                          <p>Discount(<%= number_to_percentage(coupon.c_pct, precision: 0) %> off)</p>            
+                          <p>Discount(<%= number_to_percentage(coupon.c_pct.to_f, precision: 0) %> off)</p>            
                           <p>Promotion Code</p>
                         <% else %>
                           <% hotdeal_pct = 0 %>
@@ -101,7 +101,7 @@
                         <p><%= number_to_currency(coupon.c_was_price) %></p>
                         <% if coupon.c_promocode.present? %>
                           <% promo_price = 0 %>
-                          <% promo_price = (coupon.c_pct / 100) * coupon.c_was_price %>
+                          <% promo_price = (coupon.c_pct.to_f / 100) * coupon.c_was_price %>
                           <p>- <%= number_to_currency(promo_price) %></p>
                           <p class="p-code"><%= coupon.c_promocode %></p>
                         <% else %>

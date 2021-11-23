@@ -34,7 +34,7 @@
         <div class="inner-box clearfix">
           <% if current_user && current_user.admin %>
             <div class="sharing_btn">
-              <a href="/homes" data-turbolinks="false">Back</a>
+              <a href="/" data-turbolinks="false">Back</a>
               <%= render 'coupons/sharing_sns' %>
               <button id="facebook_btn">FBcopy</button>
               <button class="btn-default js-copybtn"><span class="glyphicon glyphicon-copy"></span> TWcopy </button>
@@ -82,7 +82,7 @@
               <p><%= number_to_currency(@coupon.c_was_price) %></p>
               <% if @coupon.c_promocode.present? %>
                 <% promo_price = 0 %>
-                <% promo_price = (@coupon.c_pct / 100) * @coupon.c_was_price %>
+                <% promo_price = (@coupon.c_pct.to_f / 100) * @coupon.c_was_price %>
                 <p>- <%= number_to_currency(promo_price) %></p>
                 <p class="p-code"><%= @coupon.c_promocode %></p>
               <% else %>
