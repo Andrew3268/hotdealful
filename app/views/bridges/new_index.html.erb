@@ -1,3 +1,47 @@
+<br><br><br><br>
+
+<p>Shop Today's Trending Coupons and Deals</p>
+
 <% @coupons.each do |coupon| %>
-  <p><%= coupon.c_title %></p>
+  <% if coupon.c_spare_56 == 11111 %>
+    <p><%= coupon.c_title %></p>
+  <% end %>
 <% end %>
+
+<br><br><br><br>
+<hr>
+
+<% @online_deals.each_with_index do |deals, i| %>
+  <% if deals.c_spare_56 == 22222 %>
+    <p><%= i + 1 %><%= deals.c_title %></p>
+  <% end %>
+<% end %>
+
+<br><br><br><br>
+<hr>
+<p>여기는 슬리이드 포스팅 관련입니다.</p>
+
+<% @coupons.each do |coupon| %>
+  <% if coupon.c_spare_57 == 300 %> 
+    <a href="/coupons/chashtag/300"><img style="width:100px;height:100px;" src="http://img.danawa.com/prod_img/500000/000/948/img/5948000_1.jpg?shrink=330:330&_v=20180308121534"></a>
+  <% end %>
+
+  <% if coupon.c_spare_57 == 400 %> 
+    <img style="width:100px;height:100px;" src="https://w.namu.la/s/40de86374ddd74756b31d4694a7434ee9398baa51fa5ae72d28f2eeeafdadf0c475c55c58e29a684920e0d6a42602b339f8aaf6d19764b04405a0f8bee7f598d2922db9475579419aac4635d0a71fdb8a4b2343cb550e6ed93e13c1a05cede75">
+  <% end %>
+
+  <% if coupon.c_spare_57 == 500 %> 
+    <img style="width:100px;height:100px;" src="https://pbs.twimg.com/profile_images/1374979417915547648/vKspl9Et_400x400.jpg">
+  <% end %>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

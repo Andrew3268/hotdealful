@@ -1,0 +1,35 @@
+
+<main>
+  <input id="tab1" type="radio" name="tabs" checked>
+  <label for="tab1">Trending Coupon Codes Top 5</label>
+  <input id="tab2" type="radio" name="tabs">
+  <label for="tab2">Trending Deals Top 5</label>
+
+  <section id="content1">
+    <% @coupons.each do |coupon| %>
+      <% if coupon.c_spare_56 == 11111 %>
+        <p>
+          <span class="trend_title"><%= link_to coupon.c_title, coupon %></span>
+          <% if coupon.c_promocode.present? %>
+            <% promocode_price = 0 %>
+            <% promocode_price =  coupon.c_was_price.to_f - (coupon.c_pct.to_f / 100) * coupon.c_was_price.to_f %>
+            <em class="pricing"><span class="is_price"><%= number_to_currency(promocode_price) %></span><span class="was_price"><%= number_to_currency(coupon.c_was_price) %></span><span class="pct"><%= number_to_percentage(coupon.c_pct, precision: 0) %> off</span></em>
+          <% end %>
+        </p>
+      <% end %>
+    <% end %>
+  </section>
+  <section id="content2">
+    <% @coupons.each do |deals| %>
+      <% if deals.c_spare_56 == 22222 %>
+        <p>
+          <span class="trend_title"><%= link_to deals.c_title, deals %></span>
+          <% hotdeal_pct = 0 %>
+          <% hotdeal_pct =  (deals.c_was_price.to_f - deals.c_is_price.to_f) / deals.c_was_price.to_f * 100 %>
+          <em class="pricing"><span class="is_price"><%= number_to_currency(deals.c_is_price) %></span><span class="was_price"><%= number_to_currency(deals.c_was_price) %></span><span class="pct"><%= number_to_percentage(hotdeal_pct, precision: 0) %> off</span></em>
+        </p>
+      <% end %>
+    <% end %>
+  </section>
+
+</main>

@@ -203,9 +203,10 @@ article div{display:none}*/
 .show-wrap .total_price{font-size:30px;color:#70b7b5;font-weight:600;}
 .show-wrap .total_text{font-size:30px;}
 .show-wrap .btn{text-align:center;}
-.show-wrap .btn p{font-size:15px;margin-top:15px;}
+.show-wrap .btn p{font-size:14px;margin-top:15px;}
 .show-wrap .btn a.amz_btn{border:1px solid #70b7b5;color:#70b7b5;display:block;padding:10px;font-size:15px;border-radius:15px;float:left;width:48%;margin:1%;}
 .show-wrap .btn a.buy_now{background:#70b7b5;color:#fff;}
+.show-wrap .notice p{font-size:10.5px;color:#ccc;padding:10px 15px;margin-top:80px;border-top:1px solid #ccc;}
 .show-wrap .title{}
 .show-wrap .title h2{font-size:17px;font-weight:300;word-break:keep-all;line-height:1.4;height:5.6em;overflow:hidden;display:-webkit-box;display:-ms-flexbox;vertical-align:top;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:4;}
 .show-wrap .admin{text-align:left;}

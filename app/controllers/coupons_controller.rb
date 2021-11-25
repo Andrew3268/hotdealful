@@ -9,6 +9,7 @@ class CouponsController < ApplicationController
       @search_term = params[:search]
       @coupons = @coupons.search_by(@search_term)
     end
+    @coupons = Coupon.most_hit(1.day.ago, 10)
   end
 
   # GET /coupons/1 or /coupons/1.json
@@ -96,7 +97,7 @@ class CouponsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def coupon_params
       params.require(:coupon).permit(:c_title, :c_link, :c_image, :c_source, :c_hashtag, :c_promocode, :c_rating, :c_review_count, 
-                                     :c_is_price, :c_was_price, :c_pct, :c_description, :c_spare_56)
+                                     :c_is_price, :c_was_price, :c_pct, :c_description, :c_spare_56, :c_spare_57)
     end
   
 end
