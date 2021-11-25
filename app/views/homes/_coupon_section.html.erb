@@ -7,7 +7,8 @@
           <div class=" card [ is-collapsed ] ">
             <div class="card__inner [ js-expander ]">
               <div class="image_box">
-                <img src="<%= coupon.c_image %>" alt="<%= coupon.c_title %>" />
+                <!-- <img src="<%= coupon.c_image %>" alt="<%= coupon.c_title %>" /> -->
+                <%= link_to image_tag(coupon.c_image, alt: coupon.c_title, title: coupon.c_title), coupon %>
               </div>
               <div class="inner">
                 <p><%= coupon.c_title %></p>
@@ -34,10 +35,10 @@
                 <% end %>
 
               </div>
-              <em class="fa fa-folder-o"></em>
+              <!-- <em class="fa fa-folder-o"></em> -->
             </div>
 
-            <div class="card__expander">
+            <!-- <div class="card__expander">
               <i class="fa fa-close [ js-collapser ]"></i>
 
               <div class="left">
@@ -100,28 +101,11 @@
                   <p>Apply codes at checkout with a single click.</p>
                   <a target="_blank" href="<%= coupon.c_link %>">Accept an offer</a>
                 </div>
-              </div><!-- left -->
+              </div> -->
 
-              <div class="right">
-                <script type="text/javascript">
-                amzn_assoc_placement = "adunit0";
-                amzn_assoc_tracking_id = "3628-20";
-                amzn_assoc_ad_mode = "search";
-                amzn_assoc_ad_type = "smart";
-                amzn_assoc_marketplace = "amazon";
-                amzn_assoc_region = "US";
-                amzn_assoc_default_search_phrase = "<%= coupon.c_title %>";
-                amzn_assoc_default_category = "All";
-                amzn_assoc_linkid = "39e9aa3ca8ca9df980c22e602066352e";
-                amzn_assoc_search_bar = "false";
-                amzn_assoc_search_bar_position = "top";
-                amzn_assoc_title = "Shop Related Products";
-                amzn_assoc_rows = "1";
-                </script>
-                <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
-              </div> <!-- right -->
-              <em class="close [ js-collapser ]">Less</em>
-            </div>
+              
+              <!-- <em class="close [ js-collapser ]">Less</em> -->
+            <!-- </div> -->
 
           </div>
         <% end %>
@@ -133,4 +117,3 @@
 
   </div>
 </div>
-<%= javascript_pack_tag 'expanding' %>
