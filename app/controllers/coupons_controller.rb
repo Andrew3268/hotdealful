@@ -9,7 +9,7 @@ class CouponsController < ApplicationController
       @search_term = params[:search]
       @coupons = @coupons.search_by(@search_term)
     end
-    @coupons = Coupon.most_hit(1.day.ago, 10)
+    @coupons_top = Coupon.most_hit(1.day.ago, 10)
   end
 
   # GET /coupons/1 or /coupons/1.json

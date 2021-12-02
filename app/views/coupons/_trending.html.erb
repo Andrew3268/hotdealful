@@ -2,11 +2,11 @@
 <main>
   <input id="tab1" type="radio" name="tabs" checked>
   <label for="tab1">Popular Coupons Top 10</label>
-  <input id="tab2" type="radio" name="tabs">
-  <label for="tab2">Popular Deals Top 10</label>
+  <!-- <input id="tab2" type="radio" name="tabs">
+  <label for="tab2">Popular Deals Top 10</label> -->
 
   <section id="content1" class="trend_comm clearfix">
-    <% @coupons.each do |coupon| %>
+    <% @coupons_top.each do |coupon| %>
       <% if coupon.c_spare_56 == 11111 %>
         <div class="coupon_card clearfix">
           <div class=img_box>
@@ -23,7 +23,7 @@
   </section>
 
   <section id="content2" class="trend_comm clearfix">
-    <% @coupons.each do |deals| %>
+    <% @coupons_top.each do |deals| %>
       <% if deals.c_spare_56 == 22222 %>
         <div class="coupon_card clearfix">
           <div class=img_box>
