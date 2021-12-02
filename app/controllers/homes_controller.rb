@@ -5,9 +5,7 @@ class HomesController < ApplicationController
   # GET /homes or /homes.json
   def index
     @homes = Home.all.order("created_at DESC")
-    @coupons = Coupon.all.order("created_at DESC").limit(10)
-    @coupons_top = Coupon.most_hit(1.day.ago, 10)
-    @deals_top = Coupon.most_hit(1.day.ago, 10)
+    @coupons = Coupon.all.order("created_at DESC").limit(40)
   end
 
   # GET /homes/1 or /homes/1.json
