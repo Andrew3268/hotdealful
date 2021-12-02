@@ -1,6 +1,7 @@
-/* Coupon Section */
-.trending{border:2px solid #70b7b5;border-radius:20px;padding:20px;}
-.trending section{display:none;padding:20px 0 0;border-top:1px solid #ddd}
+/* Coupon Section ***************************************************************/
+.trending_box{margin-bottom:50px;}
+.trending{}
+.trending section{display:none;padding:20px 0;border-top:1px solid #ddd}
 .trending input{display:none}
 .trending label{display:inline-block;margin:0 0 -1px;padding:15px 25px;font-weight:600;text-align:center;color:#bbb;border:1px solid transparent}
 .trending label:before{font-family:fontawesome;font-weight:400;margin-right:10px}
@@ -9,106 +10,57 @@
 .trending input:checked+label{color:#555;border:1px solid #ddd;border-top:5px solid #70b7b5;border-bottom:1px solid #fff}
 #tab1:checked~#content1,#tab2:checked~#content2{display:block}
 
-.trending p{padding:5px 15px;}
-.trending span.trend_title{width:400px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:inline-block;vertical-align:bottom;margin-right:10px;}
+.trending .trend_comm .coupon_card{float:left;width:50%;margin-bottom:10px;border-right:1px solid #ccc;border-left:1px solid #ccc;padding:0 10px;}
+.trending .trend_comm .coupon_card .img_box{float:left;width:60%;}
+.trending .trend_comm .coupon_card .inner{float:left;width:33%;margin-left:2%;}
+.trending .trend_comm .coupon_card .inner span.trend_title{font-size:17px;}
+.trending .trend_comm .coupon_card .inner em.pricing{}
+.trending .trend_comm .coupon_card .inner span.is_price{}
+.trending .trend_comm .coupon_card .inner span.was_price{}
+.trending .trend_comm .coupon_card .inner span.pct{}
+.trending span.trend_title{width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:inline-block;vertical-align:bottom;margin-right:10px;}
 .trending em.pricing{}
 .trending span.is_price{}
 .trending span.was_price{color:#ccc;text-decoration:line-through;margin:0 5px;}
-.trending span.pct{font-weight:bold;color:#70b7b5;}
+.trending span.pct{font-weight:bold;color:#fff;background:#70b7b5;border-radius:15px;padding:3px 5px;}
 
 @media screen and (max-width:640px){
-  .trending{padding:10px;}
   .trending input:checked + label{width:50%;}
-  .trending p{padding:2px;}
-  .trending span.trend_title{width:50%;}
+  .trending section{padding:20px 5px;}
+  .trending .trend_comm .coupon_card{float:none;width:100%;margin:0 0 7px 0;border:none;padding:0;}
+  .trending .trend_comm .coupon_card .img_box{float:left;width:68%;}
+  .trending .trend_comm .coupon_card .inner{float:left;width:30%;margin-left:2%;}
+  .trending .trend_comm .coupon_card .inner span.is_price{margin-right:5px;}
+  .trending .trend_comm .coupon_card .inner span.was_price{display:none;}
+  .trending span.pct{font-size:11px;padding:3px 5px;}
+  .trending label{font-size:12px;padding:10px;}
+  .trending label:before{margin: 0;font-size: 18px;}
 }
 
 @media screen and (min-width:641px) and (max-width:1199px){
-
+  .trending .trend_comm .coupon_card{float:none;width:100%;margin:0 0 7px 0;border:none;padding:0;}
 }
 
-@media screen and (max-width: 650px) {
-  .trending label {
-    font-size: 10px;
-  }
-  .trending label:before {
-    margin: 0;
-    font-size: 18px;
-  }
-}
 
 @media screen and (max-width: 400px) {
-  .trending label {
-    padding:7px;
-  }
+  .trending label{padding:7px;}
 }
 
 
-/* Deals Section */
-.deals_box{
-width:1200px;
-height:100%;
-white-space:nowrap;
-overflow-x:scroll;
-}
+/* Deals Section ***************************************************************/
+.deals_box{width:1200px;height:100%;}
 .deals_box a{}
 .deals_box img{width:300px;height:250px;margin:0 5px;border-radius:20px;}
 
+.deals_box .owl-carousel .owl-stage-outer{height:330px;}
 
-
-
-
-
-@charset "utf-8";
-
-/******* Fonts Import Start **********/
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
-/********* Fonts Face CSS End **********/
-
-/******* Common Element CSS Start ******/
-/** {
-  margin: 0px;
-  padding: 0px;
-}
-body {
-  font-family: "Roboto", sans-serif;
-  font-size: 16px;
-}
-.clear {
-  clear: both;
-}
-img {
-  max-width: 100%;
-  border: 0px;
-}
-ul,
-ol {
-  list-style: none;
-}
-a {
-  text-decoration: none;
-  color: inherit;
-  outline: none;
-  transition: all 0.4s ease-in-out;
-  -webkit-transition: all 0.4s ease-in-out;
-}
-a:focus,
-a:active,
-a:visited,
-a:hover {
-  text-decoration: none;
-  outline: none;
-}
-a:hover {
-  color: #e73700;
-}
-*/
-/******* Common Element CSS End *********/
 
 /* -------- title style ------- */
 .line-title {
   position: relative;
   width: 400px;
+  padding-bottom:10px;
+
 }
 .line-title::before,
 .line-title::after {
@@ -131,7 +83,7 @@ a:hover {
 /******* Middle section CSS Start ******/
 /* -------- Landing page ------- */
 .game-section {
-  padding: 60px 50px;
+  padding:30px 10px;
 }
 .game-section .owl-stage {
   margin: 15px 0;
@@ -140,8 +92,8 @@ a:hover {
 }
 .game-section .item {
   margin: 0 15px 60px;
-  width: 320px;
-  height: 400px;
+  width:300px;
+  height:300px;
   display: flex;
   display: -webkit-flex;
   align-items: flex-end;
@@ -154,11 +106,7 @@ a:hover {
   -webkit-transition: all 0.4s ease-in-out;
   cursor: pointer;
 }
-/*.game-section .item.active {
-  width: 500px;
-  box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
-  -webkit-box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
-}*/
+
 .game-section .item:after {
   content: "";
   display: block;
@@ -167,54 +115,25 @@ a:hover {
   width: 100%;
   left: 0;
   top: 0;
-  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
 }
-.game-section .item-desc {
-  padding: 0 24px 12px;
-  color: #fff;
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-  transform: translateY(calc(100% - 54px));
-  -webkit-transform: translateY(calc(100% - 54px));
-  transition: all 0.4s ease-in-out;
-  -webkit-transition: all 0.4s ease-in-out;
-}
-.game-section .item.active .item-desc {
-  transform: none;
-  -webkit-transform: none;
-}
-.game-section .item-desc p {
-  opacity: 0;
-  -webkit-transform: translateY(32px);
-  transform: translateY(32px);
-  transition: all 0.4s ease-in-out 0.2s;
-  -webkit-transition: all 0.4s ease-in-out 0.2s;
-}
-.game-section .item.active .item-desc p {
-  opacity: 1;
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
-}
+
 .game-section .owl-theme.custom-carousel .owl-dots {
   margin-top: -20px;
   position: relative;
   z-index: 5;
 }
-/******** Middle section CSS End *******/
 
-/***** responsive css Start ******/
+@media screen and (max-width:640px){
+  .deals_box{width:100%;margin:0;}
+  .game-section{padding:0;}
+}
+
+@media screen and (min-width:641px) and (max-width:1199px){
+  .deals_box{width:100%;margin:0;}
+}
 
 @media (min-width: 992px) and (max-width: 1199px) {
-  /*h2 {
-    margin-bottom: 32px;
-  }
-  h3 {
-    margin: 0 0 8px;
-    font-size: 24px;
-    line-height: 32px;
-  }*/
-
+  
   /* -------- Landing page ------- */
   .game-section {
     padding: 50px 30px;
@@ -224,79 +143,37 @@ a:hover {
     width: 260px;
     height: 360px;
   }
-  .game-section .item.active {
-    width: 400px;
-  }
-  .game-section .item-desc {
-    transform: translateY(calc(100% - 46px));
-    -webkit-transform: translateY(calc(100% - 46px));
-  }
+  
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  /*h2 {
-    margin-bottom: 32px;
-  }
-  h3 {
-    margin: 0 0 8px;
-    font-size: 24px;
-    line-height: 32px;
-  }*/
+  
   .line-title {
     width: 330px;
   }
 
   /* -------- Landing page ------- */
   .game-section {
-    padding: 50px 30px 40px;
+    padding:30px 0;
   }
   .game-section .item {
     margin: 0 12px 60px;
     width: 240px;
     height: 330px;
   }
-  .game-section .item.active {
-    width: 360px;
-  }
-  .game-section .item-desc {
-    transform: translateY(calc(100% - 42px));
-    -webkit-transform: translateY(calc(100% - 42px));
-  }
+  
 }
 
 @media (max-width: 767px) {
-  /*body {
-    font-size: 14px;
-  }
-  h2 {
-    margin-bottom: 20px;
-  }
-  h3 {
-    margin: 0 0 8px;
-    font-size: 19px;
-    line-height: 24px;
-  }*/
   .line-title {
-    width: 250px;
+    width: 270px;
+    font-size:17px;
   }
 
   /* -------- Landing page ------- */
-  .game-section {
-    padding: 30px 15px 20px;
-  }
   .game-section .item {
     margin: 0 10px 40px;
-    width: 200px;
-    height: 280px;
-  }
-  .game-section .item.active {
     width: 270px;
-    box-shadow: 6px 10px 10px rgba(0, 0, 0, 0.25);
-    -webkit-box-shadow: 6px 10px 10px rgba(0, 0, 0, 0.25);
-  }
-  .game-section .item-desc {
-    padding: 0 14px 5px;
-    transform: translateY(calc(100% - 42px));
-    -webkit-transform: translateY(calc(100% - 42px));
+    height: 270px;
   }
 }

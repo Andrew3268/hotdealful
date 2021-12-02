@@ -1,6 +1,6 @@
 <div class="wrap">  
   <div class="index_wrapper">
-    
+    <h2 class="line-title">New Coupon Codes</h2>
     <div class="cards">
       <% @coupons.each do |coupon| %>
         <% if coupon.c_spare_56 == 11111 %>
@@ -11,6 +11,7 @@
                 <%= link_to image_tag(coupon.c_image, alt: coupon.c_title, title: coupon.c_title), coupon %>
               </div>
               <div class="inner">
+                <% if current_user && current_user.admin %><p>View: <%= coupon.hits %></p><% end %>
                 <p><%= coupon.c_title %></p>
                 <% if coupon.c_promocode.present? %>
                   <% promocode_price = 0 %>

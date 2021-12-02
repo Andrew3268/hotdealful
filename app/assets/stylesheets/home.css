@@ -1,22 +1,21 @@
-.main_hero{width:1200px;margin:0 auto;}
-.main_hero img{width:1200px;}
+.main_hero{width:1200px;margin:0 auto;padding:10px;}
+.main_hero .hero_pc img{width:1200px;border-radius:20px;}
 .main_hero .hero_pc{position:relative;}
 .main_hero .hero_pc a{position:absolute;bottom:20px;right:50px;color:#70b7b5;font-size:20px;border-top:1px solid #70b7b5;border-bottom:1px solid #70b7b5;}
-.main_hero .hero_mobile{display:none;position:relative;}
-.main_hero .hero_mobile a{position:absolute;bottom:15px;right:20px;color:#404141;font-size:15px;border-top:1px solid #404141;border-bottom:1px solid #404141;}
+.main_hero .hero_mobile{display:none;position:relative;padding:10px;}
+.main_hero .hero_mobile img{border-radius:20px;}
+.main_hero .hero_mobile a{position:absolute;bottom:40px;right:20px;color:#404141;font-size:15px;background:#70b7b5;font-size:11px;border-radius:15px;padding:3px 10px;}
 
 @media screen and (max-width:640px){
   .main_hero{width:100%;}
   .main_hero img{width:100%;}
 }
 
-
-
-
+.coupon_box{margin:70px 0 0 0;}
 .home_in_coupon, .admin_panel{width:1200px;margin:0 auto;overflow:hidden;}
 .admin_panel a{color:#fff;background:#08f;padding:10px;border-radius:20px;}
 .coupon_header{margin:30px auto 20px auto;text-align:center;font-size:30px;width:50%;display:block;border:1px solid;border-radius:20px;padding:5px 10px;}
-.ctn_more{background:#08f;color:#fff;font-size:20px;text-align:center;padding:10px 20px;border-radius:20px;width:15%;display:block;margin:15px auto 0 auto;}
+.ctn_more{background:#08f;color:#fff;font-size:20px;text-align:center;padding:10px 20px;border-radius:20px;width:15%;display:block;margin:15px auto 0 auto;margin-bottom:70px;}
 .deal_header{margin:100px auto 20px auto;text-align:center;font-size:30px;width:50%;display:block;border:1px solid;border-radius:20px;padding:5px 10px;}
 /* Form */
 .sub_form{margin:20px 0;}
@@ -59,7 +58,7 @@
   .home_wrap .card .right{float:none;width:100%;margin:0;}
   .home_wrap .card .m_btn{display:block;width:90%;color:#fff;background:#08f;text-align:center;font-size:25px;margin:20px 5% 0 5%;border-radius:20px;padding:10px;}
   .home_wrap .card .fab{display:none;}
-  .ctn_more{width:40%;margin-top:40px;}
+  .ctn_more{width:40%;margin-top:40px;margin-bottom:70px;}
   .home_wrap .card .right .products .inner span{font-size:17px;}
   .home_wrap .card .right .products .inner span em{font-size:15px;}
   .home_wrap .card .right .products .inner span strong{font-size:15px;}
@@ -67,6 +66,8 @@
 
 
 @media screen and (min-width:641px) and (max-width:1199px){
+  .main_hero{width:100%;padding:10px;}
+  .main_hero .hero_pc img{width:100%;border-radius:20px;}
   .home_in_coupon, .admin_panel{width:100%;}
   .home_wrap .card{width:100%;margin:80px 0 150px 0;height:900px;}
   .home_wrap .card .thumbnail{float:none;width:85%;margin:0 auto;left:0;}
@@ -74,11 +75,8 @@
   .home_wrap .card .main_title h2{font-size:30px;}
   .home_wrap .card .main_title p{font-size:15px;}
   .home_wrap .card .right{float:none;width:100%;margin:0;}
-  .ctn_more{width:30%;}
+  .ctn_more{width:30%;margin-bottom:70px;}
 }
-
-
-
 
 
 .deal_box{}

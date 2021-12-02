@@ -7,7 +7,8 @@
 
     <div class="where-hashtag">
       <% if params[:name].present? %>
-        <p><span class="hashtag-through">#<%= params[:name] %></span></p>
+        <h2 class="line-title">#<%= params[:name] %></h2>
+        <!-- <p><span class="hashtag-through">#<%= params[:name] %></span></p> -->
       <% end %>
     </div>
 
@@ -19,6 +20,7 @@
                 <%= link_to image_tag(coupon.c_image, alt: coupon.c_title, title: coupon.c_title), coupon %>
               </div>
               <div class="inner">
+                <% if current_user && current_user.admin %><p>View: <%= coupon.hits %></p><% end %>
                 <p><%= coupon.c_title %></p>
                 <% if coupon.c_promocode.present? %>
                   <% promocode_price = 0 %>

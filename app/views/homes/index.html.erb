@@ -3,12 +3,12 @@
 <div class="main_hero">
   <div class="hero_pc">
     <img src="<%=asset_path 'hero.png' %>" alt="Amazon Coupons" %>
+    <a target="_blank" href="https://amzn.to/3bvvCbX">More Clipping Coupons</a>
   </div>
   <div class="hero_mobile">
-    <img src="<%=asset_path 'hero_m.png' %>" alt="Amazon Coupons" %>
+    <img src="<%=asset_path 'hero_200.png' %>" alt="Amazon Coupons" %>
+    <a target="_blank" href="https://amzn.to/3bvvCbX">More Clipping Coupons</a>
   </div>
-</div>
-<!-- < render 'shared/hero' > -->
 
   <% if current_user && current_user.admin %>
     <div class="admin_panel">
@@ -20,12 +20,27 @@
       <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
     </div>  
   <% end %>
+</div>
 
-  <em class="coupon_header">Promotion Coupons</em>
+<!-- <div class="index_wrapper">
+  <div class="wrap">
+    <div class="deals_box"><%= render '/coupons/online_deals' %></div>
+  </div>
+</div> -->
+
+<div class="trending_box">
+  <div class="index_wrapper">
+    <div class="wrap">
+      <h2 class="line-title">Most Popular Coupons & Deals</h2>
+      <br>
+      <div class="trending"><%= render '/coupons/trending' %></div>
+    </div>
+  </div>
+</div>
+
+
+<div class="coupon_box">
   <%= render 'homes/coupon_section' %>
-  <a class="ctn_more" href="/coupons/chashtag/promotion_coupons">+ More</a>
-
-
-  <em class="deal_header">Hotdeal Top 5</em>
-  <%= render 'homes/new_deal' %>
+  <a class="ctn_more" href="/coupons/chashtag/promotion_coupons">More +</a>
+</div>
 
