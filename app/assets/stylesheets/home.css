@@ -1,4 +1,4 @@
-.main_hero{width:1200px;margin:0 auto;padding:10px;}
+.main_hero{width:1200px;margin:0 auto;padding:10px 0;}
 .main_hero .hero_pc img{width:1200px;border-radius:20px;}
 .main_hero .hero_pc{position:relative;}
 .main_hero .hero_pc a{position:absolute;bottom:20px;right:50px;color:#70b7b5;font-size:20px;border-top:1px solid #70b7b5;border-bottom:1px solid #70b7b5;}
@@ -11,7 +11,7 @@
   .main_hero img{width:100%;}
 }
 
-.coupon_box{margin:70px 0 0 0;}
+/*.coupon_box{margin:70px 0 0 0;}*/
 .home_in_coupon, .admin_panel{width:1200px;margin:0 auto;overflow:hidden;}
 .admin_panel a{color:#fff;background:#08f;padding:10px;border-radius:20px;}
 .coupon_header{margin:30px auto 20px auto;text-align:center;font-size:30px;width:50%;display:block;border:1px solid;border-radius:20px;padding:5px 10px;}

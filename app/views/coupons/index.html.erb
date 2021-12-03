@@ -5,11 +5,7 @@
     <img src="<%=asset_path 'hero.png' %>" alt="Amazon Coupons" %>
     <a target="_blank" href="https://amzn.to/3bvvCbX">More Clipping Coupons</a>
   </div>
-  <div class="hero_mobile">
-    <img src="<%=asset_path 'hero_m.png' %>" alt="Amazon Coupons" %>
-    <a target="_blank" href="https://amzn.to/3bvvCbX">More Clipping Coupons</a>
-  </div>
-
+  
   <% if current_user && current_user.admin %>
     <div class="admin_panel">
       <%= link_to 'New Coupon', new_coupon_path %>

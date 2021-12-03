@@ -22,11 +22,13 @@
   <% end %>
 </div>
 
-<!-- <div class="index_wrapper">
-  <div class="wrap">
-    <div class="deals_box"><%= render '/coupons/online_deals' %></div>
+<% if current_user && current_user.admin %>
+  <div class="index_wrapper">
+    <div class="wrap">
+      <div class="deals_box"><%= render '/coupons/online_deals' %></div>
+    </div>
   </div>
-</div> -->
+<% end %>
 
 <div class="trending_box">
   <div class="index_wrapper">
