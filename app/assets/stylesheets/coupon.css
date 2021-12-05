@@ -1,5 +1,5 @@
 /* Coupon Section ***************************************************************/
-.trending_box{margin:35px 0 50px 0;}
+.trending_box{margin:0 0 40px 0;}
 .trending{}
 .trending section{display:none;padding:20px 0;border-top:1px solid #ddd}
 .trending input{display:none}
@@ -25,6 +25,7 @@
 .trending span.pct{font-weight:bold;color:#fff;background:#70b7b5;border-radius:15px;padding:3px 5px;}
 
 @media screen and (max-width:640px){
+  .trending_box{margin-top:30px;}
   .trending input:checked + label{width:50%;}
   .trending section{padding:20px 5px;}
   .trending .trend_comm .coupon_card{float:none;width:100%;margin:0 0 7px 0;border:none;padding:0;}
