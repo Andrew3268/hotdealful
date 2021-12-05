@@ -63,7 +63,7 @@
 
 /******* Middle section CSS Start ******/
 /* -------- Landing page ------- */
-.game-section{padding:30px 10px}
+.game-section{padding:30px 0;}
 .game-section .owl-stage{margin:15px 0;display:flex;display:-webkit-flex}
 .game-section img.item{margin: 0 15px 60px;width:300px;height:200px;}
 .game-section .item{margin:0 15px 60px;width:300px;height:200px;display:flex;display:-webkit-flex;align-items:flex-end;-webkit-align-items:flex-end;background:#343434 no-repeat center center/cover;border-radius:16px;overflow:hidden;position:relative;transition:all .4s ease-in-out;-webkit-transition:all .4s ease-in-out;cursor:pointer}
@@ -73,6 +73,8 @@
 @media screen and (max-width:640px){
   .deals_box{width:100%;margin:0;}
   .game-section{padding:0;}
+  .game-section img.item{width:270px;height:170px;margin:0 7px 10px;}
+  .deals_box .owl-carousel .owl-stage-outer{height:230px;}
 }
 
 @media screen and (min-width:641px) and (max-width:1199px){
