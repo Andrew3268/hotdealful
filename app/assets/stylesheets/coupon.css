@@ -90,6 +90,9 @@
   display: flex;
   display: -webkit-flex;
 }
+
+.game-section img.item{margin: 0 15px 60px;width:300px;height:200px;}
+
 .game-section .item {
   margin: 0 15px 60px;
   width:300px;
