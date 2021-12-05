@@ -24,10 +24,10 @@
 @media screen and (max-width:640px){
   .main_hero .hero_pc{display:none;}
   .main_hero .hero_mobile{display:block;}
-
   .home_in_coupon, .admin_panel{width:100%;}
   .coupon_header, .deal_header{width:60%;font-size:20px;}
   .deal_header{margin-top:50px;}
+  .ctn_more{width:40px;}
 }
 
 
