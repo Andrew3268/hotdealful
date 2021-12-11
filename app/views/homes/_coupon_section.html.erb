@@ -13,17 +13,27 @@
               <div class="inner">
                 
                 <% if coupon.c_rating.present? %>
-                  <div class="ratings_box">
+                 <!-- <div class="ratings_box">
                     <span class="rating">
-                      <img src="<%=asset_path 'rating.png' %>"><%= coupon.c_rating %>
+                      <img src="<%=asset_path 'rating.png' %>"><p><%= coupon.c_rating %></p>
                     </span>
                     <span class="review">
-                      <img src="<%=asset_path 'review.png' %>"><%= coupon.c_review_count %> +
+                      <img src="<%=asset_path 'review.png' %>"><p><%= coupon.c_review_count %> +<p>
                     </span>
                     <% if current_user && current_user.admin %>
                       <span class="view">
                         <img src="<%=asset_path 'view.png' %>"><%= coupon.hits %>
                       </span>
+                    <% end %>
+                  </div> -->
+                <% end %>
+
+                <% if coupon.c_rating.present? %>
+                  <div class="ratings_box">
+                    <span class="rating">Rating: <%= coupon.c_rating %></span>
+                    <span class="review">Review: <%= coupon.c_review_count %> +</span>
+                    <% if current_user && current_user.admin %>
+                      <span class="view"><%= coupon.hits %></span>
                     <% end %>
                   </div>
                 <% end %>

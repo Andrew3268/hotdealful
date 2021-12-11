@@ -24,7 +24,7 @@
 .trending em.pricing{}
 .trending span.is_price{}
 .trending span.was_price{color:#ccc;text-decoration:line-through;margin:0 5px;}
-.trending span.pct{font-weight:bold;color:#fff;background:#70b7b5;border-radius:15px;padding:3px 5px;}
+.trending span.pct{font-weight:bold;color:#000;/*background:#70b7b5*/;border-radius:15px;padding:3px 5px;border:2px solid;}
 
 #profile-description .show-more{display:none;}
 
@@ -45,7 +45,7 @@
   .trending label:before{margin: 0;font-size: 18px;}
   #profile-description .show-more{display:block;}
   #profile-description .show-more{background:#08f;color:#fff;position:relative;font-size:13px;text-align:center;cursor:pointer;padding:5px 10px;border-radius:20px;width:50%;margin:20px auto 0 auto;}
-  #profile-description .show-more-height{height:130px;overflow:hidden}
+  #profile-description .show-more-height{height:130px;overflow:hidden;padding:5px 0;}
 }
 
 @media screen and (min-width:641px) and (max-width:1199px){

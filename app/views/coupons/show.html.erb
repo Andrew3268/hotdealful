@@ -23,7 +23,8 @@
             <% end %>
             <% if @coupon.c_rating.present? %>
               <div class="rating_box">
-                <span><img src="<%=asset_path 'rating.png' %>"><%= @coupon.c_rating %> <img class="review_img" src="<%=asset_path 'review.png' %>"><%= @coupon.c_review_count %> +</span>  
+                <!-- <span><img src="<%=asset_path 'rating.png' %>"><p><%= @coupon.c_rating %></p> <img class="review_img" src="<%=asset_path 'review.png' %>"><p><%= @coupon.c_review_count %> +</p></span>   -->
+                <p>Rating: <span><%= @coupon.c_rating %></span></p><p>Reviews: <span><%= @coupon.c_review_count %>+</span></p>
               </div>            
             <% end %>
           </h2>
@@ -60,7 +61,8 @@
             </h2>
             <% if @coupon.c_rating.present? %>
               <div class="rating_box">
-                <span><img src="<%=asset_path 'rating.png' %>"><%= @coupon.c_rating %><img class="review_img" src="<%=asset_path 'review.png' %>"><%= @coupon.c_review_count %> +</span>  
+                <!-- <span><img src="<%=asset_path 'rating.png' %>"><%= @coupon.c_rating %><img class="review_img" src="<%=asset_path 'review.png' %>"><%= @coupon.c_review_count %> +</span>   -->
+                <p>Rating: <span><%= @coupon.c_rating %></span></p><p>Reviews: <span><%= @coupon.c_review_count %>+</span></p>
               </div>            
             <% end %>
           </div>
