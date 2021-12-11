@@ -262,13 +262,17 @@
   /*.card{margin:0;}*/
   .card__inner{padding:0;}
   .card__inner .image_box{height:170px;}
-  .card__inner .image_box img{width:80%;height:80%;padding:10px;}  
+  .card__inner .image_box img{width:80%;height:80%;padding:20px 10px 10px 10px;}  
   .card__inner .inner p{margin:5px 0 7px 0;}
   .card__inner .inner em span.pct{position:absolute;top:0;left:0;}
   .card__inner .inner .ratings_box{font-size:11px;}
   .card__expander .left{float:none;width:100%;margin:0;}
   .card__expander .right{float:none;width:100%;margin:25px 0 0 0;}
   .card__expander, .card__expander .close{display:block;}
+}
+
+@media screen and (min-width:641px) and (max-width:1199px){
+  .card__inner .image_box img{width:80%;height:80%;padding:10px;}  
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
