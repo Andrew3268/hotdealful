@@ -1,34 +1,33 @@
-<% if current_user && current_user.admin %>
-  <header><%= render 'shared/header_index' %></header>
 
-  <div class="deals_wrap"> <br/>
-    <div class="wrap">
+<header><%= render 'shared/header_index' %></header>
 
-        <div class="d_crad_box clearfix">
+<div class="deals_wrap"> <br/>
+  <div class="wrap">
 
-           <% @deals.each do |deal| %>
-                <a target="_blank" href="<%= deal.d_link %>">
-                  <div class="d_card">
-                    <div class="img_box">
-                      <img src="<%= deal.d_image %>" alt="<%= deal.d_title %>">
-                    </div>
-                    <div class="inner">
-                      <span>By <%= deal.d_source %></span>
-                      <p><%= deal.d_title %></p>
-                      <em><%= number_to_currency(deal.d_price) %></em>
-                      <% if current_user && current_user.admin %>
-                        <div class="admin">
-                          <%= link_to 'Edit', edit_deal_path(deal) %>
-                          <%= link_to 'Destroy', deal, method: :delete, data: { confirm: 'Are you sure?' } %>
-                        </div>
-                      <% end %>
-                    </div>
+      <div class="d_crad_box clearfix">
+
+         <% @deals.each do |deal| %>
+              <a target="_blank" href="<%= deal.d_link %>">
+                <div class="d_card">
+                  <div class="img_box">
+                    <img src="<%= deal.d_image %>" alt="<%= deal.d_title %>">
                   </div>
-                </a>
-            <% end %>
-          
-       </div>
-          
-    </div>
+                  <div class="inner">
+                    <span>By <%= deal.d_source %></span>
+                    <p><%= deal.d_title %></p>
+                    <em><%= number_to_currency(deal.d_price) %></em>
+                    <% if current_user && current_user.admin %>
+                      <div class="admin">
+                        <%= link_to 'Edit', edit_deal_path(deal) %>
+                        <%= link_to 'Destroy', deal, method: :delete, data: { confirm: 'Are you sure?' } %>
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
+              </a>
+          <% end %>
+        
+     </div>
+        
   </div>
-<% end %>
+</div>
