@@ -261,6 +261,7 @@
   .index_wrapper .cards{padding:0;margin:0;}
   /*.card{margin:0;}*/
   .card__inner{padding:0;}
+  .card__inner .image_box{height:170px;}
   .card__inner .image_box img{width:80%;height:80%;padding:10px;}  
   .card__inner .inner p{margin:5px 0 7px 0;}
   .card__inner .inner em span.pct{position:absolute;top:0;left:0;}
