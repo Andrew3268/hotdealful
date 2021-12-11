@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_many :coupons
   has_many :picks
   has_many :homes
+  has_many :deals
 end

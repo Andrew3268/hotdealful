@@ -1,3 +1,4 @@
+.coupon_box{margin-top:30px;}
 /* Coupon Section ***************************************************************/
 .trending_box{margin:0 0 40px 0;}
 .trending{}
@@ -12,20 +13,39 @@
 
 .trending .trend_comm .coupon_card{float:left;width:50%;margin-bottom:10px;border-right:1px solid #ccc;border-left:1px solid #ccc;padding:0 10px;}
 .trending .trend_comm .coupon_card .img_box{float:left;width:60%;}
-.trending .trend_comm .coupon_card .inner{float:left;width:33%;margin-left:2%;}
+.trending .trend_comm .coupon_card .inner{float:left;width:38%;margin-left:2%;text-align:center;}
 .trending .trend_comm .coupon_card .inner span.trend_title{font-size:17px;}
 .trending .trend_comm .coupon_card .inner em.pricing{}
 .trending .trend_comm .coupon_card .inner span.is_price{}
 .trending .trend_comm .coupon_card .inner span.was_price{}
 .trending .trend_comm .coupon_card .inner span.pct{}
+.trending .trend_comm .coupon_card .inner .view{font-size:10px;}
 .trending span.trend_title{width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:inline-block;vertical-align:bottom;margin-right:10px;}
 .trending em.pricing{}
 .trending span.is_price{}
 .trending span.was_price{color:#ccc;text-decoration:line-through;margin:0 5px;}
 .trending span.pct{font-weight:bold;color:#fff;background:#70b7b5;border-radius:15px;padding:3px 5px;}
 
+
+#profile-description .show-more {
+  color: #777; 
+  position:relative; 
+  font-size: 12px; 
+  padding-top: 5px; 
+  height: 20px; 
+  text-align: center; 
+  /*background: #f1f1f1; */
+  cursor: pointer;
+  display:none;
+}
+
+#profile-description .show-more-height { 
+  height: 130px; 
+  overflow:hidden; 
+}
+
 @media screen and (max-width:640px){
-  .trending_box{margin-top:30px;}
+  .trending_box{margin-top:20px;}
   .trending input:checked + label{width:50%;}
   .trending section{padding:20px 5px;}
   .trending .trend_comm .coupon_card{float:none;width:100%;margin:0 0 7px 0;border:none;padding:0;}
@@ -33,9 +53,11 @@
   .trending .trend_comm .coupon_card .inner{float:left;width:30%;margin-left:2%;}
   .trending .trend_comm .coupon_card .inner span.is_price{margin-right:5px;}
   .trending .trend_comm .coupon_card .inner span.was_price{display:none;}
+  .trending .trend_comm .coupon_card .inner .view{display:none;}
   .trending span.pct{font-size:11px;padding:3px 5px;}
   .trending label{font-size:12px;padding:10px;}
   .trending label:before{margin: 0;font-size: 18px;}
+  #profile-description .show-more{display:block;}
 }
 
 @media screen and (min-width:641px) and (max-width:1199px){
@@ -63,18 +85,19 @@
 
 /******* Middle section CSS Start ******/
 /* -------- Landing page ------- */
-.game-section{padding:30px 0;}
+.game-section{padding:0;}
 .game-section .owl-stage{margin:15px 0;display:flex;display:-webkit-flex}
-.game-section img.item{margin: 0 15px 60px;width:300px;height:200px;}
+.game-section img.item{margin: 0 5px 60px;width:300px;height:200px;}
 .game-section .item{margin:0 15px 60px;width:300px;height:200px;display:flex;display:-webkit-flex;align-items:flex-end;-webkit-align-items:flex-end;background:#343434 no-repeat center center/cover;border-radius:16px;overflow:hidden;position:relative;transition:all .4s ease-in-out;-webkit-transition:all .4s ease-in-out;cursor:pointer}
 .game-section .item:after{content:"";display:block;position:absolute;height:100%;width:100%;left:0;top:0}
 .game-section .owl-theme.custom-carousel .owl-dots{margin-top:-20px;position:relative;z-index:5}
 
 @media screen and (max-width:640px){
-  .deals_box{width:100%;margin:0;}
+  .deals_box{width:100%;margin:0 0 0 0;}
   .game-section{padding:0;}
-  .game-section img.item{width:270px;height:170px;margin:0 7px 10px;}
-  .deals_box .owl-carousel .owl-stage-outer{height:230px;}
+  .game-section img.item{margin:0 7px 10px;}
+  .deals_box .owl-carousel .owl-stage-outer{height:225px;}
+  .game-section .owl-theme.custom-carousel .owl-dots{margin:0;}
 }
 
 @media screen and (min-width:641px) and (max-width:1199px){
@@ -96,3 +119,20 @@
   .line-title{width:270px;font-size:17px;}
   .game-section .item{margin: 0 10px;width:300px;height:200px;}
 }
+
+
+.hotdeals_wrap{margin-top:30px;}
+.hotdeals_wrap .owl-carousel .owl-stage-outer{padding:10px;}
+.hotdeals_wrap .card_box{width:200px;height:300px;position:relative;margin:10px;border-radius:20px;box-shadow:0px 0px 7px 6px rgba(0,0,0,0.09);padding:10px;}
+.hotdeals_wrap .card_box a{display:block;}
+.hotdeals_wrap .card_box a .img_box{height:150px;;position:relative;}
+.hotdeals_wrap .card_box a .img_box img.deal_img{width:100%;height:100%;border-radius:20px;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);margin-top:60px;object-fit:contain;}
+.hotdeals_wrap .card_box a .inner{margin-top:80px;text-align:center;}
+.hotdeals_wrap .card_box a .upto{position:absolute;top:15px;left:0;text-align:center;width:100%;line-height:1.2;font-weight:bold;font-size:22px;text-decoration:underline;}
+.hotdeals_wrap .card_box a .upto em.top{display:block;}
+.hotdeals_wrap .card_box a .upto em.bottom{}
+/*.hotdeals_wrap .card_box a .upto em.bottom span{color:#70b7b5;}*/
+.hotdeals_wrap .card_box .admin{position:absolute;bottom:5px;left:10px;}
+.hotdeals_wrap .card_box .admin a{display:inline-block;}
+
+

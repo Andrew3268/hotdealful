@@ -1,6 +1,6 @@
 <div class="wrap">  
   <div class="index_wrapper">
-    <h2 class="line-title">New Coupon Codes</h2>
+    <h2 class="line-title">New Coupon Deals</h2>
     <div class="cards">
       <% @coupons.each do |coupon| %>
         <% if coupon.c_spare_56 == 11111 %>
@@ -11,7 +11,23 @@
                 <%= link_to image_tag(coupon.c_image, alt: coupon.c_title, title: coupon.c_title), coupon %>
               </div>
               <div class="inner">
-                <% if current_user && current_user.admin %><p>View: <%= coupon.hits %></p><% end %>
+                
+                <% if coupon.c_rating.present? %>
+                  <div class="ratings_box">
+                    <span class="rating">
+                      <img src="<%=asset_path 'rating.png' %>"><%= coupon.c_rating %>
+                    </span>
+                    <span class="review">
+                      <img src="<%=asset_path 'review.png' %>"><%= coupon.c_review_count %> +
+                    </span>
+                    <% if current_user && current_user.admin %>
+                      <span class="view">
+                        <img src="<%=asset_path 'view.png' %>"><%= coupon.hits %>
+                      </span>
+                    <% end %>
+                  </div>
+                <% end %>
+
                 <p><%= coupon.c_title %></p>
                 <% if coupon.c_promocode.present? %>
                   <% promocode_price = 0 %>
@@ -113,8 +129,6 @@
       <% end %>
 
     </div>
-
-
 
   </div>
 </div>

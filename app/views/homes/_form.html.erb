@@ -4,14 +4,14 @@
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
     <div class="form-inputs">
-      <div class="basic_info"
+      <div class="basic_info">
         <%= f.input :main_title %>
         <%= f.input :main_description %>
         <%= f.input :main_image %>
         <%= f.input :main_link %>
         
 
-        <div class="sub_form">
+       <!--  <div class="sub_form">
           <p>HotDeal 01</p>
           <%= f.input :sub_image_01 %>
           <%= f.input :sub_title_01 %>
@@ -69,7 +69,7 @@
             <%= f.input :sub_was_price_05 %>
             <%= f.input :sub_pct_05 %>
           </div>
-        </div>
+        </div> -->
       </div>
 
     </div>

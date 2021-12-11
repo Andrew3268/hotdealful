@@ -5,20 +5,28 @@
   <label for="tab2">Popular Deals Top 10</label> -->
 
   <section id="content1" class="trend_comm clearfix">
-    <% @coupons_top.each do |coupon| %>
-      <% if coupon.c_spare_56 == 11111 %>
-        <div class="coupon_card clearfix">
-          <div class=img_box>
-            <span class="trend_title"><%= link_to coupon.c_title, coupon %></span>
-          </div>
-          <div class="inner">
-            <% promocode_price = 0 %>
-            <% promocode_price =  coupon.c_was_price.to_f - (coupon.c_pct.to_f / 100) * coupon.c_was_price.to_f %>
-            <em class="pricing"><span class="is_price"><%= number_to_currency(promocode_price) %></span><span class="was_price"><%= number_to_currency(coupon.c_was_price) %></span><span class="pct"><%= number_to_percentage(coupon.c_pct, precision: 0) %> off</span></em>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
+    <div id="profile-description">
+      <div class="text show-more-height">
+        <% @coupons_top.each do |coupon| %>
+          <% if coupon.c_spare_56 == 11111 %>
+            <div class="coupon_card clearfix">
+              <div class=img_box>
+                <span class="trend_title"><%= link_to coupon.c_title, coupon %></span>
+              </div>
+              <div class="inner">
+                <% promocode_price = 0 %>
+                <% promocode_price =  coupon.c_was_price.to_f - (coupon.c_pct.to_f / 100) * coupon.c_was_price.to_f %>
+                <em class="pricing"><span class="is_price"><%= number_to_currency(promocode_price) %></span><span class="was_price"><%= number_to_currency(coupon.c_was_price) %></span><span class="pct"><%= number_to_percentage(coupon.c_pct, precision: 0) %> off</span></em>
+                
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="show-more">(Show More)</div>
+    </div>
+      
+    
   </section>
 
   <section id="content2" class="trend_comm clearfix">
@@ -39,3 +47,17 @@
   </section>
 
 </main>
+
+
+<!-- Show more/less -->
+<script type="text/javascript">
+  $(".show-more").click(function () {
+    if($(".text").hasClass("show-more-height")) {
+        $(this).text("(Show Less)");
+    } else {
+        $(this).text("(Show More)");
+    }
+
+    $(".text").toggleClass("show-more-height");
+  });
+</script>

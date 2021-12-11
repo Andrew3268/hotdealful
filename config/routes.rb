@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :deals
   resources :homes
   resources :coupons
   resources :picks
@@ -25,11 +26,11 @@ Rails.application.routes.draw do
   get 'bridges/half_deal'
   get 'bridges/share_facebook'
   get 'bridges/share_ko'
-  get 'bridges/new_index'
   get 'bridges/new_under_deal'
   get 'bridges/new_half_deal'
   get 'bridges/delete_coupons'
   get 'bridges/delete_hotdeals'
+  get 'bridges/random_deals'
 
 
   get '/404' , to: 'errors#not_found'

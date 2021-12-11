@@ -126,6 +126,7 @@ header nav button img{width:25px;height:25px;}
 .footer{background:#404041;padding:7px;width:100%;}
 .footer .footer_box{margin:0 30px;}
 .footer a{text-align:center;color:#fff;display:inline-block;}
+.footer a.random_deal{color:#404041;}
 
 
 /********** About admin **********/
@@ -160,30 +161,4 @@ header nav button img{width:25px;height:25px;}
     to{box-shadow: inset -3px 0px 0px transparent;}
 }
 
-
-/* Hero Secrion */
-/*.hero{width:900px;margin:30px auto 100px auto;}
-.hero h1{font-size:3rem;float:left;width:48%;margin-right:2%;padding-bottom:1rem;}
-.hero .article{float:left;width:48%;margin-left:2%;}
-.hero .article ul{}
-.hero .article ul li{font-size:18px;list-style:circle;margin:5px;}
-.hero .article a{padding:0.7rem 2rem;margin-top:20px;background:#08f;color:#fff;border-radius:25px;display:block;width:55%;text-align:center;font-size:17px;}
-
-@media screen and (max-width:640px){
-  .hero{width:100%;padding:1.5rem 1rem;margin:0;}
-  .hero h1, .hero .article{float:none;width:100%;margin:0;}
-  .hero .article ul{margin-left:20px;}
-  .hero .article ul li{font-size:15px;}
-  .hero .article a{width:100%;}
-}
-
-
-@media screen and (min-width:641px) and (max-width:1199px){
-  .hero{padding:2rem;margin:30px 0;}
-  .hero h1, .hero .article{float:none;width:100%;margin:0;}
-  .hero .article ul{margin-left:30px;}
-  .hero .article a{width:35%;}
-}
-
-*/
 

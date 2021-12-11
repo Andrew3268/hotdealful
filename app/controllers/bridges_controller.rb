@@ -47,4 +47,8 @@ class BridgesController < ApplicationController
     @coupons = Coupon.all.order("created_at DESC")
   end
 
+  def random_deals
+    @deals = Deal.offset(rand(Deal.count)).limit(1)
+  end
+
 end

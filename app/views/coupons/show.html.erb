@@ -8,6 +8,7 @@
 
       <div class="content-section clearfix">
 
+        <!-- for Mobile -->
         <div class="title_mobile">
           <h2 class="line-break-02">
             <% promo_price = 0 %>
@@ -21,12 +22,15 @@
               <em class="price"><%= number_to_currency(@coupon.c_is_price) %>.</em> Shipping is free. w/ Prime or on $25+ orders.
             <% end %>
             <% if @coupon.c_rating.present? %>
-              <span>Rating: Ave <%= @coupon.c_rating %> / Reviews: <%= @coupon.c_review_count %> +</span>  
+              <div class="rating_box">
+                <span><img src="<%=asset_path 'rating.png' %>"><%= @coupon.c_rating %> <img class="review_img" src="<%=asset_path 'review.png' %>"><%= @coupon.c_review_count %> +</span>  
+              </div>            
             <% end %>
           </h2>
         </div>
-        
+        <!-- End Mobile -->
 
+        <!-- For PC -->
         <div class="image-box clearfix">
           <img src="<%= @coupon.c_image %>" alt="<%= @coupon.c_title %>" title="<%= @coupon.c_title %>" />
         </div>
@@ -34,7 +38,7 @@
         <div class="inner-box clearfix">
           <% if current_user && current_user.admin %>
             <div class="sharing_btn">
-              <a href="/coupons" data-turbolinks="false">Back</a>
+              <a href="/" data-turbolinks="false">Back</a>
               <%= render 'coupons/sharing_sns' %>
               <button id="facebook_btn">FBcopy</button>
               <button class="btn-default js-copybtn"><span class="glyphicon glyphicon-copy"></span> TWcopy </button>
@@ -55,7 +59,9 @@
               <% end %>
             </h2>
             <% if @coupon.c_rating.present? %>
-              <span>Rating: Ave <%= @coupon.c_rating %> / Reviews: <%= @coupon.c_review_count %> +</span>  
+              <div class="rating_box">
+                <span><img src="<%=asset_path 'rating.png' %>"><%= @coupon.c_rating %><img class="review_img" src="<%=asset_path 'review.png' %>"><%= @coupon.c_review_count %> +</span>  
+              </div>            
             <% end %>
           </div>
           <h2 class="summary_title">SUMMARY</h2>
@@ -130,6 +136,7 @@
           <% end %>
 
         </div>
+        <!-- End PC -->
       </div><!-- ./content-section-->
 
       <div class="search_ads">
@@ -161,6 +168,8 @@
               <p>Available at Amazon NOW!!</p>
               <p class="share_title"><%= @coupon.c_title %></p>
               <% if @coupon.c_promocode.present? %>
+                <p>Star Rating: <%= @coupon.c_rating %></p>
+                <p>Reviews: <%= @coupon.c_review_count %> +</p>
                 <p>Offer: <%= number_to_currency(total_price) %> (<%= number_to_percentage(@coupon.c_pct, precision: 0) %> off)</p>
                 <p>Was: <%= number_to_currency(@coupon.c_was_price) %></p>
                 <p>You can save <%= number_to_currency(promo_price) %> by Promo Code: <%= @coupon.c_promocode %>  / Shipping is free w/Prime or on $25+</p>

@@ -89,6 +89,10 @@
 .show-wrap .container .title_mobile{display:none;}
 .show-wrap .container .title_mobile h2{font-size:17px;font-weight:300;}
 .show-wrap .container .title h2 em, .show-wrap .container .title_mobile h2 em{border-bottom:3px solid #70b7b5;}
+.show-wrap .container .rating_box{margin-top:7px;}
+.show-wrap .container .rating_box span{}
+.show-wrap .container .rating_box span img{width:20px;vertical-align:sub;}
+.show-wrap .container .rating_box span img.review_img{vertical-align:text-top;margin:0 3px 0 5px;}
 
 
 .show-wrap .image-box{float:left;width:45%;margin-right:5%;position:relative;height:350px;background:#fff;border-radius:20px;}
@@ -157,6 +161,7 @@
   .show-wrap .btn{float:none;width:auto;margin:0 5% 0 5%;}
   .show-wrap .related{width:100%;margin:0 2%;}
   .show_notice{float:none;width:90%;margin:0 5%;}
+  .search_ads{margin-top:0;}
   
 }
 
@@ -216,7 +221,15 @@
 .card__inner .image_box a{display:block;}
 .card__inner .image_box img{width:60%;height:60%;object-fit:contain;}
 .card__inner .inner{margin:10px 0 20px 0;}
-.card__inner .inner p{font-size:15px;word-break:keep-all;line-height:1.4;height:1.4em;overflow:hidden;display:-webkit-box;display:-ms-flexbox;vertical-align:top;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:1;}
+.card__inner .inner .ratings_box{font-size:17px;}
+.card__inner .inner .ratings_box img{width:17px;}
+.card__inner .inner .ratings_box span.rating{margin-right:5px;}
+.card__inner .inner .ratings_box span.rating img{vertical-align:text-top;margin-right:2px;}
+.card__inner .inner .ratings_box span.review{}
+.card__inner .inner .ratings_box span.review img{vertical-align:middle;margin-right:3px;}
+.card__inner .inner .ratings_box span.view{}
+.card__inner .inner .ratings_box span.view img{vertical-align:middle;}
+.card__inner .inner p{font-size:15px;word-break:keep-all;line-height:1.4;height:1.4em;overflow:hidden;display:-webkit-box;display:-ms-flexbox;vertical-align:top;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:1;margin:5px 0;}
 .card__inner .inner em{font-size:20px;}
 .card__inner .inner .was_price{color:#ccc;text-decoration:line-through;}
 .card__inner .inner em span{font-size:15px;margin:0 5px;}
@@ -245,6 +258,7 @@
   .card__inner .image_box img{width:80%;height:80%;padding-top:15px;}  
   .card__inner .inner p{margin:5px 0 7px 0;}
   .card__inner .inner em span.pct{position:absolute;top:0;left:0;}
+  .card__inner .inner .ratings_box{font-size:15px;}
   .card__expander .left{float:none;width:100%;margin:0;}
   .card__expander .right{float:none;width:100%;margin:25px 0 0 0;}
   .card__expander, .card__expander .close{display:block;}

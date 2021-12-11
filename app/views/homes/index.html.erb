@@ -1,6 +1,6 @@
 <header><%= render 'shared/header_index' %></header>
 
-<div class="main_hero">
+<!-- <div class="main_hero">
   <div class="hero_pc">
     <img src="<%=asset_path 'hero.png' %>" alt="Amazon Coupons" %>
     <a target="_blank" href="https://amzn.to/3bvvCbX">More Clipping Coupons</a>
@@ -20,15 +20,46 @@
       <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
     </div>  
   <% end %>
-</div>
+</div> -->
 
 <div class="index_wrapper">
+
+  <% if current_user && current_user.admin %>
+    <div class="admin_panel">
+      <%= link_to 'New Coupon', new_coupon_path %>
+      <%= link_to 'New Home', new_home_path %>
+      <a href="/bridges/delete_coupons">Delete Coupons</a>
+      <a href="/bridges/delete_hotdeals">Delete Hotdeals</a>
+      <a href="/coupons">Coupon's Home</a>
+      <a href="/deals">Deals</a>
+      <a href="/bridges/random_deals">Random Deals</a>
+      <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+    </div>  
+  <% end %>
+
+
   <div class="wrap">
     <div class="deals_box"><%= render '/coupons/online_deals' %></div>
+
+    <% if current_user && current_user.admin %>
+      <div class="hotdeals_wrap">
+        <h2 class="line-title">The Best Deals</h2>  
+        <div class="owl-carousel custom-carousel owl-theme">
+          <%= render '/homes/online_deals' %>
+        </div>
+      </div>
+    <% end %>
   </div>
+
 </div>
 
-<div class="trending_box">
+
+<div class="coupon_box clearfix">
+  <%= render 'homes/coupon_section' %>
+  <a class="ctn_more" href="/coupons/chashtag/promotion_coupons">More +</a>
+</div>
+
+<div class="trending_box clearfix">
   <div class="index_wrapper">
     <div class="wrap">
       <h2 class="line-title">Most Popular Coupons & Deals</h2>
@@ -36,10 +67,5 @@
       <div class="trending"><%= render '/coupons/trending' %></div>
     </div>
   </div>
-</div>
-
-<div class="coupon_box">
-  <%= render 'homes/coupon_section' %>
-  <a class="ctn_more" href="/coupons/chashtag/promotion_coupons">More +</a>
 </div>
 

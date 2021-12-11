@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_06_063722) do
+ActiveRecord::Schema.define(version: 2021_12_10_040011) do
 
   create_table "coupons", force: :cascade do |t|
     t.integer "user_id"
@@ -77,6 +77,42 @@ ActiveRecord::Schema.define(version: 2021_11_06_063722) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["coupon_id"], name: "index_coupons_tags_on_coupon_id"
     t.index ["tag_id"], name: "index_coupons_tags_on_tag_id"
+  end
+
+  create_table "deals", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "d_title"
+    t.string "d_image"
+    t.string "d_link"
+    t.string "d_source"
+    t.decimal "d_price"
+    t.string "d_spare_01"
+    t.string "d_spare_02"
+    t.string "d_spare_03"
+    t.string "d_spare_04"
+    t.string "d_spare_05"
+    t.string "d_spare_06"
+    t.string "d_spare_07"
+    t.string "d_spare_08"
+    t.string "d_spare_09"
+    t.string "d_spare_10"
+    t.text "d_spare_31"
+    t.text "d_spare_32"
+    t.float "d_spare_41"
+    t.float "d_spare_42"
+    t.float "d_spare_43"
+    t.integer "d_spare_56"
+    t.integer "d_spare_57"
+    t.integer "d_spare_58"
+    t.decimal "d_spare_61"
+    t.decimal "d_spare_62"
+    t.decimal "d_spare_63"
+    t.datetime "d_spare_66"
+    t.datetime "d_spare_67"
+    t.date "d_spare_71"
+    t.date "d_spare_72"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -166,32 +202,6 @@ ActiveRecord::Schema.define(version: 2021_11_06_063722) do
     t.date "h_spare_73"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "impressions", force: :cascade do |t|
-    t.string "impressionable_type"
-    t.integer "impressionable_id"
-    t.integer "user_id"
-    t.string "controller_name"
-    t.string "action_name"
-    t.string "view_name"
-    t.string "request_hash"
-    t.string "ip_address"
-    t.string "session_hash"
-    t.text "message"
-    t.text "referrer"
-    t.text "params"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["controller_name", "action_name", "ip_address"], name: "controlleraction_ip_index"
-    t.index ["controller_name", "action_name", "request_hash"], name: "controlleraction_request_index"
-    t.index ["controller_name", "action_name", "session_hash"], name: "controlleraction_session_index"
-    t.index ["impressionable_type", "impressionable_id", "ip_address"], name: "poly_ip_index"
-    t.index ["impressionable_type", "impressionable_id", "params"], name: "poly_params_request_index"
-    t.index ["impressionable_type", "impressionable_id", "request_hash"], name: "poly_request_index"
-    t.index ["impressionable_type", "impressionable_id", "session_hash"], name: "poly_session_index"
-    t.index ["impressionable_type", "message", "impressionable_id"], name: "impressionable_type_message_index"
-    t.index ["user_id"], name: "index_impressions_on_user_id"
   end
 
   create_table "picks", force: :cascade do |t|
