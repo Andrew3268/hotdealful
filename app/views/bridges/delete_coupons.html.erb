@@ -14,7 +14,7 @@
       
         <% @coupons.each_with_index do |coupon, i| %>
           <% if coupon.c_spare_56 == 11111 %>
-              <% if coupon.created_at < 2.days.ago %>
+              <% if coupon.created_at < 5.days.ago %>
                 <tr>
                   <td><p><%= i + 1 %></p></td>
                   <td><p><%= coupon.c_title %></p></td>
