@@ -40,32 +40,35 @@
 
   <div class="wrap">
     <div class="deals_box"><%= render '/coupons/online_deals' %></div>
-
-    <% if current_user && current_user.admin %>
-      <div class="hotdeals_wrap">
-        <h2 class="line-title">The Best Deals</h2>  
-        <div class="owl-carousel custom-carousel owl-theme">
-          <%= render '/homes/online_deals' %>
-        </div>
-      </div>
-    <% end %>
   </div>
 
 </div>
 
-
-<div class="coupon_box clearfix">
-  <%= render 'homes/coupon_section' %>
-  <a class="ctn_more" href="/coupons/chashtag/promotion_coupons">More +</a>
-</div>
-
-<div class="trending_box clearfix">
-  <div class="index_wrapper">
-    <div class="wrap">
-      <h2 class="line-title">Most Popular Coupons & Deals</h2>
-      <br>
-      <div class="trending"><%= render '/coupons/trending' %></div>
+  <div class="trending_box clearfix">
+    <div class="index_wrapper">
+      <div class="wrap">
+        <h2 class="line-title">Most Popular Coupons & Deals</h2>
+        <br>
+        <div class="trending"><%= render '/coupons/trending' %></div>
+      </div>
     </div>
   </div>
-</div>
+
+  <div class="coupon_box clearfix">
+    <%= render 'homes/coupon_section' %>
+    <a class="ctn_more" href="/coupons/chashtag/promotion_coupons">More +</a>
+  </div>
+
+  <% if current_user && current_user.admin %>
+      <div class="index_wrapper">
+        <div class="wrap">
+          <div class="hotdeals_wrap">
+            <h2 class="line-title">The Best Deals</h2>  
+            <div class="owl-carousel custom-carousel owl-theme">
+              <%= render '/homes/online_deals' %>
+            </div>
+          </div>
+        </div>
+      </div>
+   <% end %>
 

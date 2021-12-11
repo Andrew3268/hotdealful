@@ -26,23 +26,9 @@
 .trending span.was_price{color:#ccc;text-decoration:line-through;margin:0 5px;}
 .trending span.pct{font-weight:bold;color:#fff;background:#70b7b5;border-radius:15px;padding:3px 5px;}
 
+#profile-description .show-more{display:none;}
 
-#profile-description .show-more {
-  color: #777; 
-  position:relative; 
-  font-size: 12px; 
-  padding-top: 5px; 
-  height: 20px; 
-  text-align: center; 
-  /*background: #f1f1f1; */
-  cursor: pointer;
-  display:none;
-}
 
-#profile-description .show-more-height { 
-  height: 130px; 
-  overflow:hidden; 
-}
 
 @media screen and (max-width:640px){
   .trending_box{margin-top:20px;}
@@ -58,6 +44,8 @@
   .trending label{font-size:12px;padding:10px;}
   .trending label:before{margin: 0;font-size: 18px;}
   #profile-description .show-more{display:block;}
+  #profile-description .show-more{background:#08f;color:#fff;position:relative;font-size:13px;text-align:center;cursor:pointer;padding:5px 10px;border-radius:20px;width:50%;margin:20px auto 0 auto;}
+  #profile-description .show-more-height{height:130px;overflow:hidden}
 }
 
 @media screen and (min-width:641px) and (max-width:1199px){
@@ -121,7 +109,7 @@
 }
 
 
-.hotdeals_wrap{margin-top:30px;}
+.hotdeals_wrap{margin:0 0 70px 0;}
 .hotdeals_wrap .owl-carousel .owl-stage-outer{padding:10px;}
 .hotdeals_wrap .card_box{width:200px;height:300px;position:relative;margin:10px;border-radius:20px;box-shadow:0px 0px 7px 6px rgba(0,0,0,0.09);padding:10px;}
 .hotdeals_wrap .card_box a{display:block;}
