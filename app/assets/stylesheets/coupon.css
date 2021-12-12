@@ -28,7 +28,7 @@
 
 #profile-description .show-more{display:none;}
 #profile-description .show-more{background:#08f;color:#fff;position:relative;font-size:13px;text-align:center;cursor:pointer;padding:5px 10px;border-radius:20px;width:50%;margin:20px auto 0 auto;}
-#profile-description .show-more-height{height:135px;overflow:hidden;padding:5px 0;}
+#profile-description .show-more-height{height:175px;overflow:hidden;padding:5px 0;}
 
 
 @media screen and (max-width:640px){
@@ -45,6 +45,7 @@
   .trending label{font-size:12px;padding:10px;}
   .trending label:before{margin: 0;font-size: 18px;}
   #profile-description .show-more{display:block;}
+  #profile-description .show-more-height{height:133px}
   
 }
 
