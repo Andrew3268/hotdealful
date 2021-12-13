@@ -16,7 +16,7 @@
               <div class="inner">
                 <% promocode_price = 0 %>
                 <% promocode_price =  coupon.c_was_price.to_f - (coupon.c_pct.to_f / 100) * coupon.c_was_price.to_f %>
-                <em class="pricing"><span class="is_price"><%= number_to_currency(promocode_price) %></span><span class="was_price"><%= number_to_currency(coupon.c_was_price) %></span><span class="pct"><%= number_to_percentage(coupon.c_pct, precision: 0) %> off</span></em>
+                <em class="pricing"><span class="is_price"><%= number_to_currency(promocode_price) %></span><span class="was_price"><%= number_to_currency(coupon.c_was_price) %></span><span class="pct"><%= number_to_percentage(coupon.c_pct, precision: 0) %> off</span> <% if current_user && current_user.admin %><span class="view"><%= coupon.hits %></span><% end %></em>
                 
               </div>
             </div>
