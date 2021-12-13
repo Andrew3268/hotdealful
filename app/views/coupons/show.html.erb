@@ -60,8 +60,7 @@
             <% if @coupon.c_rating.present? %>
               <div class="rating_box">
                 <!-- <span><img src="<%=asset_path 'rating.png' %>"><%= @coupon.c_rating %><img class="review_img" src="<%=asset_path 'review.png' %>"><%= @coupon.c_review_count %> +</span>   -->
-                <p>Rating: <span><%= @coupon.c_rating %></span></p><p>Reviews: <span><%= @coupon.c_review_count %>+</span></p>
-                <% if current_user && current_user.admin %><%= @coupon.c_rating %> <%= @coupon.c_review_count %>+<% end %>
+                <% if current_user && current_user.admin %><%= @coupon.c_rating %> <%= @coupon.c_review_count %>+<% end %> <p>Rating: <span><%= @coupon.c_rating %></span></p><p>Reviews: <span><%= @coupon.c_review_count %>+</span></p>
               </div>            
             <% end %>
           </div>
