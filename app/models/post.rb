@@ -1,4 +1,6 @@
 class Post < ApplicationRecord
+  acts_as_punchable
+    
   extend FriendlyId
   friendly_id :title, use: :slugged
 

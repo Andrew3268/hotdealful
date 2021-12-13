@@ -7,11 +7,10 @@
   <section id="content1" class="trend_comm clearfix">
     <div id="profile-description">
       <div class="text show-more-height">
-        <% @coupons_top.each do |coupon| %>
-          <% if coupon.c_spare_56 == 11111 %>
+        <% @coupons_top.each_with_index do |coupon, i| %>          
             <div class="coupon_card clearfix">
               <div class=img_box>
-                <span class="trend_title"><%= link_to coupon.c_title, coupon %></span>
+                <span class="trend_title"><%= i + 1 %>. <%= link_to coupon.c_title, coupon %></span>
               </div>
               <div class="inner">
                 <% promocode_price = 0 %>
@@ -20,7 +19,6 @@
                 
               </div>
             </div>
-          <% end %>
         <% end %>
       </div>
       <div class="show-more">Show More</div>
@@ -32,19 +30,17 @@
   <section id="content2" class="trend_comm clearfix">
     <div id="profile-description">
       <div class="text show-more-height">
-        <% @coupons_top.each do |deals| %>
-          <% if deals.c_spare_56 == 22222 %>
-            <div class="coupon_card clearfix">
-              <div class=img_box>
-                <span class="trend_title"><%= link_to deals.c_title, deals %></span>
-              </div>
-              <div class="inner">
-                <% hotdeal_pct = 0 %>
-                <% hotdeal_pct =  (deals.c_was_price.to_f - deals.c_is_price.to_f) / deals.c_was_price.to_f * 100 %>
-                <em class="pricing"><span class="is_price"><%= number_to_currency(deals.c_is_price) %></span><span class="was_price"><%= number_to_currency(deals.c_was_price) %></span><span class="pct"><%= number_to_percentage(hotdeal_pct, precision: 0) %> off</span></em>
-              </div>
+        <% @deals_top.each_with_index do |deals, i| %>
+          <div class="coupon_card clearfix">
+            <div class=img_box>
+              <span class="trend_title"><%= i + 1 %>. <%= link_to deals.title, deals %></span>
             </div>
-          <% end %>
+            <div class="inner">
+              <% hotdeal_pct = 0 %>
+              <% hotdeal_pct =  (deals.was_price.to_f - deals.is_price.to_f) / deals.was_price.to_f * 100 %>
+              <em class="pricing"><span class="is_price"><%= number_to_currency(deals.is_price) %></span><span class="was_price"><%= number_to_currency(deals.was_price) %></span><span class="pct"><%= number_to_percentage(hotdeal_pct, precision: 0) %> off</span> <% if current_user && current_user.admin %><span class="view"><%= deals.hits %></span><% end %></em></em>
+            </div>
+          </div>
         <% end %>
       </div>
       <div class="show-more">Show More</div>

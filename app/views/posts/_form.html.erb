@@ -7,13 +7,12 @@
       <%= f.input :image %>
       <%= f.input :title %>
       <%= f.input :link %>
-      <%= f.input :promocode %>
-      <%= f.input :hashtag, label: "[#electronics, #homeware, #kitchen, #outdoor, #pet_supplies, #beauty, #fashion ] [#online_sale, #promotion_code], [#coupon type #main categories #sub categories]" %>
+      <%= f.input :hashtag, label: "#online_deals #product_code ex)#100 #200..." %>
     </div>
     <div class="pricing clearfix">
       <%= f.input :was_price, label: "Original Price" %>
       <%= f.input :is_price, label: "is_price" %>
-      <%= f.input :pct, label: "pct" %>
+      <!-- <%= f.input :pct, label: "pct" %> -->
       <%= f.input :rating %>
       <%= f.input :review_count %>
     </div>

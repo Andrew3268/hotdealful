@@ -1,6 +1,5 @@
 <header><%= render 'shared/header_show' %></header>
 
-
 <div class="show-wrap">
   <div class="wrap">
 
@@ -20,7 +19,9 @@
             <em class="price"><%= number_to_currency(@post.is_price) %>.</em> Shipping is free. w/ Prime or on $25+ orders.
           <% end %>
           <% if @post.rating.present? %>
-            <span>Rating: Ave <%= @post.rating %> / Reviews: <%= @post.review_count %> +</span>  
+            <div class="rating_box">
+              <p>Rating: <span><%= @post.rating %></span></p><p>Reviews: <span><%= @post.review_count %>+</span></p>
+            </div>            
           <% end %>
         </div>
         
@@ -53,7 +54,9 @@
               <% end %>
             </h2>
             <% if @post.rating.present? %>
-              <span>Rating: Ave <%= @post.rating %> / Reviews: <%= @post.review_count %> +</span>  
+              <div class="rating_box">
+                <p>Rating: <span><%= @post.rating %></span></p><p>Reviews: <span><%= @post.review_count %>+</span></p>
+              </div>            
             <% end %>
           </div>
           <h2 class="summary_title">SUMMARY</h2>
@@ -102,15 +105,22 @@
             </div>
           </div>
 
+          <% if current_user && current_user.admin %>
+            <!-- for instagram feed -->
+            <p>"<%= @post.title %>"</em> on sale for <%= number_to_currency(@post.is_price) %>... (<%= number_to_percentage(hotdeal_pct, precision: 0) %> OFF), Rating:<%= @post.rating %>, Reviews: <%= @post.review_count %>+ </p>
+          <% end %>
+
           <!-- Button Section -->
 
           <div class="btn">
             <% if @post.promocode.present? %>
               <p>Apply coupon codes at checkout with a single click.</p>
-              <!-- <a class="amz_btn" target="_blank" href="<%= @post.link %>">Check it out on Amazon</a> -->
-              <a class="amz_btn" target="_blank" href="<%= @post.link %>">Go for it</a>
+              <a class="amz_btn" href="/">Back</a>
+              <a class="amz_btn buy_now" target="_blank" href="<%= @post.link %>">Take this deal</a>
             <% else %>
-              <a class="amz_btn" target="_blank" href="<%= @post.link %>">Go for it</a>
+              <p>Apply coupon codes at checkout with a single click.</p>
+              <a class="amz_btn" href="/">Back</a>
+              <a class="amz_btn buy_now" target="_blank" href="<%= @post.link %>">Take this deal</a>
             <% end %>
           </div>
 

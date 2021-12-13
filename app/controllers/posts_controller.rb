@@ -13,6 +13,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1 or /posts/1.json
   def show
+    @post.punch(request)
     set_meta_tags title: @post.title,
                   site: 'hotdeal-ful',
                   revierse: true,
