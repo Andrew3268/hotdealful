@@ -36,8 +36,8 @@
   .trending input:checked + label{width:50%;}
   .trending section{padding:20px 5px;}
   .trending .trend_comm .coupon_card{float:none;width:100%;margin:0 0 7px 0;border:none;padding:0;}
-  .trending .trend_comm .coupon_card .img_box{float:left;width:68%;}
-  .trending .trend_comm .coupon_card .inner{float:left;width:30%;margin-left:2%;}
+  .trending .trend_comm .coupon_card .img_box{float:left;width:60%;}
+  .trending .trend_comm .coupon_card .inner{float:left;width:38%;margin-left:2%;}
   .trending .trend_comm .coupon_card .inner span.is_price{margin-right:5px;}
   .trending .trend_comm .coupon_card .inner span.was_price{display:none;}
   .trending .trend_comm .coupon_card .inner .view{display:none;}
