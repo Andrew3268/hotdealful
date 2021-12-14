@@ -194,6 +194,10 @@
 .modal-overlay .modal .modal-content .search-index{margin-top:15px;}
 .modal-overlay .modal .modal-content .search-index input{width:100%;padding:10px;border-radius:15px;display:block;}
 .modal-overlay .modal .modal-content .search-index form{padding:0 25px;}
+
+.modal-overlay .modal .modal-content .show-more-height{height:-1px;}
+
+
 .modal-overlay .modal.active{visibility:visible;opacity:1;transform:scale(1);}
 .modal-overlay .modal.active .modal-content{opacity:1;}
 .modal-overlay .modal.active .close-modal{transform:translateY(10px);opacity:1;}
