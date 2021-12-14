@@ -118,7 +118,7 @@
 .hotdeals_wrap .card_box a .img_box{height:150px;;position:relative;}
 .hotdeals_wrap .card_box a .img_box img.deal_img{width:70%;height:70%;border-radius:20px;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);margin-top:60px;object-fit:contain;}
 .hotdeals_wrap .card_box a .inner{margin-top:80px;text-align:center;}
-.hotdeals_wrap .card_box a .inner p{background:#000;color:#fff;padding:5px 0;border-radius:10px;}
+.hotdeals_wrap .card_box a .inner p{background:#000;color:#fff;padding:5px 3px;border-radius:10px;}
 .hotdeals_wrap .card_box a .upto{position:absolute;top:15px;left:0;text-align:center;width:100%;line-height:1.2;font-weight:bold;font-size:22px;text-decoration:underline;}
 .hotdeals_wrap .card_box a .upto em.top{display:block;}
 .hotdeals_wrap .card_box a .upto em.bottom{}
