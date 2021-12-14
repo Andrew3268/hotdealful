@@ -11,10 +11,17 @@
     <div class="modal-content">
       
       <p>FIND THE BEST DEALS</p>
-      <span>Search the best deals & coupon codes</span>
+      <span>Search Coupon Deals</span>
       <div class="search-index">
         <%= form_for "",url: coupons_path, role: "search", method: :get do %>
-          <%= text_field_tag :search, @search_term, placeholder: "Search today's deal..." %>
+          <%= text_field_tag :search, @search_term, placeholder: "Search coupon deals" %>
+        <% end %> 
+      </div>   
+
+      <span>Search The Best Deals</span>
+      <div class="search-index">
+        <%= form_for "",url: posts_path, role: "search", method: :get do %>
+          <%= text_field_tag :search, @search_term, placeholder: "Search coupon deals" %>
         <% end %> 
       </div>   
     </div><!-- content -->

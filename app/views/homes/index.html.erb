@@ -33,18 +33,17 @@
     </div>
   </div>
 
-  <% if current_user && current_user.admin %>
-      <div class="index_wrapper">
-        <div class="wrap">
-          <div class="hotdeals_wrap">
-            <h2 class="line-title">The Best Deals</h2>  
-            <div class="owl-carousel custom-carousel owl-theme">
-              <%= render '/homes/online_deals' %>
-            </div>
-          </div>
+  <div class="index_wrapper">
+    <div class="wrap">
+      <div class="hotdeals_wrap">
+        <h2 class="line-title">The Best Deals</h2>  
+        <div class="owl-carousel custom-carousel owl-theme">
+          <%= render '/homes/online_deals' %>
         </div>
       </div>
-   <% end %>
+    </div>
+  </div>
+
 
   <div class="coupon_box clearfix">
     <%= render 'homes/coupon_section' %>
