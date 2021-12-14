@@ -10,24 +10,50 @@
 
     <div class="modal-content">
       
-      <p>FIND THE BEST DEALS</p>
-      <span>Search Coupon Deals</span>
-      <div class="search-index">
-        <%= form_for "",url: coupons_path, role: "search", method: :get do %>
-          <%= text_field_tag :search, @search_term, placeholder: "Search coupon deals" %>
-        <% end %> 
-      </div>   
+      <p>SEARCH COUPONS & THE BEST DEALS</p>
+      <div class="trending">
+        <main>
+          <input id="tab1" type="radio" name="tabs" checked>
+          <label for="tab1">Coupon Deals</label>
+          <input id="tab2" type="radio" name="tabs">
+          <label for="tab2">Best Deals</label>
 
-      <span>Search The Best Deals</span>
-      <div class="search-index">
-        <%= form_for "",url: posts_path, role: "search", method: :get do %>
-          <%= text_field_tag :search, @search_term, placeholder: "Search coupon deals" %>
-        <% end %> 
-      </div>   
+          <section id="content1" class="trend_comm clearfix">
+            <div id="profile-description">
+              <div class="text show-more-height">
+                <div class="search-index">
+                  <%= form_for "",url: coupons_path, role: "search", method: :get do %>
+                    <%= text_field_tag :search, @search_term, placeholder: "Search coupon deals" %>
+                  <% end %> 
+                </div>   
+
+              </div>
+            </div>
+          </section>
+
+          <section id="content2" class="trend_comm clearfix">
+            <div id="profile-description">
+              <div class="text show-more-height">
+                <div class="search-index">
+                  <%= form_for "",url: posts_path, role: "search", method: :get do %>
+                    <%= text_field_tag :search, @search_term, placeholder: "Search best deals" %>
+                  <% end %> 
+                </div>   
+              </div>
+            </div>
+          </section>
+
+        </main>
+      </div>
+
+
     </div><!-- content -->
     
   </div><!-- modal -->
 </div><!-- overlay -->
+
+
+
 
 
 <script type="text/javascript">
