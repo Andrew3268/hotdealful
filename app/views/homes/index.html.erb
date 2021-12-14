@@ -33,11 +33,6 @@
     </div>
   </div>
 
-  <div class="coupon_box clearfix">
-    <%= render 'homes/coupon_section' %>
-    <a class="ctn_more" href="/coupons/chashtag/promotion_coupons">More +</a>
-  </div>
-
   <% if current_user && current_user.admin %>
       <div class="index_wrapper">
         <div class="wrap">
@@ -51,3 +46,9 @@
       </div>
    <% end %>
 
+  <div class="coupon_box clearfix">
+    <%= render 'homes/coupon_section' %>
+    <a class="ctn_more" href="/coupons/chashtag/promotion_coupons">More +</a>
+  </div>
+
+  

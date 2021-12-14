@@ -90,12 +90,12 @@ header nav button img{width:25px;height:25px;}
 }
 
 /* Hashtag Location */
-.where-hashtag{margin:50px 0 20px 0;}
+.where-hashtag{margin:30px 0 20px 0;}
 .where-hashtag p{font-size:30px;font-weight:100;}
 .where-hashtag p span{color:#000;border:2px solid;padding:5px 20px;border-radius:15px;margin-left:30px;}
 .hashtag-through{display:inline;text-transform:uppercase;}
 @media screen and (max-width:640px){
-  .where-hashtag{margin:40px 0 15px 0;}
+  .where-hashtag{margin:20px 0 15px 0;}
   .where-hashtag p{font-size:25px;text-align:center;}
   .where-hashtag p span{margin:0;}
 }

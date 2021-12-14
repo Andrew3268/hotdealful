@@ -113,15 +113,8 @@
           <!-- Button Section -->
 
           <div class="btn">
-            <% if @post.promocode.present? %>
-              <p>Apply coupon codes at checkout with a single click.</p>
-              <a class="amz_btn" href="/">Back</a>
-              <a class="amz_btn buy_now" target="_blank" href="<%= @post.link %>">Take this deal</a>
-            <% else %>
-              <p>Apply coupon codes at checkout with a single click.</p>
-              <a class="amz_btn" href="/">Back</a>
-              <a class="amz_btn buy_now" target="_blank" href="<%= @post.link %>">Take this deal</a>
-            <% end %>
+            <a class="amz_btn" href="/">Back</a>
+            <a class="amz_btn buy_now" target="_blank" href="<%= @post.link %>">Take this deal</a>
           </div>
 
           <% if current_user && current_user.admin %>
@@ -140,13 +133,15 @@
          <div class="sharing facebook clearfix"">
           <span id="facebook_ctn">
             <p>Available at Amazon NOW!!</p>
-
+            <p><%= @post.title %></p>
             <% if @post.promocode.present? %>
               <p>Offer: <%= number_to_currency(total_price) %> (<%= number_to_percentage(@post.pct, precision: 0) %> off)</p>
               <p>Was: <%= number_to_currency(@post.was_price) %></p>
               <p>You can save <%= number_to_currency(promo_price) %> by Promo Code: <%= @post.promocode %>  / Shipping is free w/Prime or on $25+</p>
               <p>#amazondeals #amazoncoupons #amazonpromocode #coupons #promocode</p>
             <% else %>
+              <p>Star Rating: <%= @post.rating %></p>
+              <p>Reviews: <%= @post.review_count %> +</p>
               <p>Offer: <%= number_to_currency(@post.is_price) %> (<%= number_to_percentage(hotdeal_pct, precision: 0) %> off)</p>
               <p>Was: <%= number_to_currency(@post.was_price) %></p>
               <p>You can save <%= number_to_currency(sale_price) %> / Shipping is free w/Prime or on $25+</p>
@@ -219,7 +214,7 @@
 </script>
 
 <!-- Accordion Menu -->
-<script type="text/javascript">
+<!-- <script type="text/javascript">
   $('.accordion-item .heading').on('click', function(e) {
       e.preventDefault();
 
@@ -240,6 +235,6 @@
       $content.slideToggle(100);
       $('.accordion-item .content').not($content).slideUp('fast');
   });
-</script>
+ --></script>
 
 

@@ -220,15 +220,15 @@
 }*/
 
 .card__inner{width:100%;padding:10px;position:relative;cursor:pointer;border-radius:20px;color:#000;font-size:1.5em;text-align:center;transition:all .2s ease-in-out}
-.card__inner .image_box{height:190px;}
+.card__inner .image_box{height:190px;position:relative;}
 .card__inner .image_box a{display:block;}
-.card__inner .image_box img{width:60%;height:60%;object-fit:contain;}
+.card__inner .image_box img{width:80%;height:80%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);}
 .card__inner .inner{margin:10px 0 20px 0;}
 .card__inner .inner .ratings_box{font-size:13px;}
 .card__inner .inner .ratings_box span{background:#000;color:#fff;padding:3px 5px;border-radius:7px;}
 /*.card__inner .inner .ratings_box p{display:inline-block;margin:0;}*/
 .card__inner .inner .ratings_box img{width:17px;}
-.card__inner .inner .ratings_box span.rating{margin-right:5px;}
+/*.card__inner .inner .ratings_box span.rating{margin-right:5px;}*/
 .card__inner .inner .ratings_box span.rating img{vertical-align:text-top;margin-right:2px;}
 .card__inner .inner .ratings_box span.review{}
 .card__inner .inner .ratings_box span.review img{vertical-align:middle;margin-right:3px;}
@@ -262,7 +262,7 @@
   /*.card{margin:0;}*/
   .card__inner{padding:0;}
   .card__inner .image_box{height:170px;}
-  .card__inner .image_box img{width:80%;height:80%;padding:20px 10px 10px 10px;}  
+  .card__inner .image_box img{width:90%;height:90%;padding:20px 10px 10px 10px;}  
   .card__inner .inner p{margin:5px 0 7px 0;}
   .card__inner .inner em span.pct{position:absolute;top:0;left:0;}
   .card__inner .inner .ratings_box{font-size:11px;}

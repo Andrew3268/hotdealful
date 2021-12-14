@@ -44,7 +44,7 @@ class BridgesController < ApplicationController
   end
 
   def delete_hotdeals
-    @coupons = Coupon.all
+    @posts = Post.all
   end
 
   def random_deals
