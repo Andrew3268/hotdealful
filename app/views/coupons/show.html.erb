@@ -112,7 +112,7 @@
 
           <% if current_user && current_user.admin %>
             <!-- for instagram feed -->
-            <p>"<%= @coupon.c_title %>"</em> on sale for <%= number_to_currency(total_price) %>... (<%= number_to_percentage(@coupon.c_pct, precision: 0) %> OFF), Rating:<%= @coupon.c_rating %>, Reviews: <%= @coupon.c_review_count %>+ </p>
+            <p>👉"<%= @coupon.c_title %>"</em> on sale for <%= number_to_currency(total_price) %>... 💥(<%= number_to_percentage(@coupon.c_pct, precision: 0) %> OFF), ⭐Rating:<%= @coupon.c_rating %>, 📃Reviews: <%= @coupon.c_review_count %>+ </p>
           <% end %>
 
 
