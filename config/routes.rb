@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   get 'bridges/new_half_deal'
   get 'bridges/delete_coupons'
   get 'bridges/delete_hotdeals'
+  get 'bridges/delete_shoes'
   get 'bridges/random_deals'
 
 

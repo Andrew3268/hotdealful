@@ -31,20 +31,16 @@ class BridgesController < ApplicationController
     # @coupons = Coupon.sort_by_popularity('DESC')
   end
 
-  def new_under_deal
-    @pagy, @posts = pagy(Post.all.order("created_at DESC"), items: 40)
-  end
-
-  def new_half_deal
-    @pagy, @posts = pagy(Post.all.order("created_at DESC"), items: 40)
-  end
-
   def delete_coupons
     @coupons = Coupon.all
   end
 
   def delete_hotdeals
     @posts = Post.all
+  end
+
+  def delete_shoes
+    @deals = Deal.all
   end
 
   def random_deals
