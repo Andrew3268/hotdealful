@@ -11,14 +11,25 @@
           <h2 class="line-break-02">
             <% promo_price = 0 %>
             <% promo_price = (@post.pct.to_f / 100) * @post.was_price %>
+            
             Amazon.com has <em>"<%= @post.title %>"</em> on sale for
-            <% if @post.promocode.present? %>
-              <% total_price = 0 %>
-              <% total_price = @post.was_price - promo_price %>
-              <em class="price"><%= number_to_currency(total_price) %>.</em> Shipping is free. w/ Prime or on $25+ orders.
+            <% if @post.spare_61.present? %>
+              <% extra_coupon_deal = 0 %>
+              <% extra_coupon_deal = @post.is_price * (@post.spare_61 / 100) %>
+              <% extra_coupon_total = 0 %>
+              <% extra_coupon_total = @post.is_price - extra_coupon_deal %>
+              <em class="price"><%= number_to_currency(extra_coupon_total) %>.</em> Shipping is free. w/ Prime or on $25+ orders.
+            <% elsif %>
+              <% if @post.spare_62.present? %>
+              <% extra_coupon__dallor_total = 0 %>
+              <% extra_coupon__dallor_total = @post.is_price - @post.spare_62 %>
+                <em class="price"><%= number_to_currency(extra_coupon__dallor_total) %>.</em> Shipping is free. w/ Prime or on $25+ orders.
+              <%end %>
             <% else %>
               <em class="price"><%= number_to_currency(@post.is_price) %>.</em> Shipping is free. w/ Prime or on $25+ orders.
             <% end %>
+            
+            
             <% if @post.rating.present? %>
               <div class="rating_box">
                 <p>Rating: <span><%= @post.rating %></span></p><p>Reviews: <span><%= @post.review_count %>+</span></p>
@@ -46,11 +57,20 @@
             <h2 class="line-break-02">
               <% promo_price = 0 %>
               <% promo_price = (@post.pct.to_f / 100) * @post.was_price %>
+
               Amazon.com has <em>"<%= @post.title %>"</em> on sale for
-              <% if @post.promocode.present? %>
-                <% total_price = 0 %>
-                <% total_price = @post.was_price - promo_price %>
-                <em class="price"><%= number_to_currency(total_price) %>.</em> Shipping is free. w/ Prime or on $25+ orders.
+              <% if @post.spare_61.present? %>
+                <% extra_coupon_deal = 0 %>
+                <% extra_coupon_deal = @post.is_price * (@post.spare_61 / 100) %>
+                <% extra_coupon_total = 0 %>
+                <% extra_coupon_total = @post.is_price - extra_coupon_deal %>
+                <em class="price"><%= number_to_currency(extra_coupon_total) %>.</em> Shipping is free. w/ Prime or on $25+ orders.
+              <% elsif %>
+                <% if @post.spare_62.present? %>
+                <% extra_coupon__dallor_total = 0 %>
+                <% extra_coupon__dallor_total = @post.is_price - @post.spare_62 %>
+                  <em class="price"><%= number_to_currency(extra_coupon__dallor_total) %>.</em> Shipping is free. w/ Prime or on $25+ orders.
+                <%end %>
               <% else %>
                 <em class="price"><%= number_to_currency(@post.is_price) %>.</em> Shipping is free. w/ Prime or on $25+ orders.
               <% end %>
@@ -66,15 +86,16 @@
             <!-- Button Section - Text(left) -->
             <div class="receipt__grid1">
               <p>Offer Price</p>
-              <% if @post.promocode.present? %>
-                <p>Discount <span>by code</span>(<%= number_to_percentage(@post.pct, precision: 0) %> off)</p>            
-                <p>Promotion Code</p>
-              <% else %>
-                <% hotdeal_pct = 0 %>
-                <% hotdeal_pct =  (@post.was_price - @post.is_price) / @post.was_price * 100 %>
-                <p>Discount(<%= number_to_percentage(hotdeal_pct, precision: 0) %> off)</p>            
+              <% hotdeal_pct = 0 %>
+              <% hotdeal_pct =  (@post.was_price - @post.is_price) / @post.was_price * 100 %>
+              <p>Discount( <%= number_to_percentage(hotdeal_pct, precision: 0) %> OFF )</p>            
+              <% if @post.spare_61.present? %>
+                <p>Extra Coupon( <%= number_to_percentage(@post.spare_61, precision: 0) %> OFF )</p>
+              <% elsif %>
+                <% if @post.spare_62.present? %>
+                  <p>Extra Coupon( <%= number_to_currency(@post.spare_62, precision: 0) %> OFF )</p>
+                <% end %>
               <% end %>
-
               <hr>
 
               <p class="total_text">Total</p>
@@ -83,33 +104,50 @@
             <!-- Summary Section - Price(right) -->
             <div class="receipt__grid2">
               <p><%= number_to_currency(@post.was_price) %></p>
-              <% if @post.promocode.present? %>
-                <% promo_price = 0 %>
-                <% promo_price = (@post.pct / 100) * @post.was_price %>
-                <p>- <%= number_to_currency(promo_price) %></p>
-                <p class="p-code"><%= @post.promocode %></p>
-              <% else %>
-                <% sale_price = 0 %>
-                <% sale_price = ( hotdeal_pct / 100 ) * @post.was_price %>
-                <p>- <%= number_to_currency(sale_price) %></p>  
+              <% sale_price = 0 %>
+              <% sale_price = ( hotdeal_pct / 100 ) * @post.was_price %>
+              <p>- <%= number_to_currency(sale_price) %></p>  
+              <% if @post.spare_61.present? %>
+                <% extra_coupon_deal = 0 %>
+                <% extra_coupon_deal = sale_price * (@post.spare_61 / 100) %>
+                <p>- <%= number_to_currency(extra_coupon_deal) %></p>
+              <% elsif %>
+                <% if @post.spare_62.present? %>
+                  <p>- <%= number_to_currency(@post.spare_62) %></p>
+                <% end %>
               <% end %>
 
               <hr>
               <!-- Total Price -->
-              <% if @post.promocode.present? %>
-                <% total_price = 0 %>
-                <% total_price = @post.was_price - promo_price %>
-                <p class="total_price "><%= number_to_currency(total_price) %></p> 
+              <% if @post.spare_61.present? %>
+                <% extra_coupon_total = 0 %>
+                <% extra_coupon_total = sale_price - extra_coupon_deal %>
+                 <p class="total_price "><%= number_to_currency(extra_coupon_total) %></p>
+              <% elsif %>
+                <% if @post.spare_62.present? %>
+                  <% extra_coupon_dallor_total = 0 %>
+                  <% extra_coupon_dallor_total = sale_price - @post.spare_62 %>
+                  <p class="total_price "><%= number_to_currency(extra_coupon_dallor_total) %></p>   
+                <% end %>
               <% else %>
                 <p class="total_price "><%= number_to_currency(@post.is_price) %></p> 
               <% end %>
-                             
             </div>
           </div>
 
           <% if current_user && current_user.admin %>
             <!-- for instagram feed -->
-            <p>"<%= @post.title %>"</em> on sale for <%= number_to_currency(@post.is_price) %>... (<%= number_to_percentage(hotdeal_pct, precision: 0) %> OFF), Rating:<%= @post.rating %>, Reviews: <%= @post.review_count %>+ </p>
+            <% if @post.spare_61.present? %>
+              <p>"<%= @post.title %>"</em> on sale for <%= number_to_currency(extra_coupon_total) %>... (<%= number_to_percentage(hotdeal_pct,  precision: 0) %> OFF) + (Clipping Coupon: <%= number_to_percentage(@post.spare_61,  precision: 0) %> OFF), Rating:<%= @post.rating %>, Reviews: <%= @post.review_count %>+ </p>
+            <% elsif %>
+              <% if @post.spare_62.present? %>
+                <p>"<%= @post.title %>"</em> on sale for <%= number_to_currency(extra_coupon_total) %>... (<%= number_to_percentage(hotdeal_pct,  precision: 0) %> OFF) + (Clipping Coupon: <%= number_to_currency(@post.spare_62,  precision: 0) %> OFF), Rating:<%= @post.rating %>, Reviews: <%= @post.review_count %>+ </p>
+              <% end %> 
+
+            <% else %>
+              <p>"<%= @post.title %>"</em> on sale for <%= number_to_currency(@post.is_price) %>... (<%= number_to_percentage(hotdeal_pct,  precision: 0) %> OFF), Rating:<%= @post.rating %>, Reviews: <%= @post.review_count %>+ </p>
+            <% end %>
+              
           <% end %>
 
           <!-- Button Section -->
@@ -159,14 +197,14 @@
             <p>Available at Amazon NOW!!</p>
             <p><%= @post.title %></p>
             <% if @post.promocode.present? %>
-              <p>Offer: <%= number_to_currency(total_price) %> (<%= number_to_percentage(@post.pct, precision: 0) %> off)</p>
+              <p>Offer: <%= number_to_currency(total_price) %> (<%= number_to_percentage(@post.pct, precision: 0) %> OFF)</p>
               <p>Was: <%= number_to_currency(@post.was_price) %></p>
               <p>You can save <%= number_to_currency(promo_price) %> by Promo Code: <%= @post.promocode %>  / Shipping is free w/Prime or on $25+</p>
               <p>#amazondeals #amazoncoupons #amazonpromocode #coupons #promocode</p>
             <% else %>
               <p>Star Rating: <%= @post.rating %></p>
               <p>Reviews: <%= @post.review_count %> +</p>
-              <p>Offer: <%= number_to_currency(@post.is_price) %> (<%= number_to_percentage(hotdeal_pct, precision: 0) %> off)</p>
+              <p>Offer: <%= number_to_currency(@post.is_price) %> (<%= number_to_percentage(hotdeal_pct, precision: 0) %> OFF)</p>
               <p>Was: <%= number_to_currency(@post.was_price) %></p>
               <p>You can save <%= number_to_currency(sale_price) %> / Shipping is free w/Prime or on $25+</p>
               <p>#amazondeals #amazoncoupons #amazonpromocode #coupons #promocode</p>
@@ -182,13 +220,13 @@
               <p>Available at Amazon NOW!!</p>
 
               <% if @post.promocode.present? %>
-                <p>Offer: <%= number_to_currency(total_price) %> (<%= number_to_percentage(@post.pct, precision: 0) %> off)</p>
+                <p>Offer: <%= number_to_currency(total_price) %> (<%= number_to_percentage(@post.pct, precision: 0) %> OFF)</p>
                 <p>Was: <%= number_to_currency(@post.was_price) %></p>
                 <p>You can save <%= number_to_currency(promo_price) %> by Promo Code: <%= @post.promocode %>  / Shipping is free w/Prime or on $25+</p>
                 <p>http://hotdealful.com/posts/<%=(params[:id]) %></p>
                 <p>#amazondeals #amazoncoupons #amazonpromocode #coupons #promocode</p>
               <% else %>
-                <p>Offer: <%= number_to_currency(@post.is_price) %> (<%= number_to_percentage(hotdeal_pct, precision: 0) %> off)</p>
+                <p>Offer: <%= number_to_currency(@post.is_price) %> (<%= number_to_percentage(hotdeal_pct, precision: 0) %> OFF)</p>
                 <p>Was: <%= number_to_currency(@post.was_price) %></p>
                 <p>You can save <%= number_to_currency(sale_price) %> / Shipping is free w/Prime or on $25+</p>
                 <p>http://hotdealful.com/posts/<%=(params[:id]) %></p>

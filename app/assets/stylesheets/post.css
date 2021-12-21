@@ -240,13 +240,15 @@
 .card__inner .inner .ratings_box span.review img{vertical-align:middle;margin-right:3px;}
 .card__inner .inner .ratings_box span.view{}
 .card__inner .inner .ratings_box span.view img{vertical-align:middle;}
-.card__inner .inner p{font-size:15px;word-break:keep-all;line-height:1.4;height:1.4em;overflow:hidden;display:-webkit-box;display:-ms-flexbox;vertical-align:top;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:1;margin:5px 0;}
+.card__inner .inner p{font-size:13px;word-break:keep-all;line-height:1.4;height:1.4em;overflow:hidden;display:-webkit-box;display:-ms-flexbox;vertical-align:top;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:1;margin:5px 0;}
 .card__inner .inner em{font-size:20px;}
 .card__inner .inner .was_price{color:#ccc;text-decoration:line-through;}
 .card__inner .inner em span{font-size:15px;margin:0 5px;}
-.card__inner .inner em span.pct{/*background:#70b7b5;*/background:#fff;color:#000;padding:5px;padding:5px 10px;border-radius:15px;border:2px solid;}
+.card__inner .inner em span.pct{background:#fff;color:#000;padding:5px 10px;border-radius:15px;border:2px solid;}
 .card__inner .inner .admin_controller{font-size:13px;margin-top:10px;}
 .card__inner .inner .admin_controller a{color:#000;}
+.card__inner .extra_coupon{position:absolute;top:0;left:0;}
+.card__inner .extra_coupon p{padding:3px 10px;border-radius:20px;border:2px solid;width:115px;font-size:13px;}
 
 /*.card__expander {
   border:2px solid #000;
@@ -270,11 +272,13 @@
   .card__inner .image_box{height:170px;}
   .card__inner .image_box img{width:90%;height:90%;padding:20px 10px 10px 10px;}  
   .card__inner .inner p{margin:5px 0 7px 0;}
-  .card__inner .inner em span.pct{position:absolute;top:0;left:0;}
+  .card__inner .inner em span.pct{position:absolute;top:0;left:0;font-size:11px;padding:3px 10px;}
   .card__inner .inner .ratings_box{font-size:11px;}
   .card__expander .left{float:none;width:100%;margin:0;}
   .card__expander .right{float:none;width:100%;margin:25px 0 0 0;}
   .card__expander, .card__expander .close{display:block;}
+  .card__inner .extra_coupon{position:absolute;top:0;left:70px;}
+  .card__inner .extra_coupon p{width:90px;padding:3px 5px;font-size:11px;}
 }
 
 @media screen and (min-width:641px) and (max-width:1199px){
