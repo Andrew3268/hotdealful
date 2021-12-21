@@ -43,6 +43,9 @@
                 <% end %>
 
               </div>
+              <% if post.spare_61.present? or post.spare_62.present? %>
+                <div class="extra_coupon"><p>+ Extra coupon</p></div>
+              <% end %>
             </div>
 
           </div><!-- card -->

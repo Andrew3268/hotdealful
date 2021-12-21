@@ -1,6 +1,6 @@
 <div class="wrap">  
   <div class="index_wrapper">
-    <h2 class="line-title">New Coupon Code Deals of Amazon</h2>
+    <h2 class="line-title">New Promo Code Deals of Amazon</h2>
     <div class="cards">
       <% @coupons.each do |coupon| %>
         <% if coupon.c_spare_56 == 11111 %>
@@ -37,11 +37,7 @@
                   <div class="admin_controller">
                     <%= link_to 'Edit', edit_coupon_path(coupon) %>
                     <%= link_to 'Destroy', coupon, method: :delete, data: { confirm: 'Are you sure?' } %>
-                    <% if coupon.c_promocode.present? %>
-                      <span>Coupon</span>
-                    <% else %>
-                      <span>Online Deal</span>
-                    <% end %>
+                    
                   </div>
                 <% end %>
 
