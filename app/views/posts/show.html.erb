@@ -122,7 +122,7 @@
               <!-- Total Price -->
               <% if @post.spare_61.present? %>
                 <% extra_coupon_total = 0 %>
-                <% extra_coupon_total = sale_price - extra_coupon_deal %>
+                <% extra_coupon_total = @post.is_price - extra_coupon_deal %>
                  <p class="total_price "><%= number_to_currency(extra_coupon_total) %></p>
               <% elsif %>
                 <% if @post.spare_62.present? %>
