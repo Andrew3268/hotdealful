@@ -107,6 +107,7 @@
               <% sale_price = 0 %>
               <% sale_price = ( hotdeal_pct / 100 ) * @post.was_price %>
               <p>- <%= number_to_currency(sale_price) %></p>  
+
               <% if @post.spare_61.present? %>
                 <% extra_coupon_deal = 0 %>
                 <% extra_coupon_deal = sale_price * (@post.spare_61 / 100) %>
@@ -126,7 +127,7 @@
               <% elsif %>
                 <% if @post.spare_62.present? %>
                   <% extra_coupon_dallor_total = 0 %>
-                  <% extra_coupon_dallor_total = sale_price - @post.spare_62 %>
+                  <% extra_coupon_dallor_total =  @post.is_price - @post.spare_62 %>
                   <p class="total_price "><%= number_to_currency(extra_coupon_dallor_total) %></p>   
                 <% end %>
               <% else %>
