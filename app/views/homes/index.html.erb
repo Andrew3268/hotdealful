@@ -20,13 +20,11 @@
 
     <div class="deals_box"><%= render '/coupons/online_deals' %></div>
   
-
     <div class="trending_box clearfix">
       <h2 class="line-title">Popular Coupons & Deals of Amazon</h2>
       <br>
       <div class="trending"><%= render '/coupons/trending' %></div>
     </div>
-
     
     <div class="hotdeals_wrap">
       <h2 class="line-title">The Best Deals of Amazon</h2>  
@@ -35,14 +33,11 @@
       </div>
     </div>
     
-
-    <% if current_user && current_user.admin %>
-      <div class="extra_coupon">
-        <h2 class="line-title">New Extra Coupon Deals of Amazon</h2>  
-        <%= render 'homes/extra_deals' %>
-        <a class="ctn_more" href="/posts/hashtag/extra_coupons">More +</a>
-      </div>
-    <% end %>
+    <div class="extra_coupon">
+      <h2 class="line-title">New Extra Coupon Deals of Amazon</h2>  
+      <%= render 'homes/extra_deals' %>
+      <a class="ctn_more" href="/posts/hashtag/extra_coupons">More +</a>
+    </div>    
 
     <div class="coupon_box clearfix">
       <%= render 'homes/coupon_section' %>
