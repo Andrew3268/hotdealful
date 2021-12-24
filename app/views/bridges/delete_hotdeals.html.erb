@@ -25,6 +25,16 @@
         <% end %>
           
     </table>
-   
+
+     <br />
+     <% @posts.each do |post| %>
+        <% if post.spare_61.present? or post.spare_62.present? %>
+          <div class="extra_deal_url">
+            <p>www.hotdealful.com/posts/<%= post.id %></p>
+          </div>
+        <% end %>
+      <% end %>
+      <br />
+      
   </div>
 <% end %>
