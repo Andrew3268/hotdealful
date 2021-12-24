@@ -32,7 +32,7 @@
             
             <% if @post.rating.present? %>
               <div class="rating_box">
-                <p>Rating: <span><%= @post.rating %></span></p><p>Reviews: <span><%= @post.review_count %>+</span></p>
+                 <p>Rating: <span><%= @post.rating %></span></p><p>Reviews: <span><%= @post.review_count %>+</span></p>
               </div>            
             <% end %>
           </h2>
@@ -77,7 +77,7 @@
             </h2>
             <% if @post.rating.present? %>
               <div class="rating_box">
-                <p>Rating: <span><%= @post.rating %></span></p><p>Reviews: <span><%= @post.review_count %>+</span></p>
+                <% if current_user && current_user.admin %><%= @post.rating %> <%= @post.review_count %>+<% end %> <p>Rating: <span><%= @post.rating %></span></p><p>Reviews: <span><%= @post.review_count %>+</span></p>
               </div>            
             <% end %>
           </div>
@@ -140,14 +140,14 @@
           <% if current_user && current_user.admin %>
             <!-- for instagram feed -->
             <% if @post.spare_61.present? %>
-              <p>"<%= @post.title %>"</em> on sale for <%= number_to_currency(extra_coupon_total) %>... (<%= number_to_percentage(hotdeal_pct,  precision: 0) %> OFF) + (Clipping Coupon: <%= number_to_percentage(@post.spare_61,  precision: 0) %> OFF), Rating:<%= @post.rating %>, Reviews: <%= @post.review_count %>+ </p>
+              <p>👉"<%= @post.title %>"</em> on sale for <%= number_to_currency(extra_coupon_total) %>... 💥(<%= number_to_percentage(hotdeal_pct,  precision: 0) %> OFF) + 💥(Clipping Coupon: <%= number_to_percentage(@post.spare_61,  precision: 0) %> OFF), ⭐Rating:<%= @post.rating %>, 📃Reviews: <%= @post.review_count %>+ </p>
             <% elsif %>
               <% if @post.spare_62.present? %>
-                <p>"<%= @post.title %>"</em> on sale for <%= number_to_currency(extra_coupon_total) %>... (<%= number_to_percentage(hotdeal_pct,  precision: 0) %> OFF) + (Clipping Coupon: <%= number_to_currency(@post.spare_62,  precision: 0) %> OFF), Rating:<%= @post.rating %>, Reviews: <%= @post.review_count %>+ </p>
+                <p>👉"<%= @post.title %>"</em> on sale for <%= number_to_currency(extra_coupon_total) %>... 💥(<%= number_to_percentage(hotdeal_pct,  precision: 0) %> OFF) + 💥(Clipping Coupon: <%= number_to_currency(@post.spare_62,  precision: 0) %> OFF), ⭐Rating:<%= @post.rating %>, 📃Reviews: <%= @post.review_count %>+ </p>
               <% end %> 
 
             <% else %>
-              <p>"<%= @post.title %>"</em> on sale for <%= number_to_currency(@post.is_price) %>... (<%= number_to_percentage(hotdeal_pct,  precision: 0) %> OFF), Rating:<%= @post.rating %>, Reviews: <%= @post.review_count %>+ </p>
+              <p>👉"<%= @post.title %>"</em> on sale for <%= number_to_currency(@post.is_price) %>... 💥(<%= number_to_percentage(hotdeal_pct,  precision: 0) %> OFF), ⭐Rating:<%= @post.rating %>, 📃Reviews: <%= @post.review_count %>+ </p>
             <% end %>
               
           <% end %>
