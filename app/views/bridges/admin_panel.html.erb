@@ -1,0 +1,47 @@
+<% if current_user && current_user.admin %>
+  <header><%= render 'shared/header_index' %></header>
+    
+    <div class="wrap">
+    
+        <div class="panel_box clearfix">
+          <ul class="tabs">
+            <li>
+              <input type="radio" checked name="tabs" id="tab1">
+              <label for="tab1">Coupon Title</label>
+              <div id="tab-content1" class="tab-content">
+                <% @coupons.each do |coupon| %>
+                  <% if coupon.created_at > 7.days.ago %>
+                    <p><%= coupon.c_title %></p>
+                  <% end %>
+                <% end %>
+              </div>
+            </li>
+
+            <li>
+              <input type="radio" name="tabs" id="tab2">
+              <label for="tab2">None</label>
+              <div id="tab-content2" class="tab-content">
+                
+              </div>
+            </li>
+
+            <!-- <li>
+              <input type="radio" name="tabs" id="tab3">
+              <label for="tab3">Malts</label>
+              <div id="tab-content3" class="tab-content">
+              
+              </div>
+            </li>
+             <li>
+              <input type="radio" name="tabs" id="tab4">
+              <label for="tab4">Stouts</label>
+              <div id="tab-content4" class="tab-content">
+               
+              </div>
+            </li> -->
+          </ul>
+        </div>
+      
+        
+    </div>
+<% end %>

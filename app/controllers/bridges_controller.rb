@@ -24,12 +24,12 @@ class BridgesController < ApplicationController
     @posts = Post.all.order("created_at DESC").limit(50)
   end
 
-  def new_index
-    # @pagy, @posts = pagy(Post.all.order("created_at DESC"), items:40)
-    @coupons = Coupon.most_hit(1.day.ago, 10)
-    @online_deals = Coupon.most_hit(1.day.ago, 10)
-    # @coupons = Coupon.sort_by_popularity('DESC')
-  end
+  # def new_index
+  #   # @pagy, @posts = pagy(Post.all.order("created_at DESC"), items:40)
+  #   @coupons = Coupon.most_hit(1.day.ago, 10)
+  #   @online_deals = Coupon.most_hit(1.day.ago, 10)
+  #   # @coupons = Coupon.sort_by_popularity('DESC')
+  # end
 
   def delete_coupons
     @coupons = Coupon.all
@@ -45,6 +45,10 @@ class BridgesController < ApplicationController
 
   def random_deals
     @deals = Deal.offset(rand(Deal.count)).limit(1)
+  end
+
+  def admin_panel
+    @coupons = Coupon.all.order("created_at DESC")
   end
 
 end

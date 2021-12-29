@@ -32,6 +32,7 @@ Rails.application.routes.draw do
   get 'bridges/delete_hotdeals'
   get 'bridges/delete_shoes'
   get 'bridges/random_deals'
+  get 'bridges/admin_panel'
 
 
   get '/404' , to: 'errors#not_found'
