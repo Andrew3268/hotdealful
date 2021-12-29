@@ -12,6 +12,7 @@ Disallow: bridges/new_under_deal
 Disallow: bridges/new_half_deal
 Disallow: bridges/delete_coupons
 Disallow: bridges/delete_hotdeals
+Disallow: bridges/admin_panel
 
 Disallow: /picks/new
 Disallow: /picks/edit
