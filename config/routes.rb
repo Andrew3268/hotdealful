@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   devise_for :users
   # root 'posts#index'
   # root 'bridges#finder_detail'
-  root 'coupons#index'
+  # root 'coupons#index'
   # root 'homes#index'
+  root 'bridges#home'
   resources :posts
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
@@ -33,6 +34,7 @@ Rails.application.routes.draw do
   get 'bridges/delete_shoes'
   get 'bridges/random_deals'
   get 'bridges/admin_panel'
+  get 'bridges/home'
 
 
   get '/404' , to: 'errors#not_found'
