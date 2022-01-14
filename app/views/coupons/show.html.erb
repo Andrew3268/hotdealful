@@ -136,7 +136,8 @@
             <div class="admin">
               <p><%= render_with_chashtags(@coupon.c_hashtag) %></p>
               <%= link_to 'Edit', edit_coupon_path(@coupon) %> |
-              <%= link_to 'Back', coupons_path %>
+              <%= link_to 'Back', coupons_path %> |
+              <%= link_to 'Destroy', @coupon, method: :delete, data: { confirm: 'Are you sure?' } %>
             </div>
           <% end %>
 
