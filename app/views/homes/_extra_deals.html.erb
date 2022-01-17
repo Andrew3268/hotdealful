@@ -1,6 +1,5 @@
 <div class="cards">
   <% @extra_deals.each do |post| %>
-    <% if post.spare_61.present? or post.spare_62.present? %>
       <div class=" card [ is-collapsed ] ">
         <div class="card__inner [ js-expander ]">
           <div class="image_box">
@@ -37,7 +36,6 @@
         </div>      
       </div><!-- card -->
 
-    <% end %>
   <% end %>
   
 </div><!-- cards -->
