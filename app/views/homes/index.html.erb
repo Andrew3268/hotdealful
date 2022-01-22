@@ -19,24 +19,26 @@
     <% end %>
 
     <div class="deals_box"><%= render '/coupons/online_deals' %></div>
-  
+    
     <div class="trending_box clearfix">
-      <h2 class="line-title">Popular Coupons & Deals of Amazon</h2>
+      <h2 class="line-title">Popular Codes & Deals of Amazon</h2>
       <br>
       <div class="trending"><%= render '/coupons/trending' %></div>
     </div>
+
+    <div class="trending_box clearfix">
+      <h2 class="line-title">Today's Found::Amazon Hot Deals</h2>
+      <br>
+      <div class="trending"><%= render '/homes/extra_deals' %></div>
+      <a class="ctn_more" href="/posts">More +</a>
+    </div>
+    
 
     <div class="coupon_box clearfix">
       <%= render 'homes/coupon_section' %>
       <a class="ctn_more" href="/coupons/chashtag/promotion_coupons">More +</a>
     </div>
 
-    <div class="trending_box clearfix">
-      <h2 class="line-title">Found New Deals of Amazon</h2>
-      <br>
-      <div class="trending"><%= render '/homes/extra_deals' %></div>
-      <a class="ctn_more" href="/posts">More +</a>
-    </div>
     
     <!-- <div class="hotdeals_wrap">
       <h2 class="line-title">The Best Deals of Amazon</h2>  
