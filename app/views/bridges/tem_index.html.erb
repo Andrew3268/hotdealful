@@ -12,13 +12,8 @@
     <div class="index_wrap">
       <header><%= render 'shared/header_index' %></header>
 
-      <div class="search_hero">
-        <div class="inner">
-          <h2>Find Amazon Coupon</h2>
-          <%= form_for "",url: coupons_path, role: "search", method: :get do %>
-            <%= text_field_tag :search, @search_term, placeholder: "Search coupon deals" %>
-          <% end %> 
-        </div>
+      <div class="search_hero clearfix">
+          <%= render 'bridges/only_coupon' %>
       </div>
 
       <div class="ctn_box">
@@ -41,7 +36,7 @@
           <h2 class="line-title">Today's Found::Amazon Hot Deals</h2><br>
           <%= render '/homes/deals' %>
         </div>
-        <a class="more_btn" href="">More +</a>
+        <a class="more_btn" href="/posts">More +</a>
 
         <div class="middle_event">
           <a target="_blank" href="#n"><img src="https://images.unsplash.com/photo-1517602302552-471fe67acf66?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8YnJhbmR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"></a>
@@ -52,7 +47,7 @@
           <h2 class="line-title">Today's Found::Amazon Coupons</h2><br>
           <%= render '/homes/coupons' %>
         </div>
-        <a class="more_btn" href="">More +</a>
+        <a class="more_btn" href="/coupons">More +</a>
 
 
         <div class="trending_box clearfix">
