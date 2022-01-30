@@ -35,6 +35,7 @@ Rails.application.routes.draw do
   get 'bridges/random_deals'
   get 'bridges/admin_panel'
   get 'bridges/home'
+  get 'bridges/tem_index'
 
 
   get '/404' , to: 'errors#not_found'
