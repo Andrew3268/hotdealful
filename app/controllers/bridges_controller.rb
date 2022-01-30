@@ -61,8 +61,8 @@ class BridgesController < ApplicationController
 
   def tem_index
     @homes = Home.all.order("created_at DESC")
-    @coupons = Coupon.all.order("created_at DESC").limit(22)
-    @extra_deals = Post.all.order("created_at DESC").limit(50)
+    @coupons = Coupon.all.order("created_at DESC").limit(10)
+    @extra_deals = Post.all.order("created_at DESC").limit(10)
     @coupons_top = Coupon.most_hit(3.day.ago, 10)
     @deals_top = Post.most_hit(3.day.ago, 10)
   end
