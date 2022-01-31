@@ -1,0 +1,285 @@
+<header><%= render 'shared/header_show' %></header>
+
+<div class="show-wrap">
+  <div class="wrap">
+
+    <div class="container clearfix">
+
+      <div class="content-section clearfix">
+
+        <!-- for Mobile -->
+        <div class="title_mobile">
+          <h2 class="line-break-02">
+            <% promo_price = 0 %>
+            <% promo_price = (@coupon.c_pct.to_f / 100) * @coupon.c_was_price %>
+            Amazon.com has <em>"<%= @coupon.c_title %>"</em> on sale for
+            <% if @coupon.c_promocode.present? %>
+              <% total_price = 0 %>
+              <% total_price = @coupon.c_was_price - promo_price %>
+              <em class="price"><%= number_to_currency(total_price) %>.</em> Shipping is free. w/ Prime or on $25+ orders.
+            <% else %>
+              <em class="price"><%= number_to_currency(@coupon.c_is_price) %>.</em> Shipping is free. w/ Prime or on $25+ orders.
+            <% end %>
+            <% if @coupon.c_rating.present? %>
+              <div class="rating_box">
+                <p>Rating: <span><%= @coupon.c_rating %></span></p><p>Reviews: <span><%= @coupon.c_review_count %>+</span></p>
+              </div>            
+            <% end %>
+          </h2>
+        </div>
+        <!-- End Mobile -->
+
+        <!-- For PC -->
+        <div class="image-box clearfix">
+          <img src="<%= @coupon.c_image %>" alt="<%= @coupon.c_title %>" title="<%= @coupon.c_title %>" />
+        </div>
+
+        <div class="inner-box clearfix">
+          <% if current_user && current_user.admin %>
+            <div class="sharing_btn">
+              <a href="/" data-turbolinks="false">Back</a>
+              <%= render 'coupons/sharing_sns' %>
+              <button id="facebook_btn">FBcopy</button>
+              <button class="btn-default js-copybtn"><span class="glyphicon glyphicon-copy"></span> TWcopy </button>
+            </div>
+          <% end %>
+
+          <div class="title">
+            <h2 class="line-break-02">
+              <% promo_price = 0 %>
+              <% promo_price = (@coupon.c_pct.to_f / 100) * @coupon.c_was_price %>
+              Amazon.com has <em>"<%= @coupon.c_title %>"</em> on sale for
+              <% if @coupon.c_promocode.present? %>
+                <% total_price = 0 %>
+                <% total_price = @coupon.c_was_price - promo_price %>
+                <em class="price"><%= number_to_currency(total_price) %>.</em> Shipping is free. w/ Prime or on $25+ orders.
+              <% else %>
+                <em class="price"><%= number_to_currency(@coupon.c_is_price) %>.</em> Shipping is free. w/ Prime or on $25+ orders.
+              <% end %>
+            </h2>
+            <% if @coupon.c_rating.present? %>
+              <div class="rating_box">
+                <% if current_user && current_user.admin %><%= @coupon.c_rating %> <%= @coupon.c_review_count %>+<% end %> <p>Rating: <span><%= @coupon.c_rating %></span></p><p>Reviews: <span><%= @coupon.c_review_count %>+</span></p>
+              </div>            
+            <% end %>
+          </div>
+          <h2 class="summary_title">SUMMARY</h2>
+          <div class="receipt">
+            <!-- Button Section - Text(left) -->
+            <div class="receipt__grid1">
+              <p>Offer Price</p>
+              <% if @coupon.c_promocode.present? %>
+                <p>Discount(<%= number_to_percentage(@coupon.c_pct, precision: 0) %> off)</p>            
+                <p>Promotion Code</p>
+              <% else %>
+                <% hotdeal_pct = 0 %>
+                <% hotdeal_pct =  (@coupon.c_was_price - @coupon.c_is_price) / @coupon.c_was_price * 100 %>
+                <p>Discount(<%= number_to_percentage(hotdeal_pct, precision: 0) %> off)</p>            
+              <% end %>
+
+              <hr>
+
+              <p class="total_text">Total</p>
+            </div>
+
+            <!-- Summary Section - Price(right) -->
+            <div class="receipt__grid2">
+              <p><%= number_to_currency(@coupon.c_was_price) %></p>
+              <% if @coupon.c_promocode.present? %>
+                <% promo_price = 0 %>
+                <% promo_price = (@coupon.c_pct.to_f / 100) * @coupon.c_was_price %>
+                <p>- <%= number_to_currency(promo_price) %></p>
+                <p class="p-code"><%= @coupon.c_promocode %></p>
+              <% else %>
+                <% sale_price = 0 %>
+                <% sale_price = ( hotdeal_pct / 100 ) * @coupon.c_was_price %>
+                <p>- <%= number_to_currency(sale_price) %></p>  
+              <% end %>
+
+              <hr>
+              <!-- Total Price -->
+              <% if @coupon.c_promocode.present? %>
+                <% total_price = 0 %>
+                <% total_price = @coupon.c_was_price - promo_price %>
+                <p class="total_price "><%= number_to_currency(total_price) %></p> 
+              <% else %>
+                <p class="total_price "><%= number_to_currency(@coupon.c_is_price) %></p> 
+              <% end %>
+                             
+            </div>
+          </div>
+
+          <% if current_user && current_user.admin %>
+            <!-- for instagram feed -->
+            <p>👉"<%= @coupon.c_title %>"</em> on sale for <%= number_to_currency(total_price) %>... 💥(<%= number_to_percentage(@coupon.c_pct, precision: 0) %> OFF), ⭐Rating:<%= @coupon.c_rating %>, 📃Reviews: <%= @coupon.c_review_count %>+ </p>
+          <% end %>
+
+
+          <!-- Button Section -->
+
+          <div class="btn">
+            <% if @coupon.c_promocode.present? %>
+              <p>Apply codes at checkout with a single click.</p>
+              <a class="amz_btn" href="/">Back</a>
+              <a class="amz_btn buy_now" target="_blank" href="<%= @coupon.c_link %>">Apply this code</a>
+            <% else %>
+              <a class="amz_btn" href="/">Back</a>
+              <a class="amz_btn buy_now" target="_blank" href="<%= @coupon.c_link %>">Accept an offer</a>
+            <% end %>
+          </div>
+
+          <div class="notice">
+            <p>"HOTDEAL-FUL" is a participant in the Amazon Services LLC Associates Program & the Amazon EU Associates Programme, an affiliate advertising program designed to provide a means for us to earn fees by linking to Amazon.com,</p>
+          </div>
+
+          <% if current_user && current_user.admin %>
+            <div class="admin">
+              <p><%= render_with_chashtags(@coupon.c_hashtag) %></p>
+              <%= link_to 'Edit', edit_coupon_path(@coupon) %> |
+              <%= link_to 'Back', coupons_path %> |
+              <%= link_to 'Destroy', @coupon, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+          <% end %>
+
+        </div>
+        <!-- End PC -->
+      </div><!-- ./content-section-->
+
+      <div class="search_ads">
+        <script type="text/javascript">
+          amzn_assoc_placement = "adunit0";
+          amzn_assoc_search_bar = "false";
+          amzn_assoc_tracking_id = "3628-20";
+          amzn_assoc_ad_mode = "search";
+          amzn_assoc_ad_type = "smart";
+          amzn_assoc_marketplace = "amazon";
+          amzn_assoc_region = "US";
+          amzn_assoc_title = "Shop Related Products";
+          amzn_assoc_default_search_phrase = "<%= @coupon.c_title %>";
+          amzn_assoc_default_category = "All";
+          amzn_assoc_linkid = "39e9aa3ca8ca9df980c22e602066352e";
+        </script>
+        <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+      </div>
+      
+
+      <% if current_user && current_user.admin %>
+          <div class="sharing_ctn">
+           <div class="sharing facebook clearfix"">
+            <span id="facebook_ctn">
+              <p>Available at Amazon NOW!!</p>
+              <p class="share_title"><%= @coupon.c_title %></p>
+              <% if @coupon.c_promocode.present? %>
+                <p>Star Rating: <%= @coupon.c_rating %></p>
+                <p>Reviews: <%= @coupon.c_review_count %> +</p>
+                <p>Offer: <%= number_to_currency(total_price) %> (<%= number_to_percentage(@coupon.c_pct, precision: 0) %> off)</p>
+                <p>Was: <%= number_to_currency(@coupon.c_was_price) %></p>
+                <p>You can save <%= number_to_currency(promo_price) %> by Promo Code: <%= @coupon.c_promocode %>  / Shipping is free w/Prime or on $25+</p>
+                <p>#amazondeals #amazoncoupons #amazonpromocode #coupons #promocode</p>
+              <% else %>
+                <p>Offer: <%= number_to_currency(@coupon.c_is_price) %> (<%= number_to_percentage(hotdeal_pct, precision: 0) %> off)</p>
+                <p>Was: <%= number_to_currency(@coupon.c_was_price) %></p>
+                <p>You can save <%= number_to_currency(sale_price) %> / Shipping is free w/Prime or on $25+</p>
+                <p>#amazondeals #amazoncoupons #amazonpromocode #coupons #promocode</p>
+              <% end %>
+              
+            </span>
+          </div>
+          <hr>
+          <div class="sharingt witter-container clearfix"">
+             <span class="js-copytext"> 
+              <div class="sharing">
+
+                <p>Available at Amazon NOW!!</p>
+
+                <% if @coupon.c_promocode.present? %>
+                  <p>Offer: <%= number_to_currency(total_price) %> (<%= number_to_percentage(@coupon.c_pct, precision: 0) %> off)</p>
+                  <p>Was: <%= number_to_currency(@coupon.c_was_price) %></p>
+                  <p>You can save <%= number_to_currency(promo_price) %> by Promo Code: <%= @coupon.c_promocode %>  / Shipping is free w/Prime or on $25+</p>
+                  <p>http://hotdealful.com/coupons/<%=(params[:id]) %></p>
+                  <p>#amazondeals #amazoncoupons #amazonpromocode #coupons #promocode</p>
+                <% else %>
+                  <p>Offer: <%= number_to_currency(@coupon.c_is_price) %> (<%= number_to_percentage(hotdeal_pct, precision: 0) %> off)</p>
+                  <p>Was: <%= number_to_currency(@coupon.c_was_price) %></p>
+                  <p>You can save <%= number_to_currency(sale_price) %> / Shipping is free w/Prime or on $25+</p>
+                  <p>http://hotdealful.com/coupons/<%=(params[:id]) %></p>
+                  <p>#amazondeals #amazoncoupons #amazonpromocode #coupons #promocode</p>
+                <% end %>
+
+              </div>
+            </span>
+          </div>
+        </div><!--/.sharing_ctn -->
+      <% end %>
+
+    </div><!--./container-->
+
+  </div>
+</div>
+
+
+<script type="text/javascript">
+  const textElement = document.getElementById("facebook_ctn");
+  const copyButton = document.getElementById("facebook_btn");
+  const copyText = (e) => {
+    window.getSelection().selectAllChildren(textElement);
+    document.execCommand("copy");
+  };
+  copyButton.addEventListener("click", (e) => copyText(e));
+  copyButton.addEventListener("mouseover", (e) => resetTooltip(e));
+</script>
+
+
+<script type="text/javascript">
+  var copyBtn = document.querySelector('.js-copybtn');
+  if (copyBtn) {
+      copyBtn.addEventListener('click', function(event) {
+          var copyText= document.querySelector('.js-copytext');
+          var range = document.createRange();
+          range.selectNode(copyText);
+          window.getSelection().addRange(range);
+          try {
+              var successful = document.execCommand('copy');
+              var msg = successful ? 'successful' : 'unsuccessful';
+          } catch(err) {
+
+          }
+          window.getSelection().removeAllRanges();
+      });
+  }
+</script>
+
+<!-- Accordion Menu -->
+<script type="text/javascript">
+  $('.accordion-item .heading').on('click', function(e) {
+      e.preventDefault();
+
+      // Add the correct active class
+      if($(this).closest('.accordion-item').hasClass('active')) {
+          // Remove active classes
+          $('.accordion-item').removeClass('active');
+      } else {
+          // Remove active classes
+          $('.accordion-item').removeClass('active');
+
+          // Add the active class
+          $(this).closest('.accordion-item').addClass('active');
+      }
+
+      // Show the content
+      var $content = $(this).next();
+      $content.slideToggle(100);
+      $('.accordion-item .content').not($content).slideUp('fast');
+  });
+</script>
+
+
+<script type="text/javascript">
+    amzn_assoc_ad_type = "link_enhancement_widget";
+    amzn_assoc_tracking_id = "3628-20";
+    amzn_assoc_linkid = "5d1280310b0d9d68b1e3a70f179566ab";
+    amzn_assoc_placement = "";
+    amzn_assoc_marketplace = "amazon";
+    amzn_assoc_region = "US";
+</script>
+<script src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&MarketPlace=US"></script>

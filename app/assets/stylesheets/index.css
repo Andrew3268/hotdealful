@@ -1,18 +1,29 @@
 .web_box{width:800px;height:100%;margin:0 auto;position:fixed;left:50%;transform:translate(-50%, 0);}
-.web_box .left{float:left;width:30%;margin-right:5%;border:1px solid;}
+.web_box .left{float:left;width:30%;margin-right:5%;position:relative;height:100%;}
+.web_box .left .inner{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);}
+.web_box .left .inner h2{text-align:right;font-size:50px;line-height:1.2;}
+.web_box .left .inner p{text-align:right;}
+.web_box .left .inner a{background:#000;color:#fff;padding:10px 15px;text-align:center;margin:10px 0 0 0;border-radius:15px;float:right;}
+
 .web_box .right{float:left;width:65%;height:100%;overflow-x:hidden;overflow-y:auto;border:2px solid;border-radius:20px;-ms-overflow-style: none; /* IE and Edge */scrollbar-width: none; /* Firefox */}
 .web_box .right::-webkit-scrollbar{display:none; /* Chrome, Safari, Opera*/}
 
 .web_box .right .index_wrap{overflow:hidden;}
-
 .web_box .right .index_wrap header nav{width:100%;}
 
-.web_box .right .index_wrap .search_hero{background:#000;color:#fff;height:200px;position:relative;margin:0 0 10px 0;}
-.web_box .right .index_wrap .search_hero .search-wrapping{width:100%;}
+.web_box .right .index_wrap .search_hero{color:#000;height:300px;position:relative;margin:0 0 10px 0;}
+.web_box .right .index_wrap .search_hero .inner{display:none;}
+.web_box .right .index_wrap .search_hero .inner h2{line-height:1.2;font-size:35px;padding:30px 50px;}
+.web_box .right .index_wrap .search_hero .inner p{padding:10px 50px;}
+.web_box .right .index_wrap .search_hero .inner p.find_more{padding:10px 35px;}
+.web_box .right .index_wrap .search_hero .inner p.find_more a{background:#000;color:#fff;padding:5px 10px;border-radius:15px;}
+.web_box .right .index_wrap .search_hero .search-wrapping{width:100%;margin:0;}
 .web_box .right .index_wrap .search_hero .search_none{display:none;}
-.web_box .right .index_wrap .search_hero .set_search_box{border:none;text-align:center;float:none;width:100%;}
-.web_box .right .index_wrap .search_hero .set_search_box .feild_wrap .keyword_box input{width:80%;margin:0 auto;}
-.web_box .right .index_wrap .search_hero .set_search_box button{background:#fff;color:#000;border:none;}
+.web_box .right .index_wrap .search_hero .set_search_box{border:none;text-align:center;float:none;width:100%;margin:0;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);}
+.web_box .right .index_wrap .search_hero .set_search_box h2{margin-bottom:15px;}
+.web_box .right .index_wrap .search_hero .set_search_box .feild_wrap{width:100%;}
+.web_box .right .index_wrap .search_hero .set_search_box .feild_wrap .keyword_box input{width:90%;margin:0 auto;float:none;border-radius:20px;}
+.web_box .right .index_wrap .search_hero .set_search_box button{color:#000;border:1px solid;width:50%;padding:10px 15px;}
 .web_box .right .index_wrap .search_hero .set_search_box .feild_wrap, .set_search_box .option_wrap{margin:0;}
 
 
@@ -47,3 +58,66 @@
 .web_box .right .index_wrap .ctn_box .trending_box .trending .trend_comm .coupon_card{width:100%;}
 .web_box .right .index_wrap .ctn_box .trending_box .trending .trend_comm .coupon_card .inner span.is_price{margin-right:7px;}
 .web_box .right .index_wrap .ctn_box .trending_box .trending .trend_comm .coupon_card .inner span.was_price{display:none;}
+
+
+@media screen and (max-width:640px){
+  .web_box{width:100%;}
+  .web_box .left{float:none;width:100%;margin:0;display:none;}
+  .web_box .right{float:none;width:100%;border:none;}
+  .web_box .right .index_wrap .search_hero{height:500px;}
+  .web_box .right .index_wrap .search_hero .inner{display:block;}
+  .web_box .right .index_wrap .search_hero .inner h2{padding:20px 40px;}
+  .web_box .right .index_wrap .search_hero .inner p{padding:0 40px;}
+  .web_box .right .index_wrap .search_hero .set_search_box{top:65%;}
+}
+
+@media screen and (min-width:641px) and (max-width:1199px){
+  .web_box{width:100%;padding:10px 20px;}
+}
+
+
+/* coupon&deal page */
+.web_box .right .index_wrap .ctn_box .most_coupon{margin:10px 0 100px 0;height:200px;}
+.web_box .right .index_wrap .ctn_box .most_coupon .mc_img_box{width:200px;height:200px;position:relative;}
+.web_box .right .index_wrap .ctn_box .most_coupon .mc_img_box img{width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);padding:20px;}
+.web_box .right .index_wrap .ctn_box .most_coupon .mc_img_box span{border:1px solid #ccc;border-radius:50%;font-size:17px;padding:10px 17px;background:#000;color:#fff;position:absolute;top:0;left:0;}
+
+
+
+.scroll-downs {
+  position: absolute;
+  top: 30;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  
+  width :34px;
+  height: 55px;
+}
+.mousey {
+  width: 3px;
+  padding: 5px 10px;
+  height: 35px;
+  border: 2px solid #ccc;
+  border-radius: 25px;
+  opacity: 0.75;
+  box-sizing: content-box;
+}
+.scroller {
+  width: 3px;
+  height: 10px;
+  border-radius: 25%;
+  background-color: #ccc;
+  animation-name: scroll;
+  animation-duration: 2.2s;
+  animation-timing-function: cubic-bezier(.15,.41,.69,.94);
+  animation-iteration-count: infinite;
+}
+@keyframes scroll {
+  0% { opacity: 0; }
+  10% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(15px); opacity: 0;}
+}
+
+

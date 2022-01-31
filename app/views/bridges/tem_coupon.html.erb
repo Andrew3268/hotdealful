@@ -1,0 +1,44 @@
+<div class="web_box clearfix">
+
+  <div class="left">
+
+    What is Lorem Ipsum?
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+
+  </div>
+
+  <div class="right">
+    <div class="index_wrap">
+      <header><%= render 'shared/header_index' %></header>
+
+      <div class="ctn_box">
+       
+        <!-- <div class="most_coupon">
+          <h2 class="line-title">🔥Most Popular Promo Code Deals Top 10</h2><br>
+          <div class="owl-carousel custom-carousel owl-theme">
+            <% @coupons_top.each_with_index do |coupon, i| %>
+              <div class="mc_img_box">
+                <%= link_to image_tag(coupon.c_image, alt: coupon.c_title, title: coupon.c_title), coupon %>
+                <span class="numbering"><%= i + 1 %></span>
+              </div>
+            <% end %>
+          </div>
+        </div> -->
+      
+
+        <div class="pic_deal clearfix">
+          <h2 class="line-title">⭐Amazon Promo Code Deals</h2><br>
+          <%= render '/homes/coupons' %>
+        </div>
+
+        
+       
+      </div>
+
+    </div>
+
+
+  </div>
+
+</div>

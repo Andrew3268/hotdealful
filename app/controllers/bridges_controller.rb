@@ -67,4 +67,15 @@ class BridgesController < ApplicationController
     @deals_top = Post.most_hit(3.day.ago, 10)
   end
 
+  def tem_coupon
+    @coupons = Coupon.all.order("created_at DESC")
+    @coupons_top = Coupon.most_hit(100.day.ago, 10)
+    
+  end
+
+  def tem_deal
+    @extra_deals = Post.all.order("created_at DESC")
+    @deals_top = Post.most_hit(3.day.ago, 10)
+  end
+
 end
