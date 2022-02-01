@@ -68,7 +68,7 @@
   .web_box .right .index_wrap .search_hero .inner{display:block;}
   .web_box .right .index_wrap .search_hero .inner h2{padding:20px 40px;}
   .web_box .right .index_wrap .search_hero .inner p{padding:0 40px;}
-  .web_box .right .index_wrap .search_hero .set_search_box{top:65%;}
+  .web_box .right .index_wrap .search_hero .set_search_box{top:70%;}
 }
 
 @media screen and (min-width:641px) and (max-width:1199px){
@@ -86,7 +86,7 @@
 
 .scroll-downs {
   position: absolute;
-  top: 30;
+  top: 400px;
   right: 0;
   bottom: 0;
   left: 0;
