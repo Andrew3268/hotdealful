@@ -12,8 +12,8 @@
 }
 
 /*.coupon_box{margin:70px 0 0 0;}*/
-.home_in_coupon, .admin_panel{width:1200px;margin:0 auto;overflow:hidden;}
-.admin_panel a{color:#fff;background:#08f;padding:10px;border-radius:20px;}
+.home_in_coupon{width:1200px;margin:0 auto;overflow:hidden;}
+.admin_btn a{color:#fff;background:#08f;padding:3px;border-radius:20px;font-size:12px;}
 .coupon_header{margin:30px auto 20px auto;text-align:center;font-size:30px;width:50%;display:block;border:1px solid;border-radius:20px;padding:5px 10px;}
 .ctn_more{color:#000;font-size:20px;text-align:center;padding:10px 20px;border-radius:20px;width:15%;display:block;margin:15px auto 0 auto;margin-bottom:70px;border:2px solid;}
 .deal_header{margin:100px auto 20px auto;text-align:center;font-size:30px;width:50%;display:block;border:1px solid;border-radius:20px;padding:5px 10px;}

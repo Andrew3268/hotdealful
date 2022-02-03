@@ -7,6 +7,20 @@
   <div class="right">
     <div class="index_wrap">
       <header><%= render 'shared/header_index' %></header>
+       <% if current_user && current_user.admin %>
+          <div class="admin_btn">
+            <%= link_to 'New Coupon', new_coupon_path %>
+            <%= link_to 'New Post', new_post_path %>
+            <%= link_to 'New Home', new_home_path %>
+            <a href="/bridges/delete_coupons">Delete Coupons</a>
+            <a href="/bridges/delete_hotdeals">Delete Hotdeals</a>
+            <a href="/bridges/delete_shoes">Delete Shoes</a>
+            <a href="/coupons">Coupon's Home</a>
+            <a href="/deals">Deals</a>
+            <a href="/bridges/random_deals">Random Deals</a>
+            <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+          </div>  
+        <% end %>
 
       <div class="search_hero clearfix">
           <%= render 'bridges/only_coupon' %>
