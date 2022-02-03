@@ -36,7 +36,8 @@ body{margin:0;padding:0;font-size:15px;color:#000;line-height:1.5;font-weight:30
 }
 /*Header */
 header{position:relative;}
-header nav{padding:15px 30px 10px 30px;width:1200px;margin:0 auto;position:relative;}
+/*header nav{padding:15px 30px 10px 30px;width:1200px;margin:0 auto;position:relative;}*/ /* old show */
+header nav{padding:15px 30px 10px 30px;width:100%;margin:0 auto;position:relative;}
 header nav h1{text-align:center;font-family: 'KoHo', sans-serif;}
 header nav h1 a{color:#404041;}
 header nav img{width:25%;}

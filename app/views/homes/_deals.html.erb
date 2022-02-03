@@ -10,8 +10,8 @@
         
             <% if post.rating.present? %>
               <div class="ratings_box">
-                <span class="rating">star: <%= post.rating %></span>
-                <span class="review">rating: <%= post.review_count %> +</span>
+                <span class="rating">rating: <%= post.rating %></span>
+                <span class="review">reviews: <%= post.review_count %> +</span>
                 <% if current_user && current_user.admin %>
                   <span class="view"><%= post.hits %></span>
                 <% end %>

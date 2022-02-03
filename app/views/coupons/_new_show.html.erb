@@ -7,11 +7,19 @@
 
     <header><%= render 'shared/header_show' %></header>
     <div class="show-wrap">
-      <div class="wrap">
+      
 
         <div class="container clearfix">
 
           <div class="content-section clearfix">
+            <% if current_user && current_user.admin %>
+              <div class="sharing_btn">
+                <a href="/" data-turbolinks="false">Back</a>
+                <%= render 'coupons/sharing_sns' %>
+                <button id="facebook_btn">FBcopy</button>
+                <button class="btn-default js-copybtn"><span class="glyphicon glyphicon-copy"></span> TWcopy </button>
+              </div>
+            <% end %>
 
             <!-- for Mobile -->
             <div class="title_mobile">
@@ -32,6 +40,7 @@
                   </div>            
                 <% end %>
               </h2>
+
             </div>
             <!-- End Mobile -->
 
@@ -41,14 +50,7 @@
             </div>
 
             <div class="inner-box clearfix">
-              <% if current_user && current_user.admin %>
-                <div class="sharing_btn">
-                  <a href="/" data-turbolinks="false">Back</a>
-                  <%= render 'coupons/sharing_sns' %>
-                  <button id="facebook_btn">FBcopy</button>
-                  <button class="btn-default js-copybtn"><span class="glyphicon glyphicon-copy"></span> TWcopy </button>
-                </div>
-              <% end %>
+              
 
               <div class="title">
                 <h2 class="line-break-02">
@@ -220,7 +222,7 @@
 
         </div><!--./container-->
 
-      </div>
+      
     </div>
 
   </div>

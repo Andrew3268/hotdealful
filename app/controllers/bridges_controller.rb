@@ -53,8 +53,8 @@ class BridgesController < ApplicationController
 
   def home
     @homes = Home.all.order("created_at DESC")
-    @coupons = Coupon.all.order("created_at DESC").limit(22)
-    @extra_deals = Post.all.order("created_at DESC").limit(50)
+    @coupons = Coupon.all.order("created_at DESC").limit(10)
+    @extra_deals = Post.all.order("created_at DESC").limit(10)
     @coupons_top = Coupon.most_hit(3.day.ago, 10)
     @deals_top = Post.most_hit(3.day.ago, 10)
   end
@@ -67,14 +67,14 @@ class BridgesController < ApplicationController
     @deals_top = Post.most_hit(3.day.ago, 10)
   end
 
-  def tem_coupon
-    @coupons = Coupon.all.order("created_at DESC")
+  def coupon_section
+    @pagy, @coupons = pagy(Coupon.all.order("created_at DESC"), items: 20)
     @coupons_top = Coupon.most_hit(100.day.ago, 10)
     
   end
 
-  def tem_deal
-    @extra_deals = Post.all.order("created_at DESC")
+  def deal_section
+    @pagy, @extra_deals = pagy(Post.all.order("created_at DESC"), items: 20)
     @deals_top = Post.most_hit(3.day.ago, 10)
   end
 

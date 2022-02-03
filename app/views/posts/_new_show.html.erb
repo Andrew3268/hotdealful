@@ -1,0 +1,325 @@
+<div class="web_box clearfix">
+  <div class="left">
+    <%= render '/shared/left' %>
+  </div>
+
+  <div class="right">
+
+    <header><%= render 'shared/header_show' %></header>
+    <div class="show-wrap">
+      
+        <div class="container clearfix">
+
+          <div class="content-section clearfix">
+            <% if current_user && current_user.admin %>
+              <div class="sharing_btn">
+                <a href="/" data-turbolinks="false">Back</a>
+                <%= render 'posts/sharing_sns' %>
+                <button id="facebook_btn">FBcopy</button>
+                <button class="btn-default js-copybtn"><span class="glyphicon glyphicon-copy"></span> TWcopy </button>
+              </div>
+            <% end %>
+
+            <div class="title_mobile">
+              <h2 class="line-break-02">
+                <% promo_price = 0 %>
+                <% promo_price = (@post.pct.to_f / 100) * @post.was_price %>
+                
+                Amazon.com has <em>"<%= @post.title %>"</em> on sale for
+                <% if @post.spare_61.present? %>
+                  <% extra_coupon_deal = 0 %>
+                  <% extra_coupon_deal = @post.is_price * (@post.spare_61 / 100) %>
+                  <% extra_coupon_total = 0 %>
+                  <% extra_coupon_total = @post.is_price - extra_coupon_deal %>
+                  <em class="price"><%= number_to_currency(extra_coupon_total) %>.</em> Shipping is free. w/ Prime or on $25+ orders.
+                <% elsif %>
+                  <% if @post.spare_62.present? %>
+                  <% extra_coupon__dallor_total = 0 %>
+                  <% extra_coupon__dallor_total = @post.is_price - @post.spare_62 %>
+                    <em class="price"><%= number_to_currency(extra_coupon__dallor_total) %>.</em> Shipping is free. w/ Prime or on $25+ orders.
+                  <%end %>
+                <% else %>
+                  <em class="price"><%= number_to_currency(@post.is_price) %>.</em> Shipping is free. w/ Prime or on $25+ orders.
+                <% end %>
+                
+                
+                <% if @post.rating.present? %>
+                  <div class="rating_box">
+                     <p>Rating: <span><%= @post.rating %></span></p><p>Reviews: <span><%= @post.review_count %>+</span></p>
+                  </div>            
+                <% end %>
+              </h2>
+            </div>
+            
+
+            <div class="image-box post_img_box clearfix">
+              <img src="<%= @post.image %>" alt="<%= @post.title %>" title="<%= @post.title %>" />
+            </div>
+
+            <div class="inner-box clearfix">
+              
+              <div class="title">
+                <h2 class="line-break-02">
+                  <% promo_price = 0 %>
+                  <% promo_price = (@post.pct.to_f / 100) * @post.was_price %>
+
+                  Amazon.com has <em>"<%= @post.title %>"</em> on sale for
+                  <% if @post.spare_61.present? %>
+                    <% extra_coupon_deal = 0 %>
+                    <% extra_coupon_deal = @post.is_price * (@post.spare_61 / 100) %>
+                    <% extra_coupon_total = 0 %>
+                    <% extra_coupon_total = @post.is_price - extra_coupon_deal %>
+                    <em class="price"><%= number_to_currency(extra_coupon_total) %>.</em> Shipping is free. w/ Prime or on $25+ orders.
+                  <% elsif %>
+                    <% if @post.spare_62.present? %>
+                    <% extra_coupon__dallor_total = 0 %>
+                    <% extra_coupon__dallor_total = @post.is_price - @post.spare_62 %>
+                      <em class="price"><%= number_to_currency(extra_coupon__dallor_total) %>.</em> Shipping is free. w/ Prime or on $25+ orders.
+                    <%end %>
+                  <% else %>
+                    <em class="price"><%= number_to_currency(@post.is_price) %>.</em> Shipping is free. w/ Prime or on $25+ orders.
+                  <% end %>
+                </h2>
+                <% if @post.rating.present? %>
+                  <div class="rating_box">
+                    <% if current_user && current_user.admin %><%= @post.rating %> <%= @post.review_count %>+<% end %> <p>Rating: <span><%= @post.rating %></span></p><p>Reviews: <span><%= @post.review_count %>+</span></p>
+                  </div>            
+                <% end %>
+              </div>
+              <h2 class="summary_title">SUMMARY</h2>
+              <div class="receipt">
+                <!-- Button Section - Text(left) -->
+                <div class="receipt__grid1">
+                  <p>Offer Price</p>
+                  <% hotdeal_pct = 0 %>
+                  <% hotdeal_pct =  (@post.was_price - @post.is_price) / @post.was_price * 100 %>
+                  <p>Discount( <%= number_to_percentage(hotdeal_pct, precision: 0) %> OFF )</p>            
+                  <% if @post.spare_61.present? %>
+                    <p>Extra Coupon( <%= number_to_percentage(@post.spare_61, precision: 0) %> OFF )</p>
+                  <% elsif %>
+                    <% if @post.spare_62.present? %>
+                      <p>Extra Coupon( <%= number_to_currency(@post.spare_62, precision: 0) %> OFF )</p>
+                    <% end %>
+                  <% end %>
+                  <hr>
+
+                  <p class="total_text">Total</p>
+                </div>
+
+                <!-- Summary Section - Price(right) -->
+                <div class="receipt__grid2">
+                  <p><%= number_to_currency(@post.was_price) %></p>
+                  <% sale_price = 0 %>
+                  <% sale_price = ( hotdeal_pct / 100 ) * @post.was_price %>
+                  <p>- <%= number_to_currency(sale_price) %></p>  
+
+                  <% if @post.spare_61.present? %>
+                    <% extra_coupon_deal = 0 %>
+                    <% extra_coupon_deal =  (@post.was_price - sale_price) * (@post.spare_61 / 100) %>
+                    <p>- <%= number_to_currency(extra_coupon_deal) %></p>
+                  <% elsif %>
+                    <% if @post.spare_62.present? %>
+                      <p>- <%= number_to_currency(@post.spare_62) %></p>
+                    <% end %>
+                  <% end %>
+
+                  <hr>
+
+                  <!-- Total Price -->
+                  <% if @post.spare_61.present? %>
+                    <% extra_coupon_total = 0 %>
+                    <% extra_coupon_total = @post.is_price - extra_coupon_deal %>
+                     <p class="total_price "><%= number_to_currency(extra_coupon_total) %></p>
+                  <% elsif %>
+                    <% if @post.spare_62.present? %>
+                      <% extra_coupon_dallor_total = 0 %>
+                      <% extra_coupon_dallor_total =  @post.is_price - @post.spare_62 %>
+                      <p class="total_price "><%= number_to_currency(extra_coupon_dallor_total) %></p>   
+                    <% end %>
+                  <% else %>
+                    <p class="total_price "><%= number_to_currency(@post.is_price) %></p> 
+                  <% end %>
+                </div>
+              </div>
+
+              <% if current_user && current_user.admin %>
+                <!-- for instagram feed -->
+                <% if @post.spare_61.present? %>
+                  <p>👉"<%= @post.title %>"</em> on sale for <%= number_to_currency(extra_coupon_total) %>... 💥(<%= number_to_percentage(hotdeal_pct,  precision: 0) %> OFF) + 💥(Clipping Coupon: <%= number_to_percentage(@post.spare_61,  precision: 0) %> OFF), ⭐Rating:<%= @post.rating %>, 📃Reviews: <%= @post.review_count %>+ </p>
+                <% elsif %>
+                  <% if @post.spare_62.present? %>
+                    <p>👉"<%= @post.title %>"</em> on sale for <%= number_to_currency(extra_coupon_total) %>... 💥(<%= number_to_percentage(hotdeal_pct,  precision: 0) %> OFF) + 💥(Clipping Coupon: <%= number_to_currency(@post.spare_62,  precision: 0) %> OFF), ⭐Rating:<%= @post.rating %>, 📃Reviews: <%= @post.review_count %>+ </p>
+                  <% end %> 
+
+                <% else %>
+                  <p>👉"<%= @post.title %>"</em> on sale for <%= number_to_currency(@post.is_price) %>... 💥(<%= number_to_percentage(hotdeal_pct,  precision: 0) %> OFF), ⭐Rating:<%= @post.rating %>, 📃Reviews: <%= @post.review_count %>+ </p>
+                <% end %>
+                  
+              <% end %>
+
+              <!-- Button Section -->
+
+              <div class="btn">
+                <a class="amz_btn" href="/">Back</a>
+                <a class="amz_btn buy_now" target="_blank" href="<%= @post.link %>">Get Deal</a>
+              </div>
+
+              <div class="notice">
+                <p>"HOTDEAL-FUL" is a participant in the Amazon Services LLC Associates Program & the Amazon EU Associates Programme, an affiliate advertising program designed to provide a means for us to earn fees by linking to Amazon.com,</p>
+              </div>
+
+
+              <% if current_user && current_user.admin %>
+                <div class="admin">
+                  <p><%= render_with_hashtags(@post.hashtag) %></p>
+                  <%= link_to 'Edit', edit_post_path(@post) %> |
+                  <%= link_to 'Back', posts_path %>
+                </div>
+              <% end %>
+
+            </div>
+          </div><!-- ./content-section-->
+
+          <div class="search_ads">
+            <script type="text/javascript">
+              amzn_assoc_placement = "adunit0";
+              amzn_assoc_search_bar = "false";
+              amzn_assoc_tracking_id = "3628-20";
+              amzn_assoc_ad_mode = "search";
+              amzn_assoc_ad_type = "smart";
+              amzn_assoc_marketplace = "amazon";
+              amzn_assoc_region = "US";
+              amzn_assoc_title = "Shop Related Products";
+              amzn_assoc_default_search_phrase = "<%= @post.title %>";
+              amzn_assoc_default_category = "All";
+              amzn_assoc_linkid = "39e9aa3ca8ca9df980c22e602066352e";
+            </script>
+            <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+          </div>
+          
+          <% if current_user && current_user.admin %>
+            <div class="sharing_ctn">
+             <div class="sharing facebook clearfix"">
+              <span id="facebook_ctn">
+                <p>Available at Amazon NOW!!</p>
+                <p><%= @post.title %></p>
+                <% if @post.promocode.present? %>
+                  <p>Offer: <%= number_to_currency(total_price) %> (<%= number_to_percentage(@post.pct, precision: 0) %> OFF)</p>
+                  <p>Was: <%= number_to_currency(@post.was_price) %></p>
+                  <p>You can save <%= number_to_currency(promo_price) %> by Promo Code: <%= @post.promocode %>  / Shipping is free w/Prime or on $25+</p>
+                  <p>#amazondeals #amazoncoupons #amazonpromocode #coupons #promocode</p>
+                <% else %>
+                  <p>Star Rating: <%= @post.rating %></p>
+                  <p>Reviews: <%= @post.review_count %> +</p>
+                  <p>Offer: <%= number_to_currency(@post.is_price) %> (<%= number_to_percentage(hotdeal_pct, precision: 0) %> OFF)</p>
+                  <p>Was: <%= number_to_currency(@post.was_price) %></p>
+                  <p>You can save <%= number_to_currency(sale_price) %> / Shipping is free w/Prime or on $25+</p>
+                  <p>#amazondeals #amazoncoupons #amazonpromocode #coupons #promocode</p>
+                <% end %>
+                
+              </span>
+            </div>
+            <hr>
+            <div class="sharingt witter-container clearfix"">
+               <span class="js-copytext"> 
+                <div class="sharing">
+
+                  <p>Available at Amazon NOW!!</p>
+
+                  <% if @post.promocode.present? %>
+                    <p>Offer: <%= number_to_currency(total_price) %> (<%= number_to_percentage(@post.pct, precision: 0) %> OFF)</p>
+                    <p>Was: <%= number_to_currency(@post.was_price) %></p>
+                    <p>You can save <%= number_to_currency(promo_price) %> by Promo Code: <%= @post.promocode %>  / Shipping is free w/Prime or on $25+</p>
+                    <p>http://hotdealful.com/posts/<%=(params[:id]) %></p>
+                    <p>#amazondeals #amazoncoupons #amazonpromocode #coupons #promocode</p>
+                  <% else %>
+                    <p>Offer: <%= number_to_currency(@post.is_price) %> (<%= number_to_percentage(hotdeal_pct, precision: 0) %> OFF)</p>
+                    <p>Was: <%= number_to_currency(@post.was_price) %></p>
+                    <p>You can save <%= number_to_currency(sale_price) %> / Shipping is free w/Prime or on $25+</p>
+                    <p>http://hotdealful.com/posts/<%=(params[:id]) %></p>
+                    <p>#amazondeals #amazoncoupons #amazonpromocode #coupons #promocode</p>
+                  <% end %>
+
+                </div>
+              </span>
+            </div>
+          </div><!--/.sharing_ctn -->
+          <% end %>
+
+        </div><!--./container-->
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<script type="text/javascript">
+  const textElement = document.getElementById("facebook_ctn");
+  const copyButton = document.getElementById("facebook_btn");
+  const copyText = (e) => {
+    window.getSelection().selectAllChildren(textElement);
+    document.execCommand("copy");
+  };
+  copyButton.addEventListener("click", (e) => copyText(e));
+  copyButton.addEventListener("mouseover", (e) => resetTooltip(e));
+</script>
+
+
+<script type="text/javascript">
+  var copyBtn = document.querySelector('.js-copybtn');
+  if (copyBtn) {
+      copyBtn.addEventListener('click', function(event) {
+          var copyText= document.querySelector('.js-copytext');
+          var range = document.createRange();
+          range.selectNode(copyText);
+          window.getSelection().addRange(range);
+          try {
+              var successful = document.execCommand('copy');
+              var msg = successful ? 'successful' : 'unsuccessful';
+          } catch(err) {
+
+          }
+          window.getSelection().removeAllRanges();
+      });
+  }
+</script>
+
+<!-- Accordion Menu -->
+<script type="text/javascript">
+  $('.accordion-item .heading').on('click', function(e) {
+      e.preventDefault();
+
+      // Add the correct active class
+      if($(this).closest('.accordion-item').hasClass('active')) {
+          // Remove active classes
+          $('.accordion-item').removeClass('active');
+      } else {
+          // Remove active classes
+          $('.accordion-item').removeClass('active');
+
+          // Add the active class
+          $(this).closest('.accordion-item').addClass('active');
+      }
+
+      // Show the content
+      var $content = $(this).next();
+      $content.slideToggle(100);
+      $('.accordion-item .content').not($content).slideUp('fast');
+  });
+</script>
+
+
+<script type="text/javascript">
+    amzn_assoc_ad_type = "link_enhancement_widget";
+    amzn_assoc_tracking_id = "3628-20";
+    amzn_assoc_linkid = "5d1280310b0d9d68b1e3a70f179566ab";
+    amzn_assoc_placement = "";
+    amzn_assoc_marketplace = "amazon";
+    amzn_assoc_region = "US";
+</script>
+<script src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&MarketPlace=US"></script>
