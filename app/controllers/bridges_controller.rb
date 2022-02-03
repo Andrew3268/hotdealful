@@ -68,13 +68,13 @@ class BridgesController < ApplicationController
   end
 
   def coupon_section
-    @pagy, @coupons = pagy(Coupon.all.order("created_at DESC"), items: 20)
+    @pagy, @coupons = pagy(Coupon.all.order("created_at DESC"), items: 40)
     @coupons_top = Coupon.most_hit(100.day.ago, 10)
     
   end
 
   def deal_section
-    @pagy, @extra_deals = pagy(Post.all.order("created_at DESC"), items: 20)
+    @pagy, @extra_deals = pagy(Post.all.order("created_at DESC"), items: 40)
     @deals_top = Post.most_hit(3.day.ago, 10)
   end
 

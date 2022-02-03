@@ -50,8 +50,8 @@
 .web_box .right .index_wrap .ctn_box .pic_deal .card_wrap .card_box .inner{text-align:center;}
 .web_box .right .index_wrap .ctn_box .pic_deal .card_wrap .card_box .inner p{font-size:13px;word-break:keep-all;line-height:1.4;height:2.8em;overflow:hidden;display:-webkit-box;display:-ms-flexbox;vertical-align:top;text-overflow:ellipsis;-webkit-box-orient: vertical;-webkit-line-clamp:2;margin:10px 0;}
 .web_box .right .index_wrap .ctn_box .pic_deal .card_wrap .card_box .inner .ratings_box{font-size:12px;}
-.web_box .right .index_wrap .ctn_box .pic_deal .card_wrap .card_box .inner .ratings_box .rating{background:#000;color:#fff;padding:3px 7px;border-radius:15px;}
-.web_box .right .index_wrap .ctn_box .pic_deal .card_wrap .card_box .inner .ratings_box .review{background:#000;color:#fff;padding:3px 7px;border-radius:15px;}
+.web_box .right .index_wrap .ctn_box .pic_deal .card_wrap .card_box .inner .ratings_box .rating{background:#000;color:#fff;padding:3px 5px;border-radius:15px;font-size:11px;}
+.web_box .right .index_wrap .ctn_box .pic_deal .card_wrap .card_box .inner .ratings_box .review{background:#000;color:#fff;padding:3px 5px;border-radius:15px;font-size:11px;}
 .web_box .right .index_wrap .ctn_box .pic_deal .card_wrap .card_box .inner .is_price{font-size:20px;}
 .web_box .right .index_wrap .ctn_box .pic_deal .card_wrap .card_box .inner .was_price{font-size:15px;margin-left:5px;text-decoration:line-through;color:#ccc;}
 .web_box .right .index_wrap .ctn_box .pic_deal .card_wrap .card_box .inner .pct{border:2px solid;border-radius:20px;padding:3px 7px;position:absolute;top:10px;left:5px;background:#fff;}
