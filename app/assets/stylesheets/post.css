@@ -157,7 +157,7 @@
   .show-wrap .image-box img{width:85%;height:85%;object-fit:contain;border-radius:20px;}
   .show-wrap .post_img_box img{width:60%;height:60%;}
   .show-wrap .inner-box{float:none;width:100%;margin:0 0 50px 0;}
-  .show-wrap .summary_title{margin:19em 3em -2.5em 1.2em;float:none;}
+  .show-wrap .summary_title{margin:1em 3em -2.5em 1.2em;float:none;}
   .show-wrap .receipt{float:none;margin:3em 2em 0 2em;width:auto;}
   .show-wrap .receipt__grid1{margin-top:1.1em;font-size:15px;}
   .show-wrap .receipt__grid2{margin-top:1.1em;font-size:15px;}
