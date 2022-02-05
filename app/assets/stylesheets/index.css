@@ -24,8 +24,9 @@
 .web_box .right .index_wrap .search_hero .set_search_box{border:none;text-align:center;float:none;width:100%;margin:0;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);}
 .web_box .right .index_wrap .search_hero .set_search_box h2{margin-bottom:15px;}
 .web_box .right .index_wrap .search_hero .set_search_box .feild_wrap{width:100%;}
-.web_box .right .index_wrap .search_hero .set_search_box .feild_wrap .keyword_box input{width:90%;margin:0 auto;float:none;border-radius:20px;border:3px solid;text-align:center;padding:23px;}
-.web_box .right .index_wrap .search_hero .set_search_box button{color:#000;border:1px solid;width:35%;padding:10px;}
+.web_box .right .index_wrap .search_hero .set_search_box .feild_wrap .keyword_box input{width:88%;margin:0 auto;float:none;border-radius:10px;border:3px solid;text-align:center;padding:23px;float:left;}
+.web_box .right .index_wrap .search_hero .set_search_box button{color:#000;border:3px solid;width:12%;float:left;height:52px;position:relative;}
+.web_box .right .index_wrap .search_hero .set_search_box button img{width:31px;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);}
 .web_box .right .index_wrap .search_hero .set_search_box .feild_wrap, .set_search_box .option_wrap{margin:0;}
 
 /* Hero scroll down */
