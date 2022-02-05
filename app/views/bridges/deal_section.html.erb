@@ -8,6 +8,35 @@
     <div class="index_wrap">
       <header><%= render 'shared/header_index' %></header>
 
+      <div class="trending_box clearfix">
+        <div class="trending trend_section">
+          <main>
+            <input id="tab2" type="radio" name="tabs" checked>
+            <label for="tab2">Popular Deals Top 10</label>
+            <section id="content2" class="trend_comm clearfix">
+              <div id="profile-description">
+                <div class="text show-more-height">
+                  <% @deals_top.each_with_index do |deals, i| %>
+                    <div class="coupon_card clearfix">
+                      <div class=img_box>
+                        <span class="trend_title"><%= i + 1 %>. <%= link_to deals.title, deals %></span>
+                      </div>
+                      <div class="inner">
+                        <% hotdeal_pct = 0 %>
+                        <% hotdeal_pct =  (deals.was_price.to_f - deals.is_price.to_f) / deals.was_price.to_f * 100 %>
+                        <em class="pricing"><span class="is_price"><%= number_to_currency(deals.is_price) %></span><span class="was_price"><%= number_to_currency(deals.was_price) %></span><span class="pct"><%= number_to_percentage(hotdeal_pct, precision: 0) %> off</span> <% if current_user && current_user.admin %><span class="view"><%= deals.hits %></span><% end %></em></em>
+                      </div>
+                    </div>
+                  <% end %>
+                </div>
+                <div class="show-more">Show More</div>
+              </div>
+            </section>
+
+          </main>
+        </div>
+      </div>
+
       <div class="ctn_box">
        
         <div class="pic_deal clearfix">
@@ -21,3 +50,16 @@
   </div>
 
 </div>
+
+<!-- Show more/less -->
+<script type="text/javascript">
+  $(".show-more").click(function () {
+    if($(".text").hasClass("show-more-height")) {
+        $(this).text("Show Less");
+    } else {
+        $(this).text("Show More");
+    }
+
+    $(".text").toggleClass("show-more-height");
+  });
+</script>
