@@ -60,11 +60,11 @@
 .web_box .right .index_wrap .ctn_box .middle_event{margin:50px 0;}
 .web_box .right .index_wrap .ctn_box .middle_event img{width:100%;height:200px;object-fit:cover;border-radius:20px;}
 
-.web_box .right .index_wrap .ctn_box .trending_box{margin-top:70px;}
+/*.web_box .right .index_wrap .ctn_box .trending_box{margin-top:70px;}
 .web_box .right .index_wrap .ctn_box .trending_box .trending label{width:49.4%;}
-.web_box .right .index_wrap .ctn_box .trending_box .trending .trend_comm .coupon_card{width:100%;}
+.web_box .right .index_wrap .ctn_box .trending_box .section_trend .trend_comm .coupon_card{width:100%;float:none;}
 .web_box .right .index_wrap .ctn_box .trending_box .trending .trend_comm .coupon_card .inner span.is_price{margin-right:7px;}
-.web_box .right .index_wrap .ctn_box .trending_box .trending .trend_comm .coupon_card .inner span.was_price{display:none;}
+.web_box .right .index_wrap .ctn_box .trending_box .trending .trend_comm .coupon_card .inner span.was_price{display:none;}*/
 
 
 @media screen and (max-width:640px){

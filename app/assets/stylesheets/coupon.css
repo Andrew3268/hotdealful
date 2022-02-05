@@ -1,6 +1,6 @@
 .coupon_box{margin-top:30px;}
 /* Coupon Section ***************************************************************/
-.trending_box{margin:0 0 40px 0;}
+.trending_box{padding:20px;}
 .trending{}
 .trending section{display:none;padding:20px 0;border-top:1px solid #ddd}
 .trending input{display:none}
@@ -11,7 +11,7 @@
 .trending input:checked+label{color:#555;border:1px solid #ddd;border-top:5px solid #000;border-bottom:1px solid #fff}
 #tab1:checked~#content1,#tab2:checked~#content2{display:block}
 
-.trending .trend_comm .coupon_card{float:left;width:50%;margin-bottom:10px;border-right:1px solid #ccc;border-left:1px solid #ccc;padding:0 10px;}
+.trending .trend_comm .coupon_card{margin-bottom:10px;border-right:1px solid #ccc;border-left:1px solid #ccc;padding:0 10px;}
 .trending .trend_comm .coupon_card .img_box{float:left;width:60%;}
 .trending .trend_comm .coupon_card .inner{float:left;width:38%;margin-left:2%;text-align:center;}
 .trending .trend_comm .coupon_card .inner span.trend_title{font-size:17px;}
@@ -22,8 +22,8 @@
 .trending .trend_comm .coupon_card .inner .view{font-size:10px;}
 .trending span.trend_title{width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:inline-block;vertical-align:bottom;margin-right:10px;}
 .trending em.pricing{}
-.trending span.is_price{}
-.trending span.was_price{color:#ccc;text-decoration:line-through;margin:0 5px;}
+.trending span.is_price{margin-right:10px;}
+.trending span.was_price{color:#ccc;text-decoration:line-through;margin:0 5px;display:none;}
 .trending span.pct{font-weight:bold;color:#000;/*background:#70b7b5*/;border-radius:15px;padding:3px 5px;border:2px solid;}
 
 #profile-description .show-more{display:none;}
@@ -33,7 +33,7 @@
 
 @media screen and (max-width:640px){
   .trending_box{margin-top:20px;}
-  .trending input:checked + label{width:50%;}
+  .trending input:checked + label{width:60%;}
   .trending section{padding:20px 5px;}
   .trending .trend_comm .coupon_card{float:none;width:100%;margin:0 0 7px 0;border:none;padding:0;}
   .trending .trend_comm .coupon_card .img_box{float:left;width:60%;}

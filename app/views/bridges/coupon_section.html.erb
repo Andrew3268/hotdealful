@@ -8,6 +8,36 @@
     <div class="index_wrap">
       <header><%= render 'shared/header_index' %></header>
 
+          <div class="trending_box clearfix">
+            <div class="trending">
+              <main>
+                <input id="tab1" type="radio" name="tabs" checked>
+                <label for="tab1">Popular Promo Codes Top 10</label>
+                
+                <section id="content1" class="trend_comm clearfix">
+                  <div id="profile-description">
+                    <div class="text show-more-height">
+                      <% @coupons_top.each_with_index do |coupon, i| %>          
+                          <div class="coupon_card clearfix">
+                            <div class=img_box>
+                              <span class="trend_title"><%= i + 1 %>. <%= link_to coupon.c_title, coupon %></span>
+                            </div>
+                            <div class="inner">
+                              <% promocode_price = 0 %>
+                              <% promocode_price =  coupon.c_was_price.to_f - (coupon.c_pct.to_f / 100) * coupon.c_was_price.to_f %>
+                              <em class="pricing"><span class="is_price"><%= number_to_currency(promocode_price) %></span><span class="was_price"><%= number_to_currency(coupon.c_was_price) %></span><span class="pct"><%= number_to_percentage(coupon.c_pct, precision: 0) %> off</span> <% if current_user && current_user.admin %><span class="view"><%= coupon.hits %></span><% end %></em>
+                            </div>
+                          </div>
+                      <% end %>
+                    </div>
+                    <div class="show-more">Show More</div>
+                  </div>
+                </section>
+              </main>
+            </div>
+          </div>
+    
+
       <div class="ctn_box">
        
         <!-- <div class="most_coupon">
@@ -33,3 +63,16 @@
     <%= raw pagy_nav(@pagy) %>
   </div>
 </div>
+
+<!-- Show more/less -->
+<script type="text/javascript">
+  $(".show-more").click(function () {
+    if($(".text").hasClass("show-more-height")) {
+        $(this).text("Show Less");
+    } else {
+        $(this).text("Show More");
+    }
+
+    $(".text").toggleClass("show-more-height");
+  });
+</script>
