@@ -12,7 +12,7 @@
 .web_box .right .index_wrap{overflow:hidden;}
 .web_box .right .index_wrap header nav{width:100%;}
 
-.web_box .right .index_wrap .search_hero{color:#000;height:300px;position:relative;margin:0 0 10px 0;}
+.web_box .right .index_wrap .search_hero{color:#000;height:100px;position:relative;margin:0 0 10px 0;}
 .web_box .right .index_wrap .search_hero .inner{display:none;}
 .web_box .right .index_wrap .search_hero .inner h2{line-height:1.2;font-size:35px;padding:30px 50px;}
 .web_box .right .index_wrap .search_hero .inner p{padding:10px 50px;}
@@ -21,7 +21,7 @@
 .web_box .right .index_wrap .search_hero .inner p.find_more a{background:#000;color:#fff;padding:5px 10px;border-radius:15px;}
 .web_box .right .index_wrap .search_hero .search-wrapping{width:100%;margin:0;}
 .web_box .right .index_wrap .search_hero .search_none{display:none;}
-.web_box .right .index_wrap .search_hero .set_search_box{border:none;text-align:center;float:none;width:100%;margin:0;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);}
+.web_box .right .index_wrap .search_hero .set_search_box{border:none;text-align:center;float:none;width:100%;margin:10px 0 0 0;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);}
 .web_box .right .index_wrap .search_hero .set_search_box h2{margin-bottom:15px;}
 .web_box .right .index_wrap .search_hero .set_search_box .feild_wrap{width:100%;}
 .web_box .right .index_wrap .search_hero .set_search_box .feild_wrap .keyword_box input{width:88%;margin:0 auto;float:none;border-radius:10px;border:3px solid;text-align:center;padding:23px;float:left;}
@@ -39,6 +39,15 @@
 
 
 .web_box .right .index_wrap .ctn_box{padding:15px;}
+
+.web_box .right .index_wrap .ctn_box .ctn_banner{margin-bottom:20px;border-bottom:1px solid #ccc;padding:5px 0;padding:10px;}
+.web_box .right .index_wrap .ctn_box .ctn_banner .banner_pct{float:left;width:15%;height:85px;position:relative;}
+.web_box .right .index_wrap .ctn_box .ctn_banner .banner_pct p{text-align:center;font-size:30px;line-height:1.2;font-weight:bold;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);}
+.web_box .right .index_wrap .ctn_box .ctn_banner .banner_inner{float:left;width:60%;margin:0 2.5%;}
+.web_box .right .index_wrap .ctn_box .ctn_banner .banner_inner p{font-size:15px;margin-top:20px;}
+.web_box .right .index_wrap .ctn_box .banner_btn{float:left;width:20%;height:85px;position:relative;}
+.web_box .right .index_wrap .ctn_box .banner_btn a{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);text-align:center;width:100%;font-size:17px;background:#000;color:#fff;padding:10px;border-radius:20px;}
+
 .web_box .right .index_wrap .ctn_box .special_exhibition{margin-bottom:50px;}
 .web_box .right .index_wrap .ctn_box .special_exhibition img{border-radius:20px;}
 .web_box .right .index_wrap .ctn_box .special_exhibition .spe_top img{height:auto;width:100%;object-fit:contain;}
@@ -57,7 +66,7 @@
 .web_box .right .index_wrap .ctn_box .pic_deal .card_wrap .card_box .inner .ratings_box .review{background:#000;color:#fff;padding:3px 5px;border-radius:15px;font-size:11px;}
 .web_box .right .index_wrap .ctn_box .pic_deal .card_wrap .card_box .inner .is_price{font-size:20px;}
 .web_box .right .index_wrap .ctn_box .pic_deal .card_wrap .card_box .inner .was_price{font-size:15px;margin-left:5px;text-decoration:line-through;color:#ccc;}
-.web_box .right .index_wrap .ctn_box .pic_deal .card_wrap .card_box .inner .pct{border:2px solid;border-radius:20px;padding:3px 7px;position:absolute;top:10px;left:5px;background:#fff;}
+.web_box .right .index_wrap .ctn_box .pic_deal .card_wrap .card_box .inner .pct{border-radius:15px;padding:10px;position:absolute;top:10px;left:5px;background:red;color:#fff;font-weight:bold;width:50px;height:40px;}
 .web_box .right .index_wrap .ctn_box .more_btn{display:block;background:#000;color:#fff;padding:10px 20px;width:50%;text-align:center;border-radius:20px;font-size:20px;margin:0 auto 30px auto;}
 
 .web_box .right .index_wrap .ctn_box .middle_event{margin:50px 0;}
@@ -86,6 +95,10 @@
   .scroll-downs{display:block;}
   .web_box .right .index_wrap .search_hero .set_search_box .feild_wrap .keyword_box input{width:85%;}
   .web_box .right .index_wrap .search_hero .set_search_box button{width:15%;margin:0;}
+
+
+  .web_box .right .index_wrap .ctn_box .ctn_banner .banner_inner p{margin-top:10px;}
+  .web_box .right .index_wrap .ctn_box .banner_btn a{font-size:13px;}
 }
 
 @media screen and (min-width:641px) and (max-width:1199px){

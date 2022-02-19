@@ -40,6 +40,8 @@ Rails.application.routes.draw do
   get 'bridges/coupon_section'
   get 'bridges/deal_section'
 
+  get 'bridges/new_coupon_section'
+
 
 
   get '/404' , to: 'errors#not_found'

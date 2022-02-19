@@ -18,13 +18,13 @@ class CouponsController < ApplicationController
   def show
     @coupon.punch(request)
     set_meta_tags title: @coupon.c_title,
-                  site: 'hotdeal-ful',
+                  site: 'Off The Price',
                   revierse: true,
                   description: @coupon.c_title,
                   keywords: 'amazondeals, hotdeals, promotion code, coupons ',
                   twitter: {
                     card: "summary",
-                    site: "@hotdealful",
+                    site: "@offtheprice",
                     title: @coupon.c_title,
                     description: @coupon.c_title,
                     image: @coupon.c_image

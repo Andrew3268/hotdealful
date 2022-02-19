@@ -1,0 +1,31 @@
+<div class="card_wrap n_coupon_wrap">
+
+  <% @coupons.each do |coupon| %>
+    
+      <div class="n_coupon_card clearfix">
+        <% promocode_price = 0 %>
+        <% promocode_price =  coupon.c_was_price.to_f - (coupon.c_pct.to_f / 100) * coupon.c_was_price.to_f %>
+
+        <div class="img_box">
+          <%= link_to image_tag(coupon.c_image, alt: coupon.c_title, title: coupon.c_title), coupon %>
+          <span><%= number_to_percentage(coupon.c_pct, precision: 0) %> </span>
+        </div>
+      
+
+        <div class="inner">
+          <p class="title"><%= coupon.c_title %></p>
+
+          <p class="rating"><em>rating:<%= coupon.c_rating %></em><em>reviews:<%= coupon.c_review_count %>+</em></p>
+        
+          <p class="dec">
+            On sale for           
+            <strong><%= number_to_currency(promocode_price) %></strong> by <strong><%= number_to_percentage(coupon.c_pct, precision: 0) %> off</strong> the price with Promo Code.
+          </p>
+          <a href="/coupons/<%= coupon.id %>">GET CODE</a>
+        </div>
+      </div>
+    
+  <% end %>
+
+  
+</div>

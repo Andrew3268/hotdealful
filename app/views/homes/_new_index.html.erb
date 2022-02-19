@@ -23,6 +23,7 @@
         <% end %>
 
       <div class="search_hero clearfix">
+          
           <%= render 'bridges/only_coupon' %>
           <div class="scroll-downs">
             <div class="mousey">
@@ -33,18 +34,42 @@
 
       <div class="ctn_box">
 
+        <div class="ctn_banner clearfix">
+          <div class="banner_pct">
+            <p>50%<br>OFF</p>
+          </div>
+          <div class="banner_inner">
+            <p>Stream NEW Cinderella Free + Unlimited 30-Day Trial With Prime Video</p>
+          </div>
+          <div class="banner_btn">
+            <a target="_blank" href="#n">Get Deal</a>
+          </div>
+        </div>
+
+        <div class="ctn_banner clearfix">
+          <div class="banner_pct">
+            <p>50%<br>OFF</p>
+          </div>
+          <div class="banner_inner">
+            <p>Stream NEW Cinderella Free + Unlimited 30-Day Trial With Prime Video</p>
+          </div>
+          <div class="banner_btn">
+            <a target="_blank" href="#n">Get Deal</a>
+          </div>
+        </div>
+
         <div class="special_exhibition clearfix">
           <div class="spe_top">
             <a target="_blank" href="https://amzn.to/3Lg0Bti"><img src="<%=asset_path 'banner_top.png' %>" alt="amazon bose banner""></a>
           </div>
 
-          <div class="spe_left">
+          <!-- <div class="spe_left">
             <a target="_blank" href="https://amzn.to/3HBd2xt"><img src="<%=asset_path 'banner_left.png' %>" alt="amazon adidas banner""></a>
           </div>
 
           <div class="spe_right">
             <a target="_blank" href="https://amzn.to/3utkYxa"><img src="<%=asset_path 'banner_right.png' %>" alt="amazon fitbit banner""></a>
-          </div>          
+          </div>   -->        
         </div>
 
         <div class="pic_deal clearfix">
@@ -61,9 +86,9 @@
 
         <div class="pic_deal clearfix">
           <h2 class="line-title">Today's Found::Amazon Promo Codes</h2><br>
-          <%= render '/homes/coupons' %>
+          <%= render '/homes/new_coupons' %>
         </div>
-        <a class="more_btn" href="/bridges/coupon_section">More +</a>
+        <a class="more_btn" href="/bridges/new_coupon_section">More +</a>
 
 
         <div class="trending_box clearfix">

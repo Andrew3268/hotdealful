@@ -24,7 +24,7 @@
 .trending em.pricing{}
 .trending span.is_price{margin-right:10px;}
 .trending span.was_price{color:#ccc;text-decoration:line-through;margin:0 5px;display:none;}
-.trending span.pct{font-weight:bold;color:#000;/*background:#70b7b5*/;border-radius:15px;padding:3px 5px;border:2px solid;}
+.trending span.pct{font-weight:bold;color:#fff;;border-radius:15px;padding:3px 5px;background:red;}
 
 #profile-description .show-more{}
 #profile-description .show-more{background:#000;color:#fff;position:relative;font-size:13px;text-align:center;cursor:pointer;padding:5px 10px;border-radius:20px;width:50%;margin:20px auto 0 auto;}
@@ -126,5 +126,46 @@
 /*.hotdeals_wrap .card_box a .upto em.bottom span{color:#70b7b5;}*/
 .hotdeals_wrap .card_box .admin{position:absolute;bottom:5px;left:10px;}
 .hotdeals_wrap .card_box .admin a{display:inline-block;}
+
+
+
+/******* New Coupon Section ****/
+.n_coupon_wrap{margin-bottom:50px;}
+.n_coupon_card{border-bottom:1px solid #ccc;padding:20px 0;}
+.n_coupon_card .img_box{float:left;width:35%;height:150px;margin-right:2.5%;position:relative;font-size:14px;}
+.n_coupon_card .img_box img{width:80%;height:80%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);}
+.n_coupon_card .img_box span{background:red;color:#fff;padding:10px;border-radius:10px;position:absolute;top:0;left:0;font-weight:bold;width:50px;height:40px;}
+.n_coupon_card .inner{float:left;width:60%;margin-left:2.5%;padding:10px 0;}
+.n_coupon_card .inner p.title{word-break:keep-all;line-height:1.4;height:2.8em;overflow:hidden;display:-webkit-box;display:-ms-flexbox;vertical-align:top;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:2;}
+.n_coupon_card .inner p.dec{}
+.n_coupon_card .inner p.dec strong{text-decoration:underline;}
+.n_coupon_card .inner p.rating{margin:0 0 10px 0;}
+.n_coupon_card .inner p.rating em{margin-right:7px;background:#000;color:#fff;padding:3px 5px;font-size:11px;border-radius:15px;}
+.n_coupon_card .inner a{text-align:right;text-decoration:underline;display:block;margin-right:10px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

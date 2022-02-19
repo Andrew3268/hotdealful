@@ -89,7 +89,7 @@
 .show-wrap .container .go_back{display:none;}
 .show-wrap .container .title_mobile{}
 .show-wrap .container .title_mobile h2{font-size:17px;font-weight:300;}
-.show-wrap .container .title h2 em, .show-wrap .container .title_mobile h2 em{border-bottom:3px solid;}
+.show-wrap .container .title h2 em, .show-wrap .container .title_mobile h2 em{border-bottom:1px solid;background:yellow;}
 .show-wrap .container .rating_box{margin-top:7px;}
 .show-wrap .container .rating_box span{}
 .show-wrap .container .rating_box p{display:inline-block;margin-right:10px;border-bottom:1px solid;font-weight:bold;}
@@ -112,7 +112,7 @@
 .show-wrap .total_price{font-size:30px;color:#70b7b5;font-weight:600;}
 .show-wrap .total_text{font-size:30px;}
 .show-wrap .btn{text-align:center;}
-.show-wrap .btn p{font-size:14px;margin-top:15px;}
+.show-wrap .btn p{font-size:14px;margin-top:15px;text-align:left;margin-left:10px;}
 .show-wrap .btn a.amz_btn{border:2px solid;color:#000;display:block;padding:10px;font-size:15px;border-radius:15px;float:left;width:48%;margin:1%;}
 .show-wrap .btn a.buy_now{background:#000;color:#fff;border:2px solid #000;}
 .show-wrap .notice p{font-size:10.5px;color:#ccc;padding:10px 15px;margin-top:80px;border-top:1px solid #ccc;}
