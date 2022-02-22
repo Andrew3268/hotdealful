@@ -40,7 +40,7 @@
 
 .web_box .right .index_wrap .ctn_box{padding:15px;}
 
-.web_box .right .index_wrap .ctn_box .ctn_banner{margin-bottom:20px;border-bottom:1px solid #ccc;padding:5px 0;padding:10px;}
+.web_box .right .index_wrap .ctn_box .ctn_banner{border-bottom:1px solid #ccc;padding:5px 0;padding:20px 7px;}
 .web_box .right .index_wrap .ctn_box .ctn_banner .banner_pct{float:left;width:15%;height:85px;position:relative;}
 .web_box .right .index_wrap .ctn_box .ctn_banner .banner_pct p{text-align:center;font-size:30px;line-height:1.2;font-weight:bold;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);}
 .web_box .right .index_wrap .ctn_box .ctn_banner .banner_inner{float:left;width:60%;margin:0 2.5%;position:relative;height:85px;}
@@ -48,7 +48,7 @@
 .web_box .right .index_wrap .ctn_box .banner_btn{float:left;width:20%;height:85px;position:relative;}
 .web_box .right .index_wrap .ctn_box .banner_btn a{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);text-align:center;width:100%;font-size:17px;background:#000;color:#fff;padding:10px;border-radius:20px;}
 
-.web_box .right .index_wrap .ctn_box .special_exhibition{margin-bottom:50px;}
+.web_box .right .index_wrap .ctn_box .special_exhibition{margin:50px 0;}
 .web_box .right .index_wrap .ctn_box .special_exhibition img{border-radius:20px;}
 .web_box .right .index_wrap .ctn_box .special_exhibition .spe_top img{height:auto;width:100%;object-fit:contain;}
 .web_box .right .index_wrap .ctn_box .special_exhibition .spe_left img{float:left;width:50%;object-fit:contain;height:auto;padding-right:5px;}
@@ -97,6 +97,9 @@
   .web_box .right .index_wrap .search_hero .set_search_box .feild_wrap .keyword_box input{width:85%;}
   .web_box .right .index_wrap .search_hero .set_search_box button{width:15%;margin:0;}
   .web_box .right .index_wrap .ctn_box .banner_btn a{font-size:13px;}
+  .web_box .right .index_wrap .ctn_box .ctn_banner .banner_pct p{font-size:25px;}
+  .web_box .right .index_wrap .ctn_box .ctn_banner .banner_inner p{font-size:13px;}
+  .web_box .right .index_wrap .ctn_box .banner_btn a{padding:6px;}
 }
 
 @media screen and (min-width:641px) and (max-width:1199px){
