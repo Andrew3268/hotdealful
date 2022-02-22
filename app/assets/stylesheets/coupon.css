@@ -1,6 +1,6 @@
 .coupon_box{margin-top:30px;}
 /* Coupon Section ***************************************************************/
-.trending_box{padding:10px;}
+.trending_box{padding:10px;margin:20px 0 50px 0;}
 .trending{}
 .trending section{display:none;padding:20px 0;border-top:1px solid #ddd}
 .trending input{display:none}
@@ -138,31 +138,10 @@
 .n_coupon_card .inner{float:left;width:60%;margin-left:2.5%;padding:10px 0;}
 .n_coupon_card .inner p.title{word-break:keep-all;line-height:1.4;height:2.8em;overflow:hidden;display:-webkit-box;display:-ms-flexbox;vertical-align:top;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:2;}
 .n_coupon_card .inner p.dec{}
-.n_coupon_card .inner p.dec strong{text-decoration:underline;}
+.n_coupon_card .inner p.dec strong{text-decoration:underline;background:yellow;padding:3px;}
 .n_coupon_card .inner p.rating{margin:0 0 10px 0;}
 .n_coupon_card .inner p.rating em{margin-right:7px;background:#000;color:#fff;padding:3px 5px;font-size:11px;border-radius:15px;}
 .n_coupon_card .inner a{text-align:right;text-decoration:underline;display:block;margin-right:10px;}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -109,7 +109,7 @@
 .show-wrap .receipt__grid2{text-align:right;}
 .show-wrap .receipt__grid2 p em{color:#fff}
 .show-wrap .receipt__grid2 p.p-code{font-weight:800;}
-.show-wrap .total_price{font-size:30px;color:#70b7b5;font-weight:600;}
+.show-wrap .total_price{font-size:30px;color:red;font-weight:600;}
 .show-wrap .total_text{font-size:30px;}
 .show-wrap .btn{text-align:center;}
 .show-wrap .btn p{font-size:14px;margin-top:15px;text-align:left;margin-left:10px;}

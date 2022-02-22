@@ -22,6 +22,12 @@
             <strong><%= number_to_currency(promocode_price) %></strong> by <strong><%= number_to_percentage(coupon.c_pct, precision: 0) %> off</strong> the price with Promo Code.
           </p>
           <a href="/coupons/<%= coupon.id %>">GET CODE</a>
+          <% if current_user && current_user.admin %>
+            <div class="admin_controller">
+              <%= link_to 'Edit', edit_coupon_path(coupon) %>
+              <%= link_to 'Destroy', coupon, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+          <% end %>
         </div>
       </div>
     
