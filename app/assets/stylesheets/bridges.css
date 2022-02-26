@@ -1,9 +1,9 @@
 
 /* Advance amazon search */
-.search-wrapping{width:1200px;margin:30px auto 100px auto;}
+.search-wrapping{width:100%;margin:30px auto 30px auto;}
 
-.set_search_box{float:left;width:50%;margin-left:2%;margin:10px auto 50px auto;border-radius:10px;padding:15px 30px;border:1px solid #aaa;}
-.set_search_box h2{font-size:20px;font-weight:100;text-align:center;}
+.set_search_box{margin:10px auto 50px auto;padding:15px 30px;}
+.set_search_box h2{font-size:20px;font-weight:100;}
 .disable{display:none;}
 
 .post-type{}
@@ -61,7 +61,7 @@ a.set_reset_m{display:none;}
   .set_search_box .feild_wrap .keyword_box input{width:95%;}
   /*.op_wrap{float:none;width:100%;margin:0;}*/
   .op_wrap p{font-size:12px;margin-bottom:3px;}
-  .set_search_box{width:100%;margin:10px 0 30px 0;padding:10px;}
+  .set_search_box{width:100%;margin:10px 0 30px 0;padding:10px 30px;}
   .set_search_box button{width:100%;padding:15px;font-size:20px;margin-top:10px;} 
   .field span.label{width:100%;float:none;padding:0;}
   .field input, .field select{width:100%;float:none;}
@@ -138,7 +138,7 @@ a.set_reset_m{display:none;}
 
 
 /* Search By Percentage */
-.search-pct{float:left;width:47%;margin:10px 0 0 3%;border:1px solid #ccc;border-radius:10px;padding:10px;}
+.search-pct{padding:20px 30px;}
 .search-pct p{font-size:20px;margin-bottom:20px;text-align:center;}
 .search-pct .tg{width:100%;border-collapse:collapse;border-spacing:0;border-color:#ccc;padding:20px;}
 .search-pct .tg tr{}

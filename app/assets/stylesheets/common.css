@@ -150,6 +150,9 @@ header nav button img{width:25px;height:25px;}
 .pagy-nav{margin:50px 0 30px 0;}
 .pagy-nav .page{padding:10px;color:#000;}
 .pagy-nav .active{color:#fff;background:#70b7b5;padding:10px;border-radius:10px;}
+@media screen and (max-width:640px){
+  .pagy-nav{margin:50px 0 100px 0;}
+}
 
 
 /* error page */
@@ -174,12 +177,106 @@ header nav button img{width:25px;height:25px;}
 
 
 
+/* display the anchor link side by side  */
+.tab_bar{display:none;}
+.tab_bar nav {
+  position:fixed;
+  bottom:0;
+  left:50%;
+  transform:translate(-50%, 0);
+  width:100%;
+  display: flex;
+  background: #fff;
+  /* considerable whitespace surrounding the navigation's items */
+  padding:10px;
+  border-radius: 0 0 30px 30px;
+  box-shadow: 0 1px 15px rgba(0, 0, 0, 0.1);
+}
 
+/* remove default style and slightly separate the anchor links from one another */
+.tab_bar a {
+  line-height:initial;
+  color: inherit;
+  text-decoration: none;
+  margin: 0 0.2rem;
+  /* display the svg icon and span elements side by side, vertically aligned */
+  /*display: flex;*/
+  text-align:center;
+  align-items: center;
+  /* include padding for the background applied on the active item */
+  padding:10px;
+  border-radius: 30px;
+  /* position relative for the pseudo element */
+  position: relative;
+  /* custom properties for the colors picked up by the elements when clicked (and updated for each link in the script) */
+  --hover-bg: #5b37b720;
+  --hover-c: #5b37b7;
+  width:25%;
+}
 
+/* include considerable negative margin to have the svg icon overlapping with the span element */
+.tab_bar a svg {
+  margin-right: -2.5rem;
+  width: 28px;
+  height: 28px;
+  pointer-events: none;
+  /* transition for the change in margin */
+  transition: margin 0.2s ease-out;
+}
 
+.tab_bar a img{width:35px;align-items:center;}
+.tab_bar a img.deal{margin-top:2px;}
 
+/* include with a pseudo element relative to the anchor link a circle, with a fixed with and height */
+.tab_bar a:before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 0;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  /* positioned to the left of the anchor link and scaled to 0 */
+  transform: translate(0%, -50%) scale(0);
+  visibility: visible;
+  opacity: 1;
+}
+/* when active */
+/* specify the colors dictated by the custom properties */
+.tab_bar a.active {
+  background: var(--hover-bg);
+  color: var(--hover-c);
+}
+/* using the color specified by the then updated custom property show the circle of the pseudo element increasing its size and highlighting it momentarily */
+.tab_bar a.active:before {
+  background: var(--hover-c);
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0%, -50%) scale(2);
+  /* transition only when the class is applied */
+  transition: all 0.4s ease-out;
+}
+/* remove the margin applied to the svg to make it overlay atop the anchor link */
+.tab_bar a.active svg {
+  margin-right: 0;
+}
+/* show the span element */
+.tab_bar a.active span {
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.2s ease-out;
+}
 
+/* on smaller viewports show the navigation bar on the side, attached to the left of the screen */
+@media (max-width: 500px) {
+  .tab_bar{display:block;}
+  .tab_bar nav {
+    /*flex-direction: column;*/
+    justify-self: start;
+    /*border-radius: 0 30px 30px 0;*/
+  }
 
-
-
-
+  .tab_bar nav svg {
+    margin: 0;
+  }
+}
