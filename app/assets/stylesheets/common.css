@@ -204,7 +204,7 @@ header nav button img{width:25px;height:25px;}
   text-align:center;
   align-items: center;
   /* include padding for the background applied on the active item */
-  padding:10px;
+  padding:5px;
   border-radius: 30px;
   /* position relative for the pseudo element */
   position: relative;
@@ -224,7 +224,7 @@ header nav button img{width:25px;height:25px;}
   transition: margin 0.2s ease-out;
 }
 
-.tab_bar a img{width:35px;align-items:center;}
+.tab_bar a img{width:30px;align-items:center;}
 .tab_bar a img.deal{margin-top:2px;}
 
 /* include with a pseudo element relative to the anchor link a circle, with a fixed with and height */

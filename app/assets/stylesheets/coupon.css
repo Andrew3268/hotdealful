@@ -1,4 +1,4 @@
-.coupon_box{margin-top:30px;}
+ .coupon_box{margin-top:30px;}
 /* Coupon Section ***************************************************************/
 .trending_box{padding:10px;margin:20px 0 50px 0;}
 .trending{}
@@ -141,7 +141,7 @@
 .n_coupon_card .inner p.dec strong{text-decoration:underline;background:yellow;padding:3px;}
 .n_coupon_card .inner p.rating{margin:0 0 10px 0;}
 .n_coupon_card .inner p.rating em{margin-right:7px;background:#000;color:#fff;padding:3px 5px;font-size:11px;border-radius:15px;}
-.n_coupon_card .inner a{text-align:right;text-decoration:underline;display:block;margin-right:10px;}
+.n_coupon_card .inner a{text-align:right;text-decoration:underline;display:block;margin:15px 0 10px 0;}
 
 
 
