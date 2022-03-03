@@ -93,7 +93,7 @@
                   <p>Offer Price</p>
                   <% hotdeal_pct = 0 %>
                   <% hotdeal_pct =  (@post.was_price - @post.is_price) / @post.was_price * 100 %>
-                  <p>Discount( <%= number_to_percentage(hotdeal_pct, precision: 0) %> OFF )</p>            
+                  <p>Discount<em><%= number_to_percentage(hotdeal_pct, precision: 0) %> OFF</em></p>            
                   <% if @post.spare_61.present? %>
                     <p>Extra Coupon( <%= number_to_percentage(@post.spare_61, precision: 0) %> OFF )</p>
                   <% elsif %>

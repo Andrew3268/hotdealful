@@ -138,7 +138,7 @@
 .n_coupon_card .inner{float:left;width:60%;margin-left:2.5%;padding:10px 0;}
 .n_coupon_card .inner p.title{word-break:keep-all;line-height:1.4;height:2.8em;overflow:hidden;display:-webkit-box;display:-ms-flexbox;vertical-align:top;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:2;}
 .n_coupon_card .inner p.dec{}
-.n_coupon_card .inner p.dec strong{text-decoration:underline;background:yellow;padding:3px;}
+.n_coupon_card .inner p.dec strong{background:#ffea00;padding:3px 5px;border-radius:15px;}
 .n_coupon_card .inner p.rating{margin:0 0 10px 0;}
 .n_coupon_card .inner p.rating em{margin-right:7px;background:#000;color:#fff;padding:3px 5px;font-size:11px;border-radius:15px;}
 .n_coupon_card .inner a{text-align:right;text-decoration:underline;display:block;margin:15px 0 10px 0;}

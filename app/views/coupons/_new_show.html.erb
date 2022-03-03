@@ -78,12 +78,12 @@
                 <div class="receipt__grid1">
                   <p>Offer Price</p>
                   <% if @coupon.c_promocode.present? %>
-                    <p>Discount(<%= number_to_percentage(@coupon.c_pct, precision: 0) %> off)</p>            
+                    <p>Discount<em><%= number_to_percentage(@coupon.c_pct, precision: 0) %> off</em></p>            
                     <p>Promotion Code</p>
                   <% else %>
                     <% hotdeal_pct = 0 %>
                     <% hotdeal_pct =  (@coupon.c_was_price - @coupon.c_is_price) / @coupon.c_was_price * 100 %>
-                    <p>Discount(<%= number_to_percentage(hotdeal_pct, precision: 0) %> off)</p>            
+                    <p>Discount<em><%= number_to_percentage(hotdeal_pct, precision: 0) %> off</em></p>            
                   <% end %>
 
                   <hr>
@@ -128,9 +128,9 @@
 
               <div class="btn">
                 <% if @coupon.c_promocode.present? %>
-                  <p>Apply codes at checkout with a single click.</p>
+                  <p>Apply this code at checkout with a single click.</p>
                   <a class="amz_btn" href="/">Back</a>
-                  <a class="amz_btn buy_now" target="_blank" href="<%= @coupon.c_link %>">Apply this code</a>
+                  <a class="amz_btn buy_now" target="_blank" href="<%= @coupon.c_link %>">Apply the code</a>
                 <% else %>
                   <a class="amz_btn" href="/">Back</a>
                   <a class="amz_btn buy_now" target="_blank" href="<%= @coupon.c_link %>">Accept an offer</a>
