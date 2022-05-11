@@ -7,38 +7,39 @@
   <div class="right">
     <div class="index_wrap">
       <header><%= render 'shared/header_index' %></header>
+      <% if current_user && current_user.admin %>
+        <div class="admin_btn">
+          <%= link_to 'New Coupon', new_coupon_path %>
+          <%= link_to 'New Post', new_post_path %>
+          <%= link_to 'New Home', new_home_path %>
+          <a href="/bridges/delete_coupons">Delete Coupons</a>
+          <a href="/bridges/delete_hotdeals">Delete Hotdeals</a>
+          <a href="/bridges/delete_shoes">Delete Shoes</a>
+          <a href="/coupons">Coupon's Home</a>
+          <a href="/deals">Deals</a>
+          <a href="/bridges/random_deals">Random Deals</a>
+          <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+        </div>  
+      <% end %>
 
-          <div class="trending_box clearfix">
-            <div class="trending trend_section">
-              <main>
-                <input id="tab1" type="radio" name="tabs" checked>
-                <label for="tab1">Popular Promo Codes Top 10</label>
-                
-                <section id="content1" class="trend_comm clearfix">
-                  <div id="profile-description">
-                    <div class="text show-more-height">
-                      <% @coupons_top.each_with_index do |coupon, i| %>          
-                          <div class="coupon_card clearfix">
-                            <div class=img_box>
-                              <span class="trend_title"><%= i + 1 %>. <%= link_to coupon.c_title, coupon %></span>
-                            </div>
-                            <div class="inner">
-                              <% promocode_price = 0 %>
-                              <% promocode_price =  coupon.c_was_price.to_f - (coupon.c_pct.to_f / 100) * coupon.c_was_price.to_f %>
-                              <em class="pricing"><span class="is_price"><%= number_to_currency(promocode_price) %></span><span class="was_price"><%= number_to_currency(coupon.c_was_price) %></span><span class="pct"><%= number_to_percentage(coupon.c_pct, precision: 0) %> off</span> <% if current_user && current_user.admin %><span class="view"><%= coupon.hits %></span><% end %></em>
-                            </div>
-                          </div>
-                      <% end %>
-                    </div>
-                    <div class="show-more">Show More</div>
-                  </div>
-                </section>
-              </main>
-            </div>
+      <div class="search_hero clearfix">
+        <%= render 'bridges/only_coupon' %>
+        <div class="scroll-downs">
+          <div class="mousey">
+            <div class="scroller"></div>
           </div>
+        </div>
+      </div>
     
-
       <div class="ctn_box">
+
+        <%= render 'homes/ctn_banner' %>
+
+        <div class="special_exhibition clearfix">
+          <div class="spe_top">
+            <a target="_blank" href="https://amzn.to/3h2hIkt"><img src="<%=asset_path 'banner_top.png' %>" alt="amazon bose banner""></a>
+          </div>
+        </div>
        
         <!-- <div class="most_coupon">
           <h2 class="line-title">🔥Most Popular Promo Code Deals Top 10</h2><br>
@@ -54,14 +55,55 @@
       
 
         <div class="pic_deal clearfix">
-          <h2 class="line-title">Save with Amazon Promo Codes</h2><br>
           <%= render '/homes/new_coupons' %>
         </div>
 
-      </div>
+      </div><!-- ctn_box -->
     </div>
+
+    <div class="trending_box clearfix">
+        <div class="trending trend_section">
+          <main>
+            <input id="tab1" type="radio" name="tabs" checked>
+            <label for="tab1">Popular Promo Codes Top 10</label>
+            
+            <section id="content1" class="trend_comm clearfix">
+              <div id="profile-description">
+                <div class="text show-more-height">
+                  <% @coupons_top.each_with_index do |coupon, i| %>          
+                      <div class="coupon_card clearfix">
+                        <div class=img_box>
+                          <span class="trend_title"><%= i + 1 %>. <%= link_to coupon.c_title, coupon %></span>
+                        </div>
+                        <div class="inner">
+                          <% if coupon.c_promocode.present? %>
+                            <% promocode_price = 0 %>
+                            <% promocode_price =  coupon.c_was_price.to_f - (coupon.c_pct.to_f / 100) * coupon.c_was_price.to_f %>
+                            <em class="pricing"><span class="is_price"><%= number_to_currency(promocode_price) %></span><span class="was_price"><%= number_to_currency(coupon.c_was_price) %></span><span class="pct"><%= number_to_percentage(coupon.c_pct, precision: 0) %> off</span> <% if current_user && current_user.admin %><span class="view"><%= coupon.hits %></span><% end %></em>
+                          <% else %>
+                            <% hotdeal_pct = 0 %>
+                            <% hotdeal_pct =  (coupon.c_was_price.to_f - coupon.c_is_price.to_f) / coupon.c_was_price.to_f * 100 %>
+                            <em class="pricing"><span class="is_price"><%= number_to_currency(coupon.c_is_price) %></span><span class="was_price"><%= number_to_currency(coupon.c_was_price) %></span><span class="pct"><%= number_to_percentage(hotdeal_pct, precision: 0) %> off</span> <% if current_user && current_user.admin %><span class="view"><%= coupon.hits %></span><% end %></em>
+                          <% end %>
+                        </div>
+                      </div>
+                  <% end %>
+                </div>
+                <div class="show-more">Show More</div>
+              </div>
+            </section>
+          </main>
+        </div>
+      </div>
+
+      <div class="bottom_banner">
+        <div class="middle_event">
+          <a target="_blank" href="https://amzn.to/33zpMG9"><img src="<%=asset_path 'banner_mid.png' %>"></a>
+        </div>
+      </div>
+      
+
     <%= raw pagy_nav(@pagy) %>
-    <%= render 'coupons/tab_bar' %>
   </div>
 </div>
 

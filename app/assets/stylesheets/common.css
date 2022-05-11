@@ -151,7 +151,7 @@ header nav button img{width:25px;height:25px;}
 .pagy-nav .page{padding:10px;color:#000;}
 .pagy-nav .active{color:#fff;background:#70b7b5;padding:10px;border-radius:10px;}
 @media screen and (max-width:640px){
-  .pagy-nav{margin:50px 0 100px 0;}
+  .pagy-nav{margin:50px 0;}
 }
 
 

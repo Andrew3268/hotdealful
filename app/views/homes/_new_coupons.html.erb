@@ -6,22 +6,49 @@
         <% promocode_price = 0 %>
         <% promocode_price =  coupon.c_was_price.to_f - (coupon.c_pct.to_f / 100) * coupon.c_was_price.to_f %>
 
+        <% hotdeal_pct = 0 %>
+        <% hotdeal_pct =  (coupon.c_was_price.to_f - coupon.c_is_price.to_f) / coupon.c_was_price.to_f * 100 %>
+
+        
         <div class="img_box">
           <%= link_to image_tag(coupon.c_image, alt: coupon.c_title, title: coupon.c_title), coupon %>
-          <span><%= number_to_percentage(coupon.c_pct, precision: 0) %> </span>
+
+          <% if coupon.c_promocode.present? %>
+            <span><%= number_to_percentage(coupon.c_pct, precision: 0) %> </span>
+          <% else %>
+            <span><%= number_to_percentage(hotdeal_pct, precision: 0) %> </span>
+          <% end %>
         </div>
       
 
         <div class="inner">
+          <% if coupon.c_promocode.present? %>
+            <span class="label_code label">Promo Code</span> 
+          <% else %>
+            <span class="label_deal label">Online Deal</span>
+          <% end %>
           <p class="title"><%= coupon.c_title %></p>
 
           <p class="rating"><em>rating: <%= coupon.c_rating %></em><em>reviews: <%= coupon.c_review_count %>+</em></p>
-        
-          <p class="dec">
-            On sale for           
-            <strong><%= number_to_currency(promocode_price) %></strong> by <strong><%= number_to_percentage(coupon.c_pct, precision: 0) %> off</strong> the price with Promo Code.
-          </p>
-          <a href="/coupons/<%= coupon.id %>">GET CODE</a>
+          
+          <% if coupon.c_promocode.present? %>
+            <p class="dec">
+              On sale for           
+              <strong><%= number_to_currency(promocode_price) %></strong> by <strong><%= number_to_percentage(coupon.c_pct, precision: 0) %> off</strong> the price with Promo Code.
+            </p>
+          <% else %>
+           <p class="dec">
+              On sale for           
+              <strong><%= number_to_currency(coupon.c_is_price) %></strong> by <strong><%= number_to_percentage(hotdeal_pct, precision: 0) %> off</strong> the price.
+            </p>
+          <% end %>
+
+          <% if coupon.c_promocode.present? %>
+            <a href="/coupons/<%= coupon.id %>">GET CODE</a>
+          <% else %>
+            <a href="/coupons/<%= coupon.id %>">GET DEAL</a>
+          <% end %>
+
           <% if current_user && current_user.admin %>
             <div class="admin_controller">
               <%= link_to 'Edit', edit_coupon_path(coupon) %>
