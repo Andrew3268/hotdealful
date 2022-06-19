@@ -57,7 +57,7 @@
 .web_box .right .index_wrap .ctn_box .special_exhibition .spe_right img{float:left;width:50%;object-fit:contain;height:auto;padding-left:5px;}
 
 .web_box .right .index_wrap .ctn_box .pic_deal{}
-.web_box .right .index_wrap .ctn_box .pic_deal .card_wrap{}
+.web_box .right .index_wrap .ctn_box .pic_deal .card_wrap{padding:0 30px;}
 .web_box .right .index_wrap .ctn_box .pic_deal .card_wrap .card_box{float:left;width:48%;margin:1% 1% 50px 1%;height:350px;position:relative;}
 .web_box .right .index_wrap .ctn_box .pic_deal .card_wrap .card_box .image_box{height:200px;position:relative;}
 .web_box .right .index_wrap .ctn_box .pic_deal .card_wrap .card_box .image_box img{width:70%;height:70%;object-fit:contain;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);}
@@ -102,6 +102,7 @@
   .web_box .right .index_wrap .ctn_box .ctn_banner .banner_pct p{font-size:25px;}
   .web_box .right .index_wrap .ctn_box .ctn_banner .banner_inner p{font-size:13px;}
   .web_box .right .index_wrap .ctn_box .banner_btn a{padding:6px;}
+  .web_box .right .index_wrap .ctn_box .pic_deal .card_wrap{padding:0;}
 }
 
 @media screen and (min-width:641px) and (max-width:1199px){
