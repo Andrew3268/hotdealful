@@ -1,8 +1,8 @@
 .web_box{width:800px;height:100%;margin:0 auto;position:fixed;left:50%;transform:translate(-50%, 0);padding:10px 0;}
 .web_box .left{float:left;width:30%;margin-right:5%;position:relative;height:100%;}
-.web_box .left .inner{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);}
-.web_box .left .inner h2{text-align:right;font-size:50px;line-height:1.2;}
-.web_box .left .inner p{text-align:right;}
+.web_box .left .inner{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);width:100%;}
+.web_box .left .inner h2{font-size:30px;line-height:1.2;margin-bottom:5px;}
+.web_box .left .inner p{}
 .web_box .left .inner p em{color:#E1A10B;}
 .web_box .left .inner a.left_atag{background:#000;color:#fff;padding:10px 15px;text-align:center;margin:10px 0 0 0;border-radius:15px;float:right;}
 .web_box .left .inner .left_menu{text-align:right;}
