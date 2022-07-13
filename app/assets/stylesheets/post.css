@@ -88,10 +88,10 @@
 .show-wrap .container{width:100%;padding:20px;} 
 .show-wrap .container .go_back{display:none;}
 .show-wrap .container .title_mobile{}
-.show-wrap .container .title_mobile h2{font-size:17px;font-weight:300;}
+.show-wrap .container .title_mobile h2{font-size:15px;font-weight:100;}
 .show-wrap .container .title h2 em, .show-wrap .container .title_mobile h2 em{border-bottom:1px solid;background:rgba(255,234,0,0.5);}
-.show-wrap .container .rating_box{margin-top:7px;font-size:15px;}
-.show-wrap .container .rating_box span{}
+.show-wrap .container .rating_box{font-size:15px;}
+.show-wrap .container .rating_box span{font-size:14px;}
 .show-wrap .container .rating_box p{display:inline-block;margin-right:10px;border-bottom:1px solid;font-weight:bold;}
 .show-wrap .container .rating_box p span{background:#000;color:#fff;padding:3px 5px;border-radius:7px;}
 /*.show-wrap .container .rating_box span img{width:20px;vertical-align:sub;}
@@ -105,16 +105,16 @@
 /*.show-wrap .inner-box{float:left;width:50%;margin:0;} old show*/
 .show-wrap .inner-box{float:none;width:100%;margin:0;}
 .show-wrap .summary_title{margin-top:2em;}
-.show-wrap .receipt{height:150px;display:grid;grid-template-columns:2fr 1fr;}
-.show-wrap .receipt__grid1 p em{background:rgba(255,234,0,0.5);padding:3px 7px;border-radius:7px;margin-left:3px;}
+.show-wrap .receipt{height:150px;display:grid;grid-template-columns:2fr 1fr;margin-top:15px;}
+.show-wrap .receipt__grid1 p em{background:#ff4d4d;padding:3px 7px;border-radius:7px;margin-left:3px;color:#fff;}
 .show-wrap .receipt__grid2{text-align:right;}
 .show-wrap .receipt__grid2 p em{color:#fff}
 .show-wrap .receipt__grid2 p.p-code{font-weight:800;}
 .show-wrap .total_price{font-size:30px;color:#ff4d4d;font-weight:600;}
 .show-wrap .total_text{font-size:30px;}
 .show-wrap .btn{text-align:center;}
-.show-wrap .btn p{font-size:14px;margin-top:15px;text-align:left;margin-left:10px;}
-.show-wrap .btn a.amz_btn{border:2px solid;color:#000;display:block;padding:10px;font-size:15px;border-radius:15px;float:left;width:48%;margin:1%;}
+.show-wrap .btn p{font-size:14px;margin-top:50px;text-align:left;margin-left:10px;}
+.show-wrap .btn a.amz_btn{border:2px solid;color:#000;display:block;padding:10px;font-size:20px;border-radius:15px;float:left;width:48%;margin:1%;}
 .show-wrap .btn a.buy_now{background:#000;color:#fff;border:2px solid #000;}
 .show-wrap .notice p{font-size:10.5px;color:#ccc;padding:10px 15px;margin-top:80px;border-top:1px solid #ccc;}
 .show-wrap .title{display:none;}
