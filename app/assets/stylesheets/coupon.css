@@ -139,7 +139,7 @@
 .n_coupon_card .img_box .rating_card img{position:absolute;bottom:-8px;left:50%;transform:translate(-50%,0);}
 .n_coupon_card .inner{float:left;width:62%;margin-right:1.5%;}
 .n_coupon_card .inner .label{padding:3.5px 10px;border-radius:13px;font-size:10px;margin-bottom:5px;display:inline-block;width:40%;text-align:center;}
-.n_coupon_card .inner .label em{font-size:15px;}
+.n_coupon_card .inner .label em{font-size:15px;display:block;}
 .n_coupon_card .inner span.label_code{background:#eda93a;color:#fff;}
 .n_coupon_card .inner span.label_coupon{background:#82d588;color:#fff;}
 .n_coupon_card .inner span.label_deal{background:rgba(226,168,222,0.3);color:#e2a8de;}
