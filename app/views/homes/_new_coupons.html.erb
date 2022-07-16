@@ -9,8 +9,8 @@
         <% hotdeal_pct = 0 %>
         <% hotdeal_pct =  (coupon.c_was_price.to_f - coupon.c_is_price.to_f) / coupon.c_was_price.to_f * 100 %>
 
-
         <div class="inner">
+          <p class="posted_date">Posted: <%= coupon.created_at.strftime("#{coupon.created_at.day.ordinalize} %B %Y") %></p>
           <% if coupon.c_promocode.present? %>
             <span class="label_code label">
               Code Savings
@@ -36,20 +36,38 @@
 
           <% if coupon.c_promocode.present? %>
             <% if coupon.c_spare_61.present? || coupon.c_spare_62.present? %>
+              <% total_save = 0 %>
               <% pct_coupon = 0 %>
               <% pct_coupon = (coupon.c_spare_61.to_f / 100) * promocode_price %>
               <% total_price_pct_coupon = promocode_price - pct_coupon %>
               <% total_price_cash_coupon = promocode_price - coupon.c_spare_62.to_f %>
               <% if coupon.c_spare_61.present? %>
+                <p class="list_price"><%= number_to_currency(coupon.c_was_price) %></p>
                 <p class="code_price"><%= number_to_currency(total_price_pct_coupon) %></p>
+                <div class="more_detail">
+                  <% total_save = coupon.c_was_price - total_price_pct_coupon %>
+                  <p>You can save <em class="total_savings"><%= number_to_currency(total_save) %></em> off list price.</p>
+                  <p class="verified">✅Code & Coupon verified!</p>
+                </div>
               <% else %>
+                <p class="list_price"><%= number_to_currency(coupon.c_was_price) %></p>
                 <p class="code_price"><%= number_to_currency(total_price_cash_coupon) %></p>
+                <div class="more_detail">
+                  <% total_save = coupon.c_was_price - total_price_cash_coupon %>
+                  <p>You can save <em class="total_savings"><%= number_to_currency(total_save) %></em> off list price.</p>
+                  <p class="verified">✅Code & Coupon verified!</p>
+                </div>
               <% end %>
             <% else %>
+              <p class="list_price"><%= number_to_currency(coupon.c_was_price) %></p>
               <p class="code_price"><%= number_to_currency(promocode_price) %></p>
+              <div class="more_detail">
+                <% total_save = coupon.c_was_price - promocode_price %>
+                <p>You can save <em class="total_savings"><%= number_to_currency(total_save) %></em> off list price.</p>
+                <p class="verified">✅Code verified!</p>
+
+              </div>
             <% end %>
-            
-            
           <% else %>
             <p class="code_price"><%= number_to_currency(coupon.c_is_price) %></p>
           <% end %>
@@ -70,15 +88,10 @@
           <% end %>
           -->
 
+          <!-- <div class="btn_box">
+            <a href="/coupons/<%= coupon.id %>">btn</a>
+          </div> -->
           
-
-          <!--
-          <% if coupon.c_promocode.present? %>
-            <a href="/coupons/<%= coupon.id %>">GET CODE</a>
-          <% else %>
-            <a href="/coupons/<%= coupon.id %>">GET DEAL</a>
-          <% end %>
-          -->
 
           <% if current_user && current_user.admin %>
             <div class="admin_controller">
@@ -98,6 +111,11 @@
             <span><%= number_to_percentage(hotdeal_pct, precision: 0) %> </span>
           <% end %>
 
+          <div class="used_it">
+            <p><%= coupon.hits %> People Checked.</p>
+          </div>
+
+          <!-- 
           <% if coupon.c_rating.present? %>
            <div class="rating_card">
               <% if coupon.c_spare_58 == 50 %>
@@ -113,7 +131,7 @@
               <% end %>
             </div>
           <% end %>
-
+         -->
         </div>
       </div>
     
