@@ -29,7 +29,7 @@
                 Amazon.com has "<%= @coupon.c_title %>" on sale for
                 <% if @coupon.c_promocode.present? %>
                   <% pct_coupon = 0 %>
-                  <% pct_coupon = (@coupon.c_spare_61.to_f / 100) * promo_price %>
+                  <% pct_coupon = (@coupon.c_spare_61.to_f / 100) * @coupon.c_was_price %>
                   <% total_price = 0 %>
                   <% total_price = @coupon.c_was_price - promo_price %>
                   <% total_price_pct_coupon = total_price - pct_coupon %>
@@ -164,7 +164,7 @@
 
                   <% if @coupon.c_spare_61.present? || @coupon.c_spare_62.present? %>
                     <% pct_coupon = 0 %>
-                    <% pct_coupon = (@coupon.c_spare_61.to_f / 100) * promo_price %>
+                    <% pct_coupon = (@coupon.c_spare_61.to_f / 100) * @coupon.c_was_price %>
                     <% if @coupon.c_spare_61.present? %>
                       <p>- <%= number_to_currency(pct_coupon) %></p>
                     <% else %>
@@ -177,7 +177,6 @@
                   <!-- Total Price -->
                   <% if @coupon.c_spare_61.present? || @coupon.c_spare_62.present? %>
                     <% if @coupon.c_spare_61.present? %>
-
                       <% if @coupon.c_promocode.present? %>
                         <% total_price = 0 %>
                         <% total_price = @coupon.c_was_price - promo_price %>

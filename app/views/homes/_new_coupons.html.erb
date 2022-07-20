@@ -14,16 +14,16 @@
           <% if coupon.c_promocode.present? %>
             <span class="label_code label">
               Code Savings
-              <em><%= number_to_percentage(coupon.c_pct, precision: 0) %> off</em>
+              <em><%= number_to_percentage(coupon.c_pct, precision: 0) %></em>
             </span> 
 
             <% if coupon.c_spare_61.present? || coupon.c_spare_62.present? %>
               <span class="label_coupon label">
                 Coupon Savings
                 <% if coupon.c_spare_61.present? %>
-                  <em><%= number_to_percentage(coupon.c_spare_61, precision: 0) %> off</em>
+                  <em><%= number_to_percentage(coupon.c_spare_61, precision: 0) %></em>
                 <% else %>
-                  <em><%= number_to_currency(coupon.c_spare_62, precision: 0) %> off</em>
+                  <em><%= number_to_currency(coupon.c_spare_62, precision: 0) %> </em>
                 <% end %> 
               </span>
             <% end %>
@@ -38,9 +38,10 @@
             <% if coupon.c_spare_61.present? || coupon.c_spare_62.present? %>
               <% total_save = 0 %>
               <% pct_coupon = 0 %>
-              <% pct_coupon = (coupon.c_spare_61.to_f / 100) * promocode_price %>
+              <% pct_coupon = (coupon.c_spare_61.to_f / 100) * coupon.c_was_price %>
               <% total_price_pct_coupon = promocode_price - pct_coupon %>
               <% total_price_cash_coupon = promocode_price - coupon.c_spare_62.to_f %>
+
               <% if coupon.c_spare_61.present? %>
                 <p class="list_price"><%= number_to_currency(coupon.c_was_price) %></p>
                 <p class="code_price"><%= number_to_currency(total_price_pct_coupon) %></p>
@@ -58,6 +59,7 @@
                   <p class="verified">✅Code & Coupon verified!</p>
                 </div>
               <% end %>
+              
             <% else %>
               <p class="list_price"><%= number_to_currency(coupon.c_was_price) %></p>
               <p class="code_price"><%= number_to_currency(promocode_price) %></p>
