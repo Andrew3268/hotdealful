@@ -107,7 +107,7 @@
 .show-wrap .inner-box{float:none;width:100%;margin:0;}
 .show-wrap .summary_title{margin-top:2em;}
 .show-wrap .receipt{height:150px;display:grid;grid-template-columns:2fr 1fr;margin-top:15px;}
-.show-wrap .receipt__grid1 p, .show-wrap .receipt__grid2 p{margin:2px 0;}
+.show-wrap .receipt__grid1 p, .show-wrap .receipt__grid2 p{margin:4px 0;}
 .show-wrap .receipt__grid1 p em{background:#ff4d4d;padding:3px 7px;border-radius:7px;margin-left:3px;color:#fff;}
 .show-wrap .receipt__grid2{text-align:right;}
 .show-wrap .receipt__grid2 p em{color:#fff}
