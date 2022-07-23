@@ -7,16 +7,8 @@
   <div class="right">
     <div class="index_wrap">
       <header><%= render 'shared/header_index' %></header>
-      
-      <div class="ctn_box">
 
-        <div class="where-hashtag">
-            <% if params[:name].present? %>
-              <h2 class="line-title">#<%= params[:name] %></h2>
-              <!-- <h2 class="line-title">#<%= params[:name] %></h2> -->
-              <!-- <p><span class="hashtag-through">#<%= params[:name] %></span></p> -->
-            <% end %>
-          </div>
+      <div class="ctn_box">
 
         <div class="card_wrap n_coupon_wrap">
 
@@ -31,7 +23,7 @@
                   <p class="posted_date">Posted: <%= post.created_at.strftime("#{post.created_at.day.ordinalize} %B %Y") %></p>
                     
                     <span class="label_coupon label">
-                      Online Deal <em><%= number_to_percentage(hotdeal_pct, precision: 0) %></em>
+                      Discount <em><%= number_to_percentage(hotdeal_pct, precision: 0) %></em>
                     </span>
                     <% if post.spare_61.present? || post.spare_62.present? %>
                       <span class="label_coupon label">
@@ -104,8 +96,6 @@
               </div>
             
           <% end %>
-
-          
         </div>
 
 

@@ -7,15 +7,18 @@
       <%= f.input :image %>
       <%= f.input :title %>
       <%= f.input :link %>
-      <%= f.input :hashtag, label: "#online_deals #product_code ex)#100 #200..." %>
+      <%= f.input :hashtag, label: "HashTag" %>
     </div>
     <div class="pricing clearfix">
       <%= f.input :was_price, label: "Original Price" %>
       <%= f.input :is_price, label: "is_price" %>
       <%= f.input :spare_61, label: "Extra Coupon(%)" %>
       <%= f.input :spare_62, label: "Extra Coupon($)" %>
+    </div>
+    <div class="pricing clearfix">
       <!-- <%= f.input :pct, label: "pct" %> -->
       <%= f.input :rating %>
+      <%= f.input :spare_56, label: "Raing_code" %>
       <%= f.input :review_count %>
     </div>
 

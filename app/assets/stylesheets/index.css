@@ -41,7 +41,7 @@
 }
 
 
-.web_box .right .index_wrap .ctn_box{padding:10px;}
+/*.web_box .right .index_wrap .ctn_box{padding:5px;}*/
 .web_box .right .index_wrap .ctn_box .ctn_banner{border-bottom:1px solid #ccc;padding:5px 0;padding:20px 7px;}
 .web_box .right .index_wrap .ctn_box .ctn_banner .banner_pct{float:left;width:15%;height:85px;position:relative;}
 .web_box .right .index_wrap .ctn_box .ctn_banner .banner_pct p{text-align:center;font-size:30px;line-height:1.2;font-weight:bold;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);}
@@ -73,6 +73,9 @@
 
 .web_box .right .index_wrap .ctn_box .middle_event{margin:50px 0;}
 .web_box .right .index_wrap .ctn_box .middle_event img{width:100%;height:250px;object-fit:contain;border-radius:20px;}
+
+.web_box .right .index_wrap .ctn_box .more_coupon_btn{margin:-20px 0 20px 0;padding:0 10px;}
+.web_box .right .index_wrap .ctn_box .more_coupon_btn a{display:block;background-color:#000;color:#fff;padding:10px;border-radius:15px;text-align:center;font-size:17px;}
 .scroll-downs{top:400px;display:none;}
 
 /*.web_box .right .index_wrap .ctn_box .trending_box{margin-top:70px;}

@@ -115,10 +115,10 @@
 .show-wrap .total_price{font-size:30px;color:#ff4d4d;font-weight:600;}
 .show-wrap .total_text{font-size:30px;}
 .show-wrap .btn{text-align:center;}
-.show-wrap .btn p{font-size:14px;margin-top:50px;text-align:left;margin-left:10px;}
-.show-wrap .btn a.amz_btn{border:2px solid;color:#000;display:block;padding:10px;font-size:20px;border-radius:15px;float:left;width:48%;margin:1%;}
+.show-wrap .btn p{font-size:14px;margin-top:25px;text-align:left;margin-left:4px;}
+.show-wrap .btn a.amz_btn{border:2px solid;color:#000;display:block;padding:10px;font-size:16px;border-radius:15px;float:left;width:48%;margin:1%;}
 .show-wrap .btn a.buy_now{background:#000;color:#fff;border:2px solid #000;}
-.show-wrap .notice p{font-size:10.5px;color:#ccc;padding:10px 15px;margin-top:80px;border-top:1px solid #ccc;}
+.show-wrap .notice p{font-size:10.5px;color:#ccc;padding:10px 15px;margin-top:30px;}
 .show-wrap .title{display:none;}
 .show-wrap .title h2{font-size:17px;font-weight:300;word-break:keep-all;line-height:1.4;height:5.6em;overflow:hidden;display:-webkit-box;display:-ms-flexbox;vertical-align:top;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:4;}
 .show-wrap .admin{text-align:left;}

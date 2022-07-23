@@ -9,6 +9,8 @@ class HomesController < ApplicationController
     @extra_deals = Post.all.order("created_at DESC").limit(18)
     @coupons_top = Coupon.most_hit(3.day.ago, 10)
     @deals_top = Post.most_hit(3.day.ago, 10)
+
+    
     
   end
 

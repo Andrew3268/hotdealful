@@ -1,50 +1,95 @@
-<header><%= render 'shared/header_index' %></header>
-<div class="post_index clearfix">
-  <div class="wrap">
+<div class="web_box clearfix">
 
-      <div class="pin">
-        <h2>Find more deals // <% if current_user && current_user.admin %><%= link_to 'New Pick', new_pick_path %></h2><% end %><br/>
-        <input type="text" id="picksInput" onkeyup="myFunction()" placeholder="Search for deals.." title="Type in a name">
+  <div class="left">
+    <%= render '/shared/left' %>
+  </div>
 
-        <div class="area">
-          <ul id="picksUL">
-            <% @picks.each do |pick| %>
-              <li class="dev-box">
-                <a href="/posts/hashtag/<%=pick.p_link %>">
-                  <img src="<%= pick.p_image %>">
-                  <p><%= pick.p_title %></p>
-                  <% if current_user && current_user.admin %>
-                    <%= render_with_phashtags(pick.p_hashtag) %><br />
-                    <%= link_to 'Edit', edit_pick_path(pick) %>
-                    <%= link_to 'Destroy', pick, method: :delete, data: { confirm: 'Are you sure?' } %>
-                  <% end %>
-                </a>
-              </li>
-            <% end %>
-          </ul>
+  <div class="right">
+    <div class="index_wrap">
+      <header><%= render 'shared/header_index' %></header>
+    
+       <div class="pick_box">
+
+        <div class="menu-wrapper">
+            <div class="menu-item">
+              <a href="/coupons">Home</a>
+              <a href="/coupons/chashtag/promotion_coupons">Contact</a>
+              <a href="#">Courses</a>
+              <a href="#">About</a>
+              <a href="#">Service</a>
+              <a href="#">Events</a>
+              <a href="#">Courses</a>
+              <a href="#">FAQ</a>
+              <a href="#">Home</a>
+              <a href="#">Contact</a>
+              <a href="#">Courses</a>
+              <a href="#">About</a>
+              <a href="#">Service</a>
+              <a href="#">Events</a>
+              <a href="#">Courses</a>
+              <a href="#">FAQ</a>
+            </div> 
+            <span class="pointer left-pointer dis">
+              <i class="fa fa-chevron-left"></i>
+            </span>
+            <span class="pointer right-pointer">
+              <i class="fa fa-chevron-right"></i>
+            </span>
+          </div>
+
+          <div class="search_filter">
+            <div id="wrapper">
+              <input type="text" onkeyup="searchFilter(this)" placeholder="Search..."/>
+            </div>
+          </div>
+
+        <div class="pic_deal clearfix">
+            <%= render '/picks/blog' %>
         </div>
+      </div><!-- pick_box -->
+    </div>
 
+  
+      <div class="bottom_banner">
+        <div class="middle_event">
+          <a target="_blank" href="https://amzn.to/33zpMG9"><img src="<%=asset_path 'banner_mid.png' %>"></a>
+        </div>
       </div>
+
 
   </div>
 </div>
 
+<%= javascript_pack_tag 'coupon_index_menu' %>
 
-<script>
-function myFunction() {
-    var input, filter, ul, li, a, i, txtValue;
-    input = document.getElementById("picksInput");
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("picksUL");
-    li = ul.getElementsByTagName("li");
-    for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("p")[0];
-        txtValue = a.textContent || a.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
-        }
-    }
-}
+<script type="text/javascript">
+  function searchFilter(e){
+      // Make search case insensitive
+      search = e.value.toLowerCase();
+      // each company div's inner text is checked for a match
+    console.log(document.querySelectorAll('.company'))
+      document.querySelectorAll('.company').forEach(function(company){
+          text = company.innerText.toLowerCase();
+          if(text.match(search)){
+              company.style.display="block"
+          } else {
+              company.style.display="none";
+          }
+      })
+
+  }
+
+  for (var i = 0 ; i < 30; i++) {
+    var newDiv = document.createElement("div");
+    var newContent = document.createTextNode(
+      faker.company.companyName()
+    );
+    newDiv.className = "company"
+    // add the text node to the newly created div
+    newDiv.appendChild(newContent);
+    
+    var currentDiv = document.getElementById("wrapper"); 
+    // append each company
+    currentDiv.parentNode.insertBefore(newDiv, currentDiv.nextSibling);
+  }
 </script>

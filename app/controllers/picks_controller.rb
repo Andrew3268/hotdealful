@@ -4,7 +4,9 @@ class PicksController < ApplicationController
 
   # GET /picks or /picks.json
   def index
-    @picks = Pick.all
+    @picks = Pick.all.all.order("created_at DESC")
+    @latest_picks = Pick.last(1)
+    @except_first_picks = Pick.order("id desc").offset(1)
   end
 
   # GET /picks/1 or /picks/1.json
@@ -70,7 +72,7 @@ class PicksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def pick_params
-      params.require(:pick).permit(:p_title, :p_image, :p_link, :p_hashtag)
+      params.require(:pick).permit(:p_title, :p_image, :p_link, :p_hashtag, :p_spare_01)
     end
 end
 

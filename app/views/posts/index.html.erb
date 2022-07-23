@@ -1,26 +1,24 @@
-<header><%= render 'shared/header_index' %></header>
-
 <div class="wrap">
 
   <div class="index_wrapper">
-    <h2 class="line-title">The Best Deals of Amazon</h2>
-    <%= render 'posts/index_section' %>
+    
+    <%= render 'posts/new_index' %>
   </div>
 
-  <div class="back_btn_mobile">
+  <!-- <div class="back_btn_mobile">
     <button onclick="goBack()"><img class="go_back" src="<%=asset_path 'back_btn.png' %>" alt="뒤로가기" /></button>
     <script>
       function goBack() {
         window.history.back();
       }
     </script>
-  </div>  
+  </div>     -->
+
+  
 
 </div>
 
-<div class="wrap">
-  <%= raw pagy_nav(@pagy) %>
-</div>
+
 
 
 

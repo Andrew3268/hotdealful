@@ -219,14 +219,14 @@
 
               <!-- Button Section -->
 
-              <div class="btn">
+              <div class="btn clearfix">
                 <% if @coupon.c_promocode.present? %>
                   <% btn_price = @coupon.c_was_price.to_f - total_price.to_f %>
                   <% btn_pct_price = @coupon.c_was_price.to_f - total_price_pct_coupon.to_f %>
                   <% btn_cash_price = @coupon.c_was_price.to_f - total_price_cash_coupon.to_f %>
 
-                  <p>Apply this code at checkout with a single click.</p>
-                  <a class="amz_btn" href="/">Back</a>
+                  <p> *Apply this code at checkout with a single click.</p>
+                  <a class="amz_btn" href="/coupons">Back</a>
                   <% if @coupon.c_spare_61.present? || @coupon.c_spare_62.present? %>
                     <% if @coupon.c_spare_61.present? %>
                       <a class="amz_btn buy_now" target="_blank" href="<%= @coupon.c_link %>">Save <%= number_to_currency(btn_pct_price) %></a>
@@ -238,7 +238,7 @@
                   <% end %>
                   
                 <% else %>
-                  <a class="amz_btn" href="/">Back</a>
+                  <a class="amz_btn" href="/coupons">Back</a>
                   <a class="amz_btn buy_now" target="_blank" href="<%= @coupon.c_link %>">Accept an offer</a>
                 <% end %>
               </div>
@@ -330,10 +330,11 @@
         </div><!--./container-->
 
         <!-- <div class="back_btn_mobile">
-          <button onclick="goBack()"><img class="go_back" src="<%=asset_path 'back_btn.png' %>" alt="뒤로가기" /></button>
+          <button type="reset" onclick="goBack()"><img class="go_back" src="<%=asset_path 'back_btn.png' %>" alt="뒤로가기" /></button>
           <script>
             function goBack() {
               window.history.back();
+              // window.history.replaceState({}, '','/coupons');/
             }
           </script>
         </div> -->

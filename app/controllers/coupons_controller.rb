@@ -4,7 +4,7 @@ class CouponsController < ApplicationController
 
   # GET /coupons or /coupons.json
   def index
-    @pagy, @coupons = pagy(Coupon.all.order("created_at DESC"), items: 40)
+    @pagy, @coupons = pagy(Coupon.all.order("created_at DESC"), items: 100)
     if params[:search]
       @search_term = params[:search]
       @coupons = @coupons.search_by(@search_term)
@@ -41,7 +41,7 @@ class CouponsController < ApplicationController
 
   def hashtags
     tag = Tag.find_by(name: params[:name])
-    @pagy, @coupons = pagy(tag.coupons.order("created_at DESC"), items: 40)
+    @pagy, @coupons = pagy(tag.coupons.order("created_at DESC"), items: 100)
   end
 
   # GET /coupons/new
