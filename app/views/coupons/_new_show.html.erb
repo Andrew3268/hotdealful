@@ -118,6 +118,11 @@
                     <% end %>
                   </div>            
                 <% end %>
+                <% if @coupon.c_spare_61.present? || @coupon.c_spare_62.present? %>
+                  <p class="verified">✅Code & Coupon verified!</p>
+                <% else %>
+                  <p class="verified">✅Code verified!</p>
+                <% end %>
               </h2>
 
                
