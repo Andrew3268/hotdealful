@@ -76,6 +76,7 @@
 
 .web_box .right .index_wrap .ctn_box .more_coupon_btn{margin:-20px 0 20px 0;padding:0 10px;}
 .web_box .right .index_wrap .ctn_box .more_coupon_btn a{display:block;background-color:#000;color:#fff;padding:10px;border-radius:15px;text-align:center;font-size:17px;}
+.web_box .right .index_wrap .ctn_box .blog_box{padding:0 10px;}
 .scroll-downs{top:400px;display:none;}
 
 /*.web_box .right .index_wrap .ctn_box .trending_box{margin-top:70px;}
@@ -91,7 +92,7 @@
   .web_box .right{float:none;width:100%;border:none;-ms-overflow-style: none; /* IE and Edge */scrollbar-width: none; /* Firefox */}
   .web_box .right .index_wrap .search_hero{height:500px;}
   .web_box .right .index_wrap .search_hero .inner{display:block;}
-  .web_box .right .index_wrap .search_hero .inner h2{padding:20px 40px;}
+  .web_box .right .index_wrap .search_hero .inner h2{padding:20px 40px;text-align:center;}
   .web_box .right .index_wrap .search_hero .inner p{padding:0 40px;}
   .web_box .right .index_wrap .search_hero .set_search_box{top:70%;}
   .web_box .right .index_wrap .ctn_box .special_exhibition .spe_top img{height:200px;}
