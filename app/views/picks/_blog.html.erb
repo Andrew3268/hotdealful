@@ -1,8 +1,8 @@
 <div class="blog_box">
   <% @latest_picks.each do |pick| %>
     <div class="pick_main_card">
-      <p class="main_title"><%= pick.p_title %></p>
-      <p class="sub_title"><%= pick.p_spare_01 %></p>
+      <span class="main_title"><%= pick.p_title %></span><br />
+      <span class="sub_title"><%= pick.p_spare_01 %></span>
       <a href="/posts/hashtag/<%= pick.p_link %>"><div class="pick_img"><img src="<%= pick.p_image %>"></div></a>
       <% if current_user && current_user.admin %>
         <div class="admin">
