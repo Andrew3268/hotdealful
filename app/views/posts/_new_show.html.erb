@@ -14,6 +14,7 @@
             <% if current_user && current_user.admin %>
               <div class="sharing_btn">
                 <a href="/" data-turbolinks="false">Back</a>
+                <%= link_to 'New Post', new_post_path %>
                 <%= render 'posts/sharing_sns' %>
                 <button id="facebook_btn">FBcopy</button>
                 <button class="btn-default js-copybtn"><span class="glyphicon glyphicon-copy"></span> TWcopy </button>
