@@ -197,7 +197,21 @@
                 <% btn_pct_price = @post.was_price.to_f - extra_coupon_total.to_f %>
                 <% btn_cash_price = @post.was_price.to_f - extra_coupon_dallor_total.to_f %>
                 <a class="amz_btn" href="/">Back</a>
-                <% if @post.spare_61.present? || @post.spare_62.present? %>
+
+                <div class="pc_btn">
+                  <% if @post.spare_61.present? || @post.spare_62.present? %>
+                    <% if @post.spare_61.present? %>
+                      <a class="amz_btn buy_now" target="_blank" href="<%= @post.link %>">Save <%= number_to_currency(btn_pct_price) %></a>
+                    <% else %>
+                      <a class="amz_btn buy_now" target="_blank" href="<%= @post.link %>">Save <%= number_to_currency(btn_cash_price) %></a>
+                    <% end %>
+                  <% else %>
+                    <a class="amz_btn buy_now" target="_blank" href="<%= @post.link %>">Save <%= number_to_currency(btn_price) %></a>
+                  <% end %>
+                </div>
+
+                <div class="mobile_btn">
+                  <% if @post.spare_61.present? || @post.spare_62.present? %>
                     <% if @post.spare_61.present? %>
                       <a class="amz_btn buy_now" href="<%= @post.link %>">Save <%= number_to_currency(btn_pct_price) %></a>
                     <% else %>
@@ -206,7 +220,8 @@
                   <% else %>
                     <a class="amz_btn buy_now" href="<%= @post.link %>">Save <%= number_to_currency(btn_price) %></a>
                   <% end %>
-                
+                </div>
+
               </div>
 
               <div class="notice">

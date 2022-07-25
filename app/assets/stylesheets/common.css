@@ -199,3 +199,16 @@ header nav button img{width:25px;height:25px;}
   .tab_bar nav{/*flex-direction: column;*/justify-self:start;/*border-radius: 0 30px 30px 0;*/}
   .tab_bar nav svg{margin:0;}
 }
+
+
+/*** btn to amazon site ***/
+.btn .mobile_btn{display:none;}
+@media (max-width: 500px) {
+  .btn .pc_btn{display:none;}
+  .btn .mobile_btn{display:block;}
+}
+
+
+
+
+

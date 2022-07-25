@@ -237,15 +237,30 @@
 
                   <p> *Apply this code at checkout with a single click.</p>
                   <a class="amz_btn" href="/coupons">Back</a>
-                  <% if @coupon.c_spare_61.present? || @coupon.c_spare_62.present? %>
-                    <% if @coupon.c_spare_61.present? %>
-                      <a class="amz_btn buy_now" target="_blank" href="<%= @coupon.c_link %>">Save <%= number_to_currency(btn_pct_price) %></a>
+
+                  <div class="pc_btn">
+                    <% if @coupon.c_spare_61.present? || @coupon.c_spare_62.present? %>
+                      <% if @coupon.c_spare_61.present? %>
+                        <a class="amz_btn buy_now" target="_blank" href="<%= @coupon.c_link %>">Save <%= number_to_currency(btn_pct_price) %></a>
+                      <% else %>
+                        <a class="amz_btn buy_now" target="_blank" href="<%= @coupon.c_link %>">Save <%= number_to_currency(btn_cash_price) %></a>
+                      <% end %>
                     <% else %>
-                      <a class="amz_btn buy_now" target="_blank" href="<%= @coupon.c_link %>">Save <%= number_to_currency(btn_cash_price) %></a>
+                      <a class="amz_btn buy_now" target="_blank" href="<%= @coupon.c_link %>">Save <%= number_to_currency(btn_price) %></a>
                     <% end %>
-                  <% else %>
-                    <a class="amz_btn buy_now" target="_blank" href="<%= @coupon.c_link %>">Save <%= number_to_currency(btn_price) %></a>
-                  <% end %>
+                  </div>
+
+                  <div class="mobile_btn">
+                    <% if @coupon.c_spare_61.present? || @coupon.c_spare_62.present? %>
+                      <% if @coupon.c_spare_61.present? %>
+                        <a class="amz_btn buy_now" href="<%= @coupon.c_link %>">Save <%= number_to_currency(btn_pct_price) %></a>
+                      <% else %>
+                        <a class="amz_btn buy_now" href="<%= @coupon.c_link %>">Save <%= number_to_currency(btn_cash_price) %></a>
+                      <% end %>
+                    <% else %>
+                      <a class="amz_btn buy_now" href="<%= @coupon.c_link %>">Save <%= number_to_currency(btn_price) %></a>
+                    <% end %>
+                  </div>
                   
                 <% else %>
                   <a class="amz_btn" href="/coupons">Back</a>
