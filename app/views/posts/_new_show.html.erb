@@ -199,12 +199,12 @@
                 <a class="amz_btn" href="/">Back</a>
                 <% if @post.spare_61.present? || @post.spare_62.present? %>
                     <% if @post.spare_61.present? %>
-                      <a class="amz_btn buy_now" target="_blank" href="<%= @post.link %>">Save <%= number_to_currency(btn_pct_price) %></a>
+                      <a class="amz_btn buy_now" href="<%= @post.link %>">Save <%= number_to_currency(btn_pct_price) %></a>
                     <% else %>
-                      <a class="amz_btn buy_now" target="_blank" href="<%= @post.link %>">Save <%= number_to_currency(btn_cash_price) %></a>
+                      <a class="amz_btn buy_now" href="<%= @post.link %>">Save <%= number_to_currency(btn_cash_price) %></a>
                     <% end %>
                   <% else %>
-                    <a class="amz_btn buy_now" target="_blank" href="<%= @post.link %>">Save <%= number_to_currency(btn_price) %></a>
+                    <a class="amz_btn buy_now" href="<%= @post.link %>">Save <%= number_to_currency(btn_price) %></a>
                   <% end %>
                 
               </div>
