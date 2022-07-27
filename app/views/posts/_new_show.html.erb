@@ -61,6 +61,8 @@
               <img src="<%= @post.image %>" alt="<%= @post.title %>" title="<%= @post.title %>" />
             </div>
 
+          
+
             <div class="inner-box clearfix">
               
               <div class="title">
@@ -192,6 +194,10 @@
 
               <!-- Button Section -->
 
+              <div class="share_btn">
+                <div class="sharethis-inline-share-buttons"></div>
+              </div>
+
               <div class="btn">
                 <% btn_price = @post.was_price.to_f - @post.is_price %>
                 <% btn_pct_price = @post.was_price.to_f - extra_coupon_total.to_f %>
@@ -227,6 +233,7 @@
               <div class="notice">
                 <p>"HOTDEAL-FUL" is a participant in the Amazon Services LLC Associates Program & the Amazon EU Associates Programme, an affiliate advertising program designed to provide a means for us to earn fees by linking to Amazon.com,</p>
               </div>
+
 
 
               <% if current_user && current_user.admin %>
