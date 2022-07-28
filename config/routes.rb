@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  # root to: 'search_entries#index'
+  get 'search_entries/index', as: 'search'
+
+  # get 'search_entries/index'
   resources :deals
   resources :homes
   resources :coupons

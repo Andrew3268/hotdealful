@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_10_040011) do
+ActiveRecord::Schema.define(version: 2022_07_28_050511) do
 
   create_table "coupons", force: :cascade do |t|
     t.integer "user_id"
@@ -306,6 +306,29 @@ ActiveRecord::Schema.define(version: 2021_12_10_040011) do
     t.integer "hits", default: 1, null: false
     t.index ["average_time"], name: "index_punches_on_average_time"
     t.index ["punchable_type", "punchable_id"], name: "punchable_index"
+  end
+
+  create_table "search_entries", force: :cascade do |t|
+    t.string "title"
+    t.string "link"
+    t.string "image"
+    t.string "source"
+    t.string "hashtag"
+    t.string "promocode"
+    t.string "rating"
+    t.string "rating_code"
+    t.string "review_count"
+    t.string "is_price"
+    t.string "was_price"
+    t.string "pct"
+    t.string "pct_coupon"
+    t.string "cash_coupon"
+    t.text "description"
+    t.string "searchable_type", null: false
+    t.integer "searchable_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["searchable_type", "searchable_id"], name: "index_search_entries_on_searchable"
   end
 
   create_table "tags", force: :cascade do |t|

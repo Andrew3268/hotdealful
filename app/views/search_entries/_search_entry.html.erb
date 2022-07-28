@@ -1,0 +1,11 @@
+<%= link_to polymorphic_path search_entry.searchable do %>
+  <div class="total_search">
+    <div class="inner">
+      <p><%= highlight search_entry.title, params[:query] %></p>
+    </div>
+    <div class="img_box">
+      <img src="<%= highlight search_entry.image, params[:query] %>">
+    </div>
+    <!-- <hr/> -->
+  </div>
+<% end %>

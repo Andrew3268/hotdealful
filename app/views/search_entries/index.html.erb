@@ -1,0 +1,43 @@
+<div class="web_box clearfix">
+
+  <div class="left">
+    <%= render '/shared/left' %>
+  </div>
+
+  <div class="right">
+
+
+    <div class="index_wrap">
+      <header><%= render 'shared/header_index' %></header>
+      <div class="search_form_box">
+        <%= form_with url: :search, method: :get do |form| %>
+          <!-- <%= form.label :query, "Search for:" %> -->
+          <%= form.text_field :query %>
+          <%= form.submit "Search" %>
+          <!-- <%= link_to "Reset", search_path %> -->
+        <% end %>
+      </div>
+
+      <div class="search_box">
+        <% if params[:query].present? %>
+          <%= render partial: "search_entries/search_entry", collection: @search_entries %>
+        <% else %>
+          <div class="not_found">
+            <p>Opps!!😱</p>
+            <em>Sorry, we couldn't find what you're looking for.</em>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <!-- <div class="bottom_banner">
+      <div class="middle_event">
+        <a target="_blank" href="https://amzn.to/33zpMG9"><img src="<%=asset_path 'banner_mid.png' %>"></a>
+      </div>
+    </div> -->
+
+  
+
+  </div><!-- right -->
+</div>
+
