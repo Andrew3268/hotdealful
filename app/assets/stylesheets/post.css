@@ -180,7 +180,7 @@
 }
 
 @media screen and (min-width:641px) and (max-width:1199px){
-  .container{width:100%;margin-top:50px;}
+  .container{width:100%;}
   .show-wrap .container{width:100%;}
   .show-wrap .container .go_back{display:block;width:40px;height:40px;opacity:0.1;margin:1em 0 0 1.5em;}
   .show-wrap .container .rating_box{margin-top:0;}
