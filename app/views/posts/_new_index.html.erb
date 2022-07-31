@@ -20,7 +20,7 @@
                 <% hotdeal_pct =  (post.was_price.to_f - post.is_price.to_f) / post.was_price.to_f * 100 %>
 
                 <div class="inner">
-                  <p class="posted_date">Posted: <%= post.created_at.strftime("#{post.created_at.day.ordinalize} %B %Y") %></p>
+                  <p class="posted_date">Found by Editor: <%= post.created_at.strftime("#{post.created_at.day.ordinalize} %B %Y") %></p>
                     
                     <span class="label_coupon label">
                       Discount <em><%= number_to_percentage(hotdeal_pct, precision: 0) %></em>

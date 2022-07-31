@@ -187,6 +187,7 @@
 }
 @media screen and (min-width:641px) and (max-width:1199px){
   .more_detail .detail_card .detail_box p{font-size:10px;}
+  .more_detail .detail_card .detail_box span.review{font-size:13px;}
 }
 
 
@@ -219,7 +220,7 @@
 .bottom_banner .middle_event a img{width:100%;}
 
 @media screen and (max-width:640px){
-  .n_coupon_card{padding-top:5px;}
+  .n_coupon_card{padding-top:10px;}
   .n_coupon_card .img_box{height:135px;}
   .n_coupon_card .inner .label{font-size:10px;padding:4px 1px;}
   .n_coupon_wrap .post_search_filter{margin:-20px 0 20px 0;}
