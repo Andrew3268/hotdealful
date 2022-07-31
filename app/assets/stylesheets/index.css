@@ -15,7 +15,7 @@
 .web_box .right .index_wrap{overflow:hidden;}
 .web_box .right .index_wrap header nav{width:100%;}
 
-.web_box .right .index_wrap .search_hero{color:#000;height:100px;position:relative;margin:0 0 10px 0;}
+.web_box .right .index_wrap .search_hero{color:#000;position:relative;margin:0 0 10px 0;}
 .web_box .right .index_wrap .search_hero .inner{display:none;}
 .web_box .right .index_wrap .search_hero .inner h2{line-height:1.2;font-size:35px;padding:30px 50px;}
 .web_box .right .index_wrap .search_hero .inner p{padding:10px 50px;}
@@ -74,7 +74,7 @@
 .web_box .right .index_wrap .ctn_box .middle_event{margin:50px 0;}
 .web_box .right .index_wrap .ctn_box .middle_event img{width:100%;height:250px;object-fit:contain;border-radius:20px;}
 
-.web_box .right .index_wrap .ctn_box .more_coupon_btn{margin:-20px 0 20px 0;padding:0 10px;}
+.web_box .right .index_wrap .ctn_box .more_coupon_btn{margin:-20px 0 70px 0;padding:0 10px;}
 .web_box .right .index_wrap .ctn_box .more_coupon_btn a{display:block;background-color:#000;color:#fff;padding:10px;border-radius:15px;text-align:center;font-size:17px;}
 .web_box .right .index_wrap .ctn_box .blog_box{padding:0 10px;margin:30px 0 50px 0 ;}
 .scroll-downs{top:400px;display:none;}
@@ -90,7 +90,7 @@
   .web_box{width:100%;}
   .web_box .left{float:none;width:100%;margin:0;display:none;}
   .web_box .right{float:none;width:100%;border:none;-ms-overflow-style: none; /* IE and Edge */scrollbar-width: none; /* Firefox */}
-  .web_box .right .index_wrap .search_hero{height:500px;}
+  .web_box .right .index_wrap .search_hero{height:230px;}
   .web_box .right .index_wrap .search_hero .inner{display:block;}
   .web_box .right .index_wrap .search_hero .inner h2{padding:20px 40px;text-align:center;}
   .web_box .right .index_wrap .search_hero .inner p{padding:0 40px;}

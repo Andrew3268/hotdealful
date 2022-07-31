@@ -34,6 +34,9 @@ body{margin:0;padding:0;font-size:15px;color:#000;line-height:1.5;font-weight:30
   .layout{min-width:0;}
   .wrap{width:auto;margin:0 3%;}
 }
+
+
+
 /*Header */
 header{position:relative;height:80px;}
 /*header nav{padding:15px 30px 10px 30px;width:1200px;margin:0 auto;position:relative;}*/ /* old show */
@@ -95,10 +98,10 @@ header nav button img{width:25px;height:25px;}
 .where-hashtag p{font-size:30px;font-weight:100;}
 .where-hashtag p span{color:#000;border:2px solid;padding:5px 20px;border-radius:15px;margin-left:30px;}
 .where-hashtag h2{font-size:15px;}
-.where-hashtag h2 em{background-color:#000;color:#fff;padding:5px 10px;border-radius:15px;}
+.where-hashtag h2 em{background-color:#fff;color:#000;padding:5px 10px;border-radius:10px;margin-left:1px;}
 .hashtag-through{display:inline;text-transform:uppercase;}
 @media screen and (max-width:640px){
-  .where-hashtag{margin:20px 0 15px 0;}
+  .where-hashtag{margin:0 0 15px 0;}
   .where-hashtag p{font-size:25px;text-align:center;}
   .where-hashtag p span{margin:0;}
 }

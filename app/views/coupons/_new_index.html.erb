@@ -5,6 +5,7 @@
   </div>
 
   <div class="right">
+
     <div class="index_wrap">
       <header><%= render 'shared/header_index' %></header>
 
@@ -45,6 +46,8 @@
                   <input type="text" onkeyup="searchFilter(this)" placeholder="Search..."/>
                 </div>
               </div>
+
+
 
 
               <% @coupons.each do |coupon| %>
@@ -96,6 +99,9 @@
                                   <% total_save = coupon.c_was_price - total_price_pct_coupon %>
                                   <p>You can save <em class="total_savings"><%= number_to_currency(total_save) %></em> off list price.</p>
                                   <p class="verified">✅Code & Coupon verified!</p>
+                                  <% if coupon.c_spare_01.present? %>
+                                    <span class="exp_date">🗓Valid until <%= coupon.c_spare_01 %>/<%= coupon.c_spare_02 %>/2022 at 11:59 PM PDT</span>
+                                  <% end %>
                                 </div>
                               <% else %>
                                 <p class="list_price"><%= number_to_currency(coupon.c_was_price) %></p>
@@ -104,6 +110,9 @@
                                   <% total_save = coupon.c_was_price - total_price_cash_coupon %>
                                   <p>You can save <em class="total_savings"><%= number_to_currency(total_save) %></em> off list price.</p>
                                   <p class="verified">✅Code & Coupon verified!</p>
+                                  <% if coupon.c_spare_01.present? %>
+                                    <span class="exp_date">🗓Valid until <%= coupon.c_spare_01 %>/<%= coupon.c_spare_02 %>/2022 at 11:59 PM PDT</span>
+                                  <% end %>
                                 </div>
                               <% end %>
                               
@@ -114,7 +123,9 @@
                                 <% total_save = coupon.c_was_price - promocode_price %>
                                 <p>You can save <em class="total_savings"><%= number_to_currency(total_save) %></em> off list price.</p>
                                 <p class="verified">✅Code verified!</p>
-
+                                <% if coupon.c_spare_01.present? %>
+                                  <span class="exp_date">🗓Valid until <%= coupon.c_spare_01 %>/<%= coupon.c_spare_02 %>/2022 at 11:59 PM PDT</span>
+                                <% end %>
                               </div>
                             <% end %>
                           <% else %>
@@ -187,17 +198,23 @@
                     </div><!-- wrapper -->
                   
               <% end %>
+
           </div>
         </div>
 
         <%= raw pagy_nav(@pagy) %>
       </div>
 
+      
+
+
+
   </div><!-- right -->
 </div>
 
 <%= javascript_pack_tag 'coupon_index_menu' %>
 
+<!-- Search Filter. -->
 <script type="text/javascript">
   function searchFilter(e){
       // Make search case insensitive
@@ -229,3 +246,5 @@
     currentDiv.parentNode.insertBefore(newDiv, currentDiv.nextSibling);
   }
 </script>
+
+

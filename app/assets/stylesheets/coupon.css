@@ -135,8 +135,8 @@
 
 /******* New Coupon Section ****/
 .n_coupon_wrap{margin-bottom:50px;padding:0 10px;}
-.n_coupon_wrap h2{background-color:#000;color:#fff;padding:5px 10px;border-radius:10px;display:inline-block;font-size:15px;}
-.n_coupon_wrap .post_hashtag_box{padding:0 10px;}
+.n_coupon_wrap h2{background-color:#000;color:#fff;padding:7px 10px;border-radius:10px;display:inline-block;font-size:12px;}
+.n_coupon_wrap .post_hashtag_box{padding:0 8px;}
 .n_coupon_card{border-bottom:1px solid #ccc;padding:30px 0;}
 .n_coupon_card .img_box{float:left;width:35%;height:150px;margin-left:1.5%;position:relative;font-size:14px;border:1px solid #ccc;border-radius:20px;}
 .n_coupon_card .img_box img.main_img{width:100%;height:100%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);padding:15px;}
@@ -160,14 +160,41 @@
 .n_coupon_card .inner p.rating em{margin-right:7px;background:#515151;color:#fff;padding:3px 10px;font-size:11px;border-radius:15px;}
 .n_coupon_card .inner p.list_price{display:inline-block;font-size:15px;color:#ccc;text-decoration:line-through;margin-right:5px;}
 .n_coupon_card .inner p.code_price{font-size:20px;margin:10px 0;display:inline-block;color:#ff4d4d;font-weight:bold;}
+
+
 .n_coupon_card .inner .more_detail{}
-.n_coupon_card .inner .more_detail p.verified{font-size:13px;}
+.n_coupon_card .inner .more_detail p.verified{font-size:12px;margin:2px 0;}
 .n_coupon_card .inner .more_detail p em.total_savings{font-size:15px;font-weight:bold;}
+.n_coupon_card .inner .more_detail span.exp_date{font-size:12px;}
+
+.more_detail .detail_card{}
+.more_detail .detail_card .detail_box{float:left;width:18%;margin:1%;border:1px solid #ccc;border-radius:10px;padding:10px;height:80px;background-color:#fbfbfb;}
+.more_detail .detail_card .detail_box p{font-size:11px;margin-bottom:10px;border-bottom:1px solid;}
+.more_detail .detail_card .detail_box span{display:block;text-align:center;}
+.more_detail .detail_card .detail_box span.verified{font-size:14px;}
+.more_detail .detail_card .detail_box span.veri_span{font-size:12px;}
+.more_detail .detail_card .detail_box span.savings{font-size:20px;}
+.more_detail .detail_card .detail_box span.review{font-size:14px;margin-top:15px;}
+.more_detail .detail_card .detail_box .rating_card{position:relative;height:35px;width:100%;}
+.more_detail .detail_card .detail_box .rating_card img{width:55.66px;height:12.16px;object-fit:contain;position:absolute;top:35%;left:50%;transform:translate(-50%,-50%);}
+.more_detail .detail_card .detail_box .rating_card span{font-size:13px;margin-top:-8px;position:absolute;top:100%;left:50%;transform:translate(-50%,-50%);}
+@media screen and (max-width:640px){
+  .n_coupon_wrap h2{margin-bottom:20px;}
+  .more_detail .detail_card .detail_box{float:left;width:31.333%;}
+  .more_detail .detail_card .no_date{float:left;width:23%;margin:1%;border:1px solid #ccc;border-radius:10px;padding:10px;height:80px;background-color:#fbfbfb;}
+  .more_detail .detail_card .no_date span.review{font-size:12px;}
+  .more_detail .detail_card .detail_box p{font-size:10px;}
+}
+@media screen and (min-width:641px) and (max-width:1199px){
+  .more_detail .detail_card .detail_box p{font-size:10px;}
+}
+
+
 .n_coupon_card .inner span.price_pct{background:#ff4d4d;color:#fff;padding:3px 7px;font-size:20px;border-radius:10px;}
 .n_coupon_card .inner .btn_box a{margin:10px 0;border-radius:10px;padding:10px;display:block;}
 
 /******* Coupon index menu *******/
-.menu-wrapper{max-width:500px;height:40px;padding:0 30px;/*margin:20px auto;*/position:relative;overflow:hidden;}
+.menu-wrapper{height:40px;padding:0 30px;position:relative;overflow:hidden;}
 .menu-wrapper .menu-item{height:100%;overflow:auto;white-space:nowrap;}
 .menu-wrapper .menu-item a{display:inline-block;padding:5px 13px;color:#333;height:100%;}
 .menu-wrapper .menu-item a:first-child{padding-left:5px;}
@@ -180,20 +207,24 @@
 
 /******* Coupon index search filter *******/
 .n_coupon_wrap{}
-.n_coupon_wrap .search_filter{}
+.n_coupon_wrap .search_filter{margin-bottom:20px;}
 .n_coupon_wrap .search_filter input{width:100%;padding:10px;border-radius:15px;}
 .n_coupon_wrap .search_filter [data-filter-item]{}
 .n_coupon_wrap .search_filter .hidden{display:none;}
 
  
-
-
 .bottom_banner{}
 .bottom_banner .middle_event{}
 .bottom_banner .middle_event a{}
 .bottom_banner .middle_event a img{width:100%;}
 
 @media screen and (max-width:640px){
+  .n_coupon_card{padding-top:5px;}
   .n_coupon_card .img_box{height:135px;}
   .n_coupon_card .inner .label{font-size:10px;padding:4px 1px;}
+  .n_coupon_wrap .post_search_filter{margin:-20px 0 20px 0;}
 }
+
+
+
+
