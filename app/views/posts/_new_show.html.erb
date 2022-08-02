@@ -264,12 +264,7 @@
 
               </div>
 
-              <div class="notice">
-                <p>"HOTDEAL-FUL" is a participant in the Amazon Services LLC Associates Program & the Amazon EU Associates Programme, an affiliate advertising program designed to provide a means for us to earn fees by linking to Amazon.com,</p>
-              </div>
-
-
-
+          
               <% if current_user && current_user.admin %>
                 <div class="admin">
                   <p><%= render_with_hashtags(@post.hashtag) %></p>
@@ -297,6 +292,17 @@
             </script>
             <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
           </div>
+
+          <div class="notice">
+              <ul>
+                <li>Price may be changed after video published date.</li>
+                <li>All These products in this page belong to the website owner and the product owner.</li>
+                <li>"Offtheprice" acknowledge some content in this process, the aim is to provide for the convenience to the user. By specifying the source, we respect other people`s rights, as well as to provide support for those who own the contents.</li>
+                <li>"Offtheprice" only want to show the coolest coupons, promotion codes and best deals you can find and buy on the Amazon.com. We are not interested in spamming any boring or lame products at you. When you explore our website you’ll only find interesting and often times very deals.</li>
+                <li>"Offtheprice" is a participant in the Amazon Services LLC Associates Program & the Amazon EU Associates Programme, an affiliate advertising program designed to provide a means for us to earn fees by linking to Amazon.com,</li>
+              </ul>
+            </div>
+          
           
           <% if current_user && current_user.admin %>
             <div class="sharing_ctn">
