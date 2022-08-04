@@ -1,117 +1,120 @@
-<div class="web_box clearfix">
+<% if current_user && current_user.admin %>
+  <div class="web_box clearfix">
 
-  <div class="left">
-    <%= render '/shared/left' %>
-  </div>
+    <div class="left">
+      <%= render '/shared/left' %>
+    </div>
 
-  <div class="right">
-    <div class="index_wrap">
-      <header><%= render 'shared/header_index' %></header>
+    <div class="right">
+      <div class="index_wrap">
+        <header><%= render 'shared/header_index' %></header>
 
-      <div class="ctn_box">
+        <div class="ctn_box">
 
-        <div class="card_wrap n_coupon_wrap">
+          <div class="card_wrap n_coupon_wrap">
 
-          <% @posts.each do |post| %>
-            
-              <div class="n_coupon_card clearfix">
-                
-                <% hotdeal_pct = 0 %>
-                <% hotdeal_pct =  (post.was_price.to_f - post.is_price.to_f) / post.was_price.to_f * 100 %>
+            <% @posts.each do |post| %>
+              
+                <div class="n_coupon_card clearfix">
+                  
+                  <% hotdeal_pct = 0 %>
+                  <% hotdeal_pct =  (post.was_price.to_f - post.is_price.to_f) / post.was_price.to_f * 100 %>
 
-                <div class="inner">
-                  <p class="posted_date">Found by Editor: <%= post.created_at.strftime("#{post.created_at.day.ordinalize} %B %Y") %></p>
-                    
-                    <span class="label_coupon label">
-                      Discount <em><%= number_to_percentage(hotdeal_pct, precision: 0) %></em>
-                    </span>
-                    <% if post.spare_61.present? || post.spare_62.present? %>
+                  <div class="inner">
+                    <p class="posted_date">Found by Editor: <%= post.created_at.strftime("#{post.created_at.day.ordinalize} %B %Y") %></p>
+                      
                       <span class="label_coupon label">
-                        Coupon Savings
-                        <% if post.spare_61.present? %>
-                          <em><%= number_to_percentage(post.spare_61, precision: 0) %></em>
-                        <% else %>
-                          <em><%= number_to_currency(post.spare_62, precision: 0) %> </em>
-                        <% end %> 
+                        Discount <em><%= number_to_percentage(hotdeal_pct, precision: 0) %></em>
                       </span>
-                    <% end %>
-                  
+                      <% if post.spare_61.present? || post.spare_62.present? %>
+                        <span class="label_coupon label">
+                          Coupon Savings
+                          <% if post.spare_61.present? %>
+                            <em><%= number_to_percentage(post.spare_61, precision: 0) %></em>
+                          <% else %>
+                            <em><%= number_to_currency(post.spare_62, precision: 0) %> </em>
+                          <% end %> 
+                        </span>
+                      <% end %>
+                    
 
-                  <p class="title"><%= post.title %></p>
-                  
-                    <% if post.spare_61.present? || post.spare_62.present? %>
-                      <% total_save = 0 %>
-                      <% pct_coupon = 0 %>
-                      <% pct_coupon = (post.spare_61.to_f / 100) * post.is_price %>
-                      <% total_price_pct_coupon = post.is_price - pct_coupon %>
-                      <% total_price_cash_coupon = post.is_price - post.spare_62.to_f %>
+                    <p class="title"><%= post.title %></p>
+                    
+                      <% if post.spare_61.present? || post.spare_62.present? %>
+                        <% total_save = 0 %>
+                        <% pct_coupon = 0 %>
+                        <% pct_coupon = (post.spare_61.to_f / 100) * post.is_price %>
+                        <% total_price_pct_coupon = post.is_price - pct_coupon %>
+                        <% total_price_cash_coupon = post.is_price - post.spare_62.to_f %>
 
-                      <% if post.spare_61.present? %>
-                        <p class="list_price"><%= number_to_currency(post.was_price) %></p>
-                        <p class="code_price"><%= number_to_currency(total_price_pct_coupon) %></p>
-                        <div class="more_detail">
-                          <% total_save = post.was_price - total_price_pct_coupon %>
-                          <p>You can save <em class="total_savings"><%= number_to_currency(total_save) %></em> off list price.</p>
-                          <p class="verified">✅Deal & Coupon verified!</p>
-                        </div>
+                        <% if post.spare_61.present? %>
+                          <p class="list_price"><%= number_to_currency(post.was_price) %></p>
+                          <p class="code_price"><%= number_to_currency(total_price_pct_coupon) %></p>
+                          <div class="more_detail">
+                            <% total_save = post.was_price - total_price_pct_coupon %>
+                            <p>You can save <em class="total_savings"><%= number_to_currency(total_save) %></em> off list price.</p>
+                            <p class="verified">✅Deal & Coupon verified!</p>
+                          </div>
+                        <% else %>
+                          <p class="list_price"><%= number_to_currency(post.was_price) %></p>
+                          <p class="code_price"><%= number_to_currency(total_price_cash_coupon) %></p>
+                          <div class="more_detail">
+                            <% total_save = post.was_price - total_price_cash_coupon %>
+                            <p>You can save <em class="total_savings"><%= number_to_currency(total_save) %></em> off list price.</p>
+                            <p class="verified">✅Deal & Coupon verified!</p>
+                          </div>
+                        <% end %>
+                        
                       <% else %>
                         <p class="list_price"><%= number_to_currency(post.was_price) %></p>
-                        <p class="code_price"><%= number_to_currency(total_price_cash_coupon) %></p>
+                        <p class="code_price"><%= number_to_currency(post.is_price) %></p>
                         <div class="more_detail">
-                          <% total_save = post.was_price - total_price_cash_coupon %>
+                          <% total_save = post.was_price - post.is_price %>
                           <p>You can save <em class="total_savings"><%= number_to_currency(total_save) %></em> off list price.</p>
-                          <p class="verified">✅Deal & Coupon verified!</p>
+                          <p class="verified">✅Deal verified!</p>
+
                         </div>
                       <% end %>
-                      
-                    <% else %>
-                      <p class="list_price"><%= number_to_currency(post.was_price) %></p>
-                      <p class="code_price"><%= number_to_currency(post.is_price) %></p>
-                      <div class="more_detail">
-                        <% total_save = post.was_price - post.is_price %>
-                        <p>You can save <em class="total_savings"><%= number_to_currency(total_save) %></em> off list price.</p>
-                        <p class="verified">✅Deal verified!</p>
+                                      
 
+                    <% if current_user && current_user.admin %>
+                      <div class="admin_controller">
+                        <%= link_to 'Edit', edit_post_path(post) %>
+                        <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
                       </div>
                     <% end %>
-                                    
+                  </div>
 
-                  <% if current_user && current_user.admin %>
-                    <div class="admin_controller">
-                      <%= link_to 'Edit', edit_post_path(post) %>
-                      <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-                    </div>
-                  <% end %>
+
+                  <div class="img_box">
+                    <%= link_to image_tag(post.image, alt: post.title, title: post.title, :class => 'main_img'), post %>
+
+                    <!-- <div class="used_it">
+                      <p><%= post.hits %> People Checked.</p>
+                    </div> -->
+
+                  </div>
                 </div>
+              
+            <% end %>
+          </div>
 
 
-                <div class="img_box">
-                  <%= link_to image_tag(post.image, alt: post.title, title: post.title, :class => 'main_img'), post %>
-
-                  <!-- <div class="used_it">
-                    <p><%= post.hits %> People Checked.</p>
-                  </div> -->
-
-                </div>
-              </div>
-            
-          <% end %>
-        </div>
-
-
-        
-      </div><!-- ctn_box -->
-    </div>
-
-  
-      <div class="bottom_banner">
-        <div class="middle_event">
-          <a target="_blank" href="https://amzn.to/33zpMG9"><img src="<%=asset_path 'banner_mid.png' %>"></a>
-        </div>
+          
+        </div><!-- ctn_box -->
       </div>
 
-    <div class="wrap">
-      <%= raw pagy_nav(@pagy) %>
-    </div>
-  </div><!-- right -->
-</div>
+    
+        <div class="bottom_banner">
+          <div class="middle_event">
+            <a target="_blank" href="https://amzn.to/33zpMG9"><img src="<%=asset_path 'banner_mid.png' %>"></a>
+          </div>
+        </div>
+
+      <div class="wrap">
+        <%= raw pagy_nav(@pagy) %>
+      </div>
+      
+    </div><!-- right -->
+  </div>
+<% end %>

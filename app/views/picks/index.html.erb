@@ -10,7 +10,7 @@
     
        <div class="pick_box">
 
-        <div class="menu-wrapper">
+        <!-- <div class="menu-wrapper">
             <div class="menu-item">
               <a href="/coupons">Home</a>
               <a href="/coupons/chashtag/promotion_coupons">Contact</a>
@@ -35,7 +35,7 @@
             <span class="pointer right-pointer">
               <i class="fa fa-chevron-right"></i>
             </span>
-          </div>
+        </div> -->
 
           <div class="search_filter">
             <div id="wrapper">
@@ -73,13 +73,8 @@
         <a target="_blank" href="https://amzn.to/33zpMG9"><img src="<%=asset_path 'banner_mid.png' %>"></a>
       </div>
     </div>
-
-
-    
-
-  
-
-  </div>
+    <%= render 'posts/tab_bar' %>
+  </div><!-- right -->
 </div>
 
 <%= javascript_pack_tag 'coupon_index_menu' %>

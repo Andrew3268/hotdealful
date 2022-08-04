@@ -245,6 +245,8 @@
               <span><%= number_to_percentage(hotdeal_pct, precision: 0) %> </span>
             <% end %>
 
+
+
             <!-- <div class="used_it">
               <p><%= coupon.hits %> times checked.</p>
             </div> -->
@@ -267,11 +269,16 @@
               </div>
             <% end %>
            -->
+            <div class="rating_for_admin">
+              <% if current_user && current_user.admin %>
+                <p><%= coupon.c_rating %> // <%= coupon.c_review_count %></p>
+              <% end %>
+            </div>
           </div>
         </div>
       <% end %>
     
   <% end %>
-
+  
   
 </div>
