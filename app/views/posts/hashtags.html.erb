@@ -103,6 +103,11 @@
 
                       <div class="img_box">
                         <%= link_to image_tag(post.image, alt: post.title, title: post.title, :class => 'main_img'), post %>
+                        <div class="rating_for_admin">
+                            <% if current_user && current_user.admin %>
+                              <p><%= post.rating %> // <%= post.review_count %></p>
+                            <% end %>
+                          </div>
                       </div>
                         <!-- <div class="used_it">
                           <p><%= post.hits %> People Checked.</p>

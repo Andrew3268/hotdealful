@@ -42,7 +42,7 @@
 
               <div class="where-hashtag">
                 <% if params[:name].present? %>
-                <h2><em>#<%= params[:name] %></em> Promotion Codes</h2>
+                <h2>Promotion Codes on <em>#<%= params[:name] %></em></h2>
                   <!-- <h2 class="line-title">#<%= params[:name] %> Promotion Codes</h2> -->
                   <!-- <p><span class="hashtag-through">#<%= params[:name] %></span></p> -->
                 <% end %>
@@ -191,7 +191,11 @@
                         </div>
                       <% end %>
                      -->
-                    
+                      <div class="rating_for_admin">
+                        <% if current_user && current_user.admin %>
+                          <p><%= coupon.c_rating %> // <%= coupon.c_review_count %></p>
+                        <% end %>
+                      </div>
                     </div>
                   </div>
                 
