@@ -29,7 +29,7 @@
                 <% hotdeal_pct = 0 %>
                 <% hotdeal_pct =  (@post.was_price - @post.is_price) / @post.was_price * 100 %>
                 
-                Amazon.com has "<%= @post.title %>" on sale for
+                <em class="title_bold">Amazon.com</em> has <em class="title_bold">"<%= @post.title %>"</em> on sale for
                 <% if @post.spare_61.present? %>
                   <% extra_coupon_deal = 0 %>
                   <% extra_coupon_deal = @post.is_price * (@post.spare_61 / 100) %>
@@ -45,7 +45,7 @@
                 <% else %>
                   <em class="show_price"><%= number_to_currency(@post.is_price) %> after <em class="show_code"><%= number_to_percentage(hotdeal_pct, precision: 0) %> off</em></em>
                 <% end %>
-                <em>Shipping is free. w/ Prime or on $25+ orders.</em>
+                <em class="shipping">( Shipping is free. w/ Prime or on $25+ orders. )</em>
                 
                 <% if @post.rating.present? %>
                   <div class="rating_box">
@@ -100,20 +100,20 @@
                 <p class="posted_date">Found by Editor: <%= @post.created_at.strftime("#{@post.created_at.day.ordinalize} %B %Y") %></p>
                 <div class="more_detail clearfix">
                     <div class="detail_card cleafix">
-                        <div class="detail_box no_date">
-                          <p>🏷 Deal</p>
-                          <span class="verified">✅</span>
-                          <span class="veri_span">verified</span>
-                        </div>
                         <% if @post.spare_61.present? || @post.spare_62.present? %>
-                          <div class="detail_box no_date">
-                            <p>🎟️ Coupon</p>
-                            <span class="verified">✅</span>
-                            <span class="veri_span">verified</span>
+                          <div class="detail_box">
+                            <p>Deal & Coupon</p>
+                            <span class="verified"><img class="coupon_check" src="<%=asset_path 'coupon_check.png' %>" alt=" verified coupon&code" /> verified</span>
+                            <!-- <span class="veri_span">verified</span> -->
+                          </div>
+                        <% else %>
+                          <div class="detail_box">
+                            <p>Deal</p>
+                            <span class="verified"><img class="coupon_check" src="<%=asset_path 'coupon_check.png' %>" alt=" verified coupon&code" /> verified</span>
                           </div>
                         <% end %>
-                        <div class="detail_box no_date">
-                          <p>⭐ Ratings</p>
+                        <div class="detail_box">
+                          <p>Ratings</p>
                           <% if @post.rating.present? %>
                              <div class="rating_card">
                                 <% if @post.spare_56 == 50 %>
@@ -145,8 +145,8 @@
                               </div>
                             <% end %>
                         </div>
-                        <div class="detail_box no_date">
-                          <p>📝 Review</p>
+                        <div class="detail_box">
+                          <p>Review</p>
                           <span class="review"><%= @post.review_count %> +</span>
                         </div>
                     </div><!-- detail_card -->

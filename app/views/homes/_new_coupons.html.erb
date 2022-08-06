@@ -1,5 +1,5 @@
 <div class="card_wrap n_coupon_wrap">
-  <h2>Promotion Codes of Amazon for August 2022</h2>
+  <h2>Amazon Promotion Codes for August 2022</h2>
   <% @coupons.each do |coupon| %>
 
 
@@ -53,9 +53,9 @@
                   <div class="more_detail clearfix">
                     <% total_save = coupon.c_was_price - total_price_pct_coupon %>
                     <p>You can save <em class="total_savings"><%= number_to_currency(total_save) %></em> off list price.</p>
-                    <p class="verified">✅Code & Coupon verified!</p>
+                    <p class="verified">✅ Code & Coupon verified!</p>
                     <% if coupon.c_spare_01.present? %>
-                      <span class="exp_date">🗓Valid until <%= coupon.c_spare_01 %>/<%= coupon.c_spare_02 %>/2022 at 11:59 PM PDT</span>
+                      <span class="exp_date">🗓 Valid until <%= coupon.c_spare_01 %>/<%= coupon.c_spare_02 %>/2022 at 11:59 PM PDT</span>
                     <% end %>
                     
                     <!-- <div class="detail_card clearfix">
@@ -111,9 +111,9 @@
                   <div class="more_detail">
                     <% total_save = coupon.c_was_price - total_price_cash_coupon %>
                     <p>You can save <em class="total_savings"><%= number_to_currency(total_save) %></em> off list price.</p>
-                    <p class="verified">✅Code & Coupon verified!</p>
+                    <p class="verified">✅ Code & Coupon verified!</p>
                     <% if coupon.c_spare_01.present? %>
-                      <span class="exp_date">🗓Valid until <%= coupon.c_spare_01 %>/<%= coupon.c_spare_02 %>/2022 at 11:59 PM PDT</span>
+                      <span class="exp_date">🗓 Valid until <%= coupon.c_spare_01 %>/<%= coupon.c_spare_02 %>/2022 at 11:59 PM PDT</span>
                     <% end %>
                     <!-- <div class="detail_card clearfix">
                       <div class="detail_box">
@@ -168,9 +168,9 @@
                 <div class="more_detail">
                   <% total_save = coupon.c_was_price - promocode_price %>
                   <p>You can save <em class="total_savings"><%= number_to_currency(total_save) %></em> off list price.</p>
-                  <p class="verified">✅Code verified!</p>
+                  <p class="verified">✅ Code verified!</p>
                   <% if coupon.c_spare_01.present? %>
-                      <span class="exp_date">🗓Valid until <%= coupon.c_spare_01 %>/<%= coupon.c_spare_02 %>/2022 at 11:59 PM PDT</span>
+                      <span class="exp_date">🗓 Valid until <%= coupon.c_spare_01 %>/<%= coupon.c_spare_02 %>/2022 at 11:59 PM PDT</span>
                     <% end %>
                   <!-- <div class="detail_card clearfix">
                       <div class="detail_box">

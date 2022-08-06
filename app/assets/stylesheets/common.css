@@ -192,7 +192,7 @@ header nav button img{width:25px;height:25px;}
 .tab_bar a svg{margin-right:-2.5rem;width:28px;height:28px;pointer-events:none;transition:margin .2s ease-out}
 .tab_bar a img{width:30px;align-items:center;vertical-align:sub;}
 .tab_bar a img.deal{margin-top:2px;}
-.tab_bar a.active{background:var(--hover-bg);color:var(--hover-c);}
+.tab_bar a.active{background-color:rgba(38,38,38,0.2);}
 
 @media (max-width: 500px) {
   .tab_bar{display:block;}
