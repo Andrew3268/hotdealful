@@ -36,7 +36,7 @@ class BridgesController < ApplicationController
   end
 
   def delete_hotdeals
-    @posts = Post.all
+    @posts = Post.all.order("created_at DESC")
   end
 
   def delete_shoes
