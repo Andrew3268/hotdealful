@@ -2,8 +2,6 @@
   <h2>Amazon Promotion Codes for August 2022</h2>
   <% @coupons.each do |coupon| %>
 
-
-      <% if coupon.c_pct >= 50 %>
         <div class="n_coupon_card clearfix">
           <% promocode_price = 0 %>
           <% promocode_price =  coupon.c_was_price.to_f - (coupon.c_pct.to_f / 100) * coupon.c_was_price.to_f %>
@@ -319,7 +317,7 @@
             </div>
           </div>
         </div>
-      <% end %>
+      
     
   <% end %>
   
