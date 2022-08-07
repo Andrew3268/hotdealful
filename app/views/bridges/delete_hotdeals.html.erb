@@ -17,7 +17,7 @@
           
             <tr>
               <td><p><%= i + 1 %></p></td>
-              <td><p><%= post.title %></p></td>
+              <td><p><%= link_to post.title, post %></p></td>
               <td><p><%= post.hashtag %></p></td>
               <td><p><%= post.spare_57 %></p></td>
               <td><%= time_ago_in_words(post.created_at) %> ago</td>
