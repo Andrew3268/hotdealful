@@ -135,7 +135,7 @@
 
 /******* New Coupon Section ****/
 .n_coupon_wrap{margin-bottom:50px;padding:0 10px;}
-.n_coupon_wrap h2{background-color:#000;color:#fff;padding:7px 10px;border-radius:10px;display:inline-block;font-size:12px;}
+.n_coupon_wrap h2{background-color:#000;color:#05ce78;padding:10px;border-radius:10px;display:inline-block;font-size:15px;width:100%;text-align:center;}
 .n_coupon_wrap .post_hashtag_box{padding:0 8px;}
 .n_coupon_card{border-bottom:1px solid #ccc;padding:30px 0;}
 .n_coupon_card .img_box{float:left;width:35%;height:150px;margin-left:1.5%;position:relative;font-size:14px;border:1px solid #ccc;border-radius:20px;}
@@ -171,9 +171,9 @@
 
 .more_detail .detail_card{}
 .more_detail .detail_card .detail_box{float:left;width:31.33%;margin:1%;border:2px solid;border-radius:10px;padding:10px;height:80px;/*background-color:#fbfbfb;*/}
-.more_detail .detail_card .detail_box p{font-size:11px;margin-bottom:10px;border-bottom:1px solid;}
+.more_detail .detail_card .detail_box p{font-size:12px;margin-bottom:10px;border-bottom:1px solid;}
 .more_detail .detail_card .detail_box span{display:block;text-align:center;}
-.more_detail .detail_card .detail_box span.verified{font-size:14px;margin-top:13%;}
+.more_detail .detail_card .detail_box span.verified{font-size:14px;margin-top:11%;}
 .more_detail .detail_card .detail_box span.verified img.coupon_check{width:20px;vertical-align:middle;}
 .more_detail .detail_card .detail_box span.veri_span{font-size:12px;}
 .more_detail .detail_card .detail_box span.savings{font-size:20px;}
@@ -181,14 +181,21 @@
 .more_detail .detail_card .detail_box .rating_card{position:relative;height:35px;width:100%;}
 .more_detail .detail_card .detail_box .rating_card img{width:55.66px;height:12.16px;object-fit:contain;position:absolute;top:20%;left:50%;transform:translate(-50%,-50%);}
 .more_detail .detail_card .detail_box .rating_card span{font-size:13px;margin-top:-8px;position:absolute;top:100%;left:50%;transform:translate(-50%,-50%);}
-.exp_detail_box{width:100%;border:2px solid;border-radius:10px;height:90px;position:relative;}
-.exp_detail_box .inner{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:20px;}
-.exp_detail_box .inner p{}
-.exp_detail_box .inner span{}
+.date_exp_detail_box{width:48%;margin:1%;border:2px solid;border-radius:10px;float:left;position:relative;height:90px;}
+.daxp_single{width:100%;}
+.date_exp_detail_box .inner{padding:10px;}
+.date_exp_detail_box .inner p{border-bottom:1px solid;font-size:12px;}
+.date_exp_detail_box .inner span{position:absolute;top:70%;left:50%;transform:translate(-50%,-50%);font-size:20px;}
 @media screen and (max-width:640px){
   .n_coupon_wrap h2{margin-bottom:20px;}
   .more_detail .detail_card .detail_box{float:left;width:31.333%;}
   .more_detail .detail_card .detail_box p{font-size:10px;}
+  .more_detail .detail_card .detail_box span.verified{margin-top:13%;}
+  .date_exp_detail_box{height:70px;}
+  .date_exp_detail_box .inner{padding:7px;}
+  .date_exp_detail_box .inner p{font-size:13px;}
+  .date_exp_detail_box .inner span{font-size:15px;}
+  
 }
 @media screen and (min-width:641px) and (max-width:1199px){
   .more_detail .detail_card .detail_box p{font-size:10px;}
@@ -233,5 +240,55 @@
 }
 
 
+
+
+
+
+.see_code {
+  width: 100%;
+  margin:5px auto 5px;
+}
+
+.see_code li.open .dropdownlink {
+  color: #05ce78;
+}
+.see_code li.open .dropdownlink .fa-chevron-down {
+  transform: rotate(180deg);
+}
+
+.see_code li:last-child .dropdownlink {
+  border-bottom: 0;
+  text-align:center;
+}
+
+.see_code .dropdownlink {
+  background-color:#000;
+  cursor: pointer;
+  display: block;
+  padding: 10px;
+  font-size: 15px;
+  border-bottom: 1px solid #ccc;
+  color: #fff;
+  position: relative;
+  transition: all 0.4s ease-out;
+  border-radius:10px;
+}
+.see_code .dropdownlink i {
+  position: absolute;
+  top: 17px;
+  left: 16px;
+}
+.see_code .dropdownlink .fa-chevron-down{right:12px;left:auto;top:15px;}
+.see_code .ctn{display:none;}
+.see_code .ctn img{width:100%;margin-top:15px;}
+.see_code .ctn img.see_code_notice{width:13px;margin:0 3px 0 0 ;}
+.see_code .ctn p{text-align:center;font-size:20px;margin:-5px 0 10px 0;}
+.see_code .ctn span{font-size:12px;display:block;margin-top:3px;}
+.see_code .ctn .btn{margin-bottom:5px;}
+.see_code .ctn .btn a{display:block;float:left;width:48%;margin:1%;padding:10px;border-radius:10px;text-align:center;font-size:12px;background-color:#000;color:#fff;}
+
+
+@media screen and (max-width:640px){
+}
 
 

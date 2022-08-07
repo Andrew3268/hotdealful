@@ -156,14 +156,31 @@
 
                   </div><!-- more_detail -->  
 
-                  <% if @coupon.c_spare_01.present? %>
-                    <div class="exp_detail_box clearfix">
-                      <div class="inner">
-                        <p>Valid Until:</p>
-                        <span><%= @coupon.c_spare_01 %> / <%= @coupon.c_spare_02 %> / 2022</span>
+                  <div class="date_code clearfix">
+
+                    <% if @coupon.c_spare_01.present? %>
+                      <div class="date_exp_detail_box clearfix">
+                        <div class="inner">
+                          <p class="code_title">Promotion Codes</p>
+                          <span><%= @coupon.c_promocode %></span>
+                        </div>
                       </div>
-                    </div>
-                  <% end %>
+                      <div class="date_exp_detail_box clearfix">
+                        <div class="inner">
+                          <p>Valid Until:</p>
+                          <span><%= @coupon.c_spare_01 %> / <%= @coupon.c_spare_02 %> / 2022</span>
+                        </div>
+                      </div>
+                    <% else %>
+                      <div class="date_exp_detail_box daxp_single clearfix">
+                        <div class="inner">
+                          <p class="code_title">Promotion Codes</p>
+                          <span><%= @coupon.c_promocode %></span>
+                        </div>
+                        </div>
+                    <% end %>
+                    
+                  </div>
                
               
 
