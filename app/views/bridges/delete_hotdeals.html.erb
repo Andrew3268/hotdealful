@@ -14,7 +14,7 @@
       </tr>
         
         <% @posts.each_with_index do |post, i| %>
-          <% if post.created_at < 20.days.ago %>
+          
             <tr>
               <td><p><%= i + 1 %></p></td>
               <td><p><%= post.title %></p></td>
@@ -23,7 +23,7 @@
               <td><%= time_ago_in_words(post.created_at) %> ago</td>
               <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
-            <% end %>
+          
         <% end %>
           
     </table>

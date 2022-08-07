@@ -194,7 +194,7 @@
   .date_exp_detail_box{height:70px;}
   .date_exp_detail_box .inner{padding:7px;}
   .date_exp_detail_box .inner p{font-size:13px;}
-  .date_exp_detail_box .inner span{font-size:15px;}
+  .date_exp_detail_box .inner span{font-size:14px;}
   
 }
 @media screen and (min-width:641px) and (max-width:1199px){
@@ -240,55 +240,24 @@
 }
 
 
-
-
-
-
-.see_code {
-  width: 100%;
-  margin:5px auto 5px;
-}
-
-.see_code li.open .dropdownlink {
-  color: #05ce78;
-}
-.see_code li.open .dropdownlink .fa-chevron-down {
-  transform: rotate(180deg);
-}
-
-.see_code li:last-child .dropdownlink {
-  border-bottom: 0;
-  text-align:center;
-}
-
-.see_code .dropdownlink {
-  background-color:#000;
-  cursor: pointer;
-  display: block;
-  padding: 10px;
-  font-size: 15px;
-  border-bottom: 1px solid #ccc;
-  color: #fff;
-  position: relative;
-  transition: all 0.4s ease-out;
-  border-radius:10px;
-}
-.see_code .dropdownlink i {
-  position: absolute;
-  top: 17px;
-  left: 16px;
-}
+/********* View more code ***********/
+.see_code{width:100%;margin:5px auto 5px;}
+.see_code li.open .dropdownlink{color:#05ce78;}
+.see_code li.open .dropdownlink .fa-chevron-down{transform:rotate(180deg);}
+.see_code li:last-child .dropdownlink{border-bottom:0;text-align:center;}
+.see_code .dropdownlink{background-color:#000;cursor:pointer;display:block;padding:10px;font-size:15px;border-bottom:1px solid #ccc;color:#fff;position:relative;transition:all 0.4s ease-out;border-radius:10px;}
+.see_code .dropdownlink i {position:absolute;top:17px;left:16px;}
 .see_code .dropdownlink .fa-chevron-down{right:12px;left:auto;top:15px;}
 .see_code .ctn{display:none;}
 .see_code .ctn img{width:100%;margin-top:15px;}
 .see_code .ctn img.see_code_notice{width:13px;margin:0 3px 0 0 ;}
-.see_code .ctn p{text-align:center;font-size:20px;margin:-5px 0 10px 0;}
+.see_code .ctn p{text-align:center;font-size:20px;margin:-5px 0 10px 0;letter-spacing:8px;}
 .see_code .ctn span{font-size:12px;display:block;margin-top:3px;}
 .see_code .ctn .btn{margin-bottom:5px;}
 .see_code .ctn .btn a{display:block;float:left;width:48%;margin:1%;padding:10px;border-radius:10px;text-align:center;font-size:12px;background-color:#000;color:#fff;}
 
 
-@media screen and (max-width:640px){
-}
+
+
 
 
