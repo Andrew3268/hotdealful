@@ -54,14 +54,15 @@
                     </a>
                   </div>
                   <a href="/posts/hashtag/<%= pick.p_link %>"><div class="pick_img"><img src="<%= pick.p_image %>"></div></a>
+                  <% if current_user && current_user.admin %>
+                    <div class="admin">
+                      <%= link_to 'Edit', edit_pick_path(pick) %> |
+                      <%= link_to 'Destroy', pick, method: :delete, data: { confirm: 'Are you sure?' } %>
+                      <%= pick.p_hashtag %>
+                    </div>
+                  <% end %>
                 </div>
               </div>
-              <% if current_user && current_user.admin %>
-                  <div class="admin">
-                    <%= link_to 'Edit', edit_pick_path(pick) %> |
-                    <%= link_to 'Destroy', pick, method: :delete, data: { confirm: 'Are you sure?' } %>
-                  </div>
-                <% end %>
             <% end %>
         </div>
       </div><!-- pick_box -->

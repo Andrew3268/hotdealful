@@ -44,6 +44,7 @@ Rails.application.routes.draw do
   get 'bridges/tem_index'
   get 'bridges/coupon_section'
   get 'bridges/deal_section'
+  
 
   get 'bridges/new_coupon_section'
 
