@@ -2,6 +2,7 @@ class CouponsController < ApplicationController
   before_action :set_coupon, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, except: [:index, :show, :hashtags]
 
+ 
   # GET /coupons or /coupons.json
   def index
     @pagy, @coupons = pagy(Coupon.all.order("created_at DESC"), items: 100)
@@ -11,8 +12,8 @@ class CouponsController < ApplicationController
     end
     @coupons_top = Coupon.most_hit(1.day.ago, 10)
     @deals_top = Post.most_hit(1.day.ago, 10)
+  end 
 
-  end
 
   # GET /coupons/1 or /coupons/1.json
   def show

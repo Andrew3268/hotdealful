@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   # get 'search_entries/index'
   resources :deals
   resources :homes
-  resources :coupons
+  resources :coupons 
+
   resources :picks
   devise_for :users
   # root 'posts#index'

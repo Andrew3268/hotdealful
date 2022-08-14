@@ -96,7 +96,7 @@
                             <p class="code_price"><%= number_to_currency(total_price_pct_coupon) %></p>
                             <div class="more_detail">
                               <% total_save = coupon.c_was_price - total_price_pct_coupon %>
-                              <p>You can save <em class="total_savings"><%= number_to_currency(total_save) %></em> off list price.</p>
+                              <p>You can save <em class="total_savings"><%= number_to_currency(total_save) %>.</em></p>
                               <p class="verified">✅Code & Coupon verified!</p>
                               <% if coupon.c_spare_01.present? %>
                                 <span class="exp_date">🗓Valid until <%= coupon.c_spare_01 %>/<%= coupon.c_spare_02 %>/2022 at 11:59 PM PDT</span>
@@ -107,7 +107,7 @@
                             <p class="code_price"><%= number_to_currency(total_price_cash_coupon) %></p>
                             <div class="more_detail">
                               <% total_save = coupon.c_was_price - total_price_cash_coupon %>
-                              <p>You can save <em class="total_savings"><%= number_to_currency(total_save) %></em> off list price.</p>
+                              <p>You can save <em class="total_savings"><%= number_to_currency(total_save) %>.</em></p>
                               <p class="verified">✅Code & Coupon verified!</p>
                               <% if coupon.c_spare_01.present? %>
                                 <span class="exp_date">🗓Valid until <%= coupon.c_spare_01 %>/<%= coupon.c_spare_02 %>/2022 at 11:59 PM PDT</span>

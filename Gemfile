@@ -13,6 +13,7 @@ gem 'impressionist'
 gem 'sitemap_generator'
 gem 'whenever', require: false
 gem "punching_bag"
+gem 'roo'
 
 
 gem 'capistrano', '~> 3.11'

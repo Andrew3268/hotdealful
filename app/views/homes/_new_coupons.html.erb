@@ -62,7 +62,7 @@
                             <p><%= coupon.c_promocode %></p>
                             <div class="btn clearfix">
                               <a href="<%= coupon.c_link %>">Apply Now</a>
-                              <a href="/coupons/<%= coupon.id %>">Coupon Detail</a>
+                              <a href="/coupons/<%= coupon.id %>">Code Detail</a>
                             </div>
                             <% if coupon.c_spare_01.present? %>
                               <span><img class="see_code_notice" src="<%=asset_path 'exp.png' %>" alt="expried" />Valid until <%= coupon.c_spare_01 %>/<%= coupon.c_spare_02 %>/2022 at 11:59 PM PDT</span>
@@ -123,7 +123,7 @@
 
                   <div class="more_detail">
                     <% total_save = coupon.c_was_price - total_price_cash_coupon %>
-                    <p>You can save <em class="total_savings"><%= number_to_currency(total_save) %></em> off list price.</p>
+                    <p>You can save <em class="total_savings"><%= number_to_currency(total_save) %></em>.</p>
                     <p class="verified">✅ Code & Coupon verified!</p>
                     <ul class="see_code">
                       <li>
@@ -194,7 +194,7 @@
 
                 <div class="more_detail">
                   <% total_save = coupon.c_was_price - promocode_price %>
-                  <p>You can save <em class="total_savings"><%= number_to_currency(total_save) %></em> off list price.</p>
+                  <p>You can save <em class="total_savings"><%= number_to_currency(total_save) %></em>.</p>
                   <p class="verified">✅ Code verified!</p>
                   <ul class="see_code">
                     <li>
