@@ -135,7 +135,7 @@
                           <p><%= coupon.c_promocode %></p>
                           <div class="btn clearfix">
                             <a href="<%= coupon.c_link %>">Apply Now</a>
-                            <a href="/coupons/<%= coupon.id %>">Coupon Detail</a>
+                            <a href="/coupons/<%= coupon.id %>">Code Detail</a>
                           </div>
                           <% if coupon.c_spare_01.present? %>
                             <span><img class="see_code_notice" src="<%=asset_path 'exp.png' %>" alt="expried" />Valid until <%= coupon.c_spare_01 %>/<%= coupon.c_spare_02 %>/2022 at 11:59 PM PDT</span>
@@ -206,7 +206,7 @@
                         <p><%= coupon.c_promocode %></p>
                         <div class="btn clearfix">
                           <a href="<%= coupon.c_link %>">Apply Now</a>
-                          <a href="/coupons/<%= coupon.id %>">Coupon Detail</a>
+                          <a href="/coupons/<%= coupon.id %>">Code Detail</a>
                         </div>
                         <% if coupon.c_spare_01.present? %>
                           <span><img class="see_code_notice" src="<%=asset_path 'exp.png' %>" alt="expried" />Valid until <%= coupon.c_spare_01 %>/<%= coupon.c_spare_02 %>/2022 at 11:59 PM PDT</span>
