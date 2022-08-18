@@ -21,18 +21,18 @@ class CouponsController < ApplicationController
     set_meta_tags title: @coupon.c_title,
                   site: 'Off The Price',
                   revierse: true,
-                  description: @coupon.c_title,
+                  description: @coupon.c_description,
                   keywords: 'amazondeals, hotdeals, promotion code, coupons ',
                   twitter: {
                     card: "summary",
                     site: "@offtheprice",
                     title: @coupon.c_title,
-                    description: @coupon.c_title,
+                    description: @coupon.c_description,
                     image: @coupon.c_image
                   },
                   og: {
                     title: @coupon.c_title,
-                    description: @coupon.c_title,
+                    description: @coupon.c_description,
                     type: 'website',
                     url: coupon_url(@coupon),
                     image: @coupon.c_image

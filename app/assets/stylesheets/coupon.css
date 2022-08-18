@@ -170,35 +170,40 @@
 .n_coupon_card .inner .more_detail span.exp_date{font-size:12px;}
 
 .more_detail .detail_card{}
-.more_detail .detail_card .detail_box{float:left;width:31.33%;margin:1%;border:2px solid;border-radius:10px;padding:10px;height:80px;/*background-color:#fbfbfb;*/}
+.more_detail .detail_card .detail_box{float:left;width:48%;margin:1%;border:2px solid;border-radius:10px;padding:10px;height:80px;/*background-color:#fbfbfb;*/}
 .more_detail .detail_card .detail_box p{font-size:14px;margin-bottom:10px;border-bottom:1px solid;}
 .more_detail .detail_card .detail_box span{display:block;text-align:center;}
-.more_detail .detail_card .detail_box span.verified{font-size:14px;margin-top:8%;}
-.more_detail .detail_card .detail_box span.verified img.coupon_check{width:20px;vertical-align:middle;}
+.more_detail .detail_card .detail_box span.verified{font-size:14px;margin-top:5%;}
+.more_detail .detail_card .detail_box span.verified img.coupon_check{width:12%;vertical-align:middle;}
 .more_detail .detail_card .detail_box span.veri_span{font-size:12px;}
 .more_detail .detail_card .detail_box span.savings{font-size:20px;}
 .more_detail .detail_card .detail_box span.review{font-size:14px;margin-top:13px;}
-.more_detail .detail_card .detail_box .rating_card{position:relative;height:35px;width:100%;}
-.more_detail .detail_card .detail_box .rating_card img{width:55.66px;height:12.16px;object-fit:contain;position:absolute;top:20%;left:50%;transform:translate(-50%,-50%);}
-.more_detail .detail_card .detail_box .rating_card span{font-size:13px;margin-top:-12px;position:absolute;top:100%;left:50%;transform:translate(-50%,-50%);}
-.date_exp_detail_box{width:48%;margin:1%;border:2px solid;border-radius:10px;float:left;position:relative;height:90px;}
+.more_detail .detail_card .detail_box .rating_card{text-align:center;}
+.more_detail .detail_card .detail_box .rating_card img{width:40%;vertical-align:super;}
+.more_detail .detail_card .detail_box .rating_card span{font-size:15px;display:inline-block;}
+.more_detail .detail_card .detail_box .rating_card .rating_box{}
+.date_exp_detail_box{width:48%;margin:1%;border:2px solid;border-radius:10px;float:left;position:relative;height:80px;}
 .daxp_single{width:100%;}
 .date_exp_detail_box .inner{padding:10px;}
 .date_exp_detail_box .inner p{border-bottom:1px solid;font-size:14px;}
-.date_exp_detail_box .inner span{position:absolute;top:70%;left:50%;transform:translate(-50%,-50%);font-size:20px;}
+.date_exp_detail_box .inner span{position:absolute;top:70%;left:50%;transform:translate(-50%,-50%);font-size:18px;}
+.date_exp_detail_box .inner span.code_letter{letter-spacing:2px;}
 @media screen and (max-width:640px){
   .n_coupon_wrap h2{margin-bottom:20px;}
-  .more_detail .detail_card .detail_box{float:left;width:31.333%;}
-  .more_detail .detail_card .detail_box p{font-size:10px;}
-  .more_detail .detail_card .detail_box span.verified{margin-top:13%;}
-  .date_exp_detail_box{height:70px;}
+  /*.more_detail .detail_card .detail_box{float:left;width:31.333%;}*/
+  .more_detail .detail_card .detail_box p{font-size:12px;}
+  .more_detail .detail_card .detail_box span.verified{margin-top:0;}
+  .more_detail .detail_card .detail_box span.verified img.coupon_check{width:18%;}
+  .more_detail .detail_card .detail_box .rating_card span{font-size:13px;}
+  .more_detail .detail_card .detail_box .rating_card .rating_box{padding-top:2px;}
   .date_exp_detail_box .inner{padding:7px;}
-  .date_exp_detail_box .inner p{font-size:13px;}
+  .date_exp_detail_box .inner p{font-size:12px;}
   .date_exp_detail_box .inner span{font-size:14px;}
+  
   
 }
 @media screen and (min-width:641px) and (max-width:1199px){
-  .more_detail .detail_card .detail_box p{font-size:10px;}
+  .more_detail .detail_card .detail_box p{font-size:12px;}
   .more_detail .detail_card .detail_box span.review{font-size:13px;}
 }
 
