@@ -73,7 +73,8 @@
                   <% else %>
                     <em class="show_price"><%= number_to_currency(@coupon.c_is_price) %>.</em>
                   <% end %>
-                  // Customer Reviews: <%= @coupon.c_rating %> / <%= @coupon.c_review_count %> global ratings.  
+                  // Customer Reviews: <%= @coupon.c_rating %> / <%= @coupon.c_review_count %> global ratings. 
+
                 </p>
               <% end %>
 
@@ -114,7 +115,7 @@
               </div>
               <h2 class="summary_title">
                 SUMMARY
-                <p class="posted_date">Found by Editor: <%= @coupon.created_at.strftime("#{@coupon.created_at.day.ordinalize} %B %Y") %></p>
+                <p class="posted_date">Found on <%= @coupon.created_at.strftime("#{@coupon.created_at.day.ordinalize} %B %Y") %></p>
                 <!-- <p class="posted_date">Vaild until: <span><%= @coupon.c_spare_01 %>/<%= @coupon.c_spare_02 %>/2022</span></p> -->
 
                   <div class="more_detail clearfix">
@@ -123,12 +124,12 @@
                         <% if @coupon.c_spare_61.present? || @coupon.c_spare_62.present? %>
                           <div class="detail_box">
                             <p>Code & Coupon Check</p>
-                            <span class="verified"><img class="coupon_check" src="<%=asset_path 'coupon_check.png' %>" alt=" verified coupon&code" /> verified</span>
+                            <span class="verified"><!-- <img class="coupon_check" src="<%=asset_path 'coupon_check.png' %>" alt=" verified coupon&code" /> --><i class='fas fa-check-circle'></i> verified</span>
                           </div>
                         <% else %>
                           <div class="detail_box">
                           <p>Code Check</p>
-                          <span class="verified"><img class="coupon_check" src="<%=asset_path 'coupon_check.png' %>" alt=" verified coupon&code" /> verified</span>
+                          <span class="verified"><!-- <img class="coupon_check" src="<%=asset_path 'coupon_check.png' %>" alt=" verified coupon&code" /> --><i class='fas fa-check-circle'></i> verified</span>
                         </div>
                         <% end %>
 
@@ -139,27 +140,34 @@
                              <div class="rating_card">
                                 <% if @coupon.c_spare_58 == 50 %>
                                   <div class="rating_box">
-                                    <img src="<%=asset_path 'star_5.png' %>" alt="star_rating" style="width:40%">
+                                    <!-- <img src="<%=asset_path 'star_5.png' %>" alt="star_rating" style="width:40%"> -->
+                                    <i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i>
+                                    
                                     <span>/ <%= @coupon.c_review_count %> +</span> 
                                   </div>
                                 <% elsif @coupon.c_spare_58 == 45 %>
                                   <div class="rating_box">
-                                    <img src="<%=asset_path 'star_45.png' %>" alt="star_rating" style="width:40%">
+                                    <!-- <img src="<%=asset_path 'star_45.png' %>" alt="star_rating" style="width:40%"> -->
+                                    <i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star-half'></i>
                                     <span>/ <%= @coupon.c_review_count %> +</span> 
                                   </div>
                                 <% elsif @coupon.c_spare_58 == 40 %>
                                   <div class="rating_box">
-                                    <img src="<%=asset_path 'star_4.png' %>" alt="star_rating" style="width:40%">
+                                    <!-- <img src="<%=asset_path 'star_4.png' %>" alt="star_rating" style="width:40%"> -->
+                                    <i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i>
+                                    
                                     <span>/ <%= @coupon.c_review_count %> +</span> 
                                   </div>
                                 <% elsif @coupon.c_spare_58 == 35 %>
                                   <div class="rating_box">
-                                    <img src="<%=asset_path 'star_35.png' %>" alt="star_rating" style="width:30%">
+                                    <!-- <img src="<%=asset_path 'star_35.png' %>" alt="star_rating" style="width:30%"> -->
+                                    <i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star-half'></i>
                                     <span>/ <%= @coupon.c_review_count %> +</span> 
                                   </div>
                                 <% elsif @coupon.c_spare_58 == 30 %>
                                   <div class="rating_box">
-                                    <img src="<%=asset_path 'star_3.png' %>" alt="star_rating" style="width:30%">
+                                    <!-- <img src="<%=asset_path 'star_3.png' %>" alt="star_rating" style="width:30%"> -->
+                                    <i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i>
                                     <span>/ <%= @coupon.c_review_count %> +</span> 
                                   </div>
                                 <% end %>
@@ -178,7 +186,7 @@
                     <% if @coupon.c_spare_01.present? %>
                       <div class="date_exp_detail_box clearfix">
                         <div class="inner">
-                          <p class="code_title">Promotion Code</p>
+                          <p class="code_title">Promo Code</p>
                           <span class="code_letter"><%= @coupon.c_promocode %></span>
                         </div>
                       </div>
@@ -324,36 +332,36 @@
                   <% btn_cash_price = @coupon.c_was_price.to_f - total_price_cash_coupon.to_f %>
 
                   <p> *Apply this code at checkout with a single click.</p>
-                  <a class="amz_btn" href="/coupons">Back</a>
+                  <!-- <a class="amz_btn" href="/coupons">Back</a> -->
 
                   <div class="pc_btn">
                     <% if @coupon.c_spare_61.present? || @coupon.c_spare_62.present? %>
                       <% if @coupon.c_spare_61.present? %>
-                        <a class="amz_btn buy_now" href="<%= @coupon.c_link %>">Save <%= number_to_currency(btn_pct_price) %> 
+                        <a class="amz_btn buy_now" href="<%= @coupon.c_link %>">Go to Amazon Save <%= number_to_currency(btn_pct_price) %> 
                         Now!</a>
                       <% else %>
-                        <a class="amz_btn buy_now" href="<%= @coupon.c_link %>">Save <%= number_to_currency(btn_cash_price) %>
+                        <a class="amz_btn buy_now" href="<%= @coupon.c_link %>">Go to Amazon Save <%= number_to_currency(btn_cash_price) %>
                          Now!</a>
                       <% end %>
                     <% else %>
-                      <a class="amz_btn buy_now" href="<%= @coupon.c_link %>">Save <%= number_to_currency(btn_price) %> Now!</a>
+                      <a class="amz_btn buy_now" href="<%= @coupon.c_link %>">Go to Amazon Save <%= number_to_currency(btn_price) %> Now!</a>
                     <% end %>
                   </div>
 
                   <div class="mobile_btn">
                     <% if @coupon.c_spare_61.present? || @coupon.c_spare_62.present? %>
                       <% if @coupon.c_spare_61.present? %>
-                        <a class="amz_btn buy_now" href="<%= @coupon.c_link %>">Save <%= number_to_currency(btn_pct_price) %> Now!</a>
+                        <a class="amz_btn buy_now" href="<%= @coupon.c_link %>">Go to Amazon Save <%= number_to_currency(btn_pct_price) %> Now!</a>
                       <% else %>
-                        <a class="amz_btn buy_now" href="<%= @coupon.c_link %>">Save <%= number_to_currency(btn_cash_price) %> Now!</a>
+                        <a class="amz_btn buy_now" href="<%= @coupon.c_link %>">Go to Amazon Save <%= number_to_currency(btn_cash_price) %> Now!</a>
                       <% end %>
                     <% else %>
-                      <a class="amz_btn buy_now" href="<%= @coupon.c_link %>">Save <%= number_to_currency(btn_price) %> Now!</a>
+                      <a class="amz_btn buy_now" href="<%= @coupon.c_link %>">Go to Amazon Save <%= number_to_currency(btn_price) %> Now!</a>
                     <% end %>
                   </div>
                   
                 <% else %>
-                  <a class="amz_btn" href="/coupons">Back</a>
+                  <!-- <a class="amz_btn" href="/coupons">Back</a> -->
                   <a class="amz_btn buy_now" href="<%= @coupon.c_link %>">Accept an offer</a>
                 <% end %>
               </div>
@@ -416,12 +424,12 @@
                     <p>Reviews: <%= @coupon.c_review_count %> +</p>
                     <p>Offer: <%= number_to_currency(total_price) %> (<%= number_to_percentage(@coupon.c_pct, precision: 0) %> off)</p>
                     <p>Was: <%= number_to_currency(@coupon.c_was_price) %></p>
-                    <p>You can save <%= number_to_currency(promo_price) %> by Promo Code: <%= @coupon.c_promocode %>  / Shipping is free w/Prime or on $25+</p>
+                    <p>You can Go to Amazon save <%= number_to_currency(promo_price) %> by Promo Code: <%= @coupon.c_promocode %>  / Shipping is free w/Prime or on $25+</p>
                     <p>#amazondeals #amazoncoupons #amazonpromocode #coupons #promocode</p>
                   <% else %>
                     <p>Offer: <%= number_to_currency(@coupon.c_is_price) %> (<%= number_to_percentage(hotdeal_pct, precision: 0) %> off)</p>
                     <p>Was: <%= number_to_currency(@coupon.c_was_price) %></p>
-                    <p>You can save <%= number_to_currency(sale_price) %> / Shipping is free w/Prime or on $25+</p>
+                    <p>You can Go to Amazon save <%= number_to_currency(sale_price) %> / Shipping is free w/Prime or on $25+</p>
                     <p>#amazondeals #amazoncoupons #amazonpromocode #coupons #promocode</p>
                   <% end %>
                   
@@ -437,13 +445,13 @@
                     <% if @coupon.c_promocode.present? %>
                       <p>Offer: <%= number_to_currency(total_price) %> (<%= number_to_percentage(@coupon.c_pct, precision: 0) %> off)</p>
                       <p>Was: <%= number_to_currency(@coupon.c_was_price) %></p>
-                      <p>You can save <%= number_to_currency(promo_price) %> by Promo Code: <%= @coupon.c_promocode %>  / Shipping is free w/Prime or on $25+</p>
+                      <p>You can Go to Amazon save <%= number_to_currency(promo_price) %> by Promo Code: <%= @coupon.c_promocode %>  / Shipping is free w/Prime or on $25+</p>
                       <p>http://hotdealful.com/coupons/<%=(params[:id]) %></p>
                       <p>#amazondeals #amazoncoupons #amazonpromocode #coupons #promocode</p>
                     <% else %>
                       <p>Offer: <%= number_to_currency(@coupon.c_is_price) %> (<%= number_to_percentage(hotdeal_pct, precision: 0) %> off)</p>
                       <p>Was: <%= number_to_currency(@coupon.c_was_price) %></p>
-                      <p>You can save <%= number_to_currency(sale_price) %> / Shipping is free w/Prime or on $25+</p>
+                      <p>You can Go to Amazon save <%= number_to_currency(sale_price) %> / Shipping is free w/Prime or on $25+</p>
                       <p>http://hotdealful.com/coupons/<%=(params[:id]) %></p>
                       <p>#amazondeals #amazoncoupons #amazonpromocode #coupons #promocode</p>
                     <% end %>
