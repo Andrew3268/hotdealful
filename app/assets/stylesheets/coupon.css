@@ -183,7 +183,7 @@
 .more_detail .detail_card .detail_box .rating_card img{width:40%;vertical-align:super;}
 .more_detail .detail_card .detail_box .rating_card span{font-size:15px;display:inline-block;}
 .more_detail .detail_card .detail_box .rating_card .rating_box{}
-.more_detail .detail_card .detail_box .rating_card .rating_box i{font-size:13px;color:#ffbf00;}
+.more_detail .detail_card .detail_box .rating_card .rating_box i{font-size:19px;color:#ffbf00;vertical-align:sub;}
 .date_exp_detail_box{width:48%;margin:1%;border:2px solid;border-radius:10px;float:left;position:relative;height:80px;font-weight:100;}
 .daxp_single{width:100%;}
 .date_exp_detail_box .inner{padding:10px;}
@@ -198,7 +198,7 @@
   .more_detail .detail_card .detail_box span.verified img.coupon_check{width:18%;}
   .more_detail .detail_card .detail_box .rating_card span{font-size:13px;}
   .more_detail .detail_card .detail_box .rating_card .rating_box{padding-top:2px;}
-  .more_detail .detail_card .detail_box .rating_card .rating_box i{font-size:11px;}
+  .more_detail .detail_card .detail_box .rating_card .rating_box i{font-size:13px;vertical-align:middle;}
   .date_exp_detail_box .inner{padding:7px;}
   .date_exp_detail_box .inner p{font-size:12px;}
   .date_exp_detail_box .inner span{font-size:14px;}
