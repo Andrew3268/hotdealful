@@ -28,7 +28,7 @@
               <h2 class="line-break-02">
                 <% promo_price = 0 %>
                 <% promo_price = (@coupon.c_pct.to_f / 100) * @coupon.c_was_price %>
-                <em class="title_bold">Amazon</em> has <em class="title_bold">"<%= @coupon.c_title %>"</em> on sale for
+                <em class="title_bold"><i class="material-icons">star</i>Amazon</em> has <em class="title_bold">"<%= @coupon.c_title %>"</em> on sale for
                 <% if @coupon.c_promocode.present? %>
                   <% pct_coupon = 0 %>
                   <% pct_coupon = (@coupon.c_spare_61.to_f / 100) * @coupon.c_was_price %>
