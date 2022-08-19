@@ -173,9 +173,9 @@
 .more_detail .detail_card .detail_box{float:left;width:48%;margin:1%;border:2px solid;border-radius:10px;padding:10px;height:80px;/*background-color:#fbfbfb;*/font-weight:100;}
 .more_detail .detail_card .detail_box p{font-size:14px;margin-bottom:10px;border-bottom:1px solid;}
 .more_detail .detail_card .detail_box span{display:block;text-align:center;}
-.more_detail .detail_card .detail_box span.verified{font-size:14px;margin-top:5%;}
+.more_detail .detail_card .detail_box span.verified{font-size:17px;margin-top:5%;}
 .more_detail .detail_card .detail_box span.verified img.coupon_check{width:12%;vertical-align:middle;}
-.more_detail .detail_card .detail_box span.verified i{font-size:20px;vertical-align:middle;color:#3ae600;}
+.more_detail .detail_card .detail_box span.verified i{font-size:25px;vertical-align:middle;color:#3ae600;}
 .more_detail .detail_card .detail_box span.veri_span{font-size:12px;}
 .more_detail .detail_card .detail_box span.savings{font-size:20px;}
 .more_detail .detail_card .detail_box span.review{font-size:14px;margin-top:13px;}
@@ -194,7 +194,7 @@
   .n_coupon_wrap h2{margin-bottom:20px;}
   /*.more_detail .detail_card .detail_box{float:left;width:31.333%;}*/
   .more_detail .detail_card .detail_box p{font-size:12px;}
-  .more_detail .detail_card .detail_box span.verified{margin-top:0;}
+  .more_detail .detail_card .detail_box span.verified{margin-top:0;font-size:17px;}
   .more_detail .detail_card .detail_box span.verified img.coupon_check{width:18%;}
   .more_detail .detail_card .detail_box .rating_card span{font-size:13px;}
   .more_detail .detail_card .detail_box .rating_card .rating_box{padding-top:2px;}

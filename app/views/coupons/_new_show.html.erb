@@ -124,12 +124,12 @@
                         <% if @coupon.c_spare_61.present? || @coupon.c_spare_62.present? %>
                           <div class="detail_box">
                             <p>Code & Coupon Check</p>
-                            <span class="verified"><img class="coupon_check" src="<%=asset_path 'coupon_check.png' %>" alt=" verified coupon&code" /> verified</span>
+                            <span class="verified"><!-- <img class="coupon_check" src="<%=asset_path 'coupon_check.png' %>" alt=" verified coupon&code" /> --><i class="material-icons">check_circle</i> Verified</span>
                           </div>
                         <% else %>
                           <div class="detail_box">
                           <p>Code Check</p>
-                          <span class="verified"><img class="coupon_check" src="<%=asset_path 'coupon_check.png' %>" alt=" verified coupon&code" />verified</span>
+                          <span class="verified"><!-- <img class="coupon_check" src="<%=asset_path 'coupon_check.png' %>" alt=" verified coupon&code" /> --> <i class="material-icons">check_circle</i> Verified</span>
                         </div>
                         <% end %>
 
