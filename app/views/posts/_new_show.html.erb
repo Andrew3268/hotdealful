@@ -103,13 +103,13 @@
                         <% if @post.spare_61.present? || @post.spare_62.present? %>
                           <div class="detail_box">
                             <p>Deal & Coupon Check</p>
-                            <span class="verified"><img class="coupon_check" src="<%=asset_path 'coupon_check.png' %>" alt=" verified coupon&code" /> verified</span>
+                            <span class="verified"><!-- <img class="coupon_check" src="<%=asset_path 'coupon_check.png' %>" alt=" verified coupon&code" /> --><i class="material-icons">check_circle</i> <em>Verified</em></span>
                             <!-- <span class="veri_span">verified</span> -->
                           </div>
                         <% else %>
                           <div class="detail_box">
                             <p>Deal Check</p>
-                            <span class="verified"><img class="coupon_check" src="<%=asset_path 'coupon_check.png' %>" alt=" verified coupon&code" /> verified</span>
+                            <span class="verified"><!-- <img class="coupon_check" src="<%=asset_path 'coupon_check.png' %>" alt=" verified coupon&code" /> --> <i class="material-icons">check_circle</i> <em>Verified</em></span>
                           </div>
                         <% end %>
                         <div class="detail_box">
@@ -118,27 +118,32 @@
                              <div class="rating_card">
                                 <% if @post.spare_56 == 50 %>
                                   <div class="rating_box">
-                                    <img src="<%=asset_path 'star_5.png' %>" alt="star_rating" style="width:40%">
+                                    <!-- <img src="<%=asset_path 'star_5.png' %>" alt="star_rating" style="width:40%"> -->
+                                    <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i>
                                     <span>/ <%= @post.review_count %> +</span> 
                                   </div>
                                 <% elsif @post.spare_56 == 45 %>
                                   <div class="rating_box">
-                                    <img src="<%=asset_path 'star_45.png' %>" alt="star_rating" style="width:40%">
+                                    <!-- <img src="<%=asset_path 'star_45.png' %>" alt="star_rating" style="width:40%"> -->
+                                    <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i>
                                     <span>/ <%= @post.review_count %> +</span> 
                                   </div>
                                 <% elsif @post.spare_56 == 40 %>
                                   <div class="rating_box">
-                                    <img src="<%=asset_path 'star_4.png' %>" alt="star_rating" style="width:40%">
+                                    <!-- <img src="<%=asset_path 'star_4.png' %>" alt="star_rating" style="width:40%"> -->
+                                    <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i>
                                     <span>/ <%= @post.review_count %> +</span> 
                                   </div>
                                 <% elsif @post.spare_56 == 35 %>
                                   <div class="rating_box">
-                                    <img src="<%=asset_path 'star_35.png' %>" alt="star_rating" style="width:30%">
+                                    <!-- <img src="<%=asset_path 'star_35.png' %>" alt="star_rating" style="width:30%"> -->
+                                    <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i><i class="material-icons">star_border</i>
                                     <span>/ <%= @post.review_count %> +</span> 
                                   </div>
                                 <% elsif @post.spare_56 == 30 %>
                                   <div class="rating_box">
-                                    <img src="<%=asset_path 'star_3.png' %>" alt="star_rating" style="width:30%">
+                                    <!-- <img src="<%=asset_path 'star_3.png' %>" alt="star_rating" style="width:30%"> -->
+                                    <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i>
                                     <span>/ <%= @post.review_count %> +</span> 
                                   </div>
                                 <% end %>

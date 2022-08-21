@@ -1,6 +1,6 @@
 <% if current_user && current_user.admin %>
   <div class="wrap">
-    <h1>New Coupon</h1>
+    <h1>New Coupon (<%=link_to "refresh", new_coupon_path %>)</h1>
     <%= render 'form', coupon: @coupon %>
     <a href="/">Back</a>
     <!-- <%= link_to 'Back', coupons_path %> -->

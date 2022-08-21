@@ -57,7 +57,7 @@ class Coupon < ApplicationRecord
   belongs_to :user
   has_and_belongs_to_many :tags
   validates :c_was_price, presence: true
-  # validates_uniqueness_of :c_title, :message => "🚱 already been registered."
+  validates_uniqueness_of :c_title, :message => "🚱 already been registered."
 
 
   after_create do

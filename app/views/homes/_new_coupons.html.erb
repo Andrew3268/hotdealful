@@ -10,7 +10,7 @@
           <% hotdeal_pct =  (coupon.c_was_price.to_f - coupon.c_is_price.to_f) / coupon.c_was_price.to_f * 100 %>
 
           <div class="inner">
-            <p class="posted_date">Found by Editor: <%= coupon.created_at.strftime("#{coupon.created_at.day.ordinalize} %B %Y") %></p>
+            <p class="posted_date">Found on <%= coupon.created_at.strftime("#{coupon.created_at.day.ordinalize} %B %Y") %></p>
 
             <% if coupon.c_promocode.present? %>
               <span class="label_code label">
@@ -20,7 +20,7 @@
 
               <% if coupon.c_spare_61.present? || coupon.c_spare_62.present? %>
                 <span class="label_coupon label">
-                  Coupon Savings
+                  + Coupon Savings
                   <% if coupon.c_spare_61.present? %>
                     <em><%= number_to_percentage(coupon.c_spare_61, precision: 0) %></em>
                   <% else %>
