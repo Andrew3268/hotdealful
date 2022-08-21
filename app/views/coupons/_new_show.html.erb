@@ -56,26 +56,27 @@
 
               <br />
               <% if current_user && current_user.admin %>
-                <!-- for decription -->
-                <p>
-                  On sale for
-                  <% if @coupon.c_promocode.present? %>
-                    <% if @coupon.c_spare_61.present? || @coupon.c_spare_62.present? %>
-                      <% if @coupon.c_spare_61.present? %>
-                        <em class="show_price"><%= number_to_currency(total_price_pct_coupon) %> after Promo Code: <em class="show_code"><%= @coupon.c_promocode %>(<%= number_to_percentage(@coupon.c_pct, precision: 0) %> off)</em> & Clipping Coupon(<%= number_to_percentage(@coupon.c_spare_61, precision: 0) %> off)</em>
+                <div class="edit_desc">
+                  <!-- for decription -->
+                  <p>
+                    <span>On</span> sale for
+                    <% if @coupon.c_promocode.present? %>
+                      <% if @coupon.c_spare_61.present? || @coupon.c_spare_62.present? %>
+                        <% if @coupon.c_spare_61.present? %>
+                          <em class="show_price"><%= number_to_currency(total_price_pct_coupon) %> after Promo Code: <em class="show_code"><%= @coupon.c_promocode %>(<%= number_to_percentage(@coupon.c_pct, precision: 0) %> off)</em> & Clipping Coupon(<%= number_to_percentage(@coupon.c_spare_61, precision: 0) %> off)</em>
+                        <% else %>
+                          <em class="show_price"><%= number_to_currency(total_price_cash_coupon) %> after Promo Code: <em class="show_code"><%= @coupon.c_promocode %>(<%= number_to_percentage(@coupon.c_pct, precision: 0) %> off)</em> & Clipping Coupon(<%= number_to_currency(@coupon.c_spare_62, precision: 0) %> off)</em>
+                        <% end %>
                       <% else %>
-                        <em class="show_price"><%= number_to_currency(total_price_cash_coupon) %> after Promo Code: <em class="show_code"><%= @coupon.c_promocode %>(<%= number_to_percentage(@coupon.c_pct, precision: 0) %> off)</em> & Clipping Coupon(<%= number_to_currency(@coupon.c_spare_62, precision: 0) %> off)</em>
+                        <!-- only for promotion code -->
+                        <em class="show_price"><%= number_to_currency(total_price.to_f) %> after Promo Code: <em class="show_code"><%= @coupon.c_promocode %>(<%= number_to_percentage(@coupon.c_pct, precision: 0) %> 0ff)</em></em>
                       <% end %>
                     <% else %>
-                      <!-- only for promotion code -->
-                      <em class="show_price"><%= number_to_currency(total_price.to_f) %> after Promo Code: <em class="show_code"><%= @coupon.c_promocode %>(<%= number_to_percentage(@coupon.c_pct, precision: 0) %> 0ff)</em></em>
+                      <em class="show_price"><%= number_to_currency(@coupon.c_is_price) %>.</em>
                     <% end %>
-                  <% else %>
-                    <em class="show_price"><%= number_to_currency(@coupon.c_is_price) %>.</em>
-                  <% end %>
-                  // Customer Reviews: <%= @coupon.c_rating %> / <%= @coupon.c_review_count %> global ratings. 
-
-                </p>
+                    // Customer Reviews: <%= @coupon.c_rating %> / <%= @coupon.c_review_count %> global ratings. 
+                  </p>
+                </div>
               <% end %>
 
             </div>
