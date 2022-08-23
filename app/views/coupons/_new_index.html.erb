@@ -104,9 +104,8 @@
                                   <% total_save = coupon.c_was_price - total_price_pct_coupon %>
                                   <p>You can save <em class="total_savings"><%= number_to_currency(total_save) %></em> off list price.</p>
                                   <p class="verified">✅Code & Coupon verified!</p>
-                                   
-
-                                    <ul class="see_code">
+                                  
+                                    <!-- <ul class="see_code">
                                       <li>
                                         <div class="dropdownlink"></i> View Promotion Code
                                           <i class="fa fa-chevron-down" aria-hidden="true"></i>
@@ -123,10 +122,8 @@
                                           <% end %>
                                         </ul>
                                       </li>
-                                    </ul>
-
-
-
+                                    </ul>-->
+ 
                                 </div>
 
                               <% else %>
@@ -136,7 +133,7 @@
                                   <% total_save = coupon.c_was_price - total_price_cash_coupon %>
                                   <p>You can save <em class="total_savings"><%= number_to_currency(total_save) %></em></p>
                                   <p class="verified">✅Code & Coupon verified!</p>
-                                  <ul class="see_code">
+                                  <!-- <ul class="see_code">
                                     <li>
                                       <div class="dropdownlink"></i> View Promotion Code
                                         <i class="fa fa-chevron-down" aria-hidden="true"></i>
@@ -153,7 +150,7 @@
                                         <% end %>
                                       </ul>
                                     </li>
-                                  </ul>
+                                  </ul> -->
 
                                 </div>
                               <% end %>
@@ -165,7 +162,7 @@
                                 <% total_save = coupon.c_was_price - promocode_price %>
                                 <p>You can save <em class="total_savings"><%= number_to_currency(total_save) %></em></p>
                                 <p class="verified">✅Code verified!</p>
-                                <ul class="see_code">
+                                <!-- <ul class="see_code">
                                       <li>
                                         <div class="dropdownlink"></i> View Promotion Code
                                           <i class="fa fa-chevron-down" aria-hidden="true"></i>
@@ -182,7 +179,7 @@
                                           <% end %>
                                         </ul>
                                       </li>
-                                    </ul>
+                                </ul> -->
                               </div>
                             <% end %>
                           <% else %>

@@ -175,7 +175,7 @@
 .more_detail .detail_card .verified_check{float:left;width:33%;margin:1%;}
 .more_detail .detail_card .rating_review{float:left;width:63%;margin:1%;}
 .more_detail .detail_card .detail_box{border:1px solid #ccc;border-radius:10px;padding:10px;height:80px;/*background-color:#fbfbfb;*/font-weight:100;}
-.more_detail .detail_card .detail_box p{font-size:12px;margin-bottom:10px;/*border-bottom:1px solid;*/}
+.more_detail .detail_card .detail_box p{font-size:12px;margin-bottom:10px;background-color:rgba(0,0,0,0.1);display:table;padding:0 5px;border-radius:5px;}
 .more_detail .detail_card .detail_box span{display:block;text-align:center;}
 .more_detail .detail_card .detail_box span.verified{font-size:17px;margin-top:5%;}
 .more_detail .detail_card .detail_box span.verified img.coupon_check{width:12%;vertical-align:middle;}
@@ -193,23 +193,23 @@
 .code_detail_box{width:63%;margin:1%;border:1px solid #ccc;border-radius:10px;float:left;position:relative;height:80px;font-weight:100;}
 .daxp_single{width:100%;}
 .date_code_comm .inner{padding:10px;}
-.date_code_comm .inner p{font-size:12px;}
-.date_code_comm .inner span{font-size:15px;display:block;text-align:center;margin-top:7px;}
+.date_code_comm .inner p{font-size:12px;background-color:rgba(0,0,0,0.1);display:table;padding:0 5px;border-radius:5px;}
+.date_code_comm .inner span{font-size:15px;display:block;text-align:center;margin-top:10px;}
 .date_code_comm .inner span.code_letter{letter-spacing:2px;}
 @media screen and (max-width:640px){
   .n_coupon_wrap h2{margin-bottom:20px;}
-  .more_detail .detail_card .detail_box{height:65px;}
-  .more_detail .detail_card .detail_box p{font-size:12px;margin-bottom:2px;}
+  .more_detail .detail_card .detail_box{height:65px;padding:7px;}
+  .more_detail .detail_card .detail_box p{font-size:12px;margin-bottom:4px;padding:0 2px;}
   .more_detail .detail_card .detail_box span.verified{margin-top:0;font-size:17px;}
   .more_detail .detail_card .detail_box span.verified img.coupon_check{width:18%;}
   .more_detail .detail_card .detail_box span.verified em{font-size:14px;}
   .more_detail .detail_card .detail_box .rating_card span{font-size:13px;}
   .more_detail .detail_card .detail_box .rating_card .rating_box{padding-top:2px;}
-  .more_detail .detail_card .detail_box .rating_card .rating_box i{font-size:13px;vertical-align:middle;}
+  .more_detail .detail_card .detail_box .rating_card .rating_box i{font-size:16px;vertical-align:middle;}
   .date_code_comm{height:65px;}
   .date_code_comm .inner{padding:7px;}
   .date_code_comm .inner p{font-size:12px;}
-  .date_code_comm .inner span{font-size:14px;}
+  .date_code_comm .inner span{font-size:14px;margin-top:7px;}
   
   
 }
@@ -289,10 +289,8 @@
 .copy-text {
   position:relative;
   padding:0 10px;
-  background:#fff;
-  /*border:1px solid #ddd;*/
   border-radius:10px;
-  margin-top:-3px;
+  margin-top:1px;
   /*display:flex;*/
 }
 .copy-text input.text {
@@ -345,7 +343,7 @@
 }
 
 @media screen and (max-width:640px){
-  .copy-text{margin-top:-8px;}
+  .copy-text{margin-top:-3px;}
   .copy-text input.text{font-size:15px;padding:0;text-align:center;}
   .copy-text button{padding:7px 7px 3px 7px;}
 }
