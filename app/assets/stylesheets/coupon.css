@@ -300,11 +300,13 @@
   color:#3d3d3d;
   border:none;
   outline:none;
+  letter-spacing:2px;
 }
 .copy-text button, .copy-text div.sumarry_icon {
   vertical-align:middle;
   padding:10px 10px 5px 10px;
-  background:#5784f5;
+  /*background:#5784f5;*/
+  background-color:#ff4d4d;
   color:#fff;
   font-size:18px;
   border:none;
@@ -320,7 +322,7 @@
   position:absolute;
   top:-40px;
   right:0px;
-  background:#5c81dc;
+  background:#ff4d4d;
   padding:8px 10px;
   border-radius:20px;
   font-size:15px;
@@ -333,7 +335,7 @@
   right:25px;
   width:10px;
   height:10px;
-  background:#5c81dc;
+  background:#ff4d4d;
   transform:rotate(45deg);
   display:none;
 }
