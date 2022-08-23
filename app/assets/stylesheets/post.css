@@ -91,7 +91,7 @@
 .show-wrap .container .title_mobile h2{font-size:15px;font-weight:100;}
 .show-wrap .container .title_mobile em.show_price{color:#ff4d4d;font-weight:bold;}
 .show-wrap .container .title_mobile em.show_code{color:#ff4d4d;font-weight:bold;background-color:rgba(255,77,77,0.2);padding:2px 5px;border-radius:5px;}
-.show-wrap .container .title_mobile em.title_bold{font-weight:bold;}
+/*.show-wrap .container .title_mobile em.title_bold{font-weight:bold;}*/
 .show-wrap .container .title_mobile em.shipping{display:inline-block;margin-left:5px;}
 .show-wrap .container .rating_box{font-size:15px;}
 .show-wrap .container .rating_box span{font-size:14px;}
@@ -111,7 +111,7 @@
 .show-wrap .inner-box{float:none;width:100%;margin:0;}
 .show-wrap .summary_title{margin-top:2em;}
 .show-wrap .summary_title .verified{font-size:12px;}
-.show-wrap .summary_title p.posted_date{font-size:12px;color:#ccc;border-bottom:1px solid #ccc;font-weight:100;display:table;}
+.show-wrap .summary_title p.posted_date{font-size:12px;color:#3d3d3d;border-bottom:1px solid #ccc;font-weight:100;display:table;}
 .show-wrap .receipt{height:150px;display:grid;grid-template-columns:2fr 1fr;margin:2em 1em;}
 .show-wrap .receipt__grid1 p, .show-wrap .receipt__grid2 p{margin:4px 0;}
 .show-wrap .receipt__grid1 p em{background:rgba(255,77,77,0.2);padding:1px 7px;border-radius:7px;margin-left:3px;color:#ff4d4d;font-size:13px;font-weight:bold;}

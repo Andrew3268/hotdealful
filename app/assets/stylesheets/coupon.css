@@ -170,8 +170,12 @@
 .n_coupon_card .inner .more_detail span.exp_date{font-size:12px;}
 
 .more_detail .detail_card{}
-.more_detail .detail_card .detail_box{float:left;width:48%;margin:1%;border:2px solid;border-radius:10px;padding:10px;height:80px;/*background-color:#fbfbfb;*/font-weight:100;}
-.more_detail .detail_card .detail_box p{font-size:14px;margin-bottom:10px;border-bottom:1px solid;}
+.more_detail .detail_card .summary_block{float:left;width:48%;margin:1px;}
+
+.more_detail .detail_card .verified_check{float:left;width:33%;margin:1%;}
+.more_detail .detail_card .rating_review{float:left;width:63%;margin:1%;}
+.more_detail .detail_card .detail_box{border:1px solid #ccc;border-radius:10px;padding:10px;height:80px;/*background-color:#fbfbfb;*/font-weight:100;}
+.more_detail .detail_card .detail_box p{font-size:12px;margin-bottom:10px;/*border-bottom:1px solid;*/}
 .more_detail .detail_card .detail_box span{display:block;text-align:center;}
 .more_detail .detail_card .detail_box span.verified{font-size:17px;margin-top:5%;}
 .more_detail .detail_card .detail_box span.verified img.coupon_check{width:12%;vertical-align:middle;}
@@ -185,24 +189,27 @@
 .more_detail .detail_card .detail_box .rating_card span{font-size:15px;display:inline-block;}
 .more_detail .detail_card .detail_box .rating_card .rating_box{}
 .more_detail .detail_card .detail_box .rating_card .rating_box i{font-size:19px;color:#ffbf00;vertical-align:sub;}
-.date_exp_detail_box{width:48%;margin:1%;border:2px solid;border-radius:10px;float:left;position:relative;height:80px;font-weight:100;}
+.date_exp_detail_box{width:33%;margin:1%;border:1px solid #ccc;border-radius:10px;float:left;position:relative;height:80px;font-weight:100;}
+.code_detail_box{width:63%;margin:1%;border:1px solid #ccc;border-radius:10px;float:left;position:relative;height:80px;font-weight:100;}
 .daxp_single{width:100%;}
-.date_exp_detail_box .inner{padding:10px;}
-.date_exp_detail_box .inner p{border-bottom:1px solid;font-size:14px;}
-.date_exp_detail_box .inner span{position:absolute;top:70%;left:50%;transform:translate(-50%,-50%);font-size:18px;}
-.date_exp_detail_box .inner span.code_letter{letter-spacing:2px;}
+.date_code_comm .inner{padding:10px;}
+.date_code_comm .inner p{font-size:12px;}
+.date_code_comm .inner span{font-size:15px;display:block;text-align:center;margin-top:7px;}
+.date_code_comm .inner span.code_letter{letter-spacing:2px;}
 @media screen and (max-width:640px){
   .n_coupon_wrap h2{margin-bottom:20px;}
-  /*.more_detail .detail_card .detail_box{float:left;width:31.333%;}*/
-  .more_detail .detail_card .detail_box p{font-size:12px;}
+  .more_detail .detail_card .detail_box{height:65px;}
+  .more_detail .detail_card .detail_box p{font-size:12px;margin-bottom:2px;}
   .more_detail .detail_card .detail_box span.verified{margin-top:0;font-size:17px;}
   .more_detail .detail_card .detail_box span.verified img.coupon_check{width:18%;}
+  .more_detail .detail_card .detail_box span.verified em{font-size:14px;}
   .more_detail .detail_card .detail_box .rating_card span{font-size:13px;}
   .more_detail .detail_card .detail_box .rating_card .rating_box{padding-top:2px;}
   .more_detail .detail_card .detail_box .rating_card .rating_box i{font-size:13px;vertical-align:middle;}
-  .date_exp_detail_box .inner{padding:7px;}
-  .date_exp_detail_box .inner p{font-size:12px;}
-  .date_exp_detail_box .inner span{font-size:14px;}
+  .date_code_comm{height:65px;}
+  .date_code_comm .inner{padding:7px;}
+  .date_code_comm .inner p{font-size:12px;}
+  .date_code_comm .inner span{font-size:14px;}
   
   
 }
@@ -251,7 +258,7 @@
 
 /********* View more code ***********/
 .see_code{width:100%;margin:5px auto 5px;}
-.see_code li.open .dropdownlink{color:#ff4d4d;}
+/*.see_code li.open .dropdownlink{color:#ff4d4d;}*/
 .see_code li.open .dropdownlink .fa-chevron-down{transform:rotate(180deg);}
 .see_code li:last-child .dropdownlink{border-bottom:0;text-align:center;}
 .see_code .dropdownlink{background-color:#000;cursor:pointer;display:block;padding:10px;font-size:15px;border-bottom:1px solid #ccc;color:#fff;position:relative;transition:all 0.4s ease-out;border-radius:10px;}
@@ -270,3 +277,78 @@
 
 
 
+
+
+
+/*.copy_code{width:50%;}*/
+.label {
+  padding:5px;
+  font-size:12px;
+  color:#111;
+}
+.copy-text {
+  position:relative;
+  padding:0 10px;
+  background:#fff;
+  /*border:1px solid #ddd;*/
+  border-radius:10px;
+  margin-top:-3px;
+  /*display:flex;*/
+}
+.copy-text input.text {
+  width:75%;
+  padding:10px;
+  font-size:20px;
+  color:#3d3d3d;
+  border:none;
+  outline:none;
+}
+.copy-text button, .copy-text div.sumarry_icon {
+  vertical-align:middle;
+  padding:10px 10px 5px 10px;
+  background:#5784f5;
+  color:#fff;
+  font-size:18px;
+  border:none;
+  outline:none;
+  border-radius:10px;
+  cursor:pointer;
+}
+.copy-text button:active {
+  background:#809ce2;
+}
+.copy-text button:before {
+  content:"Copied";
+  position:absolute;
+  top:-40px;
+  right:0px;
+  background:#5c81dc;
+  padding:8px 10px;
+  border-radius:20px;
+  font-size:15px;
+  display:none;
+}
+.copy-text button:after {
+  content:"";
+  position:absolute;
+  top:-15px;
+  right:25px;
+  width:10px;
+  height:10px;
+  background:#5c81dc;
+  transform:rotate(45deg);
+  display:none;
+}
+.copy-text.active button:before,
+.copy-text.active button:after {
+  display:block;
+}
+
+@media screen and (max-width:640px){
+  .copy-text{margin-top:-8px;}
+  .copy-text input.text{font-size:15px;padding:0;text-align:center;}
+  .copy-text button{padding:7px 7px 3px 7px;}
+}
+@media screen and (min-width:641px) and (max-width:1199px){
+ 
+}

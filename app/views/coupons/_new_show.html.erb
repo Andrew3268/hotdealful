@@ -94,7 +94,7 @@
                 <h2 class="line-break-02">
                   <% promo_price = 0 %>
                   <% promo_price = (@coupon.c_pct.to_f / 100) * @coupon.c_was_price %>
-                  Amazon.com has <em>"<%= @coupon.c_title %>"</em> on sale for
+                  Amazon has <em>"<%= @coupon.c_title %>"</em> on sale for
                   
 
                   <% if @coupon.c_promocode.present? %>
@@ -122,21 +122,22 @@
 
                   <div class="more_detail clearfix">
                     <div class="detail_card cleafix">
-                        
+                     
+                   
                         <% if @coupon.c_spare_61.present? || @coupon.c_spare_62.present? %>
-                          <div class="detail_box">
-                            <p>Code & Coupon Check</p>
-                            <span class="verified"><!-- <img class="coupon_check" src="<%=asset_path 'coupon_check.png' %>" alt=" verified coupon&code" /> --><i class="material-icons">check_circle</i> <em>Verified</em></span>
+                          <div class=" verified_check detail_box">
+                            <p>Code & Coupon</p>
+                            <span class="verified"><!-- <img class="coupon_check" src="<%=asset_path 'coupon_check.png' %>" alt=" verified coupon&code" /> --><i class="material-icons">check_box</i> <em>Verified</em></span>
                           </div>
                         <% else %>
-                          <div class="detail_box">
-                          <p>Code Check</p>
-                          <span class="verified"><!-- <img class="coupon_check" src="<%=asset_path 'coupon_check.png' %>" alt=" verified coupon&code" /> --> <i class="material-icons">check_circle</i> <em>Verified</em></span>
+                          <div class="verified_check detail_box">
+                          <p>Code</p>
+                          <span class="verified"><!-- <img class="coupon_check" src="<%=asset_path 'coupon_check.png' %>" alt=" verified coupon&code" /> --> <i class="material-icons">check_box</i> <em>Verified</em></span>
                         </div>
                         <% end %>
 
 
-                        <div class="detail_box">
+                        <div class="detail_box rating_review">
                           <p>Customer Reviews</p>
                           <% if @coupon.c_rating.present? %>
                              <div class="rating_card">
@@ -182,32 +183,39 @@
 
                   </div><!-- more_detail -->  
 
+
                   <div class="date_code clearfix">
 
                     <% if @coupon.c_spare_01.present? %>
-                      <div class="date_exp_detail_box clearfix">
-                        <div class="inner">
-                          <p class="code_title">Promo Code</p>
-                          <span class="code_letter"><%= @coupon.c_promocode %></span>
-                        </div>
-                      </div>
-                      <div class="date_exp_detail_box clearfix">
+                      <div class="date_exp_detail_box date_code_comm clearfix">
                         <div class="inner">
                           <p>Valid Until:</p>
                           <span><%= @coupon.c_spare_01 %> / <%= @coupon.c_spare_02 %> / 2022</span>
                         </div>
                       </div>
-                    <% else %>
-                      <div class="date_exp_detail_box clearfix">
-                        <div class="inner">
-                          <p class="code_title">Promotion Code</p>
-                          <span class="code_letter"><%= @coupon.c_promocode %></span>
+                      <div class="code_detail_box date_code_comm clearfix">
+                        <div class="summary_block copy_code clearfix">
+                            <div class="label">Promo Code</div>  
+                            <div class="copy-text">
+                              <input type="text" class="text" value="<%= @coupon.c_promocode %>" readonly>
+                              <button><i class="material-icons">content_copy</i></button>
+                            </div>
                         </div>
                       </div>
-                      <div class="date_exp_detail_box clearfix">
+                    <% else %>
+                      <div class="date_exp_detail_box date_code_comm clearfix">
                         <div class="inner">
                           <p>Valid Until:</p>
                           <span>N/A</span>
+                        </div>
+                      </div>
+                      <div class="code_detail_box date_code_comm clearfix">
+                        <div class="summary_block copy_code clearfix">
+                          <div class="label">Promo Code</div>  
+                          <div class="copy-text">
+                            <input type="text" class="text" value="<%= @coupon.c_promocode %>" readonly>
+                            <button><i class="material-icons">content_copy</i></button>
+                          </div>
                         </div>
                       </div>
 
@@ -217,9 +225,7 @@
                   </div>
                
               </h2>
-
-               
-
+             
               <div class="receipt clearfix">
                 <!-- Button Section - Text(left) -->
                 <div class="receipt__grid1">
@@ -340,7 +346,7 @@
                   <% btn_pct_price = @coupon.c_was_price.to_f - total_price_pct_coupon.to_f %>
                   <% btn_cash_price = @coupon.c_was_price.to_f - total_price_cash_coupon.to_f %>
 
-                  <p> *Apply this code at checkout with a single click.</p>
+                  <!-- <p> *Apply this code at checkout with a single click.</p> -->
                   <!-- <a class="amz_btn" href="/coupons">Back</a> -->
 
                   <div class="pc_btn">
@@ -490,8 +496,20 @@
 
 </div>
 
-
-
+<!-- Copy Code -->
+<script type="text/javascript">
+  let copyText = document.querySelector(".copy-text");
+  copyText.querySelector("button").addEventListener("click",function(){
+    let input = copyText.querySelector("input.text");
+    input.select();
+    document.execCommand("copy");
+    copyText.classList.add("active");
+    window.getSelection().removeAllRanges();
+    setTimeout(function(){
+      copyText.classList.remove("active");
+    },2500);
+  });
+</script>
 
 
 
@@ -560,3 +578,4 @@
     amzn_assoc_region = "US";
 </script>
 <script src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&MarketPlace=US"></script>
+
