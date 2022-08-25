@@ -1,3 +1,4 @@
+
 <div class="web_box clearfix">
   <div class="left">
     <%= render '/shared/left' %>
@@ -78,7 +79,6 @@
                   </p>
                 </div>
               <% end %>
-
             </div>
             <!-- End Mobile -->
 
@@ -114,6 +114,8 @@
                 <% end %>
 
               </div>
+
+
               <h2 class="summary_title">
                 SUMMARY<i class="fa fa-amazon"></i>
 
@@ -125,7 +127,7 @@
                      
                    
                         <% if @coupon.c_spare_61.present? || @coupon.c_spare_62.present? %>
-                          <div class=" verified_check detail_box">
+                          <div class="verified_check detail_box">
                             <p>Code & Coupon</p>
                             <span class="verified"><!-- <img class="coupon_check" src="<%=asset_path 'coupon_check.png' %>" alt=" verified coupon&code" /> --><i class="material-icons">check_box</i> <em>Verified</em></span>
                           </div>
@@ -177,52 +179,9 @@
                             <% end %>
                         </div>
                         
-
-                        
                     </div><!-- detail_card -->
 
                   </div><!-- more_detail -->  
-
-
-                  <div class="date_code clearfix">
-
-                    <% if @coupon.c_spare_01.present? %>
-                      <div class="date_exp_detail_box date_code_comm clearfix">
-                        <div class="inner">
-                          <p>Valid Until:</p>
-                          <span><%= @coupon.c_spare_01 %> / <%= @coupon.c_spare_02 %> / 2022</span>
-                        </div>
-                      </div>
-                      <div class="code_detail_box date_code_comm clearfix">
-                        <div class="inner">
-                            <p>Promo Code</p>  
-                            <div class="copy-text">
-                              <input type="text" class="text" value="<%= @coupon.c_promocode %>" readonly>
-                              <button><i class="material-icons">content_copy</i></button>
-                            </div>
-                        </div>
-                      </div>
-                    <% else %>
-                      <div class="date_exp_detail_box date_code_comm clearfix">
-                        <div class="inner">
-                          <p>Valid Until:</p>
-                          <span>N/A</span>
-                        </div>
-                      </div>
-                      <div class="code_detail_box date_code_comm clearfix">
-                        <div class="inner">
-                          <p>Promo Code</p>  
-                          <div class="copy-text">
-                            <input type="text" class="text" value="<%= @coupon.c_promocode %>" readonly>
-                            <button><i class="material-icons">content_copy</i></button>
-                          </div>
-                        </div>
-                      </div>
-
-
-                    <% end %>
-                    
-                  </div>
                
               </h2>
              
@@ -338,6 +297,91 @@
               <% end %>
 
 
+
+              <div class="show_modal_container">
+                <div class="interior">
+                  <a class="modal_btn" href="#open-modal">Get Promo Code</a>
+                </div>
+              </div>
+              <div id="open-modal" class="modal-window">
+                  <div>
+                    <a href="#" title="Close" class="modal-close">Close</a>
+
+                    <div class="code_box">
+                      <p>Promo Code</p>  
+                      <div class="copy-text">
+                        <input type="text" class="text" value="<%= @coupon.c_promocode %>" readonly>
+                        <button><i class="material-icons">content_copy</i></button>
+                      </div>
+                    </div>
+                    <br>
+                    <div class="mobal_inner_btn">
+                      <% btn_price = @coupon.c_was_price.to_f - total_price.to_f %>
+                      <% btn_pct_price = @coupon.c_was_price.to_f - total_price_pct_coupon.to_f %>
+                      <% btn_cash_price = @coupon.c_was_price.to_f - total_price_cash_coupon.to_f %>
+
+                      <% if @coupon.c_spare_61.present? || @coupon.c_spare_62.present? %>
+                        <% if @coupon.c_spare_61.present? %>
+                          <a class="amz_btn buy_now" href="<%= @coupon.c_link %>">Go to Amazon & Save <%= number_to_currency(btn_pct_price) %> 
+                          Now!</a>
+                        <% else %>
+                          <a class="amz_btn buy_now" href="<%= @coupon.c_link %>">Go to Amazon & Save <%= number_to_currency(btn_cash_price) %>
+                           Now!</a>
+                        <% end %>
+                      <% else %>
+                        <a class="amz_btn buy_now" href="<%= @coupon.c_link %>">Go to Amazon & Save <%= number_to_currency(btn_price) %> Now!</a>
+                      <% end %>
+                    </div>
+
+                    <div class="modal_notice">
+                      <ul>
+                        <li>This promo code is valid until <%= @coupon.c_spare_01 %> / <%= @coupon.c_spare_02 %> / 2022 11:59PM PDT or while supplies last.</li>
+                      </ul>
+                    </div>
+
+                    <div class="qanda">
+                                              
+                        <div class="jacordian">
+                          <p>Q & A</p>
+                          <div class="tab">
+                            <input id="tab-one" type="checkbox" name="tabs">
+                            <label for="tab-one">Why is my promo code invalid?</label>
+                            <div class="tab-content">
+                              <!-- <p>It means that the code has either expired or the promotional product has been exhausted.</p> -->
+                              <p>It means that the code has expired or the promotional product has been exhausted.</p>
+                            </div>
+                          </div>
+                          <div class="tab">
+                            <input id="tab-two" type="checkbox" name="tabs">
+                            <label for="tab-two">How to redeem a promotional code?</label>
+                            <div class="tab-content">
+                              <ul>
+                                <li>Copy promo code and click Go go Amazon button.</li>
+                                <li>Add the item to the shopping cart.</li>
+                                <li>Enter the promotion code in the Gift Cards and Promotional Codes section exactly as specified. Select Apply. Don't add spaces before, inside of, or after the promotion code.</li>
+                                <li>Proceed to check out. Verify that the promotion code was applied successfully by viewing the price on the final checkout page before placing your order.</li>
+                              </ul>
+                            </div>
+                          </div>
+                          <!-- <div class="tab">
+                            <input id="tab-three" type="checkbox" name="tabs">
+                            <label for="tab-three">Label Three</label>
+                            <div class="tab-content">
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
+                            </div>
+                          </div> -->
+                        </div>
+                      
+                    </div>
+
+
+                  </div>
+              </div><!-- modal-window -->
+              
+
+
+           
+
               <!-- Button Section -->
 
               <div class="btn clearfix">
@@ -349,7 +393,7 @@
                   <!-- <p> *Apply this code at checkout with a single click.</p> -->
                   <!-- <a class="amz_btn" href="/coupons">Back</a> -->
 
-                  <div class="pc_btn">
+                  <!-- <div class="pc_btn">
                     <% if @coupon.c_spare_61.present? || @coupon.c_spare_62.present? %>
                       <% if @coupon.c_spare_61.present? %>
                         <a class="amz_btn buy_now" href="<%= @coupon.c_link %>">Go to Amazon & Save <%= number_to_currency(btn_pct_price) %> 
@@ -361,9 +405,9 @@
                     <% else %>
                       <a class="amz_btn buy_now" href="<%= @coupon.c_link %>">Go to Amazon & Save <%= number_to_currency(btn_price) %> Now!</a>
                     <% end %>
-                  </div>
+                  </div> -->
 
-                  <div class="mobile_btn">
+                 <!--  <div class="mobile_btn">
                     <% if @coupon.c_spare_61.present? || @coupon.c_spare_62.present? %>
                       <% if @coupon.c_spare_61.present? %>
                         <a class="amz_btn buy_now" href="<%= @coupon.c_link %>">Go to Amazon & Save <%= number_to_currency(btn_pct_price) %> Now!</a>
@@ -373,12 +417,12 @@
                     <% else %>
                       <a class="amz_btn buy_now" href="<%= @coupon.c_link %>">Go to Amazon & Save <%= number_to_currency(btn_price) %> Now!</a>
                     <% end %>
-                  </div>
+                  </div> -->
                   
-                <% else %>
-                  <!-- <a class="amz_btn" href="/coupons">Back</a> -->
-                  <a class="amz_btn buy_now" href="<%= @coupon.c_link %>">Accept an offer</a>
-                <% end %>
+                  <% else %>
+                    <!-- <a class="amz_btn" href="/coupons">Back</a> -->
+                    <a class="amz_btn buy_now" href="<%= @coupon.c_link %>">Accept an offer</a>
+                  <% end %>
               </div>
 
               <% if current_user && current_user.admin %>
@@ -578,4 +622,5 @@
     amzn_assoc_region = "US";
 </script>
 <script src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&MarketPlace=US"></script>
+
 

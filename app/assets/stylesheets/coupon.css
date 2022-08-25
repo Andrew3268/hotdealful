@@ -295,12 +295,13 @@
 }
 .copy-text input.text {
   width:75%;
-  padding:10px;
+  padding:10px; 
   font-size:20px;
   color:#3d3d3d;
   border:none;
   outline:none;
   letter-spacing:2px;
+  vertical-align:middle;
 }
 .copy-text button, .copy-text div.sumarry_icon {
   vertical-align:middle;
@@ -313,6 +314,7 @@
   outline:none;
   border-radius:10px;
   cursor:pointer;
+  float:right;
 }
 .copy-text button:active {
   background:#809ce2;
@@ -320,7 +322,7 @@
 .copy-text button:before {
   content:"Copied";
   position:absolute;
-  top:-40px;
+  top:-27px;
   right:0px;
   background:#ff4d4d;
   padding:8px 10px;
@@ -331,7 +333,7 @@
 .copy-text button:after {
   content:"";
   position:absolute;
-  top:-15px;
+  top:-3px;
   right:25px;
   width:10px;
   height:10px;
@@ -351,4 +353,238 @@
 }
 @media screen and (min-width:641px) and (max-width:1199px){
  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.modal-window {
+  position: fixed;
+  background-color:rgba(255, 255, 255, 0.9);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+.modal-window:target {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-window > div {
+  width: 70%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2em;
+  background:#fff;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.modal-window header {
+  font-weight: bold;
+}
+.modal-window h1 {
+  font-size: 150%;
+  margin: 0 0 15px;
+}
+.modal-window .code_box{margin-top:10px;}
+.modal-window .code_box p{margin:0 0 5px 5px;color:#9da3ab;}
+.modal-window .copy-text{border:1px solid #ccc;padding:10px;}
+.modal-window .modal_notice{margin:20px 0 0 20px;font-size:13px;}
+.modal-window .modal_notice ul{}
+.modal-window .modal_notice ul li{list-style:circle;color:#9da3ab;}
+.modal-window .mobal_inner_btn{}
+.modal-window .mobal_inner_btn a{background-color:#ff4d4d;color:#fff;padding:15px;border-radius:10px;text-align:center;}
+
+.modal-close {
+  color: #aaa;
+  line-height: 50px;
+  font-size: 80%;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 70px;
+  text-decoration: none;
+}
+.modal-close:hover {
+  color: black;
+}
+
+/*html,
+body {
+  height: 100%;
+}
+
+html {
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+body {
+  font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: 600;
+  background-image: linear-gradient(to right, #7f53ac 0, #657ced 100%);
+  color: black;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}*/
+
+.container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.modal-window > div {
+  border-radius: 1rem;
+}
+
+/*.modal-window div:not(:last-of-type) {
+  margin-bottom: 15px;
+}*/
+
+.logo {
+  max-width: 150px;
+  display: block;
+}
+
+small {
+  color: lightgray;
+}
+
+.modal_btn {
+  background-color:#ff4d4d;
+  color:#fff;
+  padding: 1em 1.5em;
+  border-radius: 10px;
+  text-decoration: none;
+  text-align:center;
+  display:block;
+  width:100%;
+}
+
+@media screen and (max-width:640px){
+  .modal-window{background-color:rgba(0,0,0,0.6)}
+  .modal-window > div{width:95%;}
+  .modal_btn{position:fixed;bottom:0;z-index:999;margin:0 auto;left:0;right:0;width:100%;}
+  .copy-text button{margin-top:-10px;}
+  .modal-window .copy-text{padding:20px 10px;}
+  .modal-window .mobal_inner_btn a{width:100%;display:block;margin-top:-10px;}
+  .modal-window .modal_notice{margin-top:5px;}
+}
+/*@media screen and (min-width:641px) and (max-width:1199px){
+ 
+}
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+/* Acordian styles */
+.qanda{margin-top:30px;}
+.tab {
+  position: relative;
+  margin-bottom: .01em;
+  width: 100%;
+  color: #fff;
+  overflow: hidden;
+}
+ .jacordian input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.jacordian label {
+  position: relative;
+  display: block;
+  padding: 0 0 0 1em;
+  background:#ffda05;
+  line-height: 3;
+  cursor: pointer;
+  color:#000;
+}
+.jacordian p{margin-left:5px;font-weight:bold;}
+.blue label {
+  background: #2980b9;
+}
+.tab-content {
+  max-height: 0;
+  overflow: hidden;
+  color:#3d3d3d;
+  -webkit-transition: max-height .35s;
+  -o-transition: max-height .35s;
+  transition: max-height .35s;
+}
+.blue .tab-content {
+  background: #3498db;
+}
+.tab-content p {
+  margin: 1em;
+}
+.tab-content ul{padding:10px 10px 10px 20px;font-size:12px;}
+.tab-content ul li{list-style-type: decimal;}
+/* :checked */
+.jacordian input:checked ~ .tab-content {
+  max-height:15em;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+/* Icon */
+.jacordian label::after {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  width: 3em;
+  height: 3em;
+  line-height: 3;
+  text-align: center;
+  -webkit-transition: all .35s;
+  -o-transition: all .35s;
+  transition: all .35s;
+}
+.jacordian input[type=checkbox] + label::after {
+  content: "\2795";
+}
+.jacordian input[type=radio] + label::after {
+  content: "\25BC";
+}
+.jacordian input[type=checkbox]:checked + label::after {
+  transform: rotate(315deg);
+}
+.jacordian input[type=radio]:checked + label::after {
+  transform: rotateX(180deg);
 }
