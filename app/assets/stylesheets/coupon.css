@@ -480,8 +480,9 @@ small {
 .modal_btn {
   background-color:#ff4d4d;
   color:#fff;
-  padding: 1em 1.5em;
-  border-radius: 10px;
+  padding:13px;
+  font-size:17px;
+  border-radius:10px;
   text-decoration: none;
   text-align:center;
   display:block;
@@ -491,7 +492,7 @@ small {
 @media screen and (max-width:640px){
   .modal-window{background-color:rgba(0,0,0,0.6)}
   .modal-window > div{width:95%;}
-  .modal_btn{position:fixed;bottom:0;z-index:999;margin:0 auto;left:0;right:0;width:100%;}
+  .modal_btn{position:fixed;bottom:0;z-index:999;margin:0 auto;left:0;right:0;width:100%;border-bottom-right-radius:0;border-bottom-left-radius:0;}
   .copy-text button{margin-top:-10px;}
   .modal-window .copy-text{padding:20px 10px;}
   .modal-window .mobal_inner_btn a{width:100%;display:block;margin-top:-10px;}
