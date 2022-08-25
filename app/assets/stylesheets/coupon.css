@@ -337,7 +337,7 @@
 }
 
 @media screen and (max-width:640px){
-  .link{position:fixed;bottom:0;margin:0 auto;left:0;right:0;border-bottom-right-radius:0;border-bottom-left-radius:0;}
+  .link{position:fixed;bottom:0;margin:0 auto;left:0;right:0;border-bottom-right-radius:0;border-bottom-left-radius:0;z-index:999;}
   .overlay{background-color:rgba(0, 0, 0, .4);}
   .code_modal.is-show{width:95%;}
   .code_modal .code_box .copy-text{padding:20px 15px;}
