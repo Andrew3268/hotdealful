@@ -464,7 +464,7 @@
 .tab-content p {
   margin: 1em;
 }
-.tab-content ul{padding:10px 10px 10px 20px;font-size:12px;}
+.tab-content ul{padding:10px 10px 60px 20px;font-size:12px;}
 .tab-content ul li{list-style-type: decimal;}
 /* :checked */
 .jacordian input:checked ~ .tab-content {
