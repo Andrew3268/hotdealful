@@ -37,7 +37,6 @@ class CouponsController < ApplicationController
                     url: coupon_url(@coupon),
                     image: @coupon.c_image
                   }
-
   end
 
   def hashtags
@@ -101,7 +100,7 @@ class CouponsController < ApplicationController
     def coupon_params
       params.require(:coupon).permit(:c_title, :c_link, :c_image, :c_source, :c_hashtag, :c_promocode, :c_rating, :c_review_count, 
                                      :c_is_price, :c_was_price, :c_pct, :c_description, :c_spare_56, :c_spare_57, :c_spare_58, :c_spare_61,
-                                     :c_spare_62,:c_spare_01, :c_spare_02, :c_spare_66)
+                                     :c_spare_62,:c_spare_01, :c_spare_02, :c_spare_66, :c_spare_41, :c_spare_42)
     end
   
 end

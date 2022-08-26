@@ -39,27 +39,11 @@ class BridgesController < ApplicationController
     @posts = Post.all.order("created_at DESC")
   end
 
-  def delete_shoes
-    @deals = Deal.all
-  end
-
-  def random_deals
-    @deals = Deal.offset(rand(Deal.count)).limit(1)
-  end
-
   def admin_panel
     @coupons = Coupon.all.order("created_at DESC")
   end
 
   def home
-    @homes = Home.all.order("created_at DESC")
-    @coupons = Coupon.all.order("created_at DESC").limit(10)
-    @extra_deals = Post.all.order("created_at DESC").limit(10)
-    @coupons_top = Coupon.most_hit(3.day.ago, 10)
-    @deals_top = Post.most_hit(3.day.ago, 10)
-  end
-
-  def tem_index
     @homes = Home.all.order("created_at DESC")
     @coupons = Coupon.all.order("created_at DESC").limit(10)
     @extra_deals = Post.all.order("created_at DESC").limit(10)
@@ -84,5 +68,6 @@ class BridgesController < ApplicationController
     @deals_top = Post.most_hit(3.day.ago, 10)
     @coupons_top = Coupon.most_hit(100.day.ago, 10) 
   end
+
 
 end

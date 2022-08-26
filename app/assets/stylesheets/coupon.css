@@ -129,10 +129,6 @@
 
 
 
-
-
-
-
 /******* New Coupon Section ****/
 .n_coupon_wrap{margin-bottom:50px;padding:0 10px;}
 .n_coupon_wrap h2{background-color:#000;color:#fff;padding:10px;border-radius:10px;display:table-cell;font-size:15px;width:100%;}
@@ -273,32 +269,11 @@
 .see_code .ctn .btn a{display:block;float:left;width:48%;margin:1%;padding:10px;border-radius:10px;text-align:center;font-size:12px;background-color:#000;color:#fff;}
 
 
-
+/****************** For modal promotion code ******************/
 /* Code Modal */
-.link {
-   padding:15px 20px;
-   display:inline-block;
-   background-color:#ff4d4d;
-   color: #fff;
-   border-radius: 3px;
-   text-decoration: none;
-   width:100%;
-   text-align:center;
-   border-radius:15px;
-}
-
-.code_modal {
-   position: fixed;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   border-radius:15px;
-   padding: 10px; 
-   z-index: 20;
-   background-color: #fff;
-   display: none;
-   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-}
+.code_modal,.link{border-radius:15px}
+.link{padding:15px 20px;display:inline-block;background-color:#ff4d4d;color:#fff;text-decoration:none;width:100%;text-align:center;}
+.code_modal{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);padding:10px;z-index:20;background-color:#fff;display:none;box-shadow:rgba(0,0,0,.16) 0 1px 4px;}
 .code_modal .code_box{}
 .code_modal .code_box p{margin:0 0 2px 5px;color:#9da3ab;}
 .code_modal .code_box .copy-text{border:1px solid #ccc;padding:10px;}
@@ -308,33 +283,11 @@
 .code_modal .modal_notice{margin:20px 0 0 20px;font-size:13px;}
 .code_modal .modal_notice ul{margin-top:-15px;}
 .code_modal .modal_notice ul li{list-style:circle;color:#9da3ab;}
-
-
 .overlay{width:100%;}
 .code_modal.is-show{display:block;width:60%;padding:30px 20px;}
 .overlay.is-show{display:block;}
-
-.modal__cross {
-   position: absolute;
-   top:10px;
-   right:30px;
-   width: 20px;
-   height: 20px;
-   cursor: pointer;
-   color:#9da3ab;
-
-}
-
-.overlay {
-   position: fixed;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   background-color: rgba(255, 255, 255, .7);
-   z-index: 10;
-   display: none;
-}
+.modal__cross{position:absolute;top:10px;right:30px;width:20px;height:20px;cursor:pointer;color:#9da3ab;}
+.overlay{position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(255,255,255,.7);z-index:10;display:none;}
 
 @media screen and (max-width:640px){
   .link{position:fixed;bottom:0;margin:0 auto;left:0;right:0;border-bottom-right-radius:0;border-bottom-left-radius:0;z-index:999;}
@@ -345,73 +298,16 @@
   .modal__cross{right:20px;}
 }
 
-
-
 /* CODE COPY */
-.label {
-  padding:5px;
-  font-size:12px;
-  color:#111;
-}
-.copy-text {
-  position:relative;
-  padding:0 10px;
-  border-radius:10px;
-  margin-top:1px;
-  /*display:flex;*/
-}
-.copy-text input.text {
-  width:75%;
-  padding:10px; 
-  font-size:20px;
-  color:#3d3d3d;
-  border:none;
-  outline:none;
-  letter-spacing:2px;
-  vertical-align:middle;
-}
-.copy-text button, .copy-text div.sumarry_icon {
-  vertical-align:middle;
-  padding:10px 10px 5px 10px;
-  /*background:#5784f5;*/
-  background-color:#ff4d4d;
-  color:#fff;
-  font-size:18px;
-  border:none;
-  outline:none;
-  border-radius:10px;
-  cursor:pointer;
-  float:right;
-}
-.copy-text button:active {
-  background:#809ce2;
-}
-.copy-text button:before {
-  content:"Copied";
-  position:absolute;
-  top:-27px;
-  right:0px;
-  background:#ff4d4d;
-  padding:8px 10px;
-  border-radius:20px;
-  font-size:15px;
-  display:none;
-}
-.copy-text button:after {
-  content:"";
-  position:absolute;
-  top:-3px;
-  right:25px;
-  width:10px;
-  height:10px;
-  background:#ff4d4d;
-  transform:rotate(45deg);
-  display:none;
-}
-.copy-text.active button:before,
-.copy-text.active button:after {
-  display:block;
-}
+.label{padding:5px;font-size:12px;color:#111;}
+.copy-text{position:relative;padding:0 10px;border-radius:10px;margin-top:1px;}
+.copy-text input.text{width:75%;padding:10px;font-size:20px;color:#3d3d3d;border:none;outline:0;letter-spacing:2px;vertical-align:middle;}
+.copy-text button, .copy-text div.sumarry_icon{vertical-align:middle;padding:10px 10px 5px;background-color:#ff4d4d;color:#fff;font-size:18px;border:none;outline:0;border-radius:10px;cursor:pointer;float:right;}
+.copy-text button:active{background:#809ce2;}
+.copy-text button:after,.copy-text button:before{position:absolute;background:#ff4d4d;display:none;}
+.copy-text button:before{content:"Copied";top:-27px;right:0;padding:8px 10px;border-radius:20px;font-size:15px;}
+.copy-text button:after{content:"";top:-3px;right:25px;width:10px;height:10px;transform:rotate(45deg);}
+.copy-text.active button:after, .copy-text.active button:before{display:block;}
 
 @media screen and (max-width:640px){
   .copy-text{margin-top:-3px;}
@@ -422,81 +318,25 @@
  
 }
 
-
 /* Acordian styles */
 .qanda{margin-top:30px;}
-.tab {
-  position: relative;
-  margin-bottom: .01em;
-  width: 100%;
-  color: #fff;
-  overflow: hidden;
-}
- .jacordian input {
-  position: absolute;
-  opacity: 0;
-  z-index: -1;
-}
-.jacordian label {
-  position: relative;
-  display: block;
-  padding: 0 0 0 1em;
-  background:#ffda05;
-  line-height: 3;
-  cursor: pointer;
-  color:#000;
-}
-.jacordian p{margin-left:5px;font-weight:bold;}
-.blue label {
-  background: #2980b9;
-}
-.tab-content {
-  max-height: 0;
-  overflow: hidden;
-  color:#3d3d3d;
-  -webkit-transition: max-height .35s;
-  -o-transition: max-height .35s;
-  transition: max-height .35s;
-}
-.blue .tab-content {
-  background: #3498db;
-}
-.tab-content p {
-  margin: 1em;
-}
+.tab{position:relative;margin-bottom:.01em;width:100%;color:#fff;overflow:hidden;}
+.jacordian input{position:absolute;opacity:0;z-index:-1;}
+.jacordian label{position:relative;display:block;padding:0 0 0 1em;background:#ffda05;line-height:3;cursor:pointer;color:#000;}
+.jacordian p{margin-left:5px;font-weight:700;}
+/*.blue label{background:#2980b9;}*/
+.tab-content{max-height:0;overflow:hidden;color:#3d3d3d;-webkit-transition:max-height .35s;-o-transition:max-height .35s;transition:max-height .35s;}
+/*.blue .tab-content{background:#3498db;}*/
+.tab-content p{margin:1em;}
 .tab-content ul{padding:10px 10px 60px 20px;font-size:12px;}
 .tab-content ul li{list-style-type: decimal;}
 /* :checked */
-.jacordian input:checked ~ .tab-content {
-  max-height:15em;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-/* Icon */
-.jacordian label::after {
-  position: absolute;
-  right: 0;
-  top: 0;
-  display: block;
-  width: 3em;
-  height: 3em;
-  line-height: 3;
-  text-align: center;
-  -webkit-transition: all .35s;
-  -o-transition: all .35s;
-  transition: all .35s;
-}
-.jacordian input[type=checkbox] + label::after {
-  content: "\2795";
-}
-.jacordian input[type=radio] + label::after {
-  content: "\25BC";
-}
-.jacordian input[type=checkbox]:checked + label::after {
-  transform: rotate(315deg);
-}
-.jacordian input[type=radio]:checked + label::after {
-  transform: rotateX(180deg);
-}
+.jacordian input:checked~.tab-content{max-height:15em;overflow-x:hidden;overflow-y:auto;}
+.jacordian label::after{position:absolute;right:0;top:0;display:block;width:3em;height:3em;line-height:3;text-align:center;-webkit-transition:.35s;-o-transition:.35s;transition:.35s;}
+.jacordian input[type=checkbox]+label::after{content:"\2795";}
+.jacordian input[type=radio]+label::after{content:"\25BC";}
+.jacordian input[type=checkbox]:checked+label::after{transform:rotate(315deg);}
+.jacordian input[type=radio]:checked+label::after{transform:rotateX(180deg);}
+/****************** End for modal promotion code ******************/
 
 

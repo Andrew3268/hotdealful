@@ -225,6 +225,22 @@ a.set_reset_m{display:none;}
 
 
 
+/** Our Pick for index top page **/
+.our_pick_wrap{}
+.our_pick_wrap .card{float:left;width:200px;height:250px;}
+.our_pick_wrap .card .img_box{width:150px;height:150px;position:relative;}
+.our_pick_wrap .card .img_box img{width:80%;height:80%;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);object-fit:contain;}
+.our_pick_wrap .card .inner{}
+
+
+
+
+
+
+
+
+
+
 
 
 

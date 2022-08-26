@@ -1,0 +1,17 @@
+<div class="our_pick_wrap clearfix">
+  <% @coupons.each do |coupon| %>
+    <% if coupon.c_spare_41.to_i >= 1000 && coupon.c_spare_42.to_i >= 4 %>
+
+      <div class="card">
+        <div class="img_box">
+          <img src="<%= coupon.c_image %>" alt="<%=coupon.c_title %>">
+        </div>
+        <div class="inner">
+          <p><%= coupon.c_title %></p>
+        </div>
+      </div>
+
+    <% end %>
+  <% end %>
+</div>
+
