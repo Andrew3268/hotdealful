@@ -1,17 +1,74 @@
-<div class="our_pick_wrap clearfix">
-  <% @coupons.each do |coupon| %>
-    <% if coupon.c_spare_41.to_i >= 1000 && coupon.c_spare_42.to_i >= 4 %>
+<div class="index_slide_container">
+  <div class="hs__wrapper">
+    <div class="hs__header">
+      <h2 class="hs__headline">Our Picks
+      </h2>
+      <div class="hs__arrows"><a class="arrow disabled arrow-prev"></a><a class="arrow arrow-next"></a></div>
+    </div>
 
-      <div class="card">
-        <div class="img_box">
-          <img src="<%= coupon.c_image %>" alt="<%=coupon.c_title %>">
-        </div>
-        <div class="inner">
-          <p><%= coupon.c_title %></p>
-        </div>
-      </div>
+    <ul class="hs">
+      <% @coupons.each do |coupon| %>
+        <% if coupon.c_spare_42.to_i >= 4 && coupon.c_spare_41.to_i >= 1000 %>
+          <% promocode_price = 0 %>
+          <% promocode_price =  coupon.c_was_price.to_f - (coupon.c_pct.to_f / 100) * coupon.c_was_price.to_f %>
+          <% hotdeal_pct = 0 %>
+          <% hotdeal_pct =  (coupon.c_was_price.to_f - coupon.c_is_price.to_f) / coupon.c_was_price.to_f * 100 %>
+          <% promo_price = 0 %>
+          <% promo_price = (coupon.c_pct.to_f / 100) * coupon.c_was_price %>
+          <% pct_coupon = 0 %>
+          <% pct_coupon = (coupon.c_spare_61.to_f / 100) * coupon.c_was_price %>
+          <% total_price = 0 %>
+          <% total_price = coupon.c_was_price - promo_price %>
+          <% total_price_pct_coupon = total_price - pct_coupon %>
+          <% total_price_cash_coupon = total_price - coupon.c_spare_62.to_f %>
 
-    <% end %>
-  <% end %>
+          <li class="hs__item"> 
+            <a href="/coupons/<%= coupon.id %>">
+              <div class="hs__item__image__wrapper">
+                <img class="hs__item__image" src="<%= coupon.c_image %>" alt="<%=coupon.c_title %>"/>
+
+                <!-- <div class="pick_discount">
+                  <% if coupon.c_spare_61.present? || coupon.c_spare_62.present? %>
+                    <% if coupon.c_spare_61.present? %>
+                      <span><%= number_to_percentage(coupon.c_pct, precision: 0) %>off</span> 
+                      <span>+</span> 
+                      <span><%= number_to_percentage(coupon.c_spare_61, precision: 0) %>off</span>
+                    <% else %>
+                      <span><%= number_to_percentage(coupon.c_pct, precision: 0) %>off</span> 
+                      <span>+</span> 
+                      <span><%= number_to_currency(coupon.c_spare_62, precision: 0) %>off</span>
+                    <% end %>
+                  <% else %>
+                    <span><%= number_to_percentage(coupon.c_pct, precision: 0) %>off</span>
+                  <% end %>
+                </div> -->
+
+
+              </div>
+              <div class="hs__item__description">
+                <p class="hs__item__title"><%= coupon.c_title %></p>
+                <!-- <span class="hs__item__subtitle">some subtitle</span> -->
+                <% if coupon.c_promocode.present? %>
+                  <% if coupon.c_spare_61.present? || coupon.c_spare_62.present? %>
+                    <% if coupon.c_spare_61.present? %>
+                      <span><%= number_to_currency(coupon.c_was_price) %></span><em class="show_price"><%= number_to_currency(total_price_pct_coupon) %></em>
+                    <% else %>
+                      <span><%= number_to_currency(coupon.c_was_price) %></span><em class="show_price"><%= number_to_currency(total_price_cash_coupon) %></em>
+                    <% end %>
+                  <% else %>
+                    <!-- only for promotion code -->
+                    <span><%= number_to_currency(coupon.c_was_price) %></span><em class="show_price"><%= number_to_currency(total_price.to_f) %></em>
+                  <% end %>
+                <% else %>
+                  <span><%= number_to_currency(coupon.c_was_price) %></span><em class="show_price"><%= number_to_currency(coupon.c_is_price) %></em>
+                <% end %>
+              </div>
+            </a>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
 </div>
 
+<%= javascript_pack_tag 'our_pick_slider' %>
