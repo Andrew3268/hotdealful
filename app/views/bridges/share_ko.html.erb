@@ -2,11 +2,13 @@
   <div class="wrap">
     <div class="sf_box">
       
-      <% @couon.each do |coupon| %>
+      <% @coupons.each do |coupon| %>
         <% if coupon.c_promocode.present? %>
           <div class="card clearfix">
             <div class="image_box">
-              <a target="_blank" href="<%= coupon.c_link %>"><img src="<%= coupon.c_image %>" alt="<%= coupon.c_title %>"/></a>
+              <a target="_blank" href="<%= coupon.c_link %>">
+                <img src="<%= coupon.c_image %>" alt="<%= coupon.c_title %>"/>
+              </a>
             </div>
             <div class="inner">
               <% promocode_price = 0 %>

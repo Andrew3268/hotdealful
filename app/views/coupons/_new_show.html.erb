@@ -316,14 +316,14 @@
 
                   <% if @coupon.c_spare_61.present? || @coupon.c_spare_62.present? %>
                     <% if @coupon.c_spare_61.present? %>
-                      <a class="amz_btn buy_now" href="<%= @coupon.c_link %>">Go to Amazon & Save <%= number_to_currency(btn_pct_price) %> 
+                      <a target="_blank" class="amz_btn buy_now" href="<%= @coupon.c_link %>">Go to Amazon & Save <%= number_to_currency(btn_pct_price) %> 
                       Now!</a>
                     <% else %>
-                      <a class="amz_btn buy_now" href="<%= @coupon.c_link %>">Go to Amazon & Save <%= number_to_currency(btn_cash_price) %>
+                      <a target="_blank" class="amz_btn buy_now" href="<%= @coupon.c_link %>">Go to Amazon & Save <%= number_to_currency(btn_cash_price) %>
                        Now!</a>
                     <% end %>
                   <% else %>
-                    <a class="amz_btn buy_now" href="<%= @coupon.c_link %>">Go to Amazon & Save <%= number_to_currency(btn_price) %> Now!</a>
+                    <a target="_blank" class="amz_btn buy_now" href="<%= @coupon.c_link %>">Go to Amazon & Save <%= number_to_currency(btn_price) %> Now!</a>
                   <% end %>
                 </div>
 

@@ -21,7 +21,8 @@ class BridgesController < ApplicationController
   end
 
   def share_ko
-    @posts = Post.all.order("created_at DESC").limit(50)
+    # @posts = Post.all.order("created_at DESC").limit(50)
+    @coupons = Coupon.all.order("created_at DESC")
   end
 
   # def new_index
@@ -57,7 +58,7 @@ class BridgesController < ApplicationController
   end
 
   def new_coupon_section
-    @pagy, @coupons = pagy(Coupon.all.order("created_at DESC"), items: 30)
+    @pagy, @coupons = pagy(Coupon.all.order("created_at DESC"), items: 20)
     @coupons_top = Coupon.most_hit(100.day.ago, 10) 
     @latest_picks = Pick.last(1)
     @except_first_picks = Pick.order("id desc").offset(1).limit(4)

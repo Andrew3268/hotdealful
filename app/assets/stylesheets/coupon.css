@@ -219,7 +219,7 @@
 .n_coupon_card .inner .btn_box a{margin:10px 0;border-radius:10px;padding:10px;display:block;}
 
 /******* Coupon index menu *******/
-.menu-wrapper{height:40px;padding:0 30px;position:relative;overflow:hidden;margin-top:35px;}
+.menu-wrapper{height:40px;padding:0 30px;position:relative;overflow:hidden;}
 .when_search_term{margin:0;}
 .menu-wrapper .menu-item{height:100%;overflow:auto;white-space:nowrap;}
 .menu-wrapper .menu-item a{display:inline-block;padding:5px 13px;color:#333;height:100%;}
@@ -233,11 +233,13 @@
 
 /******* Coupon index search filter *******/
 .n_coupon_wrap{}
-.n_coupon_wrap .search_filter{margin-bottom:20px;}
-.n_coupon_wrap .search_filter input{width:100%;padding:15px;border-radius:15px;}
-.n_coupon_wrap .search_filter [data-filter-item]{}
-.n_coupon_wrap .search_filter .hidden{display:none;}
 .n_coupon_wrap .post_search_filter{margin:-15px 0 20px 0;}
+.search_filter_comm{margin-bottom:20px;}
+.search_filter_comm input{width:100%;padding:15px;border-radius:15px;}
+.search_filter_comm [data-filter-item]{}
+.search_filter_comm .hidden{display:none;}
+.index_search{padding:0 2.5%;}
+
 
  
 .bottom_banner{}
@@ -343,7 +345,13 @@
 
 
 /** Our Pick for index top page **/
-::-webkit-scrollbar{/* Webkit */width:0;height:0;}
+/* Base Styling */
+.index_slide_container{width:100%;padding:calc(10px * 2);margin:0 auto;mix-blend-mode:invert;position:relative;}
+.hs::-webkit-scrollbar{display:none;}
+.index_slide_container:after{content:"";width:100vw;height:100%;position:absolute;left:50%;top:0;transform:translateX(-50%);z-index:-1;}
+@media only screen and (min-width: 990px) {
+  .index_slide_container{/*padding: calc(10px * 4) calc(10px * 8);*/}
+}
 
 .hs{display:flex;overflow-x:scroll;justify-content:space-between;scrollbar-width:none;/* Firefox */-ms-overflow-style:none;/* IE 10+ */-webkit-overflow-scrolling:touch;margin:0 -20px;}
 .hs__header{display:flex;align-items:center;width:100%;}
@@ -381,10 +389,11 @@
   .hs__wrapper .hs__item{flex: 1 0 calc(45% - 10px * 2);}
 }
 
-/* Base Styling */
-.index_slide_container{width:100%;padding:calc(10px * 2);margin:0 auto;mix-blend-mode:invert;position:relative;}
-.index_slide_container:after{content:"";width:100vw;height:100%;position:absolute;left:50%;top:0;transform:translateX(-50%);z-index:-1;}
-@media only screen and (min-width: 990px) {
-  .index_slide_container{/*padding: calc(10px * 4) calc(10px * 8);*/}
-}
+
+
+
+
+
+
+
 
