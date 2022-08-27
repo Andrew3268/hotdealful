@@ -219,7 +219,8 @@
 .n_coupon_card .inner .btn_box a{margin:10px 0;border-radius:10px;padding:10px;display:block;}
 
 /******* Coupon index menu *******/
-.menu-wrapper{height:40px;padding:0 30px;position:relative;overflow:hidden;}
+.menu-wrapper{height:40px;padding:0 30px;position:relative;overflow:hidden;margin-top:35px;}
+.when_search_term{margin:0;}
 .menu-wrapper .menu-item{height:100%;overflow:auto;white-space:nowrap;}
 .menu-wrapper .menu-item a{display:inline-block;padding:5px 13px;color:#333;height:100%;}
 .menu-wrapper .menu-item a:first-child{padding-left:5px;}

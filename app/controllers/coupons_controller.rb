@@ -6,12 +6,14 @@ class CouponsController < ApplicationController
   # GET /coupons or /coupons.json
   def index
     @pagy, @coupons = pagy(Coupon.all.order("created_at DESC"), items: 100)
+    @coupons_top = Coupon.most_hit(1.day.ago, 10)
+    @deals_top = Post.most_hit(1.day.ago, 10)
+    
     if params[:search]
       @search_term = params[:search]
       @coupons = @coupons.search_by(@search_term)
     end
-    @coupons_top = Coupon.most_hit(1.day.ago, 10)
-    @deals_top = Post.most_hit(1.day.ago, 10)
+
   end 
 
 
