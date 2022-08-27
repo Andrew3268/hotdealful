@@ -88,7 +88,7 @@
 .show-wrap .container{width:100%;padding:20px;} 
 .show-wrap .container .go_back{display:none;}
 .show-wrap .container .title_mobile{}
-.show-wrap .container .title_mobile h2{font-size:15px;font-weight:100;}
+.show-wrap .container .title_mobile h2{font-size:13px;font-weight:100;}
 .show-wrap .container .title_mobile em.show_price{color:#ff4d4d;font-weight:bold;}
 .show-wrap .container .title_mobile em.show_code{color:#ff4d4d;font-weight:bold;background-color:rgba(255,77,77,0.2);padding:2px 5px;border-radius:5px;}
 /*.show-wrap .container .title_mobile em.title_bold{font-weight:bold;}*/

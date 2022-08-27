@@ -141,7 +141,6 @@
 .n_coupon_card .img_box .rating_card img{position:absolute;bottom:-8px;left:50%;transform:translate(-50%,0);}
 .n_coupon_card .img_box .rating_card em{font-size:12px;}
 .n_coupon_card .img_box .used_it{position:absolute;bottom:-20px;left:0;width:100%;font-size:12px;color:#ccc;text-align:center;}
-.n_coupon_card .img_box .rating_for_admin{position:absolute;left:10px;top:5px;}
 .n_coupon_card .inner{float:left;width:62%;margin-right:1.5%;}
 .n_coupon_card .inner .posted_date{font-size:11px;color:#ccc;text-decoration:underline;margin-bottom:5px;}
 .n_coupon_card .inner .label{padding:4px 0;font-size:10px;margin-bottom:5px;display:inline-block;font-size:12px;}
@@ -157,6 +156,10 @@
 .n_coupon_card .inner p.rating em{margin-right:7px;background:#515151;color:#fff;padding:3px 10px;font-size:11px;border-radius:15px;}
 .n_coupon_card .inner p.list_price{display:inline-block;font-size:15px;color:#ccc;text-decoration:line-through;margin-right:5px;}
 .n_coupon_card .inner p.code_price{font-size:20px;margin:10px 0;display:inline-block;color:#ff4d4d;font-weight:bold;}
+.n_coupon_card .inner .star_write{}
+.n_coupon_card .inner .star_write .rating_box{}
+.n_coupon_card .inner .star_write .rating_box i{font-size:14px;color:#ffbf00;vertical-align:middle;}
+.n_coupon_card .inner .star_write .rating_box span{vertical-align:middle;}
 
 
 .n_coupon_card .inner .more_detail{}
