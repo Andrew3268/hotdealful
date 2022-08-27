@@ -7,7 +7,7 @@
     </div>
 
     <ul class="hs">
-      <% @coupons.each do |coupon| %>
+      <% @our_pick.each do |coupon| %>
         <% if coupon.c_spare_42.to_i >= 4 && coupon.c_spare_41.to_i >= 1000 %>
           <% promocode_price = 0 %>
           <% promocode_price =  coupon.c_was_price.to_f - (coupon.c_pct.to_f / 100) * coupon.c_was_price.to_f %>

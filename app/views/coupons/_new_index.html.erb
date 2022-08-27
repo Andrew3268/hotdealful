@@ -7,7 +7,7 @@
   </div>
 
   <% if @search_term.present? %>
-        <div class="right">
+    <div class="right">
 
       <div class="index_wrap">
         <header><%= render 'coupons/header_index' %></header>
@@ -278,6 +278,7 @@
             </div>
           </div>
 
+          
           <div class="pic_deal clearfix">
             <div class="card_wrap n_coupon_wrap">
                 <!-- <h2>Promotion Codes</h2> -->
@@ -369,8 +370,8 @@
                                   <p class="code_price"><%= number_to_currency(total_price_pct_coupon) %></p>
                                   <div class="more_detail">
                                     <% total_save = coupon.c_was_price - total_price_pct_coupon %>
-                                    <p>You can save <em class="total_savings"><%= number_to_currency(total_save) %></em> off list price.</p>
-                                    <p class="verified">✅Code & Coupon verified!</p>
+                                    <!-- <p>You can save <em class="total_savings"><%= number_to_currency(total_save) %></em> off list price.</p> -->
+                                    <!-- <p class="verified">✅Code & Coupon verified!</p> -->
                                     
                                       <!-- <ul class="see_code">
                                         <li>
@@ -398,8 +399,8 @@
                                   <p class="code_price"><%= number_to_currency(total_price_cash_coupon) %></p>
                                   <div class="more_detail">
                                     <% total_save = coupon.c_was_price - total_price_cash_coupon %>
-                                    <p>You can save <em class="total_savings"><%= number_to_currency(total_save) %></em></p>
-                                    <p class="verified">✅Code & Coupon verified!</p>
+                                    <!-- <p>You can save <em class="total_savings"><%= number_to_currency(total_save) %></em></p> -->
+                                    <!-- <p class="verified">✅Code & Coupon verified!</p> -->
                                     <!-- <ul class="see_code">
                                       <li>
                                         <div class="dropdownlink"></i> View Promotion Code
@@ -427,8 +428,8 @@
                                 <p class="code_price"><%= number_to_currency(promocode_price) %></p>
                                 <div class="more_detail">
                                   <% total_save = coupon.c_was_price - promocode_price %>
-                                  <p>You can save <em class="total_savings"><%= number_to_currency(total_save) %></em></p>
-                                  <p class="verified">✅Code verified!</p>
+                                  <!-- <p>You can save <em class="total_savings"><%= number_to_currency(total_save) %></em></p> -->
+                                  <!-- <p class="verified">✅Code verified!</p> -->
                                   <!-- <ul class="see_code">
                                         <li>
                                           <div class="dropdownlink"></i> View Promotion Code
@@ -529,6 +530,8 @@
 
             </div>
           </div>
+
+
 
           <%= raw pagy_nav(@pagy) %>
         </div>
