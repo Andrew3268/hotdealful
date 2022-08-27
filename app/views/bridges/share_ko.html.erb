@@ -1,22 +1,22 @@
 <% if current_user && current_user.admin %>
   <div class="wrap">
     <div class="sf_box">
-
-      <% @posts.each do |post| %>
-        <% if post.promocode.present? %>
+      
+      <% @couon.each do |coupon| %>
+        <% if coupon.c_promocode.present? %>
           <div class="card clearfix">
             <div class="image_box">
-              <a target="_blank" href="<%= post.link %>"><img src="<%= post.image %>" alt="<%= post.title %>"/></a>
+              <a target="_blank" href="<%= coupon.c_link %>"><img src="<%= coupon.c_image %>" alt="<%= coupon.c_title %>"/></a>
             </div>
             <div class="inner">
               <% promocode_price = 0 %>
-              <% promocode_price =  post.was_price - (post.pct / 100) * post.was_price %>
+              <% promocode_price =  coupon.c_was_price - (coupon.c_pct / 100) * coupon.c_was_price %>
 
-              <em class="title"><%= post.title %></em><br>
+              <em class="title"><%= coupon.c_title %></em><br>
               <em>현재 가격: <%= number_to_currency(promocode_price) %></em>
-              <em> ( <%= number_to_percentage(post.pct, precision: 0) %> off )</em><br>
-              <em>할인전 가격: <%= number_to_currency(post.was_price) %></em><br>
-              <em>프로모션 코드: <%= post.promocode %></em><br>
+              <em> ( <%= number_to_percentage(coupon.c_pct, precision: 0) %> off )</em><br>
+              <em>할인전 가격: <%= number_to_currency(coupon.c_was_price) %></em><br>
+              <em>프로모션 코드: <%= coupon.c_promocode %></em><br>
             </div>
            </div>
         <% end %>
