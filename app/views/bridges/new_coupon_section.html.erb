@@ -132,7 +132,9 @@
       </div> -->
       <!-- trending_box -->
 
-      <%= render 'coupons/tab_navigation' %>
+      <% if current_user && current_user.admin %>
+        <%= render 'coupons/tab_navigation' %>
+      <% end %>
       <br />
 
       <div class="bottom_banner">
