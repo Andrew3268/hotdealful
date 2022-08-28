@@ -62,7 +62,7 @@ class BridgesController < ApplicationController
     @coupons_top = Coupon.most_hit(100.day.ago, 5) 
     @latest_picks = Pick.last(1)
     @except_first_picks = Pick.order("id desc").offset(1).limit(4)
-    @our_pick = Coupon.all.order("created_at DESC").limit(20)
+    @our_pick = Coupon.all.order("created_at DESC")
     @by_rating = Coupon.all.order("created_at DESC").limit(5)
     @by_review = Coupon.all.order("created_at DESC").limit(5)
     @under_ten = Coupon.all.order("created_at DESC").limit(5)
