@@ -2,7 +2,7 @@
       
 
         <div class="mostContainer clearfix">
-          <h3>Trending</h3>
+          <h3><span class="trend_left">Trending <i class="material-icons">trending_up</i></span> <!-- <span class="trend_right"><a href="#">more</a></span> --></h3>
           <% @coupons_top.each_with_index do |coupon, i| %>   
           <% promocode_price = 0 %>
           <% promocode_price =  coupon.c_was_price.to_f - (coupon.c_pct.to_f / 100) * coupon.c_was_price.to_f %>
