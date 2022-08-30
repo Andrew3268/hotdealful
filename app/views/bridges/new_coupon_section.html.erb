@@ -43,6 +43,33 @@
         <% end %>
       </div>
       -->
+      <div class="menu-wrapper when_search_term">
+          <div class="menu-item">
+            <a href="/coupons/chashtag/electronics">Electronics</a>
+            <a href="/coupons/chashtag/fashion">Fashion</a>
+            <a href="/coupons/chashtag/beauty">Beauty</a>
+            <a href="/coupons/chashtag/automotive">Automotive</a>
+            <a href="/coupons/chashtag/cellphone_accessories">Cell Phone&Accessories</a>
+            <a href="/coupons/chashtag/home_kitchen">Home&Kitchen</a>
+            <a href="/coupons/chashtag/sports_outdoor">Sports&Outdoor</a>
+            <a href="/coupons/chashtag/pet_supplies">Pet Supplies</a>
+            <a href="/coupons/chashtag/health_household">Health&Household</a>
+            <a href="/coupons/chashtag/baby_products">Baby</a>
+            <a href="/coupons/chashtag/tools_home_mprovement">Home Improvemnts</a>
+            <a href="/coupons/chashtag/patio_lawn_garden">Patio&Lawn&Garden</a>
+            <a href="/coupons/chashtag/office_products">Office Products</a>
+            <a href="/coupons/chashtag/toys_games">Toys&Games</a>
+            <a href="/coupons/chashtag/video_games">Video Games</a>
+            <a href="/coupons/chashtag/musical_instruments">Msical Instruments</a>
+          </div> 
+          <span class="pointer left-pointer dis">
+            <i class="fa fa-chevron-left"></i>
+          </span>
+          <span class="pointer right-pointer">
+            <i class="fa fa-chevron-right"></i>
+          </span>
+        </div>
+
         <div class="search_hero clearfix"> 
           <div class="inner">
             <h2>Why pay more?</h2>
@@ -90,7 +117,7 @@
         </div>
 
         <div class="more_coupon_btn">
-          <a href="/coupons">More</a>
+          <a href="/coupons">View More Promo Code Deals</a>
         </div>
 
       </div><!-- ctn_box -->
@@ -132,9 +159,9 @@
       </div> -->
       <!-- trending_box -->
 
-      <% if current_user && current_user.admin %>
-        <%= render 'coupons/tab_navigation' %>
-      <% end %>
+      
+      <%= render 'coupons/most_hit' %>
+      
       <br />
 
       <div class="bottom_banner">
@@ -161,3 +188,5 @@
     $(".text").toggleClass("show-more-height");
   });
 </script>
+
+<%= javascript_pack_tag 'coupon_index_menu' %>

@@ -1,14 +1,13 @@
 <div class="index_slide_container">
   <div class="hs__wrapper">
     <div class="hs__header">
-      <h3 class="hs__headline">Our Picks
-      </h3>
+      <h3 class="hs__headline">Our Picks</h3>
       <div class="hs__arrows"><a class="arrow disabled arrow-prev"></a><a class="arrow arrow-next"></a></div>
     </div>
 
     <ul class="hs">
       <% @our_pick.each do |coupon| %>
-        <% if coupon.c_spare_42.to_i >= 4 && coupon.c_spare_41.to_i >= 5000 %>
+        <% if coupon.c_spare_42.to_i >= 4 && coupon.c_spare_41.to_i >= 3000 %>
           <% promocode_price = 0 %>
           <% promocode_price =  coupon.c_was_price.to_f - (coupon.c_pct.to_f / 100) * coupon.c_was_price.to_f %>
           <% hotdeal_pct = 0 %>

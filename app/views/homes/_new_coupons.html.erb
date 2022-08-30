@@ -333,12 +333,11 @@
               <span><%= number_to_percentage(hotdeal_pct, precision: 0) %> </span>
             <% end %>
 
-
-
-            <!-- <div class="used_it">
-              <p><%= coupon.hits %> times checked.</p>
-            </div> -->
-
+            <% if current_user && current_user.admin %>
+              <div class="used_it">
+                <p><%= coupon.hits %> People Checked.</p>
+              </div>
+            <% end %>
 
           
           </div>

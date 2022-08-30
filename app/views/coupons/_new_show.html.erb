@@ -327,13 +327,18 @@
                   <% end %>
                 </div>
 
-                <% if @coupon.c_spare_01.present? %>
+                
                   <div class="modal_notice">
                     <ul>
-                      <li>This promo code is valid until <%= @coupon.c_spare_01 %> / <%= @coupon.c_spare_02 %> / 2022 11:59PM PDT or while supplies last.</li>
+                      <% if @coupon.c_spare_01.present? %>
+                        <li>This promo code is valid until <%= @coupon.c_spare_01 %> / <%= @coupon.c_spare_02 %> / 2022 11:59PM PDT or while 
+                        supplies last.</li>
+                      <% else %>
+                        <li>This promo code will expire soon.</li>
+                      <% end %>
                     </ul>
                   </div>
-                <% end %>
+                
 
                 <div class="qanda">
                     <div class="jacordian">
