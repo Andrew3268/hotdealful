@@ -15,9 +15,10 @@ class BridgesController < ApplicationController
     @pagy, @posts = pagy(Post.all.order("created_at DESC"), items: 30)
   end
 
-  def share_facebook
+  def share_fb
     # @posts = Post.all.order('RANDOM()').limit(20) 
-    @posts = Post.all.order("created_at DESC").limit(25)
+    # @posts = Post.all.order("created_at DESC").limit(25)
+    @coupons = Coupon.all.order("created_at DESC")
   end
 
   def share_ko
@@ -62,7 +63,7 @@ class BridgesController < ApplicationController
     @coupons_top = Coupon.most_hit(100.day.ago, 5) 
     @latest_picks = Pick.last(1)
     @except_first_picks = Pick.order("id desc").offset(1).limit(4)
-    @our_pick = Coupon.all.order("created_at DESC")
+    @our_pick = Coupon.all.order("created_at DESC").limit(20)
     @by_rating = Coupon.all.order("created_at DESC").limit(5)
     @by_review = Coupon.all.order("created_at DESC").limit(5)
     @under_ten = Coupon.all.order("created_at DESC").limit(5)

@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   get 'bridges/delete_old_post'
   get 'bridges/under_deal'
   get 'bridges/half_deal'
-  get 'bridges/share_facebook'
+  get 'bridges/share_fb'
   get 'bridges/share_ko'
   get 'bridges/new_under_deal'
   get 'bridges/new_half_deal'

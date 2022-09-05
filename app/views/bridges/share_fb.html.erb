@@ -1,0 +1,32 @@
+<% if current_user && current_user.admin %>
+  <div class="wrap">
+    <div class="sf_box">
+      
+      <% @coupons.each do |coupon| %>
+          <% if coupon.c_spare_42.to_i >= 4 && coupon.c_spare_41.to_i >= 1000 %>
+            <% if coupon.c_promocode.present? %>
+              <div class="card clearfix">
+                
+                <div class="inner">
+                  <% promocode_price = 0 %>
+                  <% promocode_price =  coupon.c_was_price - (coupon.c_pct / 100) * coupon.c_was_price %>
+
+                  <em><%= coupon.c_title %></em><br>
+                  <em>Offer: <%= number_to_currency(promocode_price) %></em>
+                  <em> ( <%= number_to_percentage(coupon.c_pct, precision: 0) %> off )</em><br>
+                  <em>Was: <%= number_to_currency(coupon.c_was_price) %></em><br>
+                  <em>Promotion Code: <%= coupon.c_promocode %></em><br>
+                  <em>Link: <a href="<%= coupon.c_link %>"><%= coupon.c_link %></a></em><br>
+                  <span>---------------------------------------------</span><br>
+                </div>
+               </div>
+               
+            <% end %>
+          <% end %>
+        <% end %>
+
+      
+    </div>
+
+  </div>
+<% end %>
