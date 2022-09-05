@@ -8,7 +8,7 @@ class CouponsController < ApplicationController
     @pagy, @coupons = pagy(Coupon.all.order("created_at DESC"), items: 100)
     @coupons_top = Coupon.most_hit(1.day.ago, 10)
     @deals_top = Post.most_hit(1.day.ago, 10)
-    @our_pick = Coupon.all.order("created_at DESC").limit(20)
+    @our_pick = Coupon.all.order("created_at DESC")
     
     if params[:search]
       @search_term = params[:search]
