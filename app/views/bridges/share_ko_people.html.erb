@@ -8,6 +8,7 @@
         <% promocode_price =  coupon.c_was_price - (coupon.c_pct / 100) * coupon.c_was_price %> 
           <div style="padding:10px;">
             <p style="margin-bottom:-10px;"><%= coupon.c_title %></p><br>
+            <em><%= coupon.c_spare_42 %> / <%= number_with_precision(coupon.c_spare_41, precision: 0, separator: ',', delimiter: ',') %> global ratings</em><br>
             <em>할인코드 적용 가격: <%= number_to_currency(promocode_price) %></em>
             <em> ( <%= number_to_percentage(coupon.c_pct, precision: 0) %> off )</em><br>
             <em style="text-decoration:line-through;color:#9da3ab;">할인전 가격: <%= number_to_currency(coupon.c_was_price) %></em><br>

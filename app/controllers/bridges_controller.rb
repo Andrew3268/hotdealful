@@ -27,7 +27,7 @@ class BridgesController < ApplicationController
   end
 
   def share_ko_people
-    @coupons = Coupon.all.order("created_at DESC")
+    @coupons = Coupon.all.order("created_at DESC").limit(100)
   end
 
   # def new_index
