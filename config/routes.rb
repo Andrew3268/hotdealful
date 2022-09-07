@@ -33,6 +33,7 @@ Rails.application.routes.draw do
   get 'bridges/half_deal'
   get 'bridges/share_fb'
   get 'bridges/share_ko'
+  get 'bridges/share_ko_people'
   get 'bridges/new_under_deal'
   get 'bridges/new_half_deal'
   get 'bridges/delete_coupons'

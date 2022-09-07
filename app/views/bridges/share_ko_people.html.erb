@@ -1,0 +1,24 @@
+<% if current_user && current_user.admin %>
+  <div style="margin:100px;">
+  
+      
+      
+        <% @coupons.each do |coupon| %>              
+        <% promocode_price = 0 %>
+        <% promocode_price =  coupon.c_was_price - (coupon.c_pct / 100) * coupon.c_was_price %> 
+          <div style="padding:10px;">
+            <p style="margin-bottom:-10px;"><%= coupon.c_title %></p><br>
+            <em>할인코드 적용 가격: <%= number_to_currency(promocode_price) %></em>
+            <em> ( <%= number_to_percentage(coupon.c_pct, precision: 0) %> off )</em><br>
+            <em style="text-decoration:line-through;color:#9da3ab;">할인전 가격: <%= number_to_currency(coupon.c_was_price) %></em><br>
+            <em style="border:2px dotted;padding:5px;margin:10px 0;display:table-cell;">프로모션 코드: <%= coupon.c_promocode %></em>
+
+            <a target="_blank" href="<%= coupon.c_link %>" style="background-color:#08f;color:#fff;padding:5px 10px;border-radius:10px;display:table-cell;border:2px dotted #fff;">코드 사용하기</a>
+          </div>
+          <hr>
+        <% end %>
+      </div>
+
+      
+  </div>
+<% end %>

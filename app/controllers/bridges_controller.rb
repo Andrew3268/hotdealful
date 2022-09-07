@@ -26,6 +26,10 @@ class BridgesController < ApplicationController
     @coupons = Coupon.all.order("created_at DESC")
   end
 
+  def share_ko_people
+    @coupons = Coupon.all.order("created_at DESC")
+  end
+
   # def new_index
   #   # @pagy, @posts = pagy(Post.all.order("created_at DESC"), items:40)
   #   @coupons = Coupon.most_hit(1.day.ago, 10)

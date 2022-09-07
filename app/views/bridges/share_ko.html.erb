@@ -18,40 +18,6 @@
 
                   <em class="title"><%= coupon.c_title %></em>
                   
-                     <div class="star_write">
-                      <% if coupon.c_spare_42.present? %>
-                       <div class="rating_card">
-
-                          <% if coupon.c_spare_58 == 50 %>
-                            <div class="rating_box">
-                              <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i>
-                              <span>/ <%= number_with_precision(coupon.c_spare_41, precision: 0, separator: ',', delimiter: ',') %> +</span> 
-                            </div>
-                          <% elsif coupon.c_spare_58 == 45 %>
-                            <div class="rating_box">
-                              <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i>
-                              <span>/ <%= number_with_precision(coupon.c_spare_41, precision: 0, separator: ',', delimiter: ',') %> +</span> 
-                            </div>
-                          <% elsif coupon.c_spare_58 == 40 %>
-                            <div class="rating_box">
-                              <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i>
-                              <span>/ <%= number_with_precision(coupon.c_spare_41, precision: 0, separator: ',', delimiter: ',') %> +</span> 
-                            </div>
-                          <% elsif coupon.c_spare_58 == 35 %>
-                            <div class="rating_box">
-                              <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i><i class="material-icons">star_border</i>
-                              <span>/ <%= number_with_precision(coupon.c_spare_41, precision: 0, separator: ',', delimiter: ',') %> +</span> 
-                            </div>
-                          <% elsif coupon.c_spare_58 == 30 %>
-                            <div class="rating_box">
-                              <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i>
-                              <span>/ <%= number_with_precision(coupon.c_spare_41, precision: 0, separator: ',', delimiter: ',') %> +</span> 
-                            </div>
-                          <% end %>
-                        </div>
-                      <% end %>
-                    </div> 
-
                   <em>현재 가격: <%= number_to_currency(promocode_price) %></em>
                   <em> ( <%= number_to_percentage(coupon.c_pct, precision: 0) %> off )</em><br>
                   <em>할인전 가격: <%= number_to_currency(coupon.c_was_price) %></em><br>
