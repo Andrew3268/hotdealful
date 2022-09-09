@@ -6,7 +6,9 @@
         <% @coupons.each do |coupon| %>              
         <% promocode_price = 0 %>
         <% promocode_price =  coupon.c_was_price - (coupon.c_pct / 100) * coupon.c_was_price %> 
-          <div style="padding:10px;">
+
+          <div style="padding:10px;width:40%;">
+            <img src="<%= coupon.c_image %>" style="width:100px;height:100px;object-fit:contain;">
             <p style="margin-bottom:-10px;"><%= coupon.c_title %></p><br>
             <em><%= coupon.c_spare_42 %> / <%= number_with_precision(coupon.c_spare_41, precision: 0, separator: ',', delimiter: ',') %> global ratings</em><br>
             <em>할인코드 적용 가격: <%= number_to_currency(promocode_price) %></em>
