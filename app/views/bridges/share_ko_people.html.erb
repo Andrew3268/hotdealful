@@ -35,9 +35,9 @@
               <em>할인코드 적용 가격: <%= number_to_currency(promocode_price) %></em>
               <em> ( <%= number_to_percentage(coupon.c_pct, precision: 0) %> off )</em><br>
               <em style="text-decoration:line-through;color:#9da3ab;">할인전 가격: <%= number_to_currency(coupon.c_was_price) %></em><br>
-              <em style="border:2px dotted;padding:5px;margin:10px 0;display:table-cell;">프로모션 코드: <%= coupon.c_promocode %></em>
+              <em style="border:2px dotted;padding:5px;margin:10px 10px 10px 0;display:table-cell;">프로모션 코드: <%= coupon.c_promocode %></em>
+              <a target="_blank" href="https://www.offtheprice.com/coupons/<%=coupon.id %>" style="background-color:#08f;color:#fff;padding:5px 10px;border-radius:10px;display:table-cell;border:2px dotted #fff;">코드 사용하기</a>
             </td>
-            <td style="border: 1px solid #dddddd;padding:8px;width:14%;"><a target="_blank" href="https://www.offtheprice.com/coupons/<%=coupon.id %>" style="background-color:#08f;color:#fff;padding:5px 10px;border-radius:10px;display:table-cell;border:2px dotted #fff;">코드 사용하기</a></td>
           </tr>
         </table>
       <% end %>
