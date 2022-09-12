@@ -26,20 +26,22 @@
       <% @coupons.each do |coupon| %>              
       <% promocode_price = 0 %>
       <% promocode_price =  coupon.c_was_price - (coupon.c_pct / 100) * coupon.c_was_price %> 
-        <table style="border-collapse:collapse;width:98%;margin:0 auto;">
-          <tr>
-            <td style="border: 1px solid #dddddd;padding:8px;width:10%;"><img src="<%= coupon.c_image %>" style="width:100px;height:100px;object-fit:contain;"></td>
-            <td style="border: 1px solid #dddddd;padding:8px;">
-              <p style="margin-bottom:-10px;"><%= coupon.c_title %></p><br>
-              <em><%= coupon.c_spare_42 %> / <%= number_with_precision(coupon.c_spare_41, precision: 0, separator: ',', delimiter: ',') %> global ratings</em><br>
-              <em>할인코드 적용 가격: <%= number_to_currency(promocode_price) %></em>
-              <em> ( <%= number_to_percentage(coupon.c_pct, precision: 0) %> off )</em><br>
-              <em style="text-decoration:line-through;color:#9da3ab;">할인전 가격: <%= number_to_currency(coupon.c_was_price) %></em><br>
-              <em style="border:2px dotted;padding:5px;margin:10px 10px 10px 0;display:table-cell;">프로모션 코드: <%= coupon.c_promocode %></em>
-              <a target="_blank" href="https://www.offtheprice.com/coupons/<%=coupon.id %>" style="background-color:#08f;color:#fff;padding:5px 10px;border-radius:10px;display:table-cell;border:2px dotted #fff;">코드 사용하기</a>
-            </td>
-          </tr>
-        </table>
+        <% if coupon.c_spare_42.to_i >= 3 && coupon.c_spare_41.to_i >= 300 %>
+          <table style="border-collapse:collapse;width:98%;margin:0 auto;">
+            <tr>
+              <td style="border: 1px solid #dddddd;padding:8px;width:10%;"><img src="<%= coupon.c_image %>" style="width:100px;height:100px;object-fit:contain;"></td>
+              <td style="border: 1px solid #dddddd;padding:8px;">
+                <p style="margin-bottom:-10px;"><%= coupon.c_title %></p><br>
+                <em><%= coupon.c_spare_42 %> / <%= number_with_precision(coupon.c_spare_41, precision: 0, separator: ',', delimiter: ',') %> global ratings</em><br>
+                <em>할인코드 적용 가격: <%= number_to_currency(promocode_price) %></em>
+                <em> ( <%= number_to_percentage(coupon.c_pct, precision: 0) %> off )</em><br>
+                <em style="text-decoration:line-through;color:#9da3ab;">할인전 가격: <%= number_to_currency(coupon.c_was_price) %></em><br>
+                <em style="border:2px dotted;padding:5px;margin:10px 10px 10px 0;display:table-cell;">프로모션 코드: <%= coupon.c_promocode %></em>
+                <a target="_blank" href="https://www.offtheprice.com/coupons/<%=coupon.id %>" style="background-color:#08f;color:#fff;padding:5px 10px;border-radius:10px;display:table-cell;border:2px dotted #fff;">코드 사용하기</a>
+              </td>
+            </tr>
+          </table>
+        <% end %>
       <% end %>
     </div>
 <% end %>
