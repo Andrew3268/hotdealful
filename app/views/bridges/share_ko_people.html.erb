@@ -26,7 +26,6 @@
       <% @coupons.each do |coupon| %>              
       <% promocode_price = 0 %>
       <% promocode_price =  coupon.c_was_price - (coupon.c_pct / 100) * coupon.c_was_price %> 
-        <% if coupon.c_spare_42.to_i >= 3 && coupon.c_spare_41.to_i >= 200 %>
           <table style="border-collapse:collapse;width:98%;margin:0 auto;">
             <tr>
               <td style="border: 1px solid #dddddd;padding:8px;width:10%;"><img src="<%= coupon.c_image %>" style="width:100px;height:100px;object-fit:contain;"></td>
