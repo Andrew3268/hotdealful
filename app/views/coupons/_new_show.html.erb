@@ -293,6 +293,7 @@
                     <em class="show_price"><%= number_to_currency(@coupon.c_is_price) %>.</em>
                   <% end %>
                   ⭐Rating:<%= number_with_delimiter(@coupon.c_spare_42) %> / 5.0, 📃Reviews: <%= number_with_precision(@coupon.c_spare_41, precision: 0, separator: ',', delimiter: ',') %> global ratings
+                  <p><%= @coupon.c_link %></p>
                 </p>
               <% end %>
 
