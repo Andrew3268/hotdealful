@@ -81,8 +81,71 @@
 
 
 
+#timer {
+  width:80%;
+  margin:0 auto;
+  color: #eeeeee;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: .7em;
+  letter-spacing: 3px;
+}
+#timer .under span{font-size:8px;}
+
+.days, .hours, .minutes, .seconds{float:left;width:23%;margin:1%;padding:5px;border-radius:5px;font-size:10px;}
+
+.days {
+  background: #EF2F3C;
+}
+
+.hours {
+  background: #eeeeee;
+  color: #183059;
+}
+
+.minutes {
+  background: #276FBF;
+}
+
+.seconds {
+  background: #F0A202;
+}
+
+.numbers {
+  color:  #183059;
+  font-size:2em;
+  text-align: center;
+}
+
+.white {
+  position: absolute;
+  background:  #eeeeee;
+  height: 85px;
+  width: 75px;
+  left: 30%;
+  top: 2%;
+}
+
+.red {
+  position: absolute;
+  background:  #EF2F3C;
+  left: 18%;
+  top: 9%;
+  height: 65px;
+  width: 70px;
+ 
+}
+
+.blue {
+  position: absolute;
+  background:  #276FBF;
+  height: 80px;
+  width: 80px;
+  left: 60%;
+  top: 5%;
 
 
+}
 
 
 
