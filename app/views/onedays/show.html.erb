@@ -1,0 +1,506 @@
+<div class="web_box clearfix">
+  <div class="left">
+    <%= render '/shared/left' %>
+  </div>
+
+  <div class="right">
+
+    <header><%= render 'onedays/header_show' %></header>
+    <div class="show-wrap">
+      
+
+        <div class="container clearfix">
+
+          <div class="content-section clearfix">
+            <% if current_user && current_user.admin %>
+              <div class="sharing_btn">
+                <a href="/" data-turbolinks="false">Back</a>
+                <%= link_to 'New oneday', new_oneday_path %>
+                <%= link_to 'Edit', edit_oneday_path(@oneday) %>
+              </div>
+            <% end %>
+
+            <!-- for Mobile -->
+            <div class="title_mobile">
+              <h2 class="line-break-02">
+                <% promo_price = 0 %>
+                <% promo_price = (@oneday.o_pct.to_f / 100) * @oneday.o_was_price %>
+                <em class="title_bold">Amazon</em> has <em class="title_bold">"<%= @oneday.o_title %>"</em> on sale for
+                <% if @oneday.o_promocode.present? %>
+                  <% pct_oneday = 0 %>
+                  <% pct_oneday = (@oneday.o_pct_coupon.to_f / 100) * @oneday.o_was_price %>
+                  <% total_price = 0 %>
+                  <% total_price = @oneday.o_was_price - promo_price %>
+                  <% total_price_pct_oneday = total_price - pct_oneday %>
+                  <% total_price_cash_oneday = total_price - @oneday.o_cash_coupon.to_f %>
+
+                  <% if @oneday.o_pct_coupon.present? || @oneday.o_cash_coupon.present? %>
+                    <% if @oneday.o_pct_coupon.present? %>
+                      <em class="show_price"><%= number_to_currency(total_price_pct_oneday) %> after Promo Code: <em class="show_code"><%= @oneday.o_promocode %>(<%= number_to_percentage(@oneday.o_pct, precision: 0) %> off)</em> & <em class="show_code">Clipping oneday(<%= number_to_percentage(@oneday.o_pct_coupon, precision: 0) %> off)</em></em>
+                    <% else %>
+                      <em class="show_price"><%= number_to_currency(total_price_cash_oneday) %> after Promo Code: <em class="show_code"><%= @oneday.o_promocode %>(<%= number_to_percentage(@oneday.o_pct, precision: 0) %> off)</em> & <em class="show_code">Clipping oneday(<%= number_to_currency(@oneday.o_cash_coupon, precision: 0) %> off)</em></em>
+                    <% end %>
+                  <% else %>
+                    <!-- only for promotion code -->
+                    <em class="show_price"><%= number_to_currency(total_price.to_f) %> after Promo Code: <em class="show_code"><%= @oneday.o_promocode %>(<%= number_to_percentage(@oneday.o_pct, precision: 0) %> off)</em></em>
+                  <% end %>
+                  <em class="shipping">(Shipping is free. w/ Prime or on $25+ orders.)</em>
+                <% else %>
+                  <em class="show_price"><%= number_to_currency(@oneday.o_is_price) %>.</em> Shipping is free. w/ Prime or on $25+ orders.
+                <% end %>
+
+              </h2>
+
+              <br />
+              <% if current_user && current_user.admin %>
+                <div class="edit_desc">
+                  <!-- for decription -->
+                  <p>
+                    <span>On</span> sale for
+                    <% if @oneday.o_promocode.present? %>
+                      <% if @oneday.o_pct_coupon.present? || @oneday.o_cash_coupon.present? %>
+                        <% if @oneday.o_pct_coupon.present? %>
+                          <em class="show_price"><%= number_to_currency(total_price_pct_oneday) %> after Promo Code: <em class="show_code"><%= @oneday.o_promocode %>(<%= number_to_percentage(@oneday.o_pct, precision: 0) %> off)</em> & Clipping oneday(<%= number_to_percentage(@oneday.o_pct_coupon, precision: 0) %> off)</em>
+                        <% else %>
+                          <em class="show_price"><%= number_to_currency(total_price_cash_oneday) %> after Promo Code: <em class="show_code"><%= @oneday.o_promocode %>(<%= number_to_percentage(@oneday.o_pct, precision: 0) %> off)</em> & Clipping oneday(<%= number_to_currency(@oneday.o_cash_coupon, precision: 0) %> off)</em>
+                        <% end %>
+                      <% else %>
+                        <!-- only for promotion code -->
+                        <em class="show_price"><%= number_to_currency(total_price.to_f) %> after Promo Code: <em class="show_code"><%= @oneday.o_promocode %>(<%= number_to_percentage(@oneday.o_pct, precision: 0) %> 0ff)</em></em>
+                      <% end %>
+                    <% else %>
+                      <em class="show_price"><%= number_to_currency(@oneday.o_is_price) %>.</em>
+                    <% end %>
+                    // Customer Reviews: <%= number_with_delimiter(@oneday.o_spare_42) %> / <%= number_with_precision(@oneday.o_review_count, precision: 0, separator: ',', delimiter: ',') %> global ratings. 
+                  </p>
+                </div>
+              <% end %>
+            </div>
+            <!-- End Mobile -->
+
+            <!-- For PC -->
+            <div class="image-box clearfix">
+              <img src="<%= @oneday.o_image %>" alt="<%= @oneday.o_title %>" title="<%= @oneday.o_title %>" />
+            </div>
+
+            <div class="inner-box clearfix">
+              
+
+              <div class="title">
+                <h2 class="line-break-02">
+                  <% promo_price = 0 %>
+                  <% promo_price = (@oneday.o_pct.to_f / 100) * @oneday.o_was_price %>
+                  Amazon has <em>"<%= @oneday.o_title %>"</em> on sale for
+                  
+
+                  <% if @oneday.o_promocode.present? %>
+                    <% total_price = 0 %>
+                    <% total_price = @oneday.o_was_price - promo_price %>
+                    <em class="price"><%= number_to_currency(total_price) %>.</em> Shipping is free. w/ Prime or on $25+ orders.
+                  <% else %>
+                    <em class="price"><%= number_to_currency(@oneday.o_is_price) %>.</em> Shipping is free. w/ Prime or on $25+ orders.
+                  <% end %>
+                </h2>
+
+
+                <% if @oneday.o_rating.present? %>
+                  <div class="rating_box">
+                    <% if current_user && current_user.admin %><%= @oneday.o_rating %> <%= @oneday.o_review_count %>+<% end %>
+                  </div>            
+                <% end %>
+
+              </div>
+
+
+              <h2 class="summary_title">
+                SUMMARY<i class="fa fa-amazon"></i>
+
+                <p class="posted_date">Found on <%= @oneday.created_at.strftime("#{@oneday.created_at.day.ordinalize} %B %Y") %></p>
+                <!-- <p class="posted_date">Vaild until: <span><%= @oneday.o_spare_01 %>/<%= @oneday.o_spare_02 %>/2022</span></p> -->
+
+                  <div class="more_detail clearfix">
+                    <div class="detail_card cleafix">
+                     
+                   
+                        <% if @oneday.o_pct_coupon.present? || @oneday.o_cash_coupon.present? %>
+                          <div class="verified_check detail_box">
+                            <p>Code & oneday</p>
+                            <span class="verified"><!-- <img class="coupon_check" src="<%=asset_path 'coupon_check.png' %>" alt=" verified oneday&code" /> --><i class="material-icons">check_box</i> <em>Verified</em></span>
+                          </div>
+                        <% else %>
+                          <div class="verified_check detail_box">
+                          <p>Code</p>
+                          <span class="verified"><!-- <img class="coupon_check" src="<%=asset_path 'coupon_check.png' %>" alt=" verified oneday&code" /> --> <i class="material-icons">check_box</i> <em>Verified</em></span>
+                        </div>
+                        <% end %>
+
+
+                        <div class="detail_box rating_review">
+                          <p>Customer Reviews</p>
+                          <% if @oneday.o_rating.present? %>
+                             <div class="rating_card">
+
+                                <% if @oneday.o_rating_code == 50 %>
+                                  <div class="rating_box">
+                                    <!-- <img src="<%=asset_path 'star_5.png' %>" alt="star_rating" style="width:40%"> -->
+                                    <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i>
+                                    <span>/ <%= number_with_precision(@oneday.o_review_count, precision: 0, separator: ',', delimiter: ',') %> +</span> 
+                                  </div>
+                                <% elsif @oneday.o_rating_code == 45 %>
+                                  <div class="rating_box">
+                                    <!-- <img src="<%=asset_path 'star_45.png' %>" alt="star_rating" style="width:40%"> -->
+                                    <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i>
+                                    <span>/ <%= number_with_precision(@oneday.o_review_count, precision: 0, separator: ',', delimiter: ',') %> +</span> 
+                                  </div>
+                                <% elsif @oneday.o_rating_code == 40 %>
+                                  <div class="rating_box">
+                                    <!-- <img src="<%=asset_path 'star_4.png' %>" alt="star_rating" style="width:40%"> -->
+                                    <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i>
+                                    <span>/ <%= number_with_precision(@oneday.o_review_count, precision: 0, separator: ',', delimiter: ',') %> +</span> 
+                                  </div>
+                                <% elsif @oneday.o_rating_code == 35 %>
+                                  <div class="rating_box">
+                                    <!-- <img src="<%=asset_path 'star_35.png' %>" alt="star_rating" style="width:30%"> -->
+                                    <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i><i class="material-icons">star_border</i>
+                                    <span>/ <%= number_with_precision(@oneday.o_review_count, precision: 0, separator: ',', delimiter: ',') %> +</span> 
+                                  </div>
+                                <% elsif @oneday.o_rating_code == 30 %>
+                                  <div class="rating_box">
+                                    <!-- <img src="<%=asset_path 'star_3.png' %>" alt="star_rating" style="width:30%"> -->
+                                    <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i>
+                                    <span>/ <%= number_with_precision(@oneday.o_review_count, precision: 0, separator: ',', delimiter: ',') %> +</span> 
+                                  </div>
+                                <% end %>
+                              </div>
+                            <% end %>
+                        </div>
+                        
+                    </div><!-- detail_card -->
+
+                  </div><!-- more_detail -->  
+
+                   <div class="dday_box">
+                     <div id="timer" class="clearfix">
+                        <div class="days under"><div id="days" class="numbers "> </div><span>days</span></div> 
+                        <div class="hours under"><div id="hours" class="numbers"> </div><span>hours</span></div> 
+                        <div class="minutes under"><div id="minutes" class="numbers"> </div><span>minutes</span></div> 
+                        <div class="seconds under"><div id="seconds" class="numbers"> </div><span>seconds</span></div> 
+                      </div>
+
+                      <script type="text/javascript">
+                        const year = new Date().getFullYear();
+                        //Promotion End Date // Shoud add +1 hour from end date(PDT)
+                        const myDate = new Date('<%= @oneday.o_month %> <%= @oneday.o_day %>, <%= @oneday.o_year %> 15:59:59'); 
+                        console.log(myDate);
+
+                        // countdown
+                        let timer = setInterval(function() {
+
+                          // get today's date (Start Date)
+                          const today = new Date().getTime();
+                          
+                          // get the difference
+                          const diff = myDate - today;
+
+                          // math
+                          let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                          let hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                          let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                          let seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                          // display
+                          document.getElementById("days").innerHTML=days
+                          document.getElementById("hours").innerHTML=hours
+                          document.getElementById("minutes").innerHTML=minutes
+                          document.getElementById("seconds").innerHTML=seconds
+
+                        }, 1);
+                      </script>
+                    </div><!-- dday_box -->
+               
+              </h2>
+             
+              <div class="receipt clearfix">
+                <!-- Button Section - Text(left) -->
+                <div class="receipt__grid1">
+                  <p>List Price</p>
+                  <% if @oneday.o_promocode.present? %>
+                    <p>Code Savings<em><%= number_to_percentage(@oneday.o_pct, precision: 0) %> off</em></p>            
+                    <!-- <p>Promotion Code</p> -->
+                  <% else %>
+                    <% hotdeal_pct = 0 %>
+                    <% hotdeal_pct =  (@oneday.o_was_price - @oneday.o_is_price) / @oneday.o_was_price * 100 %>
+                    <p>Discount<em><%= number_to_percentage(hotdeal_pct, precision: 0) %> off</em></p>            
+                  <% end %>
+
+                  <% if @oneday.o_pct_coupon.present? || @oneday.o_cash_coupon.present? %>
+                    <% if @oneday.o_pct_coupon.present? %>
+                      <p>oneday Savings<em><%= number_to_percentage(@oneday.o_pct_coupon, precision: 0) %> off</em></p>
+                    <% else %>
+                      <p>oneday Savings<em><%= number_to_currency(@oneday.o_cash_coupon, precision: 0) %> off</em></p>
+                    <% end %>
+                    
+                  <% end %>
+
+                  <hr>
+
+                  <p class="total_text">Total</p>
+                </div>
+
+                <!-- Summary Section - Price(right) -->
+                <div class="receipt__grid2">
+                  <p><%= number_to_currency(@oneday.o_was_price) %></p>
+                  <% if @oneday.o_promocode.present? %>
+                    <% promo_price = 0 %>
+                    <% promo_price = (@oneday.o_pct.to_f / 100) * @oneday.o_was_price %>
+                    <p>- <%= number_to_currency(promo_price) %></p>
+                    <!-- <p class="p-code"><%= @oneday.o_promocode %></p> -->
+                  <% else %>
+                    <% sale_price = 0 %>
+                    <% sale_price = ( hotdeal_pct / 100 ) * @oneday.o_was_price %>
+                    <p>- <%= number_to_currency(sale_price) %></p>  
+                  <% end %>
+
+                  <% if @oneday.o_pct_coupon.present? || @oneday.o_cash_coupon.present? %>
+                    <% pct_oneday = 0 %>
+                    <% pct_oneday = (@oneday.o_pct_coupon.to_f / 100) * @oneday.o_was_price %>
+                    <% if @oneday.o_pct_coupon.present? %>
+                      <p>- <%= number_to_currency(pct_oneday) %></p>
+                    <% else %>
+                      <p>- <%= number_to_currency(@oneday.o_cash_coupon) %></p>
+                    <% end %>
+                  <% end %>
+
+
+                  <hr>
+                  <!-- Total Price -->
+                  <% if @oneday.o_pct_coupon.present? || @oneday.o_cash_coupon.present? %>
+                    <% if @oneday.o_pct_coupon.present? %>
+                      <% if @oneday.o_promocode.present? %>
+                        <% total_price = 0 %>
+                        <% total_price = @oneday.o_was_price - promo_price %>
+                        <% total_price_pct_oneday = total_price - pct_oneday %>
+                        <p class="total_price "><%= number_to_currency(total_price_pct_oneday) %></p> 
+                      <% else %>
+                        <p class="total_price "><%= number_to_currency(@oneday.o_is_price) %></p> 
+                      <% end %>
+
+                    <% else %>
+                       <% if @oneday.o_promocode.present? %>
+                        <% total_price = 0 %>
+                        <% total_price = @oneday.o_was_price - promo_price %>
+                        <% total_price_cash_oneday = total_price - @oneday.o_cash_coupon %>
+                        <p class="total_price "><%= number_to_currency(total_price_cash_oneday) %></p> 
+                      <% else %>
+                        <p class="total_price "><%= number_to_currency(@oneday.o_is_price) %></p> 
+                      <% end %>                    
+                    <% end %>
+
+                  <% else %>
+                    <% if @oneday.o_promocode.present? %>
+                      <% total_price = 0 %>
+                      <% total_price = @oneday.o_was_price - promo_price %>
+                      <p class="total_price "><%= number_to_currency(total_price) %></p> 
+                    <% else %>
+                      <p class="total_price "><%= number_to_currency(@oneday.o_is_price) %></p> 
+                    <% end %>
+                  <% end %>
+                  <!-- Total Price End-->       
+                </div>
+              </div>
+
+              <% if current_user && current_user.admin %>
+                <!-- for instagram feed -->
+                <p>
+                  "<%= @oneday.o_title %>" on sale for
+                  <% if @oneday.o_promocode.present? %>
+                    <% if @oneday.o_pct_coupon.present? || @oneday.o_cash_coupon.present? %>
+                      <% if @oneday.o_pct_coupon.present? %>
+                        <em class="show_price"><%= number_to_currency(total_price_pct_oneday) %> after Promo Code: <em class="show_code"><%= @oneday.o_promocode %>(<%= number_to_percentage(@oneday.o_pct, precision: 0) %> off)</em> & Clipping oneday(<%= number_to_percentage(@oneday.o_pct_coupon, precision: 0) %> off)</em>
+                      <% else %>
+                        <em class="show_price"><%= number_to_currency(total_price_cash_oneday) %> after Promo Code: <em class="show_code"><%= @oneday.o_promocode %>(<%= number_to_percentage(@oneday.o_pct, precision: 0) %> off)</em> & Clipping oneday(<%= number_to_currency(@oneday.o_cash_coupon, precision: 0) %> off)</em>
+                      <% end %>
+                    <% else %>
+                      <!-- only for promotion code -->
+                      <em class="show_price"><%= number_to_currency(total_price.to_f) %> after Promo Code: <em class="show_code"><%= @oneday.o_promocode %>(<%= number_to_percentage(@oneday.o_pct, precision: 0) %> 0ff)</em></em>
+                    <% end %>
+                  <% else %>
+                    <em class="show_price"><%= number_to_currency(@oneday.o_is_price) %>.</em>
+                  <% end %>
+                  ⭐Rating:<%= number_with_delimiter(@oneday.o_spare_42) %> / 5.0, 📃Reviews: <%= number_with_precision(@oneday.o_review_count, precision: 0, separator: ',', delimiter: ',') %> global ratings
+                  <p><%= @oneday.o_link %></p>
+                </p>
+              <% end %>
+
+            
+
+            <a href="#" class="link js-open-modal" data-modal="promotion">Get Promotion Code</a>
+            <div class="code_modal js-modal" data-modal="promotion">
+               <p class="modal__cross js-modal-close">close</p>
+               <div class="code_box">
+                  <p>Promo Code</p>  
+                  <div class="copy-text">
+                    <input type="text" class="text" value="<%= @oneday.o_promocode %>" readonly>
+                    <button><i class="material-icons">content_copy</i></button>
+                  </div>
+                </div>
+                <br />
+                <div class="mobal_inner_btn">
+                  <% btn_price = @oneday.o_was_price.to_f - total_price.to_f %>
+                  <% btn_pct_price = @oneday.o_was_price.to_f - total_price_pct_oneday.to_f %>
+                  <% btn_cash_price = @oneday.o_was_price.to_f - total_price_cash_oneday.to_f %>
+
+                  <% if @oneday.o_pct_coupon.present? || @oneday.o_cash_coupon.present? %>
+                    <% if @oneday.o_pct_coupon.present? %>
+                      <a target="_blank" class="amz_btn buy_now" href="<%= @oneday.o_link %>">Go to Amazon & Save <%= number_to_currency(btn_pct_price) %> 
+                      Now!</a>
+                    <% else %>
+                      <a target="_blank" class="amz_btn buy_now" href="<%= @oneday.o_link %>">Go to Amazon & Save <%= number_to_currency(btn_cash_price) %>
+                       Now!</a>
+                    <% end %>
+                  <% else %>
+                    <a target="_blank" class="amz_btn buy_now" href="<%= @oneday.o_link %>">Go to Amazon & Save <%= number_to_currency(btn_price) %> Now!</a>
+                  <% end %>
+                </div>
+
+                
+                  <div class="modal_notice">
+                    <ul>
+                      <% if @oneday.o_spare_01.present? %>
+                        <li>This promo code is valid until <%= @oneday.o_spare_01 %> / <%= @oneday.o_spare_02 %> / 2022 11:59PM PDT or while 
+                        supplies last.</li>
+                      <% else %>
+                        <li>This promo code will expire soon.</li>
+                      <% end %>
+                    </ul>
+                  </div>
+                
+
+                <div class="qanda">
+                    <div class="jacordian">
+                      <p>Q & A</p>
+                      <div class="tab">
+                        <input id="tab-one" type="checkbox" name="tabs">
+                        <label for="tab-one">Why is my promo code invalid?</label>
+                        <div class="tab-content">
+                          <!-- <p>It means that the code has either expired or the promotional product has been exhausted.</p> -->
+                          <p>It means that the code has expired or the promotional product has been exhausted.</p>
+                        </div>
+                      </div>
+                      <div class="tab">
+                        <input id="tab-two" type="checkbox" name="tabs">
+                        <label for="tab-two">How to redeem a promo code?</label>
+                        <div class="tab-content">
+                          <ul>
+                            <li>Copy promo code and click Go go Amazon button.</li>
+                            <li>Add the item to the shopping cart.</li>
+                            <li>Enter the promotion code in the Gift Cards and Promotional Codes section exactly as specified. Select Apply. Don't add spaces before, inside of, or after the promotion code.</li>
+                            <li>Proceed to check out. Verify that the promotion code was applied successfully by viewing the price on the final checkout page before placing your order.</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <!-- <div class="tab">
+                        <input id="tab-three" type="checkbox" name="tabs">
+                        <label for="tab-three">Label Three</label>
+                        <div class="tab-content">
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
+                        </div>
+                      </div> -->
+                    </div>
+                </div>
+            </div><!-- code_modal -->
+            <div class="overlay js-modal-overlay"></div>
+
+
+              <!-- Button Section -->
+
+              <div class="btn clearfix">
+                <% if @oneday.o_promocode.present? %>
+                  <% btn_price = @oneday.o_was_price.to_f - total_price.to_f %>
+                  <% btn_pct_price = @oneday.o_was_price.to_f - total_price_pct_oneday.to_f %>
+                  <% btn_cash_price = @oneday.o_was_price.to_f - total_price_cash_oneday.to_f %>
+
+               
+              
+                  <% else %>
+                    <!-- <a class="amz_btn" href="/onedays">Back</a> -->
+                    <a class="amz_btn buy_now" href="<%= @oneday.o_link %>">Accept an offer</a>
+                  <% end %>
+              </div>
+
+              <% if current_user && current_user.admin %>
+                <div class="admin">
+                  <%= link_to 'Edit', edit_oneday_path(@oneday) %> |
+                  <%= link_to 'Back', onedays_path %> |
+                  <%= link_to 'Destroy', @oneday, method: :delete, data: { confirm: 'Are you sure?' } %>
+                </div>
+              <% end %>
+
+            </div>
+            <!-- End PC -->
+          </div><!-- ./content-section-->
+
+         
+
+          <div class="notice">
+            <ul>
+              <li>Price, ratings, and global reviews may change after post published date.</li>
+              <li>This product belongs to Amazon.com.</li>
+              
+              <li>"Offtheprice's" aim is to provide convenience to users.</li>
+              <li>The source is copyrighted by Amazon.com.</li>
+
+              <li>We hand-picked our products to provide high quality products</li>
+
+              <li>"Offtheprice" is a participant in the Amazon Services LLC Associates Program & the Amazon EU Associates Programme, an affiliate advertising program designed to provide a means for us to earn fees by linking to Amazon.com,</li>
+            </ul>
+          </div>
+          
+     
+        </div><!--./container-->
+
+      
+      
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- Copy Code -->
+<script type="text/javascript">
+  let copyText = document.querySelector(".copy-text");
+  copyText.querySelector("button").addEventListener("click",function(){
+    let input = copyText.querySelector("input.text");
+    input.select();
+    document.execCommand("copy");
+    copyText.classList.add("active");
+    window.getSelection().removeAllRanges();
+    setTimeout(function(){
+      copyText.classList.remove("active");
+    },2500);
+  });
+</script>
+
+<!-- promotion code modal -->
+<script type="text/javascript">$('.js-open-modal').click(function(event) {
+   event.preventDefault();
+   
+   var modalName = $(this).attr('data-modal');
+   var modal = $('.js-modal[data-modal="' + modalName + '"]');
+   
+   modal.addClass('is-show');
+   $('.js-modal-overlay').addClass('is-show')
+  });
+
+  $('.js-modal-close').click(function() {
+     $(this).parent('.js-modal').removeClass('is-show');
+     $('.js-modal-overlay').removeClass('is-show');
+  });
+     
+  $('.js-modal-overlay').click(function() {
+     $('.js-modal.is-show').removeClass('is-show');
+     $(this).removeClass('is-show');
+  })
+</script>

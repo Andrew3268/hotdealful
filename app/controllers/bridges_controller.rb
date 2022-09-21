@@ -71,6 +71,8 @@ class BridgesController < ApplicationController
     @by_rating = Coupon.all.order("created_at DESC").limit(5)
     @by_review = Coupon.all.order("created_at DESC").limit(5)
     @under_ten = Coupon.all.order("created_at DESC").limit(5)
+    @onedays = Oneday.all.order("created_at DESC")
+    
   end
 
   def deal_section
@@ -78,6 +80,15 @@ class BridgesController < ApplicationController
     @deals_top = Post.most_hit(3.day.ago, 10)
     @coupons_top = Coupon.most_hit(100.day.ago, 10) 
   end
+
+  def onedays
+    @onedays = Oneday.all.order("created_at DESC")
+  end
+
+  def branch
+    
+  end
+
 
 
 end

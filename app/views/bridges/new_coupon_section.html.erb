@@ -108,11 +108,15 @@
               <%= text_field_tag :search, @search_term, placeholder: "Search....", class: 'search-input' %>
             <% end %> 
           </div> -->
-        <%= render '/homes/limited' %>
+         <div class="oneday_wrap">
+           <%= render 'bridges/limited' %>
+        </div>
+
+
+
 
         <%= render '/coupons/our_pick' %>
       
-
         <div class="pic_deal clearfix">
           <%= render '/homes/new_coupons' %>
         </div>
