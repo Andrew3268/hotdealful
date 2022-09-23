@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_18_084435) do
+ActiveRecord::Schema.define(version: 2022_09_21_060731) do
 
   create_table "coupons", force: :cascade do |t|
     t.integer "user_id"
@@ -343,6 +343,40 @@ ActiveRecord::Schema.define(version: 2022_09_18_084435) do
     t.integer "hits", default: 1, null: false
     t.index ["average_time"], name: "index_punches_on_average_time"
     t.index ["punchable_type", "punchable_id"], name: "punchable_index"
+  end
+
+  create_table "savings", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "s_title"
+    t.string "s_link"
+    t.string "s_image"
+    t.string "s_promocode"
+    t.float "s_rating"
+    t.integer "s_rating_code"
+    t.float "s_review_count"
+    t.decimal "s_is_price"
+    t.decimal "s_was_price"
+    t.decimal "s_pct"
+    t.decimal "s_cash_coupon"
+    t.decimal "s_pct_coupon"
+    t.text "s_description"
+    t.string "s_spare_01"
+    t.string "s_spare_02"
+    t.string "s_spare_03"
+    t.string "s_spare_04"
+    t.string "s_spare_05"
+    t.float "s_spare_41"
+    t.float "s_spare_42"
+    t.integer "s_spare_56"
+    t.integer "s_spare_57"
+    t.decimal "s_spare_61"
+    t.decimal "s_spare_62"
+    t.datetime "s_spare_66"
+    t.datetime "s_spare_67"
+    t.date "s_spare_71"
+    t.date "s_spare_72"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "search_entries", force: :cascade do |t|

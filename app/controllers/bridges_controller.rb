@@ -85,10 +85,5 @@ class BridgesController < ApplicationController
     @onedays = Oneday.all.order("created_at DESC")
   end
 
-  def branch
-    
-  end
-
-
 
 end

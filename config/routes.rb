@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :savings
   resources :onedays
   # root to: 'search_entries#index'
   get 'search_entries/index', as: 'search'

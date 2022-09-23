@@ -1,0 +1,8 @@
+<% if current_user && current_user.admin %>
+  <div class="wrap">
+    <h1>Editing Saving</h1>
+    <%= render 'form', saving: @saving %>
+    <%= link_to 'Show', @saving %> |
+    <%= link_to 'Back', savings_path %>
+  </div>
+<% end %>

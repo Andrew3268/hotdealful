@@ -9,4 +9,6 @@ class User < ApplicationRecord
   has_many :picks
   has_many :homes
   has_many :deals
+  has_many :onedays
+  has_many :savings
 end

@@ -1,5 +1,6 @@
 class OnedaysController < ApplicationController
   before_action :set_oneday, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, except: [:index, :show, :hashtags]
 
   # GET /onedays or /onedays.json
   def index
@@ -12,7 +13,8 @@ class OnedaysController < ApplicationController
 
   # GET /onedays/new
   def new
-    @oneday = Oneday.new
+    # @oneday = Oneday.new
+    @oneday = current_user.onedays.build
   end
 
   # GET /onedays/1/edit
@@ -21,7 +23,8 @@ class OnedaysController < ApplicationController
 
   # POST /onedays or /onedays.json
   def create
-    @oneday = Oneday.new(oneday_params)
+    # @oneday = Oneday.new(oneday_params)
+    @oneday = current_user.onedays.build(oneday_params)
 
     respond_to do |format|
       if @oneday.save
