@@ -238,7 +238,7 @@
 .n_coupon_wrap{}
 .n_coupon_wrap .post_search_filter{margin:-15px 0 20px 0;}
 .search_filter_comm{margin-bottom:20px;}
-.n_coupon_wrap .post_search_filter input{width:100%;padding:15px;border-radius:15px;}
+.n_coupon_wrap .post_search_filter input, .search_filter_comm input{width:100%;padding:15px;border-radius:15px;}
 .search_filter_comm [data-filter-item]{}
 .search_filter_comm .hidden{display:none;}
 .index_search{padding:0 2.5%;}
