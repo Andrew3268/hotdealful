@@ -131,7 +131,7 @@
 
 /******* New Coupon Section ****/
 .n_coupon_wrap{margin-bottom:50px;padding:0 10px;}
-.n_coupon_wrap h2{color:#000;padding:5px 10px;border-radius:10px;display:table-cell;font-size:15px;width:100%;font-weight:100;}
+.n_coupon_wrap h2{color:#000;padding:5px 10px;border-radius:10px;display:table-cell;font-size:20px;width:100%;font-weight:100;text-decoration:underline;}
 .n_coupon_wrap .post_hashtag_box{padding:0 8px;}
 .n_coupon_card{border-bottom:1px solid #ccc;padding:30px 0;}
 .n_coupon_card .img_box{float:left;width:35%;height:150px;margin-left:1.5%;position:relative;font-size:14px;border:1px solid #ccc;border-radius:20px;}
