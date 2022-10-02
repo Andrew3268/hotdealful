@@ -100,8 +100,8 @@ header nav button img{width:25px;height:25px;}
 /*.where-hashtag{margin:30px 0 20px 0;}*/
 .where-hashtag p{font-size:30px;font-weight:100;}
 .where-hashtag p span{color:#000;border:2px solid;padding:5px 20px;border-radius:15px;margin-left:30px;}
-.where-hashtag h2{font-size:15px;background-color:#000;color:#fff;}
-.where-hashtag h2 em{background-color:#fff;color:#000;padding:5px 10px;border-radius:10px;margin-left:1px;}
+.where-hashtag h2.hashtag_label{font-size:15px;color:#000;padding-top:7px;}
+.where-hashtag h2 em{background-color:#000;color:#fff;padding:5px 10px;border-radius:10px;margin-left:1px;}
 .hashtag-through{display:inline;text-transform:uppercase;}
 @media screen and (max-width:640px){
   .where-hashtag{margin:0 0 15px 0;}
@@ -179,12 +179,6 @@ header nav button img{width:25px;height:25px;}
 .hero_box .inner p{font-size:25px;margin-bottom:10px;}
 .hero_box .inner em{display:block;font-size:20px;}
 .hero_box .inner span{font-size:45px;line-height:0.8;text-decoration:underline;}
-
-
-
-
-
-
 
 .tab_bar{display:none;}
 .tab_bar nav{position:fixed;bottom:0;left:50%;transform:translate(-50%,0);width:100%;display:flex;background:#fff;padding:5px;/*border-radius:0 0 30px 30px;*/box-shadow:0 1px 15px rgba(0,0,0,.1)}

@@ -1,4 +1,5 @@
 <% @onedays.each do |oneday| %>
+  <% if oneday.o_image.present? %>
   <% promocode_price = 0 %>
   <% promocode_price =  oneday.o_was_price.to_f - (oneday.o_pct.to_f / 100) * oneday.o_was_price.to_f %>
   <% hotdeal_pct = 0 %>
@@ -18,37 +19,44 @@
         시간이 지나지 않았습니다.
       <% end %>       -->
     
-      <div class="one_day_box oneday_test">
-        <div class="img_box">
-          <!-- <img src="<%= oneday.o_image %>" alt="<%= oneday.o_title %>"> -->
-          <%= link_to image_tag(oneday.o_image, alt: oneday.o_title, title: oneday.o_title, :class => 'main_img'), oneday %>
-        </div>
-        <div class="inner">
-          <p><%= oneday.o_title %></p>
+      <div class="one_day_box">
+        
+        <p class="title">TODAY ONLY</p>
+      
+        <div class="card clearfix">
+          <div class="img_box">
+            <!-- <img src="<%= oneday.o_image %>" alt="<%= oneday.o_title %>"> -->
+            <%= link_to image_tag(oneday.o_image, alt: oneday.o_title, title: oneday.o_title, :class => 'main_img'), oneday %>
+          </div>
+          <div class="inner">
+            <p><%= oneday.o_title %></p>
 
-          <div class="pricing">
-            <% if oneday.o_promocode.present? %>
-              <% if oneday.o_pct_coupon.present? || oneday.o_cash_coupon.present? %>
-                <% if oneday.o_pct_coupon.present? %>
-                  <span><%= number_to_currency(oneday.o_was_price) %></span><em class="show_price"><%= number_to_currency(total_price_pct_oneday) %></em>
+            <div class="pricing">
+              <% if oneday.o_promocode.present? %>
+                <% if oneday.o_pct_coupon.present? || oneday.o_cash_coupon.present? %>
+                  <% if oneday.o_pct_coupon.present? %>
+                    <span><%= number_to_currency(oneday.o_was_price) %></span><em class="show_price"><%= number_to_currency(total_price_pct_oneday) %></em>
+                  <% else %>
+                    <span><%= number_to_currency(oneday.o_was_price) %></span><em class="show_price"><%= number_to_currency(total_price_cash_oneday) %></em>
+                  <% end %>
                 <% else %>
-                  <span><%= number_to_currency(oneday.o_was_price) %></span><em class="show_price"><%= number_to_currency(total_price_cash_oneday) %></em>
+                  <!-- only for promotion code -->
+                  <span><%= number_to_currency(oneday.o_was_price) %></span><em class="show_price"><%= number_to_currency(total_price.to_f) %></em>
                 <% end %>
               <% else %>
-                <!-- only for promotion code -->
-                <span><%= number_to_currency(oneday.o_was_price) %></span><em class="show_price"><%= number_to_currency(total_price.to_f) %></em>
+                <span><%= number_to_currency(oneday.o_was_price) %></span><em class="show_price"><%= number_to_currency(oneday.o_is_price) %></em>
               <% end %>
-            <% else %>
-              <span><%= number_to_currency(oneday.o_was_price) %></span><em class="show_price"><%= number_to_currency(oneday.o_is_price) %></em>
-            <% end %>
-          </div><!-- pricing -->
+            </div><!-- pricing -->
 
-          <% if current_user && current_user.admin %>
-            <div class="admin_controller">
-              <%= link_to 'Edit', edit_oneday_path(oneday) %>
-              <%= link_to 'Destroy', oneday, method: :delete, data: { confirm: 'Are you sure?' } %>
-            </div>
-          <% end %>
+            <%= link_to "--------------- Get Promo Code", oneday, :class => 'get_link' %>
+
+            <% if current_user && current_user.admin %>
+              <div class="admin_controller">
+                <%= link_to 'Edit', edit_oneday_path(oneday) %>
+                <%= link_to 'Destroy', oneday, method: :delete, data: { confirm: 'Are you sure?' } %>
+              </div>
+            <% end %>
+          </div>
         </div>
 
          <div class="dday_box">
@@ -92,5 +100,5 @@
 
       </div><!-- one_day_box -->
     
-    
+  <% end %>
 <% end %>

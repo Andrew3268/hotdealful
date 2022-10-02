@@ -6,7 +6,9 @@
   <br>
   <br>
   <% if current_user && current_user.admin %>
-    <a class="left_atag" href="/bridges/share_ko_">Share KO</a>
+    <%= link_to 'New Oneday', new_oneday_path, :class => 'left_atag'  %>
+    <%= link_to 'New Picks', new_pick_path, :class => 'left_atag'  %>
+    <!-- <a class="left_atag" href="/bridges/share_ko_">Share KO</a> -->
     <a class="left_atag" href="/bridges/share_ko_people">Share KP</a>
     <a class="left_atag" href="/bridges/share_fb">Share FB</a>
   <% end %>

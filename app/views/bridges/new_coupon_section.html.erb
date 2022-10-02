@@ -43,7 +43,7 @@
         <% end %>
       </div>
       -->
-      <div class="menu-wrapper when_search_term">
+      <!-- <div class="menu-wrapper when_search_term">
           <div class="menu-item">
             <a href="/coupons/chashtag/electronics">Electronics</a>
             <a href="/coupons/chashtag/fashion">Fashion</a>
@@ -69,7 +69,7 @@
           <span class="pointer right-pointer">
             <i class="fa fa-chevron-right"></i>
           </span>
-        </div>
+      </div> -->
 
         <div class="search_hero clearfix"> 
           <div class="inner">
@@ -108,15 +108,19 @@
               <%= text_field_tag :search, @search_term, placeholder: "Search....", class: 'search-input' %>
             <% end %> 
           </div> -->
-         <div class="oneday_wrap">
+
+        
+        
+        <div class="discount_banner">
+          <%= render 'picks/blog' %>
+        </div>
+
+        <div class="oneday_wrap">
            <%= render 'bridges/limited' %>
         </div>
 
 
 
-
-        <%= render '/coupons/our_pick' %>
-      
         <div class="pic_deal clearfix">
           <%= render '/homes/new_coupons' %>
         </div>
@@ -124,6 +128,8 @@
         <div class="more_coupon_btn">
           <a href="/coupons">View More Promo Code Deals</a>
         </div>
+
+        <%= render '/coupons/our_pick' %>
 
       </div><!-- ctn_box -->
     </div>
