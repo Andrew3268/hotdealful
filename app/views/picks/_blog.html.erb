@@ -1,16 +1,18 @@
 <div class="blog_box">
   <% @latest_picks.each do |pick| %>
     <% if pick.p_title.present? %>
-      <div class="pick_main_card">
-        <span class="main_title"><%= pick.p_title %></span><br />
-        <span class="sub_title"><%= pick.p_spare_01 %></span>
-        <a href="/posts/hashtag/<%= pick.p_link %>"><div class="pick_img"><img src="<%= pick.p_image %>"></div></a>
-        <% if current_user && current_user.admin %>
-          <div class="admin">
-            <%= link_to 'Edit', edit_pick_path(pick) %> |
-            <%= link_to 'Destroy', pick, method: :delete, data: { confirm: 'Are you sure?' } %>
-          </div>
-        <% end %>
+      <div class="discount_banner">
+        <div class="pick_main_card">
+          <span class="main_title"><%= pick.p_title %></span><br />
+          <span class="sub_title"><%= pick.p_spare_01 %></span>
+          <a href="/posts/hashtag/<%= pick.p_link %>"><div class="pick_img"><img src="<%= pick.p_image %>"></div></a>
+          <% if current_user && current_user.admin %>
+            <div class="admin">
+              <%= link_to 'Edit', edit_pick_path(pick) %> |
+              <%= link_to 'Destroy', pick, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+          <% end %>
+        </div>
       </div>
     <% end %>
   <% end %>

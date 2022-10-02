@@ -131,7 +131,7 @@
 
 /******* New Coupon Section ****/
 .n_coupon_wrap{margin-bottom:50px;padding:0 10px;}
-.n_coupon_wrap h2{color:#000;padding:5px 10px;border-radius:10px;display:table-cell;font-size:15px;width:100%;box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;font-weight:100;}
+.n_coupon_wrap h2{color:#000;padding:5px 10px;border-radius:10px;display:table-cell;font-size:15px;width:100%;font-weight:100;}
 .n_coupon_wrap .post_hashtag_box{padding:0 8px;}
 .n_coupon_card{border-bottom:1px solid #ccc;padding:30px 0;}
 .n_coupon_card .img_box{float:left;width:35%;height:150px;margin-left:1.5%;position:relative;font-size:14px;border:1px solid #ccc;border-radius:20px;}
@@ -238,7 +238,7 @@
 .n_coupon_wrap{}
 .n_coupon_wrap .post_search_filter{margin:-15px 0 20px 0;}
 .search_filter_comm{margin-bottom:20px;}
-.search_filter_comm input{width:100%;padding:15px;border-radius:15px;}
+.n_coupon_wrap .post_search_filter input{width:100%;padding:15px;border-radius:15px;}
 .search_filter_comm [data-filter-item]{}
 .search_filter_comm .hidden{display:none;}
 .index_search{padding:0 2.5%;}
