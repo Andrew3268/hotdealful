@@ -85,5 +85,9 @@ class BridgesController < ApplicationController
     @onedays = Oneday.all.order("created_at DESC")
   end
 
+  def promo_codes
+    @pagy, @coupons = pagy(Coupon.all.order("created_at DESC"), items: 100)
+  end
+
 
 end
