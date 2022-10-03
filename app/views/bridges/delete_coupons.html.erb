@@ -14,7 +14,7 @@
       
         <% @coupons.each_with_index do |coupon, i| %>
           
-            <% if coupon.created_at < 10.days.ago %>
+            <!-- < if coupon.created_at < 10.days.ago > -->
               <tr>
                 <td><p><%= i + 1 %></p></td>
                 <td><p><%= coupon.c_title %></p></td>
@@ -22,7 +22,7 @@
                 <td><%= time_ago_in_words(coupon.created_at) %> ago</td>
                 <td><%= link_to 'Destroy', coupon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
               </tr>
-            <% end %>
+            <!-- < end > -->
           
         <% end %>
     </table>

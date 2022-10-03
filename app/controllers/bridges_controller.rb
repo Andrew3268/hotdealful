@@ -38,7 +38,7 @@ class BridgesController < ApplicationController
   # end
 
   def delete_coupons
-    @coupons = Coupon.all
+    @coupons = Coupon.all.order("created_at DESC")
   end
 
   def delete_hotdeals
