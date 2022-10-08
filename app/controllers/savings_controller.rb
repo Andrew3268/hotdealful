@@ -6,7 +6,7 @@ class SavingsController < ApplicationController
   def index
     @savings = Saving.all.order("created_at DESC")
     @latest_savings = Saving.last(1)
-    @except_first_savings = Saving.order("id desc").offset(1).limit(20)
+    @except_first_savings = Saving.order("id desc").offset(1)
   end
 
   # GET /savings/1 or /savings/1.json

@@ -22,7 +22,7 @@
 
 
 .savings_wrap .savings_card .new_mark{position:absolute;top:-10px;left:-10px;}
-.savings_wrap .savings_card .new_mark p{font-size:17px;padding:10px;border-radius:15px;background:#000;color:#fff;}
+.savings_wrap .savings_card .new_mark p{font-size:12px;padding:5px 10px;border-radius:15px;background:#000;color:#fff;}
 
 @media screen and (max-width:640px){
   .savings_wrap .savings_card{height:190px;}
@@ -31,3 +31,6 @@
 @media screen and (min-width:641px) and (max-width:1199px){
   
 }
+
+
+

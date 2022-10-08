@@ -8,11 +8,16 @@
   <div class="right">
     <div class="index_wrap">
       <header><%= render 'coupons/header_index' %></header>  
+
+
+
+
       <div class="savings_wrap clearfix">
 
         <% if current_user && current_user.admin %>
           <%= link_to 'New Saving', new_saving_path, class: "create_savings" %>
         <% end %>
+        <br />
 
         <% @latest_savings.each do |saving| %>
           <div class="saving_latest savings_card">          
@@ -24,46 +29,47 @@
               <div class="inner">
                 <p><%= saving.s_title %></p>
                 
-                <% if saving.s_rating.present? %>
-                 <div class="rating_card">
+                <p class="description">
+                  <% if saving.s_rating.present? %>
+                   <div class="rating_card">
 
-                    <% if saving.s_rating_code == 50 %>
-                      <div class="rating_box">
-                        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i>
-                        <span>/ <%= number_with_precision(saving.s_review_count, precision: 0, separator: ',', delimiter: ',') %> +</span> 
-                      </div>
-                    <% elsif saving.s_rating_code == 45 %>
-                      <div class="rating_box">
-                        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i>
-                        <span>/ <%= number_with_precision(saving.s_review_count, precision: 0, separator: ',', delimiter: ',') %> +</span> 
-                      </div>
-                    <% elsif saving.s_rating_code == 40 %>
-                      <div class="rating_box">
-                        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i>
-                        <span>/ <%= number_with_precision(saving.s_review_count, precision: 0, separator: ',', delimiter: ',') %> +</span> 
-                      </div>
-                    <% elsif saving.s_rating_code == 35 %>
-                      <div class="rating_box">
-                        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i><i class="material-icons">star_border</i>
-                        <span>/ <%= number_with_precision(saving.s_review_count, precision: 0, separator: ',', delimiter: ',') %> +</span> 
-                      </div>
-                    <% elsif saving.s_rating_code == 30 %>
-                      <div class="rating_box">
-                        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i>
-                        <span>/ <%= number_with_precision(saving.s_review_count, precision: 0, separator: ',', delimiter: ',') %> +</span> 
-                      </div>
-                    <% end %>
+                      <% if saving.s_rating_code == 50 %>
+                        <div class="rating_box">
+                          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i>
+                          <span>/ <%= number_with_precision(saving.s_review_count, precision: 0, separator: ',', delimiter: ',') %> +</span> 
+                        </div>
+                      <% elsif saving.s_rating_code == 45 %>
+                        <div class="rating_box">
+                          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i>
+                          <span>/ <%= number_with_precision(saving.s_review_count, precision: 0, separator: ',', delimiter: ',') %> +</span> 
+                        </div>
+                      <% elsif saving.s_rating_code == 40 %>
+                        <div class="rating_box">
+                          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i>
+                          <span>/ <%= number_with_precision(saving.s_review_count, precision: 0, separator: ',', delimiter: ',') %> +</span> 
+                        </div>
+                      <% elsif saving.s_rating_code == 35 %>
+                        <div class="rating_box">
+                          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i><i class="material-icons">star_border</i>
+                          <span>/ <%= number_with_precision(saving.s_review_count, precision: 0, separator: ',', delimiter: ',') %> +</span> 
+                        </div>
+                      <% elsif saving.s_rating_code == 30 %>
+                        <div class="rating_box">
+                          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i>
+                          <span>/ <%= number_with_precision(saving.s_review_count, precision: 0, separator: ',', delimiter: ',') %> +</span> 
+                        </div>
+                      <% end %>
+                    </div>
+                  <% end %>
+                
+                  <div class="pricing">
+                    <span><em class="was_price"><%= number_to_currency(saving.s_was_price) %></em><em class="is_price"><%= number_to_currency(saving.s_is_price) %></em><em class="pct"><%= number_to_percentage(saving.s_pct, precision: 0) %></em></span>
                   </div>
-                <% end %>
-              
-                <div class="pricing">
-                  <span><em class="was_price"><%= number_to_currency(saving.s_was_price) %></em><em class="is_price"><%= number_to_currency(saving.s_is_price) %></em><em class="pct"><%= number_to_percentage(saving.s_pct, precision: 0) %></em></span>
-                </div>
 
-                <div class="promocode">
-                  <p><%= saving.s_promocode %><span>Get Full Code</span></p>
-                </div>
-
+                  <div class="promocode">
+                    <p><%= saving.s_promocode %><span>Get Full Code</span></p>
+                  </div>
+                </p>
 
                 <% if current_user && current_user.admin %>
                   <div class="adming_controller">
@@ -75,7 +81,7 @@
               </div>
             </a>
             
-            <div class="new_mark"><p>NEW</p></div>            
+            <div class="new_mark"><p>Hidden Promo Code Of The Day</p></div>            
 
           </div><!-- savings_card -->
         <% end %>
@@ -139,7 +145,7 @@
                   </div>
                 <% end %>
               </div>
-              </div>
+
             </a>
             
             
