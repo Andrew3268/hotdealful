@@ -1,6 +1,3 @@
-
-  
-  
   <% @onedays.each do |oneday| %>
     <% promocode_price = 0 %>
     <% promocode_price =  oneday.o_was_price.to_f - (oneday.o_pct.to_f / 100) * oneday.o_was_price.to_f %>
@@ -67,7 +64,7 @@
                       <% end %>
                     </div><!-- pricing -->
 
-                    <%= link_to "--------------- Get Promo Code", oneday, :class => 'get_link' %>
+                    <%= link_to "Get Promo Code", oneday, :class => 'get_link' %>
 
                     <% if current_user && current_user.admin %>
                       <div class="admin_controller">
@@ -160,7 +157,7 @@
                       <% end %>
                     </div><!-- pricing -->
 
-                    <%= link_to "--------------- Get Promo Code", oneday, :class => 'get_link' %>
+                    <%= link_to "Get Promo Code", oneday, :class => 'get_link' %>
 
                     <% if current_user && current_user.admin %>
                       <div class="admin_controller">

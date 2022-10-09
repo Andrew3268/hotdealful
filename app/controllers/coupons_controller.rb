@@ -9,6 +9,8 @@ class CouponsController < ApplicationController
     @coupons_top = Coupon.most_hit(1.day.ago, 10)
     @deals_top = Post.most_hit(1.day.ago, 10)
     @our_pick = Coupon.all.order("created_at DESC")
+    # @latest_coupons = Coupon.last(1)
+    # @except_first_coupons = Coupon.order("id desc").offset(1)
     
     if params[:search]
       @search_term = params[:search]

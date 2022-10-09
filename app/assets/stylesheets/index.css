@@ -76,7 +76,7 @@
 
 .web_box .right .index_wrap .ctn_box .more_coupon_btn{margin:-20px 0 70px 0;padding:0 10px;}
 .web_box .right .index_wrap .ctn_box .more_coupon_btn a{display:block;background-color:#000;color:#fff;padding:10px;border-radius:15px;text-align:center;font-size:15px;}
-.web_box .right .index_wrap .ctn_box .blog_box{padding:0 10px;margin:0px 0 50px 0 ;}
+.web_box .right .index_wrap .ctn_box .blog_box{padding:0 20px;}
 .scroll-downs{top:400px;display:none;}
 
 /*.web_box .right .index_wrap .ctn_box .trending_box{margin-top:70px;}
@@ -107,7 +107,7 @@
   .web_box .right .index_wrap .ctn_box .ctn_banner .banner_pct p{font-size:25px;}
   .web_box .right .index_wrap .ctn_box .ctn_banner .banner_inner p{font-size:13px;}
   .web_box .right .index_wrap .ctn_box .banner_btn a{padding:6px;}
-  .web_box .right .index_wrap .ctn_box .pic_deal{margin-top:50px;}
+  .web_box .right .index_wrap .ctn_box .pic_deal{margin-top:-20px;}
   .web_box .right .index_wrap .ctn_box .pic_deal .card_wrap{padding:0;}
 }
 

@@ -54,6 +54,40 @@
                         
 
                         <p class="title"><%= post.title %></p>
+
+                         <div class="star_write">
+                          <% if post.spare_42.present? %>
+                           <div class="rating_card">
+
+                              <% if post.spare_58 == 50 %>
+                                <div class="rating_box">
+                                  <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i>
+                                  <span>/ <%= number_with_precision(post.spare_41, precision: 0, separator: ',', delimiter: ',') %> +</span> 
+                                </div>
+                              <% elsif post.spare_58 == 45 %>
+                                <div class="rating_box">
+                                  <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i>
+                                  <span>/ <%= number_with_precision(post.spare_41, precision: 0, separator: ',', delimiter: ',') %> +</span> 
+                                </div>
+                              <% elsif post.spare_58 == 40 %>
+                                <div class="rating_box">
+                                  <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i>
+                                  <span>/ <%= number_with_precision(post.spare_41, precision: 0, separator: ',', delimiter: ',') %> +</span> 
+                                </div>
+                              <% elsif post.spare_58 == 35 %>
+                                <div class="rating_box">
+                                  <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i><i class="material-icons">star_border</i>
+                                  <span>/ <%= number_with_precision(post.spare_41, precision: 0, separator: ',', delimiter: ',') %> +</span> 
+                                </div>
+                              <% elsif post.spare_58 == 30 %>
+                                <div class="rating_box">
+                                  <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i>
+                                  <span>/ <%= number_with_precision(post.spare_41, precision: 0, separator: ',', delimiter: ',') %> +</span> 
+                                </div>
+                              <% end %>
+                            </div>
+                          <% end %> 
+                         </div>
                         
                           <% if post.spare_61.present? || post.spare_62.present? %>
                             <% total_save = 0 %>
@@ -67,16 +101,16 @@
                               <p class="code_price"><%= number_to_currency(total_price_pct_coupon) %></p>
                               <div class="more_detail">
                                 <% total_save = post.was_price - total_price_pct_coupon %>
-                                <p>You can save <em class="total_savings"><%= number_to_currency(total_save) %></em> off list price.</p>
-                                <p class="verified">✅Deal & Coupon verified!</p>
+                                <!-- <p>You can save <em class="total_savings"><%= number_to_currency(total_save) %></em> off list price.</p>
+                                <p class="verified">✅Deal & Coupon verified!</p> -->
                               </div>
                             <% else %>
                               <p class="list_price"><%= number_to_currency(post.was_price) %></p>
                               <p class="code_price"><%= number_to_currency(total_price_cash_coupon) %></p>
                               <div class="more_detail">
                                 <% total_save = post.was_price - total_price_cash_coupon %>
-                                <p>You can save <em class="total_savings"><%= number_to_currency(total_save) %></em> off list price.</p>
-                                <p class="verified">✅Deal & Coupon verified!</p>
+                                <!-- <p>You can save <em class="total_savings"><%= number_to_currency(total_save) %></em> off list price.</p>
+                                <p class="verified">✅Deal & Coupon verified!</p> -->
                               </div>
                             <% end %>
                             
@@ -85,8 +119,8 @@
                             <p class="code_price"><%= number_to_currency(post.is_price) %></p>
                             <div class="more_detail">
                               <% total_save = post.was_price - post.is_price %>
-                              <p>You can save <em class="total_savings"><%= number_to_currency(total_save) %></em> off list price.</p>
-                              <p class="verified">✅Deal verified!</p>
+                              <!-- <p>You can save <em class="total_savings"><%= number_to_currency(total_save) %></em> off list price.</p>
+                              <p class="verified">✅Deal verified!</p> -->
 
                             </div>
                           <% end %>

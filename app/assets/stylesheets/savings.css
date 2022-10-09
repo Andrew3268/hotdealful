@@ -4,7 +4,7 @@
 .savings_wrap .savings_card{width:90%;height:200px;margin:10px auto;border:1px solid #ccc;position:relative;border-radius:20px;}
 .savings_wrap .savings_card .img_box{float:left;width:30%;margin-right:3%;position:relative;height:200px;}
 .savings_wrap .savings_card .img_box img{width:85%;height:85%;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);object-fit:contain;}
-.savings_wrap .savings_card .inner{float:left;width:67%;padding:20px 10px;}
+.savings_wrap .savings_card .inner{float:left;width:67%;padding:20px 10px;margin-top:10px;}
 
 .savings_wrap .savings_card .inner .rating_card{margin:3px 0 5px 0;}
 .savings_wrap .savings_card .inner .rating_card .rating_box i{font-size:15px;vertical-align:middle;}
@@ -25,7 +25,7 @@
 .savings_wrap .savings_card .new_mark p{font-size:12px;padding:5px 10px;border-radius:15px;background:#000;color:#fff;}
 
 @media screen and (max-width:640px){
-  .savings_wrap .savings_card{height:190px;}
+  .savings_wrap .savings_card{height:220px;}
   .savings_wrap .savings_card .inner .promocode p span{padding:0 30px;}
 }
 @media screen and (min-width:641px) and (max-width:1199px){

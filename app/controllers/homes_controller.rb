@@ -9,9 +9,10 @@ class HomesController < ApplicationController
     @extra_deals = Post.all.order("created_at DESC").limit(18)
     @coupons_top = Coupon.most_hit(3.day.ago, 10)
     @deals_top = Post.most_hit(3.day.ago, 10)
+    @latest_coupons = Coupon.last(1)
+    @except_first_coupons = Coupon.order("id desc").offset(1)
 
-    
-    
+  
   end
 
   # GET /homes/1 or /homes/1.json
