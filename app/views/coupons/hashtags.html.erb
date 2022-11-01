@@ -41,14 +41,7 @@
                 </span>
               </div>
 
-              <div class="where-hashtag">
-                <% if params[:name].present? %>
-                <h2 class="hashtag_label">Promo Codes on <em>#<%= params[:name] %></em></h2>
-                  <!-- <h2 class="line-title">#<%= params[:name] %> Promotion Codes</h2> -->
-                  <!-- <p><span class="hashtag-through">#<%= params[:name] %></span></p> -->
-                <% end %>
-              </div>
-
+            
 
              <% @coupons.each do |coupon| %>
                     <div id="wrapper">
