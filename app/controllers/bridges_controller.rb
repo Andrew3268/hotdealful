@@ -66,7 +66,7 @@ class BridgesController < ApplicationController
     @pagy, @coupons = pagy(Coupon.all.order("created_at DESC"), items: 20)
     @coupons_top = Coupon.most_hit(100.day.ago, 5) 
     @latest_picks = Pick.last(1)
-    @except_first_picks = Pick.order("id desc").offset(1).limit(4)
+    @except_first_picks = Pick.order("id desc").offset(1).limit(3)
     @our_pick = Coupon.all.order("created_at DESC")
     @by_rating = Coupon.all.order("created_at DESC").limit(5)
     @by_review = Coupon.all.order("created_at DESC").limit(5)

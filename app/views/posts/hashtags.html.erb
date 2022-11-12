@@ -8,8 +8,15 @@
     <div class="index_wrap">
       <header><%= render 'posts/header_hashtag' %></header>
       
-      <div class="ctn_box">        
-        <%= render 'posts/compare' %>
+      <div class="ctn_box">    
+        <div class="compare_box">
+          <div class="where-hashtag">
+            <% if params[:name].present? %>
+              <h2>The Best deals on <em>#<%= params[:name] %></em></h2>
+            <% end %>
+          </div>    
+          <%= render 'posts/compare' %>
+        </div>
       </div><!-- ctn_box -->
 
     </div><!-- index_wrap -->

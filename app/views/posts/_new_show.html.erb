@@ -209,6 +209,14 @@
                 </div>
               </div>
 
+
+
+              <%= render 'posts/rating_detail' %>
+              <br/>
+              <br/>
+              <%= render 'posts/featured' %>
+
+
               <% if current_user && current_user.admin %>
                 <!-- for instagram feed -->
                 <% if @post.spare_61.present? %>
