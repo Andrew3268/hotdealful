@@ -497,8 +497,8 @@
 .post_tabs ul li label svg {
   fill: #929daf;
   height:1.8em;
-  width:2em
-  vertical-align: bottom;
+  width:2em;
+  vertical-align:bottom;
   /*margin-right: 0.2em;*/
   transition: all 0.2s ease-in-out;
 }
