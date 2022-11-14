@@ -326,19 +326,19 @@
 
 
 /* Mixings &  Variables */
-.clearfix,
+/*.clearfix,
 .clearfix:before,
 .clearfix:after {
   display: block;
   content: " ";
   clear: both;
   zoom: 1;
-}
-.wrap {
+}*/
+/*.wrap {
   margin: 0 auto;
   padding: 50px;
   max-width: 1200px;
-}
+}*/
 /* Bar Graph Class */
 .barGraph {
   position: relative;
