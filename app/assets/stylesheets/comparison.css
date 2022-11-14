@@ -65,7 +65,7 @@
 .product__image {
   display: block;
   margin: 0 auto;
-  max-width: 100%;
+  max-width:80%;
   height:80%;
   -webkit-transform-origin: 50% 100%;
   transform-origin: 50% 100%;
@@ -157,16 +157,25 @@
   transition: opacity 0.3s, background 0.2s;
 }
 
-.compare .detail{padding:15px 5px;border-bottom:1px solid #ccc;text-align:center;}
+.compare .detail{padding:15px 5px;border-bottom:1px solid #ccc;text-align:center;color:#3d3d3d;}
 .compare .detail em.was_price{color:#ccc;text-decoration:line-through;}
 .compare .detail em.pct{padding:5px 7px;border-radius:10px;color: #fff;font-weight:bold;background-color:#ff4d4d}
 .compare .detail em.review{font-size:12px;}
 .compare .detail em.shipping span{background:#494BC7;color:#fff;padding:5px 10px;border-radius:10px;}
+.compare .detail .extra_coupons{}
+.compare .detail .extra_coupons em{background:rgba(255,77,77,0.2);padding:5px;border-radius:10px;color:#ff4d4d;}
 .compare .detail .rating_box{}
 .compare .detail .rating_box img{vertical-align:middle;}
-.compare .detail .rating_box i{font-size:18px;color:#ffbf00;}
+.compare .detail .rating_box i{font-size:18px;color:#ff4d4d;}
 .compare .detail_btn{margin-top:10px;}
 .compare .detail_btn a{background-color:#363636;padding:10px;border-radius:10px;text-align:center;color:#fff;display:block;}
+.compare .detail .barGraph{width:50%;}
+.compare .detail .barGraph .graph{}
+.compare .detail .barGraph .graph-barBack{margin:0;}
+.compare .detail .barGraph .graph-legend{left:-25px;}
+.compare .detail .barGraph .graph-legend img{width:20px;margin:0;}
+.compare .seller_rank{height:80px;position:relative;}
+.compare .seller_rank p{position:absolute;top:50%;;left:50%;transform:translate(-50%, -50%);width:100%;}
 
 .view--compare + .compare .action--close {
   pointer-events: auto;
@@ -432,7 +441,7 @@
   border-bottom:1px solid #ccc;
 }
 
-  .compare__item .product__title p{word-break:break-word;line-height:1.4;height:2.8em;overflow:hidden;display:-webkit-box;display:-ms-flexbox;vertical-align:top;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:2;font-weight:100;}
+  .compare__item .product__title p{word-break:break-word;line-height:1.4;height:2.8em;overflow:hidden;display:-webkit-box;display:-ms-flexbox;vertical-align:top;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:2;font-weight:100;padding:0 10px;}
 
   .compare__item .product__flash{border-bottom: 2px solid #2E294E;}
   .compare__item .product__region{border-bottom: 2px solid #6D6FD2;}

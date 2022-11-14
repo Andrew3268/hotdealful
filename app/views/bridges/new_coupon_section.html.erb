@@ -82,7 +82,9 @@
       <div class="ctn_box">
 
         <!-- < render 'homes/ctn_banner' > -->
-        <%= render 'picks/blog' %>
+        <% if current_user && current_user.admin %>
+          <%= render 'picks/blog' %>
+        <% end %>
         
         <!-- <div class="special_exhibition clearfix">
           <div class="spe_top">

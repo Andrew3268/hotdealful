@@ -1,0 +1,111 @@
+ <h2 class="summary_title">
+  SUMMARY
+  <p class="posted_date">Found on <%= @post.created_at.strftime("#{@post.created_at.day.ordinalize} %B %Y") %></p>
+  <div class="more_detail clearfix">
+      <div class="detail_card cleafix">
+          <% if @post.spare_61.present? || @post.spare_62.present? %>
+            <div class="verified_check detail_box">
+              <p>Deal & Coupon</p>
+              <span class="verified"><!-- <img class="coupon_check" src="<%=asset_path 'coupon_check.png' %>" alt=" verified coupon&code" /> --><i class="material-icons">check_circle</i> <em>Verified</em></span>
+              <!-- <span class="veri_span">verified</span> -->
+            </div>
+          <% else %>
+            <div class="verified_check detail_box">
+              <p>Deal</p>
+              <span class="verified"><!-- <img class="coupon_check" src="<%=asset_path 'coupon_check.png' %>" alt=" verified coupon&code" /> --> <i class="material-icons">check_circle</i> <em>Verified</em></span>
+            </div>
+          <% end %>
+          <div class="detail_box rating_review">
+            <p>Customer Reviews</p>
+            <% if @post.spare_42.present? %>
+               <div class="rating_card">
+                  <% if @post.spare_58 == 50 %>
+                    <div class="rating_box">
+                      <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i>
+                      <span>/ <%= number_with_precision(@post.spare_41, precision: 0, separator: ',', delimiter: ',') %> +</span> 
+                    </div>
+                  <% elsif @post.spare_58 == 45 %>
+                    <div class="rating_box">
+                      <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i>
+                      <span>/ <%= number_with_precision(@post.spare_41, precision: 0, separator: ',', delimiter: ',') %> +</span> 
+                    </div>
+                  <% elsif @post.spare_58 == 40 %>
+                    <div class="rating_box">
+                      <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i>
+                      <span>/ <%= number_with_precision(@post.spare_41, precision: 0, separator: ',', delimiter: ',') %> +</span> 
+                    </div>
+                  <% elsif @post.spare_58 == 35 %>
+                    <div class="rating_box">
+                      <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i><i class="material-icons">star_border</i>
+                      <span>/ <%= number_with_precision(@post.spare_41, precision: 0, separator: ',', delimiter: ',') %> +</span> 
+                    </div>
+                  <% elsif @post.spare_58 == 30 %>
+                    <div class="rating_box">
+                      <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i>
+                      <span>/ <%= number_with_precision(@post.spare_41, precision: 0, separator: ',', delimiter: ',') %> +</span> 
+                    </div>
+                  <% end %>
+                </div>
+              <% end %>
+          </div>
+          <!-- <div class="detail_box">
+            <p>Review</p>
+            <span class="review"><%= @post.spare_41 %> +</span>
+          </div> -->
+      </div><!-- detail_card -->
+    </div><!-- more_detail --> 
+</h2>
+
+<div class="receipt">
+  <!-- Button Section - Text(left) -->
+  <div class="receipt__grid1">
+    <p>List Price</p>
+    
+    <p>Discount<em><%= number_to_percentage(hotdeal_pct, precision: 0) %> OFF</em></p>            
+    <% if @post.spare_61.present? %>
+      <p>Coupon Savings<em><%= number_to_percentage(@post.spare_61, precision: 0) %> OFF</em></p>
+    <% elsif %>
+      <% if @post.spare_62.present? %>
+        <p>Coupon Savings<em><%= number_to_currency(@post.spare_62, precision: 0) %> OFF</em></p>
+      <% end %>
+    <% end %>
+    <hr>
+
+    <p class="total_text">Total</p>
+  </div>
+
+  <!-- Summary Section - Price(right) -->
+  <div class="receipt__grid2">
+    <p><%= number_to_currency(@post.was_price) %></p>
+    <% sale_price = 0 %>
+    <% sale_price = ( hotdeal_pct / 100 ) * @post.was_price %>
+    <p>- <%= number_to_currency(sale_price) %></p>  
+
+    <% if @post.spare_61.present? %>
+      <% extra_coupon_deal = 0 %>
+      <% extra_coupon_deal =  (@post.was_price - sale_price) * (@post.spare_61 / 100) %>
+      <p>- <%= number_to_currency(extra_coupon_deal) %></p>
+    <% elsif %>
+      <% if @post.spare_62.present? %>
+        <p>- <%= number_to_currency(@post.spare_62) %></p>
+      <% end %>
+    <% end %>
+
+    <hr>
+
+    <!-- Total Price -->
+    <% if @post.spare_61.present? %>
+      <% extra_coupon_total = 0 %>
+      <% extra_coupon_total = @post.is_price - extra_coupon_deal %>
+       <p class="total_price "><%= number_to_currency(extra_coupon_total) %></p>
+    <% elsif %>
+      <% if @post.spare_62.present? %>
+        <% extra_coupon_dallor_total = 0 %>
+        <% extra_coupon_dallor_total =  @post.is_price - @post.spare_62 %>
+        <p class="total_price "><%= number_to_currency(extra_coupon_dallor_total) %></p>   
+      <% end %>
+    <% else %>
+      <p class="total_price "><%= number_to_currency(@post.is_price) %></p> 
+    <% end %>
+  </div>
+</div>

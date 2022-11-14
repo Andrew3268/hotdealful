@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_21_060731) do
+ActiveRecord::Schema.define(version: 2022_11_12_101737) do
 
   create_table "coupons", force: :cascade do |t|
     t.integer "user_id"
@@ -322,6 +322,21 @@ ActiveRecord::Schema.define(version: 2022_09_21_060731) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "slug"
+    t.integer "p_integer_01"
+    t.integer "p_integer_02"
+    t.integer "p_integer_03"
+    t.integer "p_integer_04"
+    t.integer "p_integer_05"
+    t.integer "p_integer_06"
+    t.integer "p_integer_07"
+    t.integer "p_integer_08"
+    t.integer "p_integer_09"
+    t.integer "p_integer_10"
+    t.integer "p_integer_11"
+    t.integer "p_integer_12"
+    t.integer "p_integer_13"
+    t.integer "p_integer_14"
+    t.integer "p_integer_15"
     t.index ["slug"], name: "index_posts_on_slug", unique: true
   end
 

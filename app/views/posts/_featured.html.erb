@@ -1,79 +1,248 @@
-<div class="featured_wrap">
-  <h3>By Feature</h3>
-  <div class="feat_box clearfix">
-    <ul>
-      <li>Noise cancellation</li>
-      <% if @post.spare_01 = 50 %>
-      <% elsif @post.spare_02 = 45 %>
-      <% elsif @post.spare_03 = 40 %>
-      <% elsif @post.spare_04 = 35 %>
-      <% elsif @post.spare_05 = 30 %>
-      <% elsif @post.spare_06 = 35 %>
-      <% end %>
+<% if @post.spare_04.present? %>
+  <div class="featured_wrap">
+    <% if @post.spare_04.present? %>
+      <div class="feat_box clearfix">    
+          <ul>
+          <li><%= @post.spare_04 %></li>
+          <% if @post.p_integer_06 == 30 %>
+            <li class="active"><img src="<%=asset_path 'rating_1.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_2.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_3.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_4.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_5.png' %>"></li>
+          <% elsif @post.p_integer_06 == 35 %>
+            <li><img src="<%=asset_path 'rating_1.png' %>"></li>
+            <li class="active"><img src="<%=asset_path 'rating_2.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_3.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_4.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_5.png' %>"></li>
+          <% elsif @post.p_integer_06 == 40 %>
+            <li><img src="<%=asset_path 'rating_1.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_2.png' %>"></li>
+            <li class="active"><img src="<%=asset_path 'rating_3.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_4.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_5.png' %>"></li>
+          <% elsif @post.p_integer_06 == 45 %>
+            <li><img src="<%=asset_path 'rating_1.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_2.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_3.png' %>"></li>
+            <li class="active"><img src="<%=asset_path 'rating_4.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_5.png' %>"></li>
+          <% elsif @post.p_integer_06 == 50 %>
+            <li><img src="<%=asset_path 'rating_1.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_2.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_3.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_4.png' %>"></li>
+            <li  class="active"><img src="<%=asset_path 'rating_5.png' %>"></li>
+            <% end %>
+          </ul>
+      </div>
+    <% end %>
 
-      <li><img src="<%=asset_path 'rating_1.png' %>"></li>
-      <li><img src="<%=asset_path 'rating_2.png' %>"></li>
-      <li><img src="<%=asset_path 'rating_3.png' %>"></li>
-      <li class="active"><img src="<%=asset_path 'rating_4.png' %>"></li>
-      <li><img src="<%=asset_path 'rating_5.png' %>"></li>
-    </ul>
+    <% if @post.spare_05.present? %>
+      <div class="feat_box clearfix">
+        
+          <ul>
+            <li><%= @post.spare_05 %></li>
+            <% if @post.p_integer_07 == 30 %>
+              <li class="active"><img src="<%=asset_path 'rating_1.png' %>"></li>
+              <li><img src="<%=asset_path 'rating_2.png' %>"></li>
+              <li><img src="<%=asset_path 'rating_3.png' %>"></li>
+              <li><img src="<%=asset_path 'rating_4.png' %>"></li>
+              <li><img src="<%=asset_path 'rating_5.png' %>"></li>
+            <% elsif @post.p_integer_07 == 35 %>
+              <li><img src="<%=asset_path 'rating_1.png' %>"></li>
+              <li class="active"><img src="<%=asset_path 'rating_2.png' %>"></li>
+              <li><img src="<%=asset_path 'rating_3.png' %>"></li>
+              <li><img src="<%=asset_path 'rating_4.png' %>"></li>
+              <li><img src="<%=asset_path 'rating_5.png' %>"></li>
+            <% elsif @post.p_integer_07 == 40 %>
+              <li><img src="<%=asset_path 'rating_1.png' %>"></li>
+              <li><img src="<%=asset_path 'rating_2.png' %>"></li>
+              <li class="active"><img src="<%=asset_path 'rating_3.png' %>"></li>
+              <li><img src="<%=asset_path 'rating_4.png' %>"></li>
+              <li><img src="<%=asset_path 'rating_5.png' %>"></li>
+            <% elsif @post.p_integer_07 == 45 %>
+              <li><img src="<%=asset_path 'rating_1.png' %>"></li>
+              <li><img src="<%=asset_path 'rating_2.png' %>"></li>
+              <li><img src="<%=asset_path 'rating_3.png' %>"></li>
+              <li class="active"><img src="<%=asset_path 'rating_4.png' %>"></li>
+              <li><img src="<%=asset_path 'rating_5.png' %>"></li>
+            <% elsif @post.p_integer_07 == 50 %>
+              <li><img src="<%=asset_path 'rating_1.png' %>"></li>
+              <li><img src="<%=asset_path 'rating_2.png' %>"></li>
+              <li><img src="<%=asset_path 'rating_3.png' %>"></li>
+              <li><img src="<%=asset_path 'rating_4.png' %>"></li>
+              <li  class="active"><img src="<%=asset_path 'rating_5.png' %>"></li>
+            <% end %>
+          </ul>
+        
+      </div>
+    <% end %>
+
+    <% if @post.spare_06.present? %>
+      <div class="feat_box clearfix">
+        
+          <ul>
+          <li><%= @post.spare_06 %></li>
+          <% if @post.p_integer_08 == 30 %>
+            <li class="active"><img src="<%=asset_path 'rating_1.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_2.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_3.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_4.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_5.png' %>"></li>
+          <% elsif @post.p_integer_08 == 35 %>
+            <li><img src="<%=asset_path 'rating_1.png' %>"></li>
+            <li class="active"><img src="<%=asset_path 'rating_2.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_3.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_4.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_5.png' %>"></li>
+          <% elsif @post.p_integer_08 == 40 %>
+            <li><img src="<%=asset_path 'rating_1.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_2.png' %>"></li>
+            <li class="active"><img src="<%=asset_path 'rating_3.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_4.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_5.png' %>"></li>
+          <% elsif @post.p_integer_08 == 45 %>
+            <li><img src="<%=asset_path 'rating_1.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_2.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_3.png' %>"></li>
+            <li class="active"><img src="<%=asset_path 'rating_4.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_5.png' %>"></li>
+          <% elsif @post.p_integer_08 == 50 %>
+            <li><img src="<%=asset_path 'rating_1.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_2.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_3.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_4.png' %>"></li>
+            <li  class="active"><img src="<%=asset_path 'rating_5.png' %>"></li>
+            <% end %>
+          </ul>
+        
+      </div>  
+    <% end %>
+
+    <% if @post.spare_07.present? %>
+      <div class="feat_box clearfix">
+        
+          <ul>
+            <li><%= @post.spare_07 %></li>
+            <% if @post.p_integer_09 == 30 %>
+              <li class="active"><img src="<%=asset_path 'rating_1.png' %>"></li>
+              <li><img src="<%=asset_path 'rating_2.png' %>"></li>
+              <li><img src="<%=asset_path 'rating_3.png' %>"></li>
+              <li><img src="<%=asset_path 'rating_4.png' %>"></li>
+              <li><img src="<%=asset_path 'rating_5.png' %>"></li>
+            <% elsif @post.p_integer_09 == 35 %>
+              <li><img src="<%=asset_path 'rating_1.png' %>"></li>
+              <li class="active"><img src="<%=asset_path 'rating_2.png' %>"></li>
+              <li><img src="<%=asset_path 'rating_3.png' %>"></li>
+              <li><img src="<%=asset_path 'rating_4.png' %>"></li>
+              <li><img src="<%=asset_path 'rating_5.png' %>"></li>
+            <% elsif @post.p_integer_09 == 40 %>
+              <li><img src="<%=asset_path 'rating_1.png' %>"></li>
+              <li><img src="<%=asset_path 'rating_2.png' %>"></li>
+              <li class="active"><img src="<%=asset_path 'rating_3.png' %>"></li>
+              <li><img src="<%=asset_path 'rating_4.png' %>"></li>
+              <li><img src="<%=asset_path 'rating_5.png' %>"></li>
+            <% elsif @post.p_integer_09 == 45 %>
+              <li><img src="<%=asset_path 'rating_1.png' %>"></li>
+              <li><img src="<%=asset_path 'rating_2.png' %>"></li>
+              <li><img src="<%=asset_path 'rating_3.png' %>"></li>
+              <li class="active"><img src="<%=asset_path 'rating_4.png' %>"></li>
+              <li><img src="<%=asset_path 'rating_5.png' %>"></li>
+            <% elsif @post.p_integer_09 == 50 %>
+              <li><img src="<%=asset_path 'rating_1.png' %>"></li>
+              <li><img src="<%=asset_path 'rating_2.png' %>"></li>
+              <li><img src="<%=asset_path 'rating_3.png' %>"></li>
+              <li><img src="<%=asset_path 'rating_4.png' %>"></li>
+              <li  class="active"><img src="<%=asset_path 'rating_5.png' %>"></li>
+            <% end %>
+          </ul>
+        
+      </div>
+    <% end %>
+
+    <% if @post.spare_08.present? %>  
+      <div class="feat_box clearfix">
+        
+          <ul>
+          <li><%= @post.spare_08 %></li>
+          <% if @post.p_integer_10 == 30 %>
+            <li class="active"><img src="<%=asset_path 'rating_1.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_2.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_3.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_4.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_5.png' %>"></li>
+          <% elsif @post.p_integer_10 == 35 %>
+            <li><img src="<%=asset_path 'rating_1.png' %>"></li>
+            <li class="active"><img src="<%=asset_path 'rating_2.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_3.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_4.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_5.png' %>"></li>
+          <% elsif @post.p_integer_10 == 40 %>
+            <li><img src="<%=asset_path 'rating_1.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_2.png' %>"></li>
+            <li class="active"><img src="<%=asset_path 'rating_3.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_4.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_5.png' %>"></li>
+          <% elsif @post.p_integer_10 == 45 %>
+            <li><img src="<%=asset_path 'rating_1.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_2.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_3.png' %>"></li>
+            <li class="active"><img src="<%=asset_path 'rating_4.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_5.png' %>"></li>
+          <% elsif @post.p_integer_10 == 50 %>
+            <li><img src="<%=asset_path 'rating_1.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_2.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_3.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_4.png' %>"></li>
+            <li  class="active"><img src="<%=asset_path 'rating_5.png' %>"></li>
+          <% end %>
+          </ul>
+        
+      </div>
+    <% end %>
+
+    <% if @post.spare_09.present? %>
+      <div class="feat_box clearfix">
+        
+          <ul>
+          <li><%= @post.spare_09 %></li>
+          <% if @post.p_integer_11 == 30 %>
+            <li class="active"><img src="<%=asset_path 'rating_1.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_2.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_3.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_4.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_5.png' %>"></li>
+          <% elsif @post.p_integer_11 == 35 %>
+            <li><img src="<%=asset_path 'rating_1.png' %>"></li>
+            <li class="active"><img src="<%=asset_path 'rating_2.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_3.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_4.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_5.png' %>"></li>
+          <% elsif @post.p_integer_11 == 40 %>
+            <li><img src="<%=asset_path 'rating_1.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_2.png' %>"></li>
+            <li class="active"><img src="<%=asset_path 'rating_3.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_4.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_5.png' %>"></li>
+          <% elsif @post.p_integer_11 == 45 %>
+            <li><img src="<%=asset_path 'rating_1.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_2.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_3.png' %>"></li>
+            <li class="active"><img src="<%=asset_path 'rating_4.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_5.png' %>"></li>
+          <% elsif @post.p_integer_11 == 50 %>
+            <li><img src="<%=asset_path 'rating_1.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_2.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_3.png' %>"></li>
+            <li><img src="<%=asset_path 'rating_4.png' %>"></li>
+            <li  class="active"><img src="<%=asset_path 'rating_5.png' %>"></li>
+          <% end %>
+          </ul>
+        
+      </div>
+    <% end %>
+
   </div>
-
-  <div class="feat_box clearfix">
-    <ul>
-      <li>Noise cancellation</li>
-      <li><img src="<%=asset_path 'rating_1.png' %>"></li>
-      <li><img src="<%=asset_path 'rating_2.png' %>"></li>
-      <li><img src="<%=asset_path 'rating_3.png' %>"></li>
-      <li><img src="<%=asset_path 'rating_4.png' %>"></li>
-      <li><img src="<%=asset_path 'rating_5.png' %>"></li>
-    </ul>
-  </div>
-
-  <div class="feat_box clearfix">
-    <ul>
-      <li>Noise cancellation</li>
-      <li><img src="<%=asset_path 'rating_1.png' %>"></li>
-      <li><img src="<%=asset_path 'rating_2.png' %>"></li>
-      <li><img src="<%=asset_path 'rating_3.png' %>"></li>
-      <li><img src="<%=asset_path 'rating_4.png' %>"></li>
-      <li><img src="<%=asset_path 'rating_5.png' %>"></li>
-    </ul>
-  </div>
-
-  <div class="feat_box clearfix">
-    <ul>
-      <li>Noise cancellation</li>
-      <li><img src="<%=asset_path 'rating_1.png' %>"></li>
-      <li><img src="<%=asset_path 'rating_2.png' %>"></li>
-      <li><img src="<%=asset_path 'rating_3.png' %>"></li>
-      <li><img src="<%=asset_path 'rating_4.png' %>"></li>
-      <li><img src="<%=asset_path 'rating_5.png' %>"></li>
-    </ul>
-  </div>
-
-  <div class="feat_box clearfix">
-    <ul>
-      <li>Noise cancellation</li>
-      <li><img src="<%=asset_path 'rating_1.png' %>"></li>
-      <li><img src="<%=asset_path 'rating_2.png' %>"></li>
-      <li><img src="<%=asset_path 'rating_3.png' %>"></li>
-      <li><img src="<%=asset_path 'rating_4.png' %>"></li>
-      <li><img src="<%=asset_path 'rating_5.png' %>"></li>
-    </ul>
-  </div>
-
-  <div class="feat_box clearfix">
-    <ul>
-      <li>Noise cancellation</li>
-      <li><img src="<%=asset_path 'rating_1.png' %>"></li>
-      <li><img src="<%=asset_path 'rating_2.png' %>"></li>
-      <li><img src="<%=asset_path 'rating_3.png' %>"></li>
-      <li><img src="<%=asset_path 'rating_4.png' %>"></li>
-      <li><img src="<%=asset_path 'rating_5.png' %>"></li>
-    </ul>
-  </div>
-
-
-
-</div>
+<% end %>

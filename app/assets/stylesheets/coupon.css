@@ -187,7 +187,7 @@
 .more_detail .detail_card .detail_box .rating_card img{width:40%;vertical-align:super;}
 .more_detail .detail_card .detail_box .rating_card span{font-size:15px;display:inline-block;}
 .more_detail .detail_card .detail_box .rating_card .rating_box{}
-.more_detail .detail_card .detail_box .rating_card .rating_box i{font-size:19px;color:#ffbf00;vertical-align:sub;}
+.more_detail .detail_card .detail_box .rating_card .rating_box i{font-size:19px;color:#ff4d4d;vertical-align:sub;}
 .date_exp_detail_box{width:33%;margin:1%;border:1px solid #ccc;border-radius:10px;float:left;position:relative;height:80px;font-weight:100;}
 .code_detail_box{width:63%;margin:1%;border:1px solid #ccc;border-radius:10px;float:left;position:relative;height:80px;font-weight:100;}
 .daxp_single{width:100%;}

@@ -1,40 +1,101 @@
-<div class="wrap">   
-  <h3>Customer reviews</h3>
+<div class="rating_detail">
+  <div class="graph_ratings">
+      <% if @post.spare_42.present? %>
+       <div class="rating_card">
+          <% if @post.spare_58 == 50 %>
+            <div class="rating_box">
+              <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i>
+              <span>/ <%= number_with_precision(@post.spare_41, precision: 0, separator: ',', delimiter: ',') %> +</span> 
+            </div>
+          <% elsif @post.spare_58 == 45 %>
+            <div class="rating_box">
+              <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i>
+              <span>/ <%= number_with_precision(@post.spare_41, precision: 0, separator: ',', delimiter: ',') %> +</span> 
+            </div>
+          <% elsif @post.spare_58 == 40 %>
+            <div class="rating_box">
+              <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i>
+              <span>/ <%= number_with_precision(@post.spare_41, precision: 0, separator: ',', delimiter: ',') %> +</span> 
+            </div>
+          <% elsif @post.spare_58 == 35 %>
+            <div class="rating_box">
+              <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i><i class="material-icons">star_border</i>
+              <span>/ <%= number_with_precision(@post.spare_41, precision: 0, separator: ',', delimiter: ',') %> +</span> 
+            </div>
+          <% elsif @post.spare_58 == 30 %>
+            <div class="rating_box">
+              <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i>
+              <span>/ <%= number_with_precision(@post.spare_41, precision: 0, separator: ',', delimiter: ',') %> +</span> 
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+  </div>
+
   <div class="barGraph">
     <ul class="graph">
       <span class="graph-barBack">
-        <li class="graph-bar" data-value="28.5">
+        <li class="graph-bar" data-value="<%= @post.p_integer_01 %>">
           <span class="graph-legend"><img src="<%=asset_path 'rating_5.png' %>" alt="five star" /></span>
         </li>
       </span>  
 
       <span class="graph-barBack">    
-        <li class="graph-bar" data-value="85">
+        <li class="graph-bar" data-value="<%= @post.p_integer_02 %>">
           <span class="graph-legend"><img src="<%=asset_path 'rating_4.png' %>" alt="four star" /></span>
         </li>
       </span>
 
       <span class="graph-barBack">    
-        <li class="graph-bar" data-value="70">
+        <li class="graph-bar" data-value="<%= @post.p_integer_03 %>">
           <span class="graph-legend"><img src="<%=asset_path 'rating_3.png' %>" alt="three star" /></span>
         </li>
       </span>
 
       <span class="graph-barBack">    
-        <li class="graph-bar" data-value="50">
+        <li class="graph-bar" data-value="<%= @post.p_integer_04 %>">
           <span class="graph-legend"><img src="<%=asset_path 'rating_2.png' %>" alt="two star" /></span>
         </li>
       </span>
 
       <span class="graph-barBack">    
-        <li class="graph-bar" data-value="68">
+        <li class="graph-bar" data-value="<%= @post.p_integer_05 %>">
           <span class="graph-legend"><img src="<%=asset_path 'rating_1.png' %>" alt="one star" /></span>
         </li>
-      </spa>      
+      </span>      
     </ul>
   </div>
-  
+
+  <div class="star_rating clearfix">
+    <div class="sr_box">
+      <p>5 Star</p>
+      <span><%= @post.p_integer_01 %>%</span>
+    </div>
+
+    <div class="sr_box">
+      <p>4 Star</p>
+      <span><%= @post.p_integer_02 %>%</span>
+    </div>
+
+    <div class="sr_box">
+      <p>3 Star</p>
+      <span><%= @post.p_integer_03 %>%</span>
+    </div>
+
+    <div class="sr_box">
+      <p>2 Star</p>
+      <span><%= @post.p_integer_04 %>%</span>
+    </div>
+
+    <div class="sr_box">
+      <p>1 Star</p>
+      <span><%= @post.p_integer_05 %>%</span>
+    </div>
+  </div>
+
 </div>
+  
+
 
 <script type="text/javascript">
   // Produces width of .barChart

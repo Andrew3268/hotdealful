@@ -96,7 +96,8 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:title, :link, :image, :source, :hashtag, :rating, :review_count, :is_price, :was_price,
                                    :pct, :description, :spare_61, :spare_62, :spare_56, :spare_41, :spare_42, :spare_58, :spare_01,
-                                   :spare_02, :spare_03)
+                                   :spare_02, :spare_03, :p_integer_01, :p_integer_02, :p_integer_03, :p_integer_04, :p_integer_05, :p_integer_06,
+                                   :p_integer_07, :p_integer_08, :p_integer_0, :p_integer_10, :p_integer_11, :spare_04, :spare_05, :spare_06, :spare_07, :spare_08, :spare_09)
     end
 end
 
