@@ -1,4 +1,4 @@
-<div class="hotdeal_form">
+<div class="hotdeal_form post_form">
   <%= simple_form_for(@post) do |f| %>
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
@@ -6,6 +6,8 @@
     <div class="basic_info">
       <%= f.input :image %>
       <%= f.input :title %>
+    </div>
+    <div class="hashtag clearfix">
       <%= f.input :link %>
       <%= f.input :hashtag, label: "#HashTag" %>
       <%= f.input :spare_01, label: "HashTag with out #" %>
@@ -29,7 +31,7 @@
       <%= f.input :p_integer_05, label: "1-star" %>    
     </div>
 
-    <div class="pricing clearfix">
+    <div class="pricing clearfix star_01">
       <%= f.input :spare_04, label: "fea_title_01" %>
       <%= f.input :p_integer_06, label: "fea_rating_01" %>
       <%= f.input :spare_05, label: "fea_title_02" %>

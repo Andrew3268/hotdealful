@@ -126,10 +126,15 @@ header nav button img{width:25px;height:25px;}
 .hotdeal_form textarea{height:80px;}
 .hotdeal_form trix-editor{min-height:15em;}
 .hotdeal_form label{font-size:13px;}
-.hotdeal_form .pricing div{float:left;;margin:1%;}
+.hotdeal_form .pricing div{float:left;margin:1%;}
 .hotdeal_form .pricing div .promo_code{width:500px;margin-right:1%;}
 .hotdeal_form .pricing div .promo_date{width:300px;}
 .hotdeal_form .form_btn input{margin-top:10px;background:#000;color:#fff;padding:15px 0;}
+
+.post_form label{font-size:10px;}
+.post_form .hashtag div{width:200px;float:left;margin-right:20px;}
+.post_form .pricing div{width:100px;margin: 0 0.5%;}
+.post_form .star_01 div{width:70px;}
 
 
 /********** Footer Section **********/
