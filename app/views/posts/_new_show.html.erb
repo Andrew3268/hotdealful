@@ -272,14 +272,16 @@
                           <% else %>
                             <td>-</td>
                           <% end %>
-                          <% if @post.spare_02.present? %>
-                            <td>YES</td>
+                          <% if @post.spare_03.present? %>
+                            <td><%= @post.spare_03 %></td>
                           <% else %>
                             <td>-</td>
                           <% end %>
                         </tr>
                       </table>
-                      <em><span>Amazon's Choice:</span> highlights highly rated, well-priced products available to ship immediately.</em>
+                      <% if @post.spare_02.present? %>
+                        <em><span>Amazon's Choice:</span> highlights highly rated, well-priced products available to ship immediately.</em>
+                      <% end %>
                     </div>
 
                   </section>
