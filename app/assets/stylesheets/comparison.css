@@ -61,7 +61,7 @@
 .grid .extra {
   display: none;
 }
-.img_box{padding:10px;}
+.img_box{padding:10px;height:150px;position:relative;}
 .product__image {
   /*display: block;*/
   /*margin: 0 auto;*/
@@ -70,6 +70,7 @@
   -webkit-transform-origin: 50% 100%;
   transform-origin: 50% 100%;
   object-fit:contain;
+  position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);
 }
 
 .product__title {
