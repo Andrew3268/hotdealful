@@ -54,23 +54,22 @@
 .product__info{border:1px solid #ccc;border-radius:5px;}
 .product__info > span {
   display: block;
-  padding: 1em 0;
+  padding: 0.5em 0;
 }
 
 /* since we'll be using the product info inside of the comparison, we'll hide the extra info for the grid view */
 .grid .extra {
   display: none;
 }
-.img_box{padding:20px;}
+.img_box{padding:10px;}
 .product__image {
-  display: block;
-  margin: 0 auto;
-  max-width:80%;
+  /*display: block;*/
+  /*margin: 0 auto;*/
+  width:80%;
   height:80%;
   -webkit-transform-origin: 50% 100%;
   transform-origin: 50% 100%;
   object-fit:contain;
-  /*padding:20px;*/
 }
 
 .product__title {
