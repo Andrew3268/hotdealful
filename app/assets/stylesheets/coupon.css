@@ -198,7 +198,7 @@
 @media screen and (max-width:640px){
   .n_coupon_wrap h2{margin-bottom:20px;}
   .more_detail .detail_card .detail_box{height:65px;padding:7px;}
-  .more_detail .detail_card .detail_box p{font-size:12px;margin-bottom:4px;padding:0 2px;}
+  .more_detail .detail_card .detail_box p{font-size:11px;margin-bottom:4px;padding:0 2px;}
   .more_detail .detail_card .detail_box span.verified{margin-top:0;font-size:17px;}
   .more_detail .detail_card .detail_box span.verified img.coupon_check{width:18%;}
   .more_detail .detail_card .detail_box span.verified em{font-size:14px;}
