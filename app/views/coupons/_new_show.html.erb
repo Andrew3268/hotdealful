@@ -104,7 +104,7 @@
                     // Customer Reviews: <%= number_with_delimiter(@coupon.c_spare_42) %> / <%= number_with_precision(@coupon.c_spare_41, precision: 0, separator: ',', delimiter: ',') %> global ratings. 
                   </p>
                 </div>
-              <% end %>
+            <% end %>
 
             <!-- For PC -->
             <div class="image-box clearfix">
@@ -123,29 +123,31 @@
               <h2><%= @coupon.c_title %></h2>
               <div class="pricing_box">
                 <p>
-                <% promo_price = 0 %>
-                <% promo_price = (@coupon.c_pct.to_f / 100) * @coupon.c_was_price %>
-                <% pct_coupon = 0 %>
-                <% pct_coupon = (@coupon.c_spare_61.to_f / 100) * @coupon.c_was_price %>
-                <% total_price = 0 %>
-                <% total_price = @coupon.c_was_price - promo_price %>
-                <% total_price_pct_coupon = total_price - pct_coupon %>
-                <% total_price_cash_coupon = total_price - @coupon.c_spare_62.to_f %>
-                  
-                <% if @coupon.c_spare_61.present? || @coupon.c_spare_62.present? %>   
-                  <% if @coupon.c_spare_61.present? %>
-                    <span><%= number_to_currency(total_price_pct_coupon) %></span>
-                  <% elsif %> 
-                    <% if @coupon.c_spare_62.present? %>
-                      <span><%= number_to_currency(total_price_cash_coupon) %></span>
+                  <% promo_price = 0 %>
+                  <% promo_price = (@coupon.c_pct.to_f / 100) * @coupon.c_was_price %>
+                  <% pct_coupon = 0 %>
+                  <% pct_coupon = (@coupon.c_spare_61.to_f / 100) * @coupon.c_was_price %>
+                  <% total_price = 0 %>
+                  <% total_price = @coupon.c_was_price - promo_price %>
+                  <% total_price_pct_coupon = total_price - pct_coupon %>
+                  <% total_price_cash_coupon = total_price - @coupon.c_spare_62.to_f %>
+                    
+                  <% if @coupon.c_spare_61.present? || @coupon.c_spare_62.present? %>   
+
+                    <% if @coupon.c_spare_61.present? %>
+                      <span><%= number_to_currency(total_price_pct_coupon) %></span>
+                    <% elsif %> 
+                      <% if @coupon.c_spare_62.present? %>
+                        <span><%= number_to_currency(total_price_cash_coupon) %></span>
+                      <% else %>
+                        <span><%= number_to_currency(promo_price) %></span>  
+                      <% end %>
                     <% else %>
-                      <span><%= @coupon.c_is_price %></span>
+                      <span><%= number_to_currency(promo_price) %></span>  
                     <% end %>
                   <% else %>
-                    <span><%= @coupon.c_is_price %></span>
+                      <span><%= number_to_currency(promo_price) %></span>  
                   <% end %>
-                <% else %>
-                <% end %>
                     
                 </p>
 
