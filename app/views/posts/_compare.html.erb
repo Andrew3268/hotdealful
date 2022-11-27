@@ -1,7 +1,7 @@
 
 <!-- Compare basket -->
     <div class="compare-basket">
-      <button class="action action--button action--compare"><i class="fa fa-check"></i><span class="action__text">Compare</span></button>
+      <button class="action action--button action--compare"><i class="fa fa-check"></i><span class="action__text">Compare(Max 3ea)</span></button>
     </div>
     <!-- Main view -->
     <div class="view">
@@ -57,9 +57,9 @@
                 <div class="extra_coupons">
                   <% if post.spare_61.present? || post.spare_62.present? %>
                     <% if post.spare_61.present? %>
-                      <em><%= post.spare_61 %>% Coupon</em>
+                      <em>+ <%= number_to_percentage(post.spare_61, precision: 0) %> Coupon</em>
                     <% else %>
-                      <em>$<%= post.spare_62 %> Coupon</em>
+                      <em>+ <%= number_to_currency(post.spare_62, precision: 0) %> Coupon</em>
                     <% end %>
                   <% else %>
                     <span> - </span>
@@ -134,7 +134,8 @@
               <div class="extra detail_btn">
                 <a class="btn" href="/posts/<%= post.id %>">View Detail</a>
               </div>
-              <span class="product__is_price bottom_span"></span>
+              <br><br><br>
+              <!-- <span class="product__is_price bottom_span"></span> -->
               
             </div><!-- product__info -->
             <label class="action action--compare-add"><input class="check-hidden" type="checkbox" /><i class="fa fa-plus"></i><i class="fa fa-check"></i><!-- <span class="action__text action__text--invisible">Compare</span> --></label>

@@ -21,7 +21,7 @@
               </div>
             <% end %>
 
-            <div class="title_mobile">
+            <!-- <div class="title_mobile">
               <h2 class="line-break-02">
                 <% promo_price = 0 %>
                 <% promo_price = (@post.pct.to_f / 100) * @post.was_price %>
@@ -54,41 +54,73 @@
                 <% end %>
                 
               </h2>
-            </div>
+            </div> -->
             
 
             <div class="image-box post_img_box clearfix">
               <img src="<%= @post.image %>" alt="<%= @post.title %>" title="<%= @post.title %>" />
             </div>
 
-            <!-- <div class="new_title_wrap">
+            <div class="new_title_wrap">
               
               <h2><%= @post.title %></h2>
               <div class="pricing_box">
-                <p><%= @post.was_price %>
-                  <% extra_coupon_dallor_total = 0 %>
-                  <% extra_coupon_dallor_total =  @post.is_price.to_f - @post.spare_62.to_f %>
+                <p>
+                <% extra_coupon_dallor_total = 0 %>
+                <% extra_coupon_dallor_total =  @post.is_price.to_f - @post.spare_62.to_f %>
                   
                   
-                  <% if @post.spare_61.present? %>
-                    <span><%= number_to_currency(extra_coupon_total) %></span>
-                  <% elsif %> 
-                    <% if @post.spare_62.present? %>
-                      <span><%= number_to_currency(extra_coupon_dallor_total) %></span>
-                    <% else %>
-                      <span><%= @post.is_price %></span>
-                    <% end %>
+                <% if @post.spare_61.present? %>
+                  <span><%= number_to_currency(extra_coupon_total) %></span>
+                <% elsif %> 
+                  <% if @post.spare_62.present? %>
+                    <span><%= number_to_currency(extra_coupon_dallor_total) %></span>
                   <% else %>
-                    <span><%= @post.is_price %></span>
+                    <span><%= number_to_currency(@post.is_price) %></span>
                   <% end %>
+                <% else %>
+                  <span><%= number_to_currency(@post.is_price) %></span>
+                <% end %>
                     
                 </p>
+
+                <% if @post.spare_42.present? %>
+                 <div class="rating_card">
+                    <% if @post.spare_58 == 50 %>
+                      <div class="rating_box">
+                        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i>
+                        <span>/ <%= number_with_precision(@post.spare_41, precision: 0, separator: ',', delimiter: ',') %> +</span> 
+                      </div>
+                    <% elsif @post.spare_58 == 45 %>
+                      <div class="rating_box">
+                        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i>
+                        <span>/ <%= number_with_precision(@post.spare_41, precision: 0, separator: ',', delimiter: ',') %> +</span> 
+                      </div>
+                    <% elsif @post.spare_58 == 40 %>
+                      <div class="rating_box">
+                        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i>
+                        <span>/ <%= number_with_precision(@post.spare_41, precision: 0, separator: ',', delimiter: ',') %> +</span> 
+                      </div>
+                    <% elsif @post.spare_58 == 35 %>
+                      <div class="rating_box">
+                        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i><i class="material-icons">star_border</i>
+                        <span>/ <%= number_with_precision(@post.spare_41, precision: 0, separator: ',', delimiter: ',') %> +</span> 
+                      </div>
+                    <% elsif @post.spare_58 == 30 %>
+                      <div class="rating_box">
+                        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i>
+                        <span>/ <%= number_with_precision(@post.spare_41, precision: 0, separator: ',', delimiter: ',') %> +</span> 
+                      </div>
+                    <% end %>
+                  </div>
+                <% end %>
+
               </div>
-            </div> -->
+            </div>
 
             <div class="inner-box clearfix">
               
-              <div class="title">
+              <!-- <div class="title">
                 <h2 class="line-break-02">
                   <% promo_price = 0 %>
                   <% promo_price = (@post.pct.to_f / 100) * @post.was_price %>
@@ -116,7 +148,7 @@
                     <% if current_user && current_user.admin %><%= @post.spare_42 %> <%= @post.spare_41 %>+<% end %> 
                   </div>            
                 <% end %>
-              </div>
+              </div> -->
 
 
               <div class="post_tabs">
@@ -136,10 +168,10 @@
                 <!-- <div class="slider"><div class="indicator"></div></div> -->
                 <div class="pt_content">
                 <section>
-                    <h3>SUMMARY</h3>
+                    <h3>Summary</h3>
                     <div class="summary_title">
-                      <p class="posted_date">Found on <%= @post.created_at.strftime("#{@post.created_at.day.ordinalize} %B %Y") %></p>
-                      <div class="more_detail clearfix">
+                      <!-- <p class="posted_date">Found on Amazon on <%= @post.created_at.strftime("#{@post.created_at.day.ordinalize} %B %Y") %></p> -->
+                      <div class="more_detail clearfix post_more_detail">
                           <div class="detail_card cleafix">
                               <% if @post.spare_61.present? || @post.spare_62.present? %>
                                 <div class="verified_check detail_box">
@@ -191,7 +223,7 @@
                                 <span class="review"><%= @post.spare_41 %> +</span>
                               </div> -->
                           </div><!-- detail_card -->
-                        </div><!-- more_detail --> 
+                      </div><!-- more_detail --> 
                     </div>
                     <div class="receipt">
                       <!-- Button Section - Text(left) -->
@@ -249,12 +281,12 @@
                 </section>
 
                 <section>
-                  <h3>CUSTOMER REVIEWS</h3>
+                  <h3>Customer Reviews</h3>
                   <%= render 'posts/rating_detail' %>
                   
                 </section>
                   <section>
-                    <h3>BY FEATURE</h3>
+                    <h3>By Feature</h3>
                     <%= render 'posts/featured' %>
                   </section>
 
@@ -270,12 +302,12 @@
                           <% if @post.spare_03.present? %>
                             <td><%= @post.spare_03 %></td>
                           <% else %>
-                            <td>-</td>
+                            <td><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm5 12H7v-4h10v4z"/></svg></td>
                           <% end %>
                           <% if @post.spare_02.present? %>
-                            <td><%= @post.spare_02 %></td>
+                            <td><svg id="Icons" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm5.707,8.707-7,7a1,1,0,0,1-1.414,0l-3-3a1,1,0,0,1,1.414-1.414L10,14.586l6.293-6.293a1,1,0,0,1,1.414,1.414Z"/></svg></td>
                           <% else %>
-                            <td>-</td>
+                            <td><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm5 12H7v-4h10v4z"/></svg></td>
                           <% end %>
                         </tr>
                       </table>
@@ -313,8 +345,12 @@
                 <div class="sharethis-inline-share-buttons"></div>
               </div>
               -->
+
+              <div class="post_m_btn">
+                <a href="#" class="link">Buy now on Amazon</a>
+              </div>
               
-              <div class="btn">
+              <div class="btn post_btn_wrap">
                 <% btn_price = @post.was_price.to_f - @post.is_price %>
                 <% btn_pct_price = @post.was_price.to_f - extra_coupon_total.to_f %>
                 <% btn_cash_price = @post.was_price.to_f - extra_coupon_dallor_total.to_f %>

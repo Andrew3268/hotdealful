@@ -168,6 +168,7 @@
 .n_coupon_card .inner .more_detail p em.total_savings{font-size:15px;font-weight:bold;}
 .n_coupon_card .inner .more_detail span.exp_date{font-size:12px;}
 
+.post_more_detail{display:none;}
 .more_detail .detail_card{}
 .more_detail .detail_card .summary_block{float:left;width:48%;margin:1px;}
 
@@ -198,7 +199,7 @@
 @media screen and (max-width:640px){
   .n_coupon_wrap h2{margin-bottom:20px;}
   .more_detail .detail_card .detail_box{height:65px;padding:7px;}
-  .more_detail .detail_card .detail_box p{font-size:11px;margin-bottom:4px;padding:0 2px;}
+  .more_detail .detail_card .detail_box p{font-size:10px;margin-bottom:4px;padding:0 2px;}
   .more_detail .detail_card .detail_box span.verified{margin-top:0;font-size:17px;}
   .more_detail .detail_card .detail_box span.verified img.coupon_check{width:18%;}
   .more_detail .detail_card .detail_box span.verified em{font-size:14px;}
