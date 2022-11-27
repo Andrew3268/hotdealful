@@ -140,13 +140,13 @@
                       <% if @coupon.c_spare_62.present? %>
                         <span><%= number_to_currency(total_price_cash_coupon) %></span>
                       <% else %>
-                        <span><%= number_to_currency(promo_price) %></span>  
+                        <span><%= number_to_currency(total_price) %></span>  
                       <% end %>
                     <% else %>
-                      <span><%= number_to_currency(promo_price) %></span>  
+                      <span><%= number_to_currency(total_price) %></span>  
                     <% end %>
                   <% else %>
-                      <span><%= number_to_currency(promo_price) %></span>  
+                      <span><%= number_to_currency(total_price) %></span>  
                   <% end %>
                     
                 </p>
