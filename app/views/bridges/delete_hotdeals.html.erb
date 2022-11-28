@@ -8,21 +8,20 @@
         <th>No.</th>
         <th>Title</th>
         <th>Hashtag</th>
-        <th>Sub_Code</th>
         <th>Posting Time</th>
         <th>Destroy</th>
       </tr>
         
         <% @posts.each_with_index do |post, i| %>
-          
-            <tr>
-              <td><p><%= i + 1 %></p></td>
-              <td><p><%= link_to post.title, post %></p></td>
-              <td><p><%= post.hashtag %></p></td>
-              <td><p><%= post.spare_57 %></p></td>
-              <td><%= time_ago_in_words(post.created_at) %> ago</td>
-              <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            </tr>
+            <% if post.created_at < 7.days.ago %>
+              <tr>
+                <td><p><%= i + 1 %></p></td>
+                <td><p><%= link_to post.title, post %></p></td>
+                <td><p><%= post.hashtag %></p></td>
+                <td><%= time_ago_in_words(post.created_at) %> ago</td>
+                <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            <% end %>
           
         <% end %>
           
