@@ -1,7 +1,7 @@
 
 <!-- Compare basket -->
     <div class="compare-basket">
-      <button class="action action--button action--compare"><i class="fa fa-check"></i><span class="action__text">Compare(Max 3ea)</span></button>
+      <button class="action action--button action--compare"><i class="fa fa-check"></i><span class="action__text">Compare(Max 3EA)</span></button>
     </div>
     <!-- Main view -->
     <div class="view">
@@ -14,6 +14,11 @@
               <a href="/posts/<%= post.id %>">
                 <div class="img_box">
                   <img class="product__image" src="<%= post.image %>" alt="<%= post.title %>" />
+                  <div class="compare_pct">
+                    <% hotdeal_pct = 0 %>
+                    <% hotdeal_pct =  (post.was_price - post.is_price) / post.was_price * 100 %>
+                    <span><%= number_to_percentage(hotdeal_pct, precision: 0) %></span>
+                  </div>
                 </div>
               </a>
               <% total_save = 0 %>
@@ -35,21 +40,31 @@
                         <% total_save = post.was_price - total_price_cash_coupon %>
                       </div>
                     <% end %>
+                    <% if current_user && current_user.admin %>
+                      <div class="admin">
+                        <%= link_to 'Edit', edit_post_path(post) %> |
+                        <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+                      </div>
+                    <% end %>
                 </h3>
-              <% else %>
-                <h3 class="product__title">
-                  <p><%= post.title %></p>
-                  <span class="product__is_price title_span"><%= number_to_currency(post.is_price) %></span>    
-                </h3>
-              <% end %>
-                
+                <% else %>
+                  <h3 class="product__title">
+                    <p><%= post.title %></p>
+                    <span class="product__is_price title_span"><%= number_to_currency(post.is_price) %></span>    
+                    <% if current_user && current_user.admin %>
+                      <div class="admin">
+                        <%= link_to 'Edit', edit_post_path(post) %> |
+                        <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+                      </div>
+                    <% end %>
+                  </h3>
+                <% end %>
+                  
 
               <div class="detail extra highlight">
                 <em class="was_price"><%= number_to_currency(post.was_price) %></em>
               </div>
               <div class="detail extra highlight">
-                <% hotdeal_pct = 0 %>
-                <% hotdeal_pct =  (post.was_price.to_f - post.is_price.to_f) / post.was_price.to_f * 100 %>
                 <em class="pct"><%= number_to_percentage(hotdeal_pct, precision: 0) %> off</em>
               </div>
 

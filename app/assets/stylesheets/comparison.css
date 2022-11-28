@@ -61,12 +61,14 @@
 .grid .extra {
   display: none;
 }
-.img_box{padding:10px;height:150px;position:relative;}
+.product__info .img_box{padding:10px;height:150px;position:relative;}
+.product__info .img_box .compare_pct{position:absolute;top:0;left:0;padding:7px;border-radius:5px;color:#fff;background-color:#ff4d4d;border:2px solid #fff;}
+.product__info .img_box .compare_pct span{}
 .product__image {
   /*display: block;*/
   /*margin: 0 auto;*/
-  width:80%;
-  height:80%;
+  width:70%;
+  height:70%;
   -webkit-transform-origin: 50% 100%;
   transform-origin: 50% 100%;
   object-fit:contain;

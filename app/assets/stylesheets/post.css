@@ -113,7 +113,7 @@
 /*.show-wrap .image-box{float:left;width:45%;margin-right:5%;position:relative;height:350px;background:#fff;border-radius:20px;} old show*/
 /*.show-wrap .image-box img{width:70%;height:70%;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);object-fit:contain;} old show*/
 .show-wrap .image-box{float:none;width:100%;position:relative;height:350px;background:#fff;border-radius:20px;box-shadow:rgba(149,157,165,0.3) 0px 8px 24px;border-radius:20px;}
-.show-wrap .image-box img{width:70%;height:70%;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);object-fit:contain;} 
+.show-wrap .image-box img{width:55%;height:55%;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);object-fit:contain;} 
 /*.show-wrap .inner-box{float:left;width:50%;margin:0;} old show*/
 .show-wrap .inner-box{float:none;width:100%;margin:0;}
 .show-wrap .coupon-inner-box{box-shadow:rgba(149,157,165,0.3) 0px 8px 24px;border-radius:20px;padding:30px 20px;}
