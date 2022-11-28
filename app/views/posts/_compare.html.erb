@@ -14,11 +14,6 @@
               <a href="/posts/<%= post.id %>">
                 <div class="img_box">
                   <img class="product__image" src="<%= post.image %>" alt="<%= post.title %>" />
-                  <div class="compare_pct">
-                    <% hotdeal_pct = 0 %>
-                    <% hotdeal_pct =  (post.was_price - post.is_price) / post.was_price * 100 %>
-                    <span><%= number_to_percentage(hotdeal_pct, precision: 0) %></span>
-                  </div>
                 </div>
               </a>
               <% total_save = 0 %>
@@ -47,24 +42,26 @@
                       </div>
                     <% end %>
                 </h3>
-                <% else %>
-                  <h3 class="product__title">
-                    <p><%= post.title %></p>
-                    <span class="product__is_price title_span"><%= number_to_currency(post.is_price) %></span>    
-                    <% if current_user && current_user.admin %>
+              <% else %>
+                <h3 class="product__title">
+                  <p><%= post.title %></p>
+                  <span class="product__is_price title_span"><%= number_to_currency(post.is_price) %></span>    
+                  <% if current_user && current_user.admin %>
                       <div class="admin">
                         <%= link_to 'Edit', edit_post_path(post) %> |
                         <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
                       </div>
                     <% end %>
-                  </h3>
-                <% end %>
-                  
+                </h3>
+              <% end %>
+                
 
               <div class="detail extra highlight">
                 <em class="was_price"><%= number_to_currency(post.was_price) %></em>
               </div>
               <div class="detail extra highlight">
+                <% hotdeal_pct = 0 %>
+                <% hotdeal_pct =  (post.was_price.to_f - post.is_price.to_f) / post.was_price.to_f * 100 %>
                 <em class="pct"><%= number_to_percentage(hotdeal_pct, precision: 0) %> off</em>
               </div>
 
@@ -130,8 +127,16 @@
               </div>
 
               <div class="detail extra highlight">
+                <% if post.spare_04.present? %>
+                  <p class="by_feature"><%= post.spare_04 %></p>
+                <% else %>
+                  <p> - </p>
+                <% end %>
+              </div>
+
+              <div class="detail extra highlight">
                 <% if post.spare_02.present? %>
-                  <p>Amazon's Choice</p>
+                  <p class="amz_choice">Amazon's Choice</p>
                 <% else %>
                   <p> - </p>
                 <% end %>
@@ -140,9 +145,9 @@
 
               <div class="detail extra highlight seller_rank">
                 <% if post.spare_03.present? %>
-                  <p><%= post.spare_03 %></p>
+                  <em><%= post.spare_03 %></em>
                 <% else %>
-                  <p> - </p>
+                  <em> - </em>
                 <% end %>
               </div>
               
@@ -154,7 +159,14 @@
               
             </div><!-- product__info -->
             <label class="action action--compare-add"><input class="check-hidden" type="checkbox" /><i class="fa fa-plus"></i><i class="fa fa-check"></i><!-- <span class="action__text action__text--invisible">Compare</span> --></label>
-          </div>
+            <div class="compare_pct">
+              <% if post.spare_61.present? || post.spare_62.present? %>
+                <span><%= number_to_percentage(hotdeal_pct, precision: 0) %> +</span>
+              <% else %>
+                <span><%= number_to_percentage(hotdeal_pct, precision: 0) %></span>
+              <% end %>
+            </div>
+          </div><!-- product -->
         <% end %>
       </section>
     </div><!-- /view -->
