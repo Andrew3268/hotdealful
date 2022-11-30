@@ -13,7 +13,7 @@
       </tr>
         
         <% @posts.each_with_index do |post, i| %>
-            <% if post.created_at < 1.days.ago %>
+            <% if post.created_at < 7.days.ago %>
               <tr>
                 <td><p><%= i + 1 %></p></td>
                 <td><p><%= link_to post.title, post %></p></td>

@@ -8,6 +8,7 @@
 .pick_main_card .inner a{color:#fff;display:block;}
 .pick_main_card .inner span{font-size:15px;margin:0 0 1px 10px;display:inline-table;/*position:absolute;top:40px;left:10px;right:18px;*/} 
 .pick_main_card .inner span.sub_title{font-size:13px;margin:0 0 5px 10px;display:inline-table;/*top:73px;left:10px;*/}
+.pick_main_card .inner span.date{font-size:12px;color:#fff;display:block;}
 .pick_main_card .pick_img{border-radius:20px;}
 .pick_main_card .pick_img img{width:100%;height:250px;object-fit:cover;border-radius:20px;filter:grayscale(0.8);}
 .pick_main_card .admin a{color:#fff;font-size:10px;display:inline-block;}
@@ -19,6 +20,7 @@
 .pick_sub_card .inner p{font-size:13px;}
 .pick_sub_card .inner p.main_title{color:#3d3d3d;margin-bottom:2px;line-height:1.2;}
 .pick_sub_card .inner p.sub_title{color:#3d3d3d;display:table;}
+.pick_sub_card .inner span.date{font-size:10px;color:#ccc;}
 .pick_sub_card .inner a.pick_sub_card_a{position:absolute;top:50%;transform:translate(0, -50%);display:block;}
 .pick_sub_card .inner .admin{position:absolute;right:-10px;bottom:-10px;font-size:10px;}
 /*.pick_sub_card .inner .admin a{display:table-cell;}*/

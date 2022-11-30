@@ -8,6 +8,7 @@
               <div class="inner clearfix">
                 <span class="main_title"><%= pick.p_title %></span><br />
                 <span class="sub_title"><%= pick.p_spare_01 %></span>
+                <span class="date"><%= pick.created_at.strftime("%a, %b %d, %Y") %></span>
                 <% if current_user && current_user.admin %>
                   <div class="admin">
                     <%= link_to 'Edit', edit_pick_path(pick) %> |
@@ -29,8 +30,9 @@
         <a class="pick_sub_card_a" href="/posts/hashtag/<%= pick.p_link %>"><div class="pick_img"><img src="<%= pick.p_image %>"></div></a>
         <div class="inner">
           <a class="pick_sub_card_a" href="/posts/hashtag/<%= pick.p_link %>">
-            <p class="main_title"><%= pick.p_title %></p>
+            <span class="main_title"><%= pick.p_title %></span>
             <p class="sub_title"><%= pick.p_spare_01 %></p>
+            <span class="date">Found on <%= pick.created_at.strftime("#{pick.created_at.day.ordinalize} %B %Y") %></span>
             <% if current_user && current_user.admin %>
               <div class="admin">
                 <%= link_to 'Edit', edit_pick_path(pick)%>
