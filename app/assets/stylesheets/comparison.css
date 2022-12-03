@@ -199,7 +199,7 @@
 .action--compare {
   margin: 0 0 0 4px;
   opacity: 0;
- 송pointer-events: none;
+  pointer-events: none;
   cursor: default;
   background-color: #34363D;
   color: #565B6C;
@@ -317,7 +317,7 @@
 }
 
 .product-icon::after {
-  content: ''; 
+  /*content: ''; */
   position: absolute;
   width: 100%;
   height: 100%;
