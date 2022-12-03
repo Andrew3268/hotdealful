@@ -35,6 +35,11 @@ body{margin:0;padding:0;font-size:15px;color:#000;line-height:1.5;font-weight:30
   .wrap{width:auto;margin:0 3%;}
 }
 
+/****** Common Css *****/
+/** 2 sentences **/
+.two_sentences{word-break:keep-all;line-height:1.4;height:2.8em;overflow:hidden;display:-webkit-box;display:-ms-flexbox;vertical-align:top;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:2;}
+
+
 
 
 /*Header */

@@ -3,6 +3,9 @@
 
   <div class="destory_old_post">
     <p>Destory Hotdeals // <a href="/">Home</a></p>
+
+    
+<!-- 
     <table id="customers">
       <tr>
         <th>No.</th>
@@ -14,19 +17,61 @@
         
         <% @posts.each_with_index do |post, i| %>
             <% if post.created_at < 7.days.ago %>
-              <tr>
-                <td><p><%= i + 1 %></p></td>
-                <td><p><%= link_to post.title, post %></p></td>
-                <td><p><%= post.hashtag %></p></td>
-                <td><%= time_ago_in_words(post.created_at) %> ago</td>
-                <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <tr id="myUL">
+                <td><p><a href="#"><%= i + 1 %></a></p></td>
+                <td><p><a href="#"><%= link_to post.title, post %></a></p></td>
+                <td><p><a href="#"><%= post.hashtag %></a></p></td>
+                <td><a href="#"><%= time_ago_in_words(post.created_at) %> ago</a></td>
+                <td><a href="#"><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></a></td>
               </tr>
             <% end %>
           
         <% end %>
           
-    </table>
-
+    </table> -->
     
+      <input type="text" id="myInput" onkeyup="myFunction1()" placeholder="Search for names">
+      <hr/>
+      <table id="myTable">
+          <tr>
+              <th>Hashtag</th>
+              <th>Delete</th>
+              
+          </tr>
+          <% @posts.each_with_index do |post, i| %>
+            <% if post.created_at < 5.days.ago %>
+              <tr>
+                <td><%= post.hashtag %></td>
+                <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            <% end %>
+          <% end %>
+      </table>
+  
   </div>
 <% end %>
+
+<script type="text/javascript">
+  function myFunction1() {
+    // Declare variables 
+    var input, filter, table, tr, td, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+
+    // Loop through all table rows, and hide those who don't match the search query
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+            if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+}
+
+</script>
+
