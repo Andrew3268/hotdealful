@@ -165,18 +165,19 @@ a.set_reset_m{display:none;}
   .search-pct .tg tr td a:hover{color:#000;}
 }
 
-/****** Delete_old_post ******/
-.destory_old_post{width:1200px;margin:0 auto;}
-/*.destory_old_post table{font-size:10px;}
+/****** Delete_old_coupon ******/
+.destory_old_coupon{width:1200px;margin:0 auto;}
+.destory_old_coupon table{font-size:10px;}
 #customers{border-collapse:collapse;width:100%;text-align:center;}
 #customers td, #customers th{border:1px solid #08f;padding:8px;}
 #customers td:nth-child(1){width:3%;}
 #customers td:nth-child(2){width:57%;}
 #customers td p{word-break:keep-all;line-height:1.4;height:1.4em;overflow:hidden;display:-webkit-box;display:-ms-flexbox;vertical-align:top;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:1;}
-#customers th{padding-top:12px;padding-bottom:12px;color:#08f;}*/
+#customers th{padding-top:12px;padding-bottom:12px;color:#08f;}
 
-.destory_old_post table{
-  width:100%;border-collapse:collapse;border:2px solid green;text-align:center;}
+/****** Delete_old_post ******/
+.destory_old_post{width:1200px;margin:0 auto;}
+.destory_old_post table{width:100%;border-collapse:collapse;border:2px solid green;text-align:center;font-size:10px;}
 .destory_old_post th{border:2px solid #ccc;padding:10px;text-align:center;background-color:#eee;}
 .destory_old_post td{border:2px solid #ccc;padding:10px;text-align:center;width:50%;}
 .destory_old_post #myInput{padding:10px;width:100%;display:inline-block;}
