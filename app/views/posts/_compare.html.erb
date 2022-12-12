@@ -126,9 +126,9 @@
                 <em class="review"><%= number_with_precision(post.spare_41, precision: 0, separator: ',', delimiter: ',') %> <br>global ratings</em>
               </div>
 
-              <div class="detail extra highlight">
+              <div class="detail extra highlight by_feature_top">
                 <% if post.spare_04.present? %>
-                  <p class="by_feature"><%= post.spare_04 %></p>
+                  <p class="by_feature">#1 <%= post.spare_04 %></p>
                 <% else %>
                   <p> - </p>
                 <% end %>
@@ -145,7 +145,7 @@
 
               <div class="detail extra highlight seller_rank">
                 <% if post.spare_03.present? %>
-                  <em><%= post.spare_03 %></em>
+                  <em class="active"><%= post.spare_03 %></em>
                 <% else %>
                   <em> - </em>
                 <% end %>
