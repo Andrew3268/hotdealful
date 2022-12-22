@@ -26,5 +26,5 @@
 /*.pick_sub_card .inner .admin a{display:table-cell;}*/
 
 @media screen and (max-width:640px){
-  .pick_sub_card{padding:10px;}
+  .pick_sub_card{padding:25px 10px 20px 10px;font-size:12px;}
 } 
