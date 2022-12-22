@@ -13,7 +13,7 @@
 .pick_main_card .pick_img img{width:100%;height:250px;object-fit:cover;border-radius:20px;filter:grayscale(0.8);}
 .pick_main_card .admin a{color:#fff;font-size:10px;display:inline-block;}
 
-.pick_sub_card{padding:15px;border-bottom:1px solid #ccc;}
+.pick_sub_card{padding:25px 10px 20px 10px;border-bottom:1px solid #ccc;font-size:12px;}
 .pick_sub_card .pick_img{float:left;width:25%;}
 .pick_sub_card .pick_img img{width:100%;height:60px;object-fit:cover;border-radius:10px;filter:grayscale(0.6);}
 .pick_sub_card .inner{float:left;width:70%;margin-left:5%;padding:10px;position:relative;height:60px;}
@@ -26,5 +26,5 @@
 /*.pick_sub_card .inner .admin a{display:table-cell;}*/
 
 @media screen and (max-width:640px){
-  .pick_sub_card{padding:25px 10px 20px 10px;font-size:12px;}
+  .pick_sub_card{font-size:12px;}
 } 
