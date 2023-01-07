@@ -7,7 +7,11 @@
           <div class="filter-node clearfix" data-filter='["<%= clipping.cli_title %>"," <%= clipping.cli_categories %>"]'>
             <a href="<%= clipping.cli_link %>">
               <div class="cli_box">
-                <div class="pct"><p><%= number_to_percentage(clipping.cli_pct, precision: 0) %></p></div>
+                
+                <div class="pct">
+                  <p><%= number_to_percentage(clipping.cli_pct, precision: 0) %></p>
+                </div>
+                
                 <div class="ctn">
                   <p><%= clipping.cli_title %></p>
                 </div>

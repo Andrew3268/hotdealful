@@ -131,7 +131,8 @@
 
 /******* New Coupon Section ****/
 .n_coupon_wrap{margin-bottom:50px;padding:0 10px;}
-.n_coupon_wrap h2{color:#000;display:table-cell;font-size:18px;width:100%;font-weight:100;display:inline;box-shadow:inset 0 -10px 0 #ffe7e7;}
+.n_coupon_wrap .promo_title_index{padding:0 10px;}
+.n_coupon_wrap h2{color:#000;display:table-cell;/*font-size:18px;*/width:100%;/*font-weight:100;*/display:inline;/*box-shadow:inset 0 -10px 0 #ffe7e7;*/}
 .n_coupon_wrap .post_hashtag_box{padding:0 8px;}
 .n_coupon_card{border-bottom:1px solid #ccc;padding:30px 10px;}
 .n_coupon_card .img_box{float:left;width:35%;height:150px;margin-left:1.5%;position:relative;font-size:14px;border:1px solid #ccc;border-radius:20px;}
@@ -224,7 +225,7 @@
 
 /******* Coupon index menu *******/
 .menu-wrapper{height:40px;padding:0 30px;position:relative;overflow:hidden;}
-.when_search_term{margin-top:15px;}
+/*.when_search_term{margin-top:15px;}*/
 .menu-wrapper .menu-item{height:100%;overflow:auto;white-space:nowrap;}
 .menu-wrapper .menu-item a{display:inline-block;padding:5px 13px;color:#333;height:100%;}
 .menu-wrapper .menu-item a:first-child{padding-left:5px;}
