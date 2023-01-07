@@ -11,4 +11,5 @@ class User < ApplicationRecord
   has_many :deals
   has_many :onedays
   has_many :savings
+  has_many :clippings
 end

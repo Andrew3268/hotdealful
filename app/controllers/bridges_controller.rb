@@ -74,6 +74,8 @@ class BridgesController < ApplicationController
     @onedays = Oneday.all.order("created_at DESC")
     @latest_coupons = Coupon.last(5)
     @except_first_coupons = Coupon.order("id desc").offset(1).limit(15)
+    @clippings = Clipping.all.order("created_at DESC").limit(4)
+
 
     
   end

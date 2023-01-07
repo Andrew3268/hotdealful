@@ -10,7 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_12_101737) do
+ActiveRecord::Schema.define(version: 2023_01_07_065917) do
+
+  create_table "clippings", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "cli_title"
+    t.string "cli_img"
+    t.string "cli_link"
+    t.string "cli_sub_title"
+    t.string "cli_categories"
+    t.decimal "cli_pct"
+    t.string "cli_spare_01"
+    t.string "cli_spare_02"
+    t.string "cli_spare_03"
+    t.string "cli_spare_04"
+    t.string "cli_spare_05"
+    t.float "cli_spare_41"
+    t.float "cli_spare_42"
+    t.integer "cli_spare_56"
+    t.integer "cli_spare_57"
+    t.decimal "cli_spare_61"
+    t.decimal "cli_spare_62"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "coupons", force: :cascade do |t|
     t.integer "user_id"

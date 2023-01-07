@@ -1,0 +1,169 @@
+<div class="web_box clearfix">
+
+  <div class="left">
+    <%= render '/shared/left' %>
+  </div>
+
+  <div class="right">
+    <div class="index_wrap">
+      <header><%= render 'clippings/header_index' %></header>
+      <h1>Clipping Coupons</h1>
+      <% if current_user && current_user.admin %>
+        <%= link_to 'New Clipping', new_clipping_path %>
+      <% end %>
+
+      <div class="clipping_wrap">
+        <div class="filter-search">
+          <input type="text" class="form-control" placeholder="Search Here">
+        
+          <div class="menu-wrapper when_search_term">
+            <div class="menu-item">
+              <button class="filter-button btn-primary" data-filter="*">All</button>
+              <button class="filter-button" data-filter="electronics">Electronics</button>
+              <button class="filter-button" data-filter="fashion">Fashion</button>
+              <button class="filter-button" data-filter="beauty">Beauty</button>
+              <button class="filter-button" data-filter="cellphone_accessories">Cell Phone&Accessories</button>
+              <button class="filter-button" data-filter="home_kitchen">Home&Kitchen</button>
+              <button class="filter-button" data-filter="groceries">Groceries</button>
+              <button class="filter-button" data-filter="sports_outdoor">Sports&Outdoor</button>
+              <button class="filter-button" data-filter="pet_supplies">Pet Supplies</button>
+              <button class="filter-button" data-filter="health_household">Health&Household</button>
+              <button class="filter-button" data-filter="automotive">Automotive</button>
+              <button class="filter-button" data-filter="baby">Baby</button>
+              <button class="filter-button" data-filter="tools_home_improvement">Home Improvemnts</button>
+              <button class="filter-button" data-filter="patio_lawn_garden">Patio&Lawn&Garden</button>
+              <button class="filter-button" data-filter="toys_games">Toys&Games</button>
+              <button class="filter-button" data-filter="office_products">Office Products</button>
+            </div> 
+            <span class="pointer left-pointer dis">
+              <i class="fa fa-chevron-left"></i>
+            </span>
+            <span class="pointer right-pointer">
+              <i class="fa fa-chevron-right"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="filter-group">
+
+          <% @clippings.each do |clipping| %>
+            <div class="filter-node clearfix" data-filter='["<%= clipping.cli_title %>"," <%= clipping.cli_categories %>"]'>
+              <a href="<%= clipping.cli_link %>">
+                <div class="cli_box">
+                  <div class="pct"><p><%= number_to_percentage(clipping.cli_pct, precision: 0) %></p></div>
+                  <div class="ctn">
+                    <p><%= clipping.cli_title %></p>
+                  </div>
+                  <div class="img">
+                    <img src="<%= clipping.cli_img %>" alt="<%= clipping.cli_title %>">
+                  </div>
+                </div>
+              </a>
+
+              <% if current_user && current_user.admin %>
+                <div class="admin_panner">
+                  <%= link_to 'Edit', edit_clipping_path(clipping) %>
+                  <%= link_to 'Destroy', clipping, method: :delete, data: { confirm: 'Are you sure?' } %>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+
+          <div class="filter-node clearfix" data-filter='["product_title"," electronics"]'>
+            <a href="#n">
+              <div class="cli_box">
+                <div class="pct"><p>50%</p></div>
+                <div class="ctn">
+                  <p>This Area is for product ctn</p>
+                </div>
+                <div class="img">
+                  <img src="https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/41TCOjiQhvL._SR400,400_.jpg">
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="filter-node clearfix" data-filter='["red"," fashion"]'>
+            <a href="#n">
+              <div class="cli_box">
+                <div class="pct"><p>50%</p></div>
+                <div class="ctn">
+                  <p>This Area is for product ctn</p>
+                </div>
+                <div class="img">
+                  <img src="https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/41TCOjiQhvL._SR400,400_.jpg">
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="filter-node clearfix" data-filter='["red"," beauty"]'>
+            <a href="#n">
+              <div class="cli_box">
+                <div class="pct"><p>50%</p></div>
+                <div class="ctn">
+                  <p>This Area is for product ctn</p>
+                </div>
+                <div class="img">
+                  <img src="https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/41TCOjiQhvL._SR400,400_.jpg">
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="filter-node clearfix" data-filter='["product_title"," electronics"]'>
+            <a href="#n">
+              <div class="cli_box">
+                <div class="pct"><p>50%</p></div>
+                <div class="ctn">
+                  <p>This Area is for product ctn</p>
+                </div>
+                <div class="img">
+                  <img src="https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/41TCOjiQhvL._SR400,400_.jpg">
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="filter-node clearfix" data-filter='["red"," fashion"]'>
+            <a href="#n">
+              <div class="cli_box">
+                <div class="pct"><p>50%</p></div>
+                <div class="ctn">
+                  <p>This Area is for product ctn</p>
+                </div>
+                <div class="img">
+                  <img src="https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/41TCOjiQhvL._SR400,400_.jpg">
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="filter-node clearfix" data-filter='["red"," beauty"]'>
+            <a href="#n">
+              <div class="cli_box">
+                <div class="pct"><p>50%</p></div>
+                <div class="ctn">
+                  <p>This Area is for product ctn</p>
+                </div>
+                <div class="img">
+                  <img src="https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/41TCOjiQhvL._SR400,400_.jpg">
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- <div class="filter-node" data-filter='["red"]'>
+            <div class="node-box red">Red</div>
+          </div> -->
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<%= javascript_pack_tag 'clipping_index' %>
+<%= javascript_pack_tag 'coupon_index_menu' %>

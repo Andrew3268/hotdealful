@@ -486,7 +486,7 @@ display: none;
 
 
 /***** Most Hit *****/
-.mostContainer{padding:20px;}
+.mostContainer{padding:20px;box-shadow:rgba(149, 157, 165, 0.3) 0px 8px 24px;width:90%;margin:0 5%;border-radius:20px;}
 .mostContainer h3{vertical-align:middle;}
 .mostContainer h3 .trend_right{}
 .mostContainer h3 .trend_right{float:right;background-color:#000;padding:5px 10px;border-radius:10px;}

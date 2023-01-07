@@ -1,0 +1,8 @@
+<% if current_user && current_user.admin %>
+  <div class="wrap">
+    <h1>Editing Clipping</h1>
+    <%= render 'form', clipping: @clipping %>
+    <%= link_to 'Show', @clipping %> |
+    <%= link_to 'Back', clippings_path %>
+  </div>
+<% end %>
