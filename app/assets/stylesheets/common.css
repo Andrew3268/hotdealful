@@ -50,7 +50,7 @@ header nav .header_back{}
 header nav .header_back a{display:block}
 header nav .header_back a img{width:30px;position:absolute;}
 header nav h1{text-align:center;font-family: 'KoHo', sans-serif;}
-header nav h1 a{color:#404041;}
+header nav h1 a{color:#404041;font-weight:100;}
 header nav img{width:25%;}
 header nav ul{line-height:5px;}
 header nav ul li{display:inline-block;float:left;}

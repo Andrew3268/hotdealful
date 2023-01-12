@@ -135,7 +135,8 @@
                   <% if @coupon.c_spare_61.present? || @coupon.c_spare_62.present? %>   
 
                     <% if @coupon.c_spare_61.present? %>
-                      <span><%= number_to_currency(total_price_pct_coupon) %></span>
+                      <span class="was_price"><%= number_to_currency(@coupon.c_was_price) %></span>
+                      <span class="total_price"><%= number_to_currency(total_price_pct_coupon) %></span>
                     <% elsif %> 
                       <% if @coupon.c_spare_62.present? %>
                         <span><%= number_to_currency(total_price_cash_coupon) %></span>
@@ -146,6 +147,7 @@
                       <span><%= number_to_currency(total_price) %></span>  
                     <% end %>
                   <% else %>
+                      <span><%= number_to_currency(@coupon.c_was_price) %></span>
                       <span><%= number_to_currency(total_price) %></span>  
                   <% end %>
                     
@@ -550,16 +552,14 @@
           <div class="notice">
             <ul>
               <li>Price, ratings, and global reviews may change after post published date.</li>
-              <li>This product belongs to Amazon.com.</li>
-              
-              <li>"Offtheprice's" aim is to provide convenience to users.</li>
-              <li>The source is copyrighted by Amazon.com.</li>
+              <li>Offtheprice's aim is to provide convenience to users.</li>
               <li>We respect other sellers' rights, as well as provide support for those who own the contents.</li>
 
               <!-- <li>"Offtheprice's" objective is to show the best coupons, promotion codes and deals you find and buy on Amazon.com. We are not interested in spamming any boring or lame products at you. When you explore our website you’ll only find interesting and often times very deals.</li> -->
 
               <!-- <li>We hand-picked our products to provide high quality products</li> -->
-
+              <li>The source is copyrighted by Amazon.com.</li>
+              <li>This product belongs to Amazon.com.</li>
               <li>"Offtheprice" is a participant in the Amazon Services LLC Associates Program & the Amazon EU Associates Programme, an affiliate advertising program designed to provide a means for us to earn fees by linking to Amazon.com,</li>
             </ul>
           </div>
