@@ -71,15 +71,19 @@
                   
                   
                 <% if @post.spare_61.present? %>
-                  <span><%= number_to_currency(extra_coupon_total) %></span>
+                  <span class="was_price"><%= number_to_currency(@post.was_price) %></span>
+                  <span class="total_price"><%= number_to_currency(extra_coupon_total) %></span>
                 <% elsif %> 
                   <% if @post.spare_62.present? %>
-                    <span><%= number_to_currency(extra_coupon_dallor_total) %></span>
+                    <span class="was_price"><%= number_to_currency(@post.was_price) %></span>
+                    <span class="total_price"><%= number_to_currency(extra_coupon_dallor_total) %></span>
                   <% else %>
-                    <span><%= number_to_currency(@post.is_price) %></span>
+                    <span class="was_price"><%= number_to_currency(@post.was_price) %></span>
+                    <span class="total_price"><%= number_to_currency(@post.is_price) %></span>
                   <% end %>
                 <% else %>
-                  <span><%= number_to_currency(@post.is_price) %></span>
+                <span class="was_price"><%= number_to_currency(@post.was_price) %></span>
+                  <span class="total_price"><%= number_to_currency(@post.is_price) %></span>
                 <% end %>
                     
                 </p>
