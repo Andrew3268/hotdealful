@@ -105,8 +105,8 @@
 .show-wrap .new_title_wrap{text-align:center;box-shadow:rgba(149,157,165,0.3) 0px 8px 24px;border-radius:20px;padding:30px 20px;margin:20px 0 20px 0;}
 .show-wrap .new_title_wrap h2{font-size:14px;font-weight:100;padding:0 50px;margin-bottom:10px}
 .show-wrap .new_title_wrap .pricing_box{}
-.show-wrap .new_title_wrap .pricing_box .was_price{color:#9da3ab;font-size:13px;text-decoration:line-through;}
-.show-wrap .new_title_wrap .pricing_box .total_price{font-size:18px;color:#3d3d3d;}
+.show-wrap .new_title_wrap .pricing_box .was_price{color:#9da3ab;font-size:18px;text-decoration:line-through;font-weight:100;}
+.show-wrap .new_title_wrap .pricing_box .total_price{font-size:28px;color:#3d3d3d;font-weight:100;}
 .show-wrap .new_title_wrap .pricing_box .code_saving{}
 /*.show-wrap .new_title_wrap .pricing_box p{font-size:25px;margin:15px 0 5px 0;background:rgba(255,77,77,0.2);color:#ff4d4d;display:inline-block;padding:5px 15px;border-radius:10px;}*/
 .show-wrap .new_title_wrap .rating_card i{font-size:20px;vertical-align:middle;color:#ff4d4d;}
@@ -119,11 +119,11 @@
 .show-wrap .image-box img{width:55%;height:55%;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);object-fit:contain;} 
 /*.show-wrap .inner-box{float:left;width:50%;margin:0;} old show*/
 .show-wrap .inner-box{float:none;width:100%;margin:0;}
-.show-wrap .coupon-inner-box{box-shadow:rgba(149,157,165,0.3) 0px 8px 24px;border-radius:20px;padding:30px 20px;}
+.show-wrap .coupon-inner-box{box-shadow:rgba(149,157,165,0.3) 0px 8px 24px;border-radius:20px;padding:30px 20px 0 20px;}
 /*.show-wrap .summary_title{margin-top:2em;}*/
 .show-wrap .summary_title .verified{font-size:12px;}
 .show-wrap .summary_title p.posted_date{font-size:12px;color:#3d3d3d;border-bottom:1px solid #ccc;font-weight:100;display:table;}
-.show-wrap .receipt{height:150px;display:grid;grid-template-columns:2fr 1fr;margin:2em 1em;}
+.show-wrap .receipt{height:150px;display:grid;grid-template-columns:2fr 1fr;margin:2em 1em 0 1em;}
 .show-wrap .receipt__grid1 p, .show-wrap .receipt__grid2 p{margin:4px 0;font-size:13px;}
 .show-wrap .receipt__grid1 p.total_text, .show-wrap .receipt__grid2 p.total_price{font-size:20px;}
 
@@ -138,7 +138,7 @@
 .show-wrap .btn a.amz_btn{border:2px solid;color:#000;display:block;padding:10px;font-size:14.5px;border-radius:15px;/*float:left;width:48%;margin:1%;*/}
 .show-wrap .btn a.buy_now{background:#ff4d4d;color:#fff;border:2px solid #ff4d4d;}
 .show-wrap .post_m_btn a{display:none;}
-.show-wrap .notice{margin-top:30px;padding:10px 15px;}
+.show-wrap .notice{margin-top:30px;padding:10px 15px;font-weight:100;}
 .show-wrap .notice ul{}
 .show-wrap .notice ul li{font-size:12px;color:#ccc;list-style:circle;margin-bottom:5px;}
 .show-wrap .title{display:none;}

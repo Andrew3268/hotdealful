@@ -65,6 +65,6 @@ class ClippingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def clipping_params
-      params.require(:clipping).permit(:cli_title, :cli_img, :cli_link, :cli_sub_title, :cli_pct, :cli_categories)
+      params.require(:clipping).permit(:cli_title, :cli_img, :cli_link, :cli_sub_title, :cli_pct, :cli_categories, :cli_spare_61)
     end
 end

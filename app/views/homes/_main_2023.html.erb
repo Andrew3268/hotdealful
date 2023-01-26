@@ -1,0 +1,102 @@
+<div class="index_main_wrap">
+
+  <div class="promo_title_index">
+    <h2><span>Amazon Promo Code Deals </span><br>For January 2023</h2>
+  </div>
+
+  <!-- <div class="menu-wrapper when_search_term">
+      <div class="menu-item">
+        <a href="/coupons/chashtag/electronics">Electronics</a>
+        <a href="/coupons/chashtag/fashion">Fashion</a>
+        <a href="/coupons/chashtag/beauty">Beauty</a>
+        <a href="/coupons/chashtag/cellphone_accessories">Cell Phone&Accessories</a>
+        <a href="/coupons/chashtag/home_kitchen">Home&Kitchen</a>
+        <a href="/coupons/chashtag/groceries">Groceries</a>
+        <a href="/coupons/chashtag/sports_outdoor">Sports&Outdoor</a>
+        <a href="/coupons/chashtag/pet_supplies">Pet Supplies</a>
+        <a href="/coupons/chashtag/health_household">Health&Household</a>
+        <a href="/coupons/chashtag/automotive">Automotive</a>
+        <a href="/coupons/chashtag/baby_products">Baby</a>
+        <a href="/coupons/chashtag/tools_home_improvement">Home Improvemnts</a>
+        <a href="/coupons/chashtag/patio_lawn_garden">Patio&Lawn&Garden</a>
+        <a href="/coupons/chashtag/toys_games">Toys&Games</a>
+        <a href="/coupons/chashtag/video_games">Video Games</a>
+        <a href="/coupons/chashtag/office_products">Office Products</a>
+        <a href="/coupons/chashtag/musical_instruments">Msical Instruments</a>
+      </div> 
+      <span class="pointer left-pointer dis">
+        <i class="fa fa-chevron-left"></i>
+      </span>
+      <span class="pointer right-pointer">
+        <i class="fa fa-chevron-right"></i>
+      </span>
+  </div> -->
+
+
+  <div class="card_ctn_wrap clearfix">
+
+    <% @coupons.each do |coupon| %>
+      <div class="card_ctn_box">
+        <% promocode_price = 0 %>
+        <% promocode_price =  coupon.c_was_price.to_f - (coupon.c_pct.to_f / 100) * coupon.c_was_price.to_f %>
+        <% hotdeal_pct = 0 %>
+        <% hotdeal_pct =  (coupon.c_was_price.to_f - coupon.c_is_price.to_f) / coupon.c_was_price.to_f * 100 %>
+
+
+        <div class="img_box">
+          <%= link_to image_tag(coupon.c_image, alt: coupon.c_title, title: coupon.c_title, :class => 'main_img'), coupon %>
+        </div>
+
+        <div class="inner">
+          <% if coupon.c_promocode.present? %>
+            <div class="saving_type clearfix">
+              
+              <% if coupon.c_spare_61.present? || coupon.c_spare_62.present? %>
+                <span>Code Saving <em><%= number_to_percentage(coupon.c_pct, precision: 0) %></em></span>
+                <% if coupon.c_spare_61.present? %>
+                  <span>Coupon Saving <em><em><%= number_to_percentage(coupon.c_spare_61, precision: 0) %></em></em></span>
+                <% else %>
+                  <span>Coupon Saving <em><%= number_to_currency(coupon.c_spare_62, precision: 0) %></em></span>
+                <% end %>
+              <% else %>
+                <span class="only_code">Code Saving <em><%= number_to_percentage(coupon.c_pct, precision: 0) %></em></span>
+              <% end %>
+            </div>
+          <% end %>
+          
+          <p class="two_sentences"><%= coupon.c_title %></p>
+          <div class="pricing">
+            <% total_save = 0 %>
+            <% pct_coupon = 0 %>
+            <% pct_coupon = (coupon.c_spare_61.to_f / 100) * coupon.c_was_price %>
+            <% total_price_pct_coupon = promocode_price - pct_coupon %>
+            <% total_price_cash_coupon = promocode_price - coupon.c_spare_62.to_f %>
+
+            <% if coupon.c_promocode.present? %>
+              <% if coupon.c_spare_61.present? || coupon.c_spare_62.present? %>
+                <% if coupon.c_spare_61.present? %>
+                  <span class="is_price"><%= number_to_currency(total_price_pct_coupon) %></span>
+                <% else %>
+                  <span class="is_price"><%= number_to_currency(total_price_cash_coupon) %></span>
+                <% end %>
+
+              <% else %>
+                <span class="is_price">$20.00</span>
+              <% end %>
+            <% end %>
+            
+          </div>
+
+        </div>
+      </div>
+    <% end %>
+   
+  </div>
+
+
+
+
+
+
+</div>
+
