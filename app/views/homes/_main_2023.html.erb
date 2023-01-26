@@ -61,6 +61,7 @@
               <% else %>
                 <span class="only_code">Code Saving <em><%= number_to_percentage(coupon.c_pct, precision: 0) %></em></span>
               <% end %>
+              
             </div>
           <% end %>
           
@@ -81,7 +82,7 @@
                 <% end %>
 
               <% else %>
-                <span class="is_price">$20.00</span>
+                <span class="is_price"><%= number_to_currency(promocode_price) %></span>
               <% end %>
             <% end %>
             
