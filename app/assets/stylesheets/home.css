@@ -84,9 +84,8 @@
 .index_main_wrap .card_ctn_wrap .card_ctn_box .inner p{font-size:12px;margin:10px 0;}
 .index_main_wrap .card_ctn_wrap .card_ctn_box .inner .saving_type{}
 .index_main_wrap .card_ctn_wrap .card_ctn_box .inner .saving_type span{display:block;float:left;width:50%;background-color:#000;color:#fff;font-size:9px;border:2px dotted;padding:5px 3px;border-radius:10px;line-height:1.2;}
-.index_main_wrap .card_ctn_wrap .card_ctn_box .inner .saving_type span em{font-size:17px;}
+.index_main_wrap .card_ctn_wrap .card_ctn_box .inner .saving_type span em{font-size:17px;display:block;}
 .index_main_wrap .card_ctn_wrap .card_ctn_box .inner .saving_type span.only_code{width:100%;}
-.index_main_wrap .card_ctn_wrap .card_ctn_box .inner .saving_type span.only_code em{display:block;}
 .index_main_wrap .card_ctn_wrap .card_ctn_box .inner .pricing{}
 .index_main_wrap .card_ctn_wrap .card_ctn_box .inner .pricing .was_price{font-size:15px;color:#9da3ab;text-decoration:line-through;margin-right:5px;}
 .index_main_wrap .card_ctn_wrap .card_ctn_box .inner .pricing .is_price{font-size:20px;color:#ff4d4d;font-weight:bold;}
