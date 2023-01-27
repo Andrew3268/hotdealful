@@ -10,5 +10,5 @@ import "channels"
 Rails.start()
 ActiveStorage.start()
 
-//= require addtohomescreen
+//= require_addtohomescreen
 
