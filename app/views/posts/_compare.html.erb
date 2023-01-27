@@ -57,21 +57,21 @@
                 
 
               <div class="detail extra highlight">
-                <em class="was_price"><%= number_to_currency(post.was_price) %></em>
+                <p class="was_price"><%= number_to_currency(post.was_price) %></p>
               </div>
               <div class="detail extra highlight">
                 <% hotdeal_pct = 0 %>
                 <% hotdeal_pct =  (post.was_price.to_f - post.is_price.to_f) / post.was_price.to_f * 100 %>
-                <em class="pct"><%= number_to_percentage(hotdeal_pct, precision: 0) %> off</em>
+                <p class="pct"><%= number_to_percentage(hotdeal_pct, precision: 0) %> off</p>
               </div>
 
               <div class="detail extra highlight">
                 <div class="extra_coupons">
                   <% if post.spare_61.present? || post.spare_62.present? %>
                     <% if post.spare_61.present? %>
-                      <em>+ <%= number_to_percentage(post.spare_61, precision: 0) %> Coupon</em>
+                      <span class="show_coupon">+ <%= number_to_percentage(post.spare_61, precision: 0) %> Coupon</span>
                     <% else %>
-                      <em>+ <%= number_to_currency(post.spare_62, precision: 0) %> Coupon</em>
+                      <span class="show_coupon">+ <%= number_to_currency(post.spare_62, precision: 0) %> Coupon</span>
                     <% end %>
                   <% else %>
                     <span> - </span>
@@ -109,7 +109,7 @@
                 <% end %>
               </div>
 
-              <div class="detail extra highlight">
+             <!--  <div class="detail extra highlight">
                  <div class="barGraph">
                     <ul class="graph">
                       <span class="graph-barBack">
@@ -119,33 +119,40 @@
                       </span>  
                     </ul>
                   </div>
-              </div>
+              </div> -->
 
 
               <div class="detail extra highlight">
-                <em class="review"><%= number_with_precision(post.spare_41, precision: 0, separator: ',', delimiter: ',') %> <br>global ratings</em>
+                <p class="review"><%= number_with_precision(post.spare_41, precision: 0, separator: ',', delimiter: ',') %> <br>global ratings</p>
               </div>
 
               <div class="detail extra highlight by_feature_top">
                 <% if post.spare_04.present? %>
                   <p class="by_feature">#1 <%= post.spare_04 %></p>
                 <% else %>
-                  <p> - </p>
+                  <em> - </em>
                 <% end %>
               </div>
 
-              <div class="detail extra highlight">
+              <div class="detail extra highlight amazon_choice">
                 <% if post.spare_02.present? %>
                   <p class="amz_choice">Amazon's Choice</p>
                 <% else %>
-                  <p> - </p>
+                  <em> - </em>
                 <% end %>
-                
+              </div>
+
+              <div class="detail extra highlight lowest_price">
+                <% if post.spare_10.present? %>
+                  <p class="lowest_price">Lowest price in <br />30 days</p>
+                <% else %>
+                  <em> - </em>
+                <% end %>
               </div>
 
               <div class="detail extra highlight seller_rank">
                 <% if post.spare_03.present? %>
-                  <em class="active"><%= post.spare_03 %></em>
+                  <p class="active"><%= post.spare_03 %></p>
                 <% else %>
                   <em> - </em>
                 <% end %>

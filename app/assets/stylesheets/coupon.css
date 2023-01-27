@@ -280,7 +280,7 @@
 /****************** For modal promotion code ******************/
 /* Code Modal */
 .code_modal, .link{border-radius:15px}
-.link{padding:15px 20px;display:inline-block;background-color:#ff4d4d;color:#fff;text-decoration:none;width:100%;text-align:center;}
+.link{padding:15px 20px;display:inline-block;background-color:#000;color:#fff;text-decoration:none;width:100%;text-align:center;}
 .code_modal{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);padding:10px;z-index:20;background-color:#fff;display:none;box-shadow:rgba(0,0,0,.16) 0 1px 4px;}
 .code_modal .code_box{}
 .code_modal .code_box p{margin:0 0 2px 5px;color:#9da3ab;}

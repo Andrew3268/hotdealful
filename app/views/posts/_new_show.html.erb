@@ -59,6 +59,9 @@
 
             <div class="image-box post_img_box clearfix">
               <img src="<%= @post.image %>" alt="<%= @post.title %>" title="<%= @post.title %>" />
+              <% if @post.spare_10.present? %>
+                <span>Lowest price in 30 days</span>
+              <% end %>
             </div>
 
             <div class="new_title_wrap">
