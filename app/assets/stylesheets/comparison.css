@@ -174,7 +174,7 @@
 
 /*.compare .detail em.shipping span{background:#494BC7;color:#fff;padding:5px 10px;border-radius:10px;}*/
 .compare .detail .extra_coupons{}
-.compare .detail .extra_coupons span.show_coupon{background:rgba(0,0,0,0.2);padding:5px 9px;border-radius:10px;color:#000;border:2px dotted;}
+.compare .detail .extra_coupons span.show_coupon{background:rgba(0,0,0,0.2);padding:5px 9px;border-radius:10px;color:#000;border:2px dotted;font-size:11px;}
 .compare .detail .rating_box{}
 .compare .detail .rating_box img{vertical-align:middle;}
 .compare .detail .rating_box i{font-size:16px;color:#ff4d4d;}
