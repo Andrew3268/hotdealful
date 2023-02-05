@@ -14,7 +14,8 @@ gem 'sitemap_generator'
 gem 'whenever', require: false
 gem "punching_bag"
 gem 'roo'
-gem 'add-to-homescreen-rails'
+# gem 'add-to-homescreen-rails'
+gem 'serviceworker-rails'
 
 
 
