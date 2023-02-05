@@ -24,7 +24,8 @@
         e.preventDefault();
         // Stash the event so it can be triggered later
         window.deferredPrompt = e;
-        // Update UI notify the user they can install the PWA
+        // Update UI to notify the user they can install the PWA
+        document.querySelector('.add-to-homescreen').style.display = 'block';
       });
 
       // Add to homescreen button
@@ -40,9 +41,11 @@
               console.log('User dismissed the A2HS prompt');
             }
             window.deferredPrompt = null;
+            document.querySelector('.add-to-homescreen').style.display = 'none';
           });
       });
     </script>
+
 
 
 
@@ -93,6 +96,10 @@
   </head>
 
   <body data-turbolinks="false">
+
+    <div class=".add-to-homescreen" style="display:none;">
+      <button>Add to Homescreen</button>
+    </div>
 
     <!-- <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p> -->
