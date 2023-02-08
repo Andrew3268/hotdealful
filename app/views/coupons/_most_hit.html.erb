@@ -61,16 +61,16 @@
               <% if coupon.c_promocode.present? %>
                 <% if coupon.c_spare_61.present? || coupon.c_spare_62.present? %>
                   <% if coupon.c_spare_61.present? %>
-                    <span><%= number_to_currency(coupon.c_was_price) %></span><em class="show_price"><%= number_to_currency(total_price_pct_coupon) %></em>
+                    <em class="show_price"><%= number_to_currency(total_price_pct_coupon) %></em><span><%= number_to_currency(coupon.c_was_price) %></span>
                   <% else %>
-                    <span><%= number_to_currency(coupon.c_was_price) %></span><em class="show_price"><%= number_to_currency(total_price_cash_coupon) %></em>
+                    <em class="show_price"><%= number_to_currency(total_price_cash_coupon) %></em><span><%= number_to_currency(coupon.c_was_price) %></span>
                   <% end %>
                 <% else %>
                   <!-- only for promotion code -->
-                  <span><%= number_to_currency(coupon.c_was_price) %></span><em class="show_price"><%= number_to_currency(total_price.to_f) %></em>
+                  <em class="show_price"><%= number_to_currency(total_price.to_f) %></em><span><%= number_to_currency(coupon.c_was_price) %></span>
                 <% end %>
               <% else %>
-                <span><%= number_to_currency(coupon.c_was_price) %></span><em class="show_price"><%= number_to_currency(coupon.c_is_price) %></em>
+                <em class="show_price"><%= number_to_currency(coupon.c_is_price) %></em><span><%= number_to_currency(coupon.c_was_price) %></span>
               <% end %>
             </div><!-- pricing -->
         </div>

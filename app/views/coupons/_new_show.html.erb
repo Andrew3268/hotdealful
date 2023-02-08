@@ -135,28 +135,33 @@
                   <% if @coupon.c_spare_61.present? || @coupon.c_spare_62.present? %>   
 
                     <% if @coupon.c_spare_61.present? %>
-                      <span class="was_price"><%= number_to_currency(@coupon.c_was_price) %></span>
                       <span class="total_price"><%= number_to_currency(total_price_pct_coupon) %></span>
+                      <span class="was_price"><%= number_to_currency(@coupon.c_was_price) %></span>
+                      
                     <% elsif %> 
                       <% if @coupon.c_spare_62.present? %>
-                        <span class="was_price"><%= number_to_currency(@coupon.c_was_price) %></span>
                         <span class="total_price"><%= number_to_currency(total_price_cash_coupon) %></span>
-                      <% else %>
                         <span class="was_price"><%= number_to_currency(@coupon.c_was_price) %></span>
+                        
+                      <% else %>
                         <span class="total_price"><%= number_to_currency(total_price) %></span>  
+                        <span class="was_price"><%= number_to_currency(@coupon.c_was_price) %></span>
+                        
                       <% end %>
                     <% else %>
-                      <span class="was_price"><%= number_to_currency(@coupon.c_was_price) %></span>
                       <span class="total_price"><%= number_to_currency(total_price) %></span>  
+                      <span class="was_price"><%= number_to_currency(@coupon.c_was_price) %></span>
+                      
                     <% end %>
                   <% else %>
-                      <span class="was_price"><%= number_to_currency(@coupon.c_was_price) %></span>
                       <span class="total_price"><%= number_to_currency(total_price) %></span>  
+                      <span class="was_price"><%= number_to_currency(@coupon.c_was_price) %></span>
+                      
                   <% end %>
                     
                 </p>
 
-                <% if @coupon.c_spare_42.present? %>
+               <!--  <% if @coupon.c_spare_42.present? %>
                  <div class="rating_card">
                     <% if @coupon.c_spare_58 == 50 %>
                       <div class="rating_box">
@@ -186,7 +191,7 @@
                     <% end %>
                   </div>
                 <% end %>
-
+ -->
               </div>
             </div>
 

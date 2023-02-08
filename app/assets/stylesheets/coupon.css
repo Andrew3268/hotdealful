@@ -69,7 +69,7 @@
 
 
 /* -------- title style ------- */
-.line-title{position:relative;width:100%;padding-bottom:10px;font-size:17px;}
+.line-title{position:relative;width:100%;padding-bottom:10px;font-size:17px;margin-left:5%;}
 .line-title::after,.line-title::before{content:"";position:absolute;bottom:0;left:0;height:4px;border-radius:2px}
 .line-title::before{width:100%;background:#f2f2f2}
 .line-title::after{width:32px;background:#e73700}
@@ -239,7 +239,7 @@
 /******* Coupon index search filter *******/
 .n_coupon_wrap{}
 .n_coupon_wrap .post_search_filter{margin:-15px 0 20px 0;}
-.search_filter_comm{margin:20px 10px;}
+.search_filter_comm{margin:0px 10px 20px 10px;}
 .n_coupon_wrap .post_search_filter input, .search_filter_comm input{width:100%;padding:15px;border-radius:15px;}
 .search_filter_comm [data-filter-item]{}
 .search_filter_comm .hidden{display:none;}
@@ -312,7 +312,7 @@
 .copy-text input.text{width:75%;padding:10px;font-size:20px;color:#3d3d3d;border:none;outline:0;letter-spacing:2px;vertical-align:middle;}
 .copy-text button, .copy-text div.sumarry_icon{vertical-align:middle;padding:10px 10px 5px;background-color:#000;color:#fff;font-size:18px;border:none;outline:0;border-radius:10px;cursor:pointer;float:right;}
 .copy-text button:active{background:#809ce2;}
-.copy-text button:after,.copy-text button:before{position:absolute;background:#ff4d4d;display:none;}
+.copy-text button:after,.copy-text button:before{position:absolute;background:#ffda05;display:none;color:#000;}
 .copy-text button:before{content:"Copied";top:-27px;right:0;padding:8px 10px;border-radius:20px;font-size:15px;}
 .copy-text button:after{content:"";top:-3px;right:25px;width:10px;height:10px;transform:rotate(45deg);}
 .copy-text.active button:after, .copy-text.active button:before{display:block;}
@@ -498,14 +498,14 @@ display: none;
 .mostContainer .section .img_box img{width:80%;height:80%;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);object-fit:contain;}
 .mostContainer .section .img_box .list_num{background-color:#ff4d4d;color:#fff;padding:5px 10px;border-radius:10px;position:absolute;top:0;left:0;}
 .mostContainer .section .right-section{float:left;width:70%;padding:15px 0;}
-.mostContainer .section .right-section p{font-weight:12px;}
+.mostContainer .section .right-section p{font-size:12px;}
 .mostContainer .section .right-section .hit{font-size:10px;color:#ccc;}
 .mostContainer .section .right-section .rating_card{}
 .mostContainer .section .right-section .rating_card .rating_box{}
 .mostContainer .section .right-section .rating_card .rating_box i{font-size:13px;}
 .mostContainer .section .right-section .pricing{}
-.mostContainer .section .right-section .pricing span{text-decoration:line-through;color:#9da3ab;margin-right:5px}
-.mostContainer .section .right-section .pricing em{font-size:15px;}
+.mostContainer .section .right-section .pricing span{text-decoration:line-through;color:#9da3ab;margin-left:5px;}
+.mostContainer .section .right-section .pricing em{font-size:15px;color:#ff4d4d;font-weight:bold;}
 
 
 

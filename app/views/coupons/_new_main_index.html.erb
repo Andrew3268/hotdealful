@@ -19,6 +19,7 @@
 
                 <div class="menu-wrapper when_search_term">
                   <div class="menu-item">
+                    <a href="/coupons">All</a>
                     <a href="/coupons/chashtag/electronics">Electronics</a>
                     <a href="/coupons/chashtag/fashion">Fashion</a>
                     <a href="/coupons/chashtag/beauty">Beauty</a>
@@ -142,17 +143,29 @@
             </div>  
           <% end %>
 
-          <div class="index_main_wrap">
+          <!-- <div class="index_main_wrap">
             <div class="promo_title_index for_coupon_index"><h2><span>Amazon Promo Code Deals </span><br>For January 2023</h2></div>
-          </div>
+          </div> -->
+          
           
           <div class="pic_deal clearfix">
             <div class="card_wrap n_coupon_wrap">
                 <!-- <h2>Promotion Codes</h2> -->
 
+                <div class="search_filter_comm">
+                  <!-- <div id="wrapper">
+                    <input type="text" onkeyup="searchFilter(this)" placeholder="Search..."/>
+                  </div> -->
+                  <%= form_for "",url: coupons_path, role: "search", method: :get do %>
+                    <%= text_field_tag :search, @search_term, placeholder: "Search....", class: 'search-input' %>
+                  <% end %> 
+                </div>
+
+
 
                 <div class="menu-wrapper">
                   <div class="menu-item">
+                    <a href="/coupons">All</a>
                     <a href="/coupons/chashtag/electronics">Electronics</a>
                     <a href="/coupons/chashtag/fashion">Fashion</a>
                     <a href="/coupons/chashtag/beauty">Beauty</a>
@@ -179,14 +192,7 @@
                   </span>
                 </div>
 
-                <div class="search_filter_comm">
-                  <!-- <div id="wrapper">
-                    <input type="text" onkeyup="searchFilter(this)" placeholder="Search..."/>
-                  </div> -->
-                  <%= form_for "",url: coupons_path, role: "search", method: :get do %>
-                    <%= text_field_tag :search, @search_term, placeholder: "Search....", class: 'search-input' %>
-                  <% end %> 
-                </div>
+                
 
                 <!-- < render 'coupons/our_pick' > -->
 

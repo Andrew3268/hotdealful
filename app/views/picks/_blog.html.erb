@@ -8,7 +8,7 @@
               <div class="inner clearfix">
                 <span class="main_title"><%= pick.p_title %></span><br />
                 <span class="sub_title"><%= pick.p_spare_01 %></span>
-                <span class="date"><%= pick.created_at.strftime("%a, %b %d, %Y") %></span>
+                <!-- <span class="date"><%= pick.created_at.strftime("%a, %b %d, %Y") %></span> -->
                 <% if current_user && current_user.admin %>
                   <div class="admin">
                     <%= link_to 'Edit', edit_pick_path(pick) %> |

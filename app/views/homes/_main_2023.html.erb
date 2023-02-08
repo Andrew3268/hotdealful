@@ -1,8 +1,9 @@
 <div class="index_main_wrap">
 
-  <div class="promo_title_index">
+  <!-- <div class="promo_title_index">
     <h2><span>Amazon Promo Code Deals </span><br>For February 2023</h2>
-  </div>
+  </div> -->
+  <h2 class="line-title"><span>Amazon Promo Code Deals </span><br>For February 2023</h2><br>
 
   <!-- <div class="menu-wrapper when_search_term">
       <div class="menu-item">
@@ -77,15 +78,18 @@
               <% if coupon.c_spare_61.present? || coupon.c_spare_62.present? %>
                 <% if coupon.c_spare_61.present? %>
                   <span class="is_price"><%= number_to_currency(total_price_pct_coupon) %></span>
+                  <span class="was_price"><%= number_to_currency(coupon.c_was_price) %></span>
                 <% else %>
                   <span class="is_price"><%= number_to_currency(total_price_cash_coupon) %></span>
+                  <span class="was_price"><%= number_to_currency(coupon.c_was_price) %></span>
                 <% end %>
 
               <% else %>
                 <span class="is_price"><%= number_to_currency(promocode_price) %></span>
+                <span class="was_price"><%= number_to_currency(coupon.c_was_price) %></span>
               <% end %>
             <% end %>
-            
+
           </div>
 
         </div>
@@ -93,10 +97,6 @@
     <% end %>
    
   </div>
-
-
-
-
 
 
 </div>
