@@ -214,6 +214,11 @@ header nav button img{width:25px;height:25px;}
 }
 
 
+/***** privacy policy *****/
+.policy_box{margin:auto 5%;}
+.policy_box p{margin:10px 0;}
+.policy_box span.sub_title{font-size:15px;font-weight:bold;}
+
 
 
 
