@@ -20,7 +20,7 @@
           <span class="list_num"><%= i + 1 %></span>
         </div>
         <div class="right-section">                      
-            <p><%= coupon.c_title %></p>
+            <p class="two_sentences"><%= coupon.c_title %></p>
             <% if current_user && current_user.admin %><p class="hit"><%= coupon.hits %> People Checked.</p><% end %>
 
             <!-- <div class="star_write">
@@ -77,5 +77,9 @@
       </div>
     </a>
   <% end %>
+
+  <div class="view_more">
+    <a href="/bridges/trending_coupon">View TOP 50 Trending codes</a>
+  </div>
 </div><!-- mostContainer -->
 

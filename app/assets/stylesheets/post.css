@@ -128,7 +128,7 @@
 .show-wrap .receipt__grid1 p, .show-wrap .receipt__grid2 p{margin:4px 0;font-size:13px;}
 .show-wrap .receipt__grid1 p.total_text, .show-wrap .receipt__grid2 p.total_price{font-size:20px;}
 
-.show-wrap .receipt__grid1 p em{background:000;padding:1px 7px;border-radius:7px;margin-left:3px;color:#fff;font-size:13px;font-weight:bold;}
+.show-wrap .receipt__grid1 p em{background:#000;padding:1px 7px;border-radius:7px;margin-left:3px;color:#fff;font-size:13px;font-weight:bold;}
 .show-wrap .receipt__grid2{text-align:right;}
 .show-wrap .receipt__grid2 p em{color:#fff}
 .show-wrap .receipt__grid2 p.p-code{font-weight:800;}

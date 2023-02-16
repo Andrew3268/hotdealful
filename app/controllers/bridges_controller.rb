@@ -94,5 +94,9 @@ class BridgesController < ApplicationController
     @pagy, @coupons = pagy(Coupon.all.order("created_at DESC"), items: 100)
   end
 
+  def trending_coupon
+    @coupons_top = Coupon.most_hit(1.day.ago, 50)
+  end
+
 
 end

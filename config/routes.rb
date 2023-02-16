@@ -51,6 +51,7 @@ Rails.application.routes.draw do
   get 'bridges/deal_section'
   get 'bridges/promo_codes'
   get 'bridges/policy'
+  get 'bridges/trending_coupon'
 
 
   get 'bridges/new_coupon_section'
