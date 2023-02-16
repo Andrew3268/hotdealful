@@ -69,11 +69,11 @@
                             <div class="saving_type clearfix">
                               
                               <% if coupon.c_spare_61.present? || coupon.c_spare_62.present? %>
-                                <span>Code Saving <em><%= number_to_percentage(coupon.c_pct, precision: 0) %></em></span>
+                                <span>Code Saving <em>- <%= number_to_percentage(coupon.c_pct, precision: 0) %></em></span>
                                 <% if coupon.c_spare_61.present? %>
-                                  <span>Coupon Saving <em><em><%= number_to_percentage(coupon.c_spare_61, precision: 0) %></em></em></span>
+                                  <span>Coupon Saving <em>- <%= number_to_percentage(coupon.c_spare_61, precision: 0) %></em></span>
                                 <% else %>
-                                  <span>Coupon Saving <em><%= number_to_currency(coupon.c_spare_62, precision: 0) %></em></span>
+                                  <span>Coupon Saving <em>- <%= number_to_currency(coupon.c_spare_62, precision: 0) %></em></span>
                                 <% end %>
                               <% else %>
                                 <span class="only_code">Code Saving <em><%= number_to_percentage(coupon.c_pct, precision: 0) %></em></span>
@@ -94,12 +94,15 @@
                               <% if coupon.c_spare_61.present? || coupon.c_spare_62.present? %>
                                 <% if coupon.c_spare_61.present? %>
                                   <span class="is_price"><%= number_to_currency(total_price_pct_coupon) %></span>
+                                  <span class="was_price"><%= number_to_currency(coupon.c_was_price) %></span>
                                 <% else %>
                                   <span class="is_price"><%= number_to_currency(total_price_cash_coupon) %></span>
+                                  <span class="was_price"><%= number_to_currency(coupon.c_was_price) %></span>
                                 <% end %>
 
                               <% else %>
                                 <span class="is_price"><%= number_to_currency(promocode_price) %></span>
+                                <span class="was_price"><%= number_to_currency(coupon.c_was_price) %></span>
                               <% end %>
                             <% end %>
                             
