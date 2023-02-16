@@ -75,7 +75,7 @@
 
 
 /****** Main_2023 Page  *******/
-.index_main_wrap{}
+.index_main_wrap{margin:0 2%;}
 .index_main_wrap .card_ctn_wrap{margin-top:20px;}
 .index_main_wrap .card_ctn_wrap .card_ctn_box{float:left;width:48%;margin:1% 1% 3% 1%;height:360px;box-shadow:rgba(149, 157, 165, 0.3) 0px 8px 24px;border-radius:20px;}
 .index_main_wrap .card_ctn_wrap .card_ctn_box .img_box{height:200px;position:relative;}

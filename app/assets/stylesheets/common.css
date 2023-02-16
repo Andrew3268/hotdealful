@@ -105,8 +105,8 @@ header nav button img{width:25px;height:25px;}
 /*.where-hashtag{margin:30px 0 20px 0;}*/
 /*.where-hashtag p{font-size:30px;font-weight:100;}*/
 /*.where-hashtag p span{color:#000;border:2px solid;padding:5px 20px;border-radius:15px;margin-left:30px;}*/
-.where-hashtag{margin-left:5%;}
-.where-hashtag h2{font-size:15px;}
+.where-hashtag{}
+.where-hashtag h2{font-size:15px;margin-left:5%;}
 .where-hashtag h2.hashtag_label{font-size:13px;color:#000;padding-top:7px;}
 .where-hashtag h2 em{background-color:#000;color:#fff;padding:5px 10px;border-radius:10px;margin-left:1px;}
 .hashtag-through{display:inline;text-transform:uppercase;}
