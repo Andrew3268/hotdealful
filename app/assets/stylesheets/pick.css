@@ -7,19 +7,19 @@
 .pick_main_card .inner{}
 .pick_main_card .inner a{color:#000;display:block;}
 .pick_main_card .inner span{font-size:15px;margin:0 0 1px 5px;display:inline-table;} 
-.pick_main_card .inner span.sub_title{font-size:13px;margin:0 0 5px 5px;display:inline-table;background-color:#000;padding:3px 10px;border-radius:10px;color:#fff;}
 .pick_main_card .inner span.date{font-size:12px;color:#fff;display:block;}
-.pick_main_card .pick_img{border-radius:20px;}
+.pick_main_card .pick_img{border-radius:20px;position:relative;}
 .pick_main_card .pick_img img{width:100%;height:250px;object-fit:cover;border-radius:20px;filter:grayscale(0.8);}
+.pick_main_card .pick_img span.sub_title{font-size:13px;margin:0 0 5px 5px;display:inline-table;background-color:#000;padding:3px 10px;border-radius:10px;color:#fff;position:absolute;bottom:10px;left:10px;}
 .pick_main_card .admin a{font-size:10px;display:inline-block;}
 
-.pick_sub_card{padding:30px 10px 25px 10px;border-bottom:1px solid #ccc;font-size:12px;}
+.pick_sub_card{padding:20px 10px 18px 10px;border-bottom:1px solid #ccc;font-size:12px;}
 .pick_sub_card .pick_img{float:left;width:25%;}
 .pick_sub_card .pick_img img{width:100%;height:60px;object-fit:cover;border-radius:10px;filter:grayscale(0.6);}
 .pick_sub_card .inner{float:left;width:70%;margin-left:5%;padding:10px;position:relative;height:60px;}
 .pick_sub_card .inner p{font-size:13px;}
-.pick_sub_card .inner p.main_title{color:#3d3d3d;margin-bottom:2px;line-height:1.2;}
-.pick_sub_card .inner p.sub_title{display:table;background-color:#000;padding:3px 10px;border-radius:10px;color:#fff;font-size:12px;margin-top:5px;}
+.pick_sub_card .inner span.main_title{color:#3d3d3d;margin-bottom:2px;line-height:1.2;}
+.pick_sub_card .inner p.sub_title{display:table;background-color:#000;padding:3px 10px;border-radius:7px;color:#fff;font-size:10px;margin-top:5px;}
 .pick_sub_card .inner span.date{font-size:10px;color:#ccc;}
 .pick_sub_card .inner a.pick_sub_card_a{position:absolute;top:50%;transform:translate(0, -50%);display:block;}
 .pick_sub_card .inner .admin{position:absolute;right:-10px;bottom:-10px;font-size:10px;}

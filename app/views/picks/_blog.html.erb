@@ -5,19 +5,23 @@
         <div class="discount_banner">
           <div class="pick_main_card">
             
-              <a href="/posts/hashtag/<%= pick.p_link %>"><div class="pick_img"><img src="<%= pick.p_image %>"></div></a>
+              <a href="/posts/hashtag/<%= pick.p_link %>">
+                <div class="pick_img">
+                  <img src="<%= pick.p_image %>">
+                  <span class="sub_title"><%= pick.p_spare_01 %></span>
+                </div>
+              </a>
               <div class="inner clearfix">
                 <span class="main_title"><%= pick.p_title %></span><br />
-                <span class="sub_title"><%= pick.p_spare_01 %></span>
+              
                 <% if current_user && current_user.admin %>
                   <div class="admin">
                     <%= link_to 'Edit', edit_pick_path(pick) %> |
                     <%= link_to 'Destroy', pick, method: :delete, data: { confirm: 'Are you sure?' } %>
                   </div>
                 <% end %>
+
               </div>
-            
-            
           </div>
         </div>
       </div>
@@ -30,8 +34,9 @@
         <a class="pick_sub_card_a" href="/posts/hashtag/<%= pick.p_link %>"><div class="pick_img"><img src="<%= pick.p_image %>"></div></a>
         <div class="inner">
           <a class="pick_sub_card_a" href="/posts/hashtag/<%= pick.p_link %>">
-            <span class="main_title"><%= pick.p_title %></span>
             <p class="sub_title"><%= pick.p_spare_01 %></p>
+            <span class="main_title"><%= pick.p_title %></span>
+            
             <!-- <span class="date">Found on <%= pick.created_at.strftime("#{pick.created_at.day.ordinalize} %B %Y") %></span> -->
             <% if current_user && current_user.admin %>
               <div class="admin">

@@ -22,55 +22,6 @@
         </div>  
       <% end %>
 
-      <!-- <div class="search_hero clearfix">
-
-        < render 'bridges/only_coupon' >
-        
-
-
-        <div class="scroll-downs">
-          <div class="mousey">
-            <div class="scroller"></div>
-          </div>
-        </div>
-      </div> -->
-
-      <!--
-      <div class="search_form_box">
-        <%= form_with url: :search, method: :get do |form| %>
-          <%= form.text_field :query %>
-          <%= form.submit "Search" %>
-        <% end %>
-      </div>
-      -->
-      <!-- <div class="menu-wrapper when_search_term">
-          <div class="menu-item">
-            <a href="/coupons/chashtag/electronics">Electronics</a>
-            <a href="/coupons/chashtag/fashion">Fashion</a>
-            <a href="/coupons/chashtag/beauty">Beauty</a>
-            <a href="/coupons/chashtag/cellphone_accessories">Cell Phone&Accessories</a>
-            <a href="/coupons/chashtag/home_kitchen">Home&Kitchen</a>
-            <a href="/coupons/chashtag/groceries">Groceries</a>
-            <a href="/coupons/chashtag/sports_outdoor">Sports&Outdoor</a>
-            <a href="/coupons/chashtag/pet_supplies">Pet Supplies</a>
-            <a href="/coupons/chashtag/health_household">Health&Household</a>
-            <a href="/coupons/chashtag/automotive">Automotive</a>
-            <a href="/coupons/chashtag/baby_products">Baby</a>
-            <a href="/coupons/chashtag/tools_home_improvement">Home Improvemnts</a>
-            <a href="/coupons/chashtag/patio_lawn_garden">Patio&Lawn&Garden</a>
-            <a href="/coupons/chashtag/toys_games">Toys&Games</a>
-            <a href="/coupons/chashtag/video_games">Video Games</a>
-            <a href="/coupons/chashtag/office_products">Office Products</a>
-            <a href="/coupons/chashtag/musical_instruments">Msical Instruments</a>
-          </div> 
-          <span class="pointer left-pointer dis">
-            <i class="fa fa-chevron-left"></i>
-          </span>
-          <span class="pointer right-pointer">
-            <i class="fa fa-chevron-right"></i>
-          </span>
-      </div> -->
-
         <div class="search_hero clearfix"> 
           <div class="inner">
             <h2>Why pay more?</h2>
@@ -81,35 +32,8 @@
 
       <div class="ctn_box">
 
-        <!-- < render 'homes/ctn_banner' > -->
-        
         <%= render 'picks/blog' %>
         
-        
-        <!-- <div class="special_exhibition clearfix">
-          <div class="spe_top">
-            <a target="_blank" href="https://amzn.to/3h2hIkt"><img src="<%=asset_path 'banner_top.png' %>" alt="amazon bose banner""></a>
-          </div>
-        </div> -->
-       
-        <!-- <div class="most_coupon">
-          <h2 class="line-title">🔥Most Popular Promo Code Deals Top 10</h2><br>
-          <div class="owl-carousel custom-carousel owl-theme">
-            <% @coupons_top.each_with_index do |coupon, i| %>
-              <div class="mc_img_box">
-                <%= link_to image_tag(coupon.c_image, alt: coupon.c_title, title: coupon.c_title), coupon %>
-                <span class="numbering"><%= i + 1 %></span>
-              </div>
-            <% end %>
-          </div>
-        </div> -->
-
-        <!-- <div class="search_filter_comm index_search">
-          <%= form_for "",url: coupons_path, role: "search", method: :get do %>
-            <%= text_field_tag :search, @search_term, placeholder: "Search....", class: 'search-input' %>
-          <% end %> 
-        </div> -->
-
         <% if current_user && current_user.admin %>
           <%= render 'clippings/clipping_main' %>
         <% end %>
@@ -118,14 +42,8 @@
           <!-- < render '/homes/new_coupons' > -->
           <%= render '/homes/main_2023' %>
         </div>
-        <br />
-        <br />
-        <br />
-        <br />
-        <div class="more_coupon_btn">
-          <a href="/coupons">See More Promo Code Deals</a>
-        </div>
-
+        
+  
         <!-- < render '/coupons/our_pick' > -->
 
       </div><!-- ctn_box -->
