@@ -11,9 +11,9 @@
       <div class="index_wrap">
         <header><%= render 'coupons/header_index' %></header>
 
-          <!-- <div class="pic_deal clearfix">
+           <div class="pic_deal clearfix">
             <div class="card_wrap n_coupon_wrap">
-                <h2 class="trend_code_title">Trending promo codes TOP 50</h2>
+                <h2 class="trend_code_title">Today's TOP 50 Trending promo codes</h2>
 
                   <div class="index_main_wrap">
                     <div class="card_ctn_wrap clearfix">
@@ -36,14 +36,14 @@
                                 <div class="saving_type clearfix">
                                   
                                   <% if coupon.c_spare_61.present? || coupon.c_spare_62.present? %>
-                                    <span>Code Saving <em>- <%= number_to_percentage(coupon.c_pct, precision: 0) %></em></span>
+                                    <span>Code Saving <em>- <%= number_to_percentage(coupon.c_pct, precision: 0) %><strong class="pct">off</strong></em></span>
                                     <% if coupon.c_spare_61.present? %>
-                                      <span>Coupon Saving <em>- <%= number_to_percentage(coupon.c_spare_61, precision: 0) %></em></span>
+                                      <span>Coupon Saving <em>- <%= number_to_percentage(coupon.c_spare_61, precision: 0) %><strong class="pct">off</strong></em></span>
                                     <% else %>
                                       <span>Coupon Saving <em><%= number_to_currency(coupon.c_spare_62, precision: 0) %></em></span>
                                     <% end %>
                                   <% else %>
-                                    <span class="only_code">Code Saving <em>- <%= number_to_percentage(coupon.c_pct, precision: 0) %></em></span>
+                                    <span class="only_code">Code Saving <em>- <%= number_to_percentage(coupon.c_pct, precision: 0) %><strong class="pct">off</strong></em></span>
                                   <% end %>
                                   
                                 </div>
@@ -83,7 +83,7 @@
                   </div>
 
             </div>
-          </div> -->
+          </div>
 
           <!-- <= render 'coupons/most_hit' > -->
 

@@ -16,8 +16,13 @@
             <div class="card_wrap n_coupon_wrap">
                 <!-- <h2>Promotion Codes</h2> -->
 
+                <div class="search_filter_comm">
+                  <%= form_for "",url: coupons_path, role: "search", method: :get do %>
+                    <%= text_field_tag :search, @search_term, placeholder: "Search....", class: 'search-input' %>
+                  <% end %> 
+                </div>
 
-                <div class="menu-wrapper when_search_term">
+                <div class="menu-wrapper">
                   <div class="menu-item">
                     <a href="/coupons">All</a>
                     <a href="/coupons/chashtag/electronics">Electronics</a>
@@ -44,15 +49,6 @@
                   <span class="pointer right-pointer">
                     <i class="fa fa-chevron-right"></i>
                   </span>
-                </div>
-
-                <div class="search_filter_comm">
-                  <!-- <div id="wrapper">
-                    <input type="text" onkeyup="searchFilter(this)" placeholder="Search..."/>
-                  </div> -->
-                  <%= form_for "",url: coupons_path, role: "search", method: :get do %>
-                    <%= text_field_tag :search, @search_term, placeholder: "Search....", class: 'search-input' %>
-                  <% end %> 
                 </div>
 
                   <div class="index_main_wrap">
@@ -156,9 +152,6 @@
                 <!-- <h2>Promotion Codes</h2> -->
 
                 <div class="search_filter_comm">
-                  <!-- <div id="wrapper">
-                    <input type="text" onkeyup="searchFilter(this)" placeholder="Search..."/>
-                  </div> -->
                   <%= form_for "",url: coupons_path, role: "search", method: :get do %>
                     <%= text_field_tag :search, @search_term, placeholder: "Search....", class: 'search-input' %>
                   <% end %> 

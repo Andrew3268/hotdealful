@@ -95,7 +95,7 @@ class BridgesController < ApplicationController
   end
 
   def trending_coupon
-    @coupons_top = Coupon.most_hit(1.day.ago, 50)
+    @coupons_top = Coupon.most_hit(2.day.ago, 50)
   end
 
 
