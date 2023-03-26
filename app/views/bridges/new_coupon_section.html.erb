@@ -22,13 +22,25 @@
         </div>  
       <% end %>
 
-        <div class="search_hero clearfix"> 
-          <div class="inner">
-            <h2>Why pay more?</h2>
-            <p><em>Amazon.com</em> offers thousands of great deals, but finding the best deal through endless pages might make you crazy. We offer the quickest and simplest way to find the best deals, coupons, and promo codes for you :)</p>
-            <p class="find_more"><a href="/bridges/finder_detail">Find More</a></p>
+        
+          <div class="search_hero clearfix"> 
+            <div class="inner">
+              <h2>Why pay more?</h2>
+              <p><em>Amazon.com</em> offers thousands of great deals, but finding the best deal through endless pages might make you crazy. We offer the quickest and simplest way to find the best deals, coupons, and promo codes for you :)</p>
+              <p class="find_more"><a href="/bridges/finder_detail">Find More</a></p>
+            </div>
           </div>
-        </div>
+
+
+        <% if current_user && current_user.admin %>
+          <div class="landing_menu">
+            <ul class="clearfix">
+              <li><a href="/coupons">Promo Codes</a></li>
+              <li><a href="#n">Blog</a></li>
+              <li><a href="/bridges/finder_detail">Search</a></li>
+            </ul>
+          </div>
+        <% end %>
 
       <div class="ctn_box">
 

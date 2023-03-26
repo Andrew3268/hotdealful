@@ -236,6 +236,11 @@ a.set_reset_m{display:none;}
 }
 
 
+/** Landing Menu **/
+.landing_menu{width:85%;margin:0 auto 50px auto;}
+.landing_menu ul{}
+.landing_menu ul li{float:left;width:31.33%;margin:1%;background-color:#000;border-radius:15px;padding:10px;text-align:center;}
+.landing_menu ul li a{color:#fff;}
 
 
 

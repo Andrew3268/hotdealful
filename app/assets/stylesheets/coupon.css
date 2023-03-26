@@ -133,7 +133,7 @@
 .n_coupon_wrap{margin-bottom:50px;padding:0 10px;}
 .n_coupon_wrap .promo_title_index{padding:0 10px;}
 .n_coupon_wrap h2{color:#000;display:table-cell;/*font-size:18px;*/width:100%;/*font-weight:100;*/display:inline;/*box-shadow:inset 0 -10px 0 #ffe7e7;*/font-weight:100;}
-.n_coupon_wrap h2.trend_code_title{background-color:#000;color:#fff;padding:7px 15px;border-radius:10px;font-size:15px;}
+.n_coupon_wrap h2.trend_code_title{background-color:#000;color:#fff;padding:7px 15px;border-radius:10px;font-size:15px;border:4px solid #eab500;}
 .n_coupon_wrap .post_hashtag_box{padding:0 8px;}
 .n_coupon_card{border-bottom:1px solid #ccc;padding:30px 10px;}
 .n_coupon_card .img_box{float:left;width:35%;height:150px;margin-left:1.5%;position:relative;font-size:14px;border:1px solid #ccc;border-radius:20px;}
@@ -280,8 +280,8 @@
 
 /****************** For modal promotion code ******************/
 /* Code Modal */
-.code_modal, .link{border-radius:15px}
-.link{padding:15px 20px;display:inline-block;background-color:#000;color:#fff;text-decoration:none;width:100%;text-align:center;}
+.code_modal, .link{border-radius:20px}
+.link{padding:10px 15px;display:inline-block;background-color:#000;color:#ffda05;text-decoration:none;width:100%;text-align:center;font-size:18px;border:2px solid;}
 .code_modal{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);padding:10px;z-index:20;background-color:#fff;display:none;box-shadow:rgba(0,0,0,.16) 0 1px 4px;}
 .code_modal .code_box{}
 .code_modal .code_box p{margin:0 0 2px 5px;color:#9da3ab;}
@@ -507,7 +507,7 @@ display: none;
 .mostContainer .section .right-section .pricing{}
 .mostContainer .section .right-section .pricing span{text-decoration:line-through;color:#9da3ab;margin-left:5px;}
 .mostContainer .section .right-section .pricing em{font-size:15px;color:#ff4d4d;font-weight:bold;}
-.mostContainer .view_more a{background:#000;padding:5px 15px;color:#fff;text-align:center;border-radius:10px;}
+.mostContainer .view_more a{background:#000;padding:5px 15px;color:#fff;text-align:center;border-radius:10px;border:2px solid #eab500;}
 
 
 
