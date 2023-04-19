@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :blogs
+  # root 'blogs#index'
   resources :clippings
   resources :savings
   resources :onedays
@@ -16,7 +18,10 @@ Rails.application.routes.draw do
   # root 'bridges#finder_detail'
   # root 'coupons#index'
   # root 'homes#index'
-  root 'bridges#new_coupon_section'
+
+
+  root 'bridges#new_coupon_section' #########  
+
   # root 'bridges#home'
   resources :posts
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

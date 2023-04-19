@@ -1,0 +1,40 @@
+<div class="web_box clearfix">
+  <div class="left">
+    <%= render '/shared/left' %>
+  </div>
+
+  <div class="right">
+    <header><%= render 'blogs/header_show' %></header>
+
+    <div class="show-wrap">
+        <div class="container clearfix">
+
+          <div class="blog_wrap">
+            <section class="intro">
+              <h1><%= @blog.blog_m_title %></h1>
+              <p><%= @blog.blog_m_description %></p>
+            </section>
+
+            <section class="product_box product_01">
+              <h2><%= @blog.blog_subtitle_01 %></h2>
+              <div class="product_img_box clearfix">
+                <img src="<%= @blog.blog_image_01 %>" alt="<%= @blog.blog_subtitle_01 %>">
+              </div>
+
+              <div class="blog_ctn"><%= @blog.blog_content_01 %></div>
+
+              <div class="btn"><a href="<%= @blog.blog_link_01 %>">Check it out</a></div>
+            </section>
+
+            <section class="blog_admin">
+              <%= link_to 'Edit', edit_blog_path(@blog) %> |
+              <%= link_to 'Back', blogs_path %>
+            </section>
+
+          </div><!-- blog_wrap -->
+
+       </div><!-- container -->
+    </div><!-- show-wrap -->
+  </div><!-- right -->
+
+</div><!-- web_box -->

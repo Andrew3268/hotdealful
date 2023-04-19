@@ -1,0 +1,28 @@
+/****** Index Page *****/
+
+
+
+/****** Show Page *****/
+.blog_wrap{}
+.blog_wrap .intro{}
+.blog_wrap .intro h1{line-height:1.2;}
+.blog_wrap .intro p{margin:10px 0;}
+.blog_wrap .product_box{}
+.blog_wrap .product_box h2{margin-top:50px;}
+.blog_wrap .product_box .product_img_box{width:400px;margin:50px auto;height:300px;position:relative;}
+.blog_wrap .product_box .product_img_box img{width:100%;height:100%;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);object-fit:contain;border-radius:20px;}
+.blog_wrap .product_box .blog_ctn{}
+.blog_wrap .product_box .btn{margin:20px 0;}
+.blog_wrap .product_box .btn a{display:inline-block;padding:10px 20px;background-color:#000;color:#fff;border-radius:15px;text-align:center;width:100%;}
+
+/****** Form Page *****/
+.blog_form_warp{width:1000px;margin:0 auto;}
+.blog_form_warp hr{margin:20px 0;height:0;}
+.blog_form_warp .blog_btn input{width:100%;padding:15px;border-radius:15px;}
+.blog_form_warp .title_section{margin-bottom:30px;}
+.blog_form_warp .title_section input{width:100%;padding:10px;}
+.blog_form_warp .title_section .main_desc{height:100px;width:100%;padding:10px;}
+.blog_form_warp .content_section{}
+.blog_form_warp .content_section p{font-size:30px;font-weight:bold;}
+.blog_form_warp .content_section input{width:100%;padding:10px;margin-bottom:10px;}
+.blog_form_warp .content_section .ctn_link label{margin-top:15px;}

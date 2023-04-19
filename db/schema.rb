@@ -10,7 +10,73 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_07_065917) do
+ActiveRecord::Schema.define(version: 2023_03_29_053329) do
+
+  create_table "action_text_rich_texts", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "body"
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["record_type", "record_id", "name"], name: "index_action_text_rich_texts_uniqueness", unique: true
+  end
+
+  create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.integer "record_id", null: false
+    t.integer "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.string "service_name", null: false
+    t.bigint "byte_size", null: false
+    t.string "checksum", null: false
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "active_storage_variant_records", force: :cascade do |t|
+    t.integer "blob_id", null: false
+    t.string "variation_digest", null: false
+    t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "blogs", force: :cascade do |t|
+    t.string "blog_m_title"
+    t.text "blog_m_description"
+    t.string "blog_subtitle_01"
+    t.string "blog_subtitle_02"
+    t.string "blog_subtitle_03"
+    t.string "blog_subtitle_04"
+    t.string "blog_subtitle_05"
+    t.string "blog_subtitle_06"
+    t.string "blog_subtitle_07"
+    t.string "blog_image_01"
+    t.string "blog_image_02"
+    t.string "blog_image_03"
+    t.string "blog_image_04"
+    t.string "blog_image_05"
+    t.string "blog_image_06"
+    t.string "blog_image_07"
+    t.string "blog_link_01"
+    t.string "blog_link_02"
+    t.string "blog_link_03"
+    t.string "blog_link_04"
+    t.string "blog_link_05"
+    t.string "blog_link_06"
+    t.string "blog_link_07"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "clippings", force: :cascade do |t|
     t.integer "user_id"
@@ -459,6 +525,8 @@ ActiveRecord::Schema.define(version: 2023_01_07_065917) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "coupons_tags", "coupons"
   add_foreign_key "coupons_tags", "tags"
   add_foreign_key "picks_tags", "picks"
