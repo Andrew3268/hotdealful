@@ -181,7 +181,7 @@
 .more_detail .detail_card .detail_box span{display:block;text-align:center;}
 .more_detail .detail_card .detail_box span.verified{font-size:17px;margin-top:5%;}
 .more_detail .detail_card .detail_box span.verified img.coupon_check{width:12%;vertical-align:middle;}
-.more_detail .detail_card .detail_box span.verified i{font-size:25px;vertical-align:middle;color:#3ae600;}
+.more_detail .detail_card .detail_box span.verified i{font-size:25px;vertical-align:middle;color:#000;}
 .more_detail .detail_card .detail_box span.verified em{vertical-align:middle;}
 .more_detail .detail_card .detail_box span.veri_span{font-size:12px;}
 .more_detail .detail_card .detail_box span.savings{font-size:20px;}
@@ -190,7 +190,7 @@
 .more_detail .detail_card .detail_box .rating_card img{width:40%;vertical-align:super;}
 .more_detail .detail_card .detail_box .rating_card span{font-size:15px;display:inline-block;}
 .more_detail .detail_card .detail_box .rating_card .rating_box{}
-.more_detail .detail_card .detail_box .rating_card .rating_box i{font-size:19px;color:#ff4d4d;vertical-align:sub;}
+.more_detail .detail_card .detail_box .rating_card .rating_box i{font-size:19px;color:#000;vertical-align:sub;}
 .date_exp_detail_box{width:33%;margin:1%;border:1px solid #ccc;border-radius:10px;float:left;position:relative;height:80px;font-weight:100;}
 .code_detail_box{width:63%;margin:1%;border:1px solid #ccc;border-radius:10px;float:left;position:relative;height:80px;font-weight:100;}
 .daxp_single{width:100%;}
@@ -281,7 +281,7 @@
 /****************** For modal promotion code ******************/
 /* Code Modal */
 .code_modal, .link{border-radius:20px}
-.link{padding:10px 15px;display:inline-block;background-color:#000;color:#ffda05;text-decoration:none;width:100%;text-align:center;font-size:18px;border:2px solid;}
+.link{padding:10px 15px;display:inline-block;background-color:#000;color:#fff;text-decoration:none;width:100%;text-align:center;font-size:18px;border:5px solid;font-size:15px;}
 .code_modal{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);padding:10px;z-index:20;background-color:#fff;display:none;box-shadow:rgba(0,0,0,.16) 0 1px 4px;}
 .code_modal .code_box{}
 .code_modal .code_box p{margin:0 0 2px 5px;color:#9da3ab;}
@@ -497,7 +497,7 @@ display: none;
 .mostContainer .section{height:120px;border-bottom:1px solid #ccc;margin:10px 0;}
 .mostContainer .section .img_box{float:left;width:28%;margin-right:2%;height:100px;position:relative;}
 .mostContainer .section .img_box img{width:80%;height:80%;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);object-fit:contain;}
-.mostContainer .section .img_box .list_num{background-color:#ff4d4d;color:#fff;padding:5px 10px;border-radius:10px;position:absolute;top:0;left:0;}
+.mostContainer .section .img_box .list_num{background-color:#000;color:#fff;padding:5px 10px;border-radius:10px;position:absolute;top:0;left:0;}
 .mostContainer .section .right-section{float:left;width:70%;padding:15px 0;}
 .mostContainer .section .right-section p{font-size:12px;margin-bottom:10px;}
 .mostContainer .section .right-section .hit{font-size:10px;color:#ccc;}
@@ -505,9 +505,9 @@ display: none;
 .mostContainer .section .right-section .rating_card .rating_box{}
 .mostContainer .section .right-section .rating_card .rating_box i{font-size:13px;}
 .mostContainer .section .right-section .pricing{}
-.mostContainer .section .right-section .pricing span{text-decoration:line-through;color:#9da3ab;margin-left:5px;}
-.mostContainer .section .right-section .pricing em{font-size:15px;color:#ff4d4d;font-weight:bold;}
-.mostContainer .view_more a{background:#000;padding:5px 15px;color:#fff;text-align:center;border-radius:10px;border:2px solid #eab500;}
+.mostContainer .section .right-section .pricing span{text-decoration:line-through;color:#9da3ab;margin-left:5px;font-size:13px;font-weight:100;}
+.mostContainer .section .right-section .pricing em{font-size:20px;color:#FFD700;font-weight:100;}
+.mostContainer .view_more a{background:#000;padding:5px 15px;color:#fff;text-align:center;border-radius:10px;}
 
 
 

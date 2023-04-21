@@ -69,9 +69,9 @@
                 <div class="extra_coupons">
                   <% if post.spare_61.present? || post.spare_62.present? %>
                     <% if post.spare_61.present? %>
-                      <span class="show_coupon">+ <%= number_to_percentage(post.spare_61, precision: 0) %> Coupon</span>
+                      <span class="show_coupon"><%= number_to_percentage(post.spare_61, precision: 0) %> Coupon</span>
                     <% else %>
-                      <span class="show_coupon">+ <%= number_to_currency(post.spare_62, precision: 0) %> Coupon</span>
+                      <span class="show_coupon"><%= number_to_currency(post.spare_62, precision: 0) %> Coupon</span>
                     <% end %>
                   <% else %>
                     <span> - </span>

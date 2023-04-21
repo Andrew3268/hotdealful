@@ -46,13 +46,15 @@
 
         <%= render 'picks/blog' %>
         
-        <% if current_user && current_user.admin %>
-          <%= render 'clippings/clipping_main' %>
-        <% end %>
+        <!-- < if current_user && current_user.admin >
+          < render 'clippings/clipping_main' >
+        < end > -->
 
         <div class="pic_deal clearfix">
-          <!-- < render '/homes/new_coupons' > -->
-          <%= render '/homes/main_2023' %>
+          <div class="promocode_section">
+            <!-- < render '/homes/new_coupons' > -->
+            <%= render '/homes/main_2023' %>
+          </div>
         </div>
         
   

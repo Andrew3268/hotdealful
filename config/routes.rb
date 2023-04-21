@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   # root 'homes#index'
 
 
-  root 'bridges#new_coupon_section' #########  
+  root 'bridges#landing_page' #########  
 
   # root 'bridges#home'
   resources :posts
