@@ -1,5 +1,5 @@
 .compare_box{margin:5px 5% 10% 5%;}
-.view{-webkit-transition:-webkit-transform 0.4s ease-in-out;transition: transform 0.4s ease-in-out;margin-top:35px;}
+.view{-webkit-transition:-webkit-transform 0.4s ease-in-out;transition: transform 0.4s ease-in-out;margin-top:15px;}
 
 .view--compare {
   -webkit-transform: scale3d(0.9,0.9,1);
@@ -33,18 +33,19 @@
   /*margin: 0 1em 2.5em;*/
   /*padding: 1.5em 1.5em 2em;*/
   background: #ffffff;
-  border-radius: 5px;
+  border-radius:10px;
   float:left;
   width:48%;
   margin:1%;
-  box-shadow:rgba(149, 157, 165, 0.3) 0px 3px 10px;border-radius:20px;
+  /*box-shadow:rgba(149, 157, 165, 0.3) 0px 3px 10px;border-radius:20px;*/
+  border:2px solid;
 }
 
 .product .compare_pct{position:absolute;top:4px;left:4px;border:2px solid;color:#fff;padding:7px;background:#000;border-radius:10px;}
 .product .compare_pct span{}
 
 .product--selected {
-  box-shadow: 0 0 0 2px #FFD700;
+  box-shadow: 0 0 0 4px #FFD700;
 }
 
 
@@ -85,7 +86,7 @@
   padding:5px;
 }
 .product__title p{word-break:break-word;line-height:1.4;height:2.8em;overflow:hidden;display:-webkit-box;display:-ms-flexbox;vertical-align:top;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:2;margin-bottom:10px;font-weight:100;}
-.product__title span{font-weight:200;font-size:15px;}
+.product__title span{font-weight:200;font-size:23px;}
 
 .product__price {
   font-weight: bold;
@@ -174,7 +175,7 @@
 
 /*.compare .detail em.shipping span{background:#494BC7;color:#fff;padding:5px 10px;border-radius:10px;}*/
 .compare .detail .extra_coupons{}
-.compare .detail .extra_coupons span.show_coupon{padding:5px 9px;border-radius:10px;color:#000;border:2px dotted;font-size:11px;}
+.compare .detail .extra_coupons span.show_coupon{padding:5px 13px;border-radius:10px;color:#000;border:2px dotted;font-size:11px;}
 .compare .detail .rating_box{}
 .compare .detail .rating_box img{vertical-align:middle;}
 .compare .detail .rating_box i{font-size:16px;color:#000;}
@@ -465,10 +466,7 @@
   .compare__item .product__alcohol{border-bottom: 2px solid #3C3474;}*/
   
 
-  .action--close {
-    padding: 0.3em 0.7em;
-  }
-
+  .action--close{padding: 0.3em 0.7em;}
   .action--close .fa-remove{font-size:30px;}
 
   /*.compare__item .action--buy {

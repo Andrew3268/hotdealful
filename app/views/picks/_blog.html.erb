@@ -1,5 +1,8 @@
 <div class="blog_section">
-  <h3>Featured Deals</h3>
+  <div class="sub_title_box clearfix">
+    <h3>Featured Deals</h3>
+    <div class="sub_title_mark"></div>
+  </div>
   
   <% @latest_picks.each do |pick| %>
     <% if pick.p_title.present? %>

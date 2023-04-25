@@ -5,7 +5,8 @@
 
     <div class="basic_info">
       <%= f.input :p_image, label: "Image" %>
-      <%= f.input :p_title, label: "Main Title"  %>
+      <!-- <%= f.input :p_title, label: "Main Title"  %> -->
+      <%= f.input :p_title, as: :rich_text_area, label: '#01 Contents' %>
       <%= f.input :p_spare_01, label: "Sub Title"  %>
       <%= f.input :p_link, label: "Link of posts hatag(widthout #)"  %>
       <%= f.input :p_hashtag, label: "hashtag"  %>

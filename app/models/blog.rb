@@ -1,4 +1,7 @@
 class Blog < ApplicationRecord
+
+  belongs_to :user
+  
   has_rich_text :blog_content_01
   has_rich_text :blog_content_02
   has_rich_text :blog_content_03

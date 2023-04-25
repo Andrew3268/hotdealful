@@ -34,29 +34,13 @@ Rails.application.routes.draw do
   get '/picks/phashtag/:name', to:'picks#hashtags'
   get '/coupons/chashtag/:name', to:'coupons#hashtags'
 
-  get 'bridges/finder_detail'
-  get 'bridges/about_us'
-  get 'bridges/delete_old_post'
-  get 'bridges/under_deal'
-  get 'bridges/half_deal'
-  get 'bridges/share_fb'
-  get 'bridges/share_ko'
-  get 'bridges/share_ko_people'
-  get 'bridges/new_under_deal'
-  get 'bridges/new_half_deal'
-  get 'bridges/delete_coupons'
-  get 'bridges/delete_hotdeals'
-  get 'bridges/delete_shoes'
-  get 'bridges/random_deals'
-  get 'bridges/admin_panel'
-  get 'bridges/home'
-  get 'bridges/only_coupon'
-  get 'bridges/tem_index'
-  get 'bridges/coupon_section'
-  get 'bridges/deal_section'
-  get 'bridges/promo_codes'
-  get 'bridges/policy'
-  get 'bridges/trending_coupon'
+  get 'bridges/finder_detail'#active
+  get 'bridges/about_us'#active
+  get 'bridges/delete_coupons' #active
+  get 'bridges/delete_hotdeals' #active
+  get 'bridges/only_coupon' #active
+  get 'bridges/policy' #active
+  get 'bridges/trending_coupon' #active
 
 
   get 'bridges/new_coupon_section'

@@ -4,7 +4,7 @@
 .web_box .left .inner{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);width:100%;}
 .web_box .left .inner h2{font-size:30px;line-height:1.2;margin-bottom:5px;}
 .web_box .left .inner p{}
-.web_box .left .inner p em{color:#E1A10B;}
+.web_box .left .inner p em{color:#FFD700;}
 .web_box .left .inner a.left_atag{background:#000;color:#fff;padding:10px 15px;text-align:center;margin:10px 0 0 0;border-radius:15px;float:right;}
 .web_box .left .inner .left_menu{text-align:right;}
 .web_box .left .inner .left_menu a{font-size:17px;text-decoration:underline;font-weight:lighter;}
@@ -19,7 +19,7 @@
 .web_box .right .index_wrap .search_hero .inner{display:none;}
 .web_box .right .index_wrap .search_hero .inner h2{line-height:1.2;font-size:35px;padding:30px 50px;}
 .web_box .right .index_wrap .search_hero .inner p{padding:10px 50px;}
-.web_box .right .index_wrap .search_hero .inner p em{color:#E1A10B;}
+.web_box .right .index_wrap .search_hero .inner p em{color:#FFD700;}
 .web_box .right .index_wrap .search_hero .inner p.find_more{padding:10px 35px;}
 .web_box .right .index_wrap .search_hero .inner p.find_more a{background:#000;color:#fff;padding:5px 10px;border-radius:15px;}
 .web_box .right .index_wrap .search_hero .search-wrapping{width:100%;margin:0;}

@@ -1,5 +1,7 @@
 .blog_section{width:90%;margin:0 auto;padding:20px;border-radius:20px;box-shadow:rgba(149, 157, 165, 0.3) 0px 8px 24px;}
-.blog_section h3{margin-bottom:20px;}
+.blog_section .sub_title_box{position:relative;height:20px;margin-bottom:20px;}
+.blog_section .sub_title_box h3{margin-bottom:20px;}
+.blog_section .sub_title_box div.sub_title_mark{position:absolute;top:-8px;left:-8px;width:30px;height:30px;background:#FFD700;border-radius:50%;z-index:-1;}
 .discount_banner{border-bottom:1px solid #ccc;padding-bottom:12px;}
 .pick_box{padding:0 10px;margin-bottom:50px;}
 .pick_box .search_filter{margin-bottom:20px;}

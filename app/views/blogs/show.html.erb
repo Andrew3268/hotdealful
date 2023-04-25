@@ -11,19 +11,68 @@
 
           <div class="blog_wrap">
             <section class="intro">
-              <h1><%= @blog.blog_m_title %></h1>
-              <p><%= @blog.blog_m_description %></p>
+              <img src="<%= @blog.blog_m_image %>" alt="<%= @blog.blog_m_title %>" title="<%= @blog.blog_m_title %>">
+              <div class="inner">
+                <h2><%= @blog.blog_m_title %></h2>
+                <p><%= @blog.blog_m_description %></p>
+              </div>
             </section>
 
             <section class="product_box product_01">
-              <h2><%= @blog.blog_subtitle_01 %></h2>
+              <h3><%= @blog.blog_subtitle_01 %></h3>
               <div class="product_img_box clearfix">
                 <img src="<%= @blog.blog_image_01 %>" alt="<%= @blog.blog_subtitle_01 %>">
               </div>
 
               <div class="blog_ctn"><%= @blog.blog_content_01 %></div>
 
-              <div class="btn"><a href="<%= @blog.blog_link_01 %>">Check it out</a></div>
+              <div class="btn"><a target="_blank" href="<%= @blog.blog_link_01 %>">Buy Now</a></div>
+            </section>
+
+
+
+            <section class="product_box product_02">
+              <h3><%= @blog.blog_subtitle_02 %></h3>
+              <div class="product_img_box clearfix">
+                <img src="<%= @blog.blog_image_02 %>" alt="<%= @blog.blog_subtitle_02 %>">
+              </div>
+
+              <div class="blog_ctn"><%= @blog.blog_content_02 %></div>
+
+              <div class="btn"><a target="_blank" href="<%= @blog.blog_link_02 %>">Buy Now</a></div>
+            </section>
+
+            <section class="product_box product_03">
+              <h3><%= @blog.blog_subtitle_03 %></h3>
+              <div class="product_img_box clearfix">
+                <img src="<%= @blog.blog_image_03 %>" alt="<%= @blog.blog_subtitle_03 %>">
+              </div>
+
+              <div class="blog_ctn"><%= @blog.blog_content_03 %></div>
+
+              <div class="btn"><a target="_blank" href="<%= @blog.blog_link_03 %>">Buy Now</a></div>
+            </section>
+
+            <section class="product_box product_04">
+              <h3><%= @blog.blog_subtitle_04 %></h3>
+              <div class="product_img_box clearfix">
+                <img src="<%= @blog.blog_image_04 %>" alt="<%= @blog.blog_subtitle_04 %>">
+              </div>
+
+              <div class="blog_ctn"><%= @blog.blog_content_04 %></div>
+
+              <div class="btn"><a target="_blank" href="<%= @blog.blog_link_04 %>">Buy Now</a></div>
+            </section>
+
+            <section class="product_box product_05">
+              <h3><%= @blog.blog_subtitle_05 %></h3>
+              <div class="product_img_box clearfix">
+                <img src="<%= @blog.blog_image_05 %>" alt="<%= @blog.blog_subtitle_05 %>">
+              </div>
+
+              <div class="blog_ctn"><%= @blog.blog_content_05 %></div>
+
+              <div class="btn"><a target="_blank" href="<%= @blog.blog_link_05 %>">Buy Now</a></div>
             </section>
 
             <section class="blog_admin">

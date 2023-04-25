@@ -1,0 +1,36 @@
+<section class="blog-section">
+
+  <div class="sub_title_box clearfix">
+    <h3 class="blog_section_title">Blogs <a href="/blogs">See more</a></h3>
+    <div class="sub_title_mark"></div>
+  </div>
+  <div class="owl-carousel custom-carousel owl-theme">
+
+    <% @blogs.each do |blog| %>
+      <a href="/blogs/<%= blog.id %>">
+        <div class="blog_landing_card active" style="background-image: url(<%= blog.blog_m_image %>);">
+          <div class="inner_ctn">
+            <h4><%= blog.blog_m_title %></h4>
+            <p class="two_sentences"><%= blog.blog_m_description %></p>
+          </div>
+        </div>
+      </a>
+    <% end %> 
+
+  </div>
+  
+</section>
+
+<script type="text/javascript">
+  $(".custom-carousel").owlCarousel({
+  autoWidth: true,
+  loop: true
+  });
+  $(document).ready(function () {
+    $(".custom-carousel .blog_landing_card").click(function () {
+      $(".custom-carousel .blog_landing_card").not($(this)).removeClass("active");
+      $(this).toggleClass("active");
+    });
+  });
+
+</script>

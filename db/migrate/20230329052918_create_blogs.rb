@@ -1,7 +1,10 @@
 class CreateBlogs < ActiveRecord::Migration[6.1]
   def change
     create_table :blogs do |t|
+      t.integer :user_id
       t.string :blog_m_title
+      t.string :blog_m_image
+      t.string :blog_m_category
       t.text :blog_m_description
 
       t.string :blog_subtitle_01      

@@ -4,7 +4,9 @@
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
     <div class="form-inputs title_section">
+      <%= f.input :blog_m_image, label: 'Main Image' %>
       <%= f.input :blog_m_title, label: 'Main Title' %>
+      <%= f.input :blog_m_category, label: "Categories" %>
       <%= f.input :blog_m_description, label: 'Main Description', :input_html => { :class => 'main_desc' }  %>
     </div>
 

@@ -183,22 +183,6 @@ a.set_reset_m{display:none;}
 .destory_old_post #myInput{padding:10px;width:100%;display:inline-block;}
 
 
-/****** Share To Ko ******/
-
-.sf_box{float:left;width:48%;margin-top:50px;}
-.sf_box .card{margin-top:10px;height:130px;font-size:13px;}
-.sf_box .image_box{float:left;width:20%;height:130px;position:relative;}
-.sf_box .image_box img{width:80%;height:80%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);}
-.sf_box .inner{float:left;width:75%;margin-left:5%;}
-.sf_box .inner em.title{word-break:keep-all;line-height:1.4;height:2.8em;overflow:hidden;display:-webkit-box;display:-ms-flexbox;vertical-align:top;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:2;}
-.sf_box .inner em.promo_code{border:2px dotted #ccc;padding:5px;margin-top:5px;display:table-cell;}
-.sf_box .inner .rating_box{margin-bottom:5px;}
-.sf_box .inner .rating_box i{font-size:13px;color:#ffbf00;vertical-align:middle;}
-.sf_box .inner .rating_box span{vertical-align:middle;font-size:13px;}
-
-
-
-
 /*About Us*/
 .about_us{width:1000px;margin:120px auto 0 auto;font-family: 'Montserrat', sans-serif;}
 .about_us .sections{margin-bottom:100px;border-bottom:1px solid #ccc;padding-bottom:10px;}
