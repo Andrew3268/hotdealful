@@ -24,7 +24,7 @@
     
 /****** Show Page *****/
 .blog_wrap{}
-.blog_wrap .intro{width:90%:margin:0 auto;}
+.blog_wrap .intro{width:90%;margin:0 auto;}
 .blog_wrap .intro img{width:100%;height:250px;object-fit:cover;border-radius:20px;}
 .blog_wrap .intro .inner{padding:10px;}
 .blog_wrap .intro .inner h2{line-height:1.2;}
