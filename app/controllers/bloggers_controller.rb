@@ -1,5 +1,6 @@
 class BloggersController < ApplicationController
   before_action :set_blogger, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, except: [:index, :show, :hashtags]
 
   # GET /bloggers or /bloggers.json
   def index
@@ -12,7 +13,8 @@ class BloggersController < ApplicationController
 
   # GET /bloggers/new
   def new
-    @blogger = Blogger.new
+    # @blogger = Blogger.new
+    @blogger = current_user.bloggers.build
   end
 
   # GET /bloggers/1/edit
@@ -21,7 +23,7 @@ class BloggersController < ApplicationController
 
   # POST /bloggers or /bloggers.json
   def create
-    @blogger = Blogger.new(blogger_params)
+    @blogger = current_user.bloggers.build(blogger_params)
 
     respond_to do |format|
       if @blogger.save
@@ -64,6 +66,12 @@ class BloggersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def blogger_params
-      params.require(:blogger).permit(:bl_title)
+      params.require(:blogger).permit(:bl_title, :bl_content_01, :bl_content_02, :bl_content_03, :bl_content_04, :bl_content_05, :bl_content_06,
+                                      :bl_content_07, :bl_subtitle_01, :bl_subtitle_02, :bl_subtitle_03, :bl_subtitle_04, :bl_subtitle_05, :bl_subtitle_06, :bl_subtitle_07,
+                                      :bl_image_01, :bl_image_02, :bl_image_03, :bl_image_04, :bl_image_05, :bl_image_06, :bl_image_07, :bl_link_01, :bl_link_02, :bl_link_03,
+                                      :bl_link_04, :bl_link_05, :bl_link_06, :bl_link_07, :bl_description, :bl_image, :bl_category)
     end
 end
+
+
+
