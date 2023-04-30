@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_29_053329) do
+ActiveRecord::Schema.define(version: 2023_04_30_095659) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -48,6 +48,44 @@ ActiveRecord::Schema.define(version: 2023_03_29_053329) do
     t.integer "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "bloggers", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "bl_title"
+    t.string "bl_image"
+    t.string "bl_category"
+    t.text "bl_description"
+    t.text "bl_content_01"
+    t.text "bl_content_02"
+    t.text "bl_content_03"
+    t.text "bl_content_04"
+    t.text "bl_content_05"
+    t.text "bl_content_06"
+    t.text "bl_content_07"
+    t.string "bl_subtitle_01"
+    t.string "bl_subtitle_02"
+    t.string "bl_subtitle_03"
+    t.string "bl_subtitle_04"
+    t.string "bl_subtitle_05"
+    t.string "bl_subtitle_06"
+    t.string "bl_subtitle_07"
+    t.string "bl_image_01"
+    t.string "bl_image_02"
+    t.string "bl_image_03"
+    t.string "bl_image_04"
+    t.string "bl_image_05"
+    t.string "bl_image_06"
+    t.string "bl_image_07"
+    t.string "bl_link_01"
+    t.string "bl_link_02"
+    t.string "bl_link_03"
+    t.string "bl_link_04"
+    t.string "bl_link_05"
+    t.string "bl_link_06"
+    t.string "bl_link_07"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "blogs", force: :cascade do |t|

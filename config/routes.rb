@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :bloggers
   resources :blogs
   # root 'blogs#index'
   resources :clippings
