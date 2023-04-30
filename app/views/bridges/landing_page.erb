@@ -12,7 +12,7 @@
           <%= link_to 'New Coupon', new_coupon_path %>
           <%= link_to 'New Post', new_post_path %>
           <%= link_to 'New Pick', new_pick_path %>
-          <%= link_to 'New Blog', new_blog_path %>
+          <%= link_to 'New Blog', new_blogger_path %>
           <a href="/bridges/delete_coupons">Delete Coupons</a>
           <a href="/bridges/delete_hotdeals">Delete Posts</a>
           <!-- <a href="/bridges/delete_shoes">Delete Shoes</a>
@@ -46,7 +46,7 @@
       <div class="ctn_box">
 
         <% if current_user && current_user.admin %>
-          <%= render 'blogs/blog_landing' %>
+          <%= render 'bloggers/blogger_landing' %>
         <% end %>
 
         <%= render 'picks/blog' %>

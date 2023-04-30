@@ -1,9 +1,89 @@
-<p id="notice"><%= notice %></p>
+<div class="web_box clearfix">
+  <div class="left">
+    <%= render '/shared/left' %>
+  </div>
 
-<p>
-  <strong>Bl title:</strong>
-  <%= @blogger.bl_title %>
-</p>
+  <div class="right">
+    <header><%= render 'bloggers/header_show' %></header>
 
-<%= link_to 'Edit', edit_blogger_path(@blogger) %> |
-<%= link_to 'Back', bloggers_path %>
+    <div class="show-wrap">
+        <div class="container clearfix">
+
+          <div class="blog_wrap">
+            <section class="intro">
+              <img src="<%= @blogger.bl_image %>" alt="<%= @blogger.bl_title %>" title="<%= @blogger.bl_title %>">
+              <div class="inner">
+                <h2><%= @blogger.bl_title %></h2>
+                <p><%= @blogger.bl_description %></p>
+              </div>
+            </section>
+
+            <section class="product_box product_01">
+              <h3><%= @blogger.bl_subtitle_01 %></h3>
+              <div class="product_img_box clearfix">
+                <img src="<%= @blogger.bl_image_01 %>" alt="<%= @blogger.bl_subtitle_01 %>">
+              </div>
+
+              <div class="blog_ctn"><%= @blogger.bl_content_01 %></div>
+
+              <div class="btn"><a target="_blank" href="<%= @blogger.bl_link_01 %>">Buy Now</a></div>
+            </section>
+
+
+
+            <section class="product_box product_02">
+              <h3><%= @blogger.bl_subtitle_02 %></h3>
+              <div class="product_img_box clearfix">
+                <img src="<%= @blogger.bl_image_02 %>" alt="<%= @blogger.bl_subtitle_02 %>">
+              </div>
+
+              <div class="blog_ctn"><%= @blogger.bl_content_02 %></div>
+
+              <div class="btn"><a target="_blank" href="<%= @blogger.bl_link_02 %>">Buy Now</a></div>
+            </section>
+
+            <section class="product_box product_03">
+              <h3><%= @blogger.bl_subtitle_03 %></h3>
+              <div class="product_img_box clearfix">
+                <img src="<%= @blogger.bl_image_03 %>" alt="<%= @blogger.bl_subtitle_03 %>">
+              </div>
+
+              <div class="blog_ctn"><%= @blogger.bl_content_03 %></div>
+
+              <div class="btn"><a target="_blank" href="<%= @blogger.bl_link_03 %>">Buy Now</a></div>
+            </section>
+
+            <section class="product_box product_04">
+              <h3><%= @blogger.bl_subtitle_04 %></h3>
+              <div class="product_img_box clearfix">
+                <img src="<%= @blogger.bl_image_04 %>" alt="<%= @blogger.bl_subtitle_04 %>">
+              </div>
+
+              <div class="blog_ctn"><%= @blogger.bl_content_04 %></div>
+
+              <div class="btn"><a target="_blank" href="<%= @blogger.bl_link_04 %>">Buy Now</a></div>
+            </section>
+
+            <section class="product_box product_05">
+              <h3><%= @blogger.bl_subtitle_05 %></h3>
+              <div class="product_img_box clearfix">
+                <img src="<%= @blogger.bl_image_05 %>" alt="<%= @blogger.bl_subtitle_05 %>">
+              </div>
+
+              <div class="blog_ctn"><%= @blogger.bl_content_05 %></div>
+
+              <div class="btn"><a target="_blank" href="<%= @blogger.bl_link_05 %>">Buy Now</a></div>
+            </section>
+
+            <section class="blog_admin">
+              <%= link_to 'Edit', edit_blogger_path(@blogger) %> |
+              <%= link_to 'Back', bloggers_path %>
+            </section>
+
+          </div><!-- blog_wrap -->
+
+       </div><!-- container -->
+    </div><!-- show-wrap -->
+  </div><!-- right -->
+
+</div><!-- web_box -->

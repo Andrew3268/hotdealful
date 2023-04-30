@@ -4,7 +4,7 @@ class BloggersController < ApplicationController
 
   # GET /bloggers or /bloggers.json
   def index
-    @bloggers = Blogger.all
+    @bloggers = Blogger.all.order("created_at DESC")
   end
 
   # GET /bloggers/1 or /bloggers/1.json

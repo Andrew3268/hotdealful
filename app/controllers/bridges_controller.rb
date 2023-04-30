@@ -75,7 +75,7 @@ class BridgesController < ApplicationController
     @latest_coupons = Coupon.last(5)
     @except_first_coupons = Coupon.order("id desc").offset(1).limit(15)
     @clippings = Clipping.all.order("created_at DESC").limit(4)
-    @blogs = Blog.all.order("created_at DESC").limit(5)
+    @bloggers = Blogger.all.order("created_at DESC").limit(5)
 
 
     

@@ -1,6 +1,10 @@
-<h1>Editing Blogger</h1>
-
-<%= render 'form', blogger: @blogger %>
-
-<%= link_to 'Show', @blogger %> |
-<%= link_to 'Back', bloggers_path %>
+<% if current_user && current_user.admin %>
+  <div class="wrap">
+    <div class="blog_form_warp">
+      <h1>Editing Blogger</h1>
+      <%= render 'form', blogger: @blogger %>
+      <%= link_to 'Show', @blogger %> |
+      <%= link_to 'Back', bloggers_path %>
+    </div>
+  </div>
+<% end %>
