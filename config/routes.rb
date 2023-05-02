@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :hotdeals
   resources :bloggers
   resources :blogs
   # root 'blogs#index'
@@ -34,6 +35,7 @@ Rails.application.routes.draw do
   get '/posts/hashtag/:name', to: 'posts#hashtags'
   get '/picks/phashtag/:name', to:'picks#hashtags'
   get '/coupons/chashtag/:name', to:'coupons#hashtags'
+  get '/hotdeals/dealhashtag/:name', to:'hotdeals#hashtags'
 
   get 'bridges/finder_detail'#active
   get 'bridges/about_us'#active

@@ -3,5 +3,18 @@
   <p><em>Amazon.com</em> offers thousands of great deals, but finding the best deal through endless pages might make you crazy.<br/ >We offer the quickest and simplest way to find the best deals, coupons, and promo codes for you :) <!-- Find what you're looking for at a great price and save money :) --></p>
   <a class="left_atag" href="/bridges/finder_detail">Find More</a>
 
+  <% if current_user && current_user.admin %>
+    <ul class="admin_menu">
+      <li><%= link_to 'New Coupon', new_coupon_path %></li>
+      <li><%= link_to 'New Post', new_post_path %></li>
+      <li><%= link_to 'New HotDeal', new_hotdeal_path %></li>
+      <li><%= link_to 'New Pick', new_pick_path %></li>
+      <li><%= link_to 'New Blog', new_blogger_path %></li>
+      <li><a href="/bridges/delete_coupons">Delete Coupons</a></li>
+      </ul><a href="/bridges/delete_hotdeals">Delete Posts</a></li>
+      <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+    </ul>
+  <% end %>
+
 </div>
 

@@ -14,4 +14,5 @@ class User < ApplicationRecord
   has_many :clippings
   has_many :blogs
   has_many :bloggers
+  has_many :hotdeals
 end

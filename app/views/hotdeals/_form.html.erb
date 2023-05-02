@@ -1,0 +1,39 @@
+<div class="hotdeal_form post_form">
+  <%= simple_form_for(@hotdeal) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+    <div class="form-inputs">
+      <%= f.input :deal_image %>
+      <%= f.input :deal_title %>
+      <%= f.input :deal_link %>
+      <!-- <%= f.input :deal_description %> -->
+    </div>
+
+    <div class="hashtag clearfix">
+      <%= f.input :deal_hashtag %>
+      <%= f.input :deal_source %>
+    </div>
+
+    <div class="pricing clearfix">
+      <%= f.input :deal_was_price, label: "Original Price" %>
+      <%= f.input :deal_is_price, label: "current_price" %>
+      <%= f.input :deal_pct, label: "ptc" %>
+      <%= f.input :deal_rating, label: "Star Rating" %>
+      <%= f.input :deal_rating_code, label: "Star Rating Code" %>
+      <%= f.input :deal_review_count, label: "Review" %>
+      <%= f.input :deal_pct_coupon, label: "PCT_Coupon" %>
+      <%= f.input :deal_cash_coupon, label: "Cash_Coupon" %>
+      
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+  <% end %>
+</div>
+
+
+  
+      
+      

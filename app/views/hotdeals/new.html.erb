@@ -1,0 +1,7 @@
+<% if current_user && current_user.admin %>
+  <div class="wrap">
+    <h1>New Hotdeal</h1>
+    <%= render 'form', hotdeal: @hotdeal %>
+    <%= link_to 'Back', hotdeals_path %>
+  </div>
+<% end %>
