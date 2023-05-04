@@ -33,7 +33,7 @@
 .blog_wrap .product_box{border-bottom:1px solid #ccc;padding:5px 10px 20px 10px;}
 .blog_wrap .product_box h3{margin-top:50px;}
 .blog_wrap .product_box .product_img_box{width:100%;margin:50px auto;height:300px;position:relative;}
-.blog_wrap .product_box .product_img_box img{width:100%;height:100%;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);object-fit:contain;border-radius:20px;}
+.blog_wrap .product_box .product_img_box img{width:70%;height:70%;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);object-fit:contain;border-radius:20px;}
 .blog_wrap .product_box .blog_ctn{}
 .blog_wrap .product_box .btn{margin:20px 0;}
 .blog_wrap .product_box .btn a{display:inline-block;padding:10px 20px;background-color:#000;color:#fff;border-radius:15px;text-align:center;width:100%;}
@@ -58,7 +58,7 @@
 .owl-carousel .owl-stage-outer{margin-top:10px;}
 
 /* -------- Landing page ------- */
-.blog-section{padding:20px;box-shadow:rgba(149, 157, 165, 0.3) 0px 8px 24px;border-radius:20px;width:90%;margin:50px auto;}
+.blog-section{padding:20px 10px;box-shadow:rgba(149, 157, 165, 0.3) 0px 8px 24px;border-radius:20px;width:90%;margin:50px auto;}
 .blog-section .blog_section_title{}
 .blog-section .blog_section_title a{display:block;float:right;font-weight:100;font-size:13px;color:#3d3d3d;border-bottom:3px solid;}
 .blog-section .sub_title_box{position:relative;height:20px;}
@@ -181,7 +181,7 @@
     height: 330px;
   }
   .blog-section .blog_landing_card.active {
-    width: 360px;
+    width:335px;
   }
   .blog-section .inner_ctn {
     transform: translateY(calc(100% - 42px));
