@@ -4,7 +4,7 @@ class HotdealsController < ApplicationController
 
   # GET /hotdeals or /hotdeals.json
   def index
-    @hotdeals = Hotdeal.all.order("created_at DESC")
+    @pagy, @hotdeals = pagy(Hotdeal.all.order("created_at DESC"), items: 5)
 
     if params[:search]
       @search_term = params[:search]

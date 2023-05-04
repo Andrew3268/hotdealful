@@ -130,7 +130,7 @@
 
 
 /******* New Coupon Section ****/
-.n_coupon_wrap{margin:20px 0 50px 0;padding:0 10px;}
+.n_coupon_wrap{margin:30px 0 50px 0;padding:0 10px;}
 .n_coupon_wrap .promo_title_index{padding:0 10px;}
 .n_coupon_wrap h2{color:#000;display:table-cell;/*font-size:18px;*/width:100%;/*font-weight:100;*/display:inline;/*box-shadow:inset 0 -10px 0 #ffe7e7;*/font-weight:100;}
 .n_coupon_wrap h2.trend_code_title{background-color:#000;color:#fff;padding:7px 15px;border-radius:10px;font-size:15px;}
@@ -226,14 +226,13 @@
 
 /******* Coupon index menu *******/
 .menu-wrapper{/*height:40px;*/padding:0 30px;position:relative;overflow:hidden;}
-/*.when_search_term{margin-top:15px;}*/
 .menu-wrapper .menu-item{/*height:100%*/;overflow:auto;white-space:nowrap;}
-.menu-wrapper .menu-item a{display:inline-block;padding:0px 13px;color:#fff;height:100%;background-color:#000;line-height:2.2;border-radius:15px;}
-/*.menu-wrapper .menu-item a:first-child{padding-left:5px;}*/
+.menu-wrapper .menu-item button{background-color: #000;color:#fff;border-radius:10px;padding:5px 13px;margin-left:5px;font-size:13px;}
+.menu-wrapper .menu-item a{color:#fff;}
 .menu-wrapper .menu-item::-webkit-scrollbar{display:none;}
 .menu-wrapper .pointer{height:40px;width:20px;line-height:38px;text-align:center;position:absolute;top:-3px}
-.menu-wrapper .pointer i{color:#333;cursor:pointer;font-size:20px;margin-top:10px;}
-.menu-wrapper .left-pointer{left:0;}
+.menu-wrapper .pointer i{color:#333;cursor:pointer;font-size:20px;margin-top:7px;}
+.menu-wrapper .left-pointer{left:0;top:-6px;}
 .menu-wrapper .right-pointer{right:0;}
 .menu-wrapper .dis i{color:#ccc;font-size:20px;margin-top:10px;}
 
@@ -241,7 +240,7 @@
 .n_coupon_wrap{}
 .n_coupon_wrap .post_search_filter{margin:-15px 0 20px 0;}
 .search_filter_comm{margin:0px 10px 20px 10px;}
-.n_coupon_wrap .post_search_filter input, .search_filter_comm input{width:100%;padding:15px;border-radius:15px;}
+.n_coupon_wrap .post_search_filter input, .search_filter_comm input{width:100%;padding:12px;border-radius:15px;}
 .search_filter_comm [data-filter-item]{}
 .search_filter_comm .hidden{display:none;}
 .index_search{padding:0 2.5%;}
@@ -281,7 +280,7 @@
 /****************** For modal promotion code ******************/
 /* Code Modal */
 .code_modal, .link{border-radius:20px}
-.link{padding:10px 15px;display:inline-block;background-color:#000;color:#fff;text-decoration:none;width:100%;text-align:center;font-size:18px;border:5px solid;font-size:15px;}
+.link{padding:15px 15px;display:inline-block;background-color:#000;color:#fff;text-decoration:none;width:100%;text-align:center;font-size:18px;border:5px solid;font-size:15px;}
 .code_modal{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);padding:10px;z-index:20;background-color:#fff;display:none;box-shadow:rgba(0,0,0,.16) 0 1px 4px;}
 .code_modal .code_box{}
 .code_modal .code_box p{margin:0 0 2px 5px;color:#9da3ab;}
@@ -299,7 +298,7 @@
 .overlay{position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(255,255,255,.7);z-index:10;display:none;}
 
 @media screen and (max-width:640px){
-  .link{position:fixed;bottom:0;margin:0 auto;left:0;right:0;border-bottom-right-radius:0;border-bottom-left-radius:0;z-index:999;}
+  .link{position:fixed;bottom:0;margin:0 auto;left:0;right:0;border-top-right-radius:0;border-top-left-radius:0;z-index:999;border-bottom-right-radius:20px;border-bottom-left-radius:20px;}
   .overlay{background-color:rgba(0, 0, 0, .4);}
   .code_modal.is-show{width:95%;}
   .code_modal .code_box .copy-text{padding:20px 15px;}
@@ -482,7 +481,7 @@ display: none;
 
 
 /***** Most Hit *****/
-.mostContainer{padding:20px;box-shadow:rgba(149, 157, 165, 0.3) 0px 8px 24px;width:90%;margin:0 5%;border-radius:20px;margin-top:30px;}
+.mostContainer{padding:20px;box-shadow:rgba(149, 157, 165, 0.3) 0px 8px 24px;width:90%;margin:0 5%;border-radius:20px;}
 .mostContainer h3{vertical-align:middle;}
 .mostContainer h3 .trend_right{}
 .mostContainer h3 .trend_right{float:right;background-color:#000;padding:5px 10px;border-radius:10px;}

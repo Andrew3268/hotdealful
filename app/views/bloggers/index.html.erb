@@ -9,9 +9,7 @@
       <header><%= render 'picks/header_index' %></header>
         
       <section class="blog_main_section">
-        <% if current_user && current_user.admin %><span><%= link_to 'New Blog', new_blogger_path %></span><% end %>
-
-
+        
         <div class="search_box">
           <div class="filter-search">
             <input type="text" class="form-control" placeholder="Search Here">
@@ -62,7 +60,8 @@
         <% end %>
 
       </section>
-
+      <%= raw pagy_nav(@pagy) %>
+    </div><!-- .index_wrap -->
     
     <div class="bottom_banner">
       <div class="middle_event">

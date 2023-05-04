@@ -16,6 +16,7 @@
 .blog_main_section .menu-wrapper .pointer i{margin:0;}
 .blog_main_section .menu-wrapper button{background-color:#000;color:#fff;border-radius:10px;padding:5px 13px;margin-left:5px;font-size:13px;}
 .blog_main_section .filter-search input{width:90%;margin:0 5%;padding:12px;border-radius:15px;}
+.blog_main_section .menu-wrapper .left-pointer{top:-2px;}
 .filter-node {position:relative;}
 .node-box {padding-top:50px;}
 .filter-node.filter-me {opacity:0 !important; visibility:hidden; position:absolute; top: 2000px;}

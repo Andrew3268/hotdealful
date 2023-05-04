@@ -10,7 +10,7 @@
   <div class="right">
 
       <div class="index_wrap">
-        <header><%= render 'coupons/header_index' %></header>
+        <header><%= render 'hotdeals/header_index' %></header>
 
         <div class="where-hashtag">
           <% if params[:name].present? %>
@@ -19,7 +19,7 @@
         </div>    
         <br/ >
 
-          <div class="pideal_deal clearfix">
+        <div class="pideal_deal clearfix">
             <div class="card_wrap n_coupon_wrap">
                 <!-- <h2>Promotion Codes</h2> -->
 
@@ -52,7 +52,7 @@
                   </span>
                 </div>
 
-                  <div class="index_main_wrap">
+                  <div class="index_main_wrap hotdeal_index">
                     <div class="card_ctn_wrap clearfix">
 
                         <% @hotdeals.each do |hotdeal| %>
@@ -62,9 +62,44 @@
                               <%= link_to image_tag(hotdeal.deal_image, alt: hotdeal.deal_title, title: hotdeal.deal_title, :class => 'main_img'), hotdeal %>
                             </div>
 
-                            <div class="inner">
+                            <div class="hotdeal_pct clearfix">
+                              <% if hotdeal.deal_pct_coupon.present? || hotdeal.deal_cash_coupon.present? %>
+                                <% if hotdeal.deal_pct_coupon.present? %>
+                                  <span class="pct">Sale<em>- <%= number_to_percentage(hotdeal.deal_pct, precision: 0) %><strong>off</strong></em></span>
+                                  <span class="pct">Coupon<em>- <%= number_to_percentage(hotdeal.deal_pct_coupon, precision: 0) %><strong>off</strong></em></span>
+                                <% else %>
+                                  <span class="pct">Sale<em>- <%= number_to_percentage(hotdeal.deal_pct, precision: 0) %><strong>off</strong></em></span>
+                                  <span class="pct">Coupon<em>- <%= number_to_currency(hotdeal.deal_cash_coupon) %><strong>off</strong></em></span>
+                                <% end %>
+                              <% else %>
+                                <span class="only_pct">Sale<em>- <%= number_to_percentage(hotdeal.deal_pct, precision: 0) %><strong>off</strong></em></span>
+                              <% end %>
+                            </div>
+
+
+                            <div class="inner clearfix">
                               <p class="two_sentences"><%= hotdeal.deal_title %></p>
+
                               <div class="pricing">
+                                <% total_save = 0 %>
+                                <% pct_coupon = 0 %>
+                                <% pct_coupon = (hotdeal.deal_pct_coupon.to_f / 100) * hotdeal.deal_is_price %>
+                                <% total_price_pct_coupon = hotdeal.deal_is_price - pct_coupon %>
+                                <% total_price_cash_coupon = hotdeal.deal_is_price - hotdeal.deal_cash_coupon.to_f %>
+
+                                <% if hotdeal.deal_pct_coupon.present? || hotdeal.deal_cash_coupon.present? %>
+                                  <% if hotdeal.deal_pct_coupon.present? %>
+                                    <span class="is_price"><%= number_to_currency(total_price_pct_coupon) %></span>
+                                    <span class="was_price"><%= number_to_currency(hotdeal.deal_was_price) %></span>
+                                  <% else %>
+                                    <span class="is_price"><%= number_to_currency(total_price_cash_coupon) %></span>
+                                    <span class="was_price"><%= number_to_currency(hotdeal.deal_was_price) %></span>
+                                  <% end %>
+
+                                <% else %>
+                                  <span class="is_price"><%= number_to_currency(hotdeal.deal_is_price) %></span>
+                                  <span class="was_price"><%= number_to_currency(hotdeal.deal_was_price) %></span>
+                                <% end %>
                                
                                 
                               </div><!-- .pricing -->
@@ -84,7 +119,7 @@
                   </div>
 
             </div>
-          </div>
+          </div><!-- .pideal_deal -->
 
         </div>
     <!-- < render 'coupons/tab_bar' > -->

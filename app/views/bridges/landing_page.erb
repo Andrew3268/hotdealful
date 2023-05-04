@@ -29,21 +29,21 @@
           </div>
 
 
-        <% if current_user && current_user.admin %>
-          <div class="landing_menu">
-            <ul class="clearfix">
-              <li><a href="/coupons">Promo Codes</a></li>
-              <li><a href="#n">Blog</a></li>
-              <li><a href="/bridges/finder_detail">Search</a></li>
-            </ul>
-          </div>
-        <% end %>
-
+    
       <div class="ctn_box">
 
         <% if current_user && current_user.admin %>
           <%= render 'bloggers/blogger_landing' %>
         <% end %>
+
+         <% if current_user && current_user.admin %>
+         <div class="pic_deal clearfix">
+            <div class="promocode_section">
+          <%= render 'hotdeals/hotdeal_landing' %>
+            </div>
+         </div>
+        <% end %>
+
 
         <%= render 'picks/blog' %>
         
