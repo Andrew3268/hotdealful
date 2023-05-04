@@ -54,6 +54,7 @@
 
 
 /******* Middle section CSS Start ******/
+.no-js .owl-carousel, .owl-carousel.owl-loaded{height:240px;}
 .owl-carousel.owl-drag .owl-item{height:280px;}
 .owl-carousel .owl-stage-outer{margin-top:10px;}
 
@@ -87,7 +88,7 @@
 }
 .blog-section .blog_landing_card.active {
   width:320px;
-  height:250px;
+  height:210px;
   /*box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
   -webkit-box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);*/
 }
