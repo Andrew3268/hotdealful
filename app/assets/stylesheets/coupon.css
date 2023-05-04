@@ -490,7 +490,7 @@ display: none;
 .mostContainer .section{height:120px;border-bottom:1px solid #ccc;margin:10px 0;}
 .mostContainer .section .img_box{float:left;width:28%;margin-right:2%;height:100px;position:relative;}
 .mostContainer .section .img_box img{width:80%;height:80%;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);object-fit:contain;}
-.mostContainer .section .img_box .list_num{background-color:#000;color:#fff;padding:5px 10px;border-radius:10px;position:absolute;top:0;left:0;}
+.mostContainer .section .img_box .list_num{background-color:#000;color:#fff;padding:5px 10px;border-radius:10px;position:absolute;top:0;left:0;opacity:0.6;}
 .mostContainer .section .right-section{float:left;width:70%;padding:15px 0;}
 .mostContainer .section .right-section p{font-size:12px;margin-bottom:10px;}
 .mostContainer .section .right-section .hit{font-size:10px;color:#ccc;}

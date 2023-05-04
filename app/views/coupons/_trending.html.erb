@@ -10,7 +10,7 @@
         <% @coupons_top.each_with_index do |coupon, i| %>          
             <div class="coupon_card clearfix">
               <div class=img_box>
-                <span class="trend_title"><%= i + 1 %>. <%= link_to coupon.c_title, coupon %></span>
+                <span class="trend_title">#<%= i + 1 %>. <%= link_to coupon.c_title, coupon %></span>
               </div>
               <div class="inner">
                 <% promocode_price = 0 %>
@@ -33,7 +33,7 @@
         <% @deals_top.each_with_index do |deals, i| %>
           <div class="coupon_card clearfix">
             <div class=img_box>
-              <span class="trend_title"><%= i + 1 %>. <%= link_to deals.title, deals %></span>
+              <span class="trend_title">#<%= i + 1 %>. <%= link_to deals.title, deals %></span>
             </div>
             <div class="inner">
               <% hotdeal_pct = 0 %>
