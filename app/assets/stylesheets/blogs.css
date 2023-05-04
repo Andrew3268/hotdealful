@@ -58,7 +58,7 @@
 .owl-carousel .owl-stage-outer{margin-top:10px;}
 
 /* -------- Landing page ------- */
-.blog-section{padding:20px 10px;box-shadow:rgba(149, 157, 165, 0.3) 0px 8px 24px;border-radius:20px;width:90%;margin:50px auto;}
+.blog-section{padding:20px;box-shadow:rgba(149, 157, 165, 0.3) 0px 8px 24px;border-radius:20px;width:90%;margin:50px auto;}
 .blog-section .blog_section_title{}
 .blog-section .blog_section_title a{display:block;float:right;font-weight:100;font-size:13px;color:#3d3d3d;border-bottom:3px solid;}
 .blog-section .sub_title_box{position:relative;height:20px;}
