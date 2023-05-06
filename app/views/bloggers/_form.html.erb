@@ -1,69 +1,105 @@
-<div class="blog_form_warp">
+<div class="hotdeal_form post_form">
   <%= simple_form_for(@blogger) do |f| %>
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
     <div class="form-inputs title_section">
-      <%= f.input :bl_image, label: 'Main Image' %>
-      <%= f.input :bl_title, label: 'Main Title' %>
-      <%= f.input :bl_category, label: "Categories" %>
-      <%= f.input :bl_description, label: 'Main Description', :input_html => { :class => 'main_desc' }  %>
-    </div>
+      <div class="basic_info">
+        <%= f.input :bl_image, label: 'Main Image' %>
+        <%= f.input :bl_title, label: 'Main Title' %>
+        <%= f.input :bl_category, label: "Categories" %>
+        <%= f.input :bl_description, label: 'Main Description', :input_html => { :class => 'main_desc' }  %>
+      </div>
+      <hr/>
 
-    <!-- #01 Product -->
-    <div class="form-inputs content_section">
-      <p>#01 Product</p>
-      <%= f.input :bl_subtitle_01, label: '#01 title' %>
-      <%= f.input :bl_image_01, label: '#01 image' %>
-      <%= f.input :bl_content_01, as: :rich_text_area, label: '#01 Contents' %>
-      <%= f.input :bl_link_01, label: '#01 link', :input_html => { :class => 'ctn_link' } %>
-    </div>
+      <!-- #01 Product -->    
+      <div class="basic_info">
+        <p>#01 Product</p>
+        <%= f.input :bl_image_01, label: '#01 image' %>
+        <%= f.input :bl_subtitle_01, label: '#01 title' %>
+        <%= f.input :bl_link_01, label: '#01 link', :input_html => { :class => 'ctn_link' } %>
+        <div class="pricing clearfix">        
+          <%= f.input :bl_is_price_01, label: '#Current Price' %>
+          <%= f.input :bl_was_price_01, label: '#Original Price' %>
+          <%= f.input :bl_rating_01, label: '#Rating' %>
+          <%= f.input :bl_rating_code_01, label: '#Rating Code' %>
+          <%= f.input :bl_review_01, label: '#Review' %>
+        </div>
+        <%= f.input :bl_content_01, as: :rich_text_area, label: '#01 Contents' %>
+      </div>
+      <hr/>
 
-    <hr/>
+      <!-- #02 Product -->    
+      <div class="basic_info">
+        <p>#02 Product</p>
+        <%= f.input :bl_image_02, label: '#01 image' %>
+        <%= f.input :bl_subtitle_02, label: '#01 title' %>
+        <%= f.input :bl_link_02, label: '#01 link', :input_html => { :class => 'ctn_link' } %>
+        <div class="pricing clearfix">        
+          <%= f.input :bl_is_price_02, label: '#Current Price' %>
+          <%= f.input :bl_was_price_02, label: '#Original Price' %>
+          <%= f.input :bl_rating_02, label: '#Rating' %>
+          <%= f.input :bl_rating_code_02, label: '#Rating Code' %>
+          <%= f.input :bl_review_02, label: '#Review' %>
+        </div>
+        <%= f.input :bl_content_02, as: :rich_text_area, label: '#01 Contents' %>
+      </div>
+      <hr/>
 
-    <!-- #02 Product -->
-    <div class="form-inputs content_section">
-      <p>#02 Product</p>
-      <%= f.input :bl_subtitle_02, label: '#02 title' %>
-      <%= f.input :bl_image_02, label: '#02 image' %>
-      <%= f.input :bl_content_02, as: :rich_text_area, label: '#02 Contents' %>
-      <%= f.input :bl_link_02, label: '#02 link', :input_html => { :class => 'ctn_link' } %>
-    </div>
+      <!-- #03 Product -->    
+      <div class="basic_info">
+        <p>#03 Product</p>
+        <%= f.input :bl_image_03, label: '#01 image' %>
+        <%= f.input :bl_subtitle_03, label: '#01 title' %>
+        <%= f.input :bl_link_03, label: '#01 link', :input_html => { :class => 'ctn_link' } %>
+        <div class="pricing clearfix">        
+          <%= f.input :bl_is_price_03, label: '#Current Price' %>
+          <%= f.input :bl_was_price_03, label: '#Original Price' %>
+          <%= f.input :bl_rating_03, label: '#Rating' %>
+          <%= f.input :bl_rating_code_03, label: '#Rating Code' %>
+          <%= f.input :bl_review_03, label: '#Review' %>
+        </div>
+        <%= f.input :bl_content_03, as: :rich_text_area, label: '#01 Contents' %>
+      </div>
+      <hr/>
 
-    <hr/>
+      <!-- #04 Product -->    
+      <div class="basic_info">
+        <p>#04 Product</p>
+        <%= f.input :bl_image_04, label: '#01 image' %>
+        <%= f.input :bl_subtitle_04, label: '#01 title' %>
+        <%= f.input :bl_link_04, label: '#01 link', :input_html => { :class => 'ctn_link' } %>
+        <div class="pricing clearfix">        
+          <%= f.input :bl_is_price_04, label: '#Current Price' %>
+          <%= f.input :bl_was_price_04, label: '#Original Price' %>
+          <%= f.input :bl_rating_04, label: '#Rating' %>
+          <%= f.input :bl_rating_code_04, label: '#Rating Code' %>
+          <%= f.input :bl_review_04, label: '#Review' %>
+        </div>
+        <%= f.input :bl_content_04, as: :rich_text_area, label: '#01 Contents' %>
+      </div>
+      <hr/>
 
-    <!-- #03 Product -->
-    <div class="form-inputs content_section">
-      <p>#03 Product</p>
-      <%= f.input :bl_subtitle_03, label: '#03 title' %>
-      <%= f.input :bl_image_03, label: '#03 image' %>
-      <%= f.input :bl_content_03, as: :rich_text_area, label: '#03 Contents' %>
-      <%= f.input :bl_link_03, label: '#03 link', :input_html => { :class => 'ctn_link' } %>
-    </div>
+      <!-- #05 Product -->    
+      <div class="basic_info">
+        <p>#05 Product</p>
+        <%= f.input :bl_image_05, label: '#01 image' %>
+        <%= f.input :bl_subtitle_05, label: '#01 title' %>
+        <%= f.input :bl_link_05, label: '#01 link', :input_html => { :class => 'ctn_link' } %>
+        <div class="pricing clearfix">        
+          <%= f.input :bl_is_price_05, label: '#Current Price' %>
+          <%= f.input :bl_was_price_05, label: '#Original Price' %>
+          <%= f.input :bl_rating_05, label: '#Rating' %>
+          <%= f.input :bl_rating_code_05, label: '#Rating Code' %>
+          <%= f.input :bl_review_05, label: '#Review' %>
+        </div>
+        <%= f.input :bl_content_05, as: :rich_text_area, label: '#01 Contents' %>
+      </div>
+      <hr/>
 
-    <hr/>
+    
 
-    <!-- #04 Product -->
-    <div class="form-inputs content_section">
-      <p>#04 Product</p>
-      <%= f.input :bl_subtitle_04, label: '#04 title' %>
-      <%= f.input :bl_image_04, label: '#04 image' %>
-      <%= f.input :bl_content_04, as: :rich_text_area, label: '#04 Contents' %>
-      <%= f.input :bl_link_04, label: '#04 link', :input_html => { :class => 'ctn_link' } %>
-    </div>
-
-    <hr/>
-
-    <!-- #05 Product -->
-    <div class="form-inputs content_section">
-      <p>#05 Product</p>
-      <%= f.input :bl_subtitle_05, label: '#05 title' %>
-      <%= f.input :bl_image_05, label: '#05 image' %>
-      <%= f.input :bl_content_05, as: :rich_text_area, label: '#05 Contents' %>
-      <%= f.input :bl_link_05, label: '#05 link', :input_html => { :class => 'ctn_link' } %>
-    </div>
-
-    <hr/>
+    
 
     <div class="form-actions bl_btn">
       <%= f.button :submit %>

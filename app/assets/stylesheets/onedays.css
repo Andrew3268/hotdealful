@@ -1,4 +1,4 @@
-.oneday_wrap{margin:0 0 50px 0;border-bottom:1px solid #ccc;}
+/*.oneday_wrap{margin:0 0 50px 0;border-bottom:1px solid #ccc;}
 .one_day_box{width:90%;padding:20px 10px 10px 10px;margin:50px auto;border:2px solid #000;border-radius:20px;position:relative;}
 .one_day_box p.title{position:absolute;top:-20px;left:-10px;background:#fff;color:#000;padding:10px 15px;border-radius:15px;border:2px solid;}
 .one_day_box .card{}
@@ -16,10 +16,6 @@
 #timer .under{border:2px solid;}
 #timer .under span{font-size:8px;color:#000;}
 .days, .hours, .minutes, .seconds{float:left;width:23%;margin:1%;padding:5px;border-radius:5px;font-size:10px;}
-/*.days{background: #EF2F3C;}
-.hours {background: #eeeeee;color: #183059;}
-.minutes{background: #276FBF;}
-.seconds{background: #F0A202;}*/
 .numbers {color:#000;font-size:2em;text-align: center;}
 .white{position: absolute;background:  #eeeeee;height: 85px;width: 75px;left: 30%;top: 2%;}
 .red {position: absolute;background:  #EF2F3C;left: 18%;top: 9%;height: 65px;width: 70px;}
@@ -30,9 +26,8 @@
 
 
 @media screen and (max-width:640px){
-  /*.one_day_box{margin-top:15%;}*/
   .one_day_box .dday_box{margin-top:-10px;}
 }
 @media screen and (min-width:641px) and (max-width:1199px){
   
-}
+}*/

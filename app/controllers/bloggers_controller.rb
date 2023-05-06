@@ -69,9 +69,13 @@ class BloggersController < ApplicationController
       params.require(:blogger).permit(:bl_title, :bl_content_01, :bl_content_02, :bl_content_03, :bl_content_04, :bl_content_05, :bl_content_06,
                                       :bl_content_07, :bl_subtitle_01, :bl_subtitle_02, :bl_subtitle_03, :bl_subtitle_04, :bl_subtitle_05, :bl_subtitle_06, :bl_subtitle_07,
                                       :bl_image_01, :bl_image_02, :bl_image_03, :bl_image_04, :bl_image_05, :bl_image_06, :bl_image_07, :bl_link_01, :bl_link_02, :bl_link_03,
-                                      :bl_link_04, :bl_link_05, :bl_link_06, :bl_link_07, :bl_description, :bl_image, :bl_category)
+                                      :bl_link_04, :bl_link_05, :bl_link_06, :bl_link_07, :bl_description, :bl_image, :bl_category, :bl_is_price_01, :bl_is_price_02, :bl_is_price_03, :bl_is_price_04, :bl_is_price_05,
+                                      :bl_was_price_01, :bl_was_price_02, :bl_was_price_03, :bl_was_price_04, :bl_was_price_05, :bl_rating_01, :bl_rating_02, :bl_rating_03, :bl_rating_04, :bl_rating_05,
+                                      :bl_rating_code_01, :bl_rating_code_02, :bl_rating_code_03, :bl_rating_code_04, :bl_rating_code_05, :bl_review_01, :bl_review_02, :bl_review_03, :bl_review_04, :bl_review_05)
     end
 end
 
 
 
+    
+    

@@ -31,15 +31,22 @@
 .blog_wrap .intro .inner h2{line-height:1.2;}
 .blog_wrap .intro .inner p{margin:10px 0;}
 .blog_wrap .product_box{border-bottom:1px solid #ccc;padding:5px 10px 20px 10px;}
-.blog_wrap .product_box h3{margin-top:50px;}
-.blog_wrap .product_box .product_img_box{width:100%;margin:50px auto;height:300px;position:relative;}
+.blog_wrap .product_box h3{margin-top:20px;}
+.blog_wrap .product_box .product_img_box{width:100%;margin:10px auto;height:250px;position:relative;}
 .blog_wrap .product_box .product_img_box img{width:70%;height:70%;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);object-fit:contain;border-radius:20px;}
 .blog_wrap .product_box .blog_ctn{}
 .blog_wrap .product_box .btn{margin:20px 0;}
-.blog_wrap .product_box .btn a{display:inline-block;padding:10px 20px;background-color:#000;color:#fff;border-radius:15px;text-align:center;width:100%;}
+.blog_wrap .product_box .btn a{display:inline-block;padding:10px 20px;background-color:#000;color:#fff;border-radius:15px;text-align:center;width:50%;float:left;}
+.blog_wrap .product_box .pricing{}
+.blog_wrap .product_box .pricing p{font-size:20px;color:#FFD700;}
+.blog_wrap .product_box .pricing p span{font-size:13px;color:#9da3ab;text-decoration:line-through;display:inline-block;margin-left:5px;}
+.blog_wrap .product_box .pricing .rating_card{margin-bottom:20px;}
+.blog_wrap .product_box .pricing .rating_card .material-icons{font-size:20px;}
+.blog_wrap .product_box .pricing .rating_card span{vertical-align:top;}
+
 
 /****** Form Page *****/
-.blog_form_warp{width:1000px;margin:0 auto;}
+/*.blog_form_warp{width:1000px;margin:0 auto;}
 .blog_form_warp hr{margin:20px 0;height:0;}
 .blog_form_warp .blog_btn input{width:100%;padding:15px;border-radius:15px;}
 .blog_form_warp .title_section{margin-bottom:30px;}
@@ -49,7 +56,9 @@
 .blog_form_warp .content_section p{font-size:30px;font-weight:bold;}
 .blog_form_warp .content_section input{width:100%;padding:10px;margin-bottom:10px;}
 .blog_form_warp .content_section .ctn_link label{margin-top:15px;}
+.blog_form_warp .content_section .data input{float:left;margin:1%;}*/
 
+.trix-content a{color:#08f;}
 
 
 

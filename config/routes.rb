@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+
   resources :hotdeals
   resources :bloggers
   resources :blogs

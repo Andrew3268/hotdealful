@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_04_30_105919) do
+ActiveRecord::Schema.define(version: 2023_05_06_065701) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -86,6 +86,31 @@ ActiveRecord::Schema.define(version: 2023_04_30_105919) do
     t.string "bl_link_07"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.decimal "bl_is_price_01"
+    t.decimal "bl_is_price_02"
+    t.decimal "bl_is_price_03"
+    t.decimal "bl_is_price_04"
+    t.decimal "bl_is_price_05"
+    t.decimal "bl_was_price_01"
+    t.decimal "bl_was_price_02"
+    t.decimal "bl_was_price_03"
+    t.decimal "bl_was_price_04"
+    t.decimal "bl_was_price_05"
+    t.float "bl_rating_01"
+    t.float "bl_rating_02"
+    t.float "bl_rating_03"
+    t.float "bl_rating_04"
+    t.float "bl_rating_05"
+    t.float "bl_review_01"
+    t.float "bl_review_02"
+    t.float "bl_review_03"
+    t.float "bl_review_04"
+    t.float "bl_review_05"
+    t.integer "bl_rating_code_01"
+    t.integer "bl_rating_code_02"
+    t.integer "bl_rating_code_03"
+    t.integer "bl_rating_code_04"
+    t.integer "bl_rating_code_05"
   end
 
   create_table "blogs", force: :cascade do |t|

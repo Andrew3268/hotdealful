@@ -1,0 +1,33 @@
+<div class="rating_card">
+  <% if @blogger.bl_rating_code_02 == 50 %>
+    <div class="rating_box">
+      <!-- <img src="<%=asset_path 'star_5.png' %>" alt="star_rating" style="width:40%"> -->
+      <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i>
+      <span>(<%= @blogger.bl_rating_02 %>) / <%= number_with_precision(@blogger.bl_review_02, precision: 0, separator: ',', delimiter: ',') %>+ global ratings</span> 
+    </div>
+  <% elsif @blogger.bl_rating_code_02 == 45 %>
+    <div class="rating_box">
+      <!-- <img src="<%=asset_path 'star_45.png' %>" alt="star_rating" style="width:40%"> -->
+      <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i>
+      <span>(<%= @blogger.bl_rating_02 %>) / <%= number_with_precision(@blogger.bl_review_02, precision: 0, separator: ',', delimiter: ',') %>+ global ratings</span> 
+    </div>
+  <% elsif @blogger.bl_rating_code_02 == 40 %>
+    <div class="rating_box">
+      <!-- <img src="<%=asset_path 'star_4.png' %>" alt="star_rating" style="width:40%"> -->
+      <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i>
+      <span>(<%= @blogger.bl_rating_02 %>) / <%= number_with_precision(@blogger.bl_review_02, precision: 0, separator: ',', delimiter: ',') %>+ global ratings</span> 
+    </div>
+  <% elsif @blogger.bl_rating_code_02 == 35 %>
+    <div class="rating_box">
+      <!-- <img src="<%=asset_path 'star_35.png' %>" alt="star_rating" style="width:30%"> -->
+      <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i><i class="material-icons">star_border</i>
+      <span>(<%= @blogger.bl_rating_02 %>) / <%= number_with_precision(@blogger.bl_review_02, precision: 0, separator: ',', delimiter: ',') %>+ global ratings</span> 
+    </div>
+  <% elsif @blogger.bl_rating_code_02 == 30 %>
+    <div class="rating_box">
+      <!-- <img src="<%=asset_path 'star_3.png' %>" alt="star_rating" style="width:30%"> -->
+      <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i>
+      <span>(<%= @blogger.bl_rating_02 %>) / <%= number_with_precision(@blogger.bl_review_02, precision: 0, separator: ',', delimiter: ',') %>+ global ratings</span> 
+    </div>
+  <% end %>
+</div><!-- .rating_card -->
