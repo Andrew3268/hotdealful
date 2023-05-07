@@ -28,9 +28,9 @@
               </div>
 
               <div class="pricing">
-                <p><%= @blogger.bl_is_price_01 %>
+                <p><%= number_to_currency(@blogger.bl_is_price_01) %>
                   <% if @blogger.bl_was_price_01.present? %>
-                    <span><%= @blogger.bl_was_price_01 %></span>
+                    <span><%= number_to_currency(@blogger.bl_was_price_01) %></span>
                   <% end %>
                 </p>
                 <%= render 'bloggers/rating_card_01' %>                
@@ -51,9 +51,9 @@
               </div>
 
               <div class="pricing">
-                <p><%= @blogger.bl_is_price_02 %>
+                <p><%= number_to_currency(@blogger.bl_is_price_02) %>
                   <% if @blogger.bl_was_price_02.present? %>
-                    <span><%= @blogger.bl_was_price_02 %></span>
+                    <span><%= number_to_currency(@blogger.bl_was_price_02) %></span>
                   <% end %>
                 </p>
                 <%= render 'bloggers/rating_card_02' %>                
@@ -73,9 +73,9 @@
               </div>
 
               <div class="pricing">
-                <p><%= @blogger.bl_is_price_03 %>
+                <p><%= number_to_currency(@blogger.bl_is_price_03) %>
                   <% if @blogger.bl_was_price_03.present? %>
-                    <span><%= @blogger.bl_was_price_03 %></span>
+                    <span><%= number_to_currency(@blogger.bl_was_price_03) %></span>
                   <% end %>
                 </p>
                 <%= render 'bloggers/rating_card_03' %>                
@@ -95,9 +95,9 @@
               </div>
 
               <div class="pricing">
-                <p><%= @blogger.bl_is_price_04 %>
+                <p><%= number_to_currency(@blogger.bl_is_price_04) %>
                   <% if @blogger.bl_was_price_04.present? %>
-                    <span><%= @blogger.bl_was_price_04 %></span>
+                    <span><%= number_to_currency(@blogger.bl_was_price_04) %></span>
                   <% end %>
                 </p>
                 <%= render 'bloggers/rating_card_04' %>                
@@ -117,9 +117,9 @@
               </div>
 
               <div class="pricing">
-                <p><%= @blogger.bl_is_price_05 %>
+                <p><%= number_to_currency(@blogger.bl_is_price_05) %>
                   <% if @blogger.bl_was_price_05.present? %>
-                    <span><%= @blogger.bl_was_price_05 %></span>
+                    <span><%= number_to_currency(@blogger.bl_was_price_05) %></span>
                   <% end %>
                 </p>
                 <%= render 'bloggers/rating_card_05' %>                
