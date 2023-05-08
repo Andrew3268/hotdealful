@@ -27,7 +27,7 @@
 .blog_wrap{}
 .blog_wrap .intro{width:90%;margin:0 auto;}
 .blog_wrap .intro img{width:100%;height:250px;object-fit:cover;border-radius:20px;}
-.blog_wrap .intro .inner{padding:10px;}
+.blog_wrap .intro .inner{padding:10px 0 0 0;}
 .blog_wrap .intro .inner h2{line-height:1.2;}
 .blog_wrap .intro .inner p{margin:10px 0;}
 .blog_wrap .product_box{border-bottom:1px solid #ccc;padding:5px 10px 20px 10px;}
@@ -63,8 +63,8 @@
 
 
 /******* Middle section CSS Start ******/
-.no-js .owl-carousel, .owl-carousel.owl-loaded{height:240px;}
-.owl-carousel.owl-drag .owl-item{height:280px;}
+.no-js .owl-carousel, .owl-carousel.owl-loaded{height:260px;}
+.owl-carousel.owl-drag .owl-item{height:240px;}
 .owl-carousel .owl-stage-outer{margin-top:10px;}
 
 /* -------- Landing page ------- */
@@ -127,7 +127,7 @@
   transform: none;
   -webkit-transform: none;
 }
-.blog-section .inner_ctn h4{font-size:20px;}
+.blog-section .inner_ctn h4{font-size:20px;line-height:1.2;}
 .blog-section .inner_ctn p {
   opacity: 0;
   -webkit-transform: translateY(32px);
