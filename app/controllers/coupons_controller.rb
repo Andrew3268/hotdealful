@@ -6,12 +6,12 @@ class CouponsController < ApplicationController
   # GET /coupons or /coupons.json
   def index
     @pagy, @coupons = pagy(Coupon.all.order("created_at DESC"), items: 100)
-    @coupons_top = Coupon.most_hit(1.day.ago, 10)
-    @deals_top = Post.most_hit(1.day.ago, 10)
+    @coupons_top = Coupon.most_hit(1.day.ago, 5)
+    @deals_top = Post.most_hit(1.day.ago, 5)
     @our_pick = Coupon.all.order("created_at DESC")
     @picks = Pick.all.all.order("created_at DESC").limit(1)
     @most_hit = Blogger.most_hit(1.day.ago, 5)
-    @hotdeal_top = Hotdeal.most_hit(1.day.ago, 10)
+    @hotdeal_top = Hotdeal.most_hit(1.day.ago, 5)
     # @latest_coupons = Coupon.last(1)
     # @except_first_coupons = Coupon.order("id desc").offset(1)
     
@@ -26,12 +26,12 @@ class CouponsController < ApplicationController
   # GET /coupons/1 or /coupons/1.json
   def show
     @coupon.punch(request)
-    @coupons_top = Coupon.most_hit(1.day.ago, 10)
-    @deals_top = Post.most_hit(1.day.ago, 10)
+    @coupons_top = Coupon.most_hit(1.day.ago, 5)
+    @deals_top = Post.most_hit(1.day.ago, 5)
     @our_pick = Coupon.all.order("created_at DESC")
     @picks = Pick.all.all.order("created_at DESC").limit(1)
     @most_hit = Blogger.most_hit(1.day.ago, 5)
-    @hotdeal_top = Hotdeal.most_hit(1.day.ago, 10)
+    @hotdeal_top = Hotdeal.most_hit(1.day.ago, 5)
     set_meta_tags title: @coupon.c_title,
                   site: 'Off The Price',
                   revierse: true,

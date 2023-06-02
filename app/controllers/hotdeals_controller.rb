@@ -5,9 +5,9 @@ class HotdealsController < ApplicationController
   # GET /hotdeals or /hotdeals.json
   def index
     @pagy, @hotdeals = pagy(Hotdeal.all.order("created_at DESC"), items: 5)
-    @hotdeal_top = Hotdeal.most_hit(1.day.ago, 10)
-    @coupons_top = Coupon.most_hit(1.day.ago, 10)
-    @deals_top = Post.most_hit(1.day.ago, 10)
+    @hotdeal_top = Hotdeal.most_hit(1.day.ago, 5)
+    @coupons_top = Coupon.most_hit(1.day.ago, 5)
+    @deals_top = Post.most_hit(1.day.ago, 5)
     @our_pick = Coupon.all.order("created_at DESC")
     @picks = Pick.all.all.order("created_at DESC").limit(1)
     @most_hit = Blogger.most_hit(1.day.ago, 5)
@@ -22,12 +22,12 @@ class HotdealsController < ApplicationController
   # GET /hotdeals/1 or /hotdeals/1.json
   def show
     @hotdeal.punch(request)
-    @coupons_top = Coupon.most_hit(1.day.ago, 10)
-    @deals_top = Post.most_hit(1.day.ago, 10)
+    @coupons_top = Coupon.most_hit(1.day.ago, 5)
+    @deals_top = Post.most_hit(1.day.ago, 5)
     @our_pick = Coupon.all.order("created_at DESC")
     @picks = Pick.all.all.order("created_at DESC").limit(1)
     @most_hit = Blogger.most_hit(1.day.ago, 5)
-    @hotdeal_top = Hotdeal.most_hit(1.day.ago, 10)
+    @hotdeal_top = Hotdeal.most_hit(1.day.ago, 5)
   end
 
   def hashtags
