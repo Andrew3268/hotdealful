@@ -2,7 +2,7 @@
   <nav id="navigation">
 
     <div class="nav__column">
-      <h1><a href="/" class="logo">THE FiiVE</a></h1>
+      <h1><a href="/" class="logo"><img src="<%=asset_path 'new_logo.png' %>"></a></h1>
     </div>
 
     <div class="nav__column">
@@ -16,7 +16,7 @@
         <ul class="nav_ul_list">
         <li class="nav_li_menu"><a href="/bridges/reviews">Reviews<span class="green">.</span></a></li>
           <li class="nav_li_menu"><a href="/coupons">Promotion Codes<span class="green">.</span></a></li>
-          <li class="nav_li_menu"><a href="/hotdeals">Today's Deals<span class="green">.</span></a></li>
+          <!-- <li class="nav_li_menu"><a href="/hotdeals">Today's Deals<span class="green">.</span></a></li> -->
           <% @picks.each do |pick| %>
             <li class="nav_li_menu"><a href="/posts/hashtag/<%= pick.p_link %>">Featured<span class="green">.</span></a></li>
           <% end %>
