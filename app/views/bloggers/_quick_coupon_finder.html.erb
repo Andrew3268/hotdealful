@@ -1,0 +1,215 @@
+<div class="search-wrapping blog_quick_search clearfix">
+    
+    <div class="set_search_box clearfix">
+              
+      <div style="display:none;">
+        <button class="accordion">Select Category</button>
+        <%= render 'bridges/finder_categories' %> 
+      </div>
+
+      <div class="feild_wrap">
+        <div class="keyword_box clearfix">
+          <input type="text" class="keyword" placeholder="Search coupons & deals" value="">
+        </div>
+
+        <div class="keyword_box clearfix" style="display:none;">
+          <p>Brand</p>
+          <input type="text" class="brand" placeholder="Brand Keyword" value="">
+        </div>
+      </div><!--feild_wrap-->
+      
+      <div class="option_wrap clearfix" style="display:none;">
+        <div class="option_box op_wrap">  
+          <p>Coupons</p>
+          <div class="coupon-type on_off clearfix">
+            <input id="coupon_off" name="coupon-type" type="radio" value="">
+            <label class="first swich_off" for="coupon_off">OFF</label>
+
+            <input id="coupon" name="coupon-type" type="radio" value="2231352011" checked>
+            <label for="coupon" class="swich_on">ON</label>
+          </div>
+        </div>
+
+      </div><!--option_wrap-->
+
+
+      <div class="text-center">
+        <button class="search">Find on Amazon</button>
+      </div>
+    </div><!--set_search_box-->
+</div>
+
+<script type="text/javascript">
+  //Search on Amazon[quick search]//
+  function isMobile(){
+  var UserAgent = navigator.userAgent;
+
+  if (UserAgent.match(/iPhone|iPod|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i) != null || UserAgent.match(/LG|SAMSUNG|Samsung/) != null)
+    {
+      return true;
+    }else{
+      return false;
+    }
+  }
+
+  if(isMobile()){
+      //For Mobile
+      $(document).ready(function(){
+      var rootURL = "https://www.amazon.com/s?i=aps";
+
+      $("select[name='time']").change(function(){
+        if ( $(this).val() === "custom" ){
+          $(".custom-time").removeClass("disable");
+        } else {
+          $(".custom-time").addClass("disable");
+        }
+      });
+      
+      $(".search").on("click", function(){
+        var postType = $("input:radio[name='post-type']:checked").val();
+        var primeType = $("input:radio[name='prime-type']:checked").val();
+        var couponType = $("input:radio[name='coupon-type']:checked").val();
+        var shippingType = $("input:radio[name='shipping-type']:checked").val();
+        var fastType = $("input:radio[name='fast-type']:checked").val();
+        var overseaType = $("input:radio[name='oversea-type']:checked").val();
+        var subscribeType = $("input:radio[name='subscribe-type']:checked").val();
+        var keyWord = $(".keyword").val();
+        var brandWord = $(".brand").val();
+        var minPrice = $(".minprice").val();
+        var maxPrice = $(".maxprice").val();
+        var timeType = $(".time select").val();
+        var postMonth = $("select[name='month']").val();
+        var postMax = $("select[name='max']").val();
+        var minPct = $("select[name='minpct']").val();
+        var maxPct = $("select[name='maxpct']").val();
+        // var postYear = $(".year").val();
+        
+        var key  = (keyWord === "") ? "" : "&field-keywords=" + keyWord;
+        var brand  = (brandWord === "") ? "" : "&rh=p_89%3A" + brandWord;
+        var mip  = (minPrice === "") ? "" : "&rh=p_74%3A" + minPrice+"00-";
+        var mxp  = (maxPrice === "") ? "" : maxPrice+"00";
+        var type = (postType === "") ? "" : "&i=" + postType;
+        var prime = (primeType === "") ? "" : "&rh=" + primeType;
+        var coupon = (couponType === "") ? "" : "&srs=" + couponType;
+        var shipping = (shippingType === "") ? "" : "&rh=" + shippingType;
+        var fast = (fastType === "") ? "" : "&rh=" + fastType;
+        var oversea = (overseaType === "") ? "" : "&rh=" + overseaType;
+        var subscribe = (subscribeType === "") ? "" : "&rh=" + subscribeType;
+        var time = (timeType === "" || timeType === "custom") ? "": timeType + "/";
+        var month = (postMonth === "") ? "" : postMonth+"-";
+        var max = (postMax === "") ? "" : postMax;
+        var mipct = (minPct === "") ? "" : "&rh=p_75%3A"+ minPct+ "-";
+        var mxpct = (maxPct === "") ? "" : maxPct;
+        // var year = (postYear === "") ? "" : postYear+"/";
+        var postTime;
+        
+        if( timeType ==="custom" ){
+          if( month !== "" && max !==""){
+            postTime = "&rh=p_75%3A"+month+max;
+          } else {
+            postTime = "";
+          }
+        } else {
+          
+          postTime = time;
+        }
+        
+        var query = rootURL + type + mip + mxp + mipct + mxpct + prime + coupon + shipping + fast + oversea + subscribe + postTime + key + brand + "&tag=oigbt-20";
+
+        window.open(query, '_blank');
+        
+      });
+    });
+
+
+  }else{
+
+      //For PC
+      $(document).ready(function(){
+      var rootURL = "https://www.amazon.com/s?k=";
+
+      $("select[name='time']").change(function(){
+        if ( $(this).val() === "custom" ){
+          $(".custom-time").removeClass("disable");
+        } else {
+          $(".custom-time").addClass("disable");
+        }
+      });
+      
+      $(".search").on("click", function(){
+        var postType = $("input:radio[name='post-type']:checked").val();
+        var primeType = $("input:radio[name='prime-type']:checked").val();
+        var couponType = $("input:radio[name='coupon-type']:checked").val();
+        var shippingType = $("input:radio[name='shipping-type']:checked").val();
+        var fastType = $("input:radio[name='fast-type']:checked").val();
+        var overseaType = $("input:radio[name='oversea-type']:checked").val();
+        var subscribeType = $("input:radio[name='subscribe-type']:checked").val();
+        var keyWord = $(".keyword").val();
+        var brandWord = $(".brand").val();
+        var minPrice = $(".minprice").val();
+        var maxPrice = $(".maxprice").val();
+        var timeType = $(".time select").val();
+        var postMonth = $("select[name='month']").val();
+        var postMax = $("select[name='max']").val();
+        var minPct = $("select[name='minpct']").val();
+        var maxPct = $("select[name='maxpct']").val();
+        // var postYear = $(".year").val();
+        
+        var key  = (keyWord === "") ? "" : keyWord;
+        var brand  = (brandWord === "") ? "" : "&rh=p_89%3A" + brandWord;
+        var mip  = (minPrice === "") ? "" : "&rh=p_74%3A" + minPrice+"00-";
+        var mxp  = (maxPrice === "") ? "" : maxPrice+"00";
+        var type = (postType === "") ? "" : "&i=" + postType;
+        var prime = (primeType === "") ? "" : "&rh=p_85%3A1&dc&qid=" + primeType + "&ref=sr_nr_p_85_1";
+        var coupon = (couponType === "") ? "" : "&srs=" + couponType;
+        var shipping = (shippingType === "") ? "" : "&rh=" + shippingType;
+        var fast = (fastType === "") ? "" : "&rh=" + fastType;
+        var oversea = (overseaType === "") ? "" : "&rh=" + overseaType;
+        var subscribe = (subscribeType === "") ? "" : "&rh=" + subscribeType;
+        var time = (timeType === "" || timeType === "custom") ? "": timeType + "/";
+        var month = (postMonth === "") ? "" : postMonth+"-";
+        var max = (postMax === "") ? "" : postMax;
+        var mipct = (minPct === "") ? "" : "&rh=p_75%3A"+ minPct+ "-";
+        var mxpct = (maxPct === "") ? "" : maxPct;
+        // var year = (postYear === "") ? "" : postYear+"/";
+        var postTime;
+        
+        if( timeType ==="custom" ){
+          if( month !== "" && max !==""){
+            postTime = "&rh=p_75%3A"+month+max;
+          } else {
+            postTime = "";
+          }
+        } else {
+          
+          postTime = time;
+        }
+        
+        var query = rootURL+ key + mip + mxp + mipct + mxpct + type + prime + coupon + shipping + fast + oversea + subscribe + postTime + brand + "&tag=oigbt-20";
+
+        window.open(query, '_blank');
+        
+      });
+    });
+
+  }
+  //End//
+
+  //See Categories on Amazon[quick search]//
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "block";
+      }
+    });
+  }
+  //End//
+
+</script>

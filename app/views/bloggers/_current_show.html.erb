@@ -1,0 +1,149 @@
+<div class="web_box clearfix">
+  <div class="left">
+    <%= render '/shared/left' %>
+  </div>
+
+  <div class="right">
+    <header><%= render 'bloggers/header_show' %></header>
+
+    <div class="show-wrap">
+        <div class="container clearfix">
+
+          <div class="blog_wrap">
+            <section class="intro">
+              <img src="<%= @blogger.bl_image %>" alt="<%= @blogger.bl_title %>" title="<%= @blogger.bl_title %>">
+              <div class="inner">
+                <h2><%= @blogger.bl_title %></h2>
+                <p><%= @blogger.bl_description %></p>
+              </div>
+            </section>
+            <hr />
+
+
+            <!-- #Product_01 -->
+            <section class="product_box product_01">
+              <div class="product_img_box clearfix">
+                <img src="<%= @blogger.bl_image_01 %>" alt="<%= @blogger.bl_subtitle_01 %>">
+              </div>
+
+              <div class="pricing">
+                <h3><%= @blogger.bl_subtitle_01 %></h3>
+                <%= render 'bloggers/rating_card_01' %>                
+                <p><%= number_to_currency(@blogger.bl_is_price_01) %>
+                  <% if @blogger.bl_was_price_01.present? %>
+                    <span><%= number_to_currency(@blogger.bl_was_price_01) %></span>
+                  <% end %>
+                </p>
+              </div>
+
+              <div class="blog_ctn"><%= @blogger.bl_content_01 %></div>
+
+              <div class="btn clearfix"><a target="_blank" href="<%= @blogger.bl_link_01 %>">Buy Now</a></div>
+            </section>
+
+            <!-- #Product_02 -->
+            <section class="product_box product_02">
+              <div class="product_img_box clearfix">
+                <img src="<%= @blogger.bl_image_02 %>" alt="<%= @blogger.bl_subtitle_02 %>">
+              </div>
+
+              <div class="pricing">
+                <h3><%= @blogger.bl_subtitle_02 %></h3>
+                <%= render 'bloggers/rating_card_02' %>                
+                <p><%= number_to_currency(@blogger.bl_is_price_02) %>
+                  <% if @blogger.bl_was_price_02.present? %>
+                    <span><%= number_to_currency(@blogger.bl_was_price_02) %></span>
+                  <% end %>
+                </p>
+              </div>
+
+              <div class="blog_ctn"><%= @blogger.bl_content_02 %></div>
+              <div class="btn clearfix"><a target="_blank" href="<%= @blogger.bl_link_02 %>">Buy Now</a></div>
+            </section>
+
+
+            <!-- #Product_03 -->
+            <section class="product_box product_03">
+              <div class="product_img_box clearfix">
+                <img src="<%= @blogger.bl_image_03 %>" alt="<%= @blogger.bl_subtitle_03 %>">
+              </div>
+
+              <div class="pricing">
+                <h3><%= @blogger.bl_subtitle_03 %></h3>
+                <%= render 'bloggers/rating_card_03' %>
+                <p><%= number_to_currency(@blogger.bl_is_price_03) %>
+                  <% if @blogger.bl_was_price_03.present? %>
+                    <span><%= number_to_currency(@blogger.bl_was_price_03) %></span>
+                  <% end %>
+                </p>
+              </div>
+
+              <div class="blog_ctn"><%= @blogger.bl_content_03 %></div>
+
+              <div class="btn clearfix"><a target="_blank" href="<%= @blogger.bl_link_03 %>">Buy Now</a></div>
+            </section>
+
+
+            <!-- #Product_04 -->
+            <section class="product_box product_04">
+              
+              <div class="product_img_box clearfix">
+                <img src="<%= @blogger.bl_image_04 %>" alt="<%= @blogger.bl_subtitle_04 %>">
+              </div>
+
+              <div class="pricing">
+                <h3><%= @blogger.bl_subtitle_04 %></h3>
+                <%= render 'bloggers/rating_card_04' %>                
+                <p><%= number_to_currency(@blogger.bl_is_price_04) %>
+                  <% if @blogger.bl_was_price_04.present? %>
+                    <span><%= number_to_currency(@blogger.bl_was_price_04) %></span>
+                  <% end %>
+                </p>
+              </div>
+
+              <div class="blog_ctn"><%= @blogger.bl_content_04 %></div>
+
+              <div class="btn clearfix"><a target="_blank" href="<%= @blogger.bl_link_04 %>">Buy Now</a></div>
+            </section>
+
+
+            <!-- #Product_05 -->
+            <section class="product_box product_05">
+              <div class="product_img_box clearfix">
+                <img src="<%= @blogger.bl_image_05 %>" alt="<%= @blogger.bl_subtitle_05 %>">
+              </div>
+
+              <div class="pricing">
+                <h3><%= @blogger.bl_subtitle_05 %></h3>
+                <%= render 'bloggers/rating_card_05' %>                
+                <p><%= number_to_currency(@blogger.bl_is_price_05) %>
+                  <% if @blogger.bl_was_price_05.present? %>
+                    <span><%= number_to_currency(@blogger.bl_was_price_05) %></span>
+                  <% end %>
+                </p>
+              </div>
+
+              <div class="blog_ctn"><%= @blogger.bl_content_05 %></div>
+
+              <div class="btn clearfix"><a target="_blank" href="<%= @blogger.bl_link_05 %>">Buy Now</a></div>
+            </section>  
+
+            <section class="notice">
+              <ul>
+                <li>"Offtheprice" is a participant in the Amazon Services LLC Associates Program an affiliate advertising program designed to provide a means for us to earn fees by linking to Amazon.com.</li>
+                <li>Price, ratings, and global reviews may change after post published date.</li>
+              </ul>
+            </section>
+
+            <section class="blog_admin">
+              <%= link_to 'Edit', edit_blogger_path(@blogger) %> |
+              <%= link_to 'Back', bloggers_path %>
+            </section>
+
+          </div><!-- blog_wrap -->
+
+       </div><!-- container -->
+    </div><!-- show-wrap -->
+  </div><!-- right -->
+
+</div><!-- web_box -->

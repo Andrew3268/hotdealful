@@ -1,0 +1,41 @@
+<header class="new_nav">  
+  <nav id="navigation">
+
+    <div class="nav__column">
+      <h1><a href="/" class="logo">THE FiiVE</a></h1>
+    </div>
+
+    <div class="nav__column">
+      <button class="toggle-menu">
+        <span class="hamburger-holder">
+          <span class="hamburger"></span>
+        </span>
+      </button>
+
+      <div class="menu-container">
+        <ul class="nav_ul_list">
+        <li class="nav_li_menu"><a href="/bridges/reviews">Reviews<span class="green">.</span></a></li>
+          <li class="nav_li_menu"><a href="/coupons">Promotion Codes<span class="green">.</span></a></li>
+          <li class="nav_li_menu"><a href="/hotdeals">Today's Deals<span class="green">.</span></a></li>
+          <% @picks.each do |pick| %>
+            <li class="nav_li_menu"><a href="/posts/hashtag/<%= pick.p_link %>">Featured<span class="green">.</span></a></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>  
+</header>
+
+<script type="text/javascript">
+  
+  $(document).ready(function(){
+
+  var $body       = $('body');
+  var $btnMenu    = $('.toggle-menu');
+
+  $btnMenu.click(function() {
+    $body.toggleClass('menu-open');
+  });
+});
+
+</script>

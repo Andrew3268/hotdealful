@@ -1,11 +1,7 @@
-<div class="web_box clearfix">
-  <div class="left">
-    <%= render '/shared/left' %>
-  </div>
+<div class="outline">
 
-  <div class="right">
-    <header><%= render 'bloggers/header_show' %></header>
-
+  <section class="outline_left">
+    
     <div class="show-wrap">
         <div class="container clearfix">
 
@@ -22,18 +18,18 @@
 
             <!-- #Product_01 -->
             <section class="product_box product_01">
-              <h3><%= @blogger.bl_subtitle_01 %></h3>
               <div class="product_img_box clearfix">
                 <img src="<%= @blogger.bl_image_01 %>" alt="<%= @blogger.bl_subtitle_01 %>">
               </div>
 
               <div class="pricing">
+                <h3><%= @blogger.bl_subtitle_01 %></h3>
+                <%= render 'bloggers/rating_card_01' %>                
                 <p><%= number_to_currency(@blogger.bl_is_price_01) %>
                   <% if @blogger.bl_was_price_01.present? %>
                     <span><%= number_to_currency(@blogger.bl_was_price_01) %></span>
                   <% end %>
                 </p>
-                <%= render 'bloggers/rating_card_01' %>                
               </div>
 
               <div class="blog_ctn"><%= @blogger.bl_content_01 %></div>
@@ -41,44 +37,41 @@
               <div class="btn clearfix"><a target="_blank" href="<%= @blogger.bl_link_01 %>">Buy Now</a></div>
             </section>
 
-
-
             <!-- #Product_02 -->
             <section class="product_box product_02">
-              <h3><%= @blogger.bl_subtitle_02 %></h3>
               <div class="product_img_box clearfix">
                 <img src="<%= @blogger.bl_image_02 %>" alt="<%= @blogger.bl_subtitle_02 %>">
               </div>
 
               <div class="pricing">
+                <h3><%= @blogger.bl_subtitle_02 %></h3>
+                <%= render 'bloggers/rating_card_02' %>                
                 <p><%= number_to_currency(@blogger.bl_is_price_02) %>
                   <% if @blogger.bl_was_price_02.present? %>
                     <span><%= number_to_currency(@blogger.bl_was_price_02) %></span>
                   <% end %>
                 </p>
-                <%= render 'bloggers/rating_card_02' %>                
               </div>
 
               <div class="blog_ctn"><%= @blogger.bl_content_02 %></div>
-
               <div class="btn clearfix"><a target="_blank" href="<%= @blogger.bl_link_02 %>">Buy Now</a></div>
             </section>
 
 
             <!-- #Product_03 -->
             <section class="product_box product_03">
-              <h3><%= @blogger.bl_subtitle_03 %></h3>
               <div class="product_img_box clearfix">
                 <img src="<%= @blogger.bl_image_03 %>" alt="<%= @blogger.bl_subtitle_03 %>">
               </div>
 
               <div class="pricing">
+                <h3><%= @blogger.bl_subtitle_03 %></h3>
+                <%= render 'bloggers/rating_card_03' %>
                 <p><%= number_to_currency(@blogger.bl_is_price_03) %>
                   <% if @blogger.bl_was_price_03.present? %>
                     <span><%= number_to_currency(@blogger.bl_was_price_03) %></span>
                   <% end %>
                 </p>
-                <%= render 'bloggers/rating_card_03' %>                
               </div>
 
               <div class="blog_ctn"><%= @blogger.bl_content_03 %></div>
@@ -89,18 +82,19 @@
 
             <!-- #Product_04 -->
             <section class="product_box product_04">
-              <h3><%= @blogger.bl_subtitle_04 %></h3>
+              
               <div class="product_img_box clearfix">
                 <img src="<%= @blogger.bl_image_04 %>" alt="<%= @blogger.bl_subtitle_04 %>">
               </div>
 
               <div class="pricing">
+                <h3><%= @blogger.bl_subtitle_04 %></h3>
+                <%= render 'bloggers/rating_card_04' %>                
                 <p><%= number_to_currency(@blogger.bl_is_price_04) %>
                   <% if @blogger.bl_was_price_04.present? %>
                     <span><%= number_to_currency(@blogger.bl_was_price_04) %></span>
                   <% end %>
                 </p>
-                <%= render 'bloggers/rating_card_04' %>                
               </div>
 
               <div class="blog_ctn"><%= @blogger.bl_content_04 %></div>
@@ -111,23 +105,30 @@
 
             <!-- #Product_05 -->
             <section class="product_box product_05">
-              <h3><%= @blogger.bl_subtitle_05 %></h3>
               <div class="product_img_box clearfix">
                 <img src="<%= @blogger.bl_image_05 %>" alt="<%= @blogger.bl_subtitle_05 %>">
               </div>
 
               <div class="pricing">
+                <h3><%= @blogger.bl_subtitle_05 %></h3>
+                <%= render 'bloggers/rating_card_05' %>                
                 <p><%= number_to_currency(@blogger.bl_is_price_05) %>
                   <% if @blogger.bl_was_price_05.present? %>
                     <span><%= number_to_currency(@blogger.bl_was_price_05) %></span>
                   <% end %>
                 </p>
-                <%= render 'bloggers/rating_card_05' %>                
               </div>
 
               <div class="blog_ctn"><%= @blogger.bl_content_05 %></div>
 
               <div class="btn clearfix"><a target="_blank" href="<%= @blogger.bl_link_05 %>">Buy Now</a></div>
+            </section>  
+
+            <section class="notice">
+              <ul>
+                <li>"Offtheprice" is a participant in the Amazon Services LLC Associates Program an affiliate advertising program designed to provide a means for us to earn fees by linking to Amazon.com.</li>
+                <li>Price, ratings, and global reviews may change after post published date.</li>
+              </ul>
             </section>
 
             <section class="blog_admin">
@@ -139,6 +140,261 @@
 
        </div><!-- container -->
     </div><!-- show-wrap -->
-  </div><!-- right -->
+  </section><!-- .outline_left -->
 
-</div><!-- web_box -->
+
+
+  <section class="outline_right">
+
+    <!-- Featured Deals Section -->
+    <div class="banner">
+      <h3 class="subject">Deals & Coupons Finder</h3>
+      <!-- <div class="img_box">
+        <img src="https://images.unsplash.com/photo-1627989580309-bfaf3e58af6f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80">
+      </div>
+      <div class="inner">
+        <span>Save up to 75% off</span>
+        <h4>Unleash high-quality sound with Bluetooth speakers at discounted prices</h4>
+      </div> -->
+      <%= render 'bloggers/quick_coupon_finder' %>
+    </div>
+
+    <!-- Popular Blog Section -->
+    <div class="popular_blogs">
+      <h3 class="subject">Popular</h3>
+      <div class="popular_blogs_wrap">
+
+        <% @most_hit.each do |blog| %>
+          <div class="pb_card clearfix">
+            <div class="img_box">
+              <%= link_to image_tag(blog.bl_image, alt: blog.bl_title, title: blog.bl_title, :class => 'main_img'), blog %>
+            </div>
+            <div class="inner">
+              <h3><%= link_to blog.bl_title, blog %></h3>
+            </div>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+
+    <div class="banner featured_deals">
+      <h3 class="subject">Featured Deals</h3>
+      <% @picks.each do |pick| %>
+        <a href="/posts/hashtag/<%= pick.p_link %>">
+          <div class="img_box">
+            <img src="<%= pick.p_image %>">
+          </div>
+        
+          <div class="inner">
+            <span class="featured_span"><%= pick.p_spare_01 %></span>
+            <h4><%= pick.p_title %></h4>
+          </div>
+        </a>
+      <% end %>
+    </div>
+
+
+    <div class="banner deals">
+        <h3 class="subject">Today's Deals</h3>
+        <div class="tap_tainer">
+          <div class="tab">
+            <div class="tab-menu">
+              <button class="tab-menu-link is-active" data-content="item-1">
+                <span data-title="item-1">Promotion Codes</span>
+              </button>
+              <!-- <button class="tab-menu-link" data-content="item-2">
+                <span data-title="item-2">Pick Deals</span>
+              </button> -->
+            </div>
+
+            <div class="tab-bar">
+
+              <div class="tab-bar-content is-active" id="item-1">
+
+                <% @coupons.each do |coupon| %>
+                  <div class="tab_card clearfix">
+                    <div class="img_box">
+                      <%= link_to image_tag(coupon.c_image, alt: coupon.c_title, title: coupon.c_title, :class => 'main_img'), coupon %>
+                    </div>
+                    <div class="inner">
+
+                      <% if coupon.c_promocode.present? %>
+                        <% if coupon.c_spare_61.present? || coupon.c_spare_62.present? %>
+                          <span class="coupon">Promo Codes</span>  <span class="coupon"> + Coupon</span>
+                        <% else %>
+                          <span class="coupon">Promo Codes</span>
+                        <% end %>
+                      <% end %>
+
+                      <p><%= coupon.c_title %></p>
+                      <div class="pricing">
+                        <% promocode_price =  coupon.c_was_price.to_f - (coupon.c_pct.to_f / 100) * coupon.c_was_price.to_f %>
+                        <% hotdeal_pct = 0 %>
+                        <% hotdeal_pct =  (coupon.c_was_price.to_f - coupon.c_is_price.to_f) / coupon.c_was_price.to_f * 100 %>
+                        <% total_save = 0 %>
+                        <% pct_coupon = 0 %>
+                        <% pct_coupon = (coupon.c_spare_61.to_f / 100) * coupon.c_was_price %>
+                        <% total_price_pct_coupon = promocode_price - pct_coupon %>
+                        <% total_price_cash_coupon = promocode_price - coupon.c_spare_62.to_f %>
+
+                        <% if coupon.c_promocode.present? %>
+                          <% if coupon.c_spare_61.present? || coupon.c_spare_62.present? %>
+                            <% if coupon.c_spare_61.present? %>
+                              <span class="is_price"><%= number_to_currency(total_price_pct_coupon) %></span>
+                              <span class="was_price"><%= number_to_currency(coupon.c_was_price) %></span>
+                            <% else %>
+                              <span class="is_price"><%= number_to_currency(total_price_cash_coupon) %></span>
+                              <span class="was_price"><%= number_to_currency(coupon.c_was_price) %></span>
+                            <% end %>
+
+                          <% else %>
+                            <span class="is_price"><%= number_to_currency(promocode_price) %></span>
+                            <span class="was_price"><%= number_to_currency(coupon.c_was_price) %></span>
+                          <% end %>
+                        <% end %>
+                        
+                      </div>
+                    </div>
+                  </div><!-- .tab_card -->
+                <% end %>
+
+              </div>
+
+
+              <!------ ITEM SECTION 2 ------>  
+              <div class="tab-bar-content " id="item-2">
+
+                <% @hotdeals.each do |hotdeal| %>                
+                  <div class="tab_card clearfix">
+                    <div class="img_box">
+                      <%= link_to image_tag(hotdeal.deal_image, alt: hotdeal.deal_title, title: hotdeal.deal_title, :class => 'main_img'), hotdeal %>
+                    </div>
+                    <div class="inner">
+
+                      <% if hotdeal.deal_pct_coupon.present? || hotdeal.deal_cash_coupon.present? %>
+                        <span class="coupon">+ Coupon</span>
+                      <% end %>                    
+
+                      <p><%= hotdeal.deal_title %></p>
+                      <div class="pricing">
+                        <% total_save = 0 %>
+                        <% pct_coupon = 0 %>
+                        <% pct_coupon = (hotdeal.deal_pct_coupon.to_f / 100) * hotdeal.deal_is_price %>
+                        <% total_price_pct_coupon = hotdeal.deal_is_price - pct_coupon %>
+                        <% total_price_cash_coupon = hotdeal.deal_is_price - hotdeal.deal_cash_coupon.to_f %>
+
+                        <% if hotdeal.deal_pct_coupon.present? || hotdeal.deal_cash_coupon.present? %>
+                          <% if hotdeal.deal_pct_coupon.present? %>
+                            <span class="is_price"><%= number_to_currency(total_price_pct_coupon) %></span>
+                            <span class="was_price"><%= number_to_currency(hotdeal.deal_was_price) %></span>
+                          <% else %>
+                            <span class="is_price"><%= number_to_currency(total_price_cash_coupon) %></span>
+                            <span class="was_price"><%= number_to_currency(hotdeal.deal_was_price) %></span>
+                          <% end %>
+
+                        <% else %>
+                          <span class="is_price"><%= number_to_currency(hotdeal.deal_is_price) %></span>
+                          <span class="was_price"><%= number_to_currency(hotdeal.deal_was_price) %></span>
+                        <% end %>
+                      </div>
+                    </div>
+                  </div><!-- .tab_card -->
+                <% end %>
+
+                <div class="tab_card clearfix">
+                  <div class="img_box">
+                    <img src="https://m.media-amazon.com/images/I/41DLT5XwElL._SR400,400_.jpg">
+                  </div>
+                  <div class="inner">
+                    <p>Premium Bone Conduction Headphones Newly Open-Ear Sport Headphones —…</p>
+                    <div class="pricing">
+                      <span>$50.00<em>$100</em></span>
+                    </div>
+                  </div>
+                </div><!-- .tab_card -->
+
+                <div class="tab_card clearfix">
+                  <div class="img_box">
+                    <img src="https://m.media-amazon.com/images/I/41DLT5XwElL._SR400,400_.jpg">
+                  </div>
+                  <div class="inner">
+                    <p>Premium Bone Conduction Headphones Newly Open-Ear Sport Headphones —…</p>
+                    <div class="pricing">
+                      <span>$50.00<em>$100</em></span>
+                    </div>
+                  </div>
+                </div><!-- .tab_card -->
+
+                <div class="tab_card clearfix">
+                  <div class="img_box">
+                    <img src="https://m.media-amazon.com/images/I/41DLT5XwElL._SR400,400_.jpg">
+                  </div>
+                  <div class="inner">
+                    <p>Premium Bone Conduction Headphones Newly Open-Ear Sport Headphones —…</p>
+                    <div class="pricing">
+                      <span>$50.00<em>$100</em></span>
+                    </div>
+                  </div>
+                </div><!-- .tab_card -->
+
+                <div class="tab_card clearfix">
+                  <div class="img_box">
+                    <img src="https://m.media-amazon.com/images/I/41DLT5XwElL._SR400,400_.jpg">
+                  </div>
+                  <div class="inner">
+                    <p>Premium Bone Conduction Headphones Newly Open-Ear Sport Headphones —…</p>
+                    <div class="pricing">
+                      <span>$50.00<em>$100</em></span>
+                    </div>
+                  </div>
+                </div><!-- .tab_card -->
+              </div>
+
+            </div>
+          </div>
+        </div><!-- .tap_tainer -->
+    </div>
+
+
+
+  </section><!-- .outline_right -->
+
+
+</div><!-- .outline -->
+
+
+<%= javascript_pack_tag 'coupon_index_menu' %>
+
+<script type="text/javascript">
+  // Tabs Action
+  const tabLink = document.querySelectorAll(".tab-menu-link");
+  const tabContent = document.querySelectorAll(".tab-bar-content");
+
+  tabLink.forEach((item) => {
+    item.addEventListener("click", activeTab);
+  });
+
+  function activeTab(item) {
+    const btnTarget = item.currentTarget;
+    const content = btnTarget.dataset.content;
+
+    tabContent.forEach((item) => {
+      item.classList.remove("is-active");
+    });
+
+    tabLink.forEach((item) => {
+      item.classList.remove("is-active");
+    });
+
+    document.querySelector("#" + content).classList.add("is-active");
+    btnTarget.classList.add("is-active");
+  }
+
+</script>
+
+
+
+
+
+  

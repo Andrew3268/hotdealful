@@ -5,6 +5,14 @@ class PostsController < ApplicationController
   # GET /posts or /posts.json
   def index
     @pagy, @posts = pagy(Post.all.order("created_at DESC"), items: 100)
+    @hotdeal_top = Hotdeal.most_hit(1.day.ago, 10)
+    @coupons_top = Coupon.most_hit(1.day.ago, 10)
+    @deals_top = Post.most_hit(1.day.ago, 10)
+    @our_pick = Coupon.all.order("created_at DESC")
+    @picks = Pick.all.all.order("created_at DESC").limit(1)
+    @most_hit = Blogger.most_hit(1.day.ago, 5)
+
+
     if params[:search]
       @search_term = params[:search]
       @posts = @posts.search_by(@search_term)
@@ -14,6 +22,12 @@ class PostsController < ApplicationController
   # GET /posts/1 or /posts/1.json
   def show
     @post.punch(request)
+    @hotdeal_top = Hotdeal.most_hit(1.day.ago, 10)
+    @coupons_top = Coupon.most_hit(1.day.ago, 10)
+    @deals_top = Post.most_hit(1.day.ago, 10)
+    @our_pick = Coupon.all.order("created_at DESC")
+    @picks = Pick.all.all.order("created_at DESC").limit(1)
+    @most_hit = Blogger.most_hit(1.day.ago, 5)
     set_meta_tags title: @post.title,
                   site: 'hotdeal-ful',
                   revierse: true,
@@ -38,6 +52,13 @@ class PostsController < ApplicationController
   def hashtags
     tag = Tag.find_by(name: params[:name])
     @pagy, @posts = pagy(tag.posts.order("created_at DESC"), items: 100)  
+
+    @hotdeal_top = Hotdeal.most_hit(1.day.ago, 10)
+    @coupons_top = Coupon.most_hit(1.day.ago, 10)
+    @deals_top = Post.most_hit(1.day.ago, 10)
+    @our_pick = Coupon.all.order("created_at DESC")
+    @picks = Pick.all.all.order("created_at DESC").limit(1)
+    @most_hit = Blogger.most_hit(1.day.ago, 5)
   end
 
   # GET /posts/new

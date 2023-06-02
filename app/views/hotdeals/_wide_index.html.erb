@@ -1,21 +1,132 @@
 <div class="outline">
-
+  
   <section class="outline_left">
+    
     <div class="index_wrap">
         
-      <div class="ctn_box">    
-        <div class="compare_box">
-          <div class="where-hashtag">
-            <% if params[:name].present? %>
-              <h2>The Featured Deals Of The Day</h2>
-              <h3>#<%= params[:name] %></h3>
-            <% end %>
-          </div>    
-          <%= render 'posts/compare' %>
-        </div>
-      </div><!-- ctn_box -->
+          <div class="pideal_deal clearfix">
+            <div class="card_wrap n_coupon_wrap">
 
-    </div><!-- index_wrap -->
+              <div class="divide_page clearfix">
+                  <div class="page_title">
+                    <h2>Today's Deals</h2>
+                  </div>
+                  <div class="search_filter_comm page_search">
+                    <%= form_for "",url: hotdeals_path, role: "search", method: :get do %>
+                      <%= text_field_tag :search, @search_term, placeholder: "Search....", class: 'search-input' %>
+                    <% end %> 
+                  </div>
+                </div>
+
+                <div class="menu-wrapper">
+                  <div class="menu-item">
+                    <button><a href="/hotdeals">All</a></button>
+                    <button><a href="/hotdeals/dealhashtag/electronics">Electronics</a></button>
+                    <button><a href="/hotdeals/dealhashtag/fashion">Fashion</a></button>
+                    <button><a href="/hotdeals/dealhashtag/beauty">Beauty</a></button>
+                    <button><a href="/hotdeals/dealhashtag/cellphone_accessories">Cell Phone&Accessories</a></button>
+                    <button><a href="/hotdeals/dealhashtag/home_kitchen">Home&Kitchen</a></button>
+                    <button><a href="/hotdeals/dealhashtag/groceries">Groceries</a></button>
+                    <button><a href="/hotdeals/dealhashtag/sports_outdoor">Sports&Outdoor</a></button>
+                    <button><a href="/hotdeals/dealhashtag/pet_supplies">Pet Supplies</a></button>
+                    <button><a href="/hotdeals/dealhashtag/health_household">Health&Household</a></button>
+                    <button><a href="/hotdeals/dealhashtag/automotive">Automotive</a></button>
+                    <button><a href="/hotdeals/dealhashtag/baby_products">Baby</a></button>
+                    <button><a href="/hotdeals/dealhashtag/tools_home_improvement">Home Improvemnts</a></button>
+                    <button><a href="/hotdeals/dealhashtag/patio_lawn_garden">Patio&Lawn&Garden</a></button>
+                    <button><a href="/hotdeals/dealhashtag/toys_games">Toys&Games</a></button>
+                    <button><a href="/hotdeals/dealhashtag/video_games">Video Games</a></button>
+                    <button><a href="/hotdeals/dealhashtag/office_products">Office Products</a></button>
+                    <button><a href="/hotdeals/dealhashtag/musical_instruments">Msical Instruments</a></button>
+                  </div> 
+                  <!-- <span class="pointer left-pointer dis">
+                    <i class="fa fa-chevron-left"></i>
+                  </span>
+                  <span class="pointer right-pointer">
+                    <i class="fa fa-chevron-right"></i>
+                  </span> -->
+                </div>
+
+                <!-- <div class="search_filter_comm">
+                  <%= form_for "",url: hotdeals_path, role: "search", method: :get do %>
+                    <%= text_field_tag :search, @search_term, placeholder: "Search....", class: 'search-input' %>
+                  <% end %> 
+                </div> -->
+
+
+                <div class="index_main_wrap hotdeal_index">
+                  <div class="card_ctn_wrap clearfix">
+
+                      <% @hotdeals.each do |hotdeal| %>
+                        <div class="card_ctn_box">
+                          
+                          <div class="img_box">
+                            <%= link_to image_tag(hotdeal.deal_image, alt: hotdeal.deal_title, title: hotdeal.deal_title, :class => 'main_img'), hotdeal %>
+                          </div>
+
+                          <div class="hotdeal_pct clearfix">
+                            <% if hotdeal.deal_pct_coupon.present? || hotdeal.deal_cash_coupon.present? %>
+                              <% if hotdeal.deal_pct_coupon.present? %>
+                                <span class="pct">Discount<em>- <%= number_to_percentage(hotdeal.deal_pct, precision: 0) %><strong>off</strong></em></span>
+                                <span class="pct">Coupon<em>- <%= number_to_percentage(hotdeal.deal_pct_coupon, precision: 0) %><strong>off</strong></em></span>
+                              <% else %>
+                                <span class="pct">Discount<em>- <%= number_to_percentage(hotdeal.deal_pct, precision: 0) %><strong>off</strong></em></span>
+                                <span class="pct">Coupon<em>- <%= number_to_currency(hotdeal.deal_cash_coupon) %><strong>off</strong></em></span>
+                              <% end %>
+                            <% else %>
+                              <span class="only_pct">Discount<em>- <%= number_to_percentage(hotdeal.deal_pct, precision: 0) %><strong>off</strong></em></span>
+                            <% end %>
+                          </div>
+
+
+                          <div class="inner clearfix">
+                            <p class="two_sentences"><%= hotdeal.deal_title %></p>
+
+                            <div class="pricing">
+                              <% total_save = 0 %>
+                              <% pct_coupon = 0 %>
+                              <% pct_coupon = (hotdeal.deal_pct_coupon.to_f / 100) * hotdeal.deal_is_price %>
+                              <% total_price_pct_coupon = hotdeal.deal_is_price - pct_coupon %>
+                              <% total_price_cash_coupon = hotdeal.deal_is_price - hotdeal.deal_cash_coupon.to_f %>
+
+                              <% if hotdeal.deal_pct_coupon.present? || hotdeal.deal_cash_coupon.present? %>
+                                <% if hotdeal.deal_pct_coupon.present? %>
+                                  <span class="is_price"><%= number_to_currency(total_price_pct_coupon) %></span>
+                                  <span class="was_price"><%= number_to_currency(hotdeal.deal_was_price) %></span>
+                                <% else %>
+                                  <span class="is_price"><%= number_to_currency(total_price_cash_coupon) %></span>
+                                  <span class="was_price"><%= number_to_currency(hotdeal.deal_was_price) %></span>
+                                <% end %>
+
+                              <% else %>
+                                <span class="is_price"><%= number_to_currency(hotdeal.deal_is_price) %></span>
+                                <span class="was_price"><%= number_to_currency(hotdeal.deal_was_price) %></span>
+                              <% end %>
+                             
+                              
+                            </div><!-- .pricing -->
+
+                          </div>
+
+                          <% if current_user && current_user.admin %>
+                            <div class="admin">
+                              <%= link_to 'Edit', edit_hotdeal_path(hotdeal) %> |
+                              <%= link_to 'Destroy', hotdeal, method: :delete, data: { confirm: 'Are you sure?' } %>
+                            </div>
+                          <% end %>
+                        </div>
+                      <% end %>
+
+                  </div>
+                </div>
+
+            </div>
+          </div><!-- .pideal_deal -->
+          <%= raw pagy_nav(@pagy) %>
+      </div>
+    
+    
+
     
   </section><!-- .outline_left -->
 
@@ -165,7 +276,7 @@
       </div>
     </div>
 
-    <!-- <div class="banner featured_deals">
+    <div class="banner featured_deals">
       <h3 class="subject">Featured Deals</h3>
       <% @picks.each do |pick| %>
         <a href="/posts/hashtag/<%= pick.p_link %>">
@@ -178,7 +289,7 @@
           <h4><%= pick.p_title %></h4>
         </div>
       <% end %>
-    </div>  -->
+    </div> 
   </section><!-- .outline_right -->
 
 
@@ -219,6 +330,3 @@
 
 
   
-
-
-

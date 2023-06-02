@@ -1,103 +1,280 @@
-<div class="web_box clearfix">
+<div class="outline">
 
-  <div class="left">
-    <%= render '/shared/left' %>
-  </div>
+  <section class="outline_left">
 
-  <div class="right">
-    <div class="index_wrap">
-      <header><%= render 'picks/header_index' %></header>
-        
-      <section class="blog_main_section">
-        
-        <!-- < render 'bloggers/categories_menu' > -->
 
-        <% @bloggers.each do |blog| %>
-          <div class="filter-group">
+    <% if current_user && current_user.admin %>
+      <ul class="admin_menu">
+        <li><%= link_to 'New Coupon', new_coupon_path %></li>
+        <li><%= link_to 'New Post', new_post_path %></li>
+        <li><%= link_to 'New HotDeal', new_hotdeal_path %></li>
+        <li><%= link_to 'New Pick', new_pick_path %></li>
+        <li><%= link_to 'New Blog', new_blogger_path %></li>
+        <li><a href="/bridges/delete_coupons">Delete Coupons</a></li>
+        </ul><a href="/bridges/delete_hotdeals">Delete Posts</a></li>
+      </ul>
+    <% end %>
+    <br/>
 
-            <div class="b_ctn_box filter-node" data-filter='["<%= blog.bl_category %>","<%= blog.bl_title %>"]'>
-              <div class="b_img_box">
-                <%= link_to image_tag(blog.bl_image, alt: blog.bl_title, title: blog.bl_title, :class => 'main_img'), blog %>
-              </div>
-              <div class="inner">
-                <h3><%= link_to blog.bl_title, blog %></h3>
-                <p><%= blog.bl_description %></p>
 
-                <div class="btn"><a href="/blogs/<%= blog.id %>">Read More</a></div>
-                <% if current_user && current_user.admin %>
-                  <div class="admin_panner">
-                    <%= link_to 'Edit', edit_blogger_path(blog) %>
-                    <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
-                  </div>
-                <% end %>
-              </div>
+    <div class="divide_page clearfix">
+      <div class="page_title">
+        <h2>Reviews</h2>
+      </div>
+      <div class="search_filter_comm page_search">
+        <%= form_for "",url: bridges_reviews_path, role: "search", method: :get do %>
+          <%= text_field_tag :search, @search_term, placeholder: "Search....", class: 'search-input' %>
+        <% end %> 
+      </div>
+    </div>
+    
+    <div class="blogger_nav">
+      <%= render 'bloggers/nav' %>
+    </div>
 
+    <div class="latest_blog">
+      <% @latest_blog.each do |blog| %>
+        <div class="img_box">
+          <%= link_to image_tag(blog.bl_image, alt: blog.bl_title, title: blog.bl_title, :class => 'main_img'), blog %>
+        </div>
+        <div class="inner">
+          <h2><%= link_to blog.bl_title, blog %></h2>
+          <p><%= blog.bl_description %></p>
+           <% if current_user && current_user.admin %>
+            <div class="admin_panner">
+              <%= link_to 'Edit', edit_blogger_path(blog) %>
+              <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
             </div>
+          <% end %>
+        </div>
+      <% end %>
+    
+    </div>
 
+    <div class="except_first_blogs clearfix">
+      <% @except_first_blogs.each do |blog| %>
+        <div class="efb_card clearfix">
+          <div class="img_box">
+            <%= link_to image_tag(blog.bl_image, alt: blog.bl_title, title: blog.bl_title, :class => 'main_img'), blog %>
+          </div>
+
+          <div class="inner">
+            <span><%= render_with_bloghashtags(blog.bl_category) %></span>
+            <h3><%= link_to blog.bl_title, blog %></h3>
+            <p class="four_sentences"><%= blog.bl_description %></p>
+            <% if current_user && current_user.admin %>
+              <div class="admin_panner">
+                <%= link_to 'Edit', edit_blogger_path(blog) %>
+                <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+       
+      <% end %>
+      <%= raw pagy_nav(@pagy) %>
+    </div><!-- .except_first_blogs -->
+
+  </section><!-- .outline_left -->
+
+
+
+  <section class="outline_right">
+
+    <!-- Featured Deals Section -->
+    <div class="banner">
+      <h3 class="subject">Deals & Coupons Finder</h3>
+      <%= render 'bloggers/quick_coupon_finder' %>
+    </div>
+
+    <!-- Popular Blog Section -->
+    <div class="popular_blogs">
+      <h3 class="subject">Popular</h3>
+      <div class="popular_blogs_wrap">
+
+        <% @most_hit.each do |blog| %>
+          <div class="pb_card clearfix">
+            <div class="img_box">
+              <%= link_to image_tag(blog.bl_image, alt: blog.bl_title, title: blog.bl_title, :class => 'main_img'), blog %>
+            </div>
+            <div class="inner">
+              <h3><%= link_to blog.bl_title, blog %></h3>
+            </div>
           </div>
         <% end %>
 
-      </section>
-      <%= raw pagy_nav(@pagy) %>
-    </div><!-- .index_wrap -->
-    
-    <div class="bottom_banner">
-      <div class="middle_event">
-        <a target="_blank" href="https://amzn.to/33zpMG9"><img src="<%=asset_path 'banner_mid.png' %>"></a>
       </div>
     </div>
-    <!-- <%= render 'posts/tab_bar' %> -->
-  </div><!-- right -->
-</div>
+
+    <div class="banner featured_deals">
+      <h3 class="subject">Featured Deals</h3>
+      <% @picks.each do |pick| %>
+        <a href="/posts/hashtag/<%= pick.p_link %>">
+          <div class="img_box">
+            <img src="<%= pick.p_image %>">
+          </div>
+        </a>
+        <div class="inner">
+          <span class="featured_span"><%= pick.p_spare_01 %></span>
+          <h4><%= pick.p_title %></h4>
+        </div>
+      <% end %>
+    </div>
 
 
+    <div class="banner deals">
+        <h3 class="subject">Today's Deals</h3>
+        <div class="tap_tainer">
+          <div class="tab">
+            <div class="tab-menu">
+              <button class="tab-menu-link is-active" data-content="item-1">
+                <span data-title="item-1">Promotion Codes</span>
+              </button>
+              <!-- <button class="tab-menu-link" data-content="item-2">
+                <span data-title="item-2">Pick Deals</span>
+              </button> -->
+            </div>
 
-<script type="text/javascript">
-  
-  var example = new DataFilterJS({
-    filterGroup: '.filter-group',
-    filterNode: '.filter-node',
-    filterButtonGroup: '.filter-search',
-    transitionSpeed: '0.75s'
-  });
+            <div class="tab-bar">
 
-  function DataFilterJS(config){
-    // define variables
-    var filterGroup = config.filterGroup;
-    var filterNode = config.filterNode;
-    var filterButtonGroup = config.filterButtonGroup;
-    var transitionSpeed = config.transitionSpeed;
-    var filter_group = $(filterGroup);
-    var filter_node = $(filterGroup+' > '+filterNode);
-    var search_val = $(filterButtonGroup+'> '+'input[type="text"]').value;
-    $(filterGroup+', '+filterNode+', '+filterNode+'.filter-me').css({"transition":"all "+transitionSpeed});
-    
-    // (Button) Data Filter Function
-    $(filterButtonGroup+' .filter-button').on('click', function(e) {
-      var eventFilter = e.currentTarget.attributes[1].nodeValue;
-       // Loop through Filter Nodes on Button Click
-       $.each(filter_node, function(i, v) {
-          if(eventFilter == "*") {
-            filter_node[i].classList.remove('filter-me');
-          } else if(filter_node[i].getAttribute('data-filter').includes(eventFilter) == false) {
-            filter_node[i].classList.add('filter-me')
-          } else {filter_node[i].classList.remove('filter-me');}
-       });
-    }); // end click event
+              <div class="tab-bar-content is-active" id="item-1">
 
-    // (Keystroke) Data Filter Function    
-    $(filterButtonGroup+' > input[type="text"]').on('keypress keydown keyup', function(e, fnd) {
-      // Loop through Filter Nodes on Keystroke
-      $.each($(filterNode), function(i, v) {
-        var node = v.getAttribute("data-filter").toString().toUpperCase();
-        var search_string = $(filterButtonGroup+' > '+'input[type="text"]').val().toUpperCase();
-        //console.log(node.getAttribute('data-filter'));
-        if(node.includes(search_string) == false) {
-          v.classList.add('filter-me');
-        } else {v.classList.remove('filter-me');}
-      }); // end each
-    }); // end keypress
-  }
-</script>
+                <% @coupons.each do |coupon| %>
+                  <div class="tab_card clearfix">
+                    <div class="img_box">
+                      <%= link_to image_tag(coupon.c_image, alt: coupon.c_title, title: coupon.c_title, :class => 'main_img'), coupon %>
+                    </div>
+                    <div class="inner">
+
+                      <% if coupon.c_promocode.present? %>
+                        <% if coupon.c_spare_61.present? || coupon.c_spare_62.present? %>
+                          <span class="coupon">Promo Codes</span>  <span class="coupon"> + Coupon</span>
+                        <% else %>
+                          <span class="coupon">Promo Codes</span>
+                        <% end %>
+                      <% end %>
+
+                      <p><%= coupon.c_title %></p>
+                      <div class="pricing">
+                        <% promocode_price =  coupon.c_was_price.to_f - (coupon.c_pct.to_f / 100) * coupon.c_was_price.to_f %>
+                        <% hotdeal_pct = 0 %>
+                        <% hotdeal_pct =  (coupon.c_was_price.to_f - coupon.c_is_price.to_f) / coupon.c_was_price.to_f * 100 %>
+                        <% total_save = 0 %>
+                        <% pct_coupon = 0 %>
+                        <% pct_coupon = (coupon.c_spare_61.to_f / 100) * coupon.c_was_price %>
+                        <% total_price_pct_coupon = promocode_price - pct_coupon %>
+                        <% total_price_cash_coupon = promocode_price - coupon.c_spare_62.to_f %>
+
+                        <% if coupon.c_promocode.present? %>
+                          <% if coupon.c_spare_61.present? || coupon.c_spare_62.present? %>
+                            <% if coupon.c_spare_61.present? %>
+                              <span class="is_price"><%= number_to_currency(total_price_pct_coupon) %></span>
+                              <span class="was_price"><%= number_to_currency(coupon.c_was_price) %></span>
+                            <% else %>
+                              <span class="is_price"><%= number_to_currency(total_price_cash_coupon) %></span>
+                              <span class="was_price"><%= number_to_currency(coupon.c_was_price) %></span>
+                            <% end %>
+
+                          <% else %>
+                            <span class="is_price"><%= number_to_currency(promocode_price) %></span>
+                            <span class="was_price"><%= number_to_currency(coupon.c_was_price) %></span>
+                          <% end %>
+                        <% end %>
+                        
+                      </div>
+                    </div>
+                  </div><!-- .tab_card -->
+                <% end %>
+
+                <div class="more_btn"><a href="/coupons">See more</a></div>
+              </div><!-- #item-1 -->
+
+
+              <!------ ITEM SECTION 2 ------>  
+              <div class="tab-bar-content " id="item-2">
+
+                <% @hotdeals.each do |hotdeal| %>                
+                  <div class="tab_card clearfix">
+                    <div class="img_box">
+                      <%= link_to image_tag(hotdeal.deal_image, alt: hotdeal.deal_title, title: hotdeal.deal_title, :class => 'main_img'), hotdeal %>
+                    </div>
+                    <div class="inner">
+
+                      <% if hotdeal.deal_pct_coupon.present? || hotdeal.deal_cash_coupon.present? %>
+                        <span class="coupon">+ Coupon</span>
+                      <% end %>                    
+
+                      <p><%= hotdeal.deal_title %></p>
+                      <div class="pricing">
+                        <% total_save = 0 %>
+                        <% pct_coupon = 0 %>
+                        <% pct_coupon = (hotdeal.deal_pct_coupon.to_f / 100) * hotdeal.deal_is_price %>
+                        <% total_price_pct_coupon = hotdeal.deal_is_price - pct_coupon %>
+                        <% total_price_cash_coupon = hotdeal.deal_is_price - hotdeal.deal_cash_coupon.to_f %>
+
+                        <% if hotdeal.deal_pct_coupon.present? || hotdeal.deal_cash_coupon.present? %>
+                          <% if hotdeal.deal_pct_coupon.present? %>
+                            <span class="is_price"><%= number_to_currency(total_price_pct_coupon) %></span>
+                            <span class="was_price"><%= number_to_currency(hotdeal.deal_was_price) %></span>
+                          <% else %>
+                            <span class="is_price"><%= number_to_currency(total_price_cash_coupon) %></span>
+                            <span class="was_price"><%= number_to_currency(hotdeal.deal_was_price) %></span>
+                          <% end %>
+
+                        <% else %>
+                          <span class="is_price"><%= number_to_currency(hotdeal.deal_is_price) %></span>
+                          <span class="was_price"><%= number_to_currency(hotdeal.deal_was_price) %></span>
+                        <% end %>
+                      </div>
+                    </div>
+                  </div><!-- .tab_card -->
+                <% end %>
+
+                <div class="more_btn"><a href="/hotdeals">See more</a></div>
+              </div><!-- #item-2 -->
+
+
+            </div>
+          </div>
+        </div><!-- .tap_tainer -->
+    </div>
+  </section><!-- .outline_right -->
+
+
+</div><!-- .outline -->
+
 
 <%= javascript_pack_tag 'coupon_index_menu' %>
+
+<script type="text/javascript">
+  // Tabs Action
+  const tabLink = document.querySelectorAll(".tab-menu-link");
+  const tabContent = document.querySelectorAll(".tab-bar-content");
+
+  tabLink.forEach((item) => {
+    item.addEventListener("click", activeTab);
+  });
+
+  function activeTab(item) {
+    const btnTarget = item.currentTarget;
+    const content = btnTarget.dataset.content;
+
+    tabContent.forEach((item) => {
+      item.classList.remove("is-active");
+    });
+
+    tabLink.forEach((item) => {
+      item.classList.remove("is-active");
+    });
+
+    document.querySelector("#" + content).classList.add("is-active");
+    btnTarget.classList.add("is-active");
+  }
+
+</script>
+
+
+
+
+
+  

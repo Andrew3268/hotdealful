@@ -1,4 +1,5 @@
 class Hotdeal < ApplicationRecord
+  acts_as_punchable
   belongs_to :user
   has_and_belongs_to_many :tags
 

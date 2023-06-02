@@ -9,6 +9,9 @@ class CouponsController < ApplicationController
     @coupons_top = Coupon.most_hit(1.day.ago, 10)
     @deals_top = Post.most_hit(1.day.ago, 10)
     @our_pick = Coupon.all.order("created_at DESC")
+    @picks = Pick.all.all.order("created_at DESC").limit(1)
+    @most_hit = Blogger.most_hit(1.day.ago, 5)
+    @hotdeal_top = Hotdeal.most_hit(1.day.ago, 10)
     # @latest_coupons = Coupon.last(1)
     # @except_first_coupons = Coupon.order("id desc").offset(1)
     
@@ -23,6 +26,12 @@ class CouponsController < ApplicationController
   # GET /coupons/1 or /coupons/1.json
   def show
     @coupon.punch(request)
+    @coupons_top = Coupon.most_hit(1.day.ago, 10)
+    @deals_top = Post.most_hit(1.day.ago, 10)
+    @our_pick = Coupon.all.order("created_at DESC")
+    @picks = Pick.all.all.order("created_at DESC").limit(1)
+    @most_hit = Blogger.most_hit(1.day.ago, 5)
+    @hotdeal_top = Hotdeal.most_hit(1.day.ago, 10)
     set_meta_tags title: @coupon.c_title,
                   site: 'Off The Price',
                   revierse: true,

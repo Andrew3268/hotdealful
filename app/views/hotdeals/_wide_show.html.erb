@@ -1,0 +1,484 @@
+<div class="outline">
+
+  <section class="outline_left">
+
+   <div class="show-wrap">
+      <div class="container clearfix">
+
+        <div class="content-section clearfix">
+          <% if current_user && current_user.admin %>
+            <div class="sharing_btn">
+              <a href="/" data-turbolinks="false">Back</a>
+              <%= link_to 'New Hotdeal', new_hotdeal_path %>
+            </div>
+          <% end %>
+
+    
+          <!-- For PC -->
+          <div class="new_title_wrap hotdeal_show_wrap">
+            
+            <h2><%= @hotdeal.deal_title %></h2>
+            
+            <div class="pricing_box">
+              <p>
+                <% total_save = 0 %>
+                <% pct_coupon = 0 %>
+                <% pct_coupon = (@hotdeal.deal_pct_coupon.to_f / 100) * @hotdeal.deal_is_price %>
+                <% total_price_pct_coupon = @hotdeal.deal_is_price - pct_coupon %>
+                <% total_price_cash_coupon = @hotdeal.deal_is_price - @hotdeal.deal_cash_coupon.to_f %>
+
+                <% if @hotdeal.deal_pct_coupon.present? || @hotdeal.deal_cash_coupon.present? %>
+                  <% if @hotdeal.deal_pct_coupon.present? %>
+                    <span class="is_price"><%= number_to_currency(total_price_pct_coupon) %></span>
+                    <span class="was_price"><%= number_to_currency(@hotdeal.deal_was_price) %></span>
+                  <% else %>
+                    <span class="is_price"><%= number_to_currency(total_price_cash_coupon) %></span>
+                    <span class="was_price"><%= number_to_currency(@hotdeal.deal_was_price) %></span>
+                  <% end %>
+
+                <% else %>
+                  <span class="is_price"><%= number_to_currency(@hotdeal.deal_is_price) %></span>
+                  <span class="was_price"><%= number_to_currency(@hotdeal.deal_was_price) %></span>
+                <% end %>
+              </p>
+
+            </div>
+          </div>
+
+          
+          <div class="image-box clearfix">
+            <img src="<%= @hotdeal.deal_image %>" alt="<%= @hotdeal.deal_title %>" title="<%= @hotdeal.deal_title %>" />
+          </div>
+
+          <div class="inner-box clearfix coupon-inner-box">
+            
+            <h2 class="summary_title">
+              DETAIL<i class="fa fa-amazon"></i>
+
+              <p class="posted_date">Found on <%= @hotdeal.created_at.strftime("#{@hotdeal.created_at.day.ordinalize} %B %Y") %></p>
+
+                <div class="more_detail clearfix">
+                  <div class="detail_card cleafix">
+                   
+                    <% if @hotdeal.deal_pct_coupon.present? || @hotdeal.deal_cash_coupon.present? %>
+                      <div class="verified_check detail_box">
+                        <p>Coupon</p>
+                        <span class="verified"><i class="material-icons">check_box</i> <em>Verified</em></span>
+                      </div>
+                    <% end %>
+                        
+                      
+                      <div class="detail_box rating_review">
+                        <p>Customer Reviews</p>
+                        <% if @hotdeal.deal_rating.present? %>
+                           <div class="rating_card">
+
+                              <% if @hotdeal.deal_rating_code == 50 %>
+                                <div class="rating_box">
+                                  <!-- <img src="<%=asset_path 'star_5.png' %>" alt="star_rating" style="width:40%"> -->
+                                  <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i>
+                                  <span>/ <%= number_with_precision(@hotdeal.deal_rating_code, precision: 0, separator: ',', delimiter: ',') %> +</span> 
+                                </div>
+                              <% elsif @hotdeal.deal_rating_code == 45 %>
+                                <div class="rating_box">
+                                  <!-- <img src="<%=asset_path 'star_45.png' %>" alt="star_rating" style="width:40%"> -->
+                                  <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i>
+                                  <span>/ <%= number_with_precision(@hotdeal.deal_rating_code, precision: 0, separator: ',', delimiter: ',') %> +</span> 
+                                </div>
+                              <% elsif @hotdeal.deal_rating_code == 40 %>
+                                <div class="rating_box">
+                                  <!-- <img src="<%=asset_path 'star_4.png' %>" alt="star_rating" style="width:40%"> -->
+                                  <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i>
+                                  <span>/ <%= number_with_precision(@hotdeal.deal_rating_code, precision: 0, separator: ',', delimiter: ',') %> +</span> 
+                                </div>
+                              <% elsif @hotdeal.deal_rating_code == 35 %>
+                                <div class="rating_box">
+                                  <!-- <img src="<%=asset_path 'star_35.png' %>" alt="star_rating" style="width:30%"> -->
+                                  <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i><i class="material-icons">star_border</i>
+                                  <span>/ <%= number_with_precision(@hotdeal.deal_rating_code, precision: 0, separator: ',', delimiter: ',') %> +</span> 
+                                </div>
+                              <% elsif @hotdeal.deal_rating_code == 30 %>
+                                <div class="rating_box">
+                                  <!-- <img src="<%=asset_path 'star_3.png' %>" alt="star_rating" style="width:30%"> -->
+                                  <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i>
+                                  <span>/ <%= number_with_precision(@hotdeal.deal_rating_code, precision: 0, separator: ',', delimiter: ',') %> +</span> 
+                                </div>
+                              <% end %>
+                            </div>
+                          <% end %>
+                      </div>
+                      
+                  </div><!-- detail_card -->
+
+                </div><!-- more_detail -->  
+             
+            </h2>
+           
+            <div class="receipt clearfix">
+              <!-- Button Section - Text(left) -->
+              <div class="receipt__grid1">
+                <p>List Price</p>
+                <p>Discount<em><%= number_to_percentage(@hotdeal.deal_pct, precision: 0) %> OFF</em></p>            
+                <% if @hotdeal.deal_pct_coupon.present? %>
+                  <p>Coupon Savings<em><%= number_to_percentage(@hotdeal.deal_pct_coupon, precision: 0) %> OFF</em></p>
+                <% elsif %>
+                  <% if @hotdeal.deal_cash_coupon.present? %>
+                    <p>Coupon Savings<em><%= number_to_currency(@hotdeal.deal_cash_coupon, precision: 0) %> OFF</em></p>
+                  <% end %>
+                <% end %>
+                <hr>
+
+                <p class="total_text">Total</p>
+              </div>
+
+              <!-- Summary Section - Price(right) -->
+              <div class="receipt__grid2">
+                <p><%= number_to_currency(@hotdeal.deal_was_price) %></p>
+                <p>- <%= number_to_currency(@hotdeal.deal_is_price) %></p>  
+
+                <% if @hotdeal.deal_pct_coupon.present? %>
+                  <% extra_coupon_deal = 0 %>
+                  <% extra_coupon_deal =  @hotdeal.deal_is_price * (@hotdeal.deal_pct_coupon / 100) %>
+                  <p>- <%= number_to_currency(extra_coupon_deal) %></p>
+                <% elsif %>
+                  <% if @hotdeal.deal_cash_coupon.present? %>
+                    <p>- <%= number_to_currency(@hotdeal.deal_cash_coupon) %></p>
+                  <% end %>
+                <% end %>
+
+                <hr>
+
+                <!-- Total Price -->
+                <% if @hotdeal.deal_pct_coupon.present? %>
+                  <% extra_coupon_total = 0 %>
+                  <% extra_coupon_total = @hotdeal.deal_is_price - extra_coupon_deal %>
+                   <p class="total_price "><%= number_to_currency(extra_coupon_total) %></p>
+                <% elsif %>
+                  <% if @hotdeal.deal_cash_coupon.present? %>
+                    <% extra_coupon_dallor_total = 0 %>
+                    <% extra_coupon_dallor_total =  @hotdeal.deal_is_price - @hotdeal.deal_cash_coupon %>
+                    <p class="total_price "><%= number_to_currency(extra_coupon_dallor_total) %></p>   
+                  <% end %>
+                <% else %>
+                  <p class="total_price "><%= number_to_currency(@hotdeal.deal_is_price) %></p> 
+                <% end %>
+              </div>
+           </div>
+
+            <!-- Button Section -->
+
+           <div>
+              <a target="_blank" href="<%= @hotdeal.deal_link %>" class="link">Buy now on Amazon</a>
+           </div>
+
+
+            <% if current_user && current_user.admin %>
+              <div class="admin">
+                <p><%= render_with_dealhashtags(@hotdeal.deal_hashtag) %></p>
+                <%= link_to 'Edit', edit_hotdeal_path(@hotdeal) %> |
+                <%= link_to 'Back', hotdeals_path %> |
+                <%= link_to 'Destroy', @hotdeal, method: :delete, data: { confirm: 'Are you sure?' } %>
+              </div>
+            <% end %>
+          </div>
+          <!-- End PC -->
+        </div><!-- ./content-section-->
+
+        <div class="search_ads">
+          <script type="text/javascript">
+            amzn_assoc_placement = "adunit0";
+            amzn_assoc_search_bar = "false";
+            amzn_assoc_tracking_id = "3628-20";
+            amzn_assoc_ad_mode = "search";
+            amzn_assoc_ad_type = "smart";
+            amzn_assoc_marketplace = "amazon";
+            amzn_assoc_region = "US";
+            amzn_assoc_title = "Shop Related Products";
+            amzn_assoc_default_search_phrase = "<%= @hotdeal.deal_title %>";
+            amzn_assoc_default_category = "All";
+            amzn_assoc_linkid = "39e9aa3ca8ca9df980c22e602066352e";
+          </script>
+          <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+        </div>
+
+        <div class="notice">
+          <ul>
+            <li>"Offtheprice" is a participant in the Amazon Services LLC Associates Program an affiliate advertising program designed to provide a means for us to earn fees by linking to Amazon.com.</li>
+            <li>Price, ratings, and global reviews may change after post published date.</li>
+            <!-- <li>Offtheprice's aim is to provide convenience to users.</li>
+            <li>We respect other sellers' rights, as well as provide support for those who own the contents.</li>
+            <li>"Offtheprice's" objective is to show the best coupons, promotion codes and deals you find and buy on Amazon.com. We are not interested in spamming any boring or lame products at you. When you explore our website you’ll only find interesting and often times very deals.</li>
+            <li>We hand-picked our products to provide high quality products</li>
+            <li>The source is copyrighted by Amazon.com.</li>
+            <li>This product belongs to Amazon.com.</li> -->
+          </ul>
+        </div>
+      </div><!--.container -->    
+   </div><!-- .show-wrap -->
+
+  </section><!-- .outline_left -->
+
+
+
+  <section class="outline_right">
+
+    <!-- Featured Deals Section -->
+    <div class="banner">
+      <h3 class="subject">Deals & Coupons Finder</h3>
+      <%= render 'bloggers/quick_coupon_finder' %>
+    </div>
+
+    <div class="banner deals">
+        <h3 class="subject">Today's Trending</h3>
+        <div class="tap_tainer">
+          <div class="tab">
+            <div class="tab-menu">
+              <button class="tab-menu-link is-active" data-content="item-1">
+                <span data-title="item-1">Promotion Codes</span>
+              </button>
+              <!-- <button class="tab-menu-link" data-content="item-2">
+                <span data-title="item-2">Pick Deals</span>
+              </button> -->
+            </div>
+
+            <div class="tab-bar">
+
+              <div class="tab-bar-content is-active" id="item-1">
+
+                <% @coupons_top.each do |coupon| %>
+                  <div class="tab_card clearfix">
+                    <div class="img_box">
+                      <%= link_to image_tag(coupon.c_image, alt: coupon.c_title, title: coupon.c_title, :class => 'main_img'), coupon %>
+                    </div>
+                    <div class="inner">
+
+                      <% if coupon.c_promocode.present? %>
+                        <% if coupon.c_spare_61.present? || coupon.c_spare_62.present? %>
+                          <span class="coupon">Promo Codes</span>  <span class="coupon"> + Coupon</span>
+                        <% else %>
+                          <span class="coupon">Promo Codes</span>
+                        <% end %>
+                      <% end %>
+
+                      <p><%= coupon.c_title %></p>
+                      <div class="pricing">
+                        <% promocode_price =  coupon.c_was_price.to_f - (coupon.c_pct.to_f / 100) * coupon.c_was_price.to_f %>
+                        <% hotdeal_pct = 0 %>
+                        <% hotdeal_pct =  (coupon.c_was_price.to_f - coupon.c_is_price.to_f) / coupon.c_was_price.to_f * 100 %>
+                        <% total_save = 0 %>
+                        <% pct_coupon = 0 %>
+                        <% pct_coupon = (coupon.c_spare_61.to_f / 100) * coupon.c_was_price %>
+                        <% total_price_pct_coupon = promocode_price - pct_coupon %>
+                        <% total_price_cash_coupon = promocode_price - coupon.c_spare_62.to_f %>
+
+                        <% if coupon.c_promocode.present? %>
+                          <% if coupon.c_spare_61.present? || coupon.c_spare_62.present? %>
+                            <% if coupon.c_spare_61.present? %>
+                              <span class="is_price"><%= number_to_currency(total_price_pct_coupon) %></span>
+                              <span class="was_price"><%= number_to_currency(coupon.c_was_price) %></span>
+                            <% else %>
+                              <span class="is_price"><%= number_to_currency(total_price_cash_coupon) %></span>
+                              <span class="was_price"><%= number_to_currency(coupon.c_was_price) %></span>
+                            <% end %>
+
+                          <% else %>
+                            <span class="is_price"><%= number_to_currency(promocode_price) %></span>
+                            <span class="was_price"><%= number_to_currency(coupon.c_was_price) %></span>
+                          <% end %>
+                        <% end %>
+                        
+                      </div>
+                    </div>
+                  </div><!-- .tab_card -->
+                <% end %>
+
+                <div class="more_btn"><a href="/coupons">See more</a></div>
+              </div><!-- #item-1 -->
+
+
+              <!------ ITEM SECTION 2 ------>  
+              <div class="tab-bar-content " id="item-2">
+
+                <% @hotdeal_top.each do |hotdeal| %>                
+                  <div class="tab_card clearfix">
+                    <div class="img_box">
+                      <%= link_to image_tag(hotdeal.deal_image, alt: hotdeal.deal_title, title: hotdeal.deal_title, :class => 'main_img'), hotdeal %>
+                    </div>
+                    <div class="inner">
+
+                      <% if hotdeal.deal_pct_coupon.present? || hotdeal.deal_cash_coupon.present? %>
+                        <span class="coupon">+ Coupon</span>
+                      <% end %>                    
+
+                      <p><%= hotdeal.deal_title %></p>
+                      <div class="pricing">
+                        <% total_save = 0 %>
+                        <% pct_coupon = 0 %>
+                        <% pct_coupon = (hotdeal.deal_pct_coupon.to_f / 100) * hotdeal.deal_is_price %>
+                        <% total_price_pct_coupon = hotdeal.deal_is_price - pct_coupon %>
+                        <% total_price_cash_coupon = hotdeal.deal_is_price - hotdeal.deal_cash_coupon.to_f %>
+
+                        <% if hotdeal.deal_pct_coupon.present? || hotdeal.deal_cash_coupon.present? %>
+                          <% if hotdeal.deal_pct_coupon.present? %>
+                            <span class="is_price"><%= number_to_currency(total_price_pct_coupon) %></span>
+                            <span class="was_price"><%= number_to_currency(hotdeal.deal_was_price) %></span>
+                          <% else %>
+                            <span class="is_price"><%= number_to_currency(total_price_cash_coupon) %></span>
+                            <span class="was_price"><%= number_to_currency(hotdeal.deal_was_price) %></span>
+                          <% end %>
+
+                        <% else %>
+                          <span class="is_price"><%= number_to_currency(hotdeal.deal_is_price) %></span>
+                          <span class="was_price"><%= number_to_currency(hotdeal.deal_was_price) %></span>
+                        <% end %>
+                      </div>
+                    </div>
+                  </div><!-- .tab_card -->
+                <% end %>
+
+                <div class="more_btn"><a href="/hotdeals">See more</a></div>
+              </div><!-- #item-2 -->
+
+
+            </div>
+          </div>
+        </div><!-- .tap_tainer -->
+    </div>
+
+    <!-- Popular Blog Section -->
+    <div class="popular_blogs">
+      <h3 class="subject">Popular</h3>
+      <div class="popular_blogs_wrap">
+
+        <% @most_hit.each do |blog| %>
+          <div class="pb_card clearfix">
+            <div class="img_box">
+              <%= link_to image_tag(blog.bl_image, alt: blog.bl_title, title: blog.bl_title, :class => 'main_img'), blog %>
+            </div>
+            <div class="inner">
+              <h3><%= link_to blog.bl_title, blog %></h3>
+            </div>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+
+    <div class="banner featured_deals">
+      <h3 class="subject">Featured Deals</h3>
+      <% @picks.each do |pick| %>
+        <a href="/posts/hashtag/<%= pick.p_link %>">
+          <div class="img_box">
+            <img src="<%= pick.p_image %>">
+          </div>
+        </a>
+        <div class="inner">
+          <span class="featured_span"><%= pick.p_spare_01 %></span>
+          <h4><%= pick.p_title %></h4>
+        </div>
+      <% end %>
+    </div> 
+  </section><!-- .outline_right -->
+
+
+</div><!-- .outline -->
+
+
+<%= javascript_pack_tag 'coupon_index_menu' %>
+
+<!-- Side Tap  -->
+<script type="text/javascript">
+  // Tabs Action
+  const tabLink = document.querySelectorAll(".tab-menu-link");
+  const tabContent = document.querySelectorAll(".tab-bar-content");
+
+  tabLink.forEach((item) => {
+    item.addEventListener("click", activeTab);
+  });
+
+  function activeTab(item) {
+    const btnTarget = item.currentTarget;
+    const content = btnTarget.dataset.content;
+
+    tabContent.forEach((item) => {
+      item.classList.remove("is-active");
+    });
+
+    tabLink.forEach((item) => {
+      item.classList.remove("is-active");
+    });
+
+    document.querySelector("#" + content).classList.add("is-active");
+    btnTarget.classList.add("is-active");
+  }
+
+</script>
+
+
+<!-- Accordion Menu -->
+<script type="text/javascript">
+  $('.accordion-item .heading').on('click', function(e) {
+      e.preventDefault();
+
+      // Add the correct active class
+      if($(this).closest('.accordion-item').hasClass('active')) {
+          // Remove active classes
+          $('.accordion-item').removeClass('active');
+      } else {
+          // Remove active classes
+          $('.accordion-item').removeClass('active');
+
+          // Add the active class
+          $(this).closest('.accordion-item').addClass('active');
+      }
+
+      // Show the content
+      var $content = $(this).next();
+      $content.slideToggle(100);
+      $('.accordion-item .content').not($content).slideUp('fast');
+  });
+</script>
+
+<!-- promotion code modal -->
+<script type="text/javascript">$('.js-open-modal').click(function(event) {
+   event.preventDefault();
+   
+   var modalName = $(this).attr('data-modal');
+   var modal = $('.js-modal[data-modal="' + modalName + '"]');
+   
+   modal.addClass('is-show');
+   $('.js-modal-overlay').addClass('is-show')
+  });
+
+  $('.js-modal-close').click(function() {
+     $(this).parent('.js-modal').removeClass('is-show');
+     $('.js-modal-overlay').removeClass('is-show');
+  });
+     
+  $('.js-modal-overlay').click(function() {
+     $('.js-modal.is-show').removeClass('is-show');
+     $(this).removeClass('is-show');
+  })
+</script>
+
+
+<!-- Copy Promotion Code -->
+<script type="text/javascript">
+  let copyText = document.querySelector(".copy-text");
+  copyText.querySelector("button").addEventListener("click",function(){
+    let input = copyText.querySelector("input.text");
+    input.select();
+    document.execCommand("copy");
+    copyText.classList.add("active");
+    window.getSelection().removeAllRanges();
+    setTimeout(function(){
+      copyText.classList.remove("active");
+    },2500);
+  });
+</script>
+
+
+
+
+
+

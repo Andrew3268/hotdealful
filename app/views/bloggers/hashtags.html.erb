@@ -1,22 +1,37 @@
 <div class="outline">
 
   <section class="outline_left">
-    <div class="index_wrap">
-        
-      <div class="ctn_box">    
-        <div class="compare_box">
-          <div class="where-hashtag">
-            <% if params[:name].present? %>
-              <h2>The Featured Deals Of The Day</h2>
-              <h3>#<%= params[:name] %></h3>
-            <% end %>
-          </div>    
-          <%= render 'posts/compare' %>
-        </div>
-      </div><!-- ctn_box -->
 
-    </div><!-- index_wrap -->
-    
+    <div class="where-hashtag">
+      <% if params[:name].present? %>
+        <h2>You are in <em>#<%= params[:name] %></em></h2>
+      <% end %>
+    </div>    
+
+    <div class="except_first_blogs clearfix">
+      <% @bloggers.each do |blog| %>
+        <div class="efb_card clearfix">
+          <div class="img_box">
+            <%= link_to image_tag(blog.bl_image, alt: blog.bl_title, title: blog.bl_title, :class => 'main_img'), blog %>
+          </div>
+
+          <div class="inner">
+            <span><%= render_with_bloghashtags(blog.bl_category) %></span>
+            <h3><%= link_to blog.bl_title, blog %></h3>
+            <p class="four_sentences"><%= blog.bl_description %></p>
+          </div>
+        </div>
+        <% if current_user && current_user.admin %>
+          <div class="admin_panner">
+            <%= link_to 'Edit', edit_blogger_path(blog) %>
+            <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        <% end %>
+      <% end %>
+      
+      
+    </div><!-- .except_first_blogs -->
+
   </section><!-- .outline_left -->
 
 
@@ -29,24 +44,59 @@
       <%= render 'bloggers/quick_coupon_finder' %>
     </div>
 
+    <!-- Popular Blog Section -->
+    <div class="popular_blogs">
+      <h3 class="subject">Popular</h3>
+      <div class="popular_blogs_wrap">
+
+        <% @most_hit.each do |blog| %>
+          <div class="pb_card clearfix">
+            <div class="img_box">
+              <%= link_to image_tag(blog.bl_image, alt: blog.bl_title, title: blog.bl_title, :class => 'main_img'), blog %>
+            </div>
+            <div class="inner">
+              <h3><%= link_to blog.bl_title, blog %></h3>
+            </div>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+
+    <div class="banner featured_deals">
+      <h3 class="subject">Featured Deals</h3>
+      <% @picks.each do |pick| %>
+        <a href="/posts/hashtag/<%= pick.p_link %>">
+          <div class="img_box">
+            <img src="<%= pick.p_image %>">
+          </div>
+        </a>
+        <div class="inner">
+          <span class="featured_span"><%= pick.p_spare_01 %></span>
+          <h4><%= pick.p_title %></h4>
+        </div>
+      <% end %>
+    </div>
+
+
     <div class="banner deals">
-        <h3 class="subject">Today's Trending</h3>
+        <h3 class="subject">Today's Deals</h3>
         <div class="tap_tainer">
           <div class="tab">
             <div class="tab-menu">
               <button class="tab-menu-link is-active" data-content="item-1">
                 <span data-title="item-1">Promotion Codes</span>
               </button>
-              <!-- <button class="tab-menu-link" data-content="item-2">
+              <button class="tab-menu-link" data-content="item-2">
                 <span data-title="item-2">Pick Deals</span>
-              </button> -->
+              </button>
             </div>
 
             <div class="tab-bar">
 
               <div class="tab-bar-content is-active" id="item-1">
 
-                <% @coupons_top.each do |coupon| %>
+                <% @coupons.each do |coupon| %>
                   <div class="tab_card clearfix">
                     <div class="img_box">
                       <%= link_to image_tag(coupon.c_image, alt: coupon.c_title, title: coupon.c_title, :class => 'main_img'), coupon %>
@@ -100,7 +150,7 @@
               <!------ ITEM SECTION 2 ------>  
               <div class="tab-bar-content " id="item-2">
 
-                <% @hotdeal_top.each do |hotdeal| %>                
+                <% @hotdeals.each do |hotdeal| %>                
                   <div class="tab_card clearfix">
                     <div class="img_box">
                       <%= link_to image_tag(hotdeal.deal_image, alt: hotdeal.deal_title, title: hotdeal.deal_title, :class => 'main_img'), hotdeal %>
@@ -145,80 +195,9 @@
           </div>
         </div><!-- .tap_tainer -->
     </div>
-
-    <!-- Popular Blog Section -->
-    <div class="popular_blogs">
-      <h3 class="subject">Popular</h3>
-      <div class="popular_blogs_wrap">
-
-        <% @most_hit.each do |blog| %>
-          <div class="pb_card clearfix">
-            <div class="img_box">
-              <%= link_to image_tag(blog.bl_image, alt: blog.bl_title, title: blog.bl_title, :class => 'main_img'), blog %>
-            </div>
-            <div class="inner">
-              <h3><%= link_to blog.bl_title, blog %></h3>
-            </div>
-          </div>
-        <% end %>
-
-      </div>
-    </div>
-
-    <!-- <div class="banner featured_deals">
-      <h3 class="subject">Featured Deals</h3>
-      <% @picks.each do |pick| %>
-        <a href="/posts/hashtag/<%= pick.p_link %>">
-          <div class="img_box">
-            <img src="<%= pick.p_image %>">
-          </div>
-        </a>
-        <div class="inner">
-          <span class="featured_span"><%= pick.p_spare_01 %></span>
-          <h4><%= pick.p_title %></h4>
-        </div>
-      <% end %>
-    </div>  -->
   </section><!-- .outline_right -->
 
 
-</div><!-- .outline -->
-
-
-<%= javascript_pack_tag 'coupon_index_menu' %>
-
-<script type="text/javascript">
-  // Tabs Action
-  const tabLink = document.querySelectorAll(".tab-menu-link");
-  const tabContent = document.querySelectorAll(".tab-bar-content");
-
-  tabLink.forEach((item) => {
-    item.addEventListener("click", activeTab);
-  });
-
-  function activeTab(item) {
-    const btnTarget = item.currentTarget;
-    const content = btnTarget.dataset.content;
-
-    tabContent.forEach((item) => {
-      item.classList.remove("is-active");
-    });
-
-    tabLink.forEach((item) => {
-      item.classList.remove("is-active");
-    });
-
-    document.querySelector("#" + content).classList.add("is-active");
-    btnTarget.classList.add("is-active");
-  }
-
-</script>
-
-
-
-
-
-  
-
+</div>
 
 

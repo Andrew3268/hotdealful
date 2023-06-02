@@ -4,11 +4,34 @@ class BloggersController < ApplicationController
 
   # GET /bloggers or /bloggers.json
   def index
-    @pagy, @bloggers = pagy(Blogger.all.order("created_at DESC"), items: 20)
+    # @pagy, @bloggers = pagy(Blogger.all.order("created_at DESC"), items: 1)
+    @bloggers = Blogger.all.order("created_at DESC")
+    @latest_blog = Blogger.last(1)
+    @pagy, @except_first_blogs = pagy(Blogger.order("id desc").offset(1), items: 10)
+    @picks = Pick.all.all.order("created_at DESC").limit(1)
+    @most_hit = Blogger.most_hit(1.day.ago, 5)
+    @coupons = Coupon.all.order("created_at DESC").limit(5)
+    @hotdeals = Hotdeal.all.order("created_at DESC").limit(5)
+
+    
   end
 
   # GET /bloggers/1 or /bloggers/1.json
   def show
+    @blogger.punch(request)
+    @picks = Pick.all.all.order("created_at DESC").limit(1)
+    @most_hit = Blogger.most_hit(1.day.ago, 5)
+    @coupons = Coupon.all.order("created_at DESC").limit(5)
+    @hotdeals = Hotdeal.all.order("created_at DESC").limit(5)
+  end
+
+  def hashtags
+    tag = Tag.find_by(name: params[:name])
+    @bloggers = tag.bloggers.order("created_at DESC")
+    @picks = Pick.all.all.order("created_at DESC").limit(1)
+    @most_hit = Blogger.most_hit(1.day.ago, 5)
+    @coupons = Coupon.all.order("created_at DESC").limit(5)
+    @hotdeals = Hotdeal.all.order("created_at DESC").limit(5)
   end
 
   # GET /bloggers/new

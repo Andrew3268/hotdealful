@@ -1,0 +1,103 @@
+<div class="web_box clearfix">
+
+  <div class="left">
+    <%= render '/shared/left' %>
+  </div>
+
+  <div class="right">
+    <div class="index_wrap">
+      <header><%= render 'picks/header_index' %></header>
+        
+      <section class="blog_main_section">
+        
+        <!-- < render 'bloggers/categories_menu' > -->
+
+        <% @bloggers.each do |blog| %>
+          <div class="filter-group">
+
+            <div class="b_ctn_box filter-node" data-filter='["<%= blog.bl_category %>","<%= blog.bl_title %>"]'>
+              <div class="b_img_box">
+                <%= link_to image_tag(blog.bl_image, alt: blog.bl_title, title: blog.bl_title, :class => 'main_img'), blog %>
+              </div>
+              <div class="inner">
+                <h3><%= link_to blog.bl_title, blog %></h3>
+                <p><%= blog.bl_description %></p>
+
+                <div class="btn"><a href="/blogs/<%= blog.id %>">Read More</a></div>
+                <% if current_user && current_user.admin %>
+                  <div class="admin_panner">
+                    <%= link_to 'Edit', edit_blogger_path(blog) %>
+                    <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
+                  </div>
+                <% end %>
+              </div>
+
+            </div>
+
+          </div>
+        <% end %>
+
+      </section>
+      <%= raw pagy_nav(@pagy) %>
+    </div><!-- .index_wrap -->
+    
+    <div class="bottom_banner">
+      <div class="middle_event">
+        <a target="_blank" href="https://amzn.to/33zpMG9"><img src="<%=asset_path 'banner_mid.png' %>"></a>
+      </div>
+    </div>
+    <!-- <%= render 'posts/tab_bar' %> -->
+  </div><!-- right -->
+</div>
+
+
+
+<script type="text/javascript">
+  
+  var example = new DataFilterJS({
+    filterGroup: '.filter-group',
+    filterNode: '.filter-node',
+    filterButtonGroup: '.filter-search',
+    transitionSpeed: '0.75s'
+  });
+
+  function DataFilterJS(config){
+    // define variables
+    var filterGroup = config.filterGroup;
+    var filterNode = config.filterNode;
+    var filterButtonGroup = config.filterButtonGroup;
+    var transitionSpeed = config.transitionSpeed;
+    var filter_group = $(filterGroup);
+    var filter_node = $(filterGroup+' > '+filterNode);
+    var search_val = $(filterButtonGroup+'> '+'input[type="text"]').value;
+    $(filterGroup+', '+filterNode+', '+filterNode+'.filter-me').css({"transition":"all "+transitionSpeed});
+    
+    // (Button) Data Filter Function
+    $(filterButtonGroup+' .filter-button').on('click', function(e) {
+      var eventFilter = e.currentTarget.attributes[1].nodeValue;
+       // Loop through Filter Nodes on Button Click
+       $.each(filter_node, function(i, v) {
+          if(eventFilter == "*") {
+            filter_node[i].classList.remove('filter-me');
+          } else if(filter_node[i].getAttribute('data-filter').includes(eventFilter) == false) {
+            filter_node[i].classList.add('filter-me')
+          } else {filter_node[i].classList.remove('filter-me');}
+       });
+    }); // end click event
+
+    // (Keystroke) Data Filter Function    
+    $(filterButtonGroup+' > input[type="text"]').on('keypress keydown keyup', function(e, fnd) {
+      // Loop through Filter Nodes on Keystroke
+      $.each($(filterNode), function(i, v) {
+        var node = v.getAttribute("data-filter").toString().toUpperCase();
+        var search_string = $(filterButtonGroup+' > '+'input[type="text"]').val().toUpperCase();
+        //console.log(node.getAttribute('data-filter'));
+        if(node.includes(search_string) == false) {
+          v.classList.add('filter-me');
+        } else {v.classList.remove('filter-me');}
+      }); // end each
+    }); // end keypress
+  }
+</script>
+
+<%= javascript_pack_tag 'coupon_index_menu' %>

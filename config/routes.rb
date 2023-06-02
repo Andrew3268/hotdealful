@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   # root 'homes#index'
 
 
-  root 'bridges#landing_page' #########  
+  root 'bloggers#index' #########  
 
   # root 'bridges#home'
   resources :posts
@@ -38,6 +38,7 @@ Rails.application.routes.draw do
   get '/picks/phashtag/:name', to:'picks#hashtags'
   get '/coupons/chashtag/:name', to:'coupons#hashtags'
   get '/hotdeals/dealhashtag/:name', to:'hotdeals#hashtags'
+  get '/bloggers/bloghashtag/:name', to:'bloggers#hashtags'
 
   get 'bridges/finder_detail'#active
   get 'bridges/about_us'#active
@@ -46,6 +47,8 @@ Rails.application.routes.draw do
   get 'bridges/only_coupon' #active
   get 'bridges/policy' #active
   get 'bridges/trending_coupon' #active
+  get 'bridges/testing' #active
+  get 'bridges/reviews' #active
 
 
   get 'bridges/new_coupon_section'

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_06_065701) do
+ActiveRecord::Schema.define(version: 2023_05_20_060300) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -111,6 +111,15 @@ ActiveRecord::Schema.define(version: 2023_05_06_065701) do
     t.integer "bl_rating_code_03"
     t.integer "bl_rating_code_04"
     t.integer "bl_rating_code_05"
+  end
+
+  create_table "bloggers_tags", id: false, force: :cascade do |t|
+    t.integer "blogger_id"
+    t.integer "tag_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["blogger_id"], name: "index_bloggers_tags_on_blogger_id"
+    t.index ["tag_id"], name: "index_bloggers_tags_on_tag_id"
   end
 
   create_table "blogs", force: :cascade do |t|
@@ -660,6 +669,8 @@ ActiveRecord::Schema.define(version: 2023_05_06_065701) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "bloggers_tags", "bloggers"
+  add_foreign_key "bloggers_tags", "tags"
   add_foreign_key "coupons_tags", "coupons"
   add_foreign_key "coupons_tags", "tags"
   add_foreign_key "hotdeals_tags", "hotdeals"
