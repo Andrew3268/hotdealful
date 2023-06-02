@@ -1,54 +1,49 @@
-<div class="web_box clearfix">
+<div class="outline">
+  <%= render 'shared/new_main_header' %>
 
-  <div class="left">
-    <%= render '/shared/left' %>
-  </div>
-
-  <div class="right">
+  <section class="outline_left">
     <div class="index_wrap">
-      <header><%= render 'coupons/header_hashtag' %></header>
+        
+        <div class="ctn_box">    
+          <div class="compare_box">
+            <div class="where-hashtag">
+              <% if params[:name].present? %>
+                <h2>The Best Promo Codes Deals</h2>
+                <h3>#<%= params[:name] %></h3>
+              <% end %>
+            </div>  
+          </div> 
 
-      <div class="where-hashtag">
-        <% if params[:name].present? %>
-          <h2>The Best deals on <em>#<%= params[:name] %></em></h2>
-        <% end %>
-      </div>    
-      
-        <div class="pic_deal clearfix">
-          <div class="card_wrap n_coupon_wrap">
-              <!-- <h2>Promotion Codes</h2> -->
+          <div class="menu-wrapper when_search_term">
+            <div class="menu-item">
+              <button><a href="/coupons">All</a></button>
+              <button><a href="/coupons/chashtag/electronics">Electronics</a></button>
+              <button><a href="/coupons/chashtag/fashion">Fashion</a></button>
+              <button><a href="/coupons/chashtag/beauty">Beauty</a></button>
+              <button><a href="/coupons/chashtag/cellphone_accessories">Cell Phone&Accessories</a></button>
+              <button><a href="/coupons/chashtag/home_kitchen">Home&Kitchen</a></button>
+              <button><a href="/coupons/chashtag/groceries">Groceries</a></button>
+              <button><a href="/coupons/chashtag/sports_outdoor">Sports&Outdoor</a></button>
+              <button><a href="/coupons/chashtag/pet_supplies">Pet Supplies</a></button>
+              <button><a href="/coupons/chashtag/health_household">Health&Household</a></button>
+              <button><a href="/coupons/chashtag/automotive">Automotive</a></button>
+              <button><a href="/coupons/chashtag/baby_products">Baby</a></button>
+              <button><a href="/coupons/chashtag/tools_home_improvement">Home Improvemnts</a></button>
+              <button><a href="/coupons/chashtag/patio_lawn_garden">Patio&Lawn&Garden</a></button>
+              <button><a href="/coupons/chashtag/toys_games">Toys&Games</a></button>
+              <button><a href="/coupons/chashtag/video_games">Video Games</a></button>
+              <button><a href="/coupons/chashtag/office_products">Office Products</a></button>
+              <button><a href="/coupons/chashtag/musical_instruments">Msical Instruments</a></button>
+            </div> 
+            <!-- <span class="pointer left-pointer dis">
+              <i class="fa fa-chevron-left"></i>
+            </span>
+            <span class="pointer right-pointer">
+              <i class="fa fa-chevron-right"></i>
+            </span> -->
+          </div>   
 
-              <div class="menu-wrapper when_search_term">
-                <div class="menu-item">
-                  <button><a href="/coupons">All</a></button>
-                  <button><a href="/coupons/chashtag/electronics">Electronics</a></button>
-                  <button><a href="/coupons/chashtag/fashion">Fashion</a></button>
-                  <button><a href="/coupons/chashtag/beauty">Beauty</a></button>
-                  <button><a href="/coupons/chashtag/cellphone_accessories">Cell Phone&Accessories</a></button>
-                  <button><a href="/coupons/chashtag/home_kitchen">Home&Kitchen</a></button>
-                  <button><a href="/coupons/chashtag/groceries">Groceries</a></button>
-                  <button><a href="/coupons/chashtag/sports_outdoor">Sports&Outdoor</a></button>
-                  <button><a href="/coupons/chashtag/pet_supplies">Pet Supplies</a></button>
-                  <button><a href="/coupons/chashtag/health_household">Health&Household</a></button>
-                  <button><a href="/coupons/chashtag/automotive">Automotive</a></button>
-                  <button><a href="/coupons/chashtag/baby_products">Baby</a></button>
-                  <button><a href="/coupons/chashtag/tools_home_improvement">Home Improvemnts</a></button>
-                  <button><a href="/coupons/chashtag/patio_lawn_garden">Patio&Lawn&Garden</a></button>
-                  <button><a href="/coupons/chashtag/toys_games">Toys&Games</a></button>
-                  <button><a href="/coupons/chashtag/video_games">Video Games</a></button>
-                  <button><a href="/coupons/chashtag/office_products">Office Products</a></button>
-                  <button><a href="/coupons/chashtag/musical_instruments">Msical Instruments</a></button>
-                </div> 
-                <span class="pointer left-pointer dis">
-                  <i class="fa fa-chevron-left"></i>
-                </span>
-                <span class="pointer right-pointer">
-                  <i class="fa fa-chevron-right"></i>
-                </span>
-              </div>
-
-            
-              <div class="index_main_wrap">
+           <div class="index_main_wrap">
                 <div class="card_ctn_wrap clearfix">
 
                     <% @coupons.each do |coupon| %>
@@ -114,18 +109,212 @@
                 </div>
               </div>
 
-             
 
-              
+          
+      </div><!-- ctn_box -->
+    </div><!-- index_wrap -->
+  </section><!-- .outline_left -->
+
+
+
+  <section class="outline_right">
+
+    <!-- Featured Deals Section -->
+    <div class="banner">
+      <h3 class="subject">Deals & Coupons Finder</h3>
+      <%= render 'bloggers/quick_coupon_finder' %>
+    </div>
+
+    <div class="banner deals">
+        <h3 class="subject">Today's Trending</h3>
+        <div class="tap_tainer">
+          <div class="tab">
+            <div class="tab-menu">
+              <button class="tab-menu-link is-active" data-content="item-1">
+                <span data-title="item-1">Promotion Codes</span>
+              </button>
+              <!-- <button class="tab-menu-link" data-content="item-2">
+                <span data-title="item-2">Pick Deals</span>
+              </button> -->
             </div>
-        </div>
 
-        <!-- < raw pagy_nav(@pagy) > -->
+            <div class="tab-bar">
+
+              <div class="tab-bar-content is-active" id="item-1">
+
+                <% @coupons_top.each do |coupon| %>
+                  <div class="tab_card clearfix">
+                    <div class="img_box">
+                      <%= link_to image_tag(coupon.c_image, alt: coupon.c_title, title: coupon.c_title, :class => 'main_img'), coupon %>
+                    </div>
+                    <div class="inner">
+
+                      <% if coupon.c_promocode.present? %>
+                        <% if coupon.c_spare_61.present? || coupon.c_spare_62.present? %>
+                          <span class="coupon">Promo Codes</span>  <span class="coupon"> + Coupon</span>
+                        <% else %>
+                          <span class="coupon">Promo Codes</span>
+                        <% end %>
+                      <% end %>
+
+                      <p><%= coupon.c_title %></p>
+                      <div class="pricing">
+                        <% promocode_price =  coupon.c_was_price.to_f - (coupon.c_pct.to_f / 100) * coupon.c_was_price.to_f %>
+                        <% hotdeal_pct = 0 %>
+                        <% hotdeal_pct =  (coupon.c_was_price.to_f - coupon.c_is_price.to_f) / coupon.c_was_price.to_f * 100 %>
+                        <% total_save = 0 %>
+                        <% pct_coupon = 0 %>
+                        <% pct_coupon = (coupon.c_spare_61.to_f / 100) * coupon.c_was_price %>
+                        <% total_price_pct_coupon = promocode_price - pct_coupon %>
+                        <% total_price_cash_coupon = promocode_price - coupon.c_spare_62.to_f %>
+
+                        <% if coupon.c_promocode.present? %>
+                          <% if coupon.c_spare_61.present? || coupon.c_spare_62.present? %>
+                            <% if coupon.c_spare_61.present? %>
+                              <span class="is_price"><%= number_to_currency(total_price_pct_coupon) %></span>
+                              <span class="was_price"><%= number_to_currency(coupon.c_was_price) %></span>
+                            <% else %>
+                              <span class="is_price"><%= number_to_currency(total_price_cash_coupon) %></span>
+                              <span class="was_price"><%= number_to_currency(coupon.c_was_price) %></span>
+                            <% end %>
+
+                          <% else %>
+                            <span class="is_price"><%= number_to_currency(promocode_price) %></span>
+                            <span class="was_price"><%= number_to_currency(coupon.c_was_price) %></span>
+                          <% end %>
+                        <% end %>
+                        
+                      </div>
+                    </div>
+                  </div><!-- .tab_card -->
+                <% end %>
+
+                <div class="more_btn"><a href="/coupons">See more</a></div>
+              </div><!-- #item-1 -->
+
+
+              <!------ ITEM SECTION 2 ------>  
+              <div class="tab-bar-content " id="item-2">
+
+                <% @hotdeal_top.each do |hotdeal| %>                
+                  <div class="tab_card clearfix">
+                    <div class="img_box">
+                      <%= link_to image_tag(hotdeal.deal_image, alt: hotdeal.deal_title, title: hotdeal.deal_title, :class => 'main_img'), hotdeal %>
+                    </div>
+                    <div class="inner">
+
+                      <% if hotdeal.deal_pct_coupon.present? || hotdeal.deal_cash_coupon.present? %>
+                        <span class="coupon">+ Coupon</span>
+                      <% end %>                    
+
+                      <p><%= hotdeal.deal_title %></p>
+                      <div class="pricing">
+                        <% total_save = 0 %>
+                        <% pct_coupon = 0 %>
+                        <% pct_coupon = (hotdeal.deal_pct_coupon.to_f / 100) * hotdeal.deal_is_price %>
+                        <% total_price_pct_coupon = hotdeal.deal_is_price - pct_coupon %>
+                        <% total_price_cash_coupon = hotdeal.deal_is_price - hotdeal.deal_cash_coupon.to_f %>
+
+                        <% if hotdeal.deal_pct_coupon.present? || hotdeal.deal_cash_coupon.present? %>
+                          <% if hotdeal.deal_pct_coupon.present? %>
+                            <span class="is_price"><%= number_to_currency(total_price_pct_coupon) %></span>
+                            <span class="was_price"><%= number_to_currency(hotdeal.deal_was_price) %></span>
+                          <% else %>
+                            <span class="is_price"><%= number_to_currency(total_price_cash_coupon) %></span>
+                            <span class="was_price"><%= number_to_currency(hotdeal.deal_was_price) %></span>
+                          <% end %>
+
+                        <% else %>
+                          <span class="is_price"><%= number_to_currency(hotdeal.deal_is_price) %></span>
+                          <span class="was_price"><%= number_to_currency(hotdeal.deal_was_price) %></span>
+                        <% end %>
+                      </div>
+                    </div>
+                  </div><!-- .tab_card -->
+                <% end %>
+
+                <div class="more_btn"><a href="/hotdeals">See more</a></div>
+              </div><!-- #item-2 -->
+
+
+            </div>
+          </div>
+        </div><!-- .tap_tainer -->
+    </div>
+
+    <!-- Popular Blog Section -->
+    <div class="popular_blogs">
+      <h3 class="subject">Popular</h3>
+      <div class="popular_blogs_wrap">
+
+        <% @most_hit.each do |blog| %>
+          <div class="pb_card clearfix">
+            <div class="img_box">
+              <%= link_to image_tag(blog.bl_image, alt: blog.bl_title, title: blog.bl_title, :class => 'main_img'), blog %>
+            </div>
+            <div class="inner">
+              <h3><%= link_to blog.bl_title, blog %></h3>
+            </div>
+          </div>
+        <% end %>
+
       </div>
-      <!-- < render 'coupons/tab_bar' > -->
-  </div><!-- right -->
-</div>
+    </div>
 
-<!-- scroll menu -->
+    <!-- <div class="banner featured_deals">
+      <h3 class="subject">Featured Deals</h3>
+      <% @picks.each do |pick| %>
+        <a href="/posts/hashtag/<%= pick.p_link %>">
+          <div class="img_box">
+            <img src="<%= pick.p_image %>">
+          </div>
+        </a>
+        <div class="inner">
+          <span class="featured_span"><%= pick.p_spare_01 %></span>
+          <h4><%= pick.p_title %></h4>
+        </div>
+      <% end %>
+    </div>  -->
+  </section><!-- .outline_right -->
+
+
+</div><!-- .outline -->
+
+
 <%= javascript_pack_tag 'coupon_index_menu' %>
-<%= javascript_pack_tag 'view_promotion_code' %>
+
+<script type="text/javascript">
+  // Tabs Action
+  const tabLink = document.querySelectorAll(".tab-menu-link");
+  const tabContent = document.querySelectorAll(".tab-bar-content");
+
+  tabLink.forEach((item) => {
+    item.addEventListener("click", activeTab);
+  });
+
+  function activeTab(item) {
+    const btnTarget = item.currentTarget;
+    const content = btnTarget.dataset.content;
+
+    tabContent.forEach((item) => {
+      item.classList.remove("is-active");
+    });
+
+    tabLink.forEach((item) => {
+      item.classList.remove("is-active");
+    });
+
+    document.querySelector("#" + content).classList.add("is-active");
+    btnTarget.classList.add("is-active");
+  }
+
+</script>
+
+
+
+
+
+  
+
+
+
