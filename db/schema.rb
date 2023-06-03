@@ -124,37 +124,6 @@ ActiveRecord::Schema.define(version: 2023_06_03_053336) do
     t.index ["tag_id"], name: "index_bloggers_tags_on_tag_id"
   end
 
-  create_table "blogs", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "blog_m_title"
-    t.string "blog_m_image"
-    t.string "blog_m_category"
-    t.text "blog_m_description"
-    t.string "blog_subtitle_01"
-    t.string "blog_subtitle_02"
-    t.string "blog_subtitle_03"
-    t.string "blog_subtitle_04"
-    t.string "blog_subtitle_05"
-    t.string "blog_subtitle_06"
-    t.string "blog_subtitle_07"
-    t.string "blog_image_01"
-    t.string "blog_image_02"
-    t.string "blog_image_03"
-    t.string "blog_image_04"
-    t.string "blog_image_05"
-    t.string "blog_image_06"
-    t.string "blog_image_07"
-    t.string "blog_link_01"
-    t.string "blog_link_02"
-    t.string "blog_link_03"
-    t.string "blog_link_04"
-    t.string "blog_link_05"
-    t.string "blog_link_06"
-    t.string "blog_link_07"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "clippings", force: :cascade do |t|
     t.integer "user_id"
     t.string "cli_title"
