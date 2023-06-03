@@ -23,6 +23,26 @@ class BloggersController < ApplicationController
     @most_hit = Blogger.most_hit(1.day.ago, 5)
     @coupons = Coupon.all.order("created_at DESC").limit(5)
     @hotdeals = Hotdeal.all.order("created_at DESC").limit(5)
+
+    set_meta_tags title: @blogger.bl_title,
+                  site: 'THE FiiVE',
+                  revierse: true,
+                  description: @blogger.bl_description,
+                  keywords: 'amazondeals, hotdeals, promotion code, coupons,',
+                  twitter: {
+                    card: "summary",
+                    site: "@thefiive",
+                    title: @blogger.bl_title,
+                    description: @blogger.bl_description,
+                    image: @blogger.bl_image
+                  },
+                  og: {
+                    title: @blogger.bl_title,
+                    description: @blogger.bl_description,
+                    type: 'website',
+                    url: blogger_url(@blogger),
+                    image: @blogger.bl_image
+                  }
   end
 
   def hashtags

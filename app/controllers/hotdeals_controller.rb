@@ -28,6 +28,26 @@ class HotdealsController < ApplicationController
     @picks = Pick.all.all.order("created_at DESC").limit(1)
     @most_hit = Blogger.most_hit(1.day.ago, 5)
     @hotdeal_top = Hotdeal.most_hit(1.day.ago, 5)
+
+    set_meta_tags title: @hotdeal.deal_title,
+                  site: 'THE FiiVE',
+                  revierse: true,
+                  description: @hotdeal.deal_description,
+                  keywords: 'amazondeals, hotdeals, promotion code, coupons,',
+                  twitter: {
+                    card: "summary",
+                    site: "@thefiive",
+                    title: @hotdeal.deal_title,
+                    description: @hotdeal.deal_description,
+                    image: @hotdeal.deal_image
+                  },
+                  og: {
+                    title: @hotdeal.deal_title,
+                    description: @hotdeal.deal_description,
+                    type: 'website',
+                    url: hotdeal_url(@hotdeal),
+                    image: @hotdeal.deal_image
+                  }
   end
 
   def hashtags

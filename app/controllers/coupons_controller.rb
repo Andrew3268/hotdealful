@@ -33,13 +33,13 @@ class CouponsController < ApplicationController
     @most_hit = Blogger.most_hit(1.day.ago, 5)
     @hotdeal_top = Hotdeal.most_hit(1.day.ago, 5)
     set_meta_tags title: @coupon.c_title,
-                  site: 'Off The Price',
+                  site: 'THE FiiVE',
                   revierse: true,
                   description: @coupon.c_description,
                   keywords: 'amazondeals, hotdeals, promotion code, coupons ',
                   twitter: {
                     card: "summary",
-                    site: "@offtheprice",
+                    site: "@thefiive",
                     title: @coupon.c_title,
                     description: @coupon.c_description,
                     image: @coupon.c_image

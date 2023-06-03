@@ -166,11 +166,8 @@
               </div>
            </div>
 
-            <!-- Button Section -->
-
-           <div>
-              <a target="_blank" href="<%= @hotdeal.deal_link %>" class="link">Buy now on Amazon</a>
-           </div>
+           <!-- Button Section -->
+           <div><a target="_blank" href="<%= @hotdeal.deal_link %>" class="link">Buy now on Amazon</a></div>
 
 
             <% if current_user && current_user.admin %>
@@ -216,6 +213,10 @@
         </div>
       </div><!--.container -->    
    </div><!-- .show-wrap -->
+
+   <div class="back_to_btn for_show_page">
+    <a href="javascript:history.back()" class="back_to"><img src="<%= asset_path 'back_btn.png' %>"></a>
+   </div>
 
   </section><!-- .outline_left -->
 

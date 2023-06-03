@@ -29,13 +29,13 @@ class PostsController < ApplicationController
     @picks = Pick.all.all.order("created_at DESC").limit(1)
     @most_hit = Blogger.most_hit(1.day.ago, 5)
     set_meta_tags title: @post.title,
-                  site: 'hotdeal-ful',
+                  site: 'THE FiiVE',
                   revierse: true,
                   description: @post.title,
                   keywords: 'amazondeals, hotdeals, promotion code, coupons ',
                   twitter: {
                     card: "summary",
-                    site: "@hotdealful",
+                    site: "@thefiive",
                     title: @post.title,
                     description: @post.title,
                     image: @post.image

@@ -1,7 +1,12 @@
 class BridgesController < ApplicationController
 
-  # def finder_detail
-  # end
+  def finder_detail
+    @latest_blog = Blogger.last(1)
+    @picks = Pick.all.all.order("created_at DESC").limit(1)
+    @most_hit = Blogger.most_hit(1.day.ago, 5)
+    @coupons = Coupon.all.order("created_at DESC").limit(5)
+    @hotdeals = Hotdeal.all.order("created_at DESC").limit(5)
+  end
 
   def delete_old_post
     @posts = Post.all
