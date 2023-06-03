@@ -2,22 +2,7 @@
   <%= render 'shared/new_main_header' %>
 
   <section class="outline_left">
-
-
-    <% if current_user && current_user.admin %>
-      <ul class="admin_menu">
-        <li><%= link_to 'New Coupon', new_coupon_path %></li>
-        <li><%= link_to 'New Post', new_post_path %></li>
-        <li><%= link_to 'New HotDeal', new_hotdeal_path %></li>
-        <li><%= link_to 'New Pick', new_pick_path %></li>
-        <li><%= link_to 'New Blog', new_blogger_path %></li>
-        <li><a href="/bridges/delete_coupons">Delete Coupons</a></li>
-        </ul><a href="/bridges/delete_hotdeals">Delete Posts</a></li>
-      </ul>
-    <% end %>
-    <br/>
-
-
+    
     <div class="divide_page clearfix">
       <div class="page_title">
         <h2>Reviews</h2>
@@ -88,7 +73,7 @@
             </div>
           </div>
         <% end %>
-
+        <div class="more_btn"><a href="/bridges/reviews">See more</a></div>
       </div>
     </div>
 

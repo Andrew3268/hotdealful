@@ -113,6 +113,10 @@
           
       </div><!-- ctn_box -->
     </div><!-- index_wrap -->
+
+    <div class="back_to_btn">
+      <a href="javascript:history.back()" class="back_to"><img src="<%= asset_path 'back_btn.png' %>"></a>
+    </div>
   </section><!-- .outline_left -->
 
 
@@ -257,11 +261,11 @@
             </div>
           </div>
         <% end %>
-
+        <div class="more_btn"><a href="/bridges/reviews">See more</a></div>
       </div>
     </div>
 
-    <!-- <div class="banner featured_deals">
+    <div class="banner featured_deals">
       <h3 class="subject">Featured Deals</h3>
       <% @picks.each do |pick| %>
         <a href="/posts/hashtag/<%= pick.p_link %>">
@@ -274,7 +278,7 @@
           <h4><%= pick.p_title %></h4>
         </div>
       <% end %>
-    </div>  -->
+    </div> 
   </section><!-- .outline_right -->
 
 

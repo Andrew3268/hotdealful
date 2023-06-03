@@ -53,6 +53,12 @@ class HotdealsController < ApplicationController
   def hashtags
     tag = Tag.find_by(name: params[:name])
     @hotdeals = tag.hotdeals.order("created_at DESC")
+    @coupons_top = Coupon.most_hit(1.day.ago, 5)
+    @deals_top = Post.most_hit(1.day.ago, 5)
+    @our_pick = Coupon.all.order("created_at DESC")
+    @picks = Pick.all.all.order("created_at DESC").limit(1)
+    @most_hit = Blogger.most_hit(1.day.ago, 5)
+    @hotdeal_top = Hotdeal.most_hit(1.day.ago, 5)
   end
 
   # GET /hotdeals/new

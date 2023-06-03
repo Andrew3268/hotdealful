@@ -302,7 +302,7 @@
 .outline_right .featured_deals{margin-top:30px;background-color:#fff;}
 
 
-.outline_right .popular_blogs{border:1px solid;border-radius:20px;background-color:#fff;}
+.outline_right .popular_blogs{border:1px solid;border-radius:20px;background-color:#fff;padding-bottom:45px;}
 .outline_right .popular_blogs h3.subject{height:50px;background-color:#000;color:#fff;padding:10px 20px;font-size:22px;line-height:1.3;border-top-left-radius:20px;border-top-right-radius:20px;}
 .outline_right .popular_blogs .popular_blogs_wrap{padding:20px 10px 0 10px;background-color:#fff;border-bottom-right-radius:20px;border-bottom-left-radius:20px;}
 .outline_right .popular_blogs .popular_blogs_wrap .pb_card{margin-bottom:20px;border-bottom:1px solid #ccc;padding-bottom:20px;}
@@ -342,7 +342,7 @@
 .outline_right .banner .tab-bar-content .tab_card .inner .pricing span.is_price {color:#000;font-size:17px;}
 .outline_right .banner .tab-bar-content .tab_card .inner .pricing span.was_price{color:#ccc;font-size:13px;text-decoration:line-through;margin-left:5px;}
 .outline_right .banner .tab-bar-content .more_btn{margin-top:20px;width:100%;padding:0 15px;}
-.outline_right .banner .tab-bar-content .more_btn a{font-size:15px;color:#fff;background-color:#000;border-radius:15px;padding:7px 10px;width:40%;display:block;text-align:center;float:right}
+.outline_right .more_btn a{font-size:15px;color:#fff;background-color:#000;border-radius:15px;padding:7px 10px;width:40%;display:block;text-align:center;float:right}
 
 
 @media screen and (max-width:640px){
