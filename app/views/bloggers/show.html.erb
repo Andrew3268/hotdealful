@@ -34,6 +34,9 @@
               </div>
 
               <div class="blog_ctn"><%= @blogger.bl_content_01 %></div>
+              <%= render 'bloggers/p01_featured' %>
+              
+
 
               <div class="btn clearfix"><a target="_blank" href="<%= @blogger.bl_link_01 %>">Buy Now</a></div>
             </section>
@@ -55,6 +58,8 @@
               </div>
 
               <div class="blog_ctn"><%= @blogger.bl_content_02 %></div>
+              <%= render 'bloggers/p02_featured' %>
+
               <div class="btn clearfix"><a target="_blank" href="<%= @blogger.bl_link_02 %>">Buy Now</a></div>
             </section>
 
@@ -76,6 +81,7 @@
               </div>
 
               <div class="blog_ctn"><%= @blogger.bl_content_03 %></div>
+              <%= render 'bloggers/p03_featured' %>
 
               <div class="btn clearfix"><a target="_blank" href="<%= @blogger.bl_link_03 %>">Buy Now</a></div>
             </section>
@@ -99,6 +105,7 @@
               </div>
 
               <div class="blog_ctn"><%= @blogger.bl_content_04 %></div>
+              <%= render 'bloggers/p04_featured' %>
 
               <div class="btn clearfix"><a target="_blank" href="<%= @blogger.bl_link_04 %>">Buy Now</a></div>
             </section>
@@ -121,6 +128,7 @@
               </div>
 
               <div class="blog_ctn"><%= @blogger.bl_content_05 %></div>
+              <%= render 'bloggers/p05_featured' %>
 
               <div class="btn clearfix"><a target="_blank" href="<%= @blogger.bl_link_05 %>">Buy Now</a></div>
             </section>  
@@ -132,10 +140,12 @@
               </ul>
             </section>
 
-            <section class="blog_admin">
-              <%= link_to 'Edit', edit_blogger_path(@blogger) %> |
-              <%= link_to 'Back', bloggers_path %>
-            </section>
+            <% if current_user && current_user.admin %>
+              <section class="blog_admin">
+                <%= link_to 'Edit', edit_blogger_path(@blogger) %> |
+                <%= link_to 'Back', bloggers_path %>
+              </section>
+            <% end %>
 
           </div><!-- blog_wrap -->
 
