@@ -268,7 +268,7 @@
 .outline_left .except_first_blogs .efb_card .inner h3{margin:5px 0;}
 .outline_left .except_first_blogs .efb_card .inner p{font-size:17px;}
 .outline_left .except_first_blogs .efb_card .inner .admin_panner{margin-top:10px;}
-.outline_left .back_to_btn{}
+.outline_left .back_to_btn{display:none;}
 .outline_left .back_to_btn a{}
 .outline_left .back_to_btn a img{position:fixed;bottom:10px;left:10px;opacity:0.4;z-index:10;width:50px;}
 .outline_left .for_show_page a img{bottom:65px;}
@@ -365,6 +365,7 @@
   .outline_left .show-wrap .new_title_wrap h2{font-size:18px;}
   .outline_left .code_modal.is-show{width:90%;}
   .outline_left .post_tabs{background-color:#f6f6f6;padding:30px 10px;}
+  .outline_left .back_to_btn{display:block;}
 
 
   .outline_right{width:100%;padding:0 5%;margin-bottom:100px;}
