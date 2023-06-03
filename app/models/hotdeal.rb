@@ -3,6 +3,9 @@ class Hotdeal < ApplicationRecord
   belongs_to :user
   has_and_belongs_to_many :tags
 
+  extend FriendlyId
+  friendly_id :deal_title, use: :slugged
+
   #for hashtag
   after_create do
     hotdeal = Hotdeal.find_by(id: self.id)

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_20_060300) do
+ActiveRecord::Schema.define(version: 2023_06_03_053336) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -111,6 +111,8 @@ ActiveRecord::Schema.define(version: 2023_05_20_060300) do
     t.integer "bl_rating_code_03"
     t.integer "bl_rating_code_04"
     t.integer "bl_rating_code_05"
+    t.string "slug"
+    t.index ["slug"], name: "index_bloggers_on_slug", unique: true
   end
 
   create_table "bloggers_tags", id: false, force: :cascade do |t|
@@ -424,6 +426,8 @@ ActiveRecord::Schema.define(version: 2023_05_20_060300) do
     t.date "deal_spare_73"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "slug"
+    t.index ["slug"], name: "index_hotdeals_on_slug", unique: true
   end
 
   create_table "hotdeals_tags", id: false, force: :cascade do |t|

@@ -3,6 +3,9 @@ class Blogger < ApplicationRecord
 
   has_and_belongs_to_many :tags
   belongs_to :user
+
+  extend FriendlyId
+  friendly_id :bl_title, use: :slugged
   
   has_rich_text :bl_content_01
   has_rich_text :bl_content_02
