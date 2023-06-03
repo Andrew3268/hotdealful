@@ -1,320 +1,322 @@
-<div class="by_featured_section">
-  <h4>By Featured</h4>
+<% if @blogger.bl_feat_num_15.present? %>
+  <div class="by_featured_section">
+    <h4>By Featured</h4>
 
-  <!-- #1 --->
-  <% if @blogger.bl_feat_num_15.present? && @blogger.bl_feat_num_15 >= 4.5 && @blogger.bl_feat_num_15 <= 4.9 %>
-    <div class="bfs_box clearfix">                
-      <p><%= @blogger.bl_feat_name_15 %></p>
-      <div class="rating_box">
-        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i> <span><%= @blogger.bl_feat_num_15 %></span>
+    <!-- #1 --->
+    <% if @blogger.bl_feat_num_15.present? && @blogger.bl_feat_num_15 >= 4.5 && @blogger.bl_feat_num_15 <= 4.9 %>
+      <div class="bfs_box clearfix">                
+        <p><%= @blogger.bl_feat_name_15 %></p>
+        <div class="rating_box">
+          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i> <span><%= @blogger.bl_feat_num_15 %></span>
+        </div>
       </div>
-    </div>
-  <% elsif @blogger.bl_feat_num_15.present? && @blogger.bl_feat_num_15 >= 4.1 && @blogger.bl_feat_num_15 <= 4.4 %>
-    <div class="bfs_box clearfix">                
-      <p><%= @blogger.bl_feat_name_15 %></p>
-      <div class="rating_box">
-        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_15 %></span>
+    <% elsif @blogger.bl_feat_num_15.present? && @blogger.bl_feat_num_15 >= 4.1 && @blogger.bl_feat_num_15 <= 4.4 %>
+      <div class="bfs_box clearfix">                
+        <p><%= @blogger.bl_feat_name_15 %></p>
+        <div class="rating_box">
+          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_15 %></span>
+        </div>
       </div>
-    </div>
-  <% elsif @blogger.bl_feat_num_15.present? && @blogger.bl_feat_num_15 >= 3.5 && @blogger.bl_feat_num_15 <= 4.0 %>
-    <div class="bfs_box clearfix">                
-      <p><%= @blogger.bl_feat_name_15 %></p>
-      <div class="rating_box">
-        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_15 %></span>
+    <% elsif @blogger.bl_feat_num_15.present? && @blogger.bl_feat_num_15 >= 3.5 && @blogger.bl_feat_num_15 <= 4.0 %>
+      <div class="bfs_box clearfix">                
+        <p><%= @blogger.bl_feat_name_15 %></p>
+        <div class="rating_box">
+          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_15 %></span>
+        </div>
       </div>
-    </div>
-  <% elsif @blogger.bl_feat_num_15.present? && @blogger.bl_feat_num_15 >= 3.1 && @blogger.bl_feat_num_15 <= 3.4 %>
-    <div class="bfs_box clearfix">                
-      <p><%= @blogger.bl_feat_name_15 %></p>
-      <div class="rating_box">
-        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_15 %></span>
+    <% elsif @blogger.bl_feat_num_15.present? && @blogger.bl_feat_num_15 >= 3.1 && @blogger.bl_feat_num_15 <= 3.4 %>
+      <div class="bfs_box clearfix">                
+        <p><%= @blogger.bl_feat_name_15 %></p>
+        <div class="rating_box">
+          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_15 %></span>
+        </div>
       </div>
-    </div>
-  <% elsif @blogger.bl_feat_num_15.present? && @blogger.bl_feat_num_15 >= 2.5 && @blogger.bl_feat_num_15 <= 3.0 %>
-    <div class="bfs_box clearfix">                
-      <p><%= @blogger.bl_feat_name_15 %></p>
-      <div class="rating_box">
-        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_15 %></span>
+    <% elsif @blogger.bl_feat_num_15.present? && @blogger.bl_feat_num_15 >= 2.5 && @blogger.bl_feat_num_15 <= 3.0 %>
+      <div class="bfs_box clearfix">                
+        <p><%= @blogger.bl_feat_name_15 %></p>
+        <div class="rating_box">
+          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_15 %></span>
+        </div>
       </div>
-    </div>
-  <% elsif @blogger.bl_feat_num_15.present? && @blogger.bl_feat_num_15 >= 2.1 && @blogger.bl_feat_num_15 <= 2.4 %>
-    <div class="bfs_box clearfix">                
-      <p><%= @blogger.bl_feat_name_15 %></p>
-      <div class="rating_box">
-        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_15 %></span>
+    <% elsif @blogger.bl_feat_num_15.present? && @blogger.bl_feat_num_15 >= 2.1 && @blogger.bl_feat_num_15 <= 2.4 %>
+      <div class="bfs_box clearfix">                
+        <p><%= @blogger.bl_feat_name_15 %></p>
+        <div class="rating_box">
+          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_15 %></span>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
 
 
-  <!-- #2 --->
-  <% if @blogger.bl_feat_num_16.present? && @blogger.bl_feat_num_16 >= 4.5 && @blogger.bl_feat_num_16 <= 4.9 %>
-    <div class="bfs_box clearfix">                
-      <p><%= @blogger.bl_feat_name_16 %></p>
-      <div class="rating_box">
-        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i> <span><%= @blogger.bl_feat_num_16 %></span>
+    <!-- #2 --->
+    <% if @blogger.bl_feat_num_16.present? && @blogger.bl_feat_num_16 >= 4.5 && @blogger.bl_feat_num_16 <= 4.9 %>
+      <div class="bfs_box clearfix">                
+        <p><%= @blogger.bl_feat_name_16 %></p>
+        <div class="rating_box">
+          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i> <span><%= @blogger.bl_feat_num_16 %></span>
+        </div>
       </div>
-    </div>
-  <% elsif @blogger.bl_feat_num_16.present? && @blogger.bl_feat_num_16 >= 4.1 && @blogger.bl_feat_num_16 <= 4.4 %>
-    <div class="bfs_box clearfix">                
-      <p><%= @blogger.bl_feat_name_16 %></p>
-      <div class="rating_box">
-        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_16 %></span>
+    <% elsif @blogger.bl_feat_num_16.present? && @blogger.bl_feat_num_16 >= 4.1 && @blogger.bl_feat_num_16 <= 4.4 %>
+      <div class="bfs_box clearfix">                
+        <p><%= @blogger.bl_feat_name_16 %></p>
+        <div class="rating_box">
+          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_16 %></span>
+        </div>
       </div>
-    </div>
-  <% elsif @blogger.bl_feat_num_16.present? && @blogger.bl_feat_num_16 >= 3.5 && @blogger.bl_feat_num_16 <= 4.0 %>
-    <div class="bfs_box clearfix">                
-      <p><%= @blogger.bl_feat_name_16 %></p>
-      <div class="rating_box">
-        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_16 %></span>
+    <% elsif @blogger.bl_feat_num_16.present? && @blogger.bl_feat_num_16 >= 3.5 && @blogger.bl_feat_num_16 <= 4.0 %>
+      <div class="bfs_box clearfix">                
+        <p><%= @blogger.bl_feat_name_16 %></p>
+        <div class="rating_box">
+          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_16 %></span>
+        </div>
       </div>
-    </div>
-  <% elsif @blogger.bl_feat_num_16.present? && @blogger.bl_feat_num_16 >= 3.1 && @blogger.bl_feat_num_16 <= 3.4 %>
-    <div class="bfs_box clearfix">                
-      <p><%= @blogger.bl_feat_name_16 %></p>
-      <div class="rating_box">
-        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_16 %></span>
+    <% elsif @blogger.bl_feat_num_16.present? && @blogger.bl_feat_num_16 >= 3.1 && @blogger.bl_feat_num_16 <= 3.4 %>
+      <div class="bfs_box clearfix">                
+        <p><%= @blogger.bl_feat_name_16 %></p>
+        <div class="rating_box">
+          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_16 %></span>
+        </div>
       </div>
-    </div>
-  <% elsif @blogger.bl_feat_num_16.present? && @blogger.bl_feat_num_16 >= 2.5 && @blogger.bl_feat_num_16 <= 3.0 %>
-    <div class="bfs_box clearfix">                
-      <p><%= @blogger.bl_feat_name_16 %></p>
-      <div class="rating_box">
-        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_16 %></span>
+    <% elsif @blogger.bl_feat_num_16.present? && @blogger.bl_feat_num_16 >= 2.5 && @blogger.bl_feat_num_16 <= 3.0 %>
+      <div class="bfs_box clearfix">                
+        <p><%= @blogger.bl_feat_name_16 %></p>
+        <div class="rating_box">
+          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_16 %></span>
+        </div>
       </div>
-    </div>
-  <% elsif @blogger.bl_feat_num_16.present? && @blogger.bl_feat_num_16 >= 2.1 && @blogger.bl_feat_num_16 <= 2.4 %>
-    <div class="bfs_box clearfix">                
-      <p><%= @blogger.bl_feat_name_16 %></p>
-      <div class="rating_box">
-        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_16 %></span>
+    <% elsif @blogger.bl_feat_num_16.present? && @blogger.bl_feat_num_16 >= 2.1 && @blogger.bl_feat_num_16 <= 2.4 %>
+      <div class="bfs_box clearfix">                
+        <p><%= @blogger.bl_feat_name_16 %></p>
+        <div class="rating_box">
+          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_16 %></span>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
 
-  <!-- #3 -->
-  <% if @blogger.bl_feat_num_17.present? && @blogger.bl_feat_num_17 >= 4.5 && @blogger.bl_feat_num_17 <= 4.9 %>
-    <div class="bfs_box clearfix">                
-      <p><%= @blogger.bl_feat_name_17 %></p>
-      <div class="rating_box">
-        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i> <span><%= @blogger.bl_feat_num_17 %></span>
+    <!-- #3 -->
+    <% if @blogger.bl_feat_num_17.present? && @blogger.bl_feat_num_17 >= 4.5 && @blogger.bl_feat_num_17 <= 4.9 %>
+      <div class="bfs_box clearfix">                
+        <p><%= @blogger.bl_feat_name_17 %></p>
+        <div class="rating_box">
+          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i> <span><%= @blogger.bl_feat_num_17 %></span>
+        </div>
       </div>
-    </div>
-  <% elsif @blogger.bl_feat_num_17.present? && @blogger.bl_feat_num_17 >= 4.1 && @blogger.bl_feat_num_17 <= 4.4 %>
-    <div class="bfs_box clearfix">                
-      <p><%= @blogger.bl_feat_name_17 %></p>
-      <div class="rating_box">
-        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_17 %></span>
+    <% elsif @blogger.bl_feat_num_17.present? && @blogger.bl_feat_num_17 >= 4.1 && @blogger.bl_feat_num_17 <= 4.4 %>
+      <div class="bfs_box clearfix">                
+        <p><%= @blogger.bl_feat_name_17 %></p>
+        <div class="rating_box">
+          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_17 %></span>
+        </div>
       </div>
-    </div>
-  <% elsif @blogger.bl_feat_num_17.present? && @blogger.bl_feat_num_17 >= 3.5 && @blogger.bl_feat_num_17 <= 4.0 %>
-    <div class="bfs_box clearfix">                
-      <p><%= @blogger.bl_feat_name_17 %></p>
-      <div class="rating_box">
-        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_17 %></span>
+    <% elsif @blogger.bl_feat_num_17.present? && @blogger.bl_feat_num_17 >= 3.5 && @blogger.bl_feat_num_17 <= 4.0 %>
+      <div class="bfs_box clearfix">                
+        <p><%= @blogger.bl_feat_name_17 %></p>
+        <div class="rating_box">
+          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_17 %></span>
+        </div>
       </div>
-    </div>
-  <% elsif @blogger.bl_feat_num_17.present? && @blogger.bl_feat_num_17 >= 3.1 && @blogger.bl_feat_num_17 <= 3.4 %>
-    <div class="bfs_box clearfix">                
-      <p><%= @blogger.bl_feat_name_17 %></p>
-      <div class="rating_box">
-        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_17 %></span>
+    <% elsif @blogger.bl_feat_num_17.present? && @blogger.bl_feat_num_17 >= 3.1 && @blogger.bl_feat_num_17 <= 3.4 %>
+      <div class="bfs_box clearfix">                
+        <p><%= @blogger.bl_feat_name_17 %></p>
+        <div class="rating_box">
+          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_17 %></span>
+        </div>
       </div>
-    </div>
-  <% elsif @blogger.bl_feat_num_17.present? && @blogger.bl_feat_num_17 >= 2.5 && @blogger.bl_feat_num_17 <= 3.0 %>
-    <div class="bfs_box clearfix">                
-      <p><%= @blogger.bl_feat_name_17 %></p>
-      <div class="rating_box">
-        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_17 %></span>
+    <% elsif @blogger.bl_feat_num_17.present? && @blogger.bl_feat_num_17 >= 2.5 && @blogger.bl_feat_num_17 <= 3.0 %>
+      <div class="bfs_box clearfix">                
+        <p><%= @blogger.bl_feat_name_17 %></p>
+        <div class="rating_box">
+          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_17 %></span>
+        </div>
       </div>
-    </div>
-  <% elsif @blogger.bl_feat_num_17.present? && @blogger.bl_feat_num_17 >= 2.1 && @blogger.bl_feat_num_17 <= 2.4 %>
-    <div class="bfs_box clearfix">                
-      <p><%= @blogger.bl_feat_name_17 %></p>
-      <div class="rating_box">
-        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_17 %></span>
+    <% elsif @blogger.bl_feat_num_17.present? && @blogger.bl_feat_num_17 >= 2.1 && @blogger.bl_feat_num_17 <= 2.4 %>
+      <div class="bfs_box clearfix">                
+        <p><%= @blogger.bl_feat_name_17 %></p>
+        <div class="rating_box">
+          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_17 %></span>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
 
-  <!-- #4 -->
-  <% if @blogger.bl_feat_num_18.present? && @blogger.bl_feat_num_18 >= 4.5 && @blogger.bl_feat_num_18 <= 4.9 %>
-    <div class="bfs_box clearfix">                
-      <p><%= @blogger.bl_feat_name_18 %></p>
-      <div class="rating_box">
-        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i> <span><%= @blogger.bl_feat_num_18 %></span>
+    <!-- #4 -->
+    <% if @blogger.bl_feat_num_18.present? && @blogger.bl_feat_num_18 >= 4.5 && @blogger.bl_feat_num_18 <= 4.9 %>
+      <div class="bfs_box clearfix">                
+        <p><%= @blogger.bl_feat_name_18 %></p>
+        <div class="rating_box">
+          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i> <span><%= @blogger.bl_feat_num_18 %></span>
+        </div>
       </div>
-    </div>
-  <% elsif @blogger.bl_feat_num_18.present? && @blogger.bl_feat_num_18 >= 4.1 && @blogger.bl_feat_num_18 <= 4.4 %>
-    <div class="bfs_box clearfix">                
-      <p><%= @blogger.bl_feat_name_18 %></p>
-      <div class="rating_box">
-        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_18 %></span>
+    <% elsif @blogger.bl_feat_num_18.present? && @blogger.bl_feat_num_18 >= 4.1 && @blogger.bl_feat_num_18 <= 4.4 %>
+      <div class="bfs_box clearfix">                
+        <p><%= @blogger.bl_feat_name_18 %></p>
+        <div class="rating_box">
+          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_18 %></span>
+        </div>
       </div>
-    </div>
-  <% elsif @blogger.bl_feat_num_18.present? && @blogger.bl_feat_num_18 >= 3.5 && @blogger.bl_feat_num_18 <= 4.0 %>
-    <div class="bfs_box clearfix">                
-      <p><%= @blogger.bl_feat_name_18 %></p>
-      <div class="rating_box">
-        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_18 %></span>
+    <% elsif @blogger.bl_feat_num_18.present? && @blogger.bl_feat_num_18 >= 3.5 && @blogger.bl_feat_num_18 <= 4.0 %>
+      <div class="bfs_box clearfix">                
+        <p><%= @blogger.bl_feat_name_18 %></p>
+        <div class="rating_box">
+          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_18 %></span>
+        </div>
       </div>
-    </div>
-  <% elsif @blogger.bl_feat_num_18.present? && @blogger.bl_feat_num_18 >= 3.1 && @blogger.bl_feat_num_18 <= 3.4 %>
-    <div class="bfs_box clearfix">                
-      <p><%= @blogger.bl_feat_name_18 %></p>
-      <div class="rating_box">
-        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_18 %></span>
+    <% elsif @blogger.bl_feat_num_18.present? && @blogger.bl_feat_num_18 >= 3.1 && @blogger.bl_feat_num_18 <= 3.4 %>
+      <div class="bfs_box clearfix">                
+        <p><%= @blogger.bl_feat_name_18 %></p>
+        <div class="rating_box">
+          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_18 %></span>
+        </div>
       </div>
-    </div>
-  <% elsif @blogger.bl_feat_num_18.present? && @blogger.bl_feat_num_18 >= 2.5 && @blogger.bl_feat_num_18 <= 3.0 %>
-    <div class="bfs_box clearfix">                
-      <p><%= @blogger.bl_feat_name_18 %></p>
-      <div class="rating_box">
-        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_18 %></span>
+    <% elsif @blogger.bl_feat_num_18.present? && @blogger.bl_feat_num_18 >= 2.5 && @blogger.bl_feat_num_18 <= 3.0 %>
+      <div class="bfs_box clearfix">                
+        <p><%= @blogger.bl_feat_name_18 %></p>
+        <div class="rating_box">
+          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_18 %></span>
+        </div>
       </div>
-    </div>
-  <% elsif @blogger.bl_feat_num_18.present? && @blogger.bl_feat_num_18 >= 2.1 && @blogger.bl_feat_num_18 <= 2.4 %>
-    <div class="bfs_box clearfix">                
-      <p><%= @blogger.bl_feat_name_18 %></p>
-      <div class="rating_box">
-        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_18 %></span>
+    <% elsif @blogger.bl_feat_num_18.present? && @blogger.bl_feat_num_18 >= 2.1 && @blogger.bl_feat_num_18 <= 2.4 %>
+      <div class="bfs_box clearfix">                
+        <p><%= @blogger.bl_feat_name_18 %></p>
+        <div class="rating_box">
+          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_18 %></span>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
 
-  <!-- #5 -->
-  <% if @blogger.bl_feat_num_19.present? && @blogger.bl_feat_num_19 >= 4.5 && @blogger.bl_feat_num_19 <= 4.9 %>
-    <div class="bfs_box clearfix">                
-      <p><%= @blogger.bl_feat_name_19 %></p>
-      <div class="rating_box">
-        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i> <span><%= @blogger.bl_feat_num_19 %></span>
+    <!-- #5 -->
+    <% if @blogger.bl_feat_num_19.present? && @blogger.bl_feat_num_19 >= 4.5 && @blogger.bl_feat_num_19 <= 4.9 %>
+      <div class="bfs_box clearfix">                
+        <p><%= @blogger.bl_feat_name_19 %></p>
+        <div class="rating_box">
+          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i> <span><%= @blogger.bl_feat_num_19 %></span>
+        </div>
       </div>
-    </div>
-  <% elsif @blogger.bl_feat_num_19.present? && @blogger.bl_feat_num_19 >= 4.1 && @blogger.bl_feat_num_19 <= 4.4 %>
-    <div class="bfs_box clearfix">                
-      <p><%= @blogger.bl_feat_name_19 %></p>
-      <div class="rating_box">
-        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_19 %></span>
+    <% elsif @blogger.bl_feat_num_19.present? && @blogger.bl_feat_num_19 >= 4.1 && @blogger.bl_feat_num_19 <= 4.4 %>
+      <div class="bfs_box clearfix">                
+        <p><%= @blogger.bl_feat_name_19 %></p>
+        <div class="rating_box">
+          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_19 %></span>
+        </div>
       </div>
-    </div>
-  <% elsif @blogger.bl_feat_num_19.present? && @blogger.bl_feat_num_19 >= 3.5 && @blogger.bl_feat_num_19 <= 4.0 %>
-    <div class="bfs_box clearfix">                
-      <p><%= @blogger.bl_feat_name_19 %></p>
-      <div class="rating_box">
-        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_19 %></span>
+    <% elsif @blogger.bl_feat_num_19.present? && @blogger.bl_feat_num_19 >= 3.5 && @blogger.bl_feat_num_19 <= 4.0 %>
+      <div class="bfs_box clearfix">                
+        <p><%= @blogger.bl_feat_name_19 %></p>
+        <div class="rating_box">
+          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_19 %></span>
+        </div>
       </div>
-    </div>
-  <% elsif @blogger.bl_feat_num_19.present? && @blogger.bl_feat_num_19 >= 3.1 && @blogger.bl_feat_num_19 <= 3.4 %>
-    <div class="bfs_box clearfix">                
-      <p><%= @blogger.bl_feat_name_19 %></p>
-      <div class="rating_box">
-        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_19 %></span>
+    <% elsif @blogger.bl_feat_num_19.present? && @blogger.bl_feat_num_19 >= 3.1 && @blogger.bl_feat_num_19 <= 3.4 %>
+      <div class="bfs_box clearfix">                
+        <p><%= @blogger.bl_feat_name_19 %></p>
+        <div class="rating_box">
+          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_19 %></span>
+        </div>
       </div>
-    </div>
-  <% elsif @blogger.bl_feat_num_19.present? && @blogger.bl_feat_num_19 >= 2.5 && @blogger.bl_feat_num_19 <= 3.0 %>
-    <div class="bfs_box clearfix">                
-      <p><%= @blogger.bl_feat_name_19 %></p>
-      <div class="rating_box">
-        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_19 %></span>
+    <% elsif @blogger.bl_feat_num_19.present? && @blogger.bl_feat_num_19 >= 2.5 && @blogger.bl_feat_num_19 <= 3.0 %>
+      <div class="bfs_box clearfix">                
+        <p><%= @blogger.bl_feat_name_19 %></p>
+        <div class="rating_box">
+          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_19 %></span>
+        </div>
       </div>
-    </div>
-  <% elsif @blogger.bl_feat_num_19.present? && @blogger.bl_feat_num_19 >= 2.1 && @blogger.bl_feat_num_19 <= 2.4 %>
-    <div class="bfs_box clearfix">                
-      <p><%= @blogger.bl_feat_name_19 %></p>
-      <div class="rating_box">
-        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_19 %></span>
+    <% elsif @blogger.bl_feat_num_19.present? && @blogger.bl_feat_num_19 >= 2.1 && @blogger.bl_feat_num_19 <= 2.4 %>
+      <div class="bfs_box clearfix">                
+        <p><%= @blogger.bl_feat_name_19 %></p>
+        <div class="rating_box">
+          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_19 %></span>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
 
-  <!-- #6 -->
-  <% if @blogger.bl_feat_num_20.present? && @blogger.bl_feat_num_20 >= 4.5 && @blogger.bl_feat_num_20 <= 4.9 %>
-    <div class="bfs_box clearfix">                
-      <p><%= @blogger.bl_feat_name_20 %></p>
-      <div class="rating_box">
-        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i> <span><%= @blogger.bl_feat_num_20 %></span>
+    <!-- #6 -->
+    <% if @blogger.bl_feat_num_20.present? && @blogger.bl_feat_num_20 >= 4.5 && @blogger.bl_feat_num_20 <= 4.9 %>
+      <div class="bfs_box clearfix">                
+        <p><%= @blogger.bl_feat_name_20 %></p>
+        <div class="rating_box">
+          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i> <span><%= @blogger.bl_feat_num_20 %></span>
+        </div>
       </div>
-    </div>
-  <% elsif @blogger.bl_feat_num_20.present? && @blogger.bl_feat_num_20 >= 4.1 && @blogger.bl_feat_num_20 <= 4.4 %>
-    <div class="bfs_box clearfix">                
-      <p><%= @blogger.bl_feat_name_20 %></p>
-      <div class="rating_box">
-        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_20 %></span>
+    <% elsif @blogger.bl_feat_num_20.present? && @blogger.bl_feat_num_20 >= 4.1 && @blogger.bl_feat_num_20 <= 4.4 %>
+      <div class="bfs_box clearfix">                
+        <p><%= @blogger.bl_feat_name_20 %></p>
+        <div class="rating_box">
+          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_20 %></span>
+        </div>
       </div>
-    </div>
-  <% elsif @blogger.bl_feat_num_20.present? && @blogger.bl_feat_num_20 >= 3.5 && @blogger.bl_feat_num_20 <= 4.0 %>
-    <div class="bfs_box clearfix">                
-      <p><%= @blogger.bl_feat_name_20 %></p>
-      <div class="rating_box">
-        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_20 %></span>
+    <% elsif @blogger.bl_feat_num_20.present? && @blogger.bl_feat_num_20 >= 3.5 && @blogger.bl_feat_num_20 <= 4.0 %>
+      <div class="bfs_box clearfix">                
+        <p><%= @blogger.bl_feat_name_20 %></p>
+        <div class="rating_box">
+          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_20 %></span>
+        </div>
       </div>
-    </div>
-  <% elsif @blogger.bl_feat_num_20.present? && @blogger.bl_feat_num_20 >= 3.1 && @blogger.bl_feat_num_20 <= 3.4 %>
-    <div class="bfs_box clearfix">                
-      <p><%= @blogger.bl_feat_name_20 %></p>
-      <div class="rating_box">
-        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_20 %></span>
+    <% elsif @blogger.bl_feat_num_20.present? && @blogger.bl_feat_num_20 >= 3.1 && @blogger.bl_feat_num_20 <= 3.4 %>
+      <div class="bfs_box clearfix">                
+        <p><%= @blogger.bl_feat_name_20 %></p>
+        <div class="rating_box">
+          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_20 %></span>
+        </div>
       </div>
-    </div>
-  <% elsif @blogger.bl_feat_num_20.present? && @blogger.bl_feat_num_20 >= 2.5 && @blogger.bl_feat_num_20 <= 3.0 %>
-    <div class="bfs_box clearfix">                
-      <p><%= @blogger.bl_feat_name_20 %></p>
-      <div class="rating_box">
-        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_20 %></span>
+    <% elsif @blogger.bl_feat_num_20.present? && @blogger.bl_feat_num_20 >= 2.5 && @blogger.bl_feat_num_20 <= 3.0 %>
+      <div class="bfs_box clearfix">                
+        <p><%= @blogger.bl_feat_name_20 %></p>
+        <div class="rating_box">
+          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_20 %></span>
+        </div>
       </div>
-    </div>
-  <% elsif @blogger.bl_feat_num_20.present? && @blogger.bl_feat_num_20 >= 2.1 && @blogger.bl_feat_num_20 <= 2.4 %>
-    <div class="bfs_box clearfix">                
-      <p><%= @blogger.bl_feat_name_20 %></p>
-      <div class="rating_box">
-        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_20 %></span>
+    <% elsif @blogger.bl_feat_num_20.present? && @blogger.bl_feat_num_20 >= 2.1 && @blogger.bl_feat_num_20 <= 2.4 %>
+      <div class="bfs_box clearfix">                
+        <p><%= @blogger.bl_feat_name_20 %></p>
+        <div class="rating_box">
+          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_20 %></span>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
 
-  <!-- #7 -->
-  <% if @blogger.bl_feat_num_21.present? && @blogger.bl_feat_num_21 >= 4.5 && @blogger.bl_feat_num_21 <= 4.9 %>
-    <div class="bfs_box clearfix">                
-      <p><%= @blogger.bl_feat_name_21 %></p>
-      <div class="rating_box">
-        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i> <span><%= @blogger.bl_feat_num_21 %></span>
+    <!-- #7 -->
+    <% if @blogger.bl_feat_num_21.present? && @blogger.bl_feat_num_21 >= 4.5 && @blogger.bl_feat_num_21 <= 4.9 %>
+      <div class="bfs_box clearfix">                
+        <p><%= @blogger.bl_feat_name_21 %></p>
+        <div class="rating_box">
+          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i> <span><%= @blogger.bl_feat_num_21 %></span>
+        </div>
       </div>
-    </div>
-  <% elsif @blogger.bl_feat_num_21.present? && @blogger.bl_feat_num_21 >= 4.1 && @blogger.bl_feat_num_21 <= 4.4 %>
-    <div class="bfs_box clearfix">                
-      <p><%= @blogger.bl_feat_name_21 %></p>
-      <div class="rating_box">
-        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_21 %></span>
+    <% elsif @blogger.bl_feat_num_21.present? && @blogger.bl_feat_num_21 >= 4.1 && @blogger.bl_feat_num_21 <= 4.4 %>
+      <div class="bfs_box clearfix">                
+        <p><%= @blogger.bl_feat_name_21 %></p>
+        <div class="rating_box">
+          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_21 %></span>
+        </div>
       </div>
-    </div>
-  <% elsif @blogger.bl_feat_num_21.present? && @blogger.bl_feat_num_21 >= 3.5 && @blogger.bl_feat_num_21 <= 4.0 %>
-    <div class="bfs_box clearfix">                
-      <p><%= @blogger.bl_feat_name_21 %></p>
-      <div class="rating_box">
-        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_21 %></span>
+    <% elsif @blogger.bl_feat_num_21.present? && @blogger.bl_feat_num_21 >= 3.5 && @blogger.bl_feat_num_21 <= 4.0 %>
+      <div class="bfs_box clearfix">                
+        <p><%= @blogger.bl_feat_name_21 %></p>
+        <div class="rating_box">
+          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_21 %></span>
+        </div>
       </div>
-    </div>
-  <% elsif @blogger.bl_feat_num_21.present? && @blogger.bl_feat_num_21 >= 3.1 && @blogger.bl_feat_num_21 <= 3.4 %>
-    <div class="bfs_box clearfix">                
-      <p><%= @blogger.bl_feat_name_21 %></p>
-      <div class="rating_box">
-        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_21 %></span>
+    <% elsif @blogger.bl_feat_num_21.present? && @blogger.bl_feat_num_21 >= 3.1 && @blogger.bl_feat_num_21 <= 3.4 %>
+      <div class="bfs_box clearfix">                
+        <p><%= @blogger.bl_feat_name_21 %></p>
+        <div class="rating_box">
+          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_21 %></span>
+        </div>
       </div>
-    </div>
-  <% elsif @blogger.bl_feat_num_21.present? && @blogger.bl_feat_num_21 >= 2.5 && @blogger.bl_feat_num_21 <= 3.0 %>
-    <div class="bfs_box clearfix">                
-      <p><%= @blogger.bl_feat_name_21 %></p>
-      <div class="rating_box">
-        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_21 %></span>
+    <% elsif @blogger.bl_feat_num_21.present? && @blogger.bl_feat_num_21 >= 2.5 && @blogger.bl_feat_num_21 <= 3.0 %>
+      <div class="bfs_box clearfix">                
+        <p><%= @blogger.bl_feat_name_21 %></p>
+        <div class="rating_box">
+          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_21 %></span>
+        </div>
       </div>
-    </div>
-  <% elsif @blogger.bl_feat_num_21.present? && @blogger.bl_feat_num_21 >= 2.1 && @blogger.bl_feat_num_21 <= 2.4 %>
-    <div class="bfs_box clearfix">                
-      <p><%= @blogger.bl_feat_name_21 %></p>
-      <div class="rating_box">
-        <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_21 %></span>
+    <% elsif @blogger.bl_feat_num_21.present? && @blogger.bl_feat_num_21 >= 2.1 && @blogger.bl_feat_num_21 <= 2.4 %>
+      <div class="bfs_box clearfix">                
+        <p><%= @blogger.bl_feat_name_21 %></p>
+        <div class="rating_box">
+          <i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i> <span><%= @blogger.bl_feat_num_21 %></span>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
 
-</div>  
+  </div>  
+<% end %>
