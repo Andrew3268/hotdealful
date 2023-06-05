@@ -100,7 +100,7 @@
                 <!-- <div class="slider"><div class="indicator"></div></div> -->
                 <div class="pt_content">
                 <section>
-                    <h3>Summary</h3>
+                    <h3>Summary <% if current_user && current_user.admin %>//<%= link_to 'New Post', new_post_path %><% end %></h3>
                     <div class="summary_title">
                       <!-- <p class="posted_date">Found on Amazon on <%= @post.created_at.strftime("#{@post.created_at.day.ordinalize} %B %Y") %></p> -->
                       <div class="more_detail clearfix post_more_detail">
