@@ -11,26 +11,25 @@ class PicksController < ApplicationController
 
   # GET /picks/1 or /picks/1.json
   def show
-
-    set_meta_tags title: @pick.p_title,
-                  site: 'THE FiiVE',
-                  revierse: true,
-                  description: @pick.p_spare_01,
-                  keywords: 'amazondeals, hotdeals, promotion code, coupons,',
-                  twitter: {
-                    card: "summary",
-                    site: "@thefiive",
-                    title: @pick.p_title,
-                    description: @pick.p_spare_01,
-                    image: @pick.p_image
-                  },
-                  og: {
-                    title: @pick.p_title,
-                    description: @pick.p_spare_01,
-                    type: 'website',
-                    url: pick_url(@pick),
-                    image: @pick.p_image
-                  }
+    # set_meta_tags title: @pick.p_title,
+    #               site: 'THE FiiVE',
+    #               revierse: true,
+    #               description: @pick.p_spare_01,
+    #               keywords: 'amazondeals, hotdeals, promotion code, coupons,',
+    #               twitter: {
+    #                 card: "summary",
+    #                 site: "@thefiive",
+    #                 title: @pick.p_title,
+    #                 description: @pick.p_spare_01,
+    #                 image: @pick.p_image,
+    #               },
+    #               og: {
+    #                 title: @pick.p_title,
+    #                 description: @pick.p_spare_01,
+    #                 type: 'website',
+    #                 url: pick_url(@pick),
+    #                 image: @pick.p_image,
+    #               }
   end
 
   def hashtags

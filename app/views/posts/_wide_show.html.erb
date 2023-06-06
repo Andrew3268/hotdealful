@@ -46,6 +46,10 @@
                 <p>
                   <% hotdeal_pct = 0 %>
                   <% hotdeal_pct =  (@post.was_price - @post.is_price) / @post.was_price * 100 %>
+                  <% extra_coupon_deal = 0 %>
+                  <% extra_coupon_deal = @post.is_price * (@post.spare_61 / 100) %>
+                  <% extra_coupon_total = 0 %>
+                  <% extra_coupon_total = @post.is_price - extra_coupon_deal %>
                   <% extra_coupon_dallor_total = 0 %>
                   <% extra_coupon_dallor_total =  @post.is_price.to_f - @post.spare_62.to_f %>
 
