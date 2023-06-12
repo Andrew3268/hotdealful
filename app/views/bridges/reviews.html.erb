@@ -27,7 +27,7 @@
 
           <div class="inner">
             <span><%= render_with_bloghashtags(blog.bl_category) %></span>
-            <h1><%= link_to blog.bl_title, blog %></h1>
+            <h2><%= link_to blog.bl_title, blog %></h2>
             <p class="four_sentences"><%= blog.bl_description %></p>
             <% if current_user && current_user.admin %>
               <div class="admin_panner">
@@ -69,7 +69,7 @@
               <%= link_to image_tag(blog.bl_image, alt: blog.bl_title, title: blog.bl_title, :class => 'main_img'), blog %>
             </div>
             <div class="inner">
-              <h3><%= link_to blog.bl_title, blog %></h3>
+              <h4><%= link_to blog.bl_title, blog %></h4>
             </div>
           </div>
         <% end %>

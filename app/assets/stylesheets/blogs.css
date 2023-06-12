@@ -265,7 +265,7 @@
 .outline_left .except_first_blogs .efb_card .img_box img{width:100%;height:100%;object-fit:cover;border-radius:20px;}
 .outline_left .except_first_blogs .efb_card .inner{float:left;width:55%;padding:15px 0;}
 .outline_left .except_first_blogs .efb_card .inner span{}
-.outline_left .except_first_blogs .efb_card .inner h1{margin:5px 0;font-size:18px;line-height:1.2;}
+.outline_left .except_first_blogs .efb_card .inner h2{margin:5px 0;font-size:18px;line-height:1.2;}
 .outline_left .except_first_blogs .efb_card .inner p{font-size:17px;}
 .outline_left .except_first_blogs .efb_card .inner .admin_panner{margin-top:10px;}
 .outline_left .back_to_btn{display:none;}

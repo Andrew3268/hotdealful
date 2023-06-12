@@ -10,7 +10,8 @@
 
             <div class="new_title_wrap">
               
-              <h2><% content_for :title do %><%= @post.title %><% end %></h2>
+              <% content_for :title do %><%= @post.title %><% end %>
+              <h1><%= @post.title %></h1>
               <% if @post.spare_42.present? %>
                  <div class="rating_card">
                     <% if @post.spare_58 == 50 %>
@@ -43,35 +44,35 @@
               <% end %>
               
               <div class="pricing_box">
-                <p>
-                  <% hotdeal_pct = 0 %>
-                  <% hotdeal_pct =  (@post.was_price - @post.is_price) / @post.was_price * 100 %>
-                  <% extra_coupon_deal = 0 %>
-                  <% extra_coupon_deal = @post.is_price * (@post.spare_61.to_f / 100) %>
-                  <% extra_coupon_total = 0 %>
-                  <% extra_coupon_total = @post.is_price - extra_coupon_deal %>
-                  <% extra_coupon_dallor_total = 0 %>
-                  <% extra_coupon_dallor_total =  @post.is_price.to_f - @post.spare_62.to_f %>
+                
+                <% hotdeal_pct = 0 %>
+                <% hotdeal_pct =  (@post.was_price - @post.is_price) / @post.was_price * 100 %>
+                <% extra_coupon_deal = 0 %>
+                <% extra_coupon_deal = @post.is_price * (@post.spare_61.to_f / 100) %>
+                <% extra_coupon_total = 0 %>
+                <% extra_coupon_total = @post.is_price - extra_coupon_deal %>
+                <% extra_coupon_dallor_total = 0 %>
+                <% extra_coupon_dallor_total =  @post.is_price.to_f - @post.spare_62.to_f %>
 
-                    
-                    
-                  <% if @post.spare_61.present? %>
-                    <span class="total_price"><%= number_to_currency(extra_coupon_total) %></span>
+                  
+                  
+                <% if @post.spare_61.present? %>
+                  <span class="total_price"><%= number_to_currency(extra_coupon_total) %></span>
+                  <span class="was_price"><%= number_to_currency(@post.was_price) %></span>
+                  
+                <% elsif %> 
+                  <% if @post.spare_62.present? %>
+                    <span class="total_price"><%= number_to_currency(extra_coupon_dallor_total) %></span>
                     <span class="was_price"><%= number_to_currency(@post.was_price) %></span>
-                    
-                  <% elsif %> 
-                    <% if @post.spare_62.present? %>
-                      <span class="total_price"><%= number_to_currency(extra_coupon_dallor_total) %></span>
-                      <span class="was_price"><%= number_to_currency(@post.was_price) %></span>
-                    <% else %>
-                      <span class="total_price"><%= number_to_currency(@post.is_price) %></span>
-                      <span class="was_price"><%= number_to_currency(@post.was_price) %></span>
-                    <% end %>
                   <% else %>
                     <span class="total_price"><%= number_to_currency(@post.is_price) %></span>
                     <span class="was_price"><%= number_to_currency(@post.was_price) %></span>
                   <% end %>
-                </p>
+                <% else %>
+                  <span class="total_price"><%= number_to_currency(@post.is_price) %></span>
+                  <span class="was_price"><%= number_to_currency(@post.was_price) %></span>
+                <% end %>
+                
               </div><!-- .pricing_box -->
             </div><!-- .new_title_wrap -->
             

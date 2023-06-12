@@ -18,10 +18,11 @@
           <!-- For PC -->
           <div class="new_title_wrap hotdeal_show_wrap">
             
-            <h2><% content_for :title do %><%= @hotdeal.deal_title %><% end %></h2>
+            <h1><% content_for :title do %><%= @hotdeal.deal_title %><% end %></h1>
+            <h1><%= @hotdeal.deal_title %></h1>
             
             <div class="pricing_box">
-              <p>
+              
                 <% total_save = 0 %>
                 <% pct_coupon = 0 %>
                 <% pct_coupon = (@hotdeal.deal_pct_coupon.to_f / 100) * @hotdeal.deal_is_price %>
@@ -41,8 +42,7 @@
                   <span class="is_price"><%= number_to_currency(@hotdeal.deal_is_price) %></span>
                   <span class="was_price"><%= number_to_currency(@hotdeal.deal_was_price) %></span>
                 <% end %>
-              </p>
-
+              
             </div>
           </div>
 
@@ -358,7 +358,7 @@
               <%= link_to image_tag(blog.bl_image, alt: blog.bl_title, title: blog.bl_title, :class => 'main_img'), blog %>
             </div>
             <div class="inner">
-              <h3><%= link_to blog.bl_title, blog %></h3>
+              <h4><%= link_to blog.bl_title, blog %></h4>
             </div>
           </div>
         <% end %>

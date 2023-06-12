@@ -101,7 +101,7 @@
 
 
 .show-wrap .new_title_wrap{padding:10px;}
-.show-wrap .new_title_wrap h2{font-size:20px;font-weight:100;}
+.show-wrap .new_title_wrap h1{font-size:20px;font-weight:100;}
 .show-wrap .new_title_wrap .pricing_box{display:none;}
 .show-wrap .new_title_wrap .pricing_box .was_price{color:#9da3ab;font-size:18px;text-decoration:line-through;font-weight:100;}
 .show-wrap .new_title_wrap .pricing_box .total_price{font-size:28px;color:#FFD700;font-weight:100;}

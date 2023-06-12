@@ -5,7 +5,8 @@
 
     <div class="where-hashtag">
       <% if params[:name].present? %>
-        <h2>You are in <em>#<%= params[:name] %></em></h2>
+        <% content_for :title do %>You are in <% end %> <% content_for :title do %>#<%= params[:name] %> <% end %>
+        <h1>You are in <em>#<%= params[:name] %></em></h1>
       <% end %>
     </div>    
 

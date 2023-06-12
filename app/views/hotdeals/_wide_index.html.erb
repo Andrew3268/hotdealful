@@ -10,7 +10,8 @@
 
               <div class="divide_page clearfix">
                   <div class="page_title">
-                    <h2><% conent_for :title do %>Today's Deals<% end %></h2>
+                    <% content_for :title do %>Today's Deals<% end %>
+                    <p>Today's Deals</p>
                   </div>
                   <div class="search_filter_comm page_search">
                     <%= form_for "",url: hotdeals_path, role: "search", method: :get do %>
@@ -270,7 +271,7 @@
               <%= link_to image_tag(blog.bl_image, alt: blog.bl_title, title: blog.bl_title, :class => 'main_img'), blog %>
             </div>
             <div class="inner">
-              <h3><%= link_to blog.bl_title, blog %></h3>
+              <h4><%= link_to blog.bl_title, blog %></h4>
             </div>
           </div>
         <% end %>

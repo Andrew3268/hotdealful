@@ -102,7 +102,7 @@ header.new_nav {
 .nav__column > * {
   flex-basis: auto;
 }
-.nav__column h1 a.logo img{width:150px;}
+.nav__column a.logo img{width:150px;}
 
 .nav_ul_list {
   list-style: none;

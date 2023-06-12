@@ -8,8 +8,8 @@
           <div class="compare_box">
             <div class="where-hashtag">
               <% if params[:name].present? %>
-                <h2>The Best Today's Deals</h2>
-                <h3>#<%= params[:name] %></h3>
+                <% content_for :title do %>The Best Today's Deals<% end %> <% content_for :title do %>#<%= params[:name] %> <% end %>
+                <h1>The Best Today's Deals <em>#<%= params[:name] %></em></h1>
               <% end %>
             </div>  
           </div> 
