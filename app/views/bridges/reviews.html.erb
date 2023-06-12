@@ -5,7 +5,7 @@
     
     <div class="divide_page clearfix">
       <div class="page_title">
-        <h2>Reviews</h2>
+        <p>Reviews</p>
       </div>
       <div class="search_filter_comm page_search">
         <%= form_for "",url: bridges_reviews_path, role: "search", method: :get do %>
@@ -27,7 +27,7 @@
 
           <div class="inner">
             <span><%= render_with_bloghashtags(blog.bl_category) %></span>
-            <h3><%= link_to blog.bl_title, blog %></h3>
+            <h1><%= link_to blog.bl_title, blog %></h1>
             <p class="four_sentences"><%= blog.bl_description %></p>
             <% if current_user && current_user.admin %>
               <div class="admin_panner">
@@ -119,9 +119,9 @@
 
                       <% if coupon.c_promocode.present? %>
                         <% if coupon.c_spare_61.present? || coupon.c_spare_62.present? %>
-                          <span class="coupon">Promo Codes</span>  <span class="coupon"> + Coupon</span>
+                          <span class="coupon">Promo Code</span>  <span class="coupon"> + Coupon</span>
                         <% else %>
-                          <span class="coupon">Promo Codes</span>
+                          <span class="coupon">Promo Code</span>
                         <% end %>
                       <% end %>
 

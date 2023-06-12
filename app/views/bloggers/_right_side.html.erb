@@ -1,45 +1,4 @@
-<div class="outline">
-  <%= render 'shared/new_main_header' %>
-
-  <section class="outline_left">
-
-    <div class="where-hashtag">
-      <% if params[:name].present? %>
-        <h2>You are in <em>#<%= params[:name] %></em></h2>
-      <% end %>
-    </div>    
-
-    <div class="except_first_blogs clearfix">
-      <% @bloggers.each do |blog| %>
-        <div class="efb_card clearfix">
-          <div class="img_box">
-            <%= link_to image_tag(blog.bl_image, alt: blog.bl_title, title: blog.bl_title, :class => 'main_img'), blog %>
-          </div>
-
-          <div class="inner">
-            <span><%= render_with_bloghashtags(blog.bl_category) %></span>
-            <h3><%= link_to blog.bl_title, blog %></h3>
-            <p class="four_sentences"><%= blog.bl_description %></p>
-          </div>
-        </div>
-        <% if current_user && current_user.admin %>
-          <div class="admin_panner">
-            <%= link_to 'Edit', edit_blogger_path(blog) %>
-            <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
-          </div>
-        <% end %>
-      <% end %>
-      
-      
-    </div><!-- .except_first_blogs -->
-
-  </section><!-- .outline_left -->
-
-
-
-  <section class="outline_right">
-
-    <!-- Featured Deals Section -->
+ <!-- Featured Deals Section -->
     <div class="banner">
       <h3 class="subject">Deals & Coupons Finder</h3>
       <%= render 'bloggers/quick_coupon_finder' %>
@@ -88,9 +47,9 @@
               <button class="tab-menu-link is-active" data-content="item-1">
                 <span data-title="item-1">Promotion Codes</span>
               </button>
-              <button class="tab-menu-link" data-content="item-2">
+              <!-- <button class="tab-menu-link" data-content="item-2">
                 <span data-title="item-2">Pick Deals</span>
-              </button>
+              </button> -->
             </div>
 
             <div class="tab-bar">
@@ -196,9 +155,3 @@
           </div>
         </div><!-- .tap_tainer -->
     </div>
-  </section><!-- .outline_right -->
-
-
-</div>
-
-

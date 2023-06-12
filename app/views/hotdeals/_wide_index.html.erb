@@ -10,7 +10,7 @@
 
               <div class="divide_page clearfix">
                   <div class="page_title">
-                    <h2>Today's Deals</h2>
+                    <h2><% conent_for :title do %>Today's Deals<% end %></h2>
                   </div>
                   <div class="search_filter_comm page_search">
                     <%= form_for "",url: hotdeals_path, role: "search", method: :get do %>
@@ -168,9 +168,9 @@
 
                       <% if coupon.c_promocode.present? %>
                         <% if coupon.c_spare_61.present? || coupon.c_spare_62.present? %>
-                          <span class="coupon">Promo Codes</span>  <span class="coupon"> + Coupon</span>
+                          <span class="coupon">Promo Code</span>  <span class="coupon"> + Coupon</span>
                         <% else %>
-                          <span class="coupon">Promo Codes</span>
+                          <span class="coupon">Promo Code</span>
                         <% end %>
                       <% end %>
 

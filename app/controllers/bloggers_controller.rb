@@ -26,9 +26,8 @@ class BloggersController < ApplicationController
     @coupons = Coupon.all.order("created_at DESC").limit(5)
     @hotdeals = Hotdeal.all.order("created_at DESC").limit(5)
 
-    set_meta_tags title: @blogger.bl_title,
-                  site: 'THE FiiVE',
-                  revierse: true,
+     
+    set_meta_tags revierse: true,
                   description: @blogger.bl_description,
                   keywords: 'amazondeals, hotdeals, promotion code, coupons,',
                   twitter: {

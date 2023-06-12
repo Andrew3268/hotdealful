@@ -28,10 +28,10 @@
 .blog_wrap .intro{width:90%;margin:0 auto;}
 .blog_wrap .intro img{width:100%;height:250px;object-fit:cover;border-radius:20px;}
 .blog_wrap .intro .inner{padding:10px 0 0 0;}
-.blog_wrap .intro .inner h2{line-height:1.2;font-size:30px;}
+.blog_wrap .intro .inner h1{line-height:1.2;font-size:30px;}
 .blog_wrap .intro .inner p{margin:10px 0;font-size:17px;padding-bottom:30px;}
 .blog_wrap .product_box{border-bottom:1px solid #ccc;padding:5px 10px 20px 10px;}
-.blog_wrap .product_box h3{margin-top:20px;font-size:20px;line-height:1.2;}
+.blog_wrap .product_box h2{margin-top:20px;font-size:20px;line-height:1.2;}
 .blog_wrap .product_box .product_img_box{width:100%;margin:10px auto;height:350px;position:relative;background-color:#fff;border-radius:20px;}
 .blog_wrap .product_box .product_img_box img{width:70%;height:70%;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);object-fit:contain;border-radius:20px;}
 .blog_wrap .product_box .blog_ctn{}
@@ -256,7 +256,7 @@
 .outline_left .latest_blog .img_box{height:350px;}
 .outline_left .latest_blog .img_box img{width:100%;height:100%;object-fit:cover;border-radius:20px;}
 .outline_left .latest_blog .inner{padding:0 20px;}
-.outline_left .latest_blog .inner h2{font-size:30px;line-height:1.2;}
+.outline_left .latest_blog .inner h1{font-size:30px;line-height:1.2;}
 .outline_left .latest_blog .inner p{font-size:17px;}
 
 .outline_left .except_first_blogs{margin-top:30px;}
@@ -265,7 +265,7 @@
 .outline_left .except_first_blogs .efb_card .img_box img{width:100%;height:100%;object-fit:cover;border-radius:20px;}
 .outline_left .except_first_blogs .efb_card .inner{float:left;width:55%;padding:15px 0;}
 .outline_left .except_first_blogs .efb_card .inner span{}
-.outline_left .except_first_blogs .efb_card .inner h3{margin:5px 0;}
+.outline_left .except_first_blogs .efb_card .inner h1{margin:5px 0;font-size:18px;line-height:1.2;}
 .outline_left .except_first_blogs .efb_card .inner p{font-size:17px;}
 .outline_left .except_first_blogs .efb_card .inner .admin_panner{margin-top:10px;}
 .outline_left .back_to_btn{display:none;}

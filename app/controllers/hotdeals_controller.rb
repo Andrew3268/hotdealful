@@ -29,9 +29,7 @@ class HotdealsController < ApplicationController
     @most_hit = Blogger.most_hit(1.day.ago, 5)
     @hotdeal_top = Hotdeal.most_hit(1.day.ago, 5)
 
-    set_meta_tags title: @hotdeal.deal_title,
-                  site: 'THE FiiVE',
-                  revierse: true,
+    set_meta_tags revierse: true,
                   description: @hotdeal.deal_description,
                   keywords: 'amazondeals, hotdeals, promotion code, coupons,',
                   twitter: {

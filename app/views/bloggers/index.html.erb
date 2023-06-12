@@ -21,7 +21,7 @@
 
     <div class="divide_page clearfix">
       <div class="page_title">
-        <h2>Reviews</h2>
+        <p>Reviews</p>
       </div>
       <div class="search_filter_comm page_search">
         <%= form_for "",url: bridges_reviews_path, role: "search", method: :get do %>
@@ -40,7 +40,7 @@
           <%= link_to image_tag(blog.bl_image, alt: blog.bl_title, title: blog.bl_title, :class => 'main_img'), blog %>
         </div>
         <div class="inner">
-          <h2><%= link_to blog.bl_title, blog %></h2>
+          <h1><%= link_to blog.bl_title, blog %></h1>
           <p><%= blog.bl_description %></p>
            <% if current_user && current_user.admin %>
             <div class="admin_panner">
@@ -62,7 +62,7 @@
 
           <div class="inner">
             <span><%= render_with_bloghashtags(blog.bl_category) %></span>
-            <h3><%= link_to blog.bl_title, blog %></h3>
+            <h1><%= link_to blog.bl_title, blog %></h1>
             <p class="four_sentences"><%= blog.bl_description %></p>
             <% if current_user && current_user.admin %>
               <div class="admin_panner">
@@ -82,164 +82,7 @@
 
 
   <section class="outline_right">
-
-    <!-- Featured Deals Section -->
-    <div class="banner">
-      <h3 class="subject">Deals & Coupons Finder</h3>
-      <%= render 'bloggers/quick_coupon_finder' %>
-    </div>
-
-    <!-- Popular Blog Section -->
-    <div class="popular_blogs">
-      <h3 class="subject">Popular</h3>
-      <div class="popular_blogs_wrap">
-
-        <% @most_hit.each do |blog| %>
-          <div class="pb_card clearfix">
-            <div class="img_box">
-              <%= link_to image_tag(blog.bl_image, alt: blog.bl_title, title: blog.bl_title, :class => 'main_img'), blog %>
-            </div>
-            <div class="inner">
-              <h3><%= link_to blog.bl_title, blog %></h3>
-            </div>
-          </div>
-        <% end %>
-        <div class="more_btn"><a href="/bridges/reviews">See more</a></div>
-      </div>
-    </div>
-
-    <div class="banner featured_deals">
-      <h3 class="subject">Featured Deals</h3>
-      <% @picks.each do |pick| %>
-        <a href="/posts/hashtag/<%= pick.p_link %>">
-          <div class="img_box">
-            <img src="<%= pick.p_image %>">
-          </div>
-        </a>
-        <div class="inner">
-          <span class="featured_span"><%= pick.p_spare_01 %></span>
-          <h4><%= pick.p_title %></h4>
-        </div>
-      <% end %>
-    </div>
-
-
-    <div class="banner deals">
-        <h3 class="subject">Today's Deals</h3>
-        <div class="tap_tainer">
-          <div class="tab">
-            <div class="tab-menu">
-              <button class="tab-menu-link is-active" data-content="item-1">
-                <span data-title="item-1">Promotion Codes</span>
-              </button>
-              <!-- <button class="tab-menu-link" data-content="item-2">
-                <span data-title="item-2">Pick Deals</span>
-              </button> -->
-            </div>
-
-            <div class="tab-bar">
-
-              <div class="tab-bar-content is-active" id="item-1">
-
-                <% @coupons.each do |coupon| %>
-                  <div class="tab_card clearfix">
-                    <div class="img_box">
-                      <%= link_to image_tag(coupon.c_image, alt: coupon.c_title, title: coupon.c_title, :class => 'main_img'), coupon %>
-                    </div>
-                    <div class="inner">
-
-                      <% if coupon.c_promocode.present? %>
-                        <% if coupon.c_spare_61.present? || coupon.c_spare_62.present? %>
-                          <span class="coupon">Promo Codes</span>  <span class="coupon"> + Coupon</span>
-                        <% else %>
-                          <span class="coupon">Promo Codes</span>
-                        <% end %>
-                      <% end %>
-
-                      <p><%= coupon.c_title %></p>
-                      <div class="pricing">
-                        <% promocode_price =  coupon.c_was_price.to_f - (coupon.c_pct.to_f / 100) * coupon.c_was_price.to_f %>
-                        <% hotdeal_pct = 0 %>
-                        <% hotdeal_pct =  (coupon.c_was_price.to_f - coupon.c_is_price.to_f) / coupon.c_was_price.to_f * 100 %>
-                        <% total_save = 0 %>
-                        <% pct_coupon = 0 %>
-                        <% pct_coupon = (coupon.c_spare_61.to_f / 100) * coupon.c_was_price %>
-                        <% total_price_pct_coupon = promocode_price - pct_coupon %>
-                        <% total_price_cash_coupon = promocode_price - coupon.c_spare_62.to_f %>
-
-                        <% if coupon.c_promocode.present? %>
-                          <% if coupon.c_spare_61.present? || coupon.c_spare_62.present? %>
-                            <% if coupon.c_spare_61.present? %>
-                              <span class="is_price"><%= number_to_currency(total_price_pct_coupon) %></span>
-                              <span class="was_price"><%= number_to_currency(coupon.c_was_price) %></span>
-                            <% else %>
-                              <span class="is_price"><%= number_to_currency(total_price_cash_coupon) %></span>
-                              <span class="was_price"><%= number_to_currency(coupon.c_was_price) %></span>
-                            <% end %>
-
-                          <% else %>
-                            <span class="is_price"><%= number_to_currency(promocode_price) %></span>
-                            <span class="was_price"><%= number_to_currency(coupon.c_was_price) %></span>
-                          <% end %>
-                        <% end %>
-                        
-                      </div>
-                    </div>
-                  </div><!-- .tab_card -->
-                <% end %>
-
-                <div class="more_btn"><a href="/coupons">See more</a></div>
-              </div><!-- #item-1 -->
-
-
-              <!------ ITEM SECTION 2 ------>  
-              <div class="tab-bar-content " id="item-2">
-
-                <% @hotdeals.each do |hotdeal| %>                
-                  <div class="tab_card clearfix">
-                    <div class="img_box">
-                      <%= link_to image_tag(hotdeal.deal_image, alt: hotdeal.deal_title, title: hotdeal.deal_title, :class => 'main_img'), hotdeal %>
-                    </div>
-                    <div class="inner">
-
-                      <% if hotdeal.deal_pct_coupon.present? || hotdeal.deal_cash_coupon.present? %>
-                        <span class="coupon">+ Coupon</span>
-                      <% end %>                    
-
-                      <p><%= hotdeal.deal_title %></p>
-                      <div class="pricing">
-                        <% total_save = 0 %>
-                        <% pct_coupon = 0 %>
-                        <% pct_coupon = (hotdeal.deal_pct_coupon.to_f / 100) * hotdeal.deal_is_price %>
-                        <% total_price_pct_coupon = hotdeal.deal_is_price - pct_coupon %>
-                        <% total_price_cash_coupon = hotdeal.deal_is_price - hotdeal.deal_cash_coupon.to_f %>
-
-                        <% if hotdeal.deal_pct_coupon.present? || hotdeal.deal_cash_coupon.present? %>
-                          <% if hotdeal.deal_pct_coupon.present? %>
-                            <span class="is_price"><%= number_to_currency(total_price_pct_coupon) %></span>
-                            <span class="was_price"><%= number_to_currency(hotdeal.deal_was_price) %></span>
-                          <% else %>
-                            <span class="is_price"><%= number_to_currency(total_price_cash_coupon) %></span>
-                            <span class="was_price"><%= number_to_currency(hotdeal.deal_was_price) %></span>
-                          <% end %>
-
-                        <% else %>
-                          <span class="is_price"><%= number_to_currency(hotdeal.deal_is_price) %></span>
-                          <span class="was_price"><%= number_to_currency(hotdeal.deal_was_price) %></span>
-                        <% end %>
-                      </div>
-                    </div>
-                  </div><!-- .tab_card -->
-                <% end %>
-
-                <div class="more_btn"><a href="/hotdeals">See more</a></div>
-              </div><!-- #item-2 -->
-
-
-            </div>
-          </div>
-        </div><!-- .tap_tainer -->
-    </div>
+    <%= render 'bloggers/right_side' %> 
   </section><!-- .outline_right -->
 
 

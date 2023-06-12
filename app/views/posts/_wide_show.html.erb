@@ -10,7 +10,7 @@
 
             <div class="new_title_wrap">
               
-              <h2><%= @post.title %></h2>
+              <h2><% content_for :title do %><%= @post.title %><% end %></h2>
               <% if @post.spare_42.present? %>
                  <div class="rating_card">
                     <% if @post.spare_58 == 50 %>
@@ -374,9 +374,9 @@
 
                       <% if coupon.c_promocode.present? %>
                         <% if coupon.c_spare_61.present? || coupon.c_spare_62.present? %>
-                          <span class="coupon">Promo Codes</span>  <span class="coupon"> + Coupon</span>
+                          <span class="coupon">Promo Code</span>  <span class="coupon"> + Coupon</span>
                         <% else %>
-                          <span class="coupon">Promo Codes</span>
+                          <span class="coupon">Promo Code</span>
                         <% end %>
                       <% end %>
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>    
-    <!-- <title>Why pay more? It's good enough.</title> -->
+    <title><%= content_for?(:title) ? yield(:title) : "Why pay more? It's good enough." %></title>
     <%= display_meta_tags %>
     <meta name="description" content="Find the best bargains and money-saving offers with free hand-picked coupons, promo codes, discounts and deal comparisons from our website.">
     <meta name="keywords" content="amazon, coupons, discount, sale, hotdeal, promo codes, bargins">

@@ -9,7 +9,7 @@
 
           <div class="new_title_wrap">
             
-            <h2><%= @coupon.c_title %></h2>
+            <h2><%= content_for :title do %><%= @coupon.c_title %><% end %></h2>
             
             <div class="pricing_box">
               <p>
@@ -390,9 +390,9 @@
 
                       <% if coupon.c_promocode.present? %>
                         <% if coupon.c_spare_61.present? || coupon.c_spare_62.present? %>
-                          <span class="coupon">Promo Codes</span>  <span class="coupon"> + Coupon</span>
+                          <span class="coupon">Promo Code</span>  <span class="coupon"> + Coupon</span>
                         <% else %>
-                          <span class="coupon">Promo Codes</span>
+                          <span class="coupon">Promo Code</span>
                         <% end %>
                       <% end %>
 

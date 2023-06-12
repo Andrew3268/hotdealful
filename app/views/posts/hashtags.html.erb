@@ -8,8 +8,7 @@
         <div class="compare_box">
           <div class="where-hashtag">
             <% if params[:name].present? %>
-              <h2>The Featured Deals Of The Day</h2>
-              <h3>#<%= params[:name] %></h3>
+              <h1><% content_for :title do %>The Featured Deals Of The Day <% end %><em><% content_for :title do %>#<%= params[:name] %> <% end %></em></h1>
             <% end %>
           </div>    
           <%= render 'posts/compare' %>
@@ -58,9 +57,9 @@
 
                       <% if coupon.c_promocode.present? %>
                         <% if coupon.c_spare_61.present? || coupon.c_spare_62.present? %>
-                          <span class="coupon">Promo Codes</span>  <span class="coupon"> + Coupon</span>
+                          <span class="coupon">Promo Code</span>  <span class="coupon"> + Coupon</span>
                         <% else %>
-                          <span class="coupon">Promo Codes</span>
+                          <span class="coupon">Promo Code</span>
                         <% end %>
                       <% end %>
 

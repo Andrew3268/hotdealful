@@ -28,9 +28,7 @@ class PostsController < ApplicationController
     @our_pick = Coupon.all.order("created_at DESC")
     @picks = Pick.all.all.order("created_at DESC").limit(1)
     @most_hit = Blogger.most_hit(1.day.ago, 5)
-    set_meta_tags title: @post.title,
-                  site: 'THE FiiVE',
-                  revierse: true,
+    set_meta_tags revierse: true,
                   description: @post.title,
                   keywords: 'amazondeals, hotdeals, promotion code, coupons ',
                   twitter: {
