@@ -497,27 +497,7 @@ display: none;
 
 
 
-/***** Most Hit *****/
-.mostContainer{padding:20px;box-shadow:rgba(149, 157, 165, 0.3) 0px 8px 24px;width:90%;margin:0 5%;border-radius:20px;}
-.mostContainer h3{vertical-align:middle;}
-.mostContainer h3 .trend_right{}
-.mostContainer h3 .trend_right{float:right;background-color:#000;padding:5px 10px;border-radius:10px;}
-.mostContainer h3 .trend_right a{color:#fff;display:block;}
-.mostContainer h3 i{vertical-align:middle;}
-.mostContainer .section{height:120px;border-bottom:1px solid #ccc;margin:10px 0;}
-.mostContainer .section .img_box{float:left;width:28%;margin-right:2%;height:100px;position:relative;}
-.mostContainer .section .img_box img{width:80%;height:80%;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);object-fit:contain;}
-.mostContainer .section .img_box .list_num{background-color:#000;color:#fff;padding:5px 10px;border-radius:10px;position:absolute;top:0;left:0;opacity:0.6;}
-.mostContainer .section .right-section{float:left;width:70%;padding:15px 0;}
-.mostContainer .section .right-section p{font-size:12px;margin-bottom:10px;}
-.mostContainer .section .right-section .hit{font-size:10px;color:#ccc;}
-.mostContainer .section .right-section .rating_card{}
-.mostContainer .section .right-section .rating_card .rating_box{}
-.mostContainer .section .right-section .rating_card .rating_box i{font-size:13px;}
-.mostContainer .section .right-section .pricing{}
-.mostContainer .section .right-section .pricing span{text-decoration:line-through;color:#9da3ab;margin-left:5px;font-size:13px;font-weight:100;}
-.mostContainer .section .right-section .pricing em{font-size:20px;color:#FFD700;font-weight:100;}
-.mostContainer .view_more a{background:#000;padding:5px 15px;color:#fff;text-align:center;border-radius:10px;}
+
 
 
 

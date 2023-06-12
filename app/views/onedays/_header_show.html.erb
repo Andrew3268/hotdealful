@@ -1,8 +1,0 @@
-<nav>
-  <div class="header_back"><a href="/"><img class="back_arrow" src="<%=asset_path 'back_arrow.png' %>" alt="all" /></a></div>
-  <% if @oneday.o_pct_coupon.present? || @oneday.o_cash_coupon.present? %>
-    <h1><a href="/">Code & Coupon Detail</a></h1>
-  <% else %>
-    <h1><a href="/">Promo Code Detail</a></h1>
-  <% end %>
-</nav>
