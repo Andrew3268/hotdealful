@@ -1,18 +1,6 @@
 # See https://www.robotstxt.org/robotstxt.html for documentation on how to use the robots.txt file
 
-User-agent: *
-
-Disallow: /bridges/delete_old_post
-Disallow: /bridges/share_facebook
-Disallow: /bridges/share_ko
-Disallow: /bridges/under_deal
-Disallow: /bridges/half_deal
-Disallow: /bridges/random_deals 
-Disallow: bridges/new_under_deal
-Disallow: bridges/new_half_deal
-Disallow: bridges/delete_coupons
-Disallow: bridges/delete_hotdeals
-Disallow: bridges/admin_panel
+User-agent: Googlebot
 
 Disallow: /picks/new
 Disallow: /picks/edit
@@ -22,15 +10,36 @@ Disallow: /posts/edit
 
 Disallow: /users/sign_in
 Disallow: /users/sign_up
-Disallow: /users/eidt
+Disallow: /users/edit
 
 Disallow: /coupons/new
 Disallow: /coupons/edit
-Disallow: /coupons/index
 
-Disallow: /homes/new
-Disallow: /homes/edit
+Disallow: /hotdeals/new
+Disallow: /hotdeals/edit
 
-Disallow: /deals/new
-Disallow: /deals/edit
-Disallow: /deals/show
+Disallow: /bloggers/new
+Disallow: /bloggers/edit
+
+
+
+User-agent: *
+
+Disallow: /picks/new
+Disallow: /picks/edit
+
+Disallow: /posts/new
+Disallow: /posts/edit
+
+Disallow: /users/sign_in
+Disallow: /users/sign_up
+Disallow: /users/edit
+
+Disallow: /coupons/new
+Disallow: /coupons/edit
+
+Disallow: /hotdeals/new
+Disallow: /hotdeals/edit
+
+Disallow: /bloggers/new
+Disallow: /bloggers/edit
