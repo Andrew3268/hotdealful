@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  resources :wp_reviews
   resources :hotdeals
   resources :bloggers
   resources :blogs

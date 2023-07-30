@@ -1,0 +1,2 @@
+module WpReviewsHelper
+end

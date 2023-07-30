@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @wp_review.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @wp_review.content %>
+</p>
+
+<%= link_to 'Edit', edit_wp_review_path(@wp_review) %> |
+<%= link_to 'Back', wp_reviews_path %>

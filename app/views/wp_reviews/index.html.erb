@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Wp Reviews</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @wp_reviews.each do |wp_review| %>
+      <tr>
+        <td><%= wp_review.title %></td>
+        <td><%= wp_review.content %></td>
+        <td><%= link_to 'Show', wp_review %></td>
+        <td><%= link_to 'Edit', edit_wp_review_path(wp_review) %></td>
+        <td><%= link_to 'Destroy', wp_review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Wp Review', new_wp_review_path %>
