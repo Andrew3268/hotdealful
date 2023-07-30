@@ -313,7 +313,6 @@ a.set_reset_m{display:none;}
 
 .wp_table_wrapper .table_box .table-col{border-bottom:1px solid #ccc;vertical-align:middle;}
 
-.wp_table_wrapper tr:nth-child(even) {background-color:}
 .wp_table_wrapper .table_box thead th {
     padding:5px;
     font-size:13px;
