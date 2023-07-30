@@ -6,6 +6,7 @@
 
     <% if current_user && current_user.admin %>
       <ul class="admin_menu">
+        <li><a href="/wp_reviews">WP-review</a></li>
         <li><%= link_to 'New Coupon', new_coupon_path %></li>
         <li><%= link_to 'New Post', new_post_path %></li>
         <li><%= link_to 'New HotDeal', new_hotdeal_path %></li>

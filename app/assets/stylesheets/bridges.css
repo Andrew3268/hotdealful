@@ -274,7 +274,6 @@ a.set_reset_m{display:none;}
   -webkit-transition: all .35s;
   -o-transition: all .35s;
   transition: all .35s;
-  text
 }
 .wp_acordian_box input[type=checkbox] + label::after {
   content: "\2795";
