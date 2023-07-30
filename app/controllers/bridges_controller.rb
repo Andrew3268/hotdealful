@@ -40,5 +40,10 @@ class BridgesController < ApplicationController
     end
   end
 
+  def view_test
+
+  end
+    
+
 
 end

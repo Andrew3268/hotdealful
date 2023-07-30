@@ -220,3 +220,173 @@ a.set_reset_m{display:none;}
 }
 
 
+/* Acordian styles */
+.wp_accordion_wrap{width:80%;margin:0 auto;}
+.wp_acordian_box .tab {
+  position: relative;
+  margin-bottom: .01em;
+  width: 100%;
+  color: #000;
+  overflow: hidden;
+}
+ .wp_accordion_wrap input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.wp_accordion_wrap label {
+  position: relative;
+  display: block;
+  padding: 0 0 0 1em;
+  line-height: 3;
+  cursor: pointer;
+  color:#000;
+  border-bottom:1px solid;
+}
+.wp_accordion_wrap label span:before{content: "\2714";}
+.wp_accordion_wrap a{float:right;margin-top:10px;}
+
+.wp_acordian_box .tab-content {
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height .35s;
+  -o-transition: max-height .35s;
+  transition: max-height .35s;
+}
+
+.wp_acordian_box .tab-content p {
+  margin: 1em;
+}
+/* :checked */
+.wp_acordian_box input:checked ~ .tab-content {
+  max-height: 10em;
+}
+/* Icon */
+.wp_acordian_box label::after {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  width: 3em;
+  height: 3em;
+  line-height: 3;
+  text-align: center;
+  -webkit-transition: all .35s;
+  -o-transition: all .35s;
+  transition: all .35s;
+  text
+}
+.wp_acordian_box input[type=checkbox] + label::after {
+  content: "\2795";
+}
+.wp_acordian_box input[type=radio] + label::after {
+  content: "\25BC";
+}
+.wp_acordian_box input[type=checkbox]:checked + label::after {
+  transform: rotate(315deg);
+}
+.wp_acordian_box input[type=radio]:checked + label::after {
+  transform: rotateX(180deg);
+}
+
+
+
+
+
+
+.wp_table_wrapper {
+  max-width: 1200px;
+  position: relative;
+}
+
+
+.wp_table_wrapper em {
+  color: lightgrey;
+  font-size: 12px;
+  font-weight: ital;
+}
+
+.wp_table_wrapper .table_box {
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 0;
+}
+
+.wp_table_wrapper .table_box .table-col{border-bottom:1px solid #ccc;vertical-align:middle;}
+
+.wp_table_wrapper tr:nth-child(even) {background-color:}
+.wp_table_wrapper .table_box thead th {
+    padding:5px;
+    font-size:13px;
+    text-align: center;
+    vertical-align: top;
+    width:150px;
+}
+.wp_table_wrapper .table_box tbody td {
+    color: #333;
+    font-size: 12px;
+    padding:10px 7px;
+    white-space: normal;
+    vertical-align: top;
+    text-align:center;
+}
+.wp_table_wrapper .table_box tbody td a{background-color:#000;padding:7px 12px;border-radius:10px;text-align:center;color:#fff;width:100%;}
+
+
+.wp_table_wrapper .table_scroller {
+    overflow-x: scroll;
+    overflow-y: visible;
+    padding-bottom: 5px;
+    width: 100%;
+}
+
+.wp_table_wrapper .table_box .table-sticky-col {
+    text-align:center;
+    left: 0;
+    position: sticky;
+    top: auto;
+    font-weight: 700;
+    min-width: 110px;
+    background-color: #FFFFFF;
+}
+
+.wp_table_wrapper .table-sticky-col.stripe-row {
+    background-color: #F3F3F3;
+}
+
+.wp_table_wrapper .product-img {
+    height: auto;
+    width: 150px;
+}
+
+
+.wp_table_wrapper th:not(:first-child),
+.wp_table_wrapper td:not(:first-child) {
+    border-left: 1px solid lightgrey;
+}
+
+/* general reset/setup styling for icons - needed on all */
+
+.wp_table_wrapper .scroll-button { 
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background-color: #fdb813;
+}
+
+/* mobile */
+@media screen and (max-width: 768px) and (min-width: 320px)  {
+  .wp_table_wrapper .table_box .table-sticky-col{min-width:145px;}
+  .wp_table_wrapper .table_box thead th{min-width:130px;}
+  .wp_table_wrapper .table_box tbody td{font-size: 15px;}
+  .wp_table_wrapper .product-img {width:100px;height:auto;}
+}
+
+@media screen and (max-width: 1280px) and (min-width: 768px)  {
+  .wp_table_wrapper .table_box .table-sticky-col{min-width:175px;}
+  .wp_table_wrapper .table_box thead th{width:160px;}
+}
+
+
+

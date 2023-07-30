@@ -259,7 +259,7 @@
               </div>
 
               <!-- Button Section -->
-              <div><a target="_blank" href="<%= @post.link %>" class="link">Buy now on Amazon</a></div>
+              <div><a target="_blank" href="<%= @post.link %>" class="link">View now on Amazon</a></div>
 
              <!--  <div class="btn post_btn_wrap">
                 <% btn_price = @post.was_price.to_f - @post.is_price %>
@@ -269,24 +269,24 @@
                 <div class="pc_btn">
                   <% if @post.spare_61.present? || @post.spare_62.present? %>
                     <% if @post.spare_61.present? %>
-                      <a class="amz_btn buy_now" target="_blank" href="<%= @post.link %>">Go to Amazon & Save <%= number_to_currency(btn_pct_price) %> Now!</a>
+                      <a class="amz_btn View_now" target="_blank" href="<%= @post.link %>">Go to Amazon & Save <%= number_to_currency(btn_pct_price) %> Now!</a>
                     <% else %>
-                      <a class="amz_btn buy_now" target="_blank" href="<%= @post.link %>">Go to Amazon & Save <%= number_to_currency(btn_cash_price) %> Now!</a>
+                      <a class="amz_btn View_now" target="_blank" href="<%= @post.link %>">Go to Amazon & Save <%= number_to_currency(btn_cash_price) %> Now!</a>
                     <% end %>
                   <% else %>
-                    <a class="amz_btn buy_now" target="_blank" href="<%= @post.link %>">Go to Amazon & Save <%= number_to_currency(btn_price) %> Now!</a>
+                    <a class="amz_btn View_now" target="_blank" href="<%= @post.link %>">Go to Amazon & Save <%= number_to_currency(btn_price) %> Now!</a>
                   <% end %>
                 </div>
 
                 <div class="mobile_btn">
                   <% if @post.spare_61.present? || @post.spare_62.present? %>
                     <% if @post.spare_61.present? %>
-                      <a class="amz_btn buy_now" href="<%= @post.link %>">Go to Amazon & Save <%= number_to_currency(btn_pct_price) %> Now!</a>
+                      <a class="amz_btn View_now" href="<%= @post.link %>">Go to Amazon & Save <%= number_to_currency(btn_pct_price) %> Now!</a>
                     <% else %>
-                      <a class="amz_btn buy_now" href="<%= @post.link %>">Go to Amazon & Save <%= number_to_currency(btn_cash_price) %> Now!</a>
+                      <a class="amz_btn View_now" href="<%= @post.link %>">Go to Amazon & Save <%= number_to_currency(btn_cash_price) %> Now!</a>
                     <% end %>
                   <% else %>
-                    <a class="amz_btn buy_now" href="<%= @post.link %>">Go to Amazon & Save <%= number_to_currency(btn_price) %> Now!</a>
+                    <a class="amz_btn View_now" href="<%= @post.link %>">Go to Amazon & Save <%= number_to_currency(btn_price) %> Now!</a>
                   <% end %>
                 </div>
               </div> -->

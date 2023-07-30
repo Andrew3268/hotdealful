@@ -49,6 +49,7 @@ Rails.application.routes.draw do
   get 'bridges/trending_coupon' #active
   get 'bridges/testing' #active
   get 'bridges/reviews' #active
+  get 'bridges/view_test' #active
 
 
   get 'bridges/new_coupon_section'
